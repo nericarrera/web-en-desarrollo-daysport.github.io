@@ -120,7 +120,7 @@
 .menu ul li { 
     display: inline-block;
     width: 100px;
-    height: auto;  
+    height: 55px;  
     
 }
 
@@ -132,13 +132,20 @@
     list-style: none;
     font-size: 16px;
     margin-top: 8px;
-    font-weight: 400;
+    font-weight: 700;
+    text-align: center;
 }
 
 .menu li a:hover {
-    
+    background: #ececec;
     color: #fc7200;
-} 
+    border-radius: 15px;
+}
+
+.menu li a:hover {
+    color: #fc7200;
+    border-radius: 7px;
+}
 
 .menu  li {
     display: inline-block;
@@ -151,12 +158,10 @@
 .menu li ul {
     display: none;
     position: absolute;
-    background: #ffffff;
-    width: 150px;
+    background: #ececec;
+    width: 120px;
     height: auto;
-    padding: 2px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 15px;
 }
 
 .menu li:hover > ul {
@@ -348,7 +353,7 @@
     background: #931fff;
     border-radius: 25px;
     box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.5);
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 
