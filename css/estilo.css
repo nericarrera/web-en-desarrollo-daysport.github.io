@@ -797,7 +797,7 @@ transition: all 400ms ease;
     height: 540px;
     padding: 14px;
     justify-content: center;
-    background: #ffffff;
+    background: #000000;
     justify-content: center;
     text-align: center;
 
@@ -818,12 +818,11 @@ transition: all 400ms ease;
     display: flex;
     height: 800px;
     width: 750px;
-    color: #000000;
+    color: #ffffff;
     font-size: 20px;
     text-align: justify;
     font-family: 'Oswald', sans-serif;
     padding: 15px;
-    color: #000000;
     margin-top: 25px;
 
 }
