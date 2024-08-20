@@ -430,7 +430,7 @@
 
 .conteflechas {
     position: absolute;
-    top: -5%;
+    top: 5%;
     width: 90%;
     height: auto;
     display: flex;
