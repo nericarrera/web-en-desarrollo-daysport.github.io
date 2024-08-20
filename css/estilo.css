@@ -429,6 +429,7 @@
     position: absolute;
     top: 33%;
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
