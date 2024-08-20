@@ -389,6 +389,7 @@
     justify-content: center;
     text-align: center;
     border-bottom: 0.5px solid #f0e6fa;
+    margin-top: 15px;
     margin-bottom: 50px;
     overflow: hidden;
 }
