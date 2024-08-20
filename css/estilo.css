@@ -389,7 +389,7 @@
     justify-content: center;
     text-align: center;
     border-bottom: 0.5px solid #f0e6fa;
-    margin-top: 15px;
+    margin-top: 35px;
     margin-bottom: 50px;
     overflow: hidden;
 }
@@ -430,7 +430,7 @@
 
 .conteflechas {
     position: absolute;
-    top: 62%;
+    top: 5%;
     width: 93%;
     height: auto;
     display: flex;
