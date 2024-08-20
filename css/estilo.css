@@ -384,7 +384,6 @@
     margin: auto;
     width: 97%;
     height: auto;
-    display: flex;
     flex-wrap: wrap;
     padding: 10px;
     justify-content: center;
