@@ -416,6 +416,7 @@
    position: relative;
    display: flex;
    transition: transform 0.3s ease-in-out;
+   z-index: 1;
 }
 
 .conteiner-card .card:hover{
