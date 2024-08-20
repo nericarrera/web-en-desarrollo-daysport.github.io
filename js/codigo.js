@@ -5,9 +5,22 @@ const prevArrow = document.getElementById('prevArrow');
 let scrollAmount = 0;
 const scrollStep = 200;
 
+// Obtenemos el ancho del contenedor y el ancho total de las cards
+const containerWidth = cardWrapper.offsetWidth;
+const totalScrollWidth = cardWrapper.scrollWidth;
+
 nextArrow.addEventListener('click', function(event) {
     event.preventDefault();
-    scrollAmount += scrollStep;
+    // Calculamos la cantidad máxima que se puede desplazar
+    const maxScrollAmount = totalScrollWidth - containerWidth;
+
+    // Aumentamos el desplazamiento solo si no se ha alcanzado el final
+    if (scrollAmount + scrollStep < maxScrollAmount) {
+        scrollAmount += scrollStep;
+    } else {
+        scrollAmount = maxScrollAmount; // Límite al final
+    }
+
     cardWrapper.style.transform = `translateX(-${scrollAmount}px)`;
 });
 
