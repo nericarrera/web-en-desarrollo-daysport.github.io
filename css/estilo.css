@@ -432,13 +432,14 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    z-index: 11;
+    z-index: 10;
 }
 
 .conteflechas img {
     height: 100%;
     width: 100%;
     cursor: pointer;
+    z-index: 11;
 }
 
 
