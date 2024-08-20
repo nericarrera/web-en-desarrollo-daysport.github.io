@@ -460,6 +460,7 @@
  width: 240px;
  height: 60px;
  padding: 5px;
+ z-index: 10;
 }
 
 .card-texto h5 {

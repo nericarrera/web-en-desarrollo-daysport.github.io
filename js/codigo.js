@@ -3,7 +3,7 @@ const nextArrow = document.getElementById('nextArrow');
 const prevArrow = document.getElementById('prevArrow');
 
 let scrollAmount = 0;
-const scrollStep = 250;
+const scrollStep = 110;
 
 nextArrow.addEventListener('click', function(event) {
     event.preventDefault();
