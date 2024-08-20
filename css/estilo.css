@@ -430,7 +430,7 @@
 
 .conteflechas {
     position: absolute;
-    top: 40%;
+    top: 5%;
     width: 93%;
     height: auto;
     display: flex;
@@ -440,7 +440,7 @@
 }
 
 .conteflechas img:hover{
-    transform: scale(1.80);
+    transform: scale(1.50);
 }
 
 .conteflechas img {
