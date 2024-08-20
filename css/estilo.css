@@ -439,6 +439,10 @@
     z-index: 10;
 }
 
+.conteflechas img:hover{
+    transform: scale(1.03);
+}
+
 .conteflechas img {
     height: 100%;
     width: 100%;
