@@ -457,6 +457,7 @@
 }
 
 .card-texto {
+    display: block;
  width: 240px;
  height: 60px;
  padding: 5px;
