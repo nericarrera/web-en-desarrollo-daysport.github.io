@@ -1,4 +1,4 @@
-const cardWrapper = document.querySelector('card-wrapper');
+const cardWrapper = document.querySelector('.card-wrapper');
 const nextArrow = document.getElementById('nextArrow');
 const prevArrow = document.getElementById('prevArrow');
 
