@@ -383,6 +383,7 @@
     position: relative;
     margin: auto;
     width: 97%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -565,6 +566,7 @@
     border-radius: 30px;
     margin:auto;
     box-shadow: 1px 1px 5px 5px rgb(14, 14, 13);
+    margin-top: 65px;
 }
 
 .conteiner-descuento-descuento{
