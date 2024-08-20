@@ -390,7 +390,7 @@
     text-align: center;
     border-bottom: 0.5px solid #f0e6fa;
     margin-bottom: 50px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .card-wrapper {
