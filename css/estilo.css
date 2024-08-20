@@ -430,8 +430,8 @@
 
 .conteflechas {
     position: absolute;
-    top: 5%;
-    width: 95%;
+    top: -5%;
+    width: 90%;
     height: auto;
     display: flex;
     justify-content: space-between;
