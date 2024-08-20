@@ -399,6 +399,7 @@
 }
 
 .card {
+    flex-wrap: wrap;
    width: 230px;
    height: 450px;
    border-radius: 20px;
@@ -458,8 +459,8 @@
 
 .card-texto {
     display: block;
- width: 240px;
- height: 60px;
+ width: 227px;
+ height: 145px;
  padding: 5px;
  z-index: 10;
 }
