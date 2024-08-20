@@ -1,23 +1,21 @@
+const cardWrapper = document.querySelector('.card-wrapper');
+const nextArrow = document.getElementById('nextArrow');
+const prevArrow = document.getElementById('prevArrow');
 
-        const prevArrow = document.getElementById('prevArrow');
-        const nextArrow = document.getElementById('nextArrow');
-        const img = document.querySelector('.imgcard');
-        const images = ['img/mujer/calza-nike2.png', 'img/calza-nike2.png', 'img/calza-nike2.png']; // Ruta de las imágenes
+let scrollAmount = 0;
+const scrollStep = 250;
 
-        let currentImageIndex = 0;
+nextArrow.addEventListener('click', function(event) {
+    event.preventDefault();
+    scrollAmount += scrollStep;
+    cardWrapper.style.transform = `translateX(-${scrollAmount}px)`;
+});
 
-        // Función para mostrar la siguiente imagen
-        function showNextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            img.src = images[currentImageIndex];
-        }
-
-        // Función para mostrar la imagen anterior
-        function showPrevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            img.src = images[currentImageIndex];
-        }
-
-        // Event listeners para las flechas
-        prevArrow.addEventListener('click', showPrevImage);
-        nextArrow.addEventListener('click', showNextImage);
+prevArrow.addEventListener('click', function(event) {
+    event.preventDefault();
+    scrollAmount -= scrollStep;
+    if (scrollAmount < 0) {
+        scrollAmount = 0;
+    }
+    cardWrapper.style.transform = `translateX(-${scrollAmount}px)`;
+});

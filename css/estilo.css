@@ -381,6 +381,7 @@
 /*  ARTICULOS DESTACADOS */
 
 .conteiner-card{
+    position: relative;
     margin: auto;
     width: 97%;
     display: flex;
@@ -390,6 +391,12 @@
     text-align: center;
     border-bottom: 0.5px solid #f0e6fa;
     margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.card-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
 
 .card {
@@ -408,6 +415,8 @@
    border-right: 0.3px solid rgba(0, 0, 0, 0.2);
    border-bottom: 0.3px solid rgba(0, 0, 0, 0.2);
    position: relative;
+   display: flex;
+   transition: transform 0.3s ease-in-out;
 }
 
 .conteiner-card .card:hover{
@@ -418,16 +427,17 @@
 
 .conteflechas {
     position: absolute;
-    height: 50%;
-    width: 95%;
+    top: 50%;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    transform: translateY(-50%);
 }
 
 .conteflechas img {
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 
