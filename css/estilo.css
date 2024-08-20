@@ -495,7 +495,7 @@
 .card .card-texto-envio{
     display: block;
     height: auto;
-    width: 61px;
+    width: 65px;
     font-size: 15px;
     font-weight: 800;
     margin-top: -18px;
@@ -514,7 +514,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 85px;
     height: 32px;
     border-radius: 15px;
     margin: auto;
