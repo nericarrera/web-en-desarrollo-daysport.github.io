@@ -150,9 +150,8 @@
 }
 
 .menu li a:hover {
-    color: #000000;
-    border-radius: 15px;
-    background: #f1f1f1;
+    color: #ffffff;
+    background: #0a0a0a;
     text-decoration: underline;
     
     
