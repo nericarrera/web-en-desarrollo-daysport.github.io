@@ -204,54 +204,51 @@
 
 
 
-/* CARRUSEL - DONDE VA LAS IMAGENES DEBAJO DEL MENU */
+/* BANNER PORTADA - DONDE VA LAS IMAGENES DEBAJO DEL MENU */
 
-.content-slider-box{
+.banner {
     width: 100%;
-    
-}
-
-.slider-box {
-    width: 80%;
-    overflow: hidden;
-    margin: auto;
-    padding: 10px;
-    
-}
-
-.slider-box ul{
+    height: 60vh; 
+    background: url('img/portada/pexels-cristian-rojas-10043107.jpg') no-repeat center center/cover;
     display: flex;
-    padding: 0px;
-    width: 260%;
-    animation: slide 40s infinite alternate ease-in-out;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.slider-box li{
-    width: 100%;
+.banner-content {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.slider-box img{
-    width:100%;
-
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-.slider-box li img{
-    width: 100%;
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-@keyframes slide{
-    0% { margin-left: 0;}
-    20% { margin-left: 0;}
-
-    30% { margin-left: -100%;}
-    45% { margin-left: -100%;}
-
-    50% { margin-left: -200%;}
-    70% { margin-left: -200%;}
-
-    75% { margin-left: -300%;}
-    100% { margin-left: -300%;}
+.banner-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3483fa;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
 }
+
+.banner-button:hover {
+    background-color: #2968c8;
+}
+
 
 /* TITULO - MAKE A DIFFERENCE */
 
