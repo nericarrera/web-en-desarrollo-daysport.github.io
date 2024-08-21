@@ -1,5 +1,5 @@
 const banner = document.querySelector('.banner');
-const images = ['pexels-cristian-rojas-10043107.jpg', 'img2.jpg', 'img3.jpg']; // Agrega tus imágenes aquí
+const images = ['banner1.png', 'img2.jpg', 'img3.jpg']; // Agrega tus imágenes aquí
 let currentIndex = 0;
 
 function changeImage() {
