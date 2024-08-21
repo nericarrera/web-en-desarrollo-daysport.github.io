@@ -153,11 +153,11 @@
 
 .menu li a:hover {
     color: #ffffff;
-    background: #7f21ff;
+    background: #7f21ff;    
+}
+
+.menu li:hover {
     text-decoration: underline;
-    
-    
-    
 }
 
 .menu  li {
