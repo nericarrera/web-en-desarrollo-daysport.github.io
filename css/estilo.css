@@ -209,7 +209,7 @@
 .banner {
     width: 100%;
     height: 60vh; 
-    background: url('img/portada/banner1.png') no-repeat center center/cover;
+    background: url('img/portada/banner1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
