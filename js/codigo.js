@@ -1,3 +1,15 @@
+const banner = document.querySelector('.banner');
+const images = ['pexels-cristian-rojas-10043107.jpg', 'img2.jpg', 'img3.jpg']; // Agrega tus imágenes aquí
+let currentIndex = 0;
+
+function changeImage() {
+    banner.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+setInterval(changeImage, 5000); // Cambia cada 5 segundos
+
+
 const cardWrapper = document.querySelector('.card-wrapper');
 const nextArrow = document.getElementById('nextArrow');
 const prevArrow = document.getElementById('prevArrow');
@@ -33,3 +45,4 @@ prevArrow.addEventListener('click', function(event) {
 
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
+
