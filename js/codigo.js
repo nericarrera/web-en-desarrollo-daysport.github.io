@@ -45,4 +45,3 @@ prevArrow.addEventListener('click', function(event) {
 
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
-
