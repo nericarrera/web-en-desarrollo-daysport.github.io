@@ -376,7 +376,7 @@
 
 .conteflechas {
     position: absolute;
-    top: 60%;
+    top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
