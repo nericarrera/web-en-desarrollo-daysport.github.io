@@ -1,0 +1,1220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:wght@500;700&display=swap');
+
+* {
+    margin-top: 0;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* HEADER SUPERIOR - ENVIOS - FORMA DE PAGO */
+
+.header{
+    background: #000000;
+    text-align: inline-block;
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+      
+}
+
+.header__inicio-env{
+    display: flex;
+    text-align: justify;
+    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    color:  #f3ff05;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    justify-content: center;
+    padding: 2px;    
+    margin: auto;
+}
+
+.header__inicio-env  p:hover{
+    display: flex;
+    color: #a30dfa;
+    cursor: pointer;
+}
+
+/* NAV * LOGO * BUSCADOR * IMPUT  */
+
+
+.logo{
+    display: flex;
+    width: 150px;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    
+    
+}
+
+.logo .a {
+    display: flex;
+    width: auto;
+    height: auto;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+
+}
+
+.logo .a .logo1{
+    display: flex;
+    width: 50%;
+    
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    background: #ffffff;
+    list-style: none;
+    position: static;
+    
+}
+
+.buscador{
+    display: flex;
+    justify-content: end;
+    text-align: center; 
+    width: auto;
+    height: auto; 
+}
+
+.buscador  input{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    align-content: center;
+    align-items: center;
+    width: 140px;
+    height: 26px;
+    background: #ffffff;
+    border: 1px solid #1a1a1a;
+    margin: auto;
+}
+
+
+/* MENU Y SUBMENU */
+
+.menu {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    margin: auto;
+    padding: 10px;
+         
+}
+
+.menu ul {
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-content: center ;
+    align-items: center;
+    margin: 10px;
+}
+
+.menu ul li { 
+    display: inline-block;
+    width: 100%;
+    height: auto;  
+    
+}
+
+.menu ul li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+    list-style: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-align: center;
+    padding: 1px;
+}
+
+.menu li a:hover {
+    color: #ffffff;
+    background: #7f21ff;    
+}
+
+.menu li:hover {
+    text-decoration: underline;
+}
+
+.menu  li {
+    display: inline-block;
+    text-align: center;
+    height: auto;
+    width: auto;
+
+}
+
+.menu li ul {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    width: 100px;
+    height: auto;
+    border-radius: 15px;    
+    
+}
+
+.menu li:hover > ul {
+    display: block;
+    position: absolute;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.menu li ul li a {
+    position: relative;
+    height: 38px;
+    width: 100px;
+    justify-items: center;
+    color: #000000;
+}
+
+.menu li ul li ul {
+    height: auto;
+    margin: auto;    
+}
+
+.nav__responsive-ul {
+    display: none;
+}
+
+
+
+/* BANNER PORTADA - DONDE VA LAS IMAGENES DEBAJO DEL MENU */
+
+.banner {
+    width: 100%;
+    height: 60vh; 
+    background: url('../img/portada/banner1.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner-content {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.banner-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3483fa;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.banner-button:hover {
+    background-color: #2968c8;
+}
+
+
+/* TITULO - MAKE A DIFFERENCE */
+
+.article__conteiner {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.article__p {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: 53px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000000;
+    background: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+/* SERVICIOS */
+
+.conteiner-servicios{
+    display: flex;
+    width: 100%;
+    margin: auto;
+	text-align: center;
+    justify-content: space-between; 
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    justify-content: center;
+    
+}
+
+.conteiner-row{
+    display: flex;
+    width: 97%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 28px;
+    
+
+}
+
+.card-imagenes{
+    height: 205px;
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+    border: 0.5px solid #bbbbbb;
+    border-radius: 45px;
+    box-shadow: 1px 1px 10px 1px #636363;
+    
+}
+
+.card-imagenes img{
+    width: 85px;
+    height: 85px;
+    padding: 5px;
+    margin-bottom: -35px;
+}
+
+
+.card-imagenes :hover{
+   transition: all 380ms ease;
+   cursor: pointer;
+}
+
+.card-imagenes h3{
+    display: block;
+    width: 180px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+}
+
+.card-imagenes p{
+    margin-top: -40px;
+    width: 210px;
+    height: 50px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    color: #000000;
+}
+
+
+
+
+/* TITULO DE DESTACADO */
+
+.destacado{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    justify-content: center;
+
+}
+
+.destacado__p{
+    height: 40px;
+    width: 485px;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    color: #f3ff05;
+    background: #000000;
+    border-left: 2px solid 797979;
+    border-right: 2px solid #797979;
+    border-radius: 15px;
+    box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.5);
+    margin-top: 15px;
+}
+
+
+/*  ARTICULOS DESTACADOS */
+
+.conteiner-card{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 0.5px solid #f0e6fa;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.card-wrapper {
+    width: 100%;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.card {
+    flex-wrap: wrap;
+   width: 230px;
+   height: 450px;
+   border-radius: 20px;
+   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+   margin: 5px;
+   margin-bottom: 1px;
+   text-align: left;
+   background: #ffffff;
+   transition: all 0.30s ease;
+   border-top: 0.3px solid rgba(0, 0, 0, 0.2);
+   border-left: 0.3px solid rgba(0, 0, 0, 0.2);
+   border-right: 0.3px solid rgba(0, 0, 0, 0.2);
+   border-bottom: 0.3px solid rgba(0, 0, 0, 0.2);
+   position: relative;
+   display: flex;
+   transition: transform 0.3s ease-in-out;
+   z-index: 1;
+}
+
+.conteiner-card .card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.conteflechas {
+    position: absolute;
+    top: 5%;
+    width: 99%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.conteflechas img:hover{
+    transform: scale(1.20);
+}
+
+.conteflechas img {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 11;
+}
+
+
+.conteiner-card .card .imgcard {
+    display: inline-block;
+    width: 100%;
+    height: 67%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+
+.imgcard {
+    width: 100%;
+    height: 100%;
+}
+
+.card-texto {
+    display: block;
+ width: 227px;
+ height: 145px;
+ padding: 5px;
+ z-index: 10;
+}
+
+.card-texto h5 {
+    height: 20px;
+    width: 200;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+    text-align: justify;
+    margin-bottom: 8px;   
+}
+
+.card-texto p {
+    display: inline-block;
+    height: 31px;
+    width: 200px;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 25px;
+    font-weight: 400;
+    color: #000000;   
+}
+
+.card .card-texto-envio{
+    display: block;
+    height: auto;
+    width: 65px;
+    font-size: 15px;
+    font-weight: 800;
+    margin-top: -18px;
+    justify-content: center;
+    justify-items: center;
+    color: #ffffff;
+    padding: 2px;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    background: #129c08;
+    border-radius: 5px;
+}
+
+.btn-agregar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 32px;
+    border-radius: 15px;
+    margin: auto;
+    background: #131313;
+    color: #ffffff;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.btn-agregar:hover{
+    background: #707070;
+    cursor: pointer;
+    transition: all;
+    font-weight: 500;
+    color: #000000;
+    
+}
+
+.btn-agregar-bravas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 32px;
+    border-radius: 15px;
+    margin: auto;
+    background: #131313;
+    color: #ffffff;
+}
+
+.btn-agregar-bravas:hover{
+    background: #e90090;
+    cursor: pointer;
+    font-weight: 500;
+    
+}
+
+
+/* BANNER DESCUENTO */
+
+.conteiner-descuento{
+    width: 97%;
+    height: 230px;
+    display: flex; 
+    justify-content: space-between; 
+    background: #33042b;
+    border-radius: 30px;
+    margin:auto;
+    box-shadow: 1px 1px 5px 5px rgb(14, 14, 13);
+    margin-top: 65px;
+}
+
+.conteiner-descuento-descuento{
+    width: 355px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin: auto; 
+    padding: 20px;
+      
+    
+}
+
+.conteiner-descuento-descuento img{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 1px 1px 30px 3px rgba(6, 214, 221);
+}
+
+.conteiner-descuento-descuento img:hover{
+    transform: scale(1.05);
+    
+    transition: all 400ms ease;
+    
+}
+
+
+
+
+/* TARJETA DE 3 PARTES */
+
+.contetarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    height: auto;
+    justify-content: center;
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    
+}
+
+.conteiner-tarjeta-titulo{
+    width: 95%;
+    height: 100px;
+    margin:auto;
+}
+
+.contetarjeta__p {
+    display: inline-block;
+    font-size: 45px;
+    font-weight: 300;
+    font-family: "Questrial", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  
+    color: #0a0a0a;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+.tarjeta {
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    width: 290px;
+    height: 465px;
+    margin: 18px;
+    border-radius: 5px;
+    
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 93%;
+    border-radius: 15px;
+
+}
+
+.tarjeta a{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #0a0a0a;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    height: auto;
+    width: auto;
+
+}
+
+.tarjeta-p a{
+    text-align: center;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    color: #242424;
+    font-size: 19px;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    
+
+}
+
+.contetarjeta img:hover{
+  transform: scale(1.02);
+   transition: all 380ms ease;
+
+
+}
+
+.tarjeta a:hover{
+    color: #929292;
+    transition: all 300ms ease;
+ }
+
+
+ /* MOTIVATE */
+
+.motivate {
+    display: flex;
+    width: 90%;
+    height: 180px;
+    text-align: center;
+    align-items: center; 
+    margin: auto;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 20px 2px #9b9b9b;
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    background: #000000;
+}
+
+.motivate_p {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 70px;
+    color: #ffffff;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    margin: auto;
+    
+}
+
+.motivate_p1 {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    font-family: "Questrial", sans-serif;
+  letter-spacing: 1px;
+  font-style: normal;
+    justify-content: center;
+    font-size: 22px;
+    color: #ffffff;
+    margin: auto;
+    font-weight: 600;
+    
+}
+ 
+
+/* BANNER LAS BRAVAS */
+
+.conteiner-banner{
+    display: flex;
+    width: 97%;
+    justify-content: center;
+    background-image: linear-gradient(#ffffff, #ffff18);
+    margin: auto;
+    
+    
+}
+
+.conteiner-banner-video {
+    width: 836px;
+    height: 192px; 
+    display: flex;
+    background: #fffb00e0;
+    border-radius: 5px;
+    box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+.conteiner-banner-video video{
+    display: flex;
+    height: 100%;
+    width: 46%;
+    border-top-left-radius: 5px;
+    box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.3);    
+}
+
+.conteiner-banner2{
+    height: 230px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.conteiner-banner2 .banner-bravas-p{
+    display: flex;
+    height: 100px;
+    width: 398px;
+    font-size: 39px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #e90090; 
+    margin-top: 16px;
+  margin-bottom: -15px;   
+  
+}
+
+.conteiner-banner2 img{
+    display: flex;
+    height: 90%;
+    width: 20%;
+    margin-left: 338px;
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* GALERIA FOTOS BRAVAS */
+
+.conteiner-galeria {
+    display:flex;
+    width: 97%;
+    justify-content: center;
+    align-items: center;
+    background: #ffff18;
+    margin: auto;   
+    
+}
+
+.conteiner-fotos {
+    position: relative;
+    justify-content: center;
+    width: 190px;
+    height: 425px;
+    border-top: 0.1px solid rgba(0, 0, 0, 0.5);
+    border-left: 0.1px solid rgba(0, 0, 0, 0.5);
+    border-right: 0.1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.5);
+    background: #ffffff;
+    margin: 10px;
+    margin-top: 65px;
+    border-bottom-right-radius: 25px;
+
+}
+
+.conteiner-tarjeta-fotos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 280px;
+    width: 189px;
+    border-radius: 10px;
+
+}
+
+.conteiner-tarjeta-fotos img {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+
+}
+
+.conteiner-tarjeta-info{
+    height: 140px;
+    width: 189px;
+    
+ 
+}
+
+.conteiner-tarjeta-info h5{
+    width: 217px ;
+    height: 25px;
+    color: #000000;
+    font-size: 15;
+    font-family: 'Kanit', sans-serif;
+    padding: 10px;
+    
+
+}
+
+.conteiner-tarjeta-info p{
+    width: 217px;
+    height: 30px;
+    color: #000000;
+    font-size: 20;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+}
+
+.conteiner-bravas{
+    width: 97%;
+    height: 80px;
+    margin: auto;
+    position: relative;
+    background: #ffff18;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+.conteiner-bravas-titulo{
+    display: flex;
+    position: relative;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+}
+
+.conteiner-bravas-titulo a{
+    text-decoration: none;
+}
+
+.conteiner-bravas-titulo  p{
+    width: auto;
+    height: auto;
+    padding: 5px 8px;
+    background: #000000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    
+    
+}
+
+.conteiner-bravas-titulo p:hover{
+    transition: all 300ms ease;
+    cursor: pointer;
+    background: #e90090;
+}
+
+
+/*GALERIA FUTBOL */
+
+.conteiner-futbol {
+    display: flex;
+    width: 97%;
+    padding: 25px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.conteiner-futbol h6 {
+    font-size: 50px;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    color: #000000;
+    font-weight: 100;
+    justify-content: center;
+    margin-bottom: -40px;
+
+}
+
+.conteiner-futbol h6:hover {
+transform: translateY(-5px);
+transition: all 400ms ease;
+text-decoration: underline;
+
+}
+
+
+/* SOBRE NOSOTROS  */
+
+.conteiner-sobrenosotros {
+    display: flex;
+    width: 97%;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    background: #000000;
+    margin: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;   
+    margin-bottom: -10px; 
+}
+
+.sobrenosotros h3{
+    display: flex;
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+    font-size: 115px;
+    width: 100%;
+    height: 60px;
+    color: #ffffff;
+    
+
+}
+
+.cont_sobrenosotros {
+    display: flex;
+    width: 97%;
+    height: auto;
+    padding: 14px;
+    justify-content: center;
+    background: #000000;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+
+}
+
+.img__somos {
+    width: 375px;
+    height: 460px;
+    border-radius: 50%;
+    display: flex;
+    padding: 12px;
+    margin-top: 5px;
+    margin-right: 80px;
+    
+}
+
+.nosotros__p1  {
+    display: flex;
+    width: 750px;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    font-family: 'Oswald', sans-serif;
+    padding: 15px;
+    margin-top: 25px;
+
+}
+
+/* FORMULARIO - EMAIL  */
+
+.conteiner-formularios{
+    width: 97%;
+    display: flex;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.conteinerform {
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    box-sizing: border-box;
+}
+
+form {
+    width: 440px;
+    height: 530px;
+    background: url(img/pexels-dinielle-de-veyra-4194632.jpg);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    margin: auto;
+    
+}
+
+h4 {
+    color: #ffffff;
+    text-align: center;
+    margin: 0px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    padding: 5px;
+
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+}
+
+textarea {
+    min-height: 200px;
+    max-height: 50px;
+    max-width: 100%;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 97%;
+    display: flex;
+    font-family: "AdihausDIN-CnBoldItalic","AdihausDIN Cn",Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    background: #a30dfa;
+    justify-content:space-between;
+    position: relative;
+    margin: auto;
+    background-image: linear-gradient(#000000, #a30dfa);
+
+}
+
+.conteiner-footer{
+    width: 190px;
+    height: 200px;
+    display: inline;
+    margin: 10px;
+    margin-top: 45px;  
+    padding: 15px;  
+}
+
+.conteiner-titulo-footer{
+    width: 150px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 23px;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    text-decoration: underline;
+}
+
+.conteiner-titulo-footer:hover{
+    color: #f3ff05;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.listafooter {
+    display: grid;
+   width: 150px;
+}
+
+.listafooter a{
+    font-size: 16px;
+    color: #fafafa;
+    display: inline;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    text-decoration: none;
+    -webkit-text-stroke: 0.2px #ffffff;
+}
+
+.listafooter a:hover{
+    color: #f3ff05;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+
+.iconos {
+    height: 100px;
+    width: 150px;
+    display: inline;
+    margin-top: 40px;
+
+}
+
+.conteiner-icono-nav{
+    width: 50px;
+    height: 30px;
+    
+}
+
+.iconos a img {
+    align-items: center;
+    margin: 5px;
+}
+
+.ubicacion {
+    display: flex;
+    width: 400px;
+    height: 150px;
+    color: #f0f0f0;
+    background: #747474;
+    
+}
+
+.ubicacion img {
+    width: 16px;
+    height: 16px;
+}
+
+.ubicaion img p {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.conteiner-desarrollador{
+    width: 97%;
+    height: auto;
+    justify-content: center;
+    display: flex;
+    background: #a30dfa;
+    text-decoration: none;
+    margin: auto;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.nericarrera a {
+    font-size: 15px;
+    color: #000000;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    
+}
+
+.nericarrera a:hover{
+    color: #bbbbbb;
+}
+
+
+@media only screen and (max-width: 600px){
+
+}   
+
+.nav__ul {
+     display: none;
+
+}
+
+.nav__responsive-ul {
+        display: block;
+        position: absolute;
+        width: 100%;
+        background-color: #FF5331;
+
+}
+
+
+
