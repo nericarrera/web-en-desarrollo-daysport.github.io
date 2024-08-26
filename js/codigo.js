@@ -43,5 +43,6 @@ prevArrow.addEventListener('click', function(event) {
     cardWrapper.style.transform = `translateX(-${scrollAmount}px)`;
 });
 
+window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
