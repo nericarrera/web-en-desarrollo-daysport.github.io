@@ -330,7 +330,7 @@
 /*  ARTICULOS DESTACADOS */
 
 .conteiner-card{
-    display: inline-table;
+    
     position: relative;
     margin: auto;
     width: 97%;
@@ -344,9 +344,9 @@
 }
 
 .card-wrapper {
+    display: inline-table;
     justify-content: flex-start;
     width: 100%;
-    display: flex;
     flex-wrap: wrap;
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
