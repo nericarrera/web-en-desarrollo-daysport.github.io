@@ -330,6 +330,7 @@
 /*  ARTICULOS DESTACADOS */
 
 .conteiner-card{
+    display: flex;
     position: relative;
     margin: auto;
     width: 97%;
