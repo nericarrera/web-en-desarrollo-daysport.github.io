@@ -344,11 +344,13 @@
 }
 
 .card-wrapper {
+    width: 100%;
     display: flex;
     transition: transform 0.3s ease-in-out;
 }
 
 .card {
+    flex-wrap: wrap;
    width: 230px;
    height: 450px;
    border-radius: 20px;
@@ -370,7 +372,7 @@
 
 .conteiner-card .card:hover{
     transform: translateY(-4px);
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.404);
     cursor: pointer;
 }
 
@@ -381,7 +383,11 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 10;
+}
+
+.conteflechas img:hover{
+    transform: scale(1.20);
 }
 
 .conteflechas img {
@@ -395,6 +401,8 @@
     display: inline-block;
     width: 100%;
     height: 67%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     
 }
 
@@ -404,9 +412,11 @@
 }
 
 .card-texto {
+    display: block;
  width: 240px;
  height: 60px;
  padding: 5px;
+ z-index: 10;
 }
 
 .card-texto h5 {
@@ -439,7 +449,7 @@
 .card .card-texto-envio{
     display: block;
     height: auto;
-    width: 61px;
+    width: 65px;
     font-size: 15px;
     font-weight: 800;
     margin-top: -18px;
@@ -458,7 +468,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 85px;
     height: 32px;
     border-radius: 15px;
     margin: auto;
