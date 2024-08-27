@@ -343,7 +343,7 @@
 }
 
 .card-wrapper {
-    display: inline-table;
+    display: flex;
     justify-content: flex-start;
     width: 100%;
     flex-wrap: nowrap;
@@ -352,7 +352,6 @@
 }
 
 .card {
-    display: inline-table;
    width: 230px;
    height: 450px;
    border-radius: 20px;
