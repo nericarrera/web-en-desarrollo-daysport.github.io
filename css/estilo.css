@@ -1025,6 +1025,9 @@ textarea {
     position: relative;
     margin: auto;
     background-image: linear-gradient(#000000, #a30dfa);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
 }
 
