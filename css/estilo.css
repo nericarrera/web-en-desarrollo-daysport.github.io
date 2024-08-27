@@ -352,6 +352,7 @@
 }
 
 .card {
+    display: inline-table;
    width: 230px;
    height: 450px;
    border-radius: 20px;
