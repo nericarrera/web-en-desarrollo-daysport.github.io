@@ -384,6 +384,10 @@
     z-index: 10; 
 }
 
+.conteflechas img{
+    width: 15px;
+}
+
 .conteflechas img:hover{
     transform: scale(1.20);
 }
