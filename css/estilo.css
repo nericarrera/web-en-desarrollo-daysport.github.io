@@ -755,6 +755,8 @@
     align-items: center;
     background: #ffff18;
     margin: auto;   
+    flex-wrap: wrap;
+    text-align: center;
     
 }
 
