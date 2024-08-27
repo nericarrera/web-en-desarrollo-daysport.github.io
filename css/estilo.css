@@ -468,7 +468,8 @@
 }
 
 .card .card-texto-envio:hover{
-    transform: scale(1.30);
+    transition: all 380ms ease;
+    transform: scale(1.10);
 }
 
 .btn-agregar{
