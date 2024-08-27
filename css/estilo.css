@@ -330,7 +330,6 @@
 /*  ARTICULOS DESTACADOS */
 
 .conteiner-card{
-    
     position: relative;
     margin: auto;
     width: 97%;
@@ -379,7 +378,7 @@
 
 .conteflechas {
     position: absolute;
-    height: 50%;
+    height: 70%;
     width: 95%;
     display: flex;
     align-items: center;
