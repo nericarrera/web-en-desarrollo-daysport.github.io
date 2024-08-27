@@ -467,7 +467,7 @@
     border-radius: 5px;
 }
 
-.card .card-texto-envio :hover{
+.card .card-texto-envio:hover{
     transform: scale(1.30);
 }
 
