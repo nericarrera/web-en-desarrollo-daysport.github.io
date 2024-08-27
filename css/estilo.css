@@ -346,7 +346,7 @@
     display: inline-table;
     justify-content: flex-start;
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
 }
