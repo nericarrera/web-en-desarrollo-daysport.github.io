@@ -467,6 +467,10 @@
     border-radius: 5px;
 }
 
+.card-texto-envio :hover{
+    transform: scale(1.30);
+}
+
 .btn-agregar{
     display: flex;
     justify-content: center;
