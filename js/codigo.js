@@ -46,3 +46,23 @@ prevArrow.addEventListener('click', function(event) {
 window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
+
+
+function filterProducts() {
+    const category = document.getElementById('category').value;
+    const gender = document.getElementById('gender').value;
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const cardGender = card.getAttribute('data-gender');
+        
+        // Mostrar u ocultar según los filtros seleccionados
+        if ((category === 'all' || cardCategory === category) &&
+            (gender === 'all' || cardGender === gender)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
