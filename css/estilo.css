@@ -1291,6 +1291,11 @@ textarea {
     margin: 5px;
 }
 
+.section {
+    display: flex;
+    width: 97%;
+    margin: auto;
+}
 
 .footer-section {
     display: inline;
