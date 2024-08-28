@@ -10,8 +10,8 @@
     box-sizing: border-box;
 }
 
-
-
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* HEADER SUPERIOR - ENVIOS - FORMA DE PAGO */
 
 .header{
@@ -42,6 +42,8 @@
     cursor: pointer;
 }
 
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* NAV * LOGO * BUSCADOR * IMPUT  */
 
 
@@ -103,7 +105,8 @@
     margin: auto;
 }
 
-
+/*/*//*/*/*/*/*/*/*/*/*
+/*
 /* MENU Y SUBMENU */
 
 .menu {
@@ -201,8 +204,8 @@
     display: none;
 }
 
-
-
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* TITULO - MAKE A DIFFERENCE */
 
 .article__conteiner {
@@ -225,6 +228,8 @@
     
 }
 
+/*/*/*/*/*/*/*/*/*
+/*
 /* SERVICIOS */
 
 .conteiner-servicios{
@@ -297,9 +302,9 @@
 }
 
 
-
-
-/* TITULO DE DESTACADO */
+/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
+/* TITULO DE (DESTACADO) */
 
 .destacado{
     display: flex;
@@ -326,17 +331,17 @@
     margin-top: 15px;
 }
 
-
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /*  ARTICULOS DESTACADOS */
 
-/* Contenedor de las tarjetas */
 .product-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-/* Tarjetas de productos (product-item) */
+
 .product-item {
     width: 200px;
     padding: 20px;
@@ -348,39 +353,39 @@
     transition: transform 0.3s ease;
 }
 
-/* Efecto hover en las tarjetas */
+
 .product-item:hover {
     transform: scale(1.05);
 }
 
-/* Imágenes dentro de las tarjetas */
+
 .product-item img {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
 
-/* Títulos de las tarjetas */
+
 .product-item h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #333;
 }
 
-/* Descripción del producto */
+
 .product-item p {
     font-size: 1em;
     color: #666;
 }
 
-/* Contenedor de los filtros */
+
 .filters {
     margin: 20px 0;
     display: flex;
     justify-content: space-around;
 }
 
-/* Estilo de los selectores de filtro */
+
 .filters select {
     padding: 10px;
     font-size: 1em;
@@ -390,7 +395,7 @@
     cursor: pointer;
 }
 
-/* Títulos de las tarjetas */
+
 .product-item h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
@@ -400,10 +405,10 @@
 }
 
 .product-item:hover h3 {
-    color: #007bff;  /* Cambia de color al pasar el ratón */
+    color: #007bff;  
 }
 
-/* Descripción del producto */
+
 .product-item p {
     font-size: 1em;
     color: #666;
@@ -411,7 +416,9 @@
 }
 
 
-
+/*/*/*/*/*/*/*/*/*/*/*
+/*
+/* CONTENEDOR TARJETAS- /*/*
 
 .conteiner-card{
     position: relative;
@@ -545,8 +552,8 @@
     color: #ffffff;
     padding: 2px;
     font-family: "Questrial", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     background: #129c08;
     border-radius: 5px;
 }
@@ -567,8 +574,8 @@
     background: #131313;
     color: #ffffff;
     font-family: "Questrial", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .btn-agregar:hover{
@@ -599,7 +606,8 @@
     
 }
 
-
+/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* BANNER DESCUENTO */
 
 .conteiner-descuento{
@@ -641,8 +649,8 @@
 }
 
 
-
-
+/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* TARJETA DE 3 PARTES */
 
 .contetarjeta {
@@ -732,7 +740,8 @@
     transition: all 300ms ease;
  }
 
-
+ /*/*/*/*/*/*/*/*/*/*
+ /*
  /* MOTIVATE */
 
 .motivate {
@@ -757,8 +766,8 @@
     font-size: 70px;
     color: #ffffff;
     font-family: "Questrial", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     margin: auto;
     
 }
@@ -768,8 +777,8 @@
     width: 100%;
     height: 30px;
     font-family: "Questrial", sans-serif;
-  letter-spacing: 1px;
-  font-style: normal;
+    letter-spacing: 1px;
+    font-style: normal;
     justify-content: center;
     font-size: 22px;
     color: #ffffff;
@@ -778,7 +787,8 @@
     
 }
  
-
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* BANNER LAS BRAVAS */
 
 .conteiner-banner{
@@ -838,7 +848,8 @@
     box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* GALERIA FOTOS BRAVAS */
 
 .conteiner-galeria {
@@ -959,7 +970,8 @@
     background: #e90090;
 }
 
-
+/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /*GALERIA FUTBOL */
 
 .conteiner-futbol {
@@ -988,7 +1000,8 @@ text-decoration: underline;
 
 }
 
-
+/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* SOBRE NOSOTROS  */
 
 .conteiner-sobrenosotros {
@@ -1052,6 +1065,8 @@ text-decoration: underline;
 
 }
 
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* FORMULARIO - EMAIL  */
 
 .conteiner-formularios{
@@ -1108,6 +1123,8 @@ textarea {
     max-width: 100%;
 }
 
+/*/*/*/*/*/*/*/*/*/*/*
+/*
 /* FOOTER */
 
 .footer {
