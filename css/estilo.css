@@ -1307,6 +1307,7 @@ textarea {
 .footer-titulo {
     justify-content: center;
     margin: auto;
+    text-decoration: underline;
 }
 
 .footer-titulo h3{
