@@ -328,6 +328,7 @@
 /*  ARTICULOS DESTACADOS */
 
 .product-cards {
+    width: 97%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -372,7 +373,7 @@
 
 
 .filters {
-    margin: 20px 0;
+    margin: 50px 0;
     display: flex;
     justify-content: space-around;
 }
