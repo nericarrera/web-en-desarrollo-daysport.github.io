@@ -1004,6 +1004,7 @@ text-decoration: underline;
     justify-content: space-between;
     margin-bottom: 15px;
     align-items: center;
+    z-index: 1;
 }
 
 .product-navigation img{
