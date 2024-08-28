@@ -1008,6 +1008,10 @@ text-decoration: underline;
     width: 35px;
 }
 
+.product-navigation img:hover{
+    transform: scale(1.20);
+}
+
 .product-wrapper {
     display: flex;
     flex-wrap: wrap;
