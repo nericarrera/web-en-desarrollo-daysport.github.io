@@ -1298,12 +1298,18 @@ textarea {
 }
 
 .footer-section {
-    flex: 1;
-    margin: 10px;
+    display: flex;
+    width: 97%;
+    margin: auto;
+    position: relative;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    background: #a30dfa;
 }
 
 .footer-section h3 {
-    color: #ffcc00;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
