@@ -996,9 +996,10 @@ text-decoration: underline;
 }
 
 .product-navigation {
-    position: absolute;
+    display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    align-items: center;
 }
 
 .product-navigation img{
