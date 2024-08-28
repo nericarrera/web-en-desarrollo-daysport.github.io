@@ -1293,7 +1293,7 @@ textarea {
 
 
 .footer-section {
-    display: flex;
+    display: inline;
     width: 97%;
     margin: auto;
     position: relative;
