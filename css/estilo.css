@@ -991,6 +991,7 @@ text-decoration: underline;
 
 /* Contenedor general de los productos */
 .product-container {
+    display: inline-table;
     margin: 30px auto;
     padding: 0 20px;
 }
