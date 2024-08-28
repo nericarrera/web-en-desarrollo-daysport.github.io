@@ -996,6 +996,8 @@ text-decoration: underline;
 }
 
 .product-navigation {
+    height: 25%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
