@@ -1293,7 +1293,7 @@ textarea {
 
 .section {
     display: flex;
-    margin: auto;
+    
 }
 
 .footer-section {
@@ -1305,7 +1305,7 @@ textarea {
 }
 
 .footer-titulo {
-    padding: 20px;
+    justify-content: center;
     margin: auto;
 }
 
