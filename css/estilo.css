@@ -325,7 +325,7 @@
 }
 
 
-/*  ARTICULOS DESTACADOS */
+/*  ARTICULOS DE FILTRO */
 
 .product-cards {
     width: 97%;
@@ -996,6 +996,7 @@ text-decoration: underline;
 }
 
 .product-navigation {
+    position: absolute;
     height: 25%;
     width: 97%;
     display: flex;
