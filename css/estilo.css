@@ -329,13 +329,65 @@
 
 /*  ARTICULOS DESTACADOS */
 
-.card {
+/* Contenedor de las tarjetas */
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Tarjetas de productos (product-item) */
+.product-item {
     width: 200px;
     padding: 20px;
     margin: 10px;
     border: 1px solid #ccc;
     text-align: center;
     display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en las tarjetas */
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+/* Imágenes dentro de las tarjetas */
+.product-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Títulos de las tarjetas */
+.product-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Descripción del producto */
+.product-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Contenedor de los filtros */
+.filters {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Estilo de los selectores de filtro */
+.filters select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
 }
 
 
