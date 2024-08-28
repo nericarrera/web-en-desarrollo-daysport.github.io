@@ -50,19 +50,28 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 function filterProducts() {
     const category = document.getElementById('category').value;
-    const gender = document.getElementById('gender').value;
-    const cards = document.querySelectorAll('.card');
+    const price = document.getElementById('price').value;
+    const items = document.querySelectorAll('.product-item');
     
-    cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        const cardGender = card.getAttribute('data-gender');
+    items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const itemPrice = parseInt(item.getAttribute('data-price'));
         
-        // Mostrar u ocultar según los filtros seleccionados
-        if ((category === 'all' || cardCategory === category) &&
-            (gender === 'all' || cardGender === gender)) {
-            card.style.display = 'block';
+        let priceMatch = false;
+        if (price === 'all') {
+            priceMatch = true;
+        } else if (price === 'low' && itemPrice <= 20000) {
+            priceMatch = true;
+        } else if (price === 'mid' && itemPrice > 20000 && itemPrice <= 50000) {
+            priceMatch = true;
+        } else if (price === 'high' && itemPrice > 50000) {
+            priceMatch = true;
+        }
+
+        if ((category === 'all' || itemCategory === category) && priceMatch) {
+            item.style.display = 'block';
         } else {
-            card.style.display = 'none';
+            item.style.display = 'none';
         }
     });
 }
