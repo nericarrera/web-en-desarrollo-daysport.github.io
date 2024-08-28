@@ -198,6 +198,26 @@
  <div class="destacado">      	
   <p class="destacado__p">"ARTICULOS DESTACADOS"</p>
  </div>
+
+ <div class="filters">
+  <label for="category">Categoría:</label>
+  <select id="category" onchange="filterProducts()">
+      <option value="all">Todos</option>
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+      <option value="urbano">Urbano</option>
+      <option value="deporte">Deporte</option>
+  </select>
+
+  <label for="price">Rango de Precio:</label>
+  <select id="price" onchange="filterProducts()">
+      <option value="all">Todos</option>
+      <option value="low">Hasta $20.000</option>
+      <option value="mid">$20.000 - $50.000</option>
+      <option value="high">Más de $50.000</option>
+  </select>
+</div>
+
  
   <div class="conteiner-card">
     	<div class="conteflechas">

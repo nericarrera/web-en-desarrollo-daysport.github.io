@@ -329,6 +329,18 @@
 
 /*  ARTICULOS DESTACADOS */
 
+.card {
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+
 .conteiner-card{
     position: relative;
     margin: auto;
