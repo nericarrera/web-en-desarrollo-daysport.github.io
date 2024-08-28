@@ -991,7 +991,8 @@ text-decoration: underline;
 
 /* Contenedor general de los productos */
 .product-container {
-    display: inline-table;
+    position: relative;
+    overflow: hidden;  /* Esto asegura que las tarjetas fuera del contenedor no se vean */
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -1017,22 +1018,19 @@ text-decoration: underline;
 
 .product-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     gap: 15px;
-    
-    
+    transition: transform 0.5s ease; /* Para que el deslizamiento sea suave */
+    will-change: transform;  /* Mejora el rendimiento */
 }
 
 /* Tarjetas de productos (product-card) */
 .product-card {
-    width: 240px;
+    min-width: 240px; /* Asegura que las tarjetas tengan una anchura fija */
     padding: 20px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: inline-block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
