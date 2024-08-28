@@ -1293,7 +1293,6 @@ textarea {
 
 .section {
     display: flex;
-    width: 97%;
     margin: auto;
 }
 
@@ -1303,7 +1302,6 @@ textarea {
     padding: 5px;
     justify-content: center;
     align-items: center;
-    background: #a30dfa;
 }
 
 .footer-titulo {
@@ -1314,6 +1312,7 @@ textarea {
 .footer-titulo h3{
     font-size: 15px;
     color: #FFFFFF;
+    font-family: "Questrial", sans-serif;
 }
 
 .footer-section iframe {
