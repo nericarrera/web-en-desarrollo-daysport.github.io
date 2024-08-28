@@ -996,7 +996,7 @@ text-decoration: underline;
 }
 
 .product-navigation {
-    display: flex;
+    position: absolute;
     justify-content: space-between;
     margin-bottom: 15px;
 }
