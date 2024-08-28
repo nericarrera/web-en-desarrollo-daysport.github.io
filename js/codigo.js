@@ -75,3 +75,25 @@ function filterProducts() {
         }
     });
 }
+
+let currentPosition = 0;
+const productWrapper = document.querySelector('.product-wrapper');
+const productCards = document.querySelectorAll('.product-card');
+const cardWidth = productCards[0].offsetWidth + 15; // Ancho de cada tarjeta + el espacio (gap)
+const totalWidth = cardWidth * productCards.length; // Ancho total de todas las tarjetas
+
+document.getElementById('nextProductArrow').addEventListener('click', () => {
+    // Mover hacia la derecha
+    if (currentPosition > -(totalWidth - productWrapper.offsetWidth)) {
+        currentPosition -= cardWidth;
+        productWrapper.style.transform = `translateX(${currentPosition}px)`;
+    }
+});
+
+document.getElementById('prevProductArrow').addEventListener('click', () => {
+    // Mover hacia la izquierda
+    if (currentPosition < 0) {
+        currentPosition += cardWidth;
+        productWrapper.style.transform = `translateX(${currentPosition}px)`;
+    }
+});
