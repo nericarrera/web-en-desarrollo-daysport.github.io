@@ -82,7 +82,9 @@ const productCards = document.querySelectorAll('.product-card');
 const cardWidth = productCards[0].offsetWidth + 15; // Ancho de cada tarjeta + el espacio (gap)
 const totalWidth = cardWidth * productCards.length; // Ancho total de todas las tarjetas
 
-document.getElementById('nextProductArrow').addEventListener('click', () => {
+// Manejadores para flechas del product-wrapper
+document.getElementById('nextProductArrow').addEventListener('click', (event) => {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
     // Mover hacia la derecha
     if (currentPosition > -(totalWidth - productWrapper.offsetWidth)) {
         currentPosition -= cardWidth;
@@ -90,10 +92,14 @@ document.getElementById('nextProductArrow').addEventListener('click', () => {
     }
 });
 
-document.getElementById('prevProductArrow').addEventListener('click', () => {
+document.getElementById('prevProductArrow').addEventListener('click', (event) => {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
     // Mover hacia la izquierda
     if (currentPosition < 0) {
         currentPosition += cardWidth;
         productWrapper.style.transform = `translateX(${currentPosition}px)`;
     }
 });
+
+
+
