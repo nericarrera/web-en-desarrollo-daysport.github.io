@@ -1316,7 +1316,7 @@ textarea {
 .footer-section iframe {
     width: 100%;
     max-width: 300px;
-    height: 300px;
+    height: 200px;
     border: 0;
     justify-items: left;
 }
