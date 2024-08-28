@@ -1291,6 +1291,29 @@ textarea {
     margin: 5px;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.footer-section iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: 0;
+}
+
 .ubicacion {
     display: flex;
     width: 400px;
