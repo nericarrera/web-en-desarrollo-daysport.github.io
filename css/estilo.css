@@ -1001,6 +1001,10 @@ text-decoration: underline;
     margin-bottom: 15px;
 }
 
+.product-navigation img{
+    width: 35px;
+}
+
 .product-wrapper {
     display: flex;
     flex-wrap: wrap;
