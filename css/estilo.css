@@ -1015,8 +1015,8 @@ text-decoration: underline;
 .product-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
+    gap: 15px;
+    
 }
 
 /* Tarjetas de productos (product-card) */
