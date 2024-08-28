@@ -10,8 +10,7 @@
     box-sizing: border-box;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* HEADER SUPERIOR - ENVIOS - FORMA DE PAGO */
 
 .header{
@@ -42,8 +41,7 @@
     cursor: pointer;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* NAV * LOGO * BUSCADOR * IMPUT  */
 
 
@@ -105,8 +103,7 @@
     margin: auto;
 }
 
-/*/*//*/*/*/*/*/*/*/*/*
-/*
+
 /* MENU Y SUBMENU */
 
 .menu {
@@ -204,8 +201,7 @@
     display: none;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* TITULO - MAKE A DIFFERENCE */
 
 .article__conteiner {
@@ -228,8 +224,7 @@
     
 }
 
-/*/*/*/*/*/*/*/*/*
-/*
+
 /* SERVICIOS */
 
 .conteiner-servicios{
@@ -302,8 +297,6 @@
 }
 
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
 /* TITULO DE (DESTACADO) */
 
 .destacado{
@@ -331,8 +324,7 @@
     margin-top: 15px;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /*  ARTICULOS DESTACADOS */
 
 .product-cards {
@@ -416,8 +408,7 @@
 }
 
 
-/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* CONTENEDOR TARJETAS- /*/*
 
 .conteiner-card{
@@ -606,8 +597,7 @@
     
 }
 
-/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* BANNER DESCUENTO */
 
 .conteiner-descuento{
@@ -649,8 +639,7 @@
 }
 
 
-/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* TARJETA DE 3 PARTES */
 
 .contetarjeta {
@@ -740,8 +729,7 @@
     transition: all 300ms ease;
  }
 
- /*/*/*/*/*/*/*/*/*/*
- /*
+
  /* MOTIVATE */
 
 .motivate {
@@ -787,8 +775,7 @@
     
 }
  
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* BANNER LAS BRAVAS */
 
 .conteiner-banner{
@@ -848,8 +835,7 @@
     box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* GALERIA FOTOS BRAVAS */
 
 .conteiner-galeria {
@@ -970,8 +956,7 @@
     background: #e90090;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /*GALERIA FUTBOL */
 
 .conteiner-futbol {
@@ -1000,8 +985,8 @@ text-decoration: underline;
 
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
+
 /* SOBRE NOSOTROS  */
 
 .conteiner-sobrenosotros {
@@ -1065,8 +1050,7 @@ text-decoration: underline;
 
 }
 
-/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-/*
+
 /* FORMULARIO - EMAIL  */
 
 .conteiner-formularios{
@@ -1123,8 +1107,8 @@ textarea {
     max-width: 100%;
 }
 
-/*/*/*/*/*/*/*/*/*/*/*
-/*
+
+
 /* FOOTER */
 
 .footer {
