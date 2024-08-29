@@ -1309,10 +1309,10 @@ textarea {
 }
 
 .footer-titulo h3{
-    font-size: 20px;
+    text-align: center;
+    font-size: 22px;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 1px;
     color: #FFFFFF;
     font-family: "Questrial", sans-serif;
 }
