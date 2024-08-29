@@ -381,6 +381,7 @@ section {
 }
 
 .modal-content {
+    position: relative;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -388,6 +389,16 @@ section {
     max-width: 90%;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* La cruz de cierre está posicionada en la esquina superior derecha */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
 }
 
 .modal-content h2 {
@@ -409,13 +420,4 @@ section {
 .modal-content th {
     background-color: #007bff;
     color: white;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #000;
 }
