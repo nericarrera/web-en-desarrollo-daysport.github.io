@@ -230,7 +230,138 @@ section {
     
 }
 
-/* Estilo del modal y su fondo */
+.product-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    max-width: 900px; /* Reducimos el ancho para hacer la página más compacta */
+    margin: 0 auto;
+}
+
+.product-image-section {
+    flex: 1;
+    max-width: 45%;
+    padding: 10px;
+}
+
+.product-image-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.thumbnail-gallery img {
+    width: 22%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-details-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 10px;
+}
+
+.product-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.product-size h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.size-options button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.size-options button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#sizeChartLink {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.product-quantity input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-buy-now {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.btn-buy-now:hover {
+    background-color: #218838;
+}
+
+.size-chart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    display: none;
+}
+
+.size-chart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.size-chart th, .size-chart td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.size-chart th {
+    background-color: #007bff;
+    color: white;
+}
+
+.size-chart.hidden {
+    display: none;
+}
+
 .modal {
     display: flex;
     align-items: center;
