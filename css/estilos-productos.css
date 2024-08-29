@@ -471,3 +471,16 @@ section {
 .related-product-card:hover {
     transform: scale(1.05);
 }
+
+
+.related-products-navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.related-products-navigation img {
+    width: 30px;
+    cursor: pointer;
+}
