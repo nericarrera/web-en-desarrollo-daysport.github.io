@@ -1315,6 +1315,7 @@ textarea {
     font-style: normal;
     color: #FFFFFF;
     font-family: "Questrial", sans-serif;
+    margin-bottom: 5px;
 }
 
 .footer-section iframe {
