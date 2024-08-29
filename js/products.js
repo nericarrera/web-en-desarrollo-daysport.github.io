@@ -15,3 +15,4 @@ prevRelatedArrow.addEventListener('click', () => {
 nextRelatedArrow.addEventListener('click', () => {
     relatedGallery.scrollBy({ left: 200, behavior: 'smooth' });
 });
+

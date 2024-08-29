@@ -48,30 +48,40 @@ window.addEventListener('load', updateDimensions);
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
 
+document.querySelectorAll('.filter-size, .filter-color, .filter-price').forEach(input => {
+    input.addEventListener('change', filterProducts);
+});
+
 function filterProducts() {
-    const category = document.getElementById('category').value;
-    const price = document.getElementById('price').value;
-    const items = document.querySelectorAll('.product-item');
+    const selectedSizes = Array.from(document.querySelectorAll('.filter-size:checked')).map(input => input.value);
+    const selectedColors = Array.from(document.querySelectorAll('.filter-color:checked')).map(input => input.value);
+    const selectedPrice = document.querySelector('.filter-price:checked') ? document.querySelector('.filter-price:checked').value : '';
+
+    const products = document.querySelectorAll('.product-item');
     
-    items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        const itemPrice = parseInt(item.getAttribute('data-price'));
-        
+    products.forEach(product => {
+        const productSize = product.getAttribute('data-size');
+        const productColor = product.getAttribute('data-color');
+        const productPrice = parseInt(product.getAttribute('data-price'));
+
         let priceMatch = false;
-        if (price === 'all') {
+        if (selectedPrice === 'low' && productPrice <= 20000) {
             priceMatch = true;
-        } else if (price === 'low' && itemPrice <= 20000) {
+        } else if (selectedPrice === 'mid' && productPrice > 20000 && productPrice <= 50000) {
             priceMatch = true;
-        } else if (price === 'mid' && itemPrice > 20000 && itemPrice <= 50000) {
+        } else if (selectedPrice === 'high' && productPrice > 50000) {
             priceMatch = true;
-        } else if (price === 'high' && itemPrice > 50000) {
+        } else if (!selectedPrice) {
             priceMatch = true;
         }
 
-        if ((category === 'all' || itemCategory === category) && priceMatch) {
-            item.style.display = 'block';
+        const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
+        const colorMatch = selectedColors.length === 0 || selectedColors.includes(productColor);
+
+        if (sizeMatch && colorMatch && priceMatch) {
+            product.style.display = 'block';
         } else {
-            item.style.display = 'none';
+            product.style.display = 'none';
         }
     });
 }
