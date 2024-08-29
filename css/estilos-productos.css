@@ -229,3 +229,129 @@ section {
     display: flex;
     
 }
+
+.product-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+}
+
+.product-image-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.product-image-gallery {
+    position: relative;
+}
+
+.product-image-gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.thumbnail-gallery img {
+    width: 20%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.thumbnail-gallery img:hover {
+    opacity: 0.8;
+}
+
+.product-details-section {
+    flex: 1;
+    max-width: 45%;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.product-code {
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.product-size {
+    margin-bottom: 20px;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.size-btn {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.size-btn:hover, .size-btn:focus {
+    background-color: #007bff;
+    color: white;
+}
+
+.product-quantity {
+    margin-bottom: 20px;
+}
+
+.product-quantity input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-add-to-cart {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.product-description-section {
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-description-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
