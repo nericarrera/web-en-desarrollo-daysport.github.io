@@ -6,6 +6,7 @@
     <meta name="keywords" content="ropa, ropa deportiva, buzos, camperas, ropa de mujer, ropa de hombre, tela deportiva, remera, remera deportiva, day, daysport, ropa urbana, ropa comoda, daysport_ok, deporte, entrenamiento, sport, deportivo, urbano, ropa de entrenmaiento">
     <link rel="icon" href="img/iconos/Copia de Negro y Azul Rectángulo Abogado Logo (1).png">
     <link rel="stylesheet" href="css/estilos-productos.css">
+    <link rel="stylesheet" href="css/estilo.css">
 
  <link href = "https: //fonts.googleapis.com/css2? family = Amatic + SC & family = Frijole & family = Open + Sans + Condensed: wght @ 300 &family = Oswald: wght @ 200; 300 & family = Rampart + One & display = swap "rel =" stylesheet ">
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +88,63 @@
         </div>    
     </section>
 
+    <div class="product-page-container">
+      <!-- Imagen destacada -->
+      <div class="product-image-section">
+          <div class="product-image-gallery">
+              <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Producto principal" id="mainImage">
+              <div class="thumbnail-gallery">
+                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 1" onclick="changeImage(this)">
+                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 2" onclick="changeImage(this)">
+                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 3" onclick="changeImage(this)">
+              </div>
+          </div>
+      </div>
+  
+      <!-- Detalles del producto -->
+      <div class="product-details-section">
+          <h1 class="product-title">Campera Puffer TNF</h1>
+          <p class="product-code">Código: CP001</p>
+          <p class="product-price">$60.000</p>
+  
+          <!-- Opciones de tamaño -->
+          <div class="product-size">
+              <h3>Selecciona tu talla:</h3>
+              <div class="size-options">
+                  <button class="size-btn">S</button>
+                  <button class="size-btn">M</button>
+                  <button class="size-btn">L</button>
+                  <button class="size-btn">XL</button>
+              </div>
+          </div>
+  
+          <!-- Cantidad y botones -->
+          <div class="product-quantity">
+              <label for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+          </div>
+  
+          <button class="btn-add-to-cart">Agregar al carrito</button>
+      </div>
+  </div>
+  
+  <!-- Descripción y detalles adicionales -->
+  <div class="product-description-section">
+      <h2>Descripción del producto</h2>
+      <p>Esta campera Puffer TNF es perfecta para los días fríos, con un diseño moderno y acolchado para mantenerte abrigado.</p>
+  
+      <h2>Información de envío</h2>
+      <p>Envío gratuito a todo el país en compras mayores a $50.000. Entregas entre 3 y 5 días hábiles.</p>
+  
+      <h2>Devoluciones</h2>
+      <p>Las devoluciones se aceptan dentro de los 30 días posteriores a la compra, siempre que el producto esté en perfectas condiciones.</p>
+  </div>
+
     
     
 </body>
+    
+   <script src="js/codigo.js"></script>
+   <script src="js/products.js"></script>
+
 </html>
