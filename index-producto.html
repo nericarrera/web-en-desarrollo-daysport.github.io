@@ -107,7 +107,7 @@
           <p class="product-code">Código: CP001</p>
           <p class="product-price">$60.000</p>
   
-          <!-- Opciones de tamaño -->
+          <!-- Selección de talles -->
           <div class="product-size">
               <h3>Selecciona tu talla:</h3>
               <div class="size-options">
@@ -116,28 +116,55 @@
                   <button class="size-btn">L</button>
                   <button class="size-btn">XL</button>
               </div>
+              <a href="#" id="sizeChartLink" onclick="toggleSizeChart()">Ver tabla de talles</a>
           </div>
   
-          <!-- Cantidad y botones -->
+          <!-- Cantidad y botón de compra -->
           <div class="product-quantity">
               <label for="quantity">Cantidad:</label>
               <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
           </div>
-  
+          <button class="btn-buy-now">Comprar Ahora</button>
           <button class="btn-add-to-cart">Agregar al carrito</button>
       </div>
   </div>
   
-  <!-- Descripción y detalles adicionales -->
-  <div class="product-description-section">
-      <h2>Descripción del producto</h2>
-      <p>Esta campera Puffer TNF es perfecta para los días fríos, con un diseño moderno y acolchado para mantenerte abrigado.</p>
-  
-      <h2>Información de envío</h2>
-      <p>Envío gratuito a todo el país en compras mayores a $50.000. Entregas entre 3 y 5 días hábiles.</p>
-  
-      <h2>Devoluciones</h2>
-      <p>Las devoluciones se aceptan dentro de los 30 días posteriores a la compra, siempre que el producto esté en perfectas condiciones.</p>
+  <!-- Tabla de talles -->
+  <div id="sizeChart" class="size-chart hidden">
+      <h2>Tabla de Talles</h2>
+      <table>
+          <tr>
+              <th>Talle</th>
+              <th>Pecho (cm)</th>
+              <th>Cintura (cm)</th>
+              <th>Cadera (cm)</th>
+          </tr>
+          <tr>
+              <td>S</td>
+              <td>88-92</td>
+              <td>76-80</td>
+              <td>92-96</td>
+          </tr>
+          <tr>
+              <td>M</td>
+              <td>93-97</td>
+              <td>81-85</td>
+              <td>97-101</td>
+          </tr>
+          <tr>
+              <td>L</td>
+              <td>98-102</td>
+              <td>86-90</td>
+              <td>102-106</td>
+          </tr>
+          <tr>
+              <td>XL</td>
+              <td>103-107</td>
+              <td>91-95</td>
+              <td>107-111</td>
+          </tr>
+      </table>
+      <button onclick="toggleSizeChart()">Cerrar</button>
   </div>
 
     

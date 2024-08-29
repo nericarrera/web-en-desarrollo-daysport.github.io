@@ -1,4 +1,4 @@
-function changeImage(element) {
-    const mainImage = document.getElementById('mainImage');
-    mainImage.src = element.src;
+function toggleSizeChart() {
+    const sizeChart = document.getElementById('sizeChart');
+    sizeChart.classList.toggle('hidden');
 }
