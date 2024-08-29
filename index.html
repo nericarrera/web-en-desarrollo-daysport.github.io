@@ -100,7 +100,7 @@
 
     <div class="menu">
    	  <ul>
- 	     <li><a href="hombre.html">HOMBRE</a>
+ 	     <li><a href="hombre.html">MUJER</a>
  	   	    <ul> 
             <li><a href="#">Pantalones</a></li>
 	          <li><a href="#">Shorts</a></li>
@@ -113,7 +113,7 @@
    	  </ul>
   
       <ul>		
-	     <li><a href="mujer.html">MUJER</a>
+	     <li><a href="mujer.html">HOMBRE</a>
 		     <ul>
 	         <li><a href="#">Pantalones</a></li>
            <li><a href="#">Calzas</a></li>
@@ -127,7 +127,7 @@
      </ul>
      
      <ul>		
-      <li><a href="mujer.html">NIÑ@S</a>
+      <li><a href="mujer.html">ACCESORIOS</a>
         <ul>
           <li><a href="#">Pantalones</a></li>
           <li><a href="#">Calzas</a></li>
@@ -195,64 +195,52 @@
 
 </div>
 
-<div class="filters">
-  <label for="category">Categoría:</label>
-  <select id="category" onchange="filterProducts()">
-      <option value="all">Todos</option>
-      <option value="hombre">Hombre</option>
-      <option value="mujer">Mujer</option>
-      <option value="urbano">Urbano</option>
-      <option value="deporte">Deporte</option>
-  </select>
-
-  <label for="price">Rango de Precio:</label>
-  <select id="price" onchange="filterProducts()">
-      <option value="all">Todos</option>
-      <option value="low">Hasta $20.000</option>
-      <option value="mid">$20.000 - $50.000</option>
-      <option value="high">Más de $50.000</option>
-  </select>
-</div>
-
-<!-- Tarjetas de productos -->
-<div class="product-cards">
-  <div class="product-item" data-category="deporte" data-gender="hombre" data-price="60000">
-      <img src="producto1.jpg" alt="Producto 1">
-      <h3>Producto 1</h3>
-      <p>Descripción del producto</p>
-  </div>
-  
-  <div class="product-item" data-category="urbano" data-gender="mujer" data-price="18000">
-      <img src="producto2.jpg" alt="Producto 2">
-      <h3>Producto 2</h3>
-      <p>Descripción del producto</p>
+<div class="filter-container">
+  <h2>Filtrar por</h2>
+  <div class="filter-group">
+      <h3>Tamaño</h3>
+      <label><input type="checkbox" value="S" class="filter-size"> S</label>
+      <label><input type="checkbox" value="M" class="filter-size"> M</label>
+      <label><input type="checkbox" value="L" class="filter-size"> L</label>
+      <label><input type="checkbox" value="XL" class="filter-size"> XL</label>
   </div>
 
-  <div class="product-item" data-category="urbano" data-gender="mujer" data-price="18000">
-    <img src="producto2.jpg" alt="Producto 2">
-    <h3>Producto 2</h3>
-    <p>Descripción del producto</p>
+  <div class="filter-group">
+      <h3>Color</h3>
+      <label><input type="checkbox" value="Negro" class="filter-color"> Negro</label>
+      <label><input type="checkbox" value="Blanco" class="filter-color"> Blanco</label>
+      <label><input type="checkbox" value="Azul" class="filter-color"> Azul</label>
+  </div>
+
+  <div class="filter-group">
+      <h3>Precio</h3>
+      <label><input type="radio" name="price" value="low" class="filter-price"> Hasta $20.000</label>
+      <label><input type="radio" name="price" value="mid" class="filter-price"> $20.000 - $50.000</label>
+      <label><input type="radio" name="price" value="high" class="filter-price"> Más de $50.000</label>
+  </div>
 </div>
 
-<div class="product-item" data-category="urbano" data-gender="mujer" data-price="18000">
-  <img src="producto2.jpg" alt="Producto 2">
-  <h3>Producto 2</h3>
-  <p>Descripción del producto</p>
-</div>
+<!-- Lista de productos -->
+<div class="product-list">
+  <div class="product-item" data-size="M" data-color="Negro" data-price="45000">
+      <img src="img/product1.jpg" alt="Producto 1">
+      <h5>Buzo Deportivo</h5>
+      <p>$45.000</p>
+  </div>
 
-<div class="product-item" data-category="urbano" data-gender="mujer" data-price="18000">
-  <img src="producto2.jpg" alt="Producto 2">
-  <h3>Producto 2</h3>
-  <p>Descripción del producto</p>
-</div>
+  <div class="product-item" data-size="L" data-color="Blanco" data-price="60000">
+      <img src="img/product2.jpg" alt="Producto 2">
+      <h5>Buzo Clásico</h5>
+      <p>$60.000</p>
+  </div>
 
-<div class="product-item" data-category="urbano" data-gender="mujer" data-price="18000">
-  <img src="producto2.jpg" alt="Producto 2">
-  <h3>Producto 2</h3>
-  <p>Descripción del producto</p>
-</div>
-  
-  <!-- Más tarjetas... -->
+  <div class="product-item" data-size="S" data-color="Azul" data-price="18000">
+      <img src="img/product3.jpg" alt="Producto 3">
+      <h5>Buzo Tech</h5>
+      <p>$18.000</p>
+  </div>
+
+  <!-- Más productos... -->
 </div>
      
 

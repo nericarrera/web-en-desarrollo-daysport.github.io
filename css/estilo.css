@@ -296,6 +296,52 @@
     color: #000000;
 }
 
+/* FILTRO DE ROPA */
+
+.filter-container {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.filter-group h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.product-item {
+    width: 200px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
 
 /* TITULO DE (DESTACADO) */
 
@@ -324,93 +370,7 @@
     margin-top: 15px;
 }
 
-
-/*  ARTICULOS DE FILTRO */
-
-.product-cards {
-    width: 97%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-
-.product-item {
-    width: 200px;
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-
-.product-item:hover {
-    transform: scale(1.05);
-}
-
-
-.product-item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-
-.product-item h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-
-.product-item p {
-    font-size: 1em;
-    color: #666;
-}
-
-
-.filters {
-    margin: 50px 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-
-.filters select {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    cursor: pointer;
-}
-
-
-.product-item h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.product-item:hover h3 {
-    color: #007bff;  
-}
-
-
-.product-item p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-
-
-/* CONTENEDOR TARJETAS- /*/*
+/* CONTENEDOR TARJETAS- */
 
 .conteiner-card{
     position: relative;
