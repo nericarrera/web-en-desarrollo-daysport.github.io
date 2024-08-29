@@ -52,6 +52,16 @@ document.querySelectorAll('.filter-size, .filter-color, .filter-price').forEach(
     input.addEventListener('change', filterProducts);
 });
 
+function toggleFilter(filterId) {
+    const filter = document.getElementById(filterId);
+    filter.style.display = filter.style.display === 'block' ? 'none' : 'block';
+}
+
+
+document.querySelectorAll('.filter-size, .filter-color, .filter-price').forEach(input => {
+    input.addEventListener('change', filterProducts);
+});
+
 function filterProducts() {
     const selectedSizes = Array.from(document.querySelectorAll('.filter-size:checked')).map(input => input.value);
     const selectedColors = Array.from(document.querySelectorAll('.filter-color:checked')).map(input => input.value);
