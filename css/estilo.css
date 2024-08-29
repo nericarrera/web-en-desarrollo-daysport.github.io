@@ -1311,11 +1311,12 @@ textarea {
 .footer-titulo h3{
     text-align: center;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     color: #FFFFFF;
-    font-family: "Questrial", sans-serif;
+    font-family: 'Oswald', sans-serif;
     margin-bottom: 5px;
+    letter-spacing: -1;
 }
 
 .footer-section iframe {
