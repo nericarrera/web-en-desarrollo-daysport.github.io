@@ -219,7 +219,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: opacity 200s ease-in-out;  /* Suaviza el cambio de opacidad */
+    transition: opacity 500s ease-in-out;  /* Suaviza el cambio de opacidad */
     z-index: 1;
 }
 
