@@ -1,13 +1,22 @@
 const banner = document.querySelector('.banner');
-const images = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg']; // Agrega tus imágenes aquí
+const images = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg'];  // Agrega tus imágenes aquí
 let currentIndex = 0;
 
 function changeImage() {
-    banner.style.backgroundImage = `url(${images[currentIndex]})`;
-    currentIndex = (currentIndex + 1) % images.length;
+    banner.style.opacity = 0;  // Desvanece la imagen actual
+    setTimeout(() => {
+        banner.style.backgroundImage = `url(${images[currentIndex]})`;
+        banner.style.opacity = 1;  // Aparece la nueva imagen
+        currentIndex = (currentIndex + 1) % images.length;
+    }, 500);  // Tiempo para la transición de desvanecimiento
 }
 
-setInterval(changeImage, 5000); // Cambia cada 5 segundos
+setInterval(changeImage, 5000);  // Cambia cada 5 segundos
+
+// Configura la primera imagen al cargar
+window.addEventListener('load', () => {
+    banner.style.backgroundImage = `url(${images[0]})`;
+});
 
 
 const cardWrapper = document.querySelector('.card-wrapper');
