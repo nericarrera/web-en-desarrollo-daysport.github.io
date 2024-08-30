@@ -123,4 +123,21 @@ document.getElementById('prevProductArrow').addEventListener('click', (event) =>
 });
 
 
+// Esperar a que el DOM cargue completamente
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtener todos los botones con clase "btn-agregar"
+    var botones = document.querySelectorAll(".btn-agregar");
+
+    // Añadir evento de clic a cada botón
+    botones.forEach(function (boton) {
+        boton.addEventListener("click", function () {
+            // Obtener el producto del atributo data-producto
+            var producto = boton.getAttribute("data-producto");
+
+            // Redirigir a la página de producto correspondiente
+            window.location.href = "index-producto.html?producto=" + producto;
+        });
+    });
+});
+
 
