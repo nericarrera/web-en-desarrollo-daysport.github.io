@@ -10,12 +10,6 @@ function changeSlide() {
 setInterval(changeSlide, 5000);  // Cambia cada 5 segundos
 
 
-// Configura la primera imagen al cargar
-window.addEventListener('load', () => {
-    bannerImage.style.backgroundImage = `url(${images[0]})`;
-    bannerImage.style.opacity = 1;
-});
-
 
 const cardWrapper = document.querySelector('.card-wrapper');
 const nextArrow = document.getElementById('nextArrow');
