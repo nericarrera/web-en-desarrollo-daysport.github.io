@@ -8,7 +8,7 @@ function changeImage() {
         bannerImage.style.backgroundImage = `url(${images[currentIndex]})`;
         bannerImage.style.opacity = 1;  // Aparece la nueva imagen
         currentIndex = (currentIndex + 1) % images.length;
-    }, 20000);  // Tiempo para la transición de desvanecimiento
+    }, 300);  // Tiempo para la transición de desvanecimiento
 }
 
 setInterval(changeImage, 5000);  // Cambia cada 5 segundos
