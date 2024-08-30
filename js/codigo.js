@@ -1,5 +1,5 @@
 const banner = document.querySelector('.banner');
-const images = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg'];  // Agrega tus imágenes aquí
+const images = ['img/portada/banner1.jpg', 'img/portada/banner2.jpg', 'img/portada/banner3.jpg'];  // Agrega tus imágenes aquí
 let currentIndex = 0;
 
 function changeImage() {
