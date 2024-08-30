@@ -1,12 +1,12 @@
-const banner = document.querySelector('.banner');
-const images = ['img/portada/banner1.jpg', 'img/portada/banner2.jpg', 'img/portada/banner3.jpg'];  // Agrega tus imágenes aquí
+const bannerImage = document.querySelector('.banner-image');
+const images = ['img/portada/banner1.jpg', 'img/portada/banner2.jpg', 'img/portada/banner3.jpg'];  // Ajusta la ruta de las imágenes
 let currentIndex = 0;
 
 function changeImage() {
-    banner.style.opacity = 0;  // Desvanece la imagen actual
+    bannerImage.style.opacity = 0;  // Desvanece la imagen actual
     setTimeout(() => {
-        banner.style.backgroundImage = `url(${images[currentIndex]})`;
-        banner.style.opacity = 1;  // Aparece la nueva imagen
+        bannerImage.style.backgroundImage = `url(${images[currentIndex]})`;
+        bannerImage.style.opacity = 1;  // Aparece la nueva imagen
         currentIndex = (currentIndex + 1) % images.length;
     }, 500);  // Tiempo para la transición de desvanecimiento
 }
@@ -15,7 +15,8 @@ setInterval(changeImage, 5000);  // Cambia cada 5 segundos
 
 // Configura la primera imagen al cargar
 window.addEventListener('load', () => {
-    banner.style.backgroundImage = `url(${images[0]})`;
+    bannerImage.style.backgroundImage = `url(${images[0]})`;
+    bannerImage.style.opacity = 1;
 });
 
 
