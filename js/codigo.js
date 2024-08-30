@@ -7,7 +7,7 @@ function changeSlide() {
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-setInterval(changeSlide, 5000);  // Cambia cada 5 segundos
+setInterval(changeSlide, 25000);  // Cambia cada 5 segundos
 
 
 
