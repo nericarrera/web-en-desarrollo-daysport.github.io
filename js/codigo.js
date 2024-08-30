@@ -1,17 +1,14 @@
-const bannerImage = document.querySelector('.banner-image');
-const images = ['img/portada/banner1.jpg', 'img/portada/banner2.jpg', 'img/portada/banner3.jpg'];  // Ajusta la ruta de las imágenes
+const track = document.querySelector('.banner-track');
+const slides = document.querySelectorAll('.banner-slide');
 let currentIndex = 0;
 
-function changeImage() {
-    bannerImage.style.opacity = 0;  // Desvanece la imagen actual
-    setTimeout(() => {
-        bannerImage.style.backgroundImage = `url(${images[currentIndex]})`;
-        bannerImage.style.opacity = 1;  // Aparece la nueva imagen
-        currentIndex = (currentIndex + 1) % images.length;
-    }, 300);  // Tiempo para la transición de desvanecimiento
+function changeSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-setInterval(changeImage, 5000);  // Cambia cada 5 segundos
+setInterval(changeSlide, 5000);  // Cambia cada 5 segundos
+
 
 // Configura la primera imagen al cargar
 window.addEventListener('load', () => {
