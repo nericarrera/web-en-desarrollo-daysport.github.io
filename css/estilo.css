@@ -409,7 +409,8 @@
 
   .filter-titulo{
     font-family: 'Oswald', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   .filter-section {
