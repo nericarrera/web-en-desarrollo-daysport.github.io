@@ -402,21 +402,21 @@
   }
 
   .filter-section {
-    margin: auto;
-    padding: 10px 0; /* Espaciado vertical uniforme */
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
   }
   
-  .filter-section label {
+  .filter-option {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    gap: 10px;
   }
   
-  .filter-section input[type="checkbox"] {
-    margin-right: 10px;
-    vertical-align: middle;
+  input[type="checkbox"] {
+    margin: 0;
+    transform: scale(1.2);
   }
   
   .filter-titulo-section {
