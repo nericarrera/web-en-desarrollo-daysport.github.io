@@ -325,8 +325,9 @@
 
 .conteiner-servicios{
     display: flex;
-    width: 100%;
+    width: 97%;
     margin: auto;
+    margin-top: 25px;
 	text-align: center;
     justify-content: space-between; 
     border-bottom-right-radius: 10px;
@@ -340,9 +341,7 @@
     width: 97%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 28px;
-    
+    justify-content: center;    
 
 }
 
