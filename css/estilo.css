@@ -417,7 +417,7 @@
   .filter-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
     margin-bottom: 20px;
     align-items: flex-start;
   }
