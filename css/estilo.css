@@ -394,10 +394,12 @@
 /* FILTRO DE ROPA */
 
 .container {
+    width: 97%;
     display: flex;
     position: relative;
-    margin: 20px;
-    background: #fcfcfc;
+    margin: auto;
+    background: #eeeeee;
+    padding: 10px;
   }
   
   .filters {
@@ -411,7 +413,7 @@
     font-size: 16px;
   }
 
-  .filters-section .hombre .mujer{
+  .filters-section h3{
     display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
