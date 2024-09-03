@@ -168,47 +168,62 @@
     <div class="filter-section">
       <p class="filter-titulo-section">indumentaria</p>
 
-       <div class="filter-option">
-         <input type="checkbox" id="buzos" name="gender" value="buzos">
-         <label for="mujer">Buzos</label>
-       </div>
-
-       <div class="filter-option">
-          <input type="checkbox" id="remeras" name="gender" value="remeras">
-          <label for="hombre">Remeras</label>
-       </div>
-
-       <div class="filter-option">
-          <input type="checkbox" id="pantalon-deportivo" name="gender" value="pantalon-deportivo">
-          <label for="niñ@s">Pant.Dep</label>
-       </div>
-
-       <div class="filter-option">
-          <input type="checkbox" id="joggin" name="gender" value="joggin">
-          <label for="niñ@s">Joggin</label>
-       </div>
-
       <div class="filter-option">
-        <input type="checkbox" id="campera-liviana" name="gender" value="campera-liviana">
-        <label for="niñ@s">Camp.Liviana</label>
+        <input type="checkbox" id="bermudas" name="category" value="bermudas">
+        <label for="bermudas">Bermudas</label>
       </div>
 
       <div class="filter-option">
-        <input type="checkbox" id="campera-abrigo" name="gender" value="campera-abrigo">
-        <label for="niñ@s">Camp.Abrigo</label>
+        <input type="checkbox" id="buzos" name="category" value="buzos">
+        <label for="buzos">Buzos</label>
       </div>
 
       <div class="filter-option">
-        <input type="checkbox" id="sweater" name="gender" value="sweater">
-        <label for="niñ@s">Sweater</label>
+        <input type="checkbox" id="calzas" name="category" value="calzas">
+        <label for="calzas">Calzas</label>
       </div>
 
       <div class="filter-option">
-        <input type="checkbox" id="chaleco" name="gender" value="chaleco">
-        <label for="niñ@s">Chalecos</label>
+        <input type="checkbox" id="campera-liviana" name="category" value="campera-liviana">
+        <label for="campera-liviana">Camp.Liviana</label>
       </div>
 
+      <div class="filter-option">
+        <input type="checkbox" id="campera-abrigo" name="category" value="campera-abrigo">
+        <label for="campera-abrigo">Camp.Abrigo</label>
+      </div>
 
+      <div class="filter-option">
+        <input type="checkbox" id="chaleco" name="category" value="chaleco">
+        <label for="chaleco">Chalecos</label>
+      </div>
+
+      <div class="filter-option">
+        <input type="checkbox" id="conjuntos" name="category" value="conjuntos">
+        <label for="conjuntos">Conjuntos</label>
+      </div>
+
+       <div class="filter-option">
+          <input type="checkbox" id="remeras" name="category" value="remeras">
+          <label for="remeras">Remeras</label>
+       </div>
+
+       <div class="filter-option">
+          <input type="checkbox" id="pantalon-deportivo" name="category" value="pantalon-deportivo">
+          <label for="pantalon-deportivo">Pant.Dep</label>
+       </div>
+
+       <div class="filter-option">
+          <input type="checkbox" id="joggin" name="category" value="joggin">
+          <label for="joggin">Joggin</label>
+       </div>
+
+      <div class="filter-option">
+        <input type="checkbox" id="sweater" name="category" value="sweater">
+        <label for="sweater">Sweater</label>
+      </div>
+
+    
 
     </div>
 
@@ -232,8 +247,8 @@
         <label for="extralarge">XL</label>
       </div>
       <div class="filter-option">
-        <input type="checkbox" id="superextralarge" name="size" value="XXL">
-        <label for="superextralarge">XXL</label>
+        <input type="checkbox" id="extraextralarge" name="size" value="XXL">
+        <label for="extraextralarge">XXL</label>
       </div>
     </div>
 
@@ -247,33 +262,39 @@
 
   <section class="products-grid">
     <!-- Aquí se mostrarán los productos filtrados -->
-    <div class="product">Producto 1</div>
+    <div class="product">Producto 1
+      <img src="" alt="">
+      <p class="titulo-producto"></p>
+      
+    </div>
     <div class="product">Producto 2</div>
     <div class="product">Producto 3</div>
+
+    <div class="product-list">
+      <div class="product-item" data-size="M" data-color="Negro" data-price="45000">
+          <img src="img/product1.jpg" alt="Producto 1">
+          <h5>Buzo Deportivo</h5>
+          <p>$45.000</p>
+      </div>
+    
+      <div class="product-item" data-size="L" data-color="Blanco" data-price="60000">
+          <img src="img/product2.jpg" alt="Producto 2">
+          <h5>Buzo Clásico</h5>
+          <p>$60.000</p>
+      </div>
+    
+      <div class="product-item" data-size="S" data-color="Azul" data-price="18000">
+          <img src="img/hombre/joggin/WhatsApp Image 2024-07-06 at 22.31.59 (1).jpeg" alt="Producto 3">
+          <h5>Buzo Tech</h5>
+          <p>$18.000</p>
+      </div>
 
 
   </section>
 </div>
 
 <!-- Lista de productos -->
-<div class="product-list">
-  <div class="product-item" data-size="M" data-color="Negro" data-price="45000">
-      <img src="img/product1.jpg" alt="Producto 1">
-      <h5>Buzo Deportivo</h5>
-      <p>$45.000</p>
-  </div>
 
-  <div class="product-item" data-size="L" data-color="Blanco" data-price="60000">
-      <img src="img/product2.jpg" alt="Producto 2">
-      <h5>Buzo Clásico</h5>
-      <p>$60.000</p>
-  </div>
-
-  <div class="product-item" data-size="S" data-color="Azul" data-price="18000">
-      <img src="img/product3.jpg" alt="Producto 3">
-      <h5>Buzo Tech</h5>
-      <p>$18.000</p>
-  </div>
 
   <!-- Más productos... -->
 </div>
