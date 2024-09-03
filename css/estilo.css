@@ -407,17 +407,17 @@
     border-right: 1px solid #ccc;
   }
 
-  .filters-titulo{
+  .filter-titulo{
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
   }
 
-  .filters-section {
+  .filter-section {
     display: flex;
     margin: auto;
   }
 
-  .filters-titulo-section {
+  .filter-titulo-section {
     display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
