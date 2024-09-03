@@ -137,29 +137,39 @@
 
 </div>
 
-<div class="filter-container">
-  <h2>Filtrar por</h2>
-  <div class="filter-group">
-      <h3>Tamaño</h3>
-      <label><input type="checkbox" value="S" class="filter-size"> S</label>
-      <label><input type="checkbox" value="M" class="filter-size"> M</label>
-      <label><input type="checkbox" value="L" class="filter-size"> L</label>
-      <label><input type="checkbox" value="XL" class="filter-size"> XL</label>
-  </div>
+<div class="container">
+  <aside class="filters">
+    <h3>Filtrar por</h3>
 
-  <div class="filter-group">
-      <h3>Color</h3>
-      <label><input type="checkbox" value="Negro" class="filter-color"> Negro</label>
-      <label><input type="checkbox" value="Blanco" class="filter-color"> Blanco</label>
-      <label><input type="checkbox" value="Azul" class="filter-color"> Azul</label>
-  </div>
+    <!-- Género -->
+    <div class="filter-section">
+      <h4>Género</h4>
+      <input type="checkbox" id="hombre" name="gender" value="hombre"> Hombre<br>
+      <input type="checkbox" id="mujer" name="gender" value="mujer"> Mujer<br>
+    </div>
 
-  <div class="filter-group">
-      <h3>Precio</h3>
-      <label><input type="radio" name="price" value="low" class="filter-price"> Hasta $20.000</label>
-      <label><input type="radio" name="price" value="mid" class="filter-price"> $20.000 - $50.000</label>
-      <label><input type="radio" name="price" value="high" class="filter-price"> Más de $50.000</label>
-  </div>
+    <!-- Talle -->
+    <div class="filter-section">
+      <h4>Talle</h4>
+      <input type="checkbox" id="small" name="size" value="S"> S<br>
+      <input type="checkbox" id="medium" name="size" value="M"> M<br>
+      <input type="checkbox" id="large" name="size" value="L"> L<br>
+    </div>
+
+    <!-- Precio -->
+    <div class="filter-section">
+      <h4>Precio</h4>
+      <input type="range" id="price" min="0" max="10000" step="100" value="5000">
+      <span id="price-value">$5000</span>
+    </div>
+  </aside>
+
+  <section class="products-grid">
+    <!-- Aquí se mostrarán los productos filtrados -->
+    <div class="product">Producto 1</div>
+    <div class="product">Producto 2</div>
+    <div class="product">Producto 3</div>
+  </section>
 </div>
 
 <!-- Lista de productos -->
