@@ -299,6 +299,7 @@
 
 .article__conteiner {
     display: flex;
+    position: relative;
     width: 100%;
     height: 60px;
 }
