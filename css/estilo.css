@@ -405,6 +405,11 @@
     padding: 10px;
     border-right: 1px solid #ccc;
   }
+
+  .filters h3{
+    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    font-size: 10px;
+  }
   
   .products-grid {
     width: 80%;
