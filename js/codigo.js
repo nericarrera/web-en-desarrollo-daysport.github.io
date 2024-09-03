@@ -52,34 +52,41 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
-      { id: 1, name: "Producto 1", gender: "hombre", size: "M", price: 3500 },
-      { id: 2, name: "Producto 2", gender: "mujer", size: "L", price: 4500 },
-      // Más productos...
+      { id: 1, name: "Campera Hombre", gender: "hombre", category: "camperas", size: "M", price: 3500 },
+      { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000 },
+      { id: 3, name: "Campera Mujer", gender: "mujer", category: "camperas", size: "S", price: 4500 },
+      // Agrega más productos aquí...
     ];
   
     const filters = {
       gender: [],
-      size: [],
-      price: 5000
+      category: [],
+      size: []
     };
   
-    // Actualizar el valor del filtro de precio
-    const priceRange = document.getElementById('price');
-    const priceValue = document.getElementById('price-value');
-    priceRange.addEventListener('input', function() {
-      filters.price = this.value;
-      priceValue.textContent = `$${this.value}`;
-      updateProducts();
+    // Actualizar los filtros cuando se seleccionan los checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
+        const filterValue = this.value;
+  
+        if (this.checked) {
+          filters[filterType].push(filterValue);
+        } else {
+          filters[filterType] = filters[filterType].filter(value => value !== filterValue);
+        }
+  
+        updateProducts();
+      });
     });
   
-    // Actualizar productos en la grid
     function updateProducts() {
       const filteredProducts = products.filter(product => {
         const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
+        const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
         const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
-        const matchPrice = product.price <= filters.price;
   
-        return matchGender && matchSize && matchPrice;
+        return matchGender && matchCategory && matchSize;
       });
   
       // Renderiza los productos filtrados
@@ -93,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   
-    // Inicializa
+    // Inicializa mostrando todos los productos
     updateProducts();
   });
 
