@@ -319,7 +319,6 @@
     
 }
 
-
 /* SERVICIOS */
 
 .conteiner-servicios{
@@ -371,7 +370,7 @@
    cursor: pointer;
 }
 
-.card-imagenes h3{
+.card-imagenes h2{
     display: block;
     width: 180px;
     text-align: center;
@@ -408,7 +407,7 @@
     border-right: 1px solid #ccc;
   }
 
-  .filters h3{
+  .filters-titulo{
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
   }
@@ -418,7 +417,7 @@
     margin: auto;
   }
 
-  .filters-tituloh4 {
+  .filters-titulo-section {
     display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
