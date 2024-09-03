@@ -75,7 +75,7 @@
     display: flex;
     width: 100%;
     height: 65px;
-    background: #080808;
+    background: #fdfdfd;
     list-style: none;
     position: relative;
     z-index: 10;
@@ -144,7 +144,7 @@
     text-decoration: none;
     padding: 10px 10px;
     display: inline-block;
-    color: #ffffff;
+    color: #000000;
     list-style: none;
     font-size: 18px;
     font-weight: 700;
@@ -152,9 +152,9 @@
 }
 
 .menu li a:hover {
-    color: #f3ff05;
+    color: #a30dfa;
     border-radius: 15px;
-    background: #000000;
+    background: #fdfdfd;
     text-decoration: underline;
 
 }
@@ -170,7 +170,7 @@
 .menu li ul {
     display: none;
     position: absolute;
-    background: #000000;
+    background: #fdfdfd;
     width: 100px;
     height: auto;
     border-radius: 15px;    
@@ -190,7 +190,7 @@
     height: 38px;
     width: 100px;
     justify-items: center;
-    color: #ffffff;
+    color: #000000;
 }
 
 .menu li ul li ul {
