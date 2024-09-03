@@ -418,11 +418,12 @@
     margin: auto;
   }
 
-  .filters-section  h3{
+  .filters-section h3{
     display: flex;
     font-family: 'Oswald', sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     margin: auto;
+    color: #a30dfa;
   }
   
   .products-grid {
