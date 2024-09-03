@@ -389,7 +389,9 @@
 
 .container {
     display: flex;
+    position: relative;
     margin: 20px;
+    background: #fcfcfc;
   }
   
   .filters {
