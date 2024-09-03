@@ -401,11 +401,25 @@
     padding: 10px;
   }
 
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: flex-start;
+  }
+  
+  .filters {
+    width: 20%;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+
   .filter-section {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 20px;
+    align-items: flex-start;
   }
   
   .filter-option {
@@ -427,17 +441,7 @@
     color: #a30dfa;
   }
   
-  .filters {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .filters {
-    width: 20%;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-  }
+
 
   .filter-titulo{
     font-family: 'Oswald', sans-serif;
@@ -445,9 +449,7 @@
     font-weight: 500;
   }
 
-  .filter-section {
-    
-  }
+
 
   .filter-titulo-section {
     display: flex;
