@@ -421,6 +421,12 @@
     margin-bottom: 20px;
     align-items: flex-start;
   }
+
+  .filter-section label{
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+  }
   
   .filter-option {
     display: flex;
