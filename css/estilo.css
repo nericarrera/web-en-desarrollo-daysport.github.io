@@ -187,8 +187,8 @@
 
 .menu li ul li a {
     position: relative;
-    height: 38px;
-    width: 100px;
+    height: 25%;
+    width: 50%;
     justify-items: center;
     color: #000000;
 }
