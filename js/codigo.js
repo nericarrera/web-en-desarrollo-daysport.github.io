@@ -49,53 +49,68 @@ window.addEventListener('load', updateDimensions);
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
 
-document.querySelectorAll('.filter-size, .filter-color, .filter-price').forEach(input => {
-    input.addEventListener('change', filterProducts);
-});
-
-function toggleFilter(filterId) {
-    const filter = document.getElementById(filterId);
-    filter.style.display = filter.style.display === 'block' ? 'none' : 'block';
-}
 
 
-document.querySelectorAll('.filter-size, .filter-color, .filter-price').forEach(input => {
-    input.addEventListener('change', filterProducts);
-});
 
-function filterProducts() {
-    const selectedSizes = Array.from(document.querySelectorAll('.filter-size:checked')).map(input => input.value);
-    const selectedColors = Array.from(document.querySelectorAll('.filter-color:checked')).map(input => input.value);
-    const selectedPrice = document.querySelector('.filter-price:checked') ? document.querySelector('.filter-price:checked').value : '';
 
-    const products = document.querySelectorAll('.product-item');
-    
-    products.forEach(product => {
-        const productSize = product.getAttribute('data-size');
-        const productColor = product.getAttribute('data-color');
-        const productPrice = parseInt(product.getAttribute('data-price'));
-
-        let priceMatch = false;
-        if (selectedPrice === 'low' && productPrice <= 20000) {
-            priceMatch = true;
-        } else if (selectedPrice === 'mid' && productPrice > 20000 && productPrice <= 50000) {
-            priceMatch = true;
-        } else if (selectedPrice === 'high' && productPrice > 50000) {
-            priceMatch = true;
-        } else if (!selectedPrice) {
-            priceMatch = true;
-        }
-
-        const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
-        const colorMatch = selectedColors.length === 0 || selectedColors.includes(productColor);
-
-        if (sizeMatch && colorMatch && priceMatch) {
-            product.style.display = 'block';
+document.addEventListener('DOMContentLoaded', function() {
+    const products = [
+      { id: 1, name: "Campera Hombre", gender: "hombre", category: "camperas", size: "M", price: 3500 },
+      { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000 },
+      { id: 3, name: "Campera Mujer", gender: "mujer", category: "camperas", size: "S", price: 4500 },
+      // Agrega más productos aquí...
+    ];
+  
+    const filters = {
+      gender: [],
+      category: [],
+      size: []
+    };
+  
+    // Actualizar los filtros cuando se seleccionan los checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
+        const filterValue = this.value;
+  
+        if (this.checked) {
+          filters[filterType].push(filterValue);
         } else {
-            product.style.display = 'none';
+          filters[filterType] = filters[filterType].filter(value => value !== filterValue);
         }
+  
+        updateProducts();
+      });
     });
-}
+  
+    function updateProducts() {
+      const filteredProducts = products.filter(product => {
+        const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
+        const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
+        const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
+  
+        return matchGender && matchCategory && matchSize;
+      });
+  
+      // Renderiza los productos filtrados
+      const productsGrid = document.querySelector('.products-grid');
+      productsGrid.innerHTML = ''; // Limpiar
+      filteredProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+        productDiv.textContent = product.name;
+        productsGrid.appendChild(productDiv);
+      });
+    }
+  
+    // Inicializa mostrando todos los productos
+    updateProducts();
+  });
+
+
+
+
+
 
 let currentPosition = 0;
 const productWrapper = document.querySelector('.product-wrapper');
