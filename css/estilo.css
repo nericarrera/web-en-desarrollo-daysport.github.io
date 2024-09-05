@@ -455,12 +455,11 @@
     display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
-    color: #a30dfa;
+    color: #000000;
     font-weight: 600;
     padding: 10px;
-    width: 150px;
-    background: #9b9b9b;
-    border-radius: 15px;
+    width: 130px;
+    background: #ffffff;
     box-shadow: 1px 1px 1px 1px #000;
   }
   
