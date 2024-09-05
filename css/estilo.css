@@ -425,6 +425,12 @@
     margin-bottom: 20px;
   }
 
+  .filter-section:hover{
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
 /* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
   .filter-section label{
     font-family: 'Oswald', sans-serif;
