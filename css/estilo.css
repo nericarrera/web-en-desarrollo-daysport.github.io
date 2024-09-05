@@ -469,6 +469,11 @@
     background: #ffffff;
     box-shadow: 1px 1px 1px 1px #000;
   }
+
+  .filter-titulo-section:hover{
+    background: #000000;
+    color: #ffffff;
+  }
   
   .products-grid {
     width: 80%;
