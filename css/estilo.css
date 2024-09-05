@@ -499,7 +499,8 @@
     display: block;
   }
 
-  .toggle-header {
+  /* Agregar flecha a los títulos de las secciones */
+.toggle-header {
     position: relative;
     cursor: pointer;
     padding-right: 20px; /* espacio para la flecha */
@@ -515,8 +516,18 @@
   }
   
   /* Cuando el contenido está visible, rotar la flecha */
-  .toggle-content.active + .toggle-header::after {
+  .toggle-header.expanded::after {
     transform: rotate(-180deg); /* rotar la flecha hacia arriba */
+  }
+  
+  /* Opciones ocultas por defecto */
+  .toggle-content {
+    display: none;
+  }
+  
+  /* Cuando se muestra el contenido */
+  .toggle-content.active {
+    display: block;
   }
 
 
