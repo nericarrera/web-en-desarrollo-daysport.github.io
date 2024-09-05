@@ -139,40 +139,48 @@
 
 <div class="container">
   <aside class="filters">
-    <p  class="filter-titulo">FILTRAR TU BUSQUEDA POR:</p>
+    <p class="filter-titulo">FILTRAR TU BUSQUEDA POR:</p>
 
     <!-- Género -->
     <div class="filter-section">
-      <p class="filter-titulo-section">Género</p>
-
-      <div class="filter-option">
-        <input type="checkbox" id="mujer" name="gender" value="mujer">
-        <label for="mujer">Mujer</label>
+      <p class="filter-titulo-section toggle-header" data-target="gender-options">Género</p>
+      <div id="gender-options" class="filter-options toggle-content">
+        <div class="filter-option">
+          <input type="checkbox" id="mujer" name="gender" value="mujer">
+          <label for="mujer">Mujer</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="hombre" name="gender" value="hombre">
+          <label for="hombre">Hombre</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="niñ@s" name="gender" value="niño@s">
+          <label for="niñ@s">Niñ@s</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="lasbravas" name="gender" value="lasbravas">
+          <label for="lasbravas">Las.Bravas</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="accesorios" name="gender" value="accesorios">
+          <label for="accesorios">Accesorios</label>
+        </div>
       </div>
-      <div class="filter-option">
-        <input type="checkbox" id="hombre" name="gender" value="hombre">
-        <label for="hombre">Hombre</label>
-      </div>
-      <div class="filter-option">
-        <input type="checkbox" id="niñ@s" name="gender" value="niño@s">
-        <label for="niñ@s">Niñ@s</label>
-      </div>
-
-      <div class="filter-option">
-        <input type="checkbox" id="lasbravas" name="gender" value="lasbravas">
-        <label for="lasbravas">Las.Bravas</label>
-      </div>
+    </div>
     
-
       <div class="filter-option">
         <input type="checkbox" id="accesorios" name="gender" value="accesorios">
         <label for="accesorios">Accesorios</label>
       </div>
     </div>
 
+
+    
+
      <!-- Indumentaria -->
-    <div class="filter-section">
-      <p class="filter-titulo-section">Indumentaria</p>
+     <div class="filter-section">
+      <p class="filter-titulo-section toggle-header" data-target="indumentaria-options">Indumentaria</p>
+      <div id="indumentaria-options" class="filter-options toggle-content">
 
       <div class="filter-option">
         <input type="checkbox" id="bermudas" name="category" value="bermudas">

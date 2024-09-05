@@ -492,6 +492,16 @@
   }
 
 
+  /* Opciones ocultas por defecto */
+.toggle-content {
+    display: none;
+  }
+  
+  /* Cuando se muestra el contenido */
+  .toggle-content.active {
+    display: block;
+  }
+
 
 /* TITULO DE (DESTACADO) */
 
