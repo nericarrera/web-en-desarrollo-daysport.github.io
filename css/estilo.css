@@ -415,25 +415,30 @@
     border-right: groove;
   }
 
+
   .filter-section {
     display: flex;
     border: 1px #000;
     flex-direction: column;
     gap: 8px;
     align-items: flex-start;
+    margin-bottom: 20px;
   }
 
+/* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
   .filter-section label{
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
     font-weight: 800;
     letter-spacing: 1;
+    white-space: nowrap; /* Para evitar que se dividan en dos líneas */
   }
   
   .filter-option {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center; /* Alinear verticalmente checkbox y label */
+    gap: 10px; /* Espacio entre el checkbox y el label */
+    width: 100%; /* Asegurar que ocupen todo el ancho disponible */
   }
   
   input[type="checkbox"] {
