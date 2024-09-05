@@ -50,7 +50,18 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Seleccionar todos los headers que se usan para togglear
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
 
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const target = document.getElementById(header.getAttribute('data-target'));
+      // Alternar la clase "active" para mostrar/ocultar contenido
+      target.classList.toggle('active');
+    });
+  });
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {
