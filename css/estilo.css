@@ -438,7 +438,7 @@
     display: flex;
     align-items: center; /* Alinear verticalmente checkbox y label */
     gap: 10px; /* Espacio entre el checkbox y el label */
-    width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+    width: 67%; /* Asegurar que ocupen todo el ancho disponible */
   }
   
   input[type="checkbox"] {
