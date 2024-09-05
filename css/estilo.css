@@ -516,6 +516,7 @@
     position: absolute;
     right: 0; /* colocarla al final */
     font-size: 12px;
+    padding: 7px;
     transform: rotate(0deg);
     transition: transform 0.3s ease; /* animación suave al rotar */
   }
@@ -523,7 +524,8 @@
   /* Cuando el contenido está visible, rotar la flecha */
   .toggle-header.expanded::after {
     transform: rotate(-180deg); /* rotar la flecha hacia arriba */
-  }
+    padding: 7px;  
+}
   
   /* Opciones ocultas por defecto */
   .toggle-content {
