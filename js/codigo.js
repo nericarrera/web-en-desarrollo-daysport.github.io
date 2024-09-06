@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
       const target = document.getElementById(header.getAttribute('data-target'));
-      target.classList.toggle('active'); // Despliega las opciones
+      target.classList.toggle('active');  // Añade o quita la clase 'active'
+      header.classList.toggle('expanded');  // Controlar rotación de la flecha
     });
   });
 

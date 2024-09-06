@@ -478,6 +478,11 @@
     gap: 10px; /* Espacio entre el checkbox y el label */
     width: 67%; /* Asegurar que ocupen todo el ancho disponible */
   }
+
+  /* Mostrar las opciones cuando la clase 'active' esté aplicada */
+.filter-options.active {
+    display: block;
+  }
   
   input[type="checkbox"] {
     margin: 0;
@@ -554,9 +559,12 @@
     cursor: pointer;
     padding-right: 20px; /* espacio para la flecha */
   }
+
+ 
   
   .toggle-header::after {
-    content: "▼"; /* flecha hacia abajo */
+    content: "▶";
+    margin-left: 10px; /* flecha hacia abajo */
     position: absolute;
     right: 0; /* colocarla al final */
     font-size: 12px;
@@ -565,11 +573,13 @@
     transition: transform 0.3s ease; /* animación suave al rotar */
   }
   
-  /* Cuando el contenido está visible, rotar la flecha */
-  .toggle-header.expanded::after {
-    transform: rotate(-180deg); /* rotar la flecha hacia arriba */
-    padding: 7px;  
-}
+
+/* Rotación de la flecha cuando esté desplegado */
+.toggle-header.expanded::after {
+    content: "▼";
+    margin-left: 10px;
+    transform: rotate(180deg);
+  }
   
   /* Opciones ocultas por defecto */
   .toggle-content {
