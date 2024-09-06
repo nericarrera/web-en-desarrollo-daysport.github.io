@@ -440,6 +440,10 @@
   /* Ocultar por defecto */
 .filter-options {
     display: none;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
   }
 
   /* Mostrar las opciones cuando la clase 'active' esté aplicada */
