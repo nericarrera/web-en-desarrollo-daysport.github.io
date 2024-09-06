@@ -462,6 +462,7 @@
     font-weight: 800;
     letter-spacing: 1;
     white-space: nowrap; /* Para evitar que se dividan en dos líneas */
+
   }
 
   /* Mostrar las opciones cuando la clase 'active' esté aplicada */
@@ -532,15 +533,17 @@
 .toggle-content {
     display: none;
   }
-  
-  /* Cuando se muestra el contenido */
-  
+
+    /* Cuando se muestra el contenido */
 .toggle-content.active {
     display: block;
     margin-top: -15px;
     margin-bottom: 15px;
-    width: 100%; /* Cambiar según el diseño */
+    width: 15%;
+        
  }
+    
+  
 
 
   /* Agregar flecha a los títulos de las secciones */
@@ -577,18 +580,6 @@
 
 
   
-  /* Opciones ocultas por defecto */
-  .toggle-content {
-    display: none;
-  }
-  
-  /* Cuando se muestra el contenido */
-  .toggle-content.active {
-    display: block;
-    margin-top: -15px;
-    margin-bottom: 15px;
-    
-  }
 
 
 /* TITULO DE (DESTACADO) */
