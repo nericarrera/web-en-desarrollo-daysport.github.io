@@ -512,9 +512,14 @@
   }
   
   /* Cuando se muestra el contenido */
-  .toggle-content.active {
+  
+.toggle-content.active {
     display: block;
-  }
+    margin-top: -15px;
+    margin-bottom: 15px;
+    width: 100%; /* Cambiar según el diseño */
+ }
+
 
   /* Agregar flecha a los títulos de las secciones */
 .toggle-header {
