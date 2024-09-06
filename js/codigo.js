@@ -53,25 +53,23 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 
-/* breadcrumb */
+document.addEventListener("DOMContentLoaded", function () {
+  const breadcrumb = document.getElementById('breadcrumb');
 
-document.addEventListener("DOMContentLoaded", function() {
   // Funcionalidad de desplegar las opciones de filtros
   const toggleHeaders = document.querySelectorAll('.toggle-header');
 
   toggleHeaders.forEach(header => {
-    header.addEventListener('click', function() {
+    header.addEventListener('click', function () {
       const target = document.getElementById(header.getAttribute('data-target'));
-      target.classList.toggle('active'); // Mostrar u ocultar las opciones
-      header.classList.toggle('expanded'); // Controlar rotación de la flecha
+      target.classList.toggle('active'); // Mostrar/ocultar las opciones
+      header.classList.toggle('expanded'); // Rotar flecha
     });
   });
 
-  const breadcrumb = document.getElementById('breadcrumb');
-
-  // Actualizar breadcrumb al seleccionar o deseleccionar un filtro
+  // Actualizar breadcrumb al seleccionar/deseleccionar un filtro
   document.querySelectorAll('.filter-option input').forEach(input => {
-    input.addEventListener('change', function() {
+    input.addEventListener('change', function () {
       if (input.checked) {
         addBreadcrumbItem(input.value);
       } else {
@@ -81,11 +79,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function addBreadcrumbItem(selectedFilter) {
-    // Verificar si ya está en el breadcrumb
     const existingItem = Array.from(breadcrumb.children).find(item => item.textContent.trim() === selectedFilter);
     if (existingItem) return;
 
-    // Crear nuevo item del breadcrumb
     let newItem = document.createElement('li');
     newItem.classList.add('breadcrumb-item');
     newItem.textContent = selectedFilter;
@@ -93,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function removeBreadcrumbItem(filter) {
-    // Eliminar el elemento del breadcrumb si se deselecciona
     const itemToRemove = Array.from(breadcrumb.children).find(item => item.textContent.trim() === filter);
     if (itemToRemove) {
       breadcrumb.removeChild(itemToRemove);
