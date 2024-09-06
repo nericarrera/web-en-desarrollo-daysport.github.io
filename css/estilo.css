@@ -422,7 +422,6 @@
     flex-direction: column;
     gap: 8px;
     align-items: flex-start;
-    margin-bottom: 20px;
   }
 
  
@@ -547,15 +546,24 @@
     content: "▶";
     margin-left: 10px;
     transition: transform 0.3s;
+    position: absolute;
+    right: 0; /* colocarla al final */
+    font-size: 12px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease; /* animación suave al rotar */
   }
+
+  
   
 
 /* Rotación de la flecha cuando esté desplegado */
 .toggle-header.expanded::after {
     content: "▼";
     margin-left: 10px;
-    transform: rotate(0deg);
+    transform: rotate(-180deg); /* rotar la flecha hacia arriba */
   }
+
+
   
   /* Opciones ocultas por defecto */
   .toggle-content {
@@ -567,7 +575,7 @@
     display: block;
     margin-top: -15px;
     margin-bottom: 15px;
-    width: 28%;
+    
   }
 
 
