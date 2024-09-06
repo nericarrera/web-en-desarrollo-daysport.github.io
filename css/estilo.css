@@ -416,6 +416,15 @@
     content: "";
   }
   
+  /* Para mostrar las opciones del filtro */
+  .filter-options {
+    display: none;
+  }
+  
+  .filter-options.active {
+    display: block;
+  }
+
 
 /* FILTRO DE ROPA */
 

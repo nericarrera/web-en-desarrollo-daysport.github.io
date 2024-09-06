@@ -57,14 +57,13 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Funcionalidad de desplegar las opciones
+  // Funcionalidad de desplegar las opciones de filtros
   const toggleHeaders = document.querySelectorAll('.toggle-header');
 
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
       const target = document.getElementById(header.getAttribute('data-target'));
-      target.classList.toggle('active');
-      header.classList.toggle('expanded');
+      target.classList.toggle('active'); // Despliega las opciones
     });
   });
 
@@ -74,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('.filter-option input').forEach(input => {
     input.addEventListener('change', function() {
       if (input.checked) {
-        updateBreadcrumb(input.value);
+        addBreadcrumbItem(input.value);
       } else {
         removeBreadcrumbItem(input.value);
       }
     });
   });
 
-  function updateBreadcrumb(selectedFilter) {
+  function addBreadcrumbItem(selectedFilter) {
     // Verificar si ya está en el breadcrumb
     const existingItem = Array.from(breadcrumb.children).find(item => item.textContent.trim() === selectedFilter);
     if (existingItem) return;
