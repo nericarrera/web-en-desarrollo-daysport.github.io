@@ -53,51 +53,6 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const breadcrumb = document.getElementById('breadcrumb');
-
-  // Funcionalidad de desplegar las opciones de filtros
-  const toggleHeaders = document.querySelectorAll('.toggle-header');
-
-  toggleHeaders.forEach(header => {
-    header.addEventListener('click', function () {
-      const target = document.getElementById(header.getAttribute('data-target'));
-      target.classList.toggle('active'); // Mostrar/ocultar las opciones
-      header.classList.toggle('expanded'); // Rotar flecha
-    });
-  });
-
-  // Actualizar breadcrumb al seleccionar/deseleccionar un filtro
-  document.querySelectorAll('.filter-option input').forEach(input => {
-    input.addEventListener('change', function () {
-      if (input.checked) {
-        addBreadcrumbItem(input.value);
-      } else {
-        removeBreadcrumbItem(input.value);
-      }
-    });
-  });
-
-  function addBreadcrumbItem(selectedFilter) {
-    const existingItem = Array.from(breadcrumb.children).find(item => item.textContent.trim() === selectedFilter);
-    if (existingItem) return;
-
-    let newItem = document.createElement('li');
-    newItem.classList.add('breadcrumb-item');
-    newItem.textContent = selectedFilter;
-    breadcrumb.appendChild(newItem);
-  }
-
-  function removeBreadcrumbItem(filter) {
-    const itemToRemove = Array.from(breadcrumb.children).find(item => item.textContent.trim() === filter);
-    if (itemToRemove) {
-      breadcrumb.removeChild(itemToRemove);
-    }
-  }
-});
-
-
-
 
 
 
@@ -107,16 +62,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
-      const target = document.getElementById(header.getAttribute('data-target'));
-      // Alternar la clase "active" para mostrar/ocultar contenido
-      target.classList.toggle('active');
+      const targetId = header.getAttribute('data-target');
+      const target = document.getElementById(targetId);
       
-      // Alternar la clase "expanded" para rotar la flecha
-      header.classList.toggle('expanded');
+      if (target) {
+        // Alternar la clase "active" para mostrar/ocultar contenido
+        target.classList.toggle('active');
+        
+        // Alternar la clase "expanded" para rotar la flecha
+        header.classList.toggle('expanded');
+      }
     });
   });
 });
 
+  
 
 
 
