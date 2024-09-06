@@ -479,6 +479,11 @@
     width: 67%; /* Asegurar que ocupen todo el ancho disponible */
   }
 
+  /* Ocultar por defecto */
+.filter-options {
+    display: none;
+  }
+
   /* Mostrar las opciones cuando la clase 'active' esté aplicada */
 .filter-options.active {
     display: block;
@@ -562,15 +567,11 @@
 
  
   
-  .toggle-header::after {
+ /* Flecha por defecto */
+.toggle-header::after {
     content: "▶";
-    margin-left: 10px; /* flecha hacia abajo */
-    position: absolute;
-    right: 0; /* colocarla al final */
-    font-size: 12px;
-    padding: 7px;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease; /* animación suave al rotar */
+    margin-left: 10px;
+    transition: transform 0.3s;
   }
   
 
@@ -578,7 +579,7 @@
 .toggle-header.expanded::after {
     content: "▼";
     margin-left: 10px;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
   
   /* Opciones ocultas por defecto */
