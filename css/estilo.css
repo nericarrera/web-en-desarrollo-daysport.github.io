@@ -422,7 +422,7 @@
     flex-direction: column;
     gap: 8px;
     align-items: flex-start;
-    
+    margin-bottom: 20px;
   }
 
  
@@ -444,6 +444,14 @@
     gap: 10px;
     width: 100%;
 
+  }
+
+  .filter-option label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1;
+    white-space: nowrap; /* Para evitar que se dividan en dos líneas */
   }
 
   /* Mostrar las opciones cuando la clase 'active' esté aplicada */
