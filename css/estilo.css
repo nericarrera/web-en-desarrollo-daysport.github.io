@@ -389,42 +389,6 @@
     color: #000000;
 }
 
-/* BREADCRUMB */
-
-.breadcrumb {
-    display: flex;
-    list-style: none;
-    padding: 10px 0;
-    background: none;
-  }
-  
-  .breadcrumb-item {
-    margin-right: 10px;
-  }
-  
-  .breadcrumb-item a {
-    text-decoration: none;
-    color: #a30dfa;
-  }
-  
-  .breadcrumb-item::after {
-    content: ">";
-    margin-left: 10px;
-  }
-  
-  .breadcrumb-item:last-child::after {
-    content: "";
-  }
-  
-  /* Para mostrar las opciones del filtro */
-  .filter-options {
-    display: none;
-  }
-  
-  .filter-options.active {
-    display: block;
-  }
-
 
 /* FILTRO DE ROPA */
 
