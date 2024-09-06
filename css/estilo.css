@@ -472,13 +472,7 @@
     white-space: nowrap; /* Para evitar que se dividan en dos líneas */
   }
   
-  .filter-option {
-    display: flex;
-    align-items: center; /* Alinear verticalmente checkbox y label */
-    gap: 10px; /* Espacio entre el checkbox y el label */
-    width: 67%; /* Asegurar que ocupen todo el ancho disponible */
-  }
-
+ 
   /* Ocultar por defecto */
 .filter-options {
     display: none;
