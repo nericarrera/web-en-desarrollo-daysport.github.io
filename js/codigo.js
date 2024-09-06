@@ -11,6 +11,7 @@ setInterval(changeSlide, 25000);  // Cambia cada 5 segundos
 
 
 
+/* flechas para mover las cards - 1er seccion */
 
 
 const cardWrapper = document.querySelector('.card-wrapper');
@@ -49,6 +50,45 @@ prevArrow.addEventListener('click', function(event) {
 window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
+
+
+
+/* breadcrumb */
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
+
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const target = document.getElementById(header.getAttribute('data-target'));
+      target.classList.toggle('active');
+      header.classList.toggle('expanded');
+    });
+  });
+
+  const breadcrumb = document.getElementById('breadcrumb');
+
+  // Actualizar breadcrumb al seleccionar un filtro
+  document.querySelectorAll('.filter-option input').forEach(input => {
+    input.addEventListener('change', function() {
+      updateBreadcrumb(input.value);
+    });
+  });
+
+  function updateBreadcrumb(selectedFilter) {
+    // Verificar si ya está en el breadcrumb
+    const existingItem = Array.from(breadcrumb.children).find(item => item.textContent.trim() === selectedFilter);
+    if (existingItem) return;
+
+    // Crear nuevo item del breadcrumb
+    let newItem = document.createElement('li');
+    newItem.classList.add('breadcrumb-item');
+    newItem.textContent = selectedFilter;
+    breadcrumb.appendChild(newItem);
+  }
+});
+
 
 
 
