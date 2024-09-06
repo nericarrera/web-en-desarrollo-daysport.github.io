@@ -55,7 +55,6 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 /* breadcrumb */
 
-
 document.addEventListener("DOMContentLoaded", function() {
   // Funcionalidad de desplegar las opciones de filtros
   const toggleHeaders = document.querySelectorAll('.toggle-header');
@@ -63,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
       const target = document.getElementById(header.getAttribute('data-target'));
-      target.classList.toggle('active');  // Añade o quita la clase 'active'
-      header.classList.toggle('expanded');  // Controlar rotación de la flecha
+      target.classList.toggle('active'); // Mostrar u ocultar las opciones
+      header.classList.toggle('expanded'); // Controlar rotación de la flecha
     });
   });
 
