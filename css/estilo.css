@@ -424,6 +424,8 @@
     align-items: flex-start;
   }
 
+
+
  
 
 /* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
@@ -445,7 +447,16 @@
 
   }
 
-  .filter-option label {
+  /* Alineación de los checkboxes y labels dentro de .filter-option */
+.filter-option {
+    display: flex;
+    align-items: center; /* Alinear verticalmente checkbox y label */
+    gap: 10px; /* Espacio entre el checkbox y el label */
+    width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+  }
+
+  /* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
+.filter-option label {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
     font-weight: 800;
@@ -460,7 +471,7 @@
   
   input[type="checkbox"] {
     margin: 0;
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
     
 
