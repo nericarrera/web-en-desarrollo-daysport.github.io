@@ -104,19 +104,17 @@
   
   /* Estilo para el menú que ocupe todo el ancho */
   /* Ajustes para menú desplegable que ocupe toda la pantalla y fondo completo */
-.menu ul {
-    position: relative;
-    list-style: none;
-    padding: 0;
+  .menu ul {
     margin: 0;
+    padding: 0;
   }
   
 /* Ajustar el contenedor del menú */
 .menu ul li {
     display: inline-block;
-    padding: 10px;
     position: relative;
     text-align: center;
+    padding: 10px;
   }
   
   .menu ul li a {
@@ -131,14 +129,21 @@
     display: flex;
     position: absolute;
     top: 100%;
-    left: 40%; /* Comienza desde el centro de la pantalla */
-    transform: translateX(-50%); /* Centrar el menú */
-    background-color: #ffffff; /* Fondo blanco que cubre todo */
-    justify-content: center;
+    left: 0; /* Empezar desde el borde izquierdo */
+    width: 100vw; /* Ocupar todo el ancho de la pantalla */
+    background-color: #ffffff; /* Fondo blanco */
+    justify-content: space-evenly;
     padding: 20px;
-    width: 200vh; /* Asegurarse de que el menú ocupe todo el ancho de la pantalla */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Asegurarse de que el menú esté en el frente */
+    z-index: 1000;
+  }
+
+  .menu li ul {
+    display: none;
+  }
+  
+  .menu li:hover > ul {
+    display: flex;
   }
   
   .dropdown {
@@ -153,21 +158,30 @@
     align-items: center;
   }
   
-  .icon {
+  /* Íconos o imágenes dentro del menú desplegable */
+.icon {
     width: 50px;
     height: 50px;
     margin-bottom: 5px;
   }
   
-  /* Mostrar menú desplegable en hover */
-  .menu li:hover .dropdown {
+ /* Mostrar el menú desplegable en hover */
+.menu li:hover .dropdown {
     display: flex;
   }
   
-  /* Asegurar que los ítems ocupen bien el espacio */
   .menu li ul li {
     text-align: center;
-    width: 150px; /* Ajustar el ancho de los elementos según necesidad */
+    width: auto; /* Ajustar el ancho de los elementos */
+    padding: 10px 20px; /* Añadir un poco de padding */
+  }
+
+
+/* Ajustes de tamaño para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu ul li:hover > ul {
+      flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }
   }
 
 
