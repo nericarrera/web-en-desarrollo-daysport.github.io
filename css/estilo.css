@@ -103,7 +103,8 @@
   /* MENÚ Y SUBMENÚ */
   
   /* Estilo para el menú que ocupe todo el ancho */
-  .menu ul {
+  /* Ajustes para menú desplegable que ocupe toda la pantalla y fondo completo */
+.menu ul {
     position: relative;
     list-style: none;
     padding: 0;
@@ -123,23 +124,25 @@
     text-decoration: none;
   }
   
-  .menu ul li:hover > ul {
+  /* Ajustar el menú desplegable */
+.menu ul li:hover > ul {
     display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Fondo blanco que cubre todo */
     justify-content: space-evenly;
     padding: 20px;
+    width: 100vw; /* Asegurarse de que el menú ocupe todo el ancho de la pantalla */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegurarse de que el menú esté en el frente */
   }
   
   .dropdown {
     display: none;
     width: 100%;
-    background: #f1f1f1;
-    z-index: 1;
+    background-color: #ffffff; /* Asegurar fondo blanco en todo el menú */
   }
   
   .dropdown li {
@@ -159,15 +162,10 @@
     display: flex;
   }
   
-  /* Estilos para íconos e imágenes */
-  .icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  
+  /* Asegurar que los ítems ocupen bien el espacio */
   .menu li ul li {
     text-align: center;
+    width: 150px; /* Ajustar el ancho de los elementos según necesidad */
   }
 
 
