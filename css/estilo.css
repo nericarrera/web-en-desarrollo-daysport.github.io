@@ -131,7 +131,7 @@
     display: flex;
     position: absolute;
     top: 100%;
-    left: 50%; /* Comienza desde el centro de la pantalla */
+    left: 40%; /* Comienza desde el centro de la pantalla */
     transform: translateX(-50%); /* Centrar el menú */
     background-color: #ffffff; /* Fondo blanco que cubre todo */
     justify-content: center;
