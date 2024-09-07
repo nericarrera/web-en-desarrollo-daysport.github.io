@@ -150,6 +150,7 @@
     display: none;
     width: 100%;
     background-color: #ffffff; /* Asegurar fondo blanco en todo el menú */
+    margin-left: 0;
   }
   
   .dropdown li {
