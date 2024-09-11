@@ -116,7 +116,10 @@
   /* Estilo para los elementos del menú */
   .menu > ul {
     position: relative;
+    color: #000000;
   }
+
+  
   
   /* Estilo para el submenú */
   .submenu {
