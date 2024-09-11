@@ -129,7 +129,6 @@
     left: 0;
     width: 100vw; /* Ocupa toda la pantalla */
     background-color: #fff;
-    display: flex;
     justify-content: center;
     padding: 10px 0;
     flex-wrap: wrap;
@@ -139,6 +138,10 @@
   .submenu-item {
     text-align: center;
     margin: 0 20px;
+  }
+
+  .submenu-item a{
+    color: #000;
   }
   
   /* Mostrar el submenú al hacer hover */
