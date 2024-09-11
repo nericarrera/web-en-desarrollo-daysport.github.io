@@ -114,7 +114,7 @@
   }
   
   /* Estilo para los elementos del menú */
-  .menu > ul {
+  .menu > .submenu {
     position: relative;
   }
   
