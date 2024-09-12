@@ -106,11 +106,13 @@
   /* Contenedor del menú */
 /* Estilo para el menú principal */
 .menu {
+    display: block;
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
   
   /* Estilo para los elementos del menú */
