@@ -114,7 +114,7 @@
   }
   
   /* Estilo para los elementos del menú */
-  .menu .menu-ul {
+  .menu-ul {
     position: relative;
     color: #000000;
   }
