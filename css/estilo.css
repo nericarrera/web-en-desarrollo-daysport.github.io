@@ -119,6 +119,7 @@
   .menu-ul {
     position: relative;
     color: #000000;
+    list-style-type: none;
   }
 
   .menu-li {
