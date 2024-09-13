@@ -151,6 +151,58 @@
     flex-wrap: wrap;
     color: #000000;
   }
+
+  .submenu-mujer {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -420;
+    width: 100vw; /* Ocupa toda la pantalla */
+    background-color: #fff;
+    justify-content: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    color: #000000;
+  }
+
+  .submenu-hombre {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw; /* Ocupa toda la pantalla */
+    background-color: #fff;
+    justify-content: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    color: #000000;
+  }
+
+  .submenu-niños {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw; /* Ocupa toda la pantalla */
+    background-color: #fff;
+    justify-content: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    color: #000000;
+  }
+
+  .submenu-bravas {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw; /* Ocupa toda la pantalla */
+    background-color: #fff;
+    justify-content: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    color: #000000;
+  }
   
   /* Estilo para los elementos del submenú */
   .submenu-item {
