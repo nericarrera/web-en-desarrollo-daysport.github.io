@@ -134,6 +134,8 @@
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
     color: #000000;
+    list-style-type: none;
+    
   }
 
   .menu-li a:hover{
@@ -143,12 +145,9 @@
     transition: all 420ms ease;
 
   }
-
-  
   
   /* Estilo para el submenú */
   
-
   .submenu {
     display: none;
     position: absolute;
@@ -166,7 +165,6 @@
   }
 
   
-  
   /* Estilo para los elementos del submenú */
   .submenu-item {
     text-align: center;
@@ -179,6 +177,7 @@
 
   .submenu-item a{
     color: #000;
+    font-weight: 500;
     list-style-type: none;
   }
   
