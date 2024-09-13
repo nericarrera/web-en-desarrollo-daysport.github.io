@@ -145,7 +145,7 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: -420;
+    left: -450px;
     width: 100vw; /* Ocupa toda la pantalla */
     background-color: #fff;
     justify-content: center;
