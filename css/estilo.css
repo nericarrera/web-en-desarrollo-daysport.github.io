@@ -179,6 +179,7 @@
 
   .submenu-item a{
     color: #000;
+    list-style-type: none;
   }
   
   /* Mostrar el submenú al hacer hover */
