@@ -162,6 +162,8 @@
     color: #000000;
     border-radius: 15px;
     -webkit-backdrop-filter: blur(5px);
+    -webkit-backface-visibility: 1px ;
+    
   }
 
   
