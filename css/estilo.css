@@ -148,6 +148,10 @@
     margin: 0 20px;
   }
 
+  .submenu-item img{
+    width: 40px;
+  }
+
   .submenu-item a{
     color: #000;
   }
