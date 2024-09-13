@@ -138,8 +138,10 @@
 
   .menu-li a:hover{
     text-decoration: underline;
-    color: #202020;
-    background: #33042b;
+    color: #ffffff;
+    background: #a30dfa;
+    transition: all 398ms ease;
+
   }
 
   
