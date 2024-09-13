@@ -136,6 +136,12 @@
     color: #000000;
   }
 
+  .menu-li a:hover{
+    text-decoration: underline;
+    color: #202020;
+    
+  }
+
   
   
   /* Estilo para el submenú */
