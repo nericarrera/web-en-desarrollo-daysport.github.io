@@ -175,7 +175,7 @@
     width: 50px;
   }
 
-  .submenu .submenu-item a{
+  .submenu-item li a{
     color: #000;
     font-weight: 500;
     list-style-type: none;
