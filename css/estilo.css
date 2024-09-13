@@ -175,10 +175,10 @@
     width: 50px;
   }
 
-  .submenu-item li a{
+  .submenu-item a{
     color: #000;
     font-weight: 500;
-    list-style-type: none;
+    list-style: none;
   }
   
   /* Mostrar el submenú al hacer hover */
