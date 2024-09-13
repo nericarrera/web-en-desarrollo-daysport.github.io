@@ -146,7 +146,7 @@
     position: absolute;
     top: 100%;
     left: -450px;
-    width: 100vw; /* Ocupa toda la pantalla */
+    width: 70vw; /* Ocupa toda la pantalla */
     background-color: #fff;
     justify-content: center;
     padding: 10px 0;
