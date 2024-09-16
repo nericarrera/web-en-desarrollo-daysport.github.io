@@ -161,6 +161,7 @@
     color: #000000;
     border-radius: 15px;
     backdrop-filter: blur(5px);
+    list-style-type: none;
     
   }
 
@@ -177,20 +178,18 @@
   }
 
   .submenu-item img:hover{
-    transition: all 400ms ease;
+    transition: all 430ms ease;
     transform: scale(1.2);
 
   }
 
   .submenu-item a{
     color: #000;
-    font-weight: 500;
-    list-style-type: none;
+    font-weight: 600;
+    
   }
 
-  .submenu .submenu-item a{
-    list-style-type: none;
-  }
+ 
   
   /* Mostrar el submenú al hacer hover */
   .menu > ul:hover .submenu {
