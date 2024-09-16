@@ -385,6 +385,10 @@
    cursor: pointer;
 }
 
+.card-imagenes p:hover{
+    font-weight: 600;
+}
+
 
 .card-imagenes h2{
     display: block;
