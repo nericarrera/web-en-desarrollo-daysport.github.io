@@ -379,7 +379,8 @@
 
 
 .card-imagenes img:hover{
-   transition: all 380ms ease;
+    transform: scale(1.2);
+   transition: all 580ms ease;
    cursor: pointer;
 }
 
