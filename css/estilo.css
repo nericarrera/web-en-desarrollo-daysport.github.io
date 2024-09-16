@@ -338,6 +338,7 @@
 /* SERVICIOS */
 
 .conteiner-servicios{
+    display: none;
     display: flex;
     width: 97%;
     margin: auto;
