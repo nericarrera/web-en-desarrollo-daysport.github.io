@@ -378,7 +378,7 @@
 }
 
 
-.card-imagenes img:hover{
+.card-imagenes img,h2,p:hover{
     transform: scale(1.1);
    transition: all 580ms ease;
    cursor: pointer;
