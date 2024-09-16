@@ -130,7 +130,7 @@
     padding: 5px;
   }
 
-  .menu-li a{
+  .menu-li .menu-li-a{
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
     color: #000000;
@@ -140,7 +140,7 @@
     
   }
 
-  .menu-li a:hover{
+  .menu-li .menu-li-a:hover{
     text-decoration: underline;
     color: #ffffff;
     background: #a30dfa;
