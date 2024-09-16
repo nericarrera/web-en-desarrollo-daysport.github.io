@@ -186,6 +186,7 @@
     color: #000;
     font-weight: 500;
     list-style: none;
+    text-decoration-style: none;
   }
   
   /* Mostrar el submenú al hacer hover */
