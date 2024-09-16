@@ -378,7 +378,7 @@
 }
 
 
-.card-imagenes :hover{
+.card-imagenes img:hover{
    transition: all 380ms ease;
    cursor: pointer;
 }
