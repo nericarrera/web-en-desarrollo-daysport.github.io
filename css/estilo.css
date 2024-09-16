@@ -169,10 +169,16 @@
   .submenu-item {
     text-align: center;
     margin: 0 20px;
+    margin-top: 20px;
   }
 
   .submenu-item img{
     width: 50px;
+  }
+
+  .submenu-item img:hover{
+    transform: scale(1.2);
+    
   }
 
   .submenu-item a{
