@@ -315,7 +315,6 @@
     display: flex;
     position: relative;
     width: 100%;
-    background: linear-gradient(rgb(77, 77, 77), rgba(255, 255, 255, 0) );
 }
 
 .article__p {
