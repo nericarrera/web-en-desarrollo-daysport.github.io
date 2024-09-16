@@ -187,6 +187,10 @@
     font-weight: 500;
     list-style-type: none;
   }
+
+  .submenu .submenu-item a{
+    list-style-type: none;
+  }
   
   /* Mostrar el submenú al hacer hover */
   .menu > ul:hover .submenu {
