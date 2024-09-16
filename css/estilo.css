@@ -135,7 +135,7 @@
     font-family: 'Oswald', sans-serif;
     color: #000000;
     list-style-type: none;
-    font-size: 16px;
+    font-size: 18px;
     
   }
 
@@ -194,7 +194,7 @@
  
   
   /* Mostrar el submenú al hacer hover */
-  .menu > ul:hover .submenu {
+  .menu .menu-ul:hover .submenu {
     display: flex;
     background: #ffffff;
     color: #360353;
