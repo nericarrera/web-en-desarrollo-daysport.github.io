@@ -412,8 +412,13 @@
 
 /* BREADCRUM */
 
- /* Estilo del contenedor */
- .breadcrumb {
+ /* Breadcrumb container */
+.breadcrumb-container {
+    margin: 20px 0; /* Ajusta el espacio de separación */
+}
+
+/* Estilo del contenedor */
+.breadcrumb {
     display: flex;
     list-style: none;
     padding: 0;
