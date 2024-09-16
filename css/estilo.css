@@ -177,8 +177,9 @@
   }
 
   .submenu-item img:hover{
+    transition: all 400ms ease;
     transform: scale(1.2);
-    
+
   }
 
   .submenu-item a{
