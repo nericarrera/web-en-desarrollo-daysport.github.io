@@ -191,6 +191,12 @@
 
   }
 
+  .submenu-item a:hover{
+    background:  #360353;
+    color: #FFFFFF;
+    transition: all 430ms ease;
+  }
+
  
   
   /* Mostrar el submenú al hacer hover */
