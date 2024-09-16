@@ -185,8 +185,7 @@
   .submenu-item a{
     color: #000;
     font-weight: 500;
-    list-style: none;
-    text-decoration-style: none;
+    list-style-type: none;
   }
   
   /* Mostrar el submenú al hacer hover */
