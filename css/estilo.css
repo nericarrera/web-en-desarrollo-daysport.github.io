@@ -1467,9 +1467,12 @@ textarea {
 .iconos {
     height: 100px;
     width: 150px;
-    display: inline;
-    margin-top: 40px;
-
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .conteiner-icono-nav{
