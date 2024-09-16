@@ -54,6 +54,26 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const breadcrumb = document.querySelector(".breadcrumb");
+  const pathArray = window.location.pathname.split("/").filter(item => item);
+
+  let breadcrumbHTML = `<li><a href="/">Inicio</a></li>`;
+  let accumulatedPath = "";
+
+  pathArray.forEach((segment, index) => {
+      accumulatedPath += `/${segment}`;
+      if (index === pathArray.length - 1) {
+          breadcrumbHTML += `<li><a href="#">${segment}</a></li>`;
+      } else {
+          breadcrumbHTML += `<li><a href="${accumulatedPath}">${segment}</a></li>`;
+      }
+  });
+
+  breadcrumb.innerHTML = breadcrumbHTML;
+});
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
