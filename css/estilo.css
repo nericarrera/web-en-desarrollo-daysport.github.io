@@ -378,11 +378,12 @@
 }
 
 
-.card-imagenes img,h2,p:hover{
-    transform: scale(1.1);
+.card-imagenes:hover{
+    background: #f3ff05;
    transition: all 580ms ease;
    cursor: pointer;
 }
+
 
 .card-imagenes h2{
     display: block;
