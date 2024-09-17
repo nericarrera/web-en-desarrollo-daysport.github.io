@@ -677,12 +677,19 @@
   .product img{
     display: flex;
     width: 100%;
-    
   }
 
-  .product-titulo{
+  .product-nombre{
+    font-size: 16px;
+    color: #000000;
     font-family: 'Oswald', sans-serif;
   }
+
+  .product-precio{
+    font-family: 'Oswald', sans-serif;
+  }
+
+  
 
 
   /* Opciones ocultas por defecto */
