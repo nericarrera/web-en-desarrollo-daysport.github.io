@@ -679,6 +679,11 @@
     width: 100%;
   }
 
+  .product-inf{
+    display: flex;
+    padding: 3px;
+  }
+
   .product-nombre{
     font-size: 16px;
     color: #000000;
