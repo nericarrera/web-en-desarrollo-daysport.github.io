@@ -554,11 +554,11 @@
     align-items: flex-start;
   }
 
-  #clear-filter{
+  #clear-filters{
     display: flex;
     margin: auto;
     padding: 5px;
-    
+
   }
 
 
