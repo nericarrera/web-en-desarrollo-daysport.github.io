@@ -176,6 +176,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const filters = document.querySelectorAll('.filter-option input');
+  const clearButton = document.getElementById('clear-filters');
+  const productCards = document.querySelectorAll('.product-card');
+
+  filters.forEach(filter => {
+    filter.addEventListener('change', updateFilters);
+  });
+
+  clearButton.addEventListener('click', clearFilters);
+
+  function updateFilters() {
+    const selectedFilters = Array.from(filters)
+      .filter(filter => filter.checked)
+      .map(filter => filter.value);
+
+    productCards.forEach(card => {
+      const cardGender = card.getAttribute('data-gender');
+      const cardCategory = card.getAttribute('data-category');
+
+      if (selectedFilters.includes(cardGender) || selectedFilters.includes(cardCategory)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function clearFilters() {
+    filters.forEach(filter => {
+      filter.checked = false;
+    });
+    productCards.forEach(card => {
+      card.style.display = 'block';
+    });
+  }
+});
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los headers que se usan para togglear
   const toggleHeaders = document.querySelectorAll('.toggle-header');
