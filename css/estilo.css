@@ -151,7 +151,6 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
     width: auto;
     background-color: #ffffff77;
     justify-content: center;
