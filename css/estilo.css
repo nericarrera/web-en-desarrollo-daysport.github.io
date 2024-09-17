@@ -686,6 +686,8 @@
   }
 
   .product-precio{
+    font-size: 15px;
+    color: #000000;
     font-family: 'Oswald', sans-serif;
   }
 
