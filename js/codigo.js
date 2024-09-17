@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const filters = document.querySelectorAll('.filter-option input');
   const clearButton = document.getElementById('clear-filters');
-  const productCards = document.querySelectorAll('.product-card');
+  const productCards = document.querySelectorAll('.product');
 
   filters.forEach(filter => {
     filter.addEventListener('change', updateFilters);
