@@ -313,61 +313,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
 
-document.addEventListener('DOMContentLoaded', function() {
-    const products = [
-      { id: 1, name: "Campera Hombre", gender: "hombre", category: "camperas", size: "M", price: 3500 },
-      { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000 },
-      { id: 3, name: "Campera Mujer", gender: "mujer", category: "camperas", size: "S", price: 4500 },
-      // Agrega más productos aquí...
-    ];
-  
-    const filters = {
-      gender: [],
-      category: [],
-      size: []
-    };
-  
-    // Actualizar los filtros cuando se seleccionan los checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
-        const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
-        const filterValue = this.value;
-  
-        if (this.checked) {
-          filters[filterType].push(filterValue);
-        } else {
-          filters[filterType] = filters[filterType].filter(value => value !== filterValue);
-        }
-  
-        updateProducts();
-      });
-    });
-  
-    function updateProducts() {
-      const filteredProducts = products.filter(product => {
-        const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
-        const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
-        const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
-  
-        return matchGender && matchCategory && matchSize;
-      });
-  
-      // Renderiza los productos filtrados
-      const productsGrid = document.querySelector('.products-grid');
-      productsGrid.innerHTML = ''; // Limpiar
-      filteredProducts.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.className = 'product';
-        productDiv.textContent = product.name;
-        productsGrid.appendChild(productDiv);
-      });
-    }
-  
-    // Inicializa mostrando todos los productos
-    updateProducts();
-  });
-
-
 
 
 let currentPosition = 0;
