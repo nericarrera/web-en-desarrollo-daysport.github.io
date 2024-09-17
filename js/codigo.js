@@ -219,81 +219,78 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleccionar todos los headers que se usan para togglear
-  const toggleHeaders = document.querySelectorAll('.toggle-header');
+document.addEventListener('DOMContentLoaded', function() {
+  const products = [
+    { id: 1, name: "Campera Hombre", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/campera/campera1.jpg" },
+    { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000, image: "img/mujer/remera/remera1.jpg" },
+    { id: 3, name: "Campera Mujer", gender: "mujer", category: "campera-liviana", size: "S", price: 4500, image: "img/mujer/campera/campera2.jpg" },
+    // Agrega más productos aquí, asegurándote que las categorías coincidan con las del HTML
+  ];
 
-  toggleHeaders.forEach(header => {
-    header.addEventListener('click', function() {
-      const targetId = header.getAttribute('data-target');
-      const target = document.getElementById(targetId);
-      
-      if (target) {
-        // Alternar la clase "active" para mostrar/ocultar contenido
-        target.classList.toggle('active');
-        
-        // Alternar la clase "expanded" para rotar la flecha
-        header.classList.toggle('expanded');
+  const filters = {
+    gender: [],
+    category: [],
+    size: []
+  };
+
+  // Actualizar los filtros cuando se seleccionan los checkboxes
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
+      const filterValue = this.value;
+
+      if (this.checked) {
+        filters[filterType].push(filterValue);
+      } else {
+        filters[filterType] = filters[filterType].filter(value => value !== filterValue);
       }
+
+      updateProducts();
     });
   });
-});
 
-  
+  function updateProducts() {
+    const filteredProducts = products.filter(product => {
+      const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
+      const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
+      const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const products = [
-      { id: 1, name: "Campera Hombre", gender: "hombre", category: "camperas", size: "M", price: 3500 },
-      { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000 },
-      { id: 3, name: "Campera Mujer", gender: "mujer", category: "camperas", size: "S", price: 4500 },
-      // Agrega más productos aquí...
-    ];
-  
-    const filters = {
-      gender: [],
-      category: [],
-      size: []
-    };
-  
-    // Actualizar los filtros cuando se seleccionan los checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
-        const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
-        const filterValue = this.value;
-  
-        if (this.checked) {
-          filters[filterType].push(filterValue);
-        } else {
-          filters[filterType] = filters[filterType].filter(value => value !== filterValue);
-        }
-  
-        updateProducts();
-      });
+      return matchGender && matchCategory && matchSize;
     });
-  
-    function updateProducts() {
-      const filteredProducts = products.filter(product => {
-        const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
-        const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
-        const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
-  
-        return matchGender && matchCategory && matchSize;
-      });
-  
-      // Renderiza los productos filtrados
-      const productsGrid = document.querySelector('.products-grid');
-      productsGrid.innerHTML = ''; // Limpiar
+
+    // Renderiza los productos filtrados con imagen, nombre y precio
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar
+    
+    if (filteredProducts.length === 0) {
+      productsGrid.textContent = "No se encontraron productos.";
+    } else {
       filteredProducts.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
-        productDiv.textContent = product.name;
+        
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+        
+        const productName = document.createElement('p');
+        productName.textContent = product.name;
+        
+        const productPrice = document.createElement('p');
+        productPrice.textContent = `$${product.price}`;
+
+        productDiv.appendChild(img);
+        productDiv.appendChild(productName);
+        productDiv.appendChild(productPrice);
+
         productsGrid.appendChild(productDiv);
       });
     }
-  
-    // Inicializa mostrando todos los productos
-    updateProducts();
-  });
+  }
+
+  // Inicializa mostrando todos los productos
+  updateProducts();
+});
 
 
 
