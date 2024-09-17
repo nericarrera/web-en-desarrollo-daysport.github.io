@@ -556,9 +556,12 @@
 
   #clear-filters{
     display: flex;
+    justify-content: center;
     margin: auto;
     padding: 5px;
-
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
   }
 
 
@@ -618,6 +621,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: auto;
   }
 
 
