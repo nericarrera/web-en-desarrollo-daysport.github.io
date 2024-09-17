@@ -198,9 +198,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
       { id: 1, name: "Campera Hombre", gender: "hombre", category: "camperas", size: "M", price: 3500 },
