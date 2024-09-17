@@ -248,7 +248,28 @@
  
   
   /* Mostrar el submenú al hacer hover */
-  .menu .menu-ul:hover .submenu {
+  .menu .menu-ul:hover .submenu1 {
+    display: flex;
+    background: #ffffff;
+    color: #360353;
+    transition: all 890ms ease;
+  }
+
+  .menu .menu-ul:hover .submenu2 {
+    display: flex;
+    background: #ffffff;
+    color: #360353;
+    transition: all 890ms ease;
+  }
+
+  .menu .menu-ul:hover .submenu3 {
+    display: flex;
+    background: #ffffff;
+    color: #360353;
+    transition: all 890ms ease;
+  }
+
+  .menu .menu-ul:hover .submenu4 {
     display: flex;
     background: #ffffff;
     color: #360353;
