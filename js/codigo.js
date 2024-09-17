@@ -109,25 +109,29 @@ document.addEventListener('DOMContentLoaded', function() {
   const priceValue = document.getElementById('price-value');
   const products = document.querySelectorAll('.product');
   const menuLinks = document.querySelectorAll('.menu-li-a, .submenu-item a');
+  const searchInput = document.getElementById('search');
 
   function filterProducts() {
     const selectedGenders = Array.from(genderCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedCategories = Array.from(categoryCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedSizes = Array.from(sizeCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedPrice = parseInt(priceRange.value);
+    const searchTerm = searchInput.value.toLowerCase();
 
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
       const productSize = product.getAttribute('data-size');
       const productPrice = parseInt(product.getAttribute('data-price'));
+      const productName = product.getAttribute('data-name').toLowerCase();
 
       const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
       const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
       const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
       const priceMatch = productPrice <= selectedPrice;
+      const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
 
-      if (genderMatch && categoryMatch && sizeMatch && priceMatch) {
+      if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
         product.style.display = 'block';
       } else {
         product.style.display = 'none';
@@ -142,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     priceValue.textContent = `$${priceRange.value}`;
     filterProducts();
   });
+  searchInput.addEventListener('input', filterProducts);
 
   menuLinks.forEach(link => {
     link.addEventListener('click', function(event) {
