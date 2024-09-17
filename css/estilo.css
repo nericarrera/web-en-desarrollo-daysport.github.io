@@ -155,7 +155,7 @@
     background-color: #ffffff77;
     justify-content: center;
     padding: 10px 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     color: #000000;
     border-radius: 15px;
     list-style-type: none;
