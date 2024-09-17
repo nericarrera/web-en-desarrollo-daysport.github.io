@@ -110,13 +110,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = document.querySelectorAll('.product');
   const menuLinks = document.querySelectorAll('.menu-li-a, .submenu-item a');
   const searchInput = document.getElementById('search');
+  const clearFiltersButton = document.getElementById('clear-filters');
 
   function filterProducts() {
     const selectedGenders = Array.from(genderCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedCategories = Array.from(categoryCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedSizes = Array.from(sizeCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedPrice = parseInt(priceRange.value);
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
 
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
@@ -139,6 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  function clearFilters() {
+    genderCheckboxes.forEach(checkbox => checkbox.checked = false);
+    categoryCheckboxes.forEach(checkbox => checkbox.checked = false);
+    sizeCheckboxes.forEach(checkbox => checkbox.checked = false);
+    priceRange.value = priceRange.max;
+    priceValue.textContent = `$${priceRange.value}`;
+    if (searchInput) searchInput.value = '';
+    filterProducts();
+  }
+
   genderCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
   categoryCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
   sizeCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
@@ -146,7 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     priceValue.textContent = `$${priceRange.value}`;
     filterProducts();
   });
-  searchInput.addEventListener('input', filterProducts);
+  if (searchInput) searchInput.addEventListener('input', filterProducts);
+  clearFiltersButton.addEventListener('click', clearFilters);
 
   menuLinks.forEach(link => {
     link.addEventListener('click', function(event) {
