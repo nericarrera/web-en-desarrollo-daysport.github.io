@@ -649,7 +649,7 @@
     padding: 10px;
     width: 130px;
     background: #ffffff;
-    box-shadow: 1px 1px 1px 1px #000;
+    
   }
 
   .filter-titulo-section:hover{
@@ -720,7 +720,8 @@
     font-size: 11px;
     transform: rotate(0deg);
     transition: transform 0.3s ease; /* animación suave al rotar */
-    margin-right: 10px;
+    margin-right: 0px;
+    margin-top: 6px;
   }
 
   
