@@ -221,10 +221,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const products = [
-    { id: 1, name: "Campera Hombre", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/campera/campera1.jpg" },
+    { id: 1, name: "Campera Hombre Liviana", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/campera/campera-liviana1.jpg" },
     { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000, image: "img/mujer/remera/remera1.jpg" },
-    { id: 3, name: "Campera Mujer", gender: "mujer", category: "campera-liviana", size: "S", price: 4500, image: "img/mujer/campera/campera2.jpg" },
-    // Agrega más productos aquí, asegurándote que las categorías coincidan con las del HTML
+    { id: 3, name: "Campera Mujer de Abrigo", gender: "mujer", category: "campera-abrigo", size: "S", price: 4500, image: "img/mujer/campera/campera-abrigo2.jpg" },
+    // Agrega más productos según tus necesidades...
   ];
 
   const filters = {
@@ -233,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
     size: []
   };
 
+  // Resto del código (filtros y renderizado) permanece igual
   // Actualizar los filtros cuando se seleccionan los checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
@@ -261,21 +262,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Renderiza los productos filtrados con imagen, nombre y precio
     const productsGrid = document.querySelector('.products-grid');
     productsGrid.innerHTML = ''; // Limpiar
-    
+
     if (filteredProducts.length === 0) {
       productsGrid.textContent = "No se encontraron productos.";
     } else {
       filteredProducts.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
-        
+
         const img = document.createElement('img');
         img.src = product.image;
         img.alt = product.name;
-        
+
         const productName = document.createElement('p');
         productName.textContent = product.name;
-        
+
         const productPrice = document.createElement('p');
         productPrice.textContent = `$${product.price}`;
 
@@ -291,7 +292,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializa mostrando todos los productos
   updateProducts();
 });
-
 
 
 
