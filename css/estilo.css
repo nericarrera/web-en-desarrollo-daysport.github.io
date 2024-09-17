@@ -568,6 +568,7 @@
     border: 0;
     background: #FFFFFF;
     position: relative;
+    letter-spacing: 1px;
   }
 
   #clear-filters:hover{
