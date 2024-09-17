@@ -665,7 +665,7 @@
     padding: 10px;
   }
   
-  .product-card {
+  .product {
     display: flex;
     padding: 20px;
     text-align: center;
@@ -673,7 +673,7 @@
     border-radius: 5px;
   }
 
-  .product-card img{
+  .product img{
     display: flex;
     width: 100%;
     
