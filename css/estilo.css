@@ -574,6 +574,8 @@
     transition: all 500ms ease;
     text-decoration: underline;
     cursor: pointer;
+    background: #000000;
+    color: #FFFFFF;
   }
 
 
