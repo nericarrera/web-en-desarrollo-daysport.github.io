@@ -666,7 +666,7 @@
   }
   
   .product {
-    
+    display: flex;
     padding: 20px;
     text-align: center;
     border: 1px solid #ddd;
