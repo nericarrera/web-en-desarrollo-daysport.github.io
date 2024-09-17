@@ -52,6 +52,32 @@ window.addEventListener('load', updateDimensions);
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search');
+  const products = document.querySelectorAll('.product');
+
+  function filterProducts() {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    products.forEach(product => {
+      const productName = product.getAttribute('data-name').toLowerCase();
+      const productGender = product.getAttribute('data-gender').toLowerCase();
+      const productCategory = product.getAttribute('data-category').toLowerCase();
+
+      if (productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', filterProducts);
+});
+
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
