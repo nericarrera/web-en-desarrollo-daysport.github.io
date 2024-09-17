@@ -150,10 +150,10 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 73%;
+    transform: translateX(-28%);
     width: auto;
-    background-color: #ffffff77;
+    background-color: #ffffff;
     justify-content: center;
     padding: 10px 0;
     flex-wrap: nowrap;
@@ -166,7 +166,7 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 95%;
     transform: translateX(-50%);
     width: auto;
     background-color: #ffffff77;
@@ -183,7 +183,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-51%);
     width: auto;
     background-color: #ffffff77;
     justify-content: center;
