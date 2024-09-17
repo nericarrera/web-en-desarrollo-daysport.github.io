@@ -680,6 +680,9 @@
   }
 
   .product-inf{
+    position: relative;
+    width: auto;
+    height: auto;
     display: flex;
     padding: 3px;
   }
