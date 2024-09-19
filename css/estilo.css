@@ -1537,7 +1537,7 @@ text-decoration: underline;
 
 /* FORMULARIO - EMAIL  */
 
-.conteiner-formularios{
+.conteiner-formulario{
     width: 97%;
     display: flex;
     border-radius: 15px;
@@ -1554,7 +1554,6 @@ text-decoration: underline;
 form {
     width: 440px;
     height: 530px;
-    background: url(img/pexels-dinielle-de-veyra-4194632.jpg);
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -1589,6 +1588,10 @@ textarea {
     min-height: 200px;
     max-height: 50px;
     max-width: 100%;
+}
+
+ boton{
+
 }
 
 
