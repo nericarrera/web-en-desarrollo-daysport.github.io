@@ -1590,7 +1590,10 @@ textarea {
     max-width: 100%;
 }
 
- boton{
+#boton:hover{
+    background: #ab70ce;
+    cursor: pointer;
+
 
 }
 
