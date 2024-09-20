@@ -109,6 +109,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('search');
   const clearFiltersButton = document.getElementById('clear-filters');
 
+  function assignButtonEvents() {
+    const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
+    const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
+
+    agregarButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Producto agregado al carrito');
+      });
+    });
+
+    comprarButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Producto comprado');
+      });
+    });
+  }
+
   // Función para filtrar productos
   function filterProducts() {
     const selectedGenders = Array.from(genderCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
@@ -117,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedPrice = parseInt(priceRange.value);
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
 
-    // Filtrar los productos basados en los criterios seleccionados
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
@@ -137,6 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
         product.style.display = 'none';   // Ocultar producto si no cumple
       }
     });
+
+    // Reasignar los eventos de los botones cada vez que se filtre
+    assignButtonEvents();
   }
 
   // Función para limpiar filtros
