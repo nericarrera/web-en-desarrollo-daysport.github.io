@@ -667,6 +667,8 @@
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
+    width: 285px;
+    height: 495px;
   }
 
   .product img {
