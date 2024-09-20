@@ -336,11 +336,11 @@ section {
 .product-page-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     justify-content: space-between;
     background-color: #f9f9f9;
     max-width: 900px; /* Reducimos el ancho para hacer la página más compacta */
-    margin: 0 auto;
+    margin: auto;
 }
 
 .product-image-section {
