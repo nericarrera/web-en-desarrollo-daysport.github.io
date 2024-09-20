@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
     productCards.forEach(card => {
       const cardGender = card.getAttribute('data-gender');
       const cardCategory = card.getAttribute('data-category');
+
       if (selectedFilters.includes(cardGender) || selectedFilters.includes(cardCategory)) {
         card.style.display = 'block';
       } else {
@@ -211,7 +212,11 @@ document.addEventListener('DOMContentLoaded', function() {
       card.style.display = 'block';
     });
   }
+});
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
   const products = [
     { id: 1, name: "Campera Hombre Liviana", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/joggin/WhatsApp Image 2024-07-06 at 22.31.59 (2).jpeg" },
     { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000, image: "img/mujer/remera/remera1.jpg" },
@@ -219,34 +224,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agrega más productos según tus necesidades...
   ];
 
-  const filtersState = {
+  const filters = {
     gender: [],
     category: [],
     size: []
   };
 
+  // Resto del código (filtros y renderizado) permanece igual
+  // Actualizar los filtros cuando se seleccionan los checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
       const filterType = this.name; // Puede ser 'gender', 'category', o 'size'
       const filterValue = this.value;
 
       if (this.checked) {
-        filtersState[filterType].push(filterValue);
+        filters[filterType].push(filterValue);
       } else {
-        filtersState[filterType] = filtersState[filterType].filter(value => value !== filterValue);
+        filters[filterType] = filters[filterType].filter(value => value !== filterValue);
       }
+
       updateProducts();
     });
   });
 
   function updateProducts() {
     const filteredProducts = products.filter(product => {
-      const matchGender = filtersState.gender.length ? filtersState.gender.includes(product.gender) : true;
-      const matchCategory = filtersState.category.length ? filtersState.category.includes(product.category) : true;
-      const matchSize = filtersState.size.length ? filtersState.size.includes(product.size) : true;
+      const matchGender = filters.gender.length ? filters.gender.includes(product.gender) : true;
+      const matchCategory = filters.category.length ? filters.category.includes(product.category) : true;
+      const matchSize = filters.size.length ? filters.size.includes(product.size) : true;
+
       return matchGender && matchCategory && matchSize;
     });
 
+    // Renderiza los productos filtrados con imagen, nombre y precio
     const productsGrid = document.querySelector('.products-grid');
     productsGrid.innerHTML = ''; // Limpiar
 
@@ -256,16 +266,21 @@ document.addEventListener('DOMContentLoaded', function() {
       filteredProducts.forEach(product => {
         const productDiv = document.createElement('div');
         productDiv.className = 'product';
+
         const img = document.createElement('img');
         img.src = product.image;
         img.alt = product.name;
+
         const productName = document.createElement('p');
         productName.textContent = product.name;
+
         const productPrice = document.createElement('p');
         productPrice.textContent = `$${product.price}`;
+
         productDiv.appendChild(img);
         productDiv.appendChild(productName);
         productDiv.appendChild(productPrice);
+
         productsGrid.appendChild(productDiv);
       });
     }
@@ -273,34 +288,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Inicializa mostrando todos los productos
   updateProducts();
+});
 
-  // Código para togglear contenido
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Seleccionar todos los headers que se usan para togglear
   const toggleHeaders = document.querySelectorAll('.toggle-header');
 
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
       const targetId = header.getAttribute('data-target');
       const target = document.getElementById(targetId);
-
+      
       if (target) {
+        // Alternar la clase "active" para mostrar/ocultar contenido
         target.classList.toggle('active');
+        
+        // Alternar la clase "expanded" para rotar la flecha
         header.classList.toggle('expanded');
       }
     });
   });
+});
 
-  // Código para botones de agregar y comprar
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona todos los botones con la clase 'btn-agregar-filtro'
   const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
   const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
 
+  // Añade un event listener a cada botón de agregar
   agregarButtons.forEach(button => {
     button.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el botón "Agregar"
       alert('Producto agregado al carrito');
     });
   });
 
+  // Añade un event listener a cada botón de comprar
   comprarButtons.forEach(button => {
     button.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el botón "Comprar"
       alert('Producto comprado');
     });
   });
