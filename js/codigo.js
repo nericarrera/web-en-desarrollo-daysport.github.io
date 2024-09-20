@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('search');
   const clearFiltersButton = document.getElementById('clear-filters');
 
+  // Función para filtrar productos
   function filterProducts() {
     const selectedGenders = Array.from(genderCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
     const selectedCategories = Array.from(categoryCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
@@ -116,29 +117,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedPrice = parseInt(priceRange.value);
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
 
+    // Filtrar los productos basados en los criterios seleccionados
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
       const productSize = product.getAttribute('data-size');
-      const productPrice = parseInt(product.getAttribute('data-price'));
-      const productName = product.getAttribute('data-name').toLowerCase();
+      const productPrice = parseInt(product.getAttribute('data-price')) || 0;
+      const productName = product.getAttribute('data-name').toLowerCase() || '';
 
-      products.forEach(product => {
-        const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
-        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
-        const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
-        const priceMatch = productPrice <= selectedPrice;
-        const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
-      
-        if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
-          product.style.display = 'block';  // Mostrar producto
-        } else {
-          product.style.display = 'none';  // Ocultar producto
-        }
-      
-      });
-    
+      const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
+      const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
+      const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
+      const priceMatch = productPrice <= selectedPrice;
+      const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
 
+      if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
+        product.style.display = 'block';  // Mostrar producto si cumple con los filtros
+      } else {
+        product.style.display = 'none';   // Ocultar producto si no cumple
+      }
+    });
+  }
+
+  // Función para limpiar filtros
   function clearFilters() {
     genderCheckboxes.forEach(checkbox => checkbox.checked = false);
     categoryCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -149,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     filterProducts();
   }
 
+  // Escuchar los cambios en los filtros
   genderCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
   categoryCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
   sizeCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterProducts));
@@ -159,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (searchInput) searchInput.addEventListener('input', filterProducts);
   clearFiltersButton.addEventListener('click', clearFilters);
 
+  // Enlazar los enlaces del menú a los filtros correspondientes
   menuLinks.forEach(link => {
     link.addEventListener('click', function(event) {
       event.preventDefault();
@@ -170,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Inicializar mostrando todos los productos
   filterProducts();
 });
 
