@@ -540,7 +540,6 @@ section {
 
 .related-products-gallery {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
     padding-bottom: 10px;
 }
