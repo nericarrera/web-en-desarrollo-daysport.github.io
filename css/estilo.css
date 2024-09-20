@@ -553,12 +553,12 @@
     flex-direction: column;
     gap: 12px;
     align-items: flex-start;
+    margin-bottom: -5px;
   }
 
   #clear-filters{
     display: flex;
     justify-content: flex-end;
-    margin: auto;
     padding: 5px;
     margin-right: 1px;
     margin-bottom: 25px;
@@ -647,7 +647,7 @@
     font-size: 18px;
     color: #000000;
     font-weight: 600;
-    padding: 10px;
+    padding: 4px;
     width: 130px;
     background: #ffffff;
     
