@@ -699,27 +699,21 @@
     font-family: 'Oswald', sans-serif;
   }
 
-  .container-product-btn{
-    display: flex;
-    width: auto;
-    height: auto;
-    position: relative;
-    padding: 3px;
-    margin: auto;
+  .container-product-btn {
+    margin-top: 10px;
   }
 
   .btn-agregar-filtro, .btn-comprar-filtro {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
+    margin-right: 5px;
   }
 
   .btn-agregar-filtro:hover, .btn-comprar-filtro:hover {
-    background-color: #0056b3;
+    background-color: #218838;
   }
 
 
