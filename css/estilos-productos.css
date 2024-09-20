@@ -318,6 +318,11 @@ section {
   width: 20px;
 }
 
+.volver-a{
+  text-decoration: none;
+
+}
+
 .volver-titulo{
     display: inline;
     justify-content: center;
