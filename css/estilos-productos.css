@@ -329,13 +329,16 @@ section {
 }
 
 .product-page-container {
-    display: flex;
-    flex-wrap: nowrap;
-    padding: 10px;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    max-width: 100%; /* Reducimos el ancho para hacer la página más compacta */
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  max-width: 100%;
+  margin: auto;
+  flex-direction: row;
+  align-content: center;
+  align-items: flex-start;
 }
 
 .product-image-section {
