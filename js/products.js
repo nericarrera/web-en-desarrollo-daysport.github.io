@@ -48,3 +48,4 @@ function showVideo() {
 function toggleVideo() {
     document.getElementById('videoModal').classList.toggle('hidden');
 }
+

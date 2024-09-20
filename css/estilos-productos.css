@@ -304,14 +304,11 @@ section {
     margin-top: 15px;
     margin-left: 15px;
     position: relative;
-    
-
 }
 
 .volver{
     display: inline;
     width: auto;
-
 }
 
 .volver img{
@@ -320,7 +317,6 @@ section {
 
 .volver-a{
   text-decoration: none;
-
 }
 
 .volver-titulo{
@@ -330,7 +326,6 @@ section {
     margin: auto;
     margin-left: 5px;
     font-family: 'Oswald', sans-serif;
-    
 }
 
 .product-page-container {
@@ -344,9 +339,51 @@ section {
 }
 
 .product-image-section {
-    flex: 1;
-    max-width: 45%;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.main-image-wrapper {
+  width: 80%; /* Ajusta según lo que necesites */
+  margin-bottom: 15px;
+}
+
+.main-image {
+  width: 100%; /* La imagen ocupará todo el contenedor */
+  max-height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Efecto de transición para el zoom */
+}
+
+.thumbnail-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail-gallery img:hover {
+  border: 2px solid #000; /* Cambia el color al pasar el mouse */
+}
+
+/* Efecto de zoom cuando el mouse está sobre la imagen principal */
+.main-image:hover {
+  transform: scale(1.1); /* Aumenta el tamaño un 10% al hacer hover */
+}
+
+/* Adaptabilidad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .main-image-wrapper {
+      width: 100%; /* En pantallas pequeñas la imagen ocupará el 100% del ancho */
+  }
+
+  .thumbnail-gallery img {
+      width: 80px;
+      height: 80px;
+  }
 }
 
 .product-image-gallery img {
