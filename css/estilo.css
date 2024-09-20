@@ -708,6 +708,19 @@
     margin: auto;
   }
 
+  .btn-agregar-filtro, .btn-comprar-filtro {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-agregar-filtro:hover, .btn-comprar-filtro:hover {
+    background-color: #0056b3;
+  }
 
 
 
