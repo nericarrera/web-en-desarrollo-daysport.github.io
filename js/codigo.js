@@ -1,18 +1,15 @@
+let currentIndex = 0;
 const track = document.querySelector('.banner-track');
 const slides = document.querySelectorAll('.banner-slide');
-let currentIndex = 0;
 
 function changeSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
-
 setInterval(changeSlide, 25000);  // Cambia cada 5 segundos
 
 
-
 /* flechas para mover las cards - 1er seccion */
-
 
 const cardWrapper = document.querySelector('.card-wrapper');
 const nextArrow = document.getElementById('nextArrow');
