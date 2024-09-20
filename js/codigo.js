@@ -126,19 +126,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const productPrice = parseInt(product.getAttribute('data-price'));
       const productName = product.getAttribute('data-name').toLowerCase();
 
-      const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
-      const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
-      const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
-      const priceMatch = productPrice <= selectedPrice;
-      const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
-
-      if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
-        product.style.display = 'block';
-      } else {
-        product.style.display = 'none';
-      }
-    });
-  }
+      products.forEach(product => {
+        const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
+        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
+        const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
+        const priceMatch = productPrice <= selectedPrice;
+        const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
+      
+        if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
+          product.style.display = 'block';  // Mostrar producto
+        } else {
+          product.style.display = 'none';  // Ocultar producto
+        }
+      });
+  
 
   function clearFilters() {
     genderCheckboxes.forEach(checkbox => checkbox.checked = false);
