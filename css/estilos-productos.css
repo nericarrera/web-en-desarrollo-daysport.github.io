@@ -318,6 +318,8 @@ section {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin: auto;
+    margin-left: 5px;
     
 }
 
