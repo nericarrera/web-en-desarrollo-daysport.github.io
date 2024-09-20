@@ -319,12 +319,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+function filterProducts() {
+  // Lógica de filtrado...
+
+  // Reasignar eventos a los botones después de actualizar la visibilidad
   const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
   const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
-
-  console.log(agregarButtons); // Verifica que los botones se están seleccionando
-  console.log(comprarButtons); // Verifica que los botones se están seleccionando
 
   agregarButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -337,7 +337,10 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Producto comprado');
     });
   });
-});
+}
+
+// Llamar a filterProducts cada vez que se haga un cambio
+filterProducts();
 
 
 
