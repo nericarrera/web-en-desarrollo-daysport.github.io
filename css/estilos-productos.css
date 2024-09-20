@@ -320,11 +320,12 @@ section {
 }
 
 .volver-titulo{
-    display: flex;
+    display: inline;
     justify-content: center;
     text-align: center;
     margin: auto;
     margin-left: 5px;
+    font-family: 'Oswald', sans-serif;
     
 }
 
