@@ -309,9 +309,14 @@ section {
 }
 
 .volver{
-    display: flex;
+    display: inline;
     width: auto;
 
+}
+
+.volver img{
+  
+  width: 25px;
 }
 
 .volver-titulo{
