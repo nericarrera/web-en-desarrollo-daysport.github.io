@@ -114,20 +114,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
     const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
 
-    // Asignar eventos a los botones de "Agregar"
     agregarButtons.forEach(button => {
-      button.removeEventListener('click', handleAddToCart);  // Remover event listeners antiguos (si los hubiera)
+      button.removeEventListener('click', handleAddToCart);  // Remover eventos antiguos
       button.addEventListener('click', handleAddToCart);
     });
 
-    // Asignar eventos a los botones de "Comprar"
     comprarButtons.forEach(button => {
-      button.removeEventListener('click', handleBuyNow);  // Remover event listeners antiguos (si los hubiera)
+      button.removeEventListener('click', handleBuyNow);  // Remover eventos antiguos
       button.addEventListener('click', handleBuyNow);
     });
   }
 
-  // Funciones para manejar los clics de "Agregar" y "Comprar"
+  // Funciones para manejar clics
   function handleAddToCart() {
     alert('Producto agregado al carrito');
   }
@@ -149,22 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
       const productCategory = product.getAttribute('data-category');
       const productSize = product.getAttribute('data-size');
       const productPrice = parseInt(product.getAttribute('data-price')) || 0;
-      const productName = product.getAttribute('data-name').toLowerCase() || '';
+      const productName = product.getAttribute('data-name') ? product.getAttribute('data-name').toLowerCase() : '';
 
       const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
       const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
       const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
       const priceMatch = productPrice <= selectedPrice;
-      const searchMatch = productName.includes(searchTerm) || productGender.includes(searchTerm) || productCategory.includes(searchTerm);
+      const searchMatch = productName.includes(searchTerm);
 
       if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
-        product.style.display = 'block';  // Mostrar producto si cumple con los filtros
+        product.style.display = 'block';  // Mostrar producto
       } else {
-        product.style.display = 'none';   // Ocultar producto si no cumple
+        product.style.display = 'none';   // Ocultar producto
       }
     });
 
-    // Volver a asignar eventos a los botones después del filtrado
+    // Asegurarse de que los botones tengan eventos asignados
     assignButtonEvents();
   }
 
@@ -190,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (searchInput) searchInput.addEventListener('input', filterProducts);
   clearFiltersButton.addEventListener('click', clearFilters);
 
-  // Enlazar los enlaces del menú a los filtros correspondientes
+  // Filtrar productos al hacer clic en los enlaces del menú
   menuLinks.forEach(link => {
     link.addEventListener('click', function(event) {
       event.preventDefault();
@@ -202,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Inicializar mostrando todos los productos y asignar eventos a los botones
+  // Inicializar mostrando todos los productos
   filterProducts();
 });
 
