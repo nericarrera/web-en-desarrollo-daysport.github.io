@@ -659,24 +659,20 @@
   }
   
   .products-grid {
-    width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-    padding: 10px;
+    gap: 20px;
   }
   
   .product {
-    display: inline;
+    border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
   }
 
-  .product img{
-    display: flex;
+  .product img {
     width: 100%;
+    height: auto;
   }
 
   .product-inf{
