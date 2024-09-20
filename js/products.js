@@ -35,3 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Puedes agregar más casos para otros productos...
 });
+
+
+function changeImage(element) {
+    document.getElementById('mainImage').src = element.src;
+}
+
+function showVideo() {
+    document.getElementById('videoModal').classList.remove('hidden');
+}
+
+function toggleVideo() {
+    document.getElementById('videoModal').classList.toggle('hidden');
+}
