@@ -138,8 +138,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           product.style.display = 'none';  // Ocultar producto
         }
+      
       });
-  
+    
 
   function clearFilters() {
     genderCheckboxes.forEach(checkbox => checkbox.checked = false);
