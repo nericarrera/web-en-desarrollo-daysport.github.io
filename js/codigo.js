@@ -109,21 +109,31 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('search');
   const clearFiltersButton = document.getElementById('clear-filters');
 
+  // Función para asignar eventos a los botones
   function assignButtonEvents() {
     const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
     const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
 
+    // Asignar eventos a los botones de "Agregar"
     agregarButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        alert('Producto agregado al carrito');
-      });
+      button.removeEventListener('click', handleAddToCart);  // Remover event listeners antiguos (si los hubiera)
+      button.addEventListener('click', handleAddToCart);
     });
 
+    // Asignar eventos a los botones de "Comprar"
     comprarButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        alert('Producto comprado');
-      });
+      button.removeEventListener('click', handleBuyNow);  // Remover event listeners antiguos (si los hubiera)
+      button.addEventListener('click', handleBuyNow);
     });
+  }
+
+  // Funciones para manejar los clics de "Agregar" y "Comprar"
+  function handleAddToCart() {
+    alert('Producto agregado al carrito');
+  }
+
+  function handleBuyNow() {
+    alert('Producto comprado');
   }
 
   // Función para filtrar productos
@@ -154,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Reasignar los eventos de los botones cada vez que se filtre
+    // Volver a asignar eventos a los botones después del filtrado
     assignButtonEvents();
   }
 
@@ -192,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Inicializar mostrando todos los productos
+  // Inicializar mostrando todos los productos y asignar eventos a los botones
   filterProducts();
 });
 
