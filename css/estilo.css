@@ -478,49 +478,6 @@
 }
 
 
-/* BREADCRUM */
-
- /* Breadcrumb container */
-.breadcrumb-container {
-    margin: 20px 0; /* Ajusta el espacio de separación */
-}
-
-/* Estilo del contenedor */
-.breadcrumb {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Estilo para cada enlace */
-.breadcrumb li {
-    margin: 0 10px;
-}
-
-.breadcrumb li a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-/* Separador */
-.breadcrumb li::after {
-    content: ">";
-    margin-left: 10px;
-}
-
-/* Último elemento sin separador */
-.breadcrumb li:last-child::after {
-    content: "";
-}
-
-.breadcrumb li:last-child a {
-    color: #6c757d; /* Color gris para el último enlace */
-    pointer-events: none; /* No clicable */
-}
-
 /* FILTRO DE ROPA */
 
 .container {
