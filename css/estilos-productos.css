@@ -288,7 +288,8 @@
 
 section {
     display: flex;
-    width: 97%;
+    width: auto;
+    height: 60px;
     margin: auto;
     justify-content: flex-start;
     
