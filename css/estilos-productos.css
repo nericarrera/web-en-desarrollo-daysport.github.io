@@ -328,6 +328,12 @@ section {
     font-family: 'Oswald', sans-serif;
 }
 
+.volver-titulo:hover{
+  transition: all 500ms ease;
+  background: #000000a4;
+  cursor: pointer;
+}
+
 .product-page-container {
   display: flex;
   flex-wrap: wrap;
