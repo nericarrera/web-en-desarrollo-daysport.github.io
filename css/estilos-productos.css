@@ -331,7 +331,7 @@ section {
 .product-page-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 0px;
+  padding: 10px;
   justify-content: space-between;
   background-color: #f9f9f9;
   max-width: 100%;
