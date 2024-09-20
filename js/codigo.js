@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 1, name: "Campera Hombre Liviana", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/joggin/WhatsApp Image 2024-07-06 at 22.31.59 (2).jpeg" },
     { id: 2, name: "Remera Mujer", gender: "mujer", category: "remeras", size: "L", price: 2000, image: "img/mujer/remera/remera1.jpg" },
     { id: 3, name: "Campera Mujer de Abrigo", gender: "mujer", category: "campera-abrigo", size: "S", price: 4500, image: "img/mujer/campera/campera-abrigo2.jpg" },
+    { id: 4, name: "Campera Hombre Liviana", gender: "hombre", category: "campera-liviana", size: "M", price: 3500, image: "img/hombre/joggin/WhatsApp Image 2024-07-06 at 22.31.59 (2).jpeg" },
     // Agrega más productos según tus necesidades...
   ];
 
