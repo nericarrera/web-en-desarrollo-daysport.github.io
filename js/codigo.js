@@ -311,7 +311,28 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-  
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona todos los botones con la clase 'btn-agregar-filtro'
+  const agregarButtons = document.querySelectorAll('.btn-agregar-filtro');
+  const comprarButtons = document.querySelectorAll('.btn-comprar-filtro');
+
+  // Añade un event listener a cada botón de agregar
+  agregarButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el botón "Agregar"
+      alert('Producto agregado al carrito');
+    });
+  });
+
+  // Añade un event listener a cada botón de comprar
+  comprarButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica que deseas ejecutar cuando se hace clic en el botón "Comprar"
+      alert('Producto comprado');
+    });
+  });
+});
 
 
 
