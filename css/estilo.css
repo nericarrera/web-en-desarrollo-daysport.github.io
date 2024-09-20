@@ -696,6 +696,10 @@
 
   .container-product-btn {
     margin-top: 10px;
+    width: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
   }
 
   .btn-agregar-filtro, .btn-comprar-filtro {
