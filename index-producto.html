@@ -94,56 +94,50 @@
     </section>
     
     <div class="product-page-container">
-      <!-- Imagen destacada -->
-      <div class="product-image-section">
-          <div class="product-image-gallery">
-              <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Producto principal" id="mainImage">
-              <div class="thumbnail-gallery">
-                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 1" onclick="changeImage(this)">
-                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 2" onclick="changeImage(this)">
-                  <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 3" onclick="changeImage(this)">
-                  <!-- Agregar más imágenes -->
-                  <img src="img/hombre/Camperas de Abrigo/nueva-imagen.jpeg" alt="Miniatura 4" onclick="changeImage(this)">
-                  <!-- Miniatura para el video -->
-                  <img src="img/video-thumbnail.jpg" alt="Video" onclick="showVideo()">
-              </div>
-          </div>
-      </div>
-    
-      <!-- Video emergente -->
-      <div id="videoModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close" onclick="toggleVideo()">&times;</span>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- Imagen destacada -->
+        <div class="product-image-section">
+            <div class="product-image-gallery">
+                <div class="main-image-wrapper">
+                    <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Producto principal" id="mainImage" class="main-image">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 1" onclick="changeImage(this)">
+                    <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 2" onclick="changeImage(this)">
+                    <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Miniatura 3" onclick="changeImage(this)">
+                    <!-- Agregar más imágenes -->
+                    <img src="img/hombre/Camperas de Abrigo/nueva-imagen.jpeg" alt="Miniatura 4" onclick="changeImage(this)">
+                    <!-- Miniatura para el video -->
+                    <img src="img/video-thumbnail.jpg" alt="Video" onclick="showVideo()">
+                </div>
+            </div>
         </div>
-      </div>
     
-      <!-- Detalles del producto -->
-      <div class="product-details-section">
-          <h1 class="product-title">Campera Puffer TNF</h1>
-          <p class="product-code">Código: CP001</p>
-          <p class="product-price">$60.000</p>
+        <!-- Detalles del producto -->
+        <div class="product-details-section">
+            <h1 class="product-title">Campera Puffer TNF</h1>
+            <p class="product-code">Código: CP001</p>
+            <p class="product-price">$60.000</p>
     
-          <!-- Selección de talles -->
-          <div class="product-size">
-              <h3>Selecciona tu talla:</h3>
-              <div class="size-options">
-                  <button class="size-btn">S</button>
-                  <button class="size-btn">M</button>
-                  <button class="size-btn">L</button>
-                  <button class="size-btn">XL</button>
-              </div>
-              <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
-          </div>
+            <!-- Selección de talles -->
+            <div class="product-size">
+                <h3>Selecciona tu talla:</h3>
+                <div class="size-options">
+                    <button class="size-btn">S</button>
+                    <button class="size-btn">M</button>
+                    <button class="size-btn">L</button>
+                    <button class="size-btn">XL</button>
+                </div>
+                <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
+            </div>
     
-          <!-- Cantidad y botón de compra -->
-          <div class="product-quantity">
-              <label for="quantity">Cantidad:</label>
-              <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
-          </div>
-          <button class="btn-buy-now">Comprar Ahora</button>
-          <button class="btn-add-to-cart">Agregar al carrito</button>
-      </div>
+            <!-- Cantidad y botón de compra -->
+            <div class="product-quantity">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+            </div>
+            <button class="btn-buy-now">Comprar Ahora</button>
+            <button class="btn-add-to-cart">Agregar al carrito</button>
+        </div>
     </div>
     
     <div id="sizeChartModal" class="modal hidden">
