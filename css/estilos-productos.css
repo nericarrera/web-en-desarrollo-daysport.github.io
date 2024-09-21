@@ -336,38 +336,35 @@ section {
   color: #f9f9f9;
 }
 
+ /* PRODUCTO   */
+
 .product-page-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
   padding: 20px;
 }
 
-/* Estilo para la sección de imágenes */
-.product-media-section {
-  width: 55%; /* El 55% del ancho para las imágenes */
+
+.product-images-box {
+  width: 55%;
 }
 
-.main-image-wrapper {
+.product-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-gap: 15px;
+}
+
+.product-image-item {
   width: 100%;
-  margin-bottom: 15px;
 }
 
-.main-image {
+.product-image {
   width: 100%;
   height: auto;
-  max-height: 600px;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.thumbnail-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: flex-start;
-  width: 100px; /* Ancho fijo para miniaturas */
+  max-height: 400px;
 }
 
 .thumbnail-gallery img {
@@ -390,7 +387,7 @@ section {
 
 /* Sección de detalles del producto */
 .product-details-section {
-  width: 40%; /* El 40% del ancho para los detalles del producto */
+  width: 40%;
   padding-left: 20px;
 }
 
@@ -427,17 +424,8 @@ section {
   color: #fff;
 }
 
-.btn-buy-now, .btn-add-to-cart {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  margin: 15px 0;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  text-align: center;
+.btn-buy-now:hover, .btn-add-to-cart:hover {
+  background-color: #e60000;
 }
 
 .btn-buy-now:hover, .btn-add-to-cart:hover {
@@ -451,15 +439,14 @@ section {
       align-items: center;
   }
 
-  .product-media-section, .product-details-section {
+  .product-images-box, .product-details-section {
       width: 100%;
   }
 
-  .thumbnail-gallery {
-      flex-direction: row;
+  .product-images-grid {
+      grid-template-columns: 1fr;
   }
 }
-
 .thumbnail-gallery img:hover {
   border: 2px solid #000; /* Cambia el color al pasar el mouse */
 }
@@ -481,23 +468,7 @@ section {
   }
 }
 
-.product-image-gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.thumbnail-gallery {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.thumbnail-gallery img {
-    width: 22%;
-    cursor: pointer;
-    border-radius: 5px;
-}
+/* ------DETALLES PRODUCTO----- */
 
 .product-details-section {
     flex: 1;
