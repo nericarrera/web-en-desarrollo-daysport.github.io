@@ -338,46 +338,126 @@ section {
 
 .product-page-container {
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
   justify-content: space-between;
-  background-color: #f9f9f9;
-  max-width: 100%;
-  margin: auto;
-  flex-direction: row;
-  align-content: center;
   align-items: flex-start;
+  width: 100%;
+  padding: 20px;
 }
 
-.product-image-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 45%;
-}
-
-.product-image-gallery{
-  display: flex;
-  width: 50%;
+/* Estilo para la sección de imágenes */
+.product-media-section {
+  width: 55%; /* El 55% del ancho para las imágenes */
 }
 
 .main-image-wrapper {
-  width: 80%; /* Ajusta según lo que necesites */
+  width: 100%;
   margin-bottom: 15px;
 }
 
 .main-image {
-  width: 100%; /* La imagen ocupará todo el contenedor */
-  max-height: 500px;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Efecto de transición para el zoom */
+  transition: transform 0.3s ease;
 }
 
 .thumbnail-gallery {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 10px;
+  justify-content: flex-start;
+  width: 100px; /* Ancho fijo para miniaturas */
+}
+
+.thumbnail-gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.thumbnail-gallery img:hover {
+  border: 2px solid #000;
+}
+
+/* Efecto zoom en la imagen principal */
+.main-image:hover {
+  transform: scale(1.05);
+}
+
+/* Sección de detalles del producto */
+.product-details-section {
+  width: 40%; /* El 40% del ancho para los detalles del producto */
+  padding-left: 20px;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 24px;
+  color: #e60000;
+  margin: 10px 0;
+}
+
+.product-size h3, .product-quantity label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.size-options {
+  display: flex;
+  gap: 10px;
+}
+
+.size-btn {
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.size-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-buy-now, .btn-add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+}
+
+.btn-buy-now:hover, .btn-add-to-cart:hover {
+  background-color: #e60000;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .product-page-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .product-media-section, .product-details-section {
+      width: 100%;
+  }
+
+  .thumbnail-gallery {
+      flex-direction: row;
+  }
 }
 
 .thumbnail-gallery img:hover {
