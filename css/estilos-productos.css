@@ -326,12 +326,14 @@ section {
     margin: auto;
     margin-left: 5px;
     font-family: 'Oswald', sans-serif;
+    font-size: 16px;
 }
 
 .volver-titulo:hover{
   transition: all 500ms ease;
   background: #000000a4;
   cursor: pointer;
+  color: #f9f9f9;
 }
 
 .product-page-container {
@@ -352,7 +354,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
 }
 
 .main-image-wrapper {
