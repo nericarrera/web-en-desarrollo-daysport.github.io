@@ -353,7 +353,7 @@ section {
 .product-images-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  grid-gap: 15px;
+  
 }
 
 .product-image-item {
