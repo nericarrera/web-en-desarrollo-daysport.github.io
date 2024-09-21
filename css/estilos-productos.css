@@ -357,6 +357,11 @@ section {
   width: 45%;
 }
 
+.product-image-gallery{
+  display: flex;
+  width: 50%;
+}
+
 .main-image-wrapper {
   width: 80%; /* Ajusta según lo que necesites */
   margin-bottom: 15px;
