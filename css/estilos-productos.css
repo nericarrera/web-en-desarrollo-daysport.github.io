@@ -358,6 +358,7 @@ section {
 
 .product-image-item {
   width: 100%;
+  margin-bottom: -4px;
 }
 
 .product-image-item img{
