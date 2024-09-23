@@ -349,6 +349,7 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
   gap: 10px; /* Espacio entre imágenes */
+  width: 75%;
 }
 
 .product-gallery img, 
