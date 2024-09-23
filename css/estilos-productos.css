@@ -420,21 +420,16 @@ section {
   background-color: #e60000;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
-  .product-page-container {
-      flex-direction: column;
-      align-items: center;
+  .product-page {
+      grid-template-columns: 1fr; /* Una columna para dispositivos móviles */
   }
-
-  .product-images-box, .product-details-section {
-      width: 100%;
-  }
-
-  .product-images-grid {
-      grid-template-columns: 1fr;
+  
+  .product-gallery {
+      grid-template-columns: 1fr; /* Las imágenes ocuparán toda la pantalla en una fila */
   }
 }
+
 .thumbnail-gallery img:hover {
   border: 2px solid #000; /* Cambia el color al pasar el mouse */
 }
