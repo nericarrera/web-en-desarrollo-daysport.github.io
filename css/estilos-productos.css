@@ -359,6 +359,19 @@ section {
     border-radius: 8px;
 }
 
+.product-description p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.colors img, 
+.sizes button {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
 
 /* Sección de detalles del producto */
 .product-details-section {
