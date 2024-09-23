@@ -351,8 +351,8 @@ section {
 }
 
 .product-images-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  display: flex;
+  width: calc(100% - 20px ) /2;
   
 }
 
