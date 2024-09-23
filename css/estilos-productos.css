@@ -347,12 +347,12 @@ section {
 
 
 .product-images-box {
-  width: calc(100% - 20px ) /2;
+  width: 100%;
 }
 
 .product-images-grid {
   display: flex;
-  width: calc(100% - 20px ) /2;
+  
   
 }
 
