@@ -348,7 +348,7 @@ section {
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 10px; /* Espacio entre imágenes */
+  gap: 3px; /* Espacio entre imágenes */
   width: 70%;
 }
 
@@ -357,7 +357,7 @@ section {
     width: 100%;
     height: auto; /* Para mantener la proporción */
     object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
-    border-radius: 8px;
+    
 }
 
 .product-description p {
