@@ -366,6 +366,7 @@ section {
   height: auto;
   margin-bottom: 0px;
   border-radius: 0px;
+  object-fit: cover;
 }
 
 .product-image {
