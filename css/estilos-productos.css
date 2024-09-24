@@ -383,6 +383,7 @@ section {
 .product-title {
   font-size: 28px;
   font-weight: bold;
+
 }
 
 .product-price {
@@ -497,6 +498,12 @@ section {
     font-style: normal;
 }
 
+.product-details{
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
 .product-price {
     font-size: 1.5rem;
     color: #007bff;
