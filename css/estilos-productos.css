@@ -355,7 +355,7 @@ section {
 .product-gallery img, 
 .product-gallery video {
     width: 100%;
-    height: auto; /* Para mantener la proporción */
+    height: 100%; /* Para mantener la proporción */
     object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
     
 }
