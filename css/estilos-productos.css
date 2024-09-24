@@ -496,7 +496,6 @@ section {
 .product-details-section {
     flex: 1;
     max-width: 50%;
-    padding: 10px;
 }
 
 .product-title {
