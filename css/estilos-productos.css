@@ -479,16 +479,6 @@ section {
     object-fit: cover; /* Asegura que el video o imagen rellene completamente el cuadro */
 }
 
-.thumbnail-gallery {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.product-video-section {
-  margin-top: 20px;
-}
-
 
 
 /* ------DETALLES PRODUCTO----- */
@@ -502,6 +492,9 @@ section {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .product-price {
