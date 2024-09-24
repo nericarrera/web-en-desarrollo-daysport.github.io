@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cambiar el contenido dinámicamente dependiendo del producto
     if (producto === "campera-puffer") {
-        document.querySelector(".product-title").textContent = "Campera Puffer TNF";
+        document.querySelector(".product-title").textContent = "CAMPERA PUFFER TNF";
         document.querySelector(".product-price").textContent = "$60.000";
         document.querySelector("#mainImage").src = "img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg";
     } else if (producto === "conjunto-tech-premium") {
