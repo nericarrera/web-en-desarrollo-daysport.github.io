@@ -339,17 +339,14 @@ section {
  /* PRODUCTO   */
 
  .product-gallery {
-  display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.product-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
   gap: 3px; /* Espacio entre imágenes */
   width: 70%;
 }
+
+
 
 .product-gallery img, 
 .product-gallery video {
