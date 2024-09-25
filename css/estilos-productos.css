@@ -551,6 +551,9 @@ section {
     margin-top: 10px;
     color: #007bff;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .product-quantity input {
