@@ -498,19 +498,19 @@ section {
 }
 
 .product-details{
-  font-size: 18px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
     
 }
 .product-price {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-bottom: 15px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
 
 .product-colors{
