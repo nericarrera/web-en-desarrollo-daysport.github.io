@@ -491,11 +491,12 @@ section {
 
 .product-title {
     font-size: 2rem;
-    color: #333;
+    color: #fff;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
+    background: #000000;
 }
 
 .product-details{
