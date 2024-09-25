@@ -49,3 +49,9 @@ function toggleVideo() {
     document.getElementById('videoModal').classList.toggle('hidden');
 }
 
+
+document.querySelectorAll('.zoom-container').forEach(container => {
+    container.addEventListener('click', function () {
+        this.classList.toggle('zoomed');
+    });
+});
