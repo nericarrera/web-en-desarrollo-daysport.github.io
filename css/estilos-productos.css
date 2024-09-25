@@ -571,6 +571,11 @@ section {
     font-style: italic;
 }
 
+#sizeChartLink.hover {
+  background: #360353;
+  color: #ffffff;
+}
+
 .product-quantity input {
     width: 50px;
     padding: 5px;
