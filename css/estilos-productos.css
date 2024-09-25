@@ -559,12 +559,13 @@ section {
 
 #sizeChartLink {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 25px;
     color: #007bff;
     cursor: pointer;
+    
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
 }
 
 .product-quantity input {
