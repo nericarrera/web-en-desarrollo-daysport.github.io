@@ -491,6 +491,13 @@ section {
     top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
 }
 
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
 .product-title {
     font-size: 2rem;
     color: #333;
