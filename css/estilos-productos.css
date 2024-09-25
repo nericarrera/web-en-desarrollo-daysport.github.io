@@ -566,6 +566,12 @@ section {
     font-style: normal;
 }
 
+.product-quantity label{
+  font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
 .btn-buy-now {
     padding: 12px 24px;
     background-color: #28a745;
