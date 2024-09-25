@@ -562,7 +562,7 @@ section {
     margin-top: 25px;
     color: #007bff;
     cursor: pointer;
-    
+
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: italic;
@@ -572,10 +572,10 @@ section {
     width: 50px;
     padding: 5px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 25px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
 }
 
 .product-quantity label{
