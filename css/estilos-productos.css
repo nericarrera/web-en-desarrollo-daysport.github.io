@@ -485,7 +485,6 @@ section {
     position: sticky;
     top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
     margin: 10px;
-    background-image: url(..img/fondo/pexels-mccutcheon-3713892.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
