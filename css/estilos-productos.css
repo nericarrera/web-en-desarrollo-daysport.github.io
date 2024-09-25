@@ -303,7 +303,7 @@ section {
     margin: auto;
     margin-top: 15px;
     margin-left: 15px;
-    position: relative;
+    position: absolute;
 }
 
 .volver{
