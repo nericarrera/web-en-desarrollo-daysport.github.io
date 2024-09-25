@@ -531,11 +531,11 @@ section {
 }
 
 .product-size h3 {
-    font-size: 1.2rem;
+    font-size: 13px;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
 }
 
 .size-options button {
