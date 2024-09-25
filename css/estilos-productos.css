@@ -292,6 +292,7 @@ section {
     height: 60px;
     margin: auto;
     justify-content: flex-start;
+    position: absolute;
     
 }
 
