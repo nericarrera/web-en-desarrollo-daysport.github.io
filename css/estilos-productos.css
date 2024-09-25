@@ -338,11 +338,10 @@ section {
 
  /* PRODUCTO   */
 
-.product-page{
+ .product-gallery {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-top: 1px solid #ededed;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .product-gallery {
@@ -491,11 +490,6 @@ section {
     top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
 }
 
-.product-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
 
 
 .product-title {
