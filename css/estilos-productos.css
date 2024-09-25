@@ -508,11 +508,17 @@ section {
     font-size: 1.5rem;
     color: #007bff;
     margin-bottom: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .product-size h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .size-options button {
@@ -521,11 +527,17 @@ section {
     border: 1px solid #ddd;
     background-color: #fff;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .size-options button:hover {
     background-color: #007bff;
     color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 #sizeChartLink {
@@ -550,6 +562,9 @@ section {
     cursor: pointer;
     margin-top: 20px;
     font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .btn-buy-now:hover {
