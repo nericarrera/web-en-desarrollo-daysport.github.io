@@ -543,14 +543,13 @@ section {
 }
 
 .size-options button {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    width: 55px;  
+    height: 39px;
+    background-color: #ebebeb;
     cursor: pointer;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .size-options button:hover {
