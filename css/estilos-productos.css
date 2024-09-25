@@ -506,6 +506,9 @@ section {
     font-weight: 500;
     font-style: normal;
     margin-top: 30px;
+    background: black;
+    color: #fff;
+    padding: 3px;
     
 }
 .product-price {
