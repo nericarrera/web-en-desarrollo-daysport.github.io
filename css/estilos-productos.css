@@ -294,19 +294,16 @@ section {
 }
 
 .conteiner-volver {
-    display: flex;
+    display: contents;
     padding: 5px;
     width: 100%;
-    height: auto;
     margin: auto;
-    margin-top: 15px;
-    margin-left: 15px;
     position: absolute;
 }
 
 .volver{
     display: inline;
-    width: auto;
+    margin: 15px;
 }
 
 .volver img{
