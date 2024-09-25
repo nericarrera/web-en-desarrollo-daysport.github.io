@@ -503,6 +503,8 @@ section {
   font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
+    position: sticky;
+  top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
 }
 .product-price {
     font-size: 1.5rem;
