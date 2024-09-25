@@ -484,6 +484,7 @@ section {
     max-width: 50%;
     position: sticky;
     top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
+    margin: 21px;
 }
 
 
