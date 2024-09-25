@@ -571,7 +571,7 @@ section {
     font-style: italic;
 }
 
-#sizeChartLink.hover {
+#sizeChartLink:hover {
   background: #360353;
   color: #ffffff;
 }
