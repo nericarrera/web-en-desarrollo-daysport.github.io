@@ -561,6 +561,9 @@ section {
     padding: 5px;
     text-align: center;
     margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .btn-buy-now {
