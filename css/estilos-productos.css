@@ -340,16 +340,14 @@ section {
 
  .product-page {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+  gap: 3px; /* Espacio entre imágenes */
+  width: 70%;
 }
 
  .product-gallery {
   flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 3px; /* Espacio entre imágenes */
-  width: 70%;
 }
 
 .zoom-container {
