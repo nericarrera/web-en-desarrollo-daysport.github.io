@@ -526,6 +526,10 @@ section {
     font-style: italic;
 }
 
+.product-size{
+  margin-top: 15px;
+}
+
 .product-size h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
