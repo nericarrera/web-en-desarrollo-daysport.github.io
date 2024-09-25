@@ -521,6 +521,9 @@ section {
   font-weight: 800;
   font-style: italic;
   margin-top: 25px;
+  background: #fbff01;
+  color: #000;
+  padding: 3px;
 }
 
 .product-colors{
