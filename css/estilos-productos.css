@@ -521,9 +521,11 @@ section {
   font-weight: 800;
   font-style: italic;
   margin-top: 25px;
-  background: #fbff01;
-  color: #000;
+  background: #360353;
+  color: #fff;
   padding: 3px;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px #000;
 }
 
 .product-colors{
