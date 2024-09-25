@@ -394,7 +394,7 @@ section {
 
 .size-options {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .size-btn {
