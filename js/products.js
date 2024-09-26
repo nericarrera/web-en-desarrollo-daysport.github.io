@@ -52,39 +52,54 @@ function toggleVideo() {
 
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
-    let isDragging = false;
     let startX, startY;
-    let scrollLeft, scrollTop;
+    let isDragging = false;
 
-    container.addEventListener('click', function () {
-        this.classList.toggle('zoomed');
-        isZoomed = !isZoomed;
+    // Clic para hacer zoom
+    container.addEventListener('click', function (e) {
+        const img = this.querySelector('img, video');
+        
         if (!isZoomed) {
-            // Cuando se desactiva el zoom, vuelve a la posición original
-            this.querySelector('img, video').style.transform = 'scale(1)';
-            this.querySelector('img, video').style.left = '0';
-            this.querySelector('img, video').style.top = '0';
-        }
-    });
-
-    container.addEventListener('mousedown', function (e) {
-        if (isZoomed) {
-            isDragging = true;
+            isZoomed = true;
+            this.classList.add('zoomed');
+            img.style.transform = 'scale(2)';
             startX = e.pageX - this.offsetLeft;
             startY = e.pageY - this.offsetTop;
-            scrollLeft = this.scrollLeft;
-            scrollTop = this.scrollTop;
+
+        } else {
+            isZoomed = false;
+            this.classList.remove('zoomed');
+            img.style.transform = 'scale(1)';
+            img.style.left = '0';
+            img.style.top = '0';
         }
     });
 
+    // Permitir el arrastre (panning) dentro de los límites de la imagen
     container.addEventListener('mousemove', function (e) {
-        if (isZoomed && isDragging) {
-            e.preventDefault();
-            const x = e.pageX - this.offsetLeft;
-            const y = e.pageY - this.offsetTop;
-            const moveX = x - startX;
-            const moveY = y - startY;
-            this.querySelector('img, video').style.transform = `scale(2) translate(${moveX}px, ${moveY}px)`;
+        if (!isZoomed || !isDragging) return;
+        
+        const img = this.querySelector('img, video');
+        const rect = this.getBoundingClientRect(); // Obtener tamaño del contenedor
+        const imgRect = img.getBoundingClientRect(); // Tamaño de la imagen dentro del contenedor
+
+        let moveX = e.pageX - rect.left - startX;
+        let moveY = e.pageY - rect.top - startY;
+
+        // Limitar el movimiento dentro del contenedor
+        const maxMoveX = (imgRect.width - rect.width) / 2;
+        const maxMoveY = (imgRect.height - rect.height) / 2;
+
+        // Ajustar el movimiento para que no sobrepase los límites de la imagen
+        moveX = Math.min(maxMoveX, Math.max(-maxMoveX, moveX));
+        moveY = Math.min(maxMoveY, Math.max(-maxMoveY, moveY));
+
+        img.style.transform = `scale(2) translate(${moveX}px, ${moveY}px)`;
+    });
+
+    container.addEventListener('mousedown', function () {
+        if (isZoomed) {
+            isDragging = true;
         }
     });
 
