@@ -51,7 +51,48 @@ function toggleVideo() {
 
 
 document.querySelectorAll('.zoom-container').forEach(container => {
+    let isZoomed = false;
+    let isDragging = false;
+    let startX, startY;
+    let scrollLeft, scrollTop;
+
     container.addEventListener('click', function () {
         this.classList.toggle('zoomed');
+        isZoomed = !isZoomed;
+        if (!isZoomed) {
+            // Cuando se desactiva el zoom, vuelve a la posición original
+            this.querySelector('img, video').style.transform = 'scale(1)';
+            this.querySelector('img, video').style.left = '0';
+            this.querySelector('img, video').style.top = '0';
+        }
+    });
+
+    container.addEventListener('mousedown', function (e) {
+        if (isZoomed) {
+            isDragging = true;
+            startX = e.pageX - this.offsetLeft;
+            startY = e.pageY - this.offsetTop;
+            scrollLeft = this.scrollLeft;
+            scrollTop = this.scrollTop;
+        }
+    });
+
+    container.addEventListener('mousemove', function (e) {
+        if (isZoomed && isDragging) {
+            e.preventDefault();
+            const x = e.pageX - this.offsetLeft;
+            const y = e.pageY - this.offsetTop;
+            const moveX = x - startX;
+            const moveY = y - startY;
+            this.querySelector('img, video').style.transform = `scale(2) translate(${moveX}px, ${moveY}px)`;
+        }
+    });
+
+    container.addEventListener('mouseup', function () {
+        isDragging = false;
+    });
+
+    container.addEventListener('mouseleave', function () {
+        isDragging = false;
     });
 });
