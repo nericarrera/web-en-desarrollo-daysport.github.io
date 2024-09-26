@@ -484,14 +484,13 @@ section {
   cursor: zoom-in;
 }
 
-.zoom-container.zoomed {
-  cursor: zoom-out;
+.zoom-container img, .zoom-container video {
+  transition: transform 0.3s ease;
+  cursor: grab;
 }
 
-.zoom-img, .zoom-video {
-  width: 100%;
-  transition: transform 0.3s ease;
-  transform-origin: center center; /* Para que el zoom comience desde el centro */
+.zoomed img, .zoomed video {
+  cursor: zoom-out;
 }
 
 .zoom-container.zoomed .zoom-img, 
