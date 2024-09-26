@@ -37,67 +37,57 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function changeImage(element) {
-    document.getElementById('mainImage').src = element.src;
-}
-
-function showVideo() {
-    document.getElementById('videoModal').classList.remove('hidden');
-}
-
-function toggleVideo() {
-    document.getElementById('videoModal').classList.toggle('hidden');
-}
-
-
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
-    let startX, startY;
+    let startX, startY, offsetX, offsetY;
     let isDragging = false;
 
     // Clic para hacer zoom
     container.addEventListener('click', function (e) {
         const img = this.querySelector('img, video');
-        
+
         if (!isZoomed) {
             isZoomed = true;
             this.classList.add('zoomed');
             img.style.transform = 'scale(2)';
+            this.style.cursor = 'zoom-out';
             startX = e.pageX - this.offsetLeft;
             startY = e.pageY - this.offsetTop;
-
+            offsetX = 0;
+            offsetY = 0;
         } else {
             isZoomed = false;
             this.classList.remove('zoomed');
             img.style.transform = 'scale(1)';
             img.style.left = '0';
             img.style.top = '0';
+            this.style.cursor = 'zoom-in';
         }
     });
 
-    // Permitir el arrastre (panning) dentro de los límites de la imagen
+    // Arrastrar y mover la imagen cuando está en zoom
     container.addEventListener('mousemove', function (e) {
-        if (!isZoomed || !isDragging) return;
-        
+        if (!isZoomed) return;
+
         const img = this.querySelector('img, video');
-        const rect = this.getBoundingClientRect(); // Obtener tamaño del contenedor
-        const imgRect = img.getBoundingClientRect(); // Tamaño de la imagen dentro del contenedor
+        const rect = this.getBoundingClientRect();
+        const imgRect = img.getBoundingClientRect();
+        
+        const moveX = e.pageX - rect.left - startX;
+        const moveY = e.pageY - rect.top - startY;
 
-        let moveX = e.pageX - rect.left - startX;
-        let moveY = e.pageY - rect.top - startY;
-
-        // Limitar el movimiento dentro del contenedor
+        // Limitar el movimiento para que no se salga de los bordes
         const maxMoveX = (imgRect.width - rect.width) / 2;
         const maxMoveY = (imgRect.height - rect.height) / 2;
 
-        // Ajustar el movimiento para que no sobrepase los límites de la imagen
-        moveX = Math.min(maxMoveX, Math.max(-maxMoveX, moveX));
-        moveY = Math.min(maxMoveY, Math.max(-maxMoveY, moveY));
+        const translateX = Math.min(maxMoveX, Math.max(-maxMoveX, moveX));
+        const translateY = Math.min(maxMoveY, Math.max(-maxMoveY, moveY));
 
-        img.style.transform = `scale(2) translate(${moveX}px, ${moveY}px)`;
+        img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
     });
 
-    container.addEventListener('mousedown', function () {
+    // Cambiar a modo de arrastre con el mouse
+    container.addEventListener('mousedown', function (e) {
         if (isZoomed) {
             isDragging = true;
         }
