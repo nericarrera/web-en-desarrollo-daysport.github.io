@@ -78,14 +78,14 @@ container.addEventListener('mousemove', function (e) {
     const imgRect = img.getBoundingClientRect();
 
     // Aumentamos la sensibilidad de desplazamiento (ajustado a 300% para más rapidez)
-    const moveX = -((mouseX / rect.width) * 300 - 150); 
-    const moveY = -((mouseY / rect.height) * 300 - 150);
+    const moveX = ((mouseX / rect.width) * 300 - 150); 
+    const moveY = ((mouseY / rect.height) * 300 - 150);
 
     // Limitar el movimiento para que no se salga del borde
-    const maxTranslateX = (imgRect.width - rect.width) / 2;  // Limitar para que no se salga en X
-    const maxTranslateY = (imgRect.height - rect.height) / 2; // Limitar para que no se salga en Y
+    const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 2);  
+    const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 2); 
 
-    // Aplicar el límite de movimiento
+    // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
     const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
     const translateY = Math.min(maxTranslateY, Math.max(-maxTranslateY, moveY));
 
