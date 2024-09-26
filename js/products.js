@@ -99,3 +99,32 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra la lupa correctamente
     });
 });
+
+const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+zoomableImages.forEach(image => {
+    let zoomedIn = false;
+
+    image.addEventListener('click', function (e) {
+        if (!zoomedIn) {
+            image.classList.add('zoomed-in');
+            zoomedIn = true;
+        } else {
+            image.classList.remove('zoomed-in');
+            zoomedIn = false;
+        }
+    });
+
+    image.addEventListener('mousemove', function (e) {
+        if (zoomedIn) {
+            const rect = image.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const offsetX = -((x / rect.width) * 100 - 50);
+            const offsetY = -((y / rect.height) * 100 - 50);
+
+            image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
+        }
+    });
+});
