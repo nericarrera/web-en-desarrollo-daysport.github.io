@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
     let startX, startY;
-    
+
     // Clic para hacer zoom
     container.addEventListener('click', function (e) {
         const img = this.querySelector('img, video');
@@ -49,17 +49,17 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         if (!isZoomed) {
             isZoomed = true;
             this.classList.add('zoomed');
-            img.style.transform = 'scale(2)';
-            this.style.cursor = 'zoom-out';
+            img.style.transform = 'scale(2)';  // Zoom al 200%
+            this.style.cursor = 'zoom-out';  // Cambia a la lupa de zoom out
             startX = e.pageX - rect.left;
             startY = e.pageY - rect.top;
         } else {
             isZoomed = false;
             this.classList.remove('zoomed');
-            img.style.transform = 'scale(1)';
+            img.style.transform = 'scale(1)';  // Vuelve al tamaño original
             img.style.left = '0';
             img.style.top = '0';
-            this.style.cursor = 'zoom-in';
+            this.style.cursor = 'zoom-in';  // Cambia a la lupa de zoom in
         }
     });
 
@@ -77,9 +77,9 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         // Obtener el tamaño de la imagen
         const imgRect = img.getBoundingClientRect();
 
-        // Calcular el movimiento en la misma dirección
-        const moveX = ((mouseX / rect.width) * 100 - 50) * -1;
-        const moveY = ((mouseY / rect.height) * 100 - 50) * -1;
+        // Aumentar la sensibilidad del desplazamiento (ajustando a 200% para más rapidez)
+        const moveX = ((mouseX / rect.width) * 200 - 100);
+        const moveY = ((mouseY / rect.height) * 200 - 100);
 
         // Limitar el movimiento para que no se salga de los bordes
         const maxTranslateX = (imgRect.width - rect.width) / 2;
@@ -95,6 +95,6 @@ document.querySelectorAll('.zoom-container').forEach(container => {
 
     // Cambiar el cursor a lupa incluso en estado de zoom
     container.addEventListener('mouseenter', function () {
-        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra lupa correcta
     });
 });
