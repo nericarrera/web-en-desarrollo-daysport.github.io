@@ -486,7 +486,7 @@ section {
 }
 
 .zoom-container img, .zoom-container video {
-  transition: transform 0.1s ease; /* Cambiado a 0.1s para que sea más rápido */
+  transition: transform 0.1s ease; /* Mantiene la transición rápida */
 }
 
 .zoomed {

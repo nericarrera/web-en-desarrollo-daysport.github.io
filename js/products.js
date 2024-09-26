@@ -79,7 +79,8 @@ document.querySelectorAll('.zoom-container').forEach(container => {
 
         // Aumentar la sensibilidad del desplazamiento (ajustando a 200% para más rapidez)
         const moveX = ((mouseX / rect.width) * 200 - 100);
-        const moveY = ((mouseY / rect.height) * 200 - 100);
+        // Invertimos el movimiento en el eje Y para que el desplazamiento sea más intuitivo
+        const moveY = -((mouseY / rect.height) * 200 - 100);
 
         // Limitar el movimiento para que no se salga de los bordes
         const maxTranslateX = (imgRect.width - rect.width) / 2;
@@ -95,6 +96,6 @@ document.querySelectorAll('.zoom-container').forEach(container => {
 
     // Cambiar el cursor a lupa incluso en estado de zoom
     container.addEventListener('mouseenter', function () {
-        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra lupa correcta
+        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra la lupa correctamente
     });
 });
