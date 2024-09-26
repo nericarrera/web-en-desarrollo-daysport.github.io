@@ -518,10 +518,10 @@ section {
   font-weight: 800;
   font-style: italic;
   margin-top: 25px;
-  color: #fff;
+  color: #000000;
   padding: 3px;
   letter-spacing: 1px;
-  -webkit-text-stroke: 2px #000;
+  
 }
 
 .product-colors{
