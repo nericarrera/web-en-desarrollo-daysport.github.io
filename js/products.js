@@ -39,22 +39,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
-    let startX, startY, offsetX, offsetY;
-    let isDragging = false;
-
+    let startX, startY;
+    
     // Clic para hacer zoom
     container.addEventListener('click', function (e) {
         const img = this.querySelector('img, video');
+        const rect = this.getBoundingClientRect();
 
         if (!isZoomed) {
             isZoomed = true;
             this.classList.add('zoomed');
             img.style.transform = 'scale(2)';
             this.style.cursor = 'zoom-out';
-            startX = e.pageX - this.offsetLeft;
-            startY = e.pageY - this.offsetTop;
-            offsetX = 0;
-            offsetY = 0;
+            startX = e.pageX - rect.left;
+            startY = e.pageY - rect.top;
         } else {
             isZoomed = false;
             this.classList.remove('zoomed');
@@ -65,39 +63,38 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         }
     });
 
-    // Arrastrar y mover la imagen cuando está en zoom
+    // Movimiento del mouse para hacer scroll en la imagen cuando está en zoom
     container.addEventListener('mousemove', function (e) {
         if (!isZoomed) return;
 
         const img = this.querySelector('img, video');
         const rect = this.getBoundingClientRect();
+
+        // Posición del mouse relativa al contenedor
+        const mouseX = e.pageX - rect.left;
+        const mouseY = e.pageY - rect.top;
+
+        // Obtener el tamaño de la imagen
         const imgRect = img.getBoundingClientRect();
-        
-        const moveX = e.pageX - rect.left - startX;
-        const moveY = e.pageY - rect.top - startY;
+
+        // Calcular el movimiento en la misma dirección
+        const moveX = ((mouseX / rect.width) * 100 - 50) * -1;
+        const moveY = ((mouseY / rect.height) * 100 - 50) * -1;
 
         // Limitar el movimiento para que no se salga de los bordes
-        const maxMoveX = (imgRect.width - rect.width) / 2;
-        const maxMoveY = (imgRect.height - rect.height) / 2;
+        const maxTranslateX = (imgRect.width - rect.width) / 2;
+        const maxTranslateY = (imgRect.height - rect.height) / 2;
 
-        const translateX = Math.min(maxMoveX, Math.max(-maxMoveX, moveX));
-        const translateY = Math.min(maxMoveY, Math.max(-maxMoveY, moveY));
+        // Aplicar el límite de movimiento
+        const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
+        const translateY = Math.min(maxTranslateY, Math.max(-maxTranslateY, moveY));
 
+        // Mover la imagen dentro de los límites
         img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
     });
 
-    // Cambiar a modo de arrastre con el mouse
-    container.addEventListener('mousedown', function (e) {
-        if (isZoomed) {
-            isDragging = true;
-        }
-    });
-
-    container.addEventListener('mouseup', function () {
-        isDragging = false;
-    });
-
-    container.addEventListener('mouseleave', function () {
-        isDragging = false;
+    // Cambiar el cursor a lupa incluso en estado de zoom
+    container.addEventListener('mouseenter', function () {
+        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
     });
 });
