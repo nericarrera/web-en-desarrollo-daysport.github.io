@@ -83,8 +83,8 @@ container.addEventListener('mousemove', function (e) {
     const moveY = -((mouseY / rect.height) * 300 - 150);
 
     // Limitar el movimiento para que no se salga de los bordes
-    const maxTranslateX = (imgRect.width - rect.width) / 1.8;
-    const maxTranslateY = (imgRect.height - rect.height) / 1.8;
+    const maxTranslateX = (imgRect.width - rect.width) / 2.3;
+    const maxTranslateY = (imgRect.height - rect.height) / 2.3;
 
     // Aplicar el límite de movimiento
     const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
