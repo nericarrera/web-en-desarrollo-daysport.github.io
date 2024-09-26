@@ -79,12 +79,12 @@ container.addEventListener('mousemove', function (e) {
 
     // Ajustamos los movimientos en ambos ejes
     // Invertimos también el movimiento en el eje X
-    const moveX = -((mouseX / rect.width) * 250 - 100); 
-    const moveY = -((mouseY / rect.height) * 250 - 100);
+    const moveX = -((mouseX / rect.width) * 300 - 150); 
+    const moveY = -((mouseY / rect.height) * 300 - 150);
 
     // Limitar el movimiento para que no se salga de los bordes
-    const maxTranslateX = (imgRect.width - rect.width) / 2.0;
-    const maxTranslateY = (imgRect.height - rect.height) / 2.0;
+    const maxTranslateX = (imgRect.width - rect.width) / 1.0;
+    const maxTranslateY = (imgRect.height - rect.height) / 1.0;
 
     // Aplicar el límite de movimiento
     const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
