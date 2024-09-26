@@ -492,14 +492,12 @@ section {
 }
 
 .product-title {
-    font-size: 2rem;
-    padding: 3px;
-    color: #fff;
+    font-size: 35px;
+    color: #000000;
     margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-    background: #000000;
 }
 
 .product-details{
