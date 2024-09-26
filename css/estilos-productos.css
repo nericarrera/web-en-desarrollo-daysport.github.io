@@ -486,6 +486,18 @@ section {
 
 .zoom-container img, .zoom-container video {
   transition: transform 0.3s ease;
+}
+
+.zoomed {
+  cursor: zoom-out;
+}
+
+.zoomed img, .zoomed video {
+  cursor: zoom-out;
+}
+
+.zoom-container img, .zoom-container video {
+  transition: transform 0.3s ease;
   cursor: grab;
 }
 
