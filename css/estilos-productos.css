@@ -517,6 +517,27 @@ section {
   cursor: grabbing; /* Cambia el cursor cuando el usuario está arrastrando */
 }
 
+.zoomable-image {
+    width: 100%;
+    max-width: 500px;
+    cursor: zoom-in; /* Muestra la lupa */
+    transition: transform 0.3s ease;
+}
+
+.zoomed-in {
+    cursor: zoom-out; /* Cambia a menos cuando está en zoom */
+    transform: scale(2); /* Zoom */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.product-gallery:hover .zoomable-image {
+    cursor: zoom-in; /* Muestra la lupa al pasar el mouse */
+}
+
 
 /* ------DETALLES PRODUCTO----- */
 
