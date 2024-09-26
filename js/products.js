@@ -63,7 +63,7 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         }
     });
 
-   // Movimiento del mouse para hacer scroll en la imagen cuando está en zoom
+// Movimiento del mouse para hacer scroll en la imagen cuando está en zoom
 container.addEventListener('mousemove', function (e) {
     if (!isZoomed) return;
 
@@ -77,14 +77,13 @@ container.addEventListener('mousemove', function (e) {
     // Obtener el tamaño de la imagen
     const imgRect = img.getBoundingClientRect();
 
-    // Ajustamos los movimientos en ambos ejes
-    // Invertimos también el movimiento en el eje X
+    // Aumentamos la sensibilidad de desplazamiento (ajustado a 300% para más rapidez)
     const moveX = -((mouseX / rect.width) * 300 - 150); 
     const moveY = -((mouseY / rect.height) * 300 - 150);
 
-    // Limitar el movimiento para que no se salga de los bordes
-    const maxTranslateX = (imgRect.width - rect.width) / 1.0;
-    const maxTranslateY = (imgRect.height - rect.height) / 1.0;
+    // Limitar el movimiento para que no se salga del borde
+    const maxTranslateX = (imgRect.width - rect.width) / 2;  // Limitar para que no se salga en X
+    const maxTranslateY = (imgRect.height - rect.height) / 2; // Limitar para que no se salga en Y
 
     // Aplicar el límite de movimiento
     const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
@@ -92,11 +91,19 @@ container.addEventListener('mousemove', function (e) {
 
     // Mover la imagen dentro de los límites
     img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
+    img.style.cursor = 'zoom-out';  // Cambia el cursor a lupa mientras esté en zoom
 });
 
-// Cambiar el cursor a lupa incluso en estado de zoom
+// Cambiar el cursor a lupa cuando esté dentro del contenedor en estado de zoom
 container.addEventListener('mouseenter', function () {
     this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra la lupa correctamente
+});
+
+// Cambiar el cursor a lupa incluso al salir del área de zoom
+container.addEventListener('mouseleave', function () {
+    if (isZoomed) {
+        this.style.cursor = 'zoom-out';  // Se mantiene el cursor de lupa al salir del área
+    }
 });
 });
 
