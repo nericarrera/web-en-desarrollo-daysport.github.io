@@ -870,7 +870,6 @@ section {
 }
 
 .product-details-rating summary {
-  display: flex;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -878,7 +877,6 @@ section {
   background-color: #fff;
   border-radius: 5px;
   outline: none;
-  justify-content: space-between;
 }
 
 .product-details-rating summary:hover {
@@ -911,4 +909,10 @@ section {
 
 .product-details-rating button:hover {
   background-color: #333;
+}
+
+.rating {
+  float: right;
+  font-size: 1.2em;
+  color: #28a745; /* Color verde para las estrellas */
 }
