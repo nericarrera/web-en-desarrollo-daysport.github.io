@@ -1084,6 +1084,7 @@ font-style: normal;
 
 .section-conteiner {
   display: flex;
+  width: auto;
   
 }
 
