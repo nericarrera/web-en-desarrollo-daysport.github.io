@@ -856,6 +856,7 @@ section {
 /*---------- DETALLES Y PUNTUACION --------------*/
 
 .product-details-rating {
+  width: 70%;
   margin-top: 20px;
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
