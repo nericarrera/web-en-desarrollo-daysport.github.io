@@ -855,7 +855,7 @@ section {
 
 /*---------- DETALLES Y PUNTUACION --------------*/
 
-.product-details-rating {
+.product-details-rating details {
 
   margin-bottom: 10px;
 }
