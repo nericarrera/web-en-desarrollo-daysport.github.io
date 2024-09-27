@@ -109,12 +109,12 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         const imgRect = img.getBoundingClientRect();
 
         // Calcular cuánto puede moverse la imagen sin salirse del contenedor
-        const moveX = ((mouseX / rect.width) * 200 - 150);  // Mayor sensibilidad de movimiento
-        const moveY = ((mouseY / rect.height) * 200 - 150);
+        const moveX = ((mouseX / rect.width) * 300 - 150);  // Mayor sensibilidad de movimiento
+        const moveY = ((mouseY / rect.height) * 300 - 150);
 
         // Limitar el movimiento para que no se salga del borde
-        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 3);  
-        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 3);
+        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 1);  
+        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 1);
 
         // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
         const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
