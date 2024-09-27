@@ -107,3 +107,22 @@ document.querySelectorAll('.zoom-container').forEach(container => {
     });
 });
 
+
+// Simula una carga de comentarios desde un servidor o base de datos
+const comments = [
+    { user: 'Usuario3', text: 'Muy cómodo, me gustó mucho.' },
+    { user: 'Usuario4', text: 'El tamaño era un poco más grande de lo que esperaba.' }
+];
+
+// Función para agregar los comentarios al DOM
+function loadComments() {
+    const commentsList = document.getElementById('comments-list');
+    comments.forEach(comment => {
+        const commentElement = document.createElement('li');
+        commentElement.innerHTML = `<strong>${comment.user}</strong>: ${comment.text}`;
+        commentsList.appendChild(commentElement);
+    });
+}
+
+// Cargar los comentarios automáticamente al cargar la página
+document.addEventListener('DOMContentLoaded', loadComments);
