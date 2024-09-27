@@ -542,7 +542,7 @@ section {
 /* ------DETALLES PRODUCTO----- */
 
 .product-details-sidebar {
-  width: auto; /* Ajusta según tu diseño */
+  width: 351px; /* Ajusta según tu diseño */
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   position: relative;
