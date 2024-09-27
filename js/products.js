@@ -78,12 +78,12 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         const imgRect = img.getBoundingClientRect();
 
         // Calcular cuánto puede moverse la imagen sin salirse del contenedor
-        const moveX = ((mouseX / rect.width) * 300 - 150);  // Mayor sensibilidad de movimiento
-        const moveY = ((mouseY / rect.height) * 300 - 150);
+        const moveX = ((mouseX / rect.width) * 200 - 150);  // Mayor sensibilidad de movimiento
+        const moveY = ((mouseY / rect.height) * 200 - 150);
 
         // Limitar el movimiento para que no se salga del borde
-        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 2);  
-        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 2);
+        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 3);  
+        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 3);
 
         // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
         const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
@@ -110,8 +110,8 @@ document.querySelectorAll('.zoom-container').forEach(container => {
 
 // Simula una carga de comentarios desde un servidor o base de datos
 const comments = [
-    { user: 'Usuario3', text: 'Muy cómodo, me gustó mucho.' },
-    { user: 'Usuario4', text: 'El tamaño era un poco más grande de lo que esperaba.' }
+    { user: 'Usuario1', text: '¡Excelente producto! Lo recomiendo.', rating: 5 },
+    { user: 'Usuario2', text: 'La calidad es increíble, mejor de lo que esperaba.', rating: 4 }
 ];
 
 // Función para agregar los comentarios al DOM
@@ -119,10 +119,52 @@ function loadComments() {
     const commentsList = document.getElementById('comments-list');
     comments.forEach(comment => {
         const commentElement = document.createElement('li');
-        commentElement.innerHTML = `<strong>${comment.user}</strong>: ${comment.text}`;
+        commentElement.innerHTML = `<strong>${comment.user}</strong>: ${comment.text} <span>(${comment.rating} ★)</span>`;
         commentsList.appendChild(commentElement);
     });
 }
 
 // Cargar los comentarios automáticamente al cargar la página
 document.addEventListener('DOMContentLoaded', loadComments);
+
+
+// Capturar el formulario y escuchar el evento de envío
+const commentForm = document.getElementById('comment-form');
+
+commentForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+
+    // Obtener los valores del formulario
+    const commentText = document.getElementById('comment').value;
+    const commentRating = document.getElementById('rating').value;
+
+    // Validar que el comentario no esté vacío
+    if (commentText === '') {
+        alert('Por favor, escribe un comentario.');
+        return;
+    }
+
+    // Crear un nuevo comentario y agregarlo a la lista
+    const commentsList = document.getElementById('comments-list');
+    const newComment = document.createElement('li');
+    newComment.innerHTML = `<strong>UsuarioNuevo</strong>: ${commentText} <span>(${commentRating} ★)</span>`;
+    commentsList.appendChild(newComment);
+
+    // Limpiar el formulario
+    commentForm.reset();
+});
+
+
+// Ejemplo para cargar comentarios desde una API simulada
+function loadCommentsFromAPI() {
+    fetch('https://mi-api.com/comments')  // Simula la llamada a tu backend
+        .then(response => response.json())
+        .then(data => {
+            const commentsList = document.getElementById('comments-list');
+            data.forEach(comment => {
+                const commentElement = document.createElement('li');
+                commentElement.innerHTML = `<strong>${comment.user}</strong>: ${comment.text} <span>(${comment.rating} ★)</span>`;
+                commentsList.appendChild(commentElement);
+            });
+        });
+}
