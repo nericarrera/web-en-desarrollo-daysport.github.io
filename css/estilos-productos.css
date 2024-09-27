@@ -997,7 +997,7 @@ section {
 /* FOOTER */
 
 .footer {
-  width: 97%;
+  width: 100%;
   display: flex;
   font-family: "AdihausDIN-CnBoldItalic","AdihausDIN Cn",Helvetica, Arial, sans-serif;
   text-decoration: none;
