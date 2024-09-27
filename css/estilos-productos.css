@@ -884,8 +884,8 @@ section {
 
 .product-details summary:hover {
   background-color: #eee;
-  width: auto;
-  height: auto;
+  width: 97%;
+  height: 80%;
   
 }
 
