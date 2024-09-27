@@ -16,6 +16,32 @@ nextRelatedArrow.addEventListener('click', () => {
     relatedGallery.scrollBy({ left: 200, behavior: 'smooth' });
 });
 
+window.addEventListener('scroll', function () {
+    const sidebar = document.querySelector('.product-details-sidebar');
+    const footer = document.querySelector('footer'); // Asumiendo que el footer tiene esta etiqueta
+    const sidebarTop = sidebar.offsetTop;
+    const footerTop = footer.offsetTop;
+    const windowScroll = window.scrollY;
+    const sidebarHeight = sidebar.offsetHeight;
+    const footerHeight = footer.offsetHeight;
+    
+    // Limite inferior (donde se debe detener)
+    const limit = footerTop - sidebarHeight;
+    
+    if (windowScroll >= sidebarTop && windowScroll <= limit) {
+        // Si el scroll está en el área entre el inicio del sidebar y el footer
+        sidebar.style.position = 'fixed';
+        sidebar.style.top = '10px'; // Puedes ajustar este valor según el espaciado que quieras
+    } else if (windowScroll > limit) {
+        // Si el scroll supera el límite (para evitar que se solape con el footer)
+        sidebar.style.position = 'absolute';
+        sidebar.style.top = limit + 'px';
+    } else {
+        // Si el scroll está arriba del contenedor, lo ponemos de nuevo en su posición original
+        sidebar.style.position = 'static';
+    }
+});
+
 
 // Esperar a que el DOM cargue completamente
 document.addEventListener("DOMContentLoaded", function () {
@@ -168,3 +194,4 @@ function loadCommentsFromAPI() {
             });
         });
 }
+

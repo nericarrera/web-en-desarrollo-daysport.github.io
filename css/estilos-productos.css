@@ -541,6 +541,13 @@ section {
 
 /* ------DETALLES PRODUCTO----- */
 
+.product-details-sidebar {
+  width: auto; /* Ajusta según tu diseño */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
 .product-details-section {
     flex: 1;
     max-width: 50%;
