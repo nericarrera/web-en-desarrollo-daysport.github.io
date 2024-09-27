@@ -887,7 +887,8 @@ section {
 .product-details-rating details ul,
 .product-details-rating details form {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .product-details-rating textarea {
