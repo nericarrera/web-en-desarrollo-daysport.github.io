@@ -877,6 +877,7 @@ section {
   background-color: #fff;
   border-radius: 5px;
   outline: none;
+  justify-content: space-between;
 }
 
 .product-details-rating summary:hover {
