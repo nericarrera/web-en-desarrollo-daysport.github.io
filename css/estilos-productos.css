@@ -897,6 +897,7 @@ section {
   margin-top: 10px;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  border: 1px solid #1a1a1a;
 }
 
 .product-details-rating button {
