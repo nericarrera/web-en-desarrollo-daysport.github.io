@@ -913,6 +913,6 @@ section {
 
 .rating {
   float: right;
-  font-size: 1.2em;
+  font-size: 1.0em;
   color: #28a745; /* Color verde para las estrellas */
 }
