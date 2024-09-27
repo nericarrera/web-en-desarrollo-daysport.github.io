@@ -880,6 +880,7 @@ section {
 
 .product-details summary:hover {
   background-color: #eee;
+  font-size: 20px;
 }
 
 .rating {
