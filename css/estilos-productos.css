@@ -868,7 +868,9 @@ section {
 
 .product-details-rating summary {
   font-weight: bold;
+  width: 98%;
   cursor: pointer;
+  height: 110px;
   margin-bottom: 5px;
   margin: auto;
   padding: 10px;
