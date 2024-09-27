@@ -113,8 +113,8 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         const moveY = ((mouseY / rect.height) * 300 - 150);
 
         // Limitar el movimiento para que no se salga del borde
-        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 10);  
-        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 10);
+        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 8);  
+        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 8);
 
         // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
         const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
