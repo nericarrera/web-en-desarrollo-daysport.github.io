@@ -28,14 +28,19 @@ window.addEventListener('scroll', function () {
     // Limite inferior (donde se debe detener)
     const limit = footerTop - sidebarHeight;
     
+    // Guardar el valor de "right" o "left" original del contenedor
+    const sidebarRight = window.innerWidth - sidebar.getBoundingClientRect().right + 'px';
+
     if (windowScroll >= sidebarTop && windowScroll <= limit) {
         // Si el scroll está en el área entre el inicio del sidebar y el footer
         sidebar.style.position = 'fixed';
-        sidebar.style.top = '10px'; // Puedes ajustar este valor según el espaciado que quieras
+        sidebar.style.top = '10px'; // Puedes ajustar este valor
+        sidebar.style.right = sidebarRight; // Mantener la posición a la derecha
     } else if (windowScroll > limit) {
         // Si el scroll supera el límite (para evitar que se solape con el footer)
         sidebar.style.position = 'absolute';
         sidebar.style.top = limit + 'px';
+        sidebar.style.right = '0px'; // Vuelve a la posición original al detenerse
     } else {
         // Si el scroll está arriba del contenedor, lo ponemos de nuevo en su posición original
         sidebar.style.position = 'static';
