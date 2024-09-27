@@ -37,74 +37,53 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.querySelectorAll('.zoom-container').forEach(container => {
-    let isZoomed = false;
-    let startX, startY;
+// Seleccionamos el contenedor que contiene la imagen a hacer zoom
+const container = document.querySelector('.image-container');
+let isZoomed = false; // Controlar el estado del zoom
 
-    // Clic para hacer zoom
-    container.addEventListener('click', function (e) {
-        const img = this.querySelector('img, video');
-        const rect = this.getBoundingClientRect();
+// Configurar el evento para hacer clic y activar/desactivar el zoom
+container.addEventListener('click', function (e) {
+    const img = this.querySelector('img');
 
-        if (!isZoomed) {
-            isZoomed = true;
-            this.classList.add('zoomed');
-            img.style.transform = 'scale(2)';  // Zoom al 200%
-            this.style.cursor = 'zoom-out';  // Cambia a la lupa de zoom out
-            startX = e.pageX - rect.left;
-            startY = e.pageY - rect.top;
-        } else {
-            isZoomed = false;
-            this.classList.remove('zoomed');
-            img.style.transform = 'scale(1)';  // Vuelve al tamaño original
-            img.style.left = '0';
-            img.style.top = '0';
-            this.style.cursor = 'zoom-in';  // Cambia a la lupa de zoom in
-        }
-    });
-
-// Movimiento del mouse para hacer scroll en la imagen cuando está en zoom
-container.addEventListener('mousemove', function (e) {
-    if (!isZoomed) return;
-
-    const img = this.querySelector('img, video');
-    const rect = this.getBoundingClientRect();
-
-    // Posición del mouse relativa al contenedor
-    const mouseX = e.pageX - rect.left;
-    const mouseY = e.pageY - rect.top;
-
-    // Obtener el tamaño de la imagen
-    const imgRect = img.getBoundingClientRect();
-
-    // Aumentamos la sensibilidad de desplazamiento (ajustado a 300% para más rapidez)
-    const moveX = ((mouseX / rect.width) * 300 - 150); 
-    const moveY = ((mouseY / rect.height) * 300 - 150);
-
-    // Limitar el movimiento para que no se salga del borde
-    const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 2);  
-    const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 2); 
-
-    // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
-    const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
-    const translateY = Math.min(maxTranslateY, Math.max(-maxTranslateY, moveY));
-
-    // Mover la imagen dentro de los límites
-    img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
-    img.style.cursor = 'zoom-out';  // Cambia el cursor a lupa mientras esté en zoom
-});
-
-// Cambiar el cursor a lupa cuando esté dentro del contenedor en estado de zoom
-container.addEventListener('mouseenter', function () {
-    this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra la lupa correctamente
-});
-
-// Cambiar el cursor a lupa incluso al salir del área de zoom
-container.addEventListener('mouseleave', function () {
-    if (isZoomed) {
-        this.style.cursor = 'zoom-out';  // Se mantiene el cursor de lupa al salir del área
+    // Alternar entre zoom y no zoom al hacer clic
+    if (!isZoomed) {
+        img.style.transform = 'scale(2)'; // Zoom 200%
+        img.style.cursor = 'zoom-out';    // Cambia el cursor a "lupa con menos"
+        isZoomed = true;
+    } else {
+        img.style.transform = 'scale(1)'; // Volver al tamaño normal
+        img.style.cursor = 'zoom-in';     // Cambia el cursor a "lupa con más"
+        isZoomed = false;
     }
 });
+
+// Movimiento del mouse para desplazar la imagen en zoom
+container.addEventListener('mousemove', function (e) {
+    if (!isZoomed) return;  // Solo mover si está en zoom
+
+    const img = this.querySelector('img');
+    const rect = this.getBoundingClientRect();
+    const mouseX = e.pageX - rect.left; // Posición X del mouse dentro del contenedor
+    const mouseY = e.pageY - rect.top;  // Posición Y del mouse dentro del contenedor
+
+    // Calcular el porcentaje del desplazamiento en función de la posición del mouse
+    const offsetX = Math.min(Math.max((mouseX / rect.width) * 100, 0), 100);
+    const offsetY = Math.min(Math.max((mouseY / rect.height) * 100, 0), 100);
+
+    // Aplicar el origen de transformación para centrar la imagen donde está el mouse
+    img.style.transformOrigin = `${offsetX}% ${offsetY}%`;
+});
+
+// Cambiar el cursor a lupa cuando está sobre la imagen
+container.addEventListener('mouseenter', function () {
+    const img = this.querySelector('img');
+    img.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Cambia entre lupa con más o menos según el estado de zoom
+});
+
+// Cambiar el cursor a lupa al salir del área de la imagen
+container.addEventListener('mouseleave', function () {
+    const img = this.querySelector('img');
+    img.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Mantener el cursor de lupa incluso al salir del área
 });
 
 const zoomableImages = document.querySelectorAll('.zoomable-image');
