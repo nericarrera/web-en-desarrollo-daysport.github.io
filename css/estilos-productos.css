@@ -883,28 +883,11 @@ section {
   background-color: #f0f0f0;
 }
 
-.product-details-rating p, 
-.product-details-rating ul,
-.product-details-rating form {
-  display: none;
+.product-details-rating details p, 
+.product-details-rating details ul,
+.product-details-rating details form {
   margin-top: 10px;
   font-size: 16px;
-}
-
-.product-details-rating[open] p,
-.product-details-rating[open] ul,
-.product-details-rating[open] form {
-  display: block;
-}
-
-.product-details-rating[open] summary::after {
-  content: "▲";
-  float: right;
-}
-
-.product-details-rating summary::after {
-  content: "▼";
-  float: right;
 }
 
 .product-details-rating textarea {
