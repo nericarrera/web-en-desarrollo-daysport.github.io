@@ -918,3 +918,32 @@ section {
   font-size: 1.0em;
   color: #28a745; /* Color verde para las estrellas */
 }
+
+/*-------COMENTARIOS ANTEIORES-------- */
+.previous-comments {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.previous-comments h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.previous-comments ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.previous-comments li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.previous-comments strong {
+  font-weight: bold;
+}
