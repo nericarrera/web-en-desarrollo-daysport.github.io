@@ -955,6 +955,8 @@ section {
   font-size: 16px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .previous-comments strong {
