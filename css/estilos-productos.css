@@ -863,6 +863,7 @@ section {
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
   padding: 15px;
+  margin-left: 3px;
 }
 
 .product-details-rating details {
