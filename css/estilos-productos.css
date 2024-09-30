@@ -129,7 +129,9 @@
 
   .menu-li .menu-li-a {
     text-decoration: none;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Poppins", system-ui;
+    font-weight: 600;
+    font-style: italic;
     color: #000000;
     list-style-type: none;
     font-size: 18px;
