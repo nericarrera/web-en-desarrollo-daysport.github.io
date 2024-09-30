@@ -580,9 +580,10 @@ section {
   font-size: 20px;
   color: #000000;
   margin-bottom: 15px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
   margin-top: 25px;
   color: #000000;
   padding: 3px;
