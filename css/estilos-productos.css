@@ -575,10 +575,9 @@ section {
   font-style: normal;
   letter-spacing: 0.5px;
     margin-top: 30px;
-    color: #000000;
-    padding: 3px;
-    
+    color: #000000;    
 }
+
 .product-price {
   font-size: 18px;
   color: #000000;
@@ -587,7 +586,6 @@ section {
   font-style: normal;
   color: #000000;
   letter-spacing: 1px;
-  
 }
 
 .product-colors{
