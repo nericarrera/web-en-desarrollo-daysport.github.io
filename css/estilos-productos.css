@@ -797,13 +797,14 @@ section {
 }
 
 .related-products-container h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
     font-size: 3rem;
     color: #141414;
       font-family: "Poppins", system-ui;
       font-weight: 600;
       font-style: italic;
+
 }
 
 .related-products-gallery {
