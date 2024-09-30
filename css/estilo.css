@@ -1324,7 +1324,7 @@ text-decoration: underline;
     position: relative;
     overflow: hidden;  /* Esto asegura que las tarjetas fuera del contenedor no se vean */
     margin: 30px;
-    padding: 0 20px;
+    
 }
 
 .product-navigation {
