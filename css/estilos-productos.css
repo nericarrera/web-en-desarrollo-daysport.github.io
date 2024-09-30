@@ -898,6 +898,11 @@ section {
   font-size: 18px;
   padding: 5px;
   height: auto;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .product-details-rating textarea {
