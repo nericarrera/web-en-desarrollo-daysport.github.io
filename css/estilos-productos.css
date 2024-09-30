@@ -343,7 +343,7 @@ section {
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 3px; /* Espacio entre imágenes */
+  gap: 1px; /* Espacio entre imágenes */
   width: 70%;
 }
 
@@ -859,7 +859,6 @@ section {
 
 .product-details-rating {
   width: 69%;
-  margin-top: 20px;
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
   padding: 15px;
