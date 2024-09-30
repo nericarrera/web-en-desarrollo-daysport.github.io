@@ -130,11 +130,11 @@
   .menu-li .menu-li-a {
     text-decoration: none;
     font-family: "Poppins", system-ui;
-    font-weight: 600;
-    font-style: italic;
+    font-weight: 500;
+    font-style: normal;
     color: #000000;
     list-style-type: none;
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .menu-li .menu-li-a:hover {
