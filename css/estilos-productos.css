@@ -567,6 +567,7 @@ section {
 }
 
 .product-details{
+  width: 280px;
   font-size: 15px;
   font-family: "Dosis", sans-serif;
   font-optical-sizing: auto;
