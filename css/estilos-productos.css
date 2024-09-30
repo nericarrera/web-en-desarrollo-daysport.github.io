@@ -371,7 +371,6 @@ section {
 
 /* Sección de detalles del producto */
 .product-details-section {
-  width: 40%;
   padding-left: 35px;
 }
 
@@ -557,6 +556,7 @@ section {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 10;
+    padding-left: 35px;
 
 }
 
