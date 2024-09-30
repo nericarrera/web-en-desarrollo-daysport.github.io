@@ -662,6 +662,20 @@ section {
     background-color: #218838;
 }
 
+.btn-add-to-cart2{
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-family: "Dosis", sans-serif;
+font-weight: 600;
+font-style: normal;
+letter-spacing: 0.5px;
+}
+
 .size-chart {
     background-color: white;
     padding: 20px;
