@@ -579,10 +579,8 @@ section {
 .product-price {
   font-size: 20px;
   color: #000000;
-  margin-bottom: 15px;
-  font-family: "Lexend Deca", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
+  font-family: "Arvo", serif;
+  font-weight: 700;
   font-style: normal;
   color: #000000;
   padding: 3px;
