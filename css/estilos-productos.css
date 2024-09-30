@@ -86,8 +86,9 @@
   .buscador input {
     display: flex;
     justify-content: center;
-    font-weight: 500;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Poppins", system-ui;
+    font-weight: 600;
+    font-style: italic;
     align-content: center;
     align-items: center;
     width: 140px;
