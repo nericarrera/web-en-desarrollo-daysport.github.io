@@ -486,7 +486,7 @@
 /* FILTRO DE ROPA */
 
 .container {
-    width: 97%;
+    width: 100%;
     display: flex;
     position: relative;
     margin: auto;
