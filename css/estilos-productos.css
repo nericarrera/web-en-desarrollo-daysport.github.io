@@ -369,34 +369,6 @@ section {
 }
 
 
-/* Sección de detalles del producto */
-.product-details-section {
-  padding-left: 35px;
-}
-
-.product-title {
-  font-size: 28px;
-  font-weight: bold;
-
-}
-
-.product-price {
-  font-size: 24px;
-  color: #e60000;
-  margin: 10px 0;
-}
-
-.product-size h3, .product-quantity label {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.size-options {
-  display: flex;
-  gap: 5px;
-  
-}
-
 .size-btn {
   padding: 10px 20px;
   background-color: #f2f2f2;
@@ -622,17 +594,19 @@ section {
     height: 40px;
     background-color: #ebebeb;
     cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: italic;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 .size-options button:hover {
     background-color: #360353;
     color: #fff;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
     font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 #sizeChartLink {
@@ -640,9 +614,10 @@ section {
     margin-top: 50px;
     color: #161616;
     cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: italic;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+   letter-spacing: 0.5px;
 }
 
 #sizeChartLink:hover {
@@ -655,16 +630,18 @@ section {
     padding: 5px;
     text-align: center;
     margin-top: 25px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .product-quantity label{
   font-size: 15px;
-  font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .btn-buy-now {
@@ -675,9 +652,10 @@ section {
     cursor: pointer;
     margin-top: 20px;
     font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .btn-buy-now:hover {
@@ -701,26 +679,29 @@ section {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .size-chart th, .size-chart td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .size-chart th {
     background-color: #007bff;
     color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .size-chart.hidden {
@@ -769,9 +750,10 @@ section {
 .modal-content h2 {
     margin-bottom: 20px;
     font-size: 1.8rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+    font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 .modal-content table {
@@ -783,9 +765,10 @@ section {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
     font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 .modal-content th {
