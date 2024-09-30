@@ -25,10 +25,12 @@
     display: flex;
     text-align: justify;
     font-size: 14px;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 1.0px;
     color:  #a30dfa;
     font-weight: 900;
-    letter-spacing: 2.5px;
     justify-content: center;
     padding: 2px;    
     margin: auto;
