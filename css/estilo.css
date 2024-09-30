@@ -1323,7 +1323,7 @@ text-decoration: underline;
 .product-container {
     position: relative;
     overflow: hidden;  /* Esto asegura que las tarjetas fuera del contenedor no se vean */
-    margin: 30px auto;
+    margin: 30px;
     padding: 0 20px;
 }
 
