@@ -859,7 +859,7 @@ section {
 /*---------- DETALLES Y PUNTUACION --------------*/
 
 .product-details-rating {
-  width: 69%;
+  width: 66%;
   border-top: 1px solid #ccc;
   font-family: Arial, sans-serif;
   padding: 15px;
@@ -880,10 +880,10 @@ section {
   background-color: #fff;
   border-radius: 5px;
   outline: none;
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .product-details-rating summary:hover {
