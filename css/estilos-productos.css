@@ -556,12 +556,12 @@ section {
 }
 
 .product-title {
-    font-size: 33px;
+    font-size: 30px;
     color: #000000;
-    margin-bottom: 10px;
     font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: italic;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 .product-details{
