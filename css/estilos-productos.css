@@ -875,12 +875,15 @@ section {
 
 .product-details-rating summary {
   font-size: 18px;
-  font-weight: bold;
   cursor: pointer;
   padding: 10px;
   background-color: #fff;
   border-radius: 5px;
   outline: none;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
 
 .product-details-rating summary:hover {
