@@ -302,6 +302,7 @@ section {
     width: 100%;
     margin: auto;
     position: absolute;
+    z-index: 10;
 }
 
 .volver{
