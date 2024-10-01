@@ -38,14 +38,12 @@
 
 .header__inicio-env  p:hover{
     display: flex;
-    color: #360353;
+    color: #ffffff;
     cursor: pointer;
 }
 
-
 /* NAV * LOGO * BUSCADOR * IMPUT  */
 
-/* Estilos base, no modificados */
 .logo {
     display: flex;
     width: 130px;
