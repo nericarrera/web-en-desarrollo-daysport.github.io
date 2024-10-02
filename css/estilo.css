@@ -868,10 +868,7 @@
 .conteiner-card .card .imgcard {
     display: inline-block;
     width: 100%;
-    height: 67%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    
+    height: 67%;    
 }
 
 .imgcard {
