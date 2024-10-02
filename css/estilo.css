@@ -77,12 +77,16 @@
     z-index: 10;
     justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
   }
+
+  .conteiner-buscador-carrito {
+    display: flex;
+    margin: auto;
+  }
   
   .buscador {
     display: flex;
     justify-content: end;
     text-align: center; 
-    width: 10%;
     height: auto; 
   }
   
