@@ -727,14 +727,14 @@
 }
 
 .destacado__p{
-    height: 40px;
-    width: 485px;
     text-align: center;
     justify-content: center;
     font-size: 45px;
     font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
+    font-weight: 500;
     color: #f3ff05;
     box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.5);
+    margin: auto;
 }
 
 /* CONTENEDOR TARJETAS- */
