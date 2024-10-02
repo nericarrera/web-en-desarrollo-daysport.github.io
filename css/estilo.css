@@ -636,7 +636,7 @@
     padding: 3px;
   }
 
-  .product-inf .product-nombre {
+  .product-nombre {
     font-size: 16px;
     color: #000000;
     font-family: "Dosis", sans-serif;
@@ -646,6 +646,7 @@
   }
 
   .product-precio {
+    display: flex;
     font-size: 15px;
     color: #000000;
     font-family: "Arvo", serif;
