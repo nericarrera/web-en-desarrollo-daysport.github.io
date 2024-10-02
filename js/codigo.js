@@ -50,6 +50,7 @@ window.addEventListener('load', updateDimensions);
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
 
+
 // Variables globales para el carrito
 let cart = [];
 const cartIcon = document.getElementById('cart-icon');
@@ -99,6 +100,11 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
         addToCart(productName, productPrice);
         alert('Producto añadido al carrito!');
     });
+});
+
+cartIcon.addEventListener('click', () => {
+  console.log('Carrito desplegado');
+  cartDropdown.classList.toggle('hidden');
 });
 
 
