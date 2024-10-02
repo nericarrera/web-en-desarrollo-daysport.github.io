@@ -636,7 +636,7 @@
     padding: 3px;
   }
 
-  .product-nombre{
+  .product-nombre {
     font-size: 16px;
     color: #000000;
     font-family: "Dosis", sans-serif;
@@ -646,7 +646,7 @@
     letter-spacing: 0.5px;
   }
 
-  .product-precio{
+  .product-precio {
     font-size: 15px;
     color: #000000;
     font-family: 'Oswald', sans-serif;
