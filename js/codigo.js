@@ -91,7 +91,7 @@ function removeFromCart(index) {
     updateCart();
 }
 
-// Ejemplo de añadir un producto al carrito (puedes enlazar esta función a tus botones)
+// Asegurarse de que los botones de "Agregar al carrito" existan y funcionen
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     button.addEventListener('click', (e) => {
         const productName = e.target.getAttribute('data-product');

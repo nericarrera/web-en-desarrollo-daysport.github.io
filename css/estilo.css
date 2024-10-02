@@ -130,15 +130,14 @@
 
 .cart-dropdown {
     position: absolute;
-    top: 50px;
+    top: 60px; /* Ajusta esto para que el carrito se despliegue correctamente */
     right: 10px;
     width: 300px;
-    padding: 20px;
     background-color: white;
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    display: none;
+    z-index: 9999; /* Asegúrate de que esté en el frente */
+    display: none; /* Empieza oculto */
 }
 
 .cart-dropdown ul {
