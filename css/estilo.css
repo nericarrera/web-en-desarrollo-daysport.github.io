@@ -721,6 +721,8 @@
     height: 60px;
     position: relative;
     justify-content: center;
+    background: #000000;
+    margin-top: 15px;
 
 }
 
@@ -732,12 +734,9 @@
     font-size: 35px;
     font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
     color: #f3ff05;
-    background: #000000;
-    border-left: 2px solid 797979;
     border-right: 2px solid #797979;
     border-radius: 15px;
     box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.5);
-    margin-top: 15px;
 }
 
 /* CONTENEDOR TARJETAS- */
