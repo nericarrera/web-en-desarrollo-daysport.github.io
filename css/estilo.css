@@ -507,7 +507,6 @@
     width: 40%;
   }
 
-
   .filter-section {
     display: flex;
     border: 1px #000;
@@ -540,10 +539,6 @@
     color: #FFFFFF;
   }
 
-
-
- 
-
 /* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
   .filter-section label{
     font-family: 'Oswald', sans-serif;
@@ -553,14 +548,12 @@
     white-space: nowrap; /* Para evitar que se dividan en dos líneas */
   }
   
- 
   /* Ocultar por defecto */
 .filter-options {
     display: none;
     align-items: center;
     gap: 10px;
     width: 100%;
-
   }
 
   /* Alineación de los checkboxes y labels dentro de .filter-option */
@@ -571,7 +564,7 @@
     width: 100%; /* Asegurar que ocupen todo el ancho disponible */
   }
 
-  /* Si deseas que el label mantenga una alineación más consistente, puedes ajustar el width */
+
 .filter-option label {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
@@ -592,14 +585,11 @@
   }
     
 
-
   .filter-titulo{
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
     font-weight: 600;
   }
-
-
 
   .filter-titulo-section {
     display: flex;
@@ -617,6 +607,7 @@
     background: #000000;
     color: #ffffff;
   }
+
   
   .products-grid {
     display: flex;
@@ -648,7 +639,11 @@
   .product-nombre{
     font-size: 16px;
     color: #000000;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.5px;
   }
 
   .product-precio{
