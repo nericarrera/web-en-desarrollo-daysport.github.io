@@ -628,7 +628,7 @@
     height: auto;
   }
 
-  .product-inf{
+  .product-inf {
     position: relative;
     width: auto;
     height: auto;
@@ -636,7 +636,7 @@
     padding: 3px;
   }
 
-  .product-nombre {
+  .product-inf .product-nombre {
     font-size: 16px;
     color: #000000;
     font-family: "Dosis", sans-serif;
