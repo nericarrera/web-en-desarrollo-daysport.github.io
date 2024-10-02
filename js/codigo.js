@@ -281,10 +281,10 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = product.image;
         img.alt = product.name;
 
-        const productName = document.createElement('p');
+        const productName = document.createElement('product-nombre');
         productName.textContent = product.name;
 
-        const productPrice = document.createElement('p');
+        const productPrice = document.createElement('product-precio');
         productPrice.textContent = `$${product.price}`;
 
         productDiv.appendChild(img);
