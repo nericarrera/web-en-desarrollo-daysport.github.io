@@ -1404,6 +1404,26 @@ text-decoration: underline;
     background-color: #0056b3;
 }
 
+.product-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-add-to-cart, .btn-view-details {
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 5px;
+}
+
+.btn-add-to-cart:hover, .btn-view-details:hover {
+    background-color: #333;
+}
+
 
 
 

@@ -391,3 +391,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Array para almacenar los productos añadidos al carrito
+let cart = [];
+
+// Función para añadir al carrito
+function addToCart(productName, productPrice) {
+    cart.push({name: productName, price: productPrice});
+    updateCartUI();
+}
+
+// Actualizar la interfaz del carrito
+function updateCartUI() {
+    const cartContainer = document.getElementById('cart-items');
+    cartContainer.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        cartContainer.innerHTML += `<li>${item.name} - $${item.price}</li>`;
+    });
+}
+
+// Capturar clicks en los botones de agregar al carrito
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const productName = e.target.getAttribute('data-product');
+        const productPrice = e.target.getAttribute('data-price');
+        addToCart(productName, productPrice);
+        alert('Producto añadido al carrito!');
+    });
+});
+
