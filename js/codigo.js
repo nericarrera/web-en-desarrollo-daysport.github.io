@@ -9,6 +9,7 @@ function changeSlide() {
 setInterval(changeSlide, 25000);  // Cambia cada 5 segundos
 
 
+
 /* flechas para mover las cards - 1er seccion */
 
 const cardWrapper = document.querySelector('.card-wrapper');
@@ -47,6 +48,59 @@ prevArrow.addEventListener('click', function(event) {
 window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
+
+
+// Variables globales para el carrito
+let cart = [];
+const cartIcon = document.getElementById('cart-icon');
+const cartDropdown = document.getElementById('cart-dropdown');
+const cartCount = document.getElementById('cart-count');
+const cartItemsList = document.getElementById('cart-items-list');
+const cartTotal = document.getElementById('cart-total');
+
+// Mostrar u ocultar el carrito al hacer clic en el ícono del carrito
+cartIcon.addEventListener('click', () => {
+    cartDropdown.classList.toggle('hidden');
+});
+
+// Añadir productos al carrito
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+}
+
+// Actualizar la interfaz del carrito
+function updateCart() {
+    cartItemsList.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += parseFloat(item.price);
+        const li = document.createElement('li');
+        li.innerHTML = `${item.name} - $${item.price} <button onclick="removeFromCart(${index})">Eliminar</button>`;
+        cartItemsList.appendChild(li);
+    });
+
+    cartCount.innerText = cart.length;
+    cartTotal.innerText = `$${total.toFixed(2)}`;
+}
+
+// Eliminar productos del carrito
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Ejemplo de añadir un producto al carrito (puedes enlazar esta función a tus botones)
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const productName = e.target.getAttribute('data-product');
+        const productPrice = e.target.getAttribute('data-price');
+        addToCart(productName, productPrice);
+        alert('Producto añadido al carrito!');
+    });
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -390,33 +444,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-// Array para almacenar los productos añadidos al carrito
-let cart = [];
-
-// Función para añadir al carrito
-function addToCart(productName, productPrice) {
-    cart.push({name: productName, price: productPrice});
-    updateCartUI();
-}
-
-// Actualizar la interfaz del carrito
-function updateCartUI() {
-    const cartContainer = document.getElementById('cart-items');
-    cartContainer.innerHTML = '';
-
-    cart.forEach((item, index) => {
-        cartContainer.innerHTML += `<li>${item.name} - $${item.price}</li>`;
-    });
-}
-
-// Capturar clicks en los botones de agregar al carrito
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const productName = e.target.getAttribute('data-product');
-        const productPrice = e.target.getAttribute('data-price');
-        addToCart(productName, productPrice);
-        alert('Producto añadido al carrito!');
-    });
-});
 
