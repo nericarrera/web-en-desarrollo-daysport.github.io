@@ -100,6 +100,27 @@
     margin: auto;
     margin-right: 25px;
   }
+
+  .cart-icon-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#cart-icon {
+    width: 30px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 12px;
+}
   
   /* MENÚ Y SUBMENÚ */
   
