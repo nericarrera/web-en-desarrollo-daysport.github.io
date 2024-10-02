@@ -121,6 +121,40 @@
     border-radius: 50%;
     font-size: 12px;
 }
+
+.cart-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+}
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-dropdown li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-dropdown .cart-summary {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
   
   /* MENÚ Y SUBMENÚ */
   
