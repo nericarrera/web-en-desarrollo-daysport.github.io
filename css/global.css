@@ -84,6 +84,7 @@
     margin: auto;
     margin-top: 24px;
     width: auto;
+    position: relative;
   }
   
   .buscador {
