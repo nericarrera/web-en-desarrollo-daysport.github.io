@@ -155,7 +155,10 @@
     display: none; /* Empieza oculto */
 }
 
-
+.titulo-carrito{
+    color: #000000;
+    font-size: 19px;
+}
 
 .cart-dropdown ul {
     list-style: none;
