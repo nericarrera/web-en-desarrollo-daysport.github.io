@@ -49,10 +49,10 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 // Variables globales para el carrito
-let carts = [];
+let cart = [];
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
-const cartsCount = document.getElementById('cart-count');
+const cartCount = document.getElementById('cart-count');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 
@@ -105,10 +105,10 @@ cartIcon.addEventListener('click', () => {
 });
 
 
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let carts = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Actualizar contador del carrito en la página principal
-const cartCount = document.getElementById('cart-count');
+const cartsCount = document.getElementById('cart-count');
 cartCount.innerText = cart.length;
 
 // Añadir productos al carrito
