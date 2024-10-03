@@ -107,6 +107,10 @@
     margin-right: 15px;
   }
 
+  .buscador img {
+    width: 25px;
+  }
+
   .cart-icon-container {
     position: relative;
     display: inline-block;
