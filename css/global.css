@@ -153,6 +153,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 30; /* Asegúrate de que esté en el frente */
     display: none; /* Empieza oculto */
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-dropdown-hidden {
