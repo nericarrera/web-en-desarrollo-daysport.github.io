@@ -49,7 +49,7 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 // Variables globales para el carrito
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];  // Cargar carrito desde LocalStorage
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
 const cartCount = document.getElementById('cart-count');
@@ -60,12 +60,6 @@ const cartTotal = document.getElementById('cart-total');
 cartIcon.addEventListener('click', () => {
     cartDropdown.classList.toggle('hidden');
 });
-
-// Añadir productos al carrito
-function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    updateCart();
-}
 
 // Actualizar la interfaz del carrito
 function updateCart() {
@@ -81,6 +75,14 @@ function updateCart() {
 
     cartCount.innerText = cart.length;
     cartTotal.innerText = `$${total.toFixed(2)}`;
+    localStorage.setItem('cart', JSON.stringify(cart));  // Guardar en LocalStorage
+}
+
+// Añadir productos al carrito
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+    alert('Producto añadido al carrito!');
 }
 
 // Eliminar productos del carrito
@@ -89,43 +91,18 @@ function removeFromCart(index) {
     updateCart();
 }
 
-// Asegurarse de que los botones de "Agregar al carrito" existan y funcionen
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const productName = e.target.getAttribute('data-product');
-        const productPrice = e.target.getAttribute('data-price');
-        addToCart(productName, productPrice);
-        alert('Producto añadido al carrito!');
-    });
-});
-
-cartIcon.addEventListener('click', () => {
-  console.log('Carrito desplegado');
-  cartDropdown.classList.toggle('hidden');
-});
-
-
-let carts = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Actualizar contador del carrito en la página principal
-const cartsCount = document.getElementById('cart-count');
-cartCount.innerText = cart.length;
-
-// Añadir productos al carrito
-function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    localStorage.setItem('cart', JSON.stringify(cart)); // Guardar en LocalStorage
-    cartCount.innerText = cart.length; // Actualizar contador
-}
-
 // Enlazar los botones de "Agregar al carrito" para cada producto
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     button.addEventListener('click', (e) => {
         const productName = e.target.getAttribute('data-product');
         const productPrice = e.target.getAttribute('data-price');
         addToCart(productName, productPrice);
-        alert('Producto añadido al carrito!');
     });
+});
+
+// Cargar el carrito cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    updateCart();
 });
 
 
