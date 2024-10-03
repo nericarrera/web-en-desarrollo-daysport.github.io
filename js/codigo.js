@@ -168,37 +168,37 @@ document.addEventListener('DOMContentLoaded', function() {
     alert('Producto comprado');
   }
 
-  // Función para filtrar productos
   function filterProducts() {
-    const selectedGenders = Array.from(genderCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-    const selectedCategories = Array.from(categoryCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-    const selectedSizes = Array.from(sizeCheckboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-    const selectedPrice = parseInt(priceRange.value);
-    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+    const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(cb => cb.value);
+    const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
+    const selectedPrice = parseInt(document.getElementById('price').value);
 
+    const products = document.querySelectorAll('.product');
     products.forEach(product => {
-      const productGender = product.getAttribute('data-gender');
-      const productCategory = product.getAttribute('data-category');
-      const productSize = product.getAttribute('data-size');
-      const productPrice = parseInt(product.getAttribute('data-price')) || 0;
-      const productName = product.getAttribute('data-name') ? product.getAttribute('data-name').toLowerCase() : '';
+        const productGender = product.getAttribute('data-gender');
+        const productCategory = product.getAttribute('data-category');
+        const productPrice = parseInt(product.getAttribute('data-price')) || 0;
 
-      const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
-      const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
-      const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
-      const priceMatch = productPrice <= selectedPrice;
-      const searchMatch = productName.includes(searchTerm);
+        const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(productGender);
+        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(productCategory);
+        const priceMatch = productPrice <= selectedPrice;
 
-      if (genderMatch && categoryMatch && sizeMatch && priceMatch && searchMatch) {
-        product.style.display = 'block';  // Mostrar producto
-      } else {
-        product.style.display = 'none';   // Ocultar producto
-      }
+        if (genderMatch && categoryMatch && priceMatch) {
+            product.style.display = 'block';  // Mostrar producto
+        } else {
+            product.style.display = 'none';   // Ocultar producto
+        }
     });
+}
 
-    // Asegurarse de que los botones tengan eventos asignados
-    assignButtonEvents();
-  }
+// Escuchar los cambios en los filtros
+document.querySelectorAll('input[name="gender"], input[name="category"], #price').forEach(input => {
+    input.addEventListener('change', filterProducts);
+});
+
+// Llamar a filterProducts al cargar la página para mostrar los productos iniciales
+document.addEventListener('DOMContentLoaded', filterProducts);
+
 
   // Función para limpiar filtros
   function clearFilters() {
