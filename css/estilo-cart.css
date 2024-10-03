@@ -39,6 +39,16 @@
 }
 
 /* NAV * LOGO * BUSCADOR * IMPUT  */
+.nav {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    background: #fdfdfd;
+    list-style: none;
+    position: relative;
+    z-index: 10;
+    justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
+  }
 
 .logo {
     display: flex;
@@ -63,17 +73,6 @@
     width: 40%;
   }
   
-  .nav {
-    display: flex;
-    width: 100%;
-    height: 65px;
-    background: #fdfdfd;
-    list-style: none;
-    position: relative;
-    z-index: 10;
-    justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
-  }
-
   .conteiner-buscador-carrito {
     display: flex;
     margin: auto;
@@ -185,9 +184,7 @@
     margin-top: 2px;
 }
 
-
-  
-  /* MENÚ Y SUBMENÚ */
+/* MENÚ Y SUBMENÚ */
   
   /* Contenedor del menú */
 /* Estilo para el menú principal */
@@ -321,14 +318,12 @@
     transition: all 430ms ease;
     transform: scale(1.2);
     cursor: pointer;
-
   }
 
   .submenu-item a{
     font-family: 'Oswald', sans-serif;
     color: #000;
     text-decoration: none;
-
   }
 
   .submenu-item a:hover{
@@ -337,8 +332,6 @@
     transition: all 430ms ease;
   }
 
- 
-  
   /* Mostrar el submenú al hacer hover */
   .menu .menu-ul:hover .submenu1 {
     display: flex;
@@ -374,6 +367,9 @@
     margin: 0 auto 10px;
   }
 
+
+  
+  
   /* SECTION */
 section {
     display: flex;
@@ -422,3 +418,5 @@ section {
   cursor: pointer;
   color: #f9f9f9;
 }
+
+
