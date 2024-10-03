@@ -187,6 +187,7 @@
 
 .cart-dropdown-hidden {
     display: none;
+    background: #ccc;
 }
 
 
