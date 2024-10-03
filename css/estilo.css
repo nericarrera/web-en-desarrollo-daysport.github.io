@@ -104,7 +104,8 @@
     background: #ffffff;
     border: 1px solid #1a1a1a;
     margin: auto;
-    margin-right: 15px;
+    margin-right: -25px;
+    margin-left: 20px;
   }
 
   #serch-icon {
@@ -119,7 +120,6 @@
     display: inline-block;
     cursor: pointer;
     margin: auto;
-    margin-left: 20px;
 }
 
 #cart-icon {
