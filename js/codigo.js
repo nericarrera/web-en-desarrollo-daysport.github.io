@@ -105,10 +105,10 @@ cartIcon.addEventListener('click', () => {
 });
 
 
-let carts = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Actualizar contador del carrito en la página principal
-const cartsCount = document.getElementById('cart-count');
+const cartCount = document.getElementById('cart-count');
 cartCount.innerText = cart.length;
 
 // Añadir productos al carrito
