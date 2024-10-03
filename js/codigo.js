@@ -61,7 +61,7 @@ cartIcon.addEventListener('click', () => {
   if (cart.length === 0) {
       alert("El carrito está vacío.");
   } else {
-      cartDropdown.classList.toggle('hidden');  // Mostrar/ocultar el carrito
+      cartDropdown.classList.toggle('cart-dropdown-hidden');  // Mostrar/ocultar el carrito
   }
 });
 
