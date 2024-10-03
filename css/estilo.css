@@ -83,6 +83,8 @@
     display: flex;
     margin: auto;
     margin-top: 24px;
+    width: auto;
+    margin-right: 5px;
   }
   
   .buscador {
