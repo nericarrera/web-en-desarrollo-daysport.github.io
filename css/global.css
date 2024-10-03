@@ -145,7 +145,7 @@
 
 .cart-dropdown {
     position: absolute;
-    top: 60px; /* Ajusta esto para que el carrito se despliegue correctamente */
+    top: 70px; /* Ajusta esto para que el carrito se despliegue correctamente */
     right: 10px;
     width: 300px;
     background-color: white;
@@ -171,6 +171,19 @@
     display: flex;
     justify-content: space-between;
 }
+
+.cart-summary button {
+    background-color: #a30dfa;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .cart-summary button:hover {
+    background-color: #8b06d1;
+ }
 
 .hidden {
     display: none;
