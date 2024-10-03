@@ -49,10 +49,10 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 // Variables globales para el carrito
-let cart = [];
+let carts = [];
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
-const cartCount = document.getElementById('cart-count');
+const cartsCount = document.getElementById('cart-count');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 
