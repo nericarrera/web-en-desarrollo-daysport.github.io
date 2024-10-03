@@ -104,7 +104,7 @@
     background: #ffffff;
     border: 1px solid #1a1a1a;
     margin: auto;
-    margin-right: 25px;
+    margin-right: 15px;
   }
 
   .cart-icon-container {
@@ -1592,7 +1592,6 @@ input, .textarea1 {
     box-sizing: border-box;
     font-size: 17px;
     border: none;
-    border-radius: 10px;
 }
 
 .textarea1 {
