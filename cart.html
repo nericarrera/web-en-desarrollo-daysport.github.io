@@ -32,14 +32,16 @@
 </head>
 <body>
 
-    <header>
+    <header class="header">
         <div class="header__inicio-env">
-            <p>ENVIOS A TODO EL PAIS !</p>
-          </div>
-    </header>
-
-    <nav class="nav">
-
+          <p>ENVIOS A TODO EL PAIS !</p>
+        </div>
+      </header>
+    
+      <!-- navegador -->
+      
+      <nav class="nav">
+    
         <div class="logo">
           <a class="a" href="index.html"><img class="logo1" src="img/logo/Copia de daysport (2).png"></a>
         </div> 
@@ -57,7 +59,7 @@
                 <li class="submenu-item"><img src="img/iconos/iconos-ropa-menu/shorts-mujer-1.png" alt="Shorts"><a href="#" data-filter="shorts">Shorts</a></li>
               </ul>
             </li>
-          </ul>
+         </ul>
            <ul class="menu-ul">
             <li class="menu-li"><a class="menu-li-a" href="#" data-filter="hombre">HOMBRE</a>
               <ul class="submenu2">
@@ -89,35 +91,39 @@
                 <li class="submenu-item"><img src="img/iconos/iconos-ropa-menu/pantalones (2).png" alt="jeans"><a href="#" data-filter="jeans">Jeans</a></li>
            </ul>
         </div>
+        
+      
+        
+    </div>
     
-        <div class="conteiner-buscador-carrito">
+    <div class="conteiner-buscador-carrito">
     
-         <div class="cart-icon-container">
-           <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
-           <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
-         </div>
+      <div class="cart-icon-container">
+        <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
+        <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
+     </div>
     
-           <div id="cart-dropdown" class="cart-dropdown hidden">
-             <h4>Carrito de compras</h4>
-             <ul id="cart-items-list">
-             <!-- Aquí se mostrarán los productos añadidos -->
-             </ul>
-              <div class="cart-summary">
-               <p>Total: <span id="cart-total">$0</span></p>
-               <button id="checkout-btn">Finalizar compra</button>
-               <button id="view-cart-btn">Ver carrito</button>
-              </div>
-           </div>
+     <div id="cart-dropdown" class="cart-dropdown hidden">
+      <h4>Carrito de compras</h4>
+      <ul id="cart-items-list">
+          <!-- Aquí se mostrarán los productos añadidos -->
+      </ul>
+      <div class="cart-summary">
+          <p>Total: <span id="cart-total">$0</span></p>
+          <button id="checkout-btn">Finalizar compra</button>
+          <button id="view-cart-btn">Ver carrito</button>
+      </div>
+      </div>
     
-            <div class="user-icon-container">
-             <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
-            </div>
+      <div class="user-icon-container">
+        <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
+     </div>
     
-           <div class="buscador">
-             <input type="text" id="search" placeholder="Buscar"><a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
-           </div>
-       </div>
-    </nav>
+      <div class="buscador">
+         <input type="text" id="search" placeholder="Buscar"><a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
+      </div>
+     </div>
+      </nav>
 
     <section id="cart-items-section">
         <ul id="cart-items-list">
