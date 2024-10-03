@@ -417,5 +417,37 @@ section {
   cursor: pointer;
   color: #f9f9f9;
 }
+ /* --------- carrito ---------- */
+
+#cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+}
+
+#cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-summary {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #333;
+}
 
 
