@@ -1,5 +1,4 @@
 
-
 // Cargar productos desde LocalStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartItemsList = document.getElementById('cart-items-list');
