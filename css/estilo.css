@@ -121,7 +121,6 @@
 #cart-count {
     position: absolute;
     top: -5px;
-    right: 0px;
     background-color: red;
     color: white;
     padding: 5px;
