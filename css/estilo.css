@@ -119,10 +119,12 @@
     display: inline-block;
     cursor: pointer;
     margin: auto;
+    margin-left: 20px;
 }
 
 #cart-icon {
-    width: 25px;
+    width: 22px;
+    margin-top: 5px;
 }
 
 #cart-count {
@@ -180,7 +182,10 @@
 }
 
 #user-icon {
-    width: 25px;
+    width: 22px;
+    margin-left: 25px;
+    height: 25px;
+    margin-top: 2px;
 }
 
 
