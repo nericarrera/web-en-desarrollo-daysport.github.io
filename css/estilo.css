@@ -120,13 +120,14 @@
 
 #cart-count {
     position: absolute;
-    top: -6px;
+    top: -5px;
     background-color: red;
     color: white;
     padding: 5px;
     border-radius: 100%;
-    font-size: 12px;
+    font-size: 9px;
     width: 17px;
+    margin: auto;
 }
 
 .cart-dropdown {
