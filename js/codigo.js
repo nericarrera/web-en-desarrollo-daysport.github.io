@@ -672,6 +672,7 @@ document.getElementById('prevProductArrow').addEventListener('click', (event) =>
 });
 
 
+/* -----------BOTON PARA AGREGAR AL CARRITO--------------*/
 // Esperar a que el DOM cargue completamente
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener todos los botones con clase "btn-agregar"
