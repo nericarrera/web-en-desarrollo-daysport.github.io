@@ -348,20 +348,16 @@
       </div>
 
      <!-- Precio -->
-     <div class="filter-section">
-      <p class="filter-titulo-section">Precio</p>
-      
-      <!-- Desde -->
-      <label for="price-min">Desde:</label>
-      <input type="range" id="price-min" min="0" max="100000" step="100" value="5000">
-      <span id="price-min-value">$5.000</span>
-      
-      <!-- Hasta -->
-      <label for="price-max">Hasta:</label>
-      <input type="range" id="price-max" min="0" max="100000" step="100" value="150000">
-      <span id="price-max-value">$150.000</span>
-    </div>
-   </aside>
+      <div class="filter-section">
+        <p class="filter-titulo-section">Precio</p>
+
+       <!-- Rango de precio -->
+        <label for="price-range">Selecciona el precio:</label>
+        <input type="range" id="price-range" min="5000" max="120000" step="100" value="5000">
+        <span id="price-display">$5,000</span> <!-- Mostrará el valor dinámico del rango -->
+      </div>
+
+    </aside>
 
 
    <section class="products-grid">
@@ -393,8 +389,10 @@
     <div class="product">producto 2</div>
     <div class="product">Producto 3</div>
 
-  </div>
-  </section>
+    </div>
+
+    </section>
+  
      
 
  <div class="destacado">      	
