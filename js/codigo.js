@@ -415,23 +415,6 @@ function filterProducts() {
 // Llamar a filterProducts cada vez que se haga un cambio
 filterProducts();
 
-// Variables para los inputs de precio
-const priceMinInput = document.getElementById('price-min');
-const priceMaxInput = document.getElementById('price-max');
-const priceMinValue = document.getElementById('price-min-value');
-const priceMaxValue = document.getElementById('price-max-value');
-
-// Actualizar los valores mostrados
-priceMinInput.addEventListener('input', function() {
-  priceMinValue.textContent = `$${priceMinInput.value}`;
-  filterProducts();  // Aplicar el filtro cuando cambie el valor
-});
-
-priceMaxInput.addEventListener('input', function() {
-  priceMaxValue.textContent = `$${priceMaxInput.value}`;
-  filterProducts();  // Aplicar el filtro cuando cambie el valor
-});
-
 // Variables para el input de precio y para mostrar el valor seleccionado
 const priceRangeInput = document.getElementById('price-range');
 const priceDisplay = document.getElementById('price-display');
@@ -442,7 +425,6 @@ priceRangeInput.addEventListener('input', function() {
   priceDisplay.textContent = `$${selectedPrice.toLocaleString()}`;  // Formatear con comas (ej: 10,000)
   filterProducts();  // Aplicar el filtro en tiempo real
 });
-
 
 // Función para filtrar los productos por el valor del rango de precios
 function filterProducts() {
