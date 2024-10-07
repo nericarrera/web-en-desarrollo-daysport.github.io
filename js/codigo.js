@@ -6,7 +6,7 @@ function changeSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
-setInterval(changeSlide, 25000);  // Cambia cada 5 segundos
+setInterval(changeSlide, 25000);  // Cambia cada 25 segundos
 
 /* flechas para mover las cards - 1er seccion */
 
@@ -414,6 +414,42 @@ function filterProducts() {
 
 // Llamar a filterProducts cada vez que se haga un cambio
 filterProducts();
+
+// Variables para los inputs de precio
+const priceMinInput = document.getElementById('price-min');
+const priceMaxInput = document.getElementById('price-max');
+const priceMinValue = document.getElementById('price-min-value');
+const priceMaxValue = document.getElementById('price-max-value');
+
+// Actualizar los valores mostrados
+priceMinInput.addEventListener('input', function() {
+  priceMinValue.textContent = `$${priceMinInput.value}`;
+  filterProducts();  // Aplicar el filtro cuando cambie el valor
+});
+
+priceMaxInput.addEventListener('input', function() {
+  priceMaxValue.textContent = `$${priceMaxInput.value}`;
+  filterProducts();  // Aplicar el filtro cuando cambie el valor
+});
+
+// Función para filtrar los productos por rango de precios
+function filterProducts() {
+  const minPrice = parseInt(priceMinInput.value);
+  const maxPrice = parseInt(priceMaxInput.value);
+  
+  const products = document.querySelectorAll('.product');  // Asegúrate de que los productos tengan la clase 'product'
+
+  products.forEach(product => {
+    const productPrice = parseInt(product.getAttribute('data-price'));
+
+    // Mostrar solo productos dentro del rango
+    if (productPrice >= minPrice && productPrice <= maxPrice) {
+      product.style.display = 'block';  // Mostrar producto
+    } else {
+      product.style.display = 'none';   // Ocultar producto
+    }
+  });
+}
 
 
 

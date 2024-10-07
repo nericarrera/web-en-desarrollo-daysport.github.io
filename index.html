@@ -349,10 +349,18 @@
 
      <!-- Precio -->
      <div class="filter-section">
-       <p class="filter-titulo-section">Precio</p>
-       <input type="range" id="price" min="0" max="100000" step="100" value="5000">
-       <span id="price-value">$5000</span>
-      </div>
+      <p class="filter-titulo-section">Precio</p>
+      
+      <!-- Desde -->
+      <label for="price-min">Desde:</label>
+      <input type="range" id="price-min" min="0" max="100000" step="100" value="0">
+      <span id="price-min-value">$0</span>
+      
+      <!-- Hasta -->
+      <label for="price-max">Hasta:</label>
+      <input type="range" id="price-max" min="0" max="100000" step="100" value="100000">
+      <span id="price-max-value">$100000</span>
+    </div>
    </aside>
 
 
