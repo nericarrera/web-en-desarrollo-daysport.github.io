@@ -322,6 +322,24 @@ document.addEventListener('DOMContentLoaded', function() {
           image: "img/mujer/remera/remera1.jpg", 
           detailsPage: "product2.html" 
       },
+      { 
+        id: 3, 
+        name: "Campera Hombre Liviana", 
+        gender: "hombre", 
+        category: "campera-liviana", 
+        price: 3500, 
+        image: "img/hombre/campera-liviana/campera1.jpg", 
+        detailsPage: "product1.html"
+    },
+    { 
+        id: 4, 
+        name: "Remera Mujer", 
+        gender: "mujer", 
+        category: "remeras", 
+        price: 2000, 
+        image: "img/mujer/remera/remera1.jpg", 
+        detailsPage: "product2.html" 
+    },
       // Añade más productos según necesites...
   ];
 
