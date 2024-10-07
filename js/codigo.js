@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
- 
+ /*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
 
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los headers que se usan para togglear
@@ -586,7 +586,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+/*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
 
+ 
 function filterProducts() {
   // Lógica de filtrado...
 
