@@ -378,7 +378,7 @@
 
 /* SECTION */
 
-section {
+.section-conteiner-volver {
     display: flex;
     width: auto;
     height: 60px;
