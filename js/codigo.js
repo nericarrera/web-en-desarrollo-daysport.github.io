@@ -432,24 +432,38 @@ priceMaxInput.addEventListener('input', function() {
   filterProducts();  // Aplicar el filtro cuando cambie el valor
 });
 
-// Función para filtrar los productos por rango de precios
+// Variables para el input de precio y para mostrar el valor seleccionado
+const priceRangeInput = document.getElementById('price-range');
+const priceDisplay = document.getElementById('price-display');
+
+// Actualizar el valor del rango en tiempo real
+priceRangeInput.addEventListener('input', function() {
+  const selectedPrice = parseInt(priceRangeInput.value);
+  priceDisplay.textContent = `$${selectedPrice.toLocaleString()}`;  // Formatear con comas (ej: 10,000)
+  filterProducts();  // Aplicar el filtro en tiempo real
+});
+
+
+// Función para filtrar los productos por el valor del rango de precios
 function filterProducts() {
-  const minPrice = parseInt(priceMinInput.value);
-  const maxPrice = parseInt(priceMaxInput.value);
+  const selectedPrice = parseInt(priceRangeInput.value);
   
   const products = document.querySelectorAll('.product');  // Asegúrate de que los productos tengan la clase 'product'
 
   products.forEach(product => {
     const productPrice = parseInt(product.getAttribute('data-price'));
 
-    // Mostrar solo productos dentro del rango
-    if (productPrice >= minPrice && productPrice <= maxPrice) {
+    // Mostrar solo productos cuyo precio sea menor o igual al valor seleccionado
+    if (productPrice <= selectedPrice) {
       product.style.display = 'block';  // Mostrar producto
     } else {
       product.style.display = 'none';   // Ocultar producto
     }
   });
 }
+
+// Llamar a filterProducts al cargar la página para que se aplique el filtro inicial
+filterProducts();
 
 
 
