@@ -586,7 +586,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-/*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
+/*-------------------------*/
 
  
 function filterProducts() {
@@ -622,6 +622,7 @@ priceRangeInput.addEventListener('input', function() {
   priceDisplay.textContent = `$${selectedPrice.toLocaleString()}`;  // Formatear con comas (ej: 10,000)
   filterProducts();  // Aplicar el filtro en tiempo real
 });
+
 
 // Función para filtrar los productos por el valor del rango de precios
 function filterProducts() {
