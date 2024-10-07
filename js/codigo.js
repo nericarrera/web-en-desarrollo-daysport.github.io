@@ -1,3 +1,5 @@
+/*--------BANNER--------*/
+
 let currentIndex = 0;
 const track = document.querySelector('.banner-track');
 const slides = document.querySelectorAll('.banner-slide');
@@ -8,7 +10,9 @@ function changeSlide() {
 }
 setInterval(changeSlide, 25000);  // Cambia cada 25 segundos
 
-/* flechas para mover las cards - 1er seccion */
+/*-------------BANNER---------------*/
+
+/*-----flechas para mover las cards - 1er seccion------- */
 
 const cardWrapper = document.querySelector('.card-wrapper');
 const nextArrow = document.getElementById('nextArrow');
@@ -48,6 +52,7 @@ window.addEventListener('load', updateDimensions);
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
 
+/*------------CARRITO------------*/
 
 // Variables globales para el carrito
 let cart = JSON.parse(localStorage.getItem('cart')) || [];  // Cargar carrito desde LocalStorage
@@ -115,9 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCart();  // Actualizar el carrito al cargar la página
 });
 
+/*-------------CARRITO-----------------*/
 
-
-
+/*-------------FUNCION DE FILTRO------------*/
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('search');
   const products = document.querySelectorAll('.product');
@@ -211,6 +216,10 @@ document.querySelectorAll('input[name="gender"], input[name="category"], #price'
 document.addEventListener('DOMContentLoaded', filterProducts);
 
 
+/*-------------FUNCION DE FILTRO------------*/
+
+/*-------------FUNCION LIMPIAR FILTRO------------*/
+
   // Función para limpiar filtros
   function clearFilters() {
     genderCheckboxes.forEach(checkbox => checkbox.checked = false);
@@ -289,7 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/*-------------FUNCION LIMPIAR FILTRO------------*/
 
+/*-------------FUNCION AGREGAR PRODUCTOS------------*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const products = [
@@ -440,6 +451,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Muestra todos los productos inicialmente
   displayProducts(products);
 
+  /*-------------FUNCION AGREGAR PRODUCTOS------------*/
+
+  /*-------------FUNCION FILTROS DE CRITERIOS------------*/
+
   // Filtrar productos al seleccionar criterios
   function filterProducts() {
       const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(cb => cb.value);
@@ -507,6 +522,8 @@ document.addEventListener('DOMContentLoaded', function() {
       updateProducts();
     });
   });
+
+  /*-------------FUNCION FILTROS DE CRITERIOS------------*/
 
   function updateProducts() {
     const filteredProducts = products.filter(product => {
