@@ -603,7 +603,7 @@
 }
 
 
-/* FILTRO DE ROPA */
+/*------------- FILTRO DE ROPA ------------ */
 
 .container {
     width: 100%;
@@ -686,14 +686,12 @@
     width: 100%; /* Asegurar que ocupen todo el ancho disponible */
   }
 
-
 .filter-option label {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
     font-weight: 800;
     letter-spacing: 1;
     white-space: nowrap; /* Para evitar que se dividan en dos líneas */
-
   }
 
   /* Mostrar las opciones cuando la clase 'active' esté aplicada */
@@ -706,7 +704,6 @@
     transform: scale(1);
   }
     
-
   .filter-titulo{
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
@@ -722,7 +719,6 @@
     padding: 4px;
     width: 130px;
     background: #ffffff;
-    
   }
 
   .filter-titulo-section:hover{
@@ -776,8 +772,6 @@
     font-style: normal;
   }
   
-
-
   /* Opciones ocultas por defecto */
 .toggle-content {
     display: none;
@@ -792,9 +786,6 @@
         
  }
     
-  
-
-
   /* Agregar flecha a los títulos de las secciones */
 .toggle-header {
     position: relative;
@@ -802,8 +793,6 @@
     padding-right: 20px; /* espacio para la flecha */
   }
 
- 
-  
  /* Flecha por defecto */
 .toggle-header::after {
     content: "▶";
@@ -818,9 +807,6 @@
     margin-top: 6px;
   }
 
-  
-  
-
 /* Rotación de la flecha cuando esté desplegado */
 .toggle-header.expanded::after {
     content: "▼";
@@ -829,18 +815,13 @@
   }
 
 
-  
-
-
-/* TITULO DE (DESTACADO) */
-
+/*--------- TITULO DE (DESTACADO)----------- */
 .destacado{
     display: flex;
     width: 100%;
     position: relative;
     justify-content: center;
     margin-top: 15px;
-
 }
 
 .destacado__p{
@@ -853,8 +834,8 @@
     -webkit-text-stroke: 2px #000;
 }
 
-/* CONTENEDOR TARJETAS- */
 
+/*------------- CONTENEDOR TARJETAS---------- */
 .conteiner-card{
     position: relative;
     margin: auto;
@@ -923,7 +904,6 @@
     cursor: pointer;
     z-index: 11;
 }
-
 
 .conteiner-card .card .imgcard {
     display: inline-block;
@@ -1013,7 +993,6 @@
     transition: all;
     font-weight: 500;
     color: #000000;
-    
 }
 
 .btn-agregar-bravas{
@@ -1032,12 +1011,9 @@
     background: #e90090;
     cursor: pointer;
     font-weight: 500;
-    
 }
 
-
-/* BANNER DESCUENTO */
-
+/*----------- BANNER DESCUENTO------------ */
 .conteiner-descuento{
     width: 97%;
     height: 230px;
