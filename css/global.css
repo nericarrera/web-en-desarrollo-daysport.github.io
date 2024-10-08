@@ -747,6 +747,26 @@
     font-weight: 700;
     font-style: normal;
   }
+
+  /*-----------------MINIATURAS PRODUCTO--------------*/
+  .thumbnails-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+  }
+  
+  .thumbnail:hover {
+    border-color: #a30dfa; /* Color destacado al pasar el ratón */
+  }
+  
   
   /*-------------------DETALLES DE EL FILTRO------------------*/
   /* Opciones ocultas por defecto */
