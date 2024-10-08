@@ -312,15 +312,20 @@ document.querySelectorAll('.thumbnail').forEach(thumbnail => {
 
 document.addEventListener('DOMContentLoaded', function() {
   const products = [
-      { 
-          id: 1, 
-          name: "Campera Hombre Liviana", 
-          gender: "hombre", 
-          category: "campera-liviana", 
-          price: 3500, 
-          image: "img/hombre/campera-liviana/campera1.jpg", 
-          detailsPage: "product1.html"
-      },
+    {
+      id: 1,
+      name: "OPT 4 INCH L",
+      gender: "mujer",
+      category: "training",
+      price: 58999,
+      image: "img/principal.jpg",  // Imagen principal
+      thumbnails: [
+        "img/color1.jpg",
+        "img/color2.jpg",
+        "img/color3.jpg"
+      ],  // Miniaturas adicionales
+      detailsPage: "product1.html"
+    },
       { 
           id: 2, 
           name: "Remera Mujer", 
