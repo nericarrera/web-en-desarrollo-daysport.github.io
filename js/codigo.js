@@ -325,110 +325,93 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = [
     {
       id: 1,
-      name: "Remera Modal Viscosa",
+      name: "OPT 4 INCH L",
       gender: "mujer",
-      category: "remeras",
+      category: "training",
       price: 58999,
-      image: "img/mujer/remeras-modal-viscosa/remera modal viscosa 1.jpeg",  // Imagen principal
+      image: "img/principal.jpg",  // Imagen principal
       thumbnails: [
-        "img/mujer/remeras-modal-viscosa/remera modal viscosa 2.jpeg",
-        "img/mujer/remeras-modal-viscosa/remera modal viscosa 3.jpeg",
-        "img/mujer/remeras-modal-viscosa/remera modal viscosa 4.jpeg"
+        "img/color1.jpg",
+        "img/color2.jpg",
+        "img/color3.jpg"
       ],  // Miniaturas adicionales
       detailsPage: "product1.html"
-    },
-      { 
-          id: 2, 
-          name: "Remera Mujer", 
-          gender: "mujer", 
-          category: "remeras", 
-          price: 2000, 
-          image: "img/mujer/remera/remera1.jpg", 
-          detailsPage: "product2.html" 
-      },
-      { 
-        id: 3, 
-        name: "Campera Hombre Liviana", 
-        gender: "hombre", 
-        category: "campera-liviana", 
-        price: 3500, 
-        image: "img/hombre/campera-liviana/campera1.jpg", 
-        detailsPage: "product1.html"
-    },
-    { 
-        id: 4, 
-        name: "Remera Mujer", 
-        gender: "mujer", 
-        category: "remeras", 
-        price: 2000, 
-        image: "img/mujer/remera/remera1.jpg", 
-        detailsPage: "product2.html" 
-    },
-      // Añade más productos según necesites...
-  ];
-
-   function displayProducts(productsToShow) {
-        const productsGrid = document.querySelector('.products-grid');
-        productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
-
-        productsToShow.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
-            productDiv.setAttribute('data-gender', product.gender);
-            productDiv.setAttribute('data-category', product.category);
-            productDiv.setAttribute('data-price', product.price);
-
-            const img = document.createElement('img');
-            img.src = product.image;
-            img.alt = product.name;
-            img.addEventListener('click', () => {
-                window.location.href = product.detailsPage;
-            });
-
-            const productInfo = document.createElement('div');
-            productInfo.className = 'product-inf';
-
-            const productName = document.createElement('p');
-            productName.className = 'product-nombre';
-            productName.textContent = product.name;
-
-            const productPrice = document.createElement('p');
-            productPrice.className = 'product-precio';
-            productPrice.textContent = `$${product.price.toLocaleString()}`;
-
-            const buttonsContainer = document.createElement('div');
-            buttonsContainer.className = 'container-product-btn';
-
-            const addButton = document.createElement('button');
-            addButton.className = 'btn-agregar-filtro';
-            addButton.textContent = 'Agregar';
-            addButton.addEventListener('click', () => {
-                addToCart(product.name, product.price);
-            });
-
-            const buyButton = document.createElement('button');
-            buyButton.className = 'btn-comprar-filtro';
-            buyButton.textContent = 'Comprar';
-            buyButton.addEventListener('click', () => {
-                window.location.href = product.detailsPage;
-            });
-
-            buttonsContainer.appendChild(addButton);
-            buttonsContainer.appendChild(buyButton);
-
-            productInfo.appendChild(productName);
-            productInfo.appendChild(productPrice);
-            productInfo.appendChild(buttonsContainer);
-
-            productDiv.appendChild(img);
-            productDiv.appendChild(productInfo);
-
-            productsGrid.appendChild(productDiv);
-        });
     }
-
-    // Muestra todos los productos inicialmente
-    displayProducts(products);
+    // Otros productos...
+  ];
+  
+  function displayProducts(productsToShow) {
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
+  
+    productsToShow.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+  
+      // Imagen principal
+      const mainImageContainer = document.createElement('div');
+      mainImageContainer.className = 'main-image-container';
+      const mainImage = document.createElement('img');
+      mainImage.src = product.image;
+      mainImage.alt = product.name;
+      mainImage.className = 'main-image';
+      mainImageContainer.appendChild(mainImage);
+  
+      // Miniaturas
+      const thumbnailsContainer = document.createElement('div');
+      thumbnailsContainer.className = 'thumbnails-container';
+      product.thumbnails.forEach(thumbnailSrc => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = thumbnailSrc;
+        thumbnail.alt = 'Miniatura';
+        thumbnail.className = 'thumbnail';
+        thumbnail.addEventListener('click', () => {
+          mainImage.src = thumbnailSrc;  // Cambiar la imagen principal
+        });
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+  
+      // Detalles del producto
+      const productDetails = document.createElement('div');
+      productDetails.className = 'product-details';
+  
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+  
+      const productName = document.createElement('p');
+      productName.className = 'product-name';
+      productName.textContent = product.name;
+  
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category';
+      productCategory.textContent = "Mujer Training";
+  
+      const productColors = document.createElement('p');
+      productColors.className = 'product-colors';
+      productColors.textContent = `${product.thumbnails.length} colores`;
+  
+      const productStatus = document.createElement('p');
+      productStatus.className = 'product-status';
+      productStatus.textContent = "Nuevo";
+  
+      productDetails.appendChild(productPrice);
+      productDetails.appendChild(productName);
+      productDetails.appendChild(productCategory);
+      productDetails.appendChild(productColors);
+      productDetails.appendChild(productStatus);
+  
+      // Agregar todos los elementos al contenedor del producto
+      productDiv.appendChild(mainImageContainer);
+      productDiv.appendChild(thumbnailsContainer);
+      productDiv.appendChild(productDetails);
+  
+      productsGrid.appendChild(productDiv);
+    });
+  }
+  
+  // Mostrar los productos al cargar la página
+  displayProducts(products);
 
     function displayProducts(productsToShow) {
       const productsGrid = document.querySelector('.products-grid');
