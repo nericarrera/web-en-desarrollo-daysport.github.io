@@ -146,10 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
   searchInput.addEventListener('input', filterProducts);
 });
 
-/*------------FUNCION DE FILTRO------------- */
-
 // Llamar a filterProducts cada vez que se haga un cambio
 filterProducts();
+
+/*------------FUNCION DE FILTRO------------- */
 
 // Variables para el input de precio y para mostrar el valor seleccionado
 const priceRangeInput = document.getElementById('price-range');
@@ -184,6 +184,7 @@ function filterProducts() {
 // Llamar a filterProducts al cargar la página para que se aplique el filtro inicial
 filterProducts();
 
+/* ------------------FUNCION DE FILTRO MENU--------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
   const genderCheckboxes = document.querySelectorAll('input[name="gender"]');
@@ -252,7 +253,7 @@ document.querySelectorAll('input[name="gender"], input[name="category"], #price'
 // Llamar a filterProducts al cargar la página para mostrar los productos iniciales
 document.addEventListener('DOMContentLoaded', filterProducts);
 
-/*-------------FUNCION DE FILTRO------------*/
+/*-------------FUNCION DE FILTRO MENU----------------*/
 
 
 /*-------------FUNCION LIMPIAR FILTRO------------*/
