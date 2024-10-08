@@ -380,6 +380,34 @@ document.addEventListener('DOMContentLoaded', function() {
         "img/color3.jpg"
       ],  // Miniaturas adicionales
       detailsPage: "product1.html"
+    },
+    {
+      id: 2,
+      name: "OPT 4 INCH L",
+      gender: "mujer",
+      category: "training",
+      price: 58999,
+      image: "img/principal.jpg",  // Imagen principal
+      thumbnails: [
+        "img/color1.jpg",
+        "img/color2.jpg",
+        "img/color3.jpg"
+      ],  // Miniaturas adicionales
+      detailsPage: "product2.html"
+    },
+    {
+      id: 3,
+      name: "OPT 4 INCH L",
+      gender: "mujer",
+      category: "training",
+      price: 58999,
+      image: "img/principal.jpg",  // Imagen principal
+      thumbnails: [
+        "img/color1.jpg",
+        "img/color2.jpg",
+        "img/color3.jpg"
+      ],  // Miniaturas adicionales
+      detailsPage: "product3.html"
     }
   ];
 
@@ -487,7 +515,7 @@ displayProducts(products);
   // Filtrar productos al cargar la página
   filterProducts();
 
-  
+
 
     // Filtrar productos al seleccionar criterios
     function filterProducts() {
