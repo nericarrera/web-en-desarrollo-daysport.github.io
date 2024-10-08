@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
   searchInput.addEventListener('input', filterProducts);
 });
 
-
+/*------------FUNCION DE FILTRO------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
   const genderCheckboxes = document.querySelectorAll('input[name="gender"]');
@@ -215,8 +215,8 @@ document.querySelectorAll('input[name="gender"], input[name="category"], #price'
 // Llamar a filterProducts al cargar la página para mostrar los productos iniciales
 document.addEventListener('DOMContentLoaded', filterProducts);
 
-
 /*-------------FUNCION DE FILTRO------------*/
+
 
 /*-------------FUNCION LIMPIAR FILTRO------------*/
 
@@ -306,6 +306,17 @@ document.querySelectorAll('.thumbnail').forEach(thumbnail => {
     const mainImage = document.querySelector('.main-image');
     mainImage.src = this.src;  // Cambiar la imagen principal al hacer clic en la miniatura
   });
+});
+
+const thumbnailsContainer = document.createElement('div');
+thumbnailsContainer.className = 'thumbnails-container';
+
+product.thumbnails.forEach(thumbnailSrc => {
+  const thumbnail = document.createElement('img');
+  thumbnail.src = thumbnailSrc;
+  thumbnail.alt = 'Miniatura';
+  thumbnail.className = 'thumbnail';  // Añadir clase CSS a cada miniatura
+  thumbnailsContainer.appendChild(thumbnail);
 });
 
 /*-------------FUNCION AGREGAR PRODUCTOS------------*/
