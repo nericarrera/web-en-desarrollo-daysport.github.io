@@ -300,6 +300,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*-------------FUNCION LIMPIAR FILTRO------------*/
 
+/*------------MINIATURAS PRODUCTO------------ */
+document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+  thumbnail.addEventListener('click', function () {
+    const mainImage = document.querySelector('.main-image');
+    mainImage.src = this.src;  // Cambiar la imagen principal al hacer clic en la miniatura
+  });
+});
+
 /*-------------FUNCION AGREGAR PRODUCTOS------------*/
 
 document.addEventListener('DOMContentLoaded', function() {
