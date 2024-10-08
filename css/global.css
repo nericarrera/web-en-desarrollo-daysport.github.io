@@ -702,7 +702,7 @@
     color: #ffffff;
   }
 
-  .product-card{
+  .product-card {
     width: 300px;
     border: 1px solid #ddd;
     padding: 10px;
@@ -712,11 +712,11 @@
   }
   
   .main-image-container {
-    width: 100%;
+    width: 95%;
   }
   
   .main-image {
-    width: 100%;
+    width: 95%;
     height: auto;
     margin-bottom: 10px;
   }
