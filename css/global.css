@@ -705,46 +705,47 @@
   /*---------------------CONTENEDOR DE FILTRO-----------------*/  
   .products-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
+    flex-wrap: wrap;  /* Permite que los productos se distribuyan en múltiples filas */
+    gap: 20px;  /* Espaciado entre productos */
+    justify-content: flex-start;  /* Alinear productos hacia el inicio */
   }
   
   .product-card {
-    width: 300px;
+    width: 285px;  /* Ancho consistente con el resto de productos */
     border: 1px solid #ddd;
-    padding: 10px;
-    margin: 20px;
+    padding: 15px;
+    margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    flex: 1 1 calc(25% - 20px);  /* Toma un cuarto del ancho de la fila menos el espacio */
   }
   
   .main-image-container {
-    width: 95%;
+    width: 100%;  /* Utiliza el 100% del ancho del contenedor padre */
+    margin-bottom: 10px;
   }
   
   .main-image {
-    width: 95%;
+    width: 100%;
     height: auto;
-    margin-bottom: 10px;
   }
   
   .thumbnails-container {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;  /* Espaciado entre miniaturas */
     margin-bottom: 15px;
   }
   
   .thumbnail {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     border: 1px solid #ddd;
   }
   
   .thumbnail:hover {
-    border-color: #a30dfaa9; /* Color destacado al pasar el ratón */
+    border-color: #a30dfaa9;  /* Color destacado al pasar el ratón */
   }
   
   .product-details {
