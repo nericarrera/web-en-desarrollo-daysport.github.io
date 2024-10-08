@@ -603,7 +603,7 @@
     align-items: flex-start;
     padding: 10px;
     border-right: groove;
-    width: 35%;
+    width: 20%;
   }
 
   .filter-section {
@@ -766,7 +766,7 @@
   .thumbnail:hover {
     border-color: #a30dfa; /* Color destacado al pasar el ratón */
   }
-  
+
   
   /*-------------------DETALLES DE EL FILTRO------------------*/
   /* Opciones ocultas por defecto */
