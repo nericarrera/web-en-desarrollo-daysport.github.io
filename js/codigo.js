@@ -318,11 +318,11 @@ document.addEventListener('DOMContentLoaded', function() {
       gender: "mujer",
       category: "training",
       price: 58999,
-      image: "img/mujer/remera.jpg",  // Imagen principal
+      image: "img/mujer/remeras modal viscosa/remera modal viscosa 1.jpeg",  // Imagen principal
       thumbnails: [
-        "img/color1.jpg",
-        "img/color2.jpg",
-        "img/color3.jpg"
+        "img/mujer/remeras modal viscosa/remera modal viscosa 2.jpeg",
+        "img/mujer/remeras modal viscosa/remera modal viscosa 3.jpeg",
+        "img/mujer/remeras modal viscosa/remera modal viscosa 4.jpeg"
       ],  // Miniaturas adicionales
       detailsPage: "product1.html"
     },
