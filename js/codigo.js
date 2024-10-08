@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
       gender: "mujer",
       category: "training",
       price: 58999,
-      image: "img/principal.jpg",  // Imagen principal
+      image: "img/mujer/remera.jpg",  // Imagen principal
       thumbnails: [
         "img/color1.jpg",
         "img/color2.jpg",
