@@ -702,6 +702,69 @@
     color: #ffffff;
   }
 
+
+
+  .product-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .main-image-container {
+    width: 100%;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .thumbnails-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+  }
+  
+  .thumbnail:hover {
+    border-color: #a30dfa; /* Color destacado al pasar el ratón */
+  }
+  
+  .product-details {
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  .product-price {
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+  }
+  
+  .product-name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .product-category,
+  .product-colors,
+  .product-status {
+    color: #666;
+    font-size: 12px;
+    margin: 2px 0;
+  }
+
 /*---------------------CONTENEDOR DE FILTRO-----------------*/  
   .products-grid {
     display: flex;
