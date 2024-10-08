@@ -486,7 +486,8 @@ displayProducts(products);
 
   // Filtrar productos al cargar la página
   filterProducts();
-});
+
+  
 
     // Filtrar productos al seleccionar criterios
     function filterProducts() {
