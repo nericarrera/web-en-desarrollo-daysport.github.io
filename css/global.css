@@ -726,7 +726,7 @@
     color: #ffffff;
   }
 
-  
+/*---------------------CONTENEDOR DE FILTRO-----------------*/  
   .products-grid {
     display: flex;
     flex-wrap: wrap;
@@ -772,6 +772,7 @@
     font-style: normal;
   }
   
+  /*-------------------DETALLES DE EL FILTRO------------------*/
   /* Opciones ocultas por defecto */
 .toggle-content {
     display: none;
@@ -1033,8 +1034,6 @@
     border-radius: 15px;
     margin: auto; 
     padding: 20px;
-      
-    
 }
 
 .conteiner-descuento-descuento img{
@@ -1047,15 +1046,11 @@
 
 .conteiner-descuento-descuento img:hover{
     transform: scale(1.05);
-    
     transition: all 400ms ease;
-    
 }
 
 
-
 /* TARJETA DE 3 PARTES */
-
 .contetarjeta {
     display: flex;
     flex-wrap: wrap;
@@ -1065,7 +1060,6 @@
     margin:auto;
     margin-top: 40px;
     margin-bottom: 30px;
-    
 }
 
 .conteiner-tarjeta-titulo{
@@ -1081,7 +1075,6 @@
     font-family: "Questrial", sans-serif;
   font-weight: 600;
   font-style: normal;
-  
     color: #0a0a0a;
     padding: 25px;
     margin-top: 15px;
@@ -1095,14 +1088,12 @@
     height: 465px;
     margin: 18px;
     border-radius: 5px;
-    
 }
 
 .tarjeta img {
     width: 100%;
     height: 93%;
     border-radius: 15px;
-
 }
 
 .tarjeta a{
@@ -1114,7 +1105,6 @@
     font-weight: 300;
     height: auto;
     width: auto;
-
 }
 
 .tarjeta-p a{
@@ -1127,15 +1117,11 @@
     font-family: "Questrial", sans-serif;
   font-weight: 400;
   font-style: normal;
-    
-
 }
 
 .contetarjeta img:hover{
   transform: scale(1.02);
    transition: all 380ms ease;
-
-
 }
 
 .tarjeta a:hover{
@@ -1144,7 +1130,7 @@
  }
 
 
- /* MOTIVATE */
+ /*---------------- MOTIVATE------------------ */
 
 .motivate {
     display: flex;
@@ -1171,7 +1157,6 @@
     font-weight: 400;
     font-style: normal;
     margin: auto;
-    
 }
 
 .motivate_p1 {
@@ -1186,20 +1171,16 @@
     color: #ffffff;
     margin: auto;
     font-weight: 600;
-    
 }
  
 
 /* BANNER LAS BRAVAS */
-
 .conteiner-banner{
     display: flex;
     width: 97%;
     justify-content: center;
     background-image: linear-gradient(#ffffff, #ffff18);
     margin: auto;
-    
-    
 }
 
 .conteiner-banner-video {
@@ -1237,8 +1218,7 @@
     font-weight: 900;
     color: #e90090; 
     margin-top: 16px;
-  margin-bottom: -15px;   
-  
+    margin-bottom: -15px;   
 }
 
 .conteiner-banner2 img{
@@ -1261,7 +1241,6 @@
     margin: auto;   
     flex-wrap: wrap;
     text-align: center;
-    
 }
 
 .conteiner-fotos {
@@ -1277,7 +1256,6 @@
     margin: 10px;
     margin-top: 65px;
     border-bottom-right-radius: 25px;
-
 }
 
 .conteiner-tarjeta-fotos{
@@ -1287,21 +1265,17 @@
     height: 280px;
     width: 189px;
     border-radius: 10px;
-
 }
 
 .conteiner-tarjeta-fotos img {
     width: 100%;
     height: 100%;
     background: #FFFFFF;
-
 }
 
 .conteiner-tarjeta-info{
     height: 140px;
     width: 189px;
-    
- 
 }
 
 .conteiner-tarjeta-info h5{
@@ -1311,8 +1285,6 @@
     font-size: 15;
     font-family: 'Kanit', sans-serif;
     padding: 10px;
-    
-
 }
 
 .conteiner-tarjeta-info p{
@@ -1333,7 +1305,6 @@
     background: #ffff18;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    
 }
 
 .conteiner-bravas-titulo{
@@ -1343,7 +1314,6 @@
     justify-content: center;
     align-items: center;
     width: auto;
-
 }
 
 .conteiner-bravas-titulo a{
@@ -1360,8 +1330,6 @@
     font-size: 25px;
     font-weight: 600;
     border-radius: 10px;
-    
-    
 }
 
 .conteiner-bravas-titulo p:hover{
@@ -1389,14 +1357,12 @@
     font-weight: 100;
     justify-content: center;
     margin-bottom: -40px;
-
 }
 
 .conteiner-futbol h6:hover {
-transform: translateY(-5px);
-transition: all 400ms ease;
-text-decoration: underline;
-
+    transform: translateY(-5px);
+    transition: all 400ms ease;
+    text-decoration: underline;
 }
 
 
@@ -1407,7 +1373,6 @@ text-decoration: underline;
     position: relative;
     overflow: hidden;  /* Esto asegura que las tarjetas fuera del contenedor no se vean */
     margin: 30px;
-    
 }
 
 .product-navigation {
