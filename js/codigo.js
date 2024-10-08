@@ -356,6 +356,12 @@ product.thumbnails.forEach(thumbnailSrc => {
   thumbnailsContainer.appendChild(thumbnail);
 });
 
+const thumbnails = document.querySelectorAll('.thumbnail');
+thumbnails.forEach(thumbnail => {
+  thumbnail.style.borderRadius = '10px';
+  thumbnail.style.margin = '3px';
+});
+
 /*-------------FUNCION AGREGAR PRODUCTOS------------*/
 
 document.addEventListener('DOMContentLoaded', function() {
