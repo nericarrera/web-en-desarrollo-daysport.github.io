@@ -1461,7 +1461,7 @@
 }
 
 /* Tarjetas de productos (product-card) */
-.product-card {
+.product-card2 {
     min-width: 240px; /* Asegura que las tarjetas tengan una anchura fija */
     padding: 20px;
     background: #fff;
@@ -1471,13 +1471,13 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card:hover {
+.product-card2:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Imágenes dentro de las tarjetas */
-.product-image {
+.product-image2 {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -1486,12 +1486,12 @@
     transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image {
+.product-card2:hover .product-image2 {
     transform: scale(1.05);
 }
 
 /* Información del producto */
-.product-info h5 {
+.product-info2 h5 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #333;
