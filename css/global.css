@@ -736,7 +736,7 @@
   }
   
   .thumbnail:hover {
-    border-color: #a30dfa; /* Color destacado al pasar el ratón */
+    border-color: #a30dfaa9; /* Color destacado al pasar el ratón */
   }
   
   .product-details {
