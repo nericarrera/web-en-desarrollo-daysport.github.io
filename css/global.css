@@ -10,7 +10,7 @@
 }
 
 
-/* HEADER */
+/*--------------HEADER--------------- */
 
 .header{
     background: #000000;
@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-/* NAV * LOGO * BUSCADOR * IMPUT  */
+/*-------- NAV--- * ---LOGO-- *--- BUSCADOR --*-- IMPUT---  */
 
 .logo {
     display: flex;
