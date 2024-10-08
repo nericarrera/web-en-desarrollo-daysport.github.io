@@ -314,9 +314,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = [
     {
       id: 1,
-      name: "OPT 4 INCH L",
+      name: "Remera Modal Viscosa",
       gender: "mujer",
-      category: "training",
+      category: "remeras",
       price: 58999,
       image: "img/mujer/remeras-modal-viscosa/remera modal viscosa 1.jpeg",  // Imagen principal
       thumbnails: [
