@@ -10,7 +10,7 @@ function changeSlide() {
 }
 setInterval(changeSlide, 25000);  // Cambia cada 25 segundos
 
-/*-------------BANNER---------------*/
+/*----------------------------*/
 
 /*-----flechas para mover las cards - 1er seccion------- */
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCart();  // Actualizar el carrito al cargar la página
 });
 
-/*-------------CARRITO-----------------*/
+/*--------------------------------------*/
 
 /*-------------FUNCION DE FILTRO------------*/
 document.addEventListener('DOMContentLoaded', function() {
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-/*-------------FUNCION LIMPIAR FILTRO------------*/
+/*-------------------------------------------*/
 
 /*------------MINIATURAS PRODUCTO------------ */
 document.querySelectorAll('.thumbnail').forEach(thumbnail => {
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Mostrar los productos al cargar la página
   displayProducts(products);  // Asegúrate de tener una lista de productos a mostrar
 }});
-  /*-------------FUNCION AGREGAR PRODUCTOS------------*/
+  /*--------------------------------------------*/
 
   /*-------------FUNCION FILTROS DE CRITERIOS------------*/
 
