@@ -632,8 +632,9 @@
 
   .label-1 {
     font-size: 15px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-style: normal;
     letter-spacing: 0.5px;
   }
