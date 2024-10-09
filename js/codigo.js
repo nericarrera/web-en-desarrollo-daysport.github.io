@@ -414,12 +414,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function displayProducts(productsToShow) {
     const productsGrid = document.querySelector('.products-grid');
     productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
-
+  
     productsToShow.forEach(product => {
-      // Crear contenedor de tarjeta de producto
       const productDiv = document.createElement('div');
       productDiv.className = 'product-card';
-
+  
       // Imagen principal
       const mainImageContainer = document.createElement('div');
       mainImageContainer.className = 'main-image-container';
@@ -428,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mainImage.alt = product.name;
       mainImage.className = 'main-image';
       mainImageContainer.appendChild(mainImage);
-
+  
       // Miniaturas
       const thumbnailsContainer = document.createElement('div');
       thumbnailsContainer.className = 'thumbnails-container';
@@ -442,50 +441,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         thumbnailsContainer.appendChild(thumbnail);
       });
-
+  
       // Detalles del producto
       const productDetails = document.createElement('div');
       productDetails.className = 'product-details';
-
+  
       const productPrice = document.createElement('p');
       productPrice.className = 'product-price';
       productPrice.textContent = `$${product.price.toLocaleString()}`;
-
+  
       const productName = document.createElement('p');
       productName.className = 'product-name';
       productName.textContent = product.name;
-
+  
       const productCategory = document.createElement('p');
       productCategory.className = 'product-category';
       productCategory.textContent = product.category;
-
+  
       const productColors = document.createElement('p');
       productColors.className = 'product-colors';
       productColors.textContent = `${product.thumbnails.length} colores`;
-
+  
       const productStatus = document.createElement('p');
       productStatus.className = 'product-status';
       productStatus.textContent = "Nuevo";
-
+  
       productDetails.appendChild(productPrice);
       productDetails.appendChild(productName);
       productDetails.appendChild(productCategory);
       productDetails.appendChild(productColors);
       productDetails.appendChild(productStatus);
-
+  
       // Agregar todos los elementos al contenedor del producto
       productDiv.appendChild(mainImageContainer);
       productDiv.appendChild(thumbnailsContainer);
       productDiv.appendChild(productDetails);
-
+  
       productsGrid.appendChild(productDiv);
     });
-  }
-
+  
+     
   // Mostrar los productos al cargar la página
-displayProducts(products);
-});
-
+  displayProducts(products);  // Asegúrate de tener una lista de productos a mostrar
+}});
   /*-------------FUNCION AGREGAR PRODUCTOS------------*/
 
   /*-------------FUNCION FILTROS DE CRITERIOS------------*/
@@ -577,14 +575,22 @@ displayProducts(products);
 
  /*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
 
- document.addEventListener('DOMContentLoaded', function() {
-  const filterHeaders = document.querySelectorAll('.toggle-header');
+document.addEventListener("DOMContentLoaded", function() {
+  // Seleccionar todos los headers que se usan para togglear
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
 
-  filterHeaders.forEach(header => {
+  toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
-      const content = document.getElementById(header.getAttribute('data-target'));
-      content.classList.toggle('active');
-      header.classList.toggle('expanded'); // Para rotar la flecha
+      const targetId = header.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      
+      if (target) {
+        // Alternar la clase "active" para mostrar/ocultar contenido
+        target.classList.toggle('active');
+        
+        // Alternar la clase "expanded" para rotar la flecha
+        header.classList.toggle('expanded');
+      }
     });
   });
 });
