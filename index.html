@@ -200,60 +200,43 @@
 
   <!-- Género -->
   <div class="filter-section">
-    <p class="filter-titulo-section">Género</p>
-    <div>
-      <input type="checkbox" id="mujer" name="gender" value="mujer">
-      <label for="mujer">Mujer</label>
-    </div>
-    <div>
-      <input type="checkbox" id="hombre" name="gender" value="hombre">
-      <label for="hombre">Hombre</label>
-    </div>
-    <div>
-      <input type="checkbox" id="ninos" name="gender" value="niños">
-      <label for="ninos">Niñ@s</label>
-    </div>
-    <div>
-      <input type="checkbox" id="bravas" name="gender" value="bravas">
-      <label for="bravas">Las.Bravas</label>
-    </div>
-    <div>
-      <input type="checkbox" id="accesorios" name="gender" value="accesorios">
-      <label for="accesorios">Accesorios</label>
+    <p class="filter-titulo-section toggle-header" data-target="gender-options">Género <span class="arrow">▼</span></p>
+    <div id="gender-options" class="filter-options toggle-content">
+      <div>
+        <input type="checkbox" id="mujer" name="gender" value="mujer">
+        <label for="mujer">Mujer</label>
+      </div>
+      <!-- Más opciones de género -->
     </div>
   </div>
 
   <!-- Indumentaria -->
   <div class="filter-section">
-    <p class="filter-titulo-section">Indumentaria</p>
-    <div>
-      <input type="checkbox" id="buzos" name="category" value="buzos">
-      <label for="buzos">Buzos</label>
+    <p class="filter-titulo-section toggle-header" data-target="indumentaria-options">Indumentaria <span class="arrow">▼</span></p>
+    <div id="indumentaria-options" class="filter-options toggle-content">
+      <div>
+        <input type="checkbox" id="buzos" name="category" value="buzos">
+        <label for="buzos">Buzos</label>
+      </div>
+      <!-- Más opciones de indumentaria -->
     </div>
-    <div>
-      <input type="checkbox" id="camperas-livianas" name="category" value="camperas-livianas">
-      <label for="camperas-livianas">Camperas Livianas</label>
-    </div>
-    <!-- Agrega más opciones aquí -->
   </div>
 
   <!-- Talles -->
   <div class="filter-section">
-    <p class="filter-titulo-section">Talles</p>
-    <div>
-      <input type="checkbox" id="S" name="size" value="S">
-      <label for="S">S</label>
+    <p class="filter-titulo-section toggle-header" data-target="talles-options">Talles <span class="arrow">▼</span></p>
+    <div id="talles-options" class="filter-options toggle-content">
+      <div>
+        <input type="checkbox" id="S" name="size" value="S">
+        <label for="S">S</label>
+      </div>
+      <!-- Más opciones de talles -->
     </div>
-    <div>
-      <input type="checkbox" id="M" name="size" value="M">
-      <label for="M">M</label>
-    </div>
-    <!-- Agrega más talles aquí -->
   </div>
 
   <!-- Rango de precios -->
   <div class="filter-section">
-    <p class="filter-titulo-section">Precio</p>
+    <p class="filter-titulo-section toggle-header">Precio <span class="arrow">▼</span></p>
     <input type="range" id="price-range" min="1000" max="250000" step="500" value="1000">
     <span id="price-display">$1000</span>
   </div>
