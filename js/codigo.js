@@ -126,6 +126,55 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/*----------------FILTRO POR COLORES------------- */
+document.addEventListener('DOMContentLoaded', function() {
+  const filters = {
+    gender: [],
+    category: [],
+    size: [],
+    color: [] // Nueva propiedad para filtrar por color
+  };
+
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const filterType = this.name; // Puede ser 'gender', 'category', 'size', o 'color'
+      const filterValue = this.value;
+
+      if (this.checked) {
+        filters[filterType].push(filterValue);
+      } else {
+        filters[filterType] = filters[filterType].filter(value => value !== filterValue);
+      }
+
+      updateProducts();
+    });
+  });
+
+  function updateProducts() {
+    const products = document.querySelectorAll('.product-card');
+    products.forEach(product => {
+      const productGender = product.getAttribute('data-gender');
+      const productCategory = product.getAttribute('data-category');
+      const productSize = product.getAttribute('data-size');
+      const productColor = product.getAttribute('data-color'); // Asegúrate de agregar 'data-color' a los productos
+
+      const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+      const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+      const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
+      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+
+      if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
+        product.style.display = 'block'; // Mostrar el producto si coincide
+      } else {
+        product.style.display = 'none';  // Ocultar el producto si no coincide
+      }
+    });
+  }
+
+  // Inicializar mostrando todos los productos
+  updateProducts();
+});
+
 
 
 /*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
