@@ -733,9 +733,9 @@
   
   .thumbnails-container {
     display: flex;
-    justify-content: center;
     gap: 8px;  /* Espaciado entre miniaturas */
     margin-bottom: 15px;
+    margin-left: 5px;
   }
   
   .thumbnail {
@@ -773,7 +773,7 @@
     margin: 2px 0;
   }
 
-  
+
   /*-------------------DETALLES DE EL FILTRO------------------*/
   /* Opciones ocultas por defecto */
 .toggle-content {
