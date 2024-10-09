@@ -110,21 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /*--------------------------------------------------- */
 
 /*-----------------------FILTRO DESPLEGABLE--------------- */
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleHeaders = document.querySelectorAll('.toggle-header');
 
-  toggleHeaders.forEach(header => {
-    header.addEventListener('click', function() {
-      const targetId = header.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-
-      if (targetContent) {
-        targetContent.classList.toggle('toggle-content'); // Mostramos/ocultamos la sección
-        header.classList.toggle('expanded'); // Rotamos la flecha
-      }
-    });
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
   const toggleHeaders = document.querySelectorAll('.toggle-header');
