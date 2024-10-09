@@ -596,8 +596,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.5px;
