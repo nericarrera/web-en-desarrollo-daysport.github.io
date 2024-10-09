@@ -676,6 +676,37 @@
     color: #333; /* Color del texto */
   }
 
+  /*---------------FILTROS OPCION COLORES------------*/
+  .filter-option input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid #000;
+    background-color: transparent;
+  }
+  
+  #color-negro + label::before {
+    background-color: black;
+  }
+  
+  #color-blanco + label::before {
+    background-color: white;
+  }
+  
+  #color-rojo + label::before {
+    background-color: red;
+  }
+  
+  #color-azul + label::before {
+    background-color: blue;
+  }
+  
+  #color-verde + label::before {
+    background-color: green;
+  }
 
 
 /*--------- TITULO DE (DESTACADO)----------- */
