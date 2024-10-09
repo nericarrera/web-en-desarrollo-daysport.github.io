@@ -517,31 +517,6 @@ displayProducts(products);
 
 
 
-    // Filtrar productos al seleccionar criterios
-    function filterProducts() {
-        const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(cb => cb.value);
-        const selectedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
-        const selectedPrice = parseInt(document.getElementById('price-range').value);
-
-        const filteredProducts = products.filter(product => {
-            const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(product.gender);
-            const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-            const priceMatch = product.price <= selectedPrice;
-
-            return genderMatch && categoryMatch && priceMatch;
-        });
-
-        displayProducts(filteredProducts);
-    }
-
-    // Escuchar cambios en los filtros
-    document.querySelectorAll('input[name="gender"], input[name="category"], #price-range').forEach(input => {
-        input.addEventListener('change', filterProducts);
-    });
-
-
-
-
   // Resto del código (filtros y renderizado) permanece igual
   // Actualizar los filtros cuando se seleccionan los checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -602,22 +577,14 @@ displayProducts(products);
 
  /*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleccionar todos los headers que se usan para togglear
-  const toggleHeaders = document.querySelectorAll('.toggle-header');
+ document.addEventListener('DOMContentLoaded', function() {
+  const filterHeaders = document.querySelectorAll('.toggle-header');
 
-  toggleHeaders.forEach(header => {
+  filterHeaders.forEach(header => {
     header.addEventListener('click', function() {
-      const targetId = header.getAttribute('data-target');
-      const target = document.getElementById(targetId);
-      
-      if (target) {
-        // Alternar la clase "active" para mostrar/ocultar contenido
-        target.classList.toggle('active');
-        
-        // Alternar la clase "expanded" para rotar la flecha
-        header.classList.toggle('expanded');
-      }
+      const content = document.getElementById(header.getAttribute('data-target'));
+      content.classList.toggle('active');
+      header.classList.toggle('expanded'); // Para rotar la flecha
     });
   });
 });
