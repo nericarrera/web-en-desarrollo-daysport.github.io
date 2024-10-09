@@ -82,7 +82,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------*/
 
+/*-----------------FILTRO -------------------- */
 
+document.addEventListener('DOMContentLoaded', function() {
+  const priceRange = document.getElementById('price-range');
+  const priceDisplay = document.getElementById('price-display');
+  const clearFiltersButton = document.getElementById('clear-filters');
+  
+  // Actualizar el precio cuando el usuario mueva el control de rango
+  priceRange.addEventListener('input', function() {
+    priceDisplay.textContent = `$${priceRange.value}`;
+  });
+
+  // Limpiar filtros al hacer clic en el botón
+  clearFiltersButton.addEventListener('click', function() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    priceRange.value = 1000;
+    priceDisplay.textContent = `$1000`;
+    // Aquí puedes añadir código para resetear la lista de productos filtrados
+  });
+  
+  // Puedes agregar aquí la lógica para filtrar los productos al seleccionar una opción
+});
 
 
 
