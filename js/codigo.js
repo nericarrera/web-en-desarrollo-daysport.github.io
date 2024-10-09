@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         target.style.height = target.scrollHeight + 'px'; // Calcula la altura del contenido para desplegar
         setTimeout(() => {
           target.style.height = 'auto'; // Ajustamos la altura a auto después de la transición para mantener el contenido visible
-        }, 700); // Debe coincidir con la duración de la transición en CSS (0.5s en este caso)
+        }, 5000); // Debe coincidir con la duración de la transición en CSS (0.5s en este caso)
       }
     });
   });
