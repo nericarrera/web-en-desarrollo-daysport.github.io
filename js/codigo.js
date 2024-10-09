@@ -107,6 +107,24 @@ document.addEventListener('DOMContentLoaded', function() {
   // Puedes agregar aquí la lógica para filtrar los productos al seleccionar una opción
 });
 
+/*--------------------------------------------------- */
+
+/*-----------------------FILTRO DESPLEGABLE--------------- */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
+
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const targetId = header.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+
+      if (targetContent) {
+        targetContent.classList.toggle('toggle-content'); // Mostramos/ocultamos la sección
+        header.classList.toggle('expanded'); // Rotamos la flecha
+      }
+    });
+  });
+});
 
 
 
