@@ -667,6 +667,7 @@
     width: auto; /* Ajusta el tamaño del checkbox si es necesario */
     height: auto;
     cursor: pointer;
+    margin-top: 2px;
   }
   
   .filter-option label {
