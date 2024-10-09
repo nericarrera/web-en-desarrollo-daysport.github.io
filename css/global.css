@@ -630,10 +630,7 @@
     margin-bottom: 20px;
   }
 
-  #gender-options{
-    justify-content: center;
-    text-align: center;
-  }
+  
 
   .filter-option {
     display: flex;
