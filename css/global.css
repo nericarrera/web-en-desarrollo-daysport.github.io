@@ -686,6 +686,7 @@
     vertical-align: middle;
     border: 1px solid #000;
     background-color: transparent;
+    border-radius: 100%;
   }
   
   #color-negro + label::before {
