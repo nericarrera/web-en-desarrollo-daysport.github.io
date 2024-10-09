@@ -584,10 +584,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const target = document.getElementById(targetId);
 
       if (target) {
-        // Alternar la clase "active" para mostrar/ocultar contenido
+        // Alternar la clase "active" para mostrar/ocultar el contenido
         target.classList.toggle('active');
-        
-        // Alternar la clase "expanded" para rotar la flecha
+        // Alternar la clase "expanded" para cambiar el estilo del encabezado
         header.classList.toggle('expanded');
       }
     });
