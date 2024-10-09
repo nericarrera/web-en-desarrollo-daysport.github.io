@@ -600,7 +600,7 @@
   
   .arrow {
     font-size: 12px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
   }
   
   .toggle-content {
