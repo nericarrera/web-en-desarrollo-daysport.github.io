@@ -596,6 +596,11 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.5px;
   }
   
   .arrow {
