@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
       gender: "mujer",
       category: "training",
       price: 58999,
-      image: "img/principal.jpg",  // Imagen principal
+      image: "img/mujer/remeras-modal-viscosa/remera modal viscosa 1.jpeg",  // Imagen principal
       thumbnails: [
         "img/color1.jpg",
         "img/color2.jpg",
