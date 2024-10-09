@@ -110,7 +110,21 @@ document.addEventListener('DOMContentLoaded', function() {
 /*--------------------------------------------------- */
 
 /*-----------------------FILTRO DESPLEGABLE--------------- */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
 
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const targetId = header.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+
+      if (targetContent) {
+        targetContent.classList.toggle('toggle-content'); // Mostramos/ocultamos la sección
+        header.classList.toggle('expanded'); // Rotamos la flecha
+      }
+    });
+  });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const toggleHeaders = document.querySelectorAll('.toggle-header');
@@ -133,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         target.style.height = target.scrollHeight + 'px'; // Calcula la altura del contenido para desplegar
         setTimeout(() => {
           target.style.height = 'auto'; // Ajustamos la altura a auto después de la transición para mantener el contenido visible
-        }, 500); // Debe coincidir con la duración de la transición en CSS (0.5s en este caso)
+        }, 700); // Debe coincidir con la duración de la transición en CSS (0.5s en este caso)
       }
     });
   });
