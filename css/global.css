@@ -632,6 +632,10 @@
     border: none;
     cursor: pointer;
     margin-bottom: 20px;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.5px;
   }
 
   .label-1 {
