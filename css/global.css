@@ -629,6 +629,25 @@
     margin-bottom: 20px;
   }
 
+  .filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre checkbox y label */
+    margin-bottom: 5px;
+  }
+  
+  .filter-option input[type="checkbox"] {
+    width: 20px; /* Ajusta el tamaño del checkbox si es necesario */
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .filter-option label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #333; /* Color del texto */
+  }
+
 
 
 /*--------- TITULO DE (DESTACADO)----------- */
