@@ -618,7 +618,7 @@
   .toggle-content {
     display: none; /* Ocultamos el contenido inicialmente */
     overflow: hidden;
-    transition: height 5.0s ease;
+    transition: height 1.0s ease;
   }
   
   .toggle-header.expanded .arrow {
