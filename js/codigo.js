@@ -126,6 +126,33 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleHeaders = document.querySelectorAll('.toggle-header');
+
+  toggleHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      const targetId = header.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+
+      if (target.classList.contains('active')) {
+        // Si ya está activo (desplegado), lo ocultamos suavemente
+        target.style.height = target.scrollHeight + 'px'; // Establece la altura actual antes de colapsar
+        setTimeout(() => {
+          target.style.height = '0px';
+        }, 1); // Pequeña demora para que el cambio de altura ocurra de forma visible
+        target.classList.remove('active');
+      } else {
+        // Si está colapsado, lo desplegamos suavemente
+        target.classList.add('active');
+        target.style.height = target.scrollHeight + 'px'; // Calcula la altura del contenido para desplegar
+        setTimeout(() => {
+          target.style.height = 'auto'; // Ajustamos la altura a auto después de la transición para mantener el contenido visible
+        }, 500); // Debe coincidir con la duración de la transición en CSS (0.5s en este caso)
+      }
+    });
+  });
+});
+
 /*----------------FILTRO POR COLORES------------- */
 document.addEventListener('DOMContentLoaded', function() {
   const filters = {
