@@ -629,6 +629,12 @@
     margin-bottom: 20px;
   }
 
+  #gender-options{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
   .filter-option {
     display: flex;
     align-items: center;
