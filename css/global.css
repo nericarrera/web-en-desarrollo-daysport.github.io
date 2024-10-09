@@ -580,6 +580,39 @@
     color: #000000;
 }
 
+/*-----------------FILTROS---------------*/
+.filters {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .filter-titulo-section {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  #price-display {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  #clear-filters {
+    background-color: #ff5c5c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
 
 
 
