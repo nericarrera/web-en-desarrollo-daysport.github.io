@@ -575,15 +575,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
  /*-------------FUNCION DESPLIEGE DE CHECKBOX FILTROS------------*/
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleccionar todos los headers que se usan para togglear
+ document.addEventListener('DOMContentLoaded', function() {
   const toggleHeaders = document.querySelectorAll('.toggle-header');
 
   toggleHeaders.forEach(header => {
     header.addEventListener('click', function() {
       const targetId = header.getAttribute('data-target');
       const target = document.getElementById(targetId);
-      
+
       if (target) {
         // Alternar la clase "active" para mostrar/ocultar contenido
         target.classList.toggle('active');
