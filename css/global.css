@@ -707,16 +707,15 @@
     display: flex;
     flex-wrap: wrap;  /* Permite que los productos se distribuyan en múltiples filas */
     gap: 20px;  /* Espaciado entre productos */
-    justify-content: flex-start;  /* Alinear productos hacia el inicio */
+    justify-content: flex-start;
   }
   
   .product-card {
-    width: 285px;  /* Ancho consistente con el resto de productos */
+    width: 285px;
     border: 1px solid #ddd;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1 1 calc(25% - 20px);  /* Toma un cuarto del ancho de la fila menos el espacio */
   }
   
   .main-image-container {
@@ -735,7 +734,6 @@
     display: flex;
     gap: 8px;  /* Espaciado entre miniaturas */
     margin-bottom: 15px;
-    margin-left: 5px;
   }
   
   .thumbnail {
