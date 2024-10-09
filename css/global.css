@@ -740,7 +740,7 @@
   
   .thumbnail {
     width: 40px;
-    height: 40px;
+    height: 50px;
     cursor: pointer;
     border: 1px solid #ddd;
   }
