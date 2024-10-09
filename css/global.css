@@ -713,7 +713,6 @@
   .product-card {
     width: 285px;  /* Ancho consistente con el resto de productos */
     border: 1px solid #ddd;
-    padding: 15px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -729,6 +728,8 @@
     width: 100%;
     height: auto;
   }
+
+  /*-----------------MINIATURAS PRODUCTO--------------*/
   
   .thumbnails-container {
     display: flex;
@@ -770,27 +771,6 @@
     color: #666;
     font-size: 12px;
     margin: 2px 0;
-  }
-
-
-
-  /*-----------------MINIATURAS PRODUCTO--------------*/
-  .thumbnails-container {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .thumbnail {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-  }
-  
-  .thumbnail:hover {
-    border-color: #a30dfa; /* Color destacado al pasar el ratón */
   }
 
   
