@@ -126,12 +126,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = [
     {
       id: 1,
-      name: "Campera Liviana Hombre",
-      price: 25000,
-      gender: "hombre",
-      category: "campera-liviana",
-      images: ["img/hombre/campera-liviana1.jpg", "img/hombre/campera-liviana2.jpg"],
-      colors: ["Negro", "Gris"],
+      name: "Remera Modal Viscosa",
+      price: 7.500,
+      gender: "mujer",
+      category: "remeras",
+      images: ["img//mujer/remeras-modal-viscosa/remera modal viscosa 1.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 2.jpeg"],
+      colors: ["Rosa", "Gris"],
       status: "Nuevo"
     },
     {
