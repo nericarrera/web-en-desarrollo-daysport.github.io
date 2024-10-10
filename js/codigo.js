@@ -153,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/*----------------FILTRO POR COLORES------------- */
+/*----------------FILTRO POR COLORES------------------------------------------------ */
+
 document.addEventListener('DOMContentLoaded', function() {
   const filters = {
     gender: [],
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicialmente, mostrar todos los productos
   updateProducts();
 });
-
+/*----------------------------------------------------------------------------------------- */
 
 
 /*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
