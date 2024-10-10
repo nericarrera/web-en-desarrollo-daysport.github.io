@@ -609,6 +609,10 @@
     font-style: normal;
     letter-spacing: 0.5px;
   }
+
+  .gender-options{
+    margin-bottom: 5px;
+  }
   
   .arrow {
     font-size: 12px;
@@ -657,8 +661,6 @@
     letter-spacing: 0.5px;
   }
 
-  
-
   .filter-option {
     display: flex;
     gap: 10px; /* Espacio entre checkbox y label */
@@ -681,6 +683,7 @@
     font-weight: 500;
     font-style: normal;
     letter-spacing: 0.5px;
+    margin-bottom: 5px;
   }
 
   /*---------------FILTROS OPCION COLORES------------*/
