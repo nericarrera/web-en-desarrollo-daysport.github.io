@@ -683,7 +683,9 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 5px;
-    font-family: system-ui;
+    font-size: 14px;
+    color: #000000;
+    font-family: "Arvo", serif;
     font-weight: 700;
     font-style: normal;
     color: #000000;
