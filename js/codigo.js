@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gender: [],
     category: [],
     size: [],
-    color: [] // Nueva propiedad para filtrar por color
+    color: [] // Propiedad para filtrar por color
   };
 
   // Escucha los cambios en los checkboxes
@@ -181,13 +181,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateProducts() {
     const products = document.querySelectorAll('.product');
-    
+
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
       const productSize = product.getAttribute('data-size');
       const productColor = product.getAttribute('data-color');
-      
+
       const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
       const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
       const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
