@@ -1469,7 +1469,7 @@ form {
     
 }
 
-h4 {
+.titulo-form {
     color: #ffffff;
     text-align: center;
     margin: 0px;
@@ -1480,7 +1480,7 @@ h4 {
 
 }
 
-input, .textarea1 {
+.input-form, .textarea1 {
     width: 100%;
     margin-bottom: 20px;
     padding: 7px;
