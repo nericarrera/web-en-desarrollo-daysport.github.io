@@ -716,6 +716,50 @@
     background-color: green;
   }
 
+  #violeta + label::before { 
+    background-color: #8e44ad; 
+}
+
+  #beige + label::before { 
+    background-color: #f5f5dc; 
+}
+
+  #marron + label::before { 
+    background-color: #8b4513; 
+}
+
+  #gris-topo + label::before { 
+    background-color: #635d5b; 
+}
+
+  #naranja + label::before { 
+    background-color: #ffa500; 
+}
+
+  #amarillo + label::before { 
+    background-color: #ffff00; 
+}
+
+  #rosa + label::before { 
+    background-color: #ff69b4; 
+}
+
+  #celeste + label::before { 
+    background-color: #87ceeb; 
+}
+
+  #hueso + label::before { 
+    background-color: #e3dac9; 
+}
+
+  #multicolor + label::before { 
+    background-image: linear-gradient(45deg, red, yellow, green, blue); 
+}
+
+  #combinados + label::before { 
+    background-image: linear-gradient(45deg, #ff8c00, #ff4500); 
+}
+
 
 /*--------- TITULO DE (DESTACADO)----------- */
 .destacado{
