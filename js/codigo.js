@@ -82,16 +82,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------*/
 
-/*-----------------FILTRO -------------------- */
+/*-----------------FILTRO precio-------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const priceRange = document.getElementById('price-range');
-  const priceDisplay = document.getElementById('price-display');
+  // Variables para el rango de precios mínimo y máximo
+  const priceRangeMin = document.getElementById('price-range-min');
+  const priceRangeMax = document.getElementById('price-range-max');
+  const priceDisplayMin = document.getElementById('price-display-min');
+  const priceDisplayMax = document.getElementById('price-display-max');
   const clearFiltersButton = document.getElementById('clear-filters');
   
-  // Actualizar el precio cuando el usuario mueva el control de rango
-  priceRange.addEventListener('input', function() {
-    priceDisplay.textContent = `$${priceRange.value}`;
+  // Actualizar el precio mínimo y máximo cuando el usuario mueve los controles
+  priceRangeMin.addEventListener('input', function() {
+    priceDisplayMin.textContent = `$${parseInt(priceRangeMin.value).toLocaleString()}`;
+    updateProducts();
+  });
+
+  priceRangeMax.addEventListener('input', function() {
+    priceDisplayMax.textContent = `$${parseInt(priceRangeMax.value).toLocaleString()}`;
+    updateProducts();
   });
 
   // Limpiar filtros al hacer clic en el botón
@@ -99,12 +108,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = false;
     });
-    priceRange.value = 1000;
-    priceDisplay.textContent = `$1000`;
-    // Aquí puedes añadir código para resetear la lista de productos filtrados
+    priceRangeMin.value = 1000;
+    priceRangeMax.value = 250000;
+    priceDisplayMin.textContent = `$1.000`;
+    priceDisplayMax.textContent = `$250.000`;
+    updateProducts();  // Aquí puedes añadir código para resetear la lista de productos filtrados
   });
   
   // Puedes agregar aquí la lógica para filtrar los productos al seleccionar una opción
+  function updateProducts() {
+    // Lógica para actualizar productos en función de los filtros seleccionados (incluyendo el rango de precio)
+  }
 });
 
 /*--------------------------------------------------- */

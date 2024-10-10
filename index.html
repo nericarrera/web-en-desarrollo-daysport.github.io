@@ -332,8 +332,15 @@
   <!-- Rango de precios -->
   <div class="filter-section">
     <p class="filter-titulo-section toggle-header">Precio</p>
-    <input type="range" id="price-range" min="1000" max="250000" step="500" value="1000">
-    <span id="price-display">$1000</span>
+    
+    <!-- Muestra el precio mínimo y máximo seleccionado -->
+    <div class="price-display">
+      <span id="price-display-min">$1.000</span> - <span id="price-display-max">$250.000</span>
+    </div>
+    
+    <!-- Controles de rango para el precio mínimo y máximo -->
+    <input type="range" id="price-range-min" min="1000" max="250000" step="500" value="1000">
+    <input type="range" id="price-range-max" min="1000" max="250000" step="500" value="250000">
   </div>
 </aside>
  

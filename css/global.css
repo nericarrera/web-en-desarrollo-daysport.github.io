@@ -635,11 +635,46 @@
     margin-right: 5px;
   }
   
-  #price-display {
+  /*--------------FILTRO PRECIO-------------*/
+  .filter-section .price-display {
+    text-align: center;
     font-weight: bold;
-    margin-left: 10px;
+    font-size: 14px;
   }
   
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+    appearance: none;
+    height: 4px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.15s ease-in-out;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  input[type="range"]:hover {
+    opacity: 1;
+  }
+  
+/*-------------------------------------------*/
   #clear-filters {
     background-color: #ff5c5c;
     color: white;
