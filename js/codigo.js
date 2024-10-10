@@ -121,7 +121,102 @@ document.addEventListener('DOMContentLoaded', function() {
 /*--------------------------------------------------- */
 
 
+/*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const products = [
+    {
+      id: 1,
+      name: "OPT 4 INCH L",
+      price: 58999,
+      gender: "mujer",
+      category: "training",
+      colors: ["color1.jpg", "color2.jpg", "color3.jpg"]
+    },
+    {
+      id: 2,
+      name: "Zapatillas Deportivas",
+      price: 99999,
+      gender: "hombre",
+      category: "deportivo",
+      colors: ["color4.jpg", "color5.jpg"]
+    }
+    // Más productos aquí
+  ];
 
+  function displayProducts(productsToShow) {
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar la cuadrícula antes de agregar productos
+
+    productsToShow.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+
+      // Imagen principal
+      const mainImageContainer = document.createElement('div');
+      mainImageContainer.className = 'main-image-container';
+      const mainImage = document.createElement('img');
+      mainImage.src = `img/${product.colors[0]}`;
+      mainImage.alt = product.name;
+      mainImage.className = 'main-image';
+      mainImageContainer.appendChild(mainImage);
+
+      // Miniaturas
+      const thumbnailsContainer = document.createElement('div');
+      thumbnailsContainer.className = 'thumbnails-container';
+      product.colors.forEach(colorSrc => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = `img/${colorSrc}`;
+        thumbnail.alt = 'Vista color';
+        thumbnail.className = 'thumbnail';
+        thumbnail.addEventListener('click', () => {
+          mainImage.src = `img/${colorSrc}`;  // Cambiar la imagen principal
+        });
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+
+      // Detalles del producto
+      const productDetails = document.createElement('div');
+      productDetails.className = 'product-details';
+
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+
+      const productName = document.createElement('p');
+      productName.className = 'product-name';
+      productName.textContent = product.name;
+
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category';
+      productCategory.textContent = product.category;
+
+      const productColors = document.createElement('p');
+      productColors.className = 'product-colors';
+      productColors.textContent = `${product.colors.length} colores`;
+
+      const productStatus = document.createElement('p');
+      productStatus.className = 'product-status';
+      productStatus.textContent = "Nuevo";
+
+      productDetails.appendChild(productPrice);
+      productDetails.appendChild(productName);
+      productDetails.appendChild(productCategory);
+      productDetails.appendChild(productColors);
+      productDetails.appendChild(productStatus);
+
+      // Añadir todo al producto
+      productDiv.appendChild(mainImageContainer);
+      productDiv.appendChild(thumbnailsContainer);
+      productDiv.appendChild(productDetails);
+      productsGrid.appendChild(productDiv);
+    });
+  }
+
+  // Mostrar los productos al cargar la página
+  displayProducts(products);
+
+  // Aquí puedes agregar la lógica de filtrado y enlazarla con la función displayProducts
+});
 
 /*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
 document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
