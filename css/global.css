@@ -639,7 +639,7 @@
  /* Estilo para la barra de rango de precio */
 .price-range-container {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 40px; /* Ajusta según tus necesidades */
     margin-top: 10px;
   }
