@@ -581,6 +581,10 @@
 }
 
 /*-----------------FILTROS---------------*/
+.container {
+    display: flex;
+  }
+
 .filters {
     border: 1px solid #ddd;
     padding: 20px;
@@ -703,6 +707,7 @@
   }
   
 /*-------------------------------------------*/
+
   #clear-filters {
     background-color: #ff5c5c;
     color: white;
@@ -829,66 +834,63 @@
 /*--------------------------------------------------*/
 
 /*---------------PRODUCTOS PARA EL FILTRO-------------*/
-/* Contenedor general para los productos */
 .products-grid {
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     gap: 20px;
-    margin-top: 20px;
   }
   
-  /* Estilo para cada tarjeta de producto */
   .product-card {
-    width: 270px;
+    width: calc(33.333% - 20px);
     border: 1px solid #ddd;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     text-align: center;
-    background-color: #fff;
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
   
   .product-card:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
-  /* Imagen principal */
-  .product-main-image img {
+  .main-image-container {
     width: 100%;
-    height: auto;
     margin-bottom: 10px;
   }
   
-  /* Miniaturas */
-  .product-thumbnails {
+  .main-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .thumbnails-container {
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   
-  .product-thumbnails img {
+  .thumbnail {
     width: 50px;
     height: 50px;
     cursor: pointer;
     border: 1px solid #ddd;
-    transition: border-color 0.3s ease-in-out;
   }
   
-  .product-thumbnails img:hover {
-    border-color: #000; /* Cambia el color de borde al pasar el ratón */
+  .thumbnail:hover {
+    border-color: #a30dfa;
   }
   
-  /* Detalles del producto */
   .product-details {
     text-align: left;
+    font-size: 14px;
   }
   
   .product-price {
     font-weight: bold;
-    font-size: 18px;
-    color: #333;
+    color: #000;
+    margin-bottom: 5px;
   }
   
   .product-name {
@@ -899,11 +901,10 @@
   .product-category,
   .product-colors,
   .product-status {
-    font-size: 14px;
     color: #666;
+    font-size: 12px;
     margin: 2px 0;
   }
-
 /*--------- TITULO DE (DESTACADO)----------- */
 .destacado{
     display: flex;
