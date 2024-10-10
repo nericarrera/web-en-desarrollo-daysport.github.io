@@ -716,48 +716,48 @@
     background-color: green;
   }
 
-  #violeta + label::before { 
+  #color-violeta + label::before { 
     background-color: #8e44ad; 
 }
 
-  #beige + label::before { 
+  #color-beige + label::before { 
     background-color: #f5f5dc; 
 }
 
-  #marron + label::before { 
+  #color-marron + label::before { 
     background-color: #8b4513; 
 }
 
-  #gris-topo + label::before { 
+  #color-gris-topo + label::before { 
     background-color: #635d5b; 
 }
 
-  #naranja + label::before { 
+  #color-naranja + label::before { 
     background-color: #ffa500; 
 }
 
-  #amarillo + label::before { 
+  #color-amarillo + label::before { 
     background-color: #ffff00; 
 }
 
-  #rosa + label::before { 
+  #color-rosa + label::before { 
     background-color: #ff69b4; 
 }
 
-  #celeste + label::before { 
+  #color-celeste + label::before { 
     background-color: #87ceeb; 
 }
 
-  #hueso + label::before { 
+  #color-hueso + label::before { 
     background-color: #e3dac9; 
 }
 
-  #multicolor + label::before { 
+  #color-multicolor + label::before { 
     background-image: linear-gradient(45deg, red, yellow, green, blue); 
 }
 
-  #combinados + label::before { 
-    background-image: linear-gradient(45deg, #ff8c00, #ff4500); 
+  #color-combinados + label::before { 
+    background-image: linear-gradient(45deg, #0026ff, #ff4500); 
 }
 
 
