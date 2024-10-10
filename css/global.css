@@ -639,6 +639,7 @@
   .price-range-container {
     position: relative;
     width: 100%;
+    height: 50px; /* Altura para acomodar los controles */
   }
   
   input[type="range"] {
@@ -647,6 +648,8 @@
     appearance: none;
     background: transparent;
     position: absolute;
+    top: 0;
+    pointer-events: none; /* Esto evita que se superpongan los eventos de los sliders */
   }
   
   input[type="range"]::-webkit-slider-runnable-track {
@@ -665,13 +668,32 @@
     border-radius: 50%;
     cursor: pointer;
     margin-top: -6px; /* Ajustar para centrar el thumb */
-    z-index: 20;
+    pointer-events: auto; /* Esto permite que se pueda interactuar con los sliders */
+  }
+  
+  input#price-min {
+    z-index: 2; /* El slider del mínimo tiene un z-index mayor */
+  }
+  
+  input#price-max {
+    z-index: 1; /* El slider del máximo tiene un z-index menor */
   }
   
   .price-display {
     font-size: 14px;
     text-align: center;
     margin-bottom: 10px;
+  }
+  
+  .track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 5px;
+    transform: translateY(-50%);
   }
   
   input[type="range"]::-moz-range-thumb {
