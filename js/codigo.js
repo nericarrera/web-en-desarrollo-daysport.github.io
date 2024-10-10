@@ -126,21 +126,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = [
     {
       id: 1,
-      name: "OPT 4 INCH L",
-      price: 58999,
-      gender: "mujer",
-      category: "training",
-      colors: ["color1.jpg", "color2.jpg", "color3.jpg"]
+      name: "Campera Liviana Hombre",
+      price: 25000,
+      gender: "hombre",
+      category: "campera-liviana",
+      images: ["img/hombre/campera-liviana1.jpg", "img/hombre/campera-liviana2.jpg"],
+      colors: ["Negro", "Gris"],
+      status: "Nuevo"
     },
     {
       id: 2,
-      name: "Zapatillas Deportivas",
-      price: 99999,
-      gender: "hombre",
-      category: "deportivo",
-      colors: ["color4.jpg", "color5.jpg"]
-    }
-    // Más productos aquí
+      name: "Remera Mujer Training",
+      price: 15000,
+      gender: "mujer",
+      category: "remeras",
+      images: ["img/mujer/remera1.jpg", "img/mujer/remera2.jpg"],
+      colors: ["Blanco", "Negro"],
+      status: "Nuevo"
+    },
+    // Añade más productos aquí
   ];
 
   function displayProducts(productsToShow) {
@@ -155,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const mainImageContainer = document.createElement('div');
       mainImageContainer.className = 'main-image-container';
       const mainImage = document.createElement('img');
-      mainImage.src = `img/${product.colors[0]}`;
+      mainImage.src = product.images[0];  // La primera imagen como principal
       mainImage.alt = product.name;
       mainImage.className = 'main-image';
       mainImageContainer.appendChild(mainImage);
@@ -163,13 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // Miniaturas
       const thumbnailsContainer = document.createElement('div');
       thumbnailsContainer.className = 'thumbnails-container';
-      product.colors.forEach(colorSrc => {
+      product.images.forEach((imgSrc, index) => {
         const thumbnail = document.createElement('img');
-        thumbnail.src = `img/${colorSrc}`;
-        thumbnail.alt = 'Vista color';
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Vista color ${index + 1}`;
         thumbnail.className = 'thumbnail';
         thumbnail.addEventListener('click', () => {
-          mainImage.src = `img/${colorSrc}`;  // Cambiar la imagen principal
+          mainImage.src = imgSrc;  // Cambiar la imagen principal
         });
         thumbnailsContainer.appendChild(thumbnail);
       });
@@ -196,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const productStatus = document.createElement('p');
       productStatus.className = 'product-status';
-      productStatus.textContent = "Nuevo";
+      productStatus.textContent = product.status;
 
       productDetails.appendChild(productPrice);
       productDetails.appendChild(productName);
@@ -214,8 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Mostrar los productos al cargar la página
   displayProducts(products);
-
-  // Aquí puedes agregar la lógica de filtrado y enlazarla con la función displayProducts
 });
 
 /*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
