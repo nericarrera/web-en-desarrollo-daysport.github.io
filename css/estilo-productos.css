@@ -695,6 +695,7 @@
     font-weight: 600;
     font-style: normal;
     letter-spacing: 0.5px;
+    margin-top: 4px;
 }
 
 .size-options button:hover {
