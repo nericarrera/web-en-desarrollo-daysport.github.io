@@ -681,9 +681,14 @@
   
   .price-display {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-weight: bold;
+    justify-content: space-around;
+    margin-bottom: 5px;
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #000000;
+    letter-spacing: 1px;
+
   }
   
   .price-range-bar {
