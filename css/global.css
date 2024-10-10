@@ -645,7 +645,6 @@
   }
   
   .price-range-container input[type="range"] {
-    -webkit-appearance: none;
     width: 100%;
     height: 5px; /* Ancho de la barra */
     background: #ccc;
