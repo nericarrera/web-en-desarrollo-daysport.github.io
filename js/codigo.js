@@ -120,6 +120,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------------------- */
 
+
+
+
+/*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
+document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
+  thumbnail.addEventListener('click', function() {
+    const mainImage = this.closest('.product-card').querySelector('.product-main-image img');
+    mainImage.src = this.src; // Cambia la imagen principal al hacer clic en la miniatura
+  });
+});
+
 /*-----------------------FILTRO DESPLEGABLE--------------- */
 document.addEventListener('DOMContentLoaded', function() {
   const toggleHeaders = document.querySelectorAll('.toggle-header');
