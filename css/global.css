@@ -665,6 +665,7 @@
     border-radius: 50%;
     cursor: pointer;
     margin-top: -6px; /* Ajustar para centrar el thumb */
+    z-index: 20;
   }
   
   .price-display {
