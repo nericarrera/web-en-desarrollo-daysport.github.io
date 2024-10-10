@@ -636,79 +636,66 @@
   }
   
   /*--------------FILTRO PRECIO-------------*/
-  .price-range-container {
+ /* Estilo para la barra de rango de precio */
+.price-range-container {
     position: relative;
     width: 100%;
-    height: 50px; /* Altura para acomodar los controles */
+    height: 40px; /* Ajusta según tus necesidades */
+    margin-top: 10px;
   }
   
-  input[type="range"] {
-    width: 100%;
+  .price-range-container input[type="range"] {
     -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    position: absolute;
-    top: 0;
-    pointer-events: none; /* Esto evita que se superpongan los eventos de los sliders */
-  }
-  
-  input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 6px;
+    height: 5px; /* Ancho de la barra */
     background: #ccc;
-    border-radius: 5px;
+    position: absolute;
+    z-index: 2;
   }
   
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 18px;
-    height: 18px;
-    background-color: #000;
+    width: 16px; /* Ancho del thumb */
+    height: 16px; /* Alto del thumb */
     border-radius: 50%;
+    background: black; /* Color del thumb */
     cursor: pointer;
-    margin-top: -6px; /* Ajustar para centrar el thumb */
-    pointer-events: auto; /* Esto permite que se pueda interactuar con los sliders */
+    position: relative;
+    z-index: 3;
+    border: 2px solid white; /* Para el borde blanco */
   }
   
-  input#price-min {
-    z-index: 2; /* El slider del mínimo tiene un z-index mayor */
+  input[type="range"]:nth-child(2)::-webkit-slider-thumb {
+    z-index: 4; /* Hacer que el segundo thumb esté sobre el primero */
   }
   
-  input#price-max {
-    z-index: 1; /* El slider del máximo tiene un z-index menor */
+  /* Para Firefox */
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+    border: 2px solid white;
   }
   
   .price-display {
-    font-size: 14px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+    font-weight: bold;
   }
   
-  .track {
+  .price-range-bar {
+    height: 5px;
+    background: black;
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background-color: #ccc;
-    border-radius: 5px;
     transform: translateY(-50%);
-  }
-  
-  input[type="range"]::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    background-color: #000;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  input[type="range"]::-moz-range-track {
-    width: 100%;
-    height: 6px;
-    background: #ccc;
-    border-radius: 5px;
+    z-index: 1;
+    left: 0;
+    right: 0;
   }
   
 /*-------------------------------------------*/

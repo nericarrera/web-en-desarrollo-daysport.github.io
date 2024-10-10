@@ -85,45 +85,37 @@ document.addEventListener('DOMContentLoaded', function() {
 /*-----------------FILTRO precio-------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const priceMin = document.getElementById('price-min');
-  const priceMax = document.getElementById('price-max');
-  const priceMinDisplay = document.getElementById('price-min-display');
-  const priceMaxDisplay = document.getElementById('price-max-display');
-  const clearFiltersButton = document.getElementById('clear-filters');
+  const minPriceRange = document.getElementById('min-price-range');
+  const maxPriceRange = document.getElementById('max-price-range');
+  const priceDisplayMin = document.getElementById('price-display-min');
+  const priceDisplayMax = document.getElementById('price-display-max');
 
-  // Actualizar el rango de precios cuando el usuario mueve los controles de rango
-  priceMin.addEventListener('input', function() {
-    if (parseInt(priceMin.value) > parseInt(priceMax.value)) {
-      priceMin.value = priceMax.value;  // Evitar que el mínimo sea mayor que el máximo
-    }
-    priceMinDisplay.textContent = `$${parseInt(priceMin.value).toLocaleString()}`;
-    updateProducts();  // Actualizar los productos filtrados
+  // Actualizar los valores al mover los controles de rango
+  minPriceRange.addEventListener('input', function() {
+    priceDisplayMin.textContent = `$${parseInt(minPriceRange.value).toLocaleString()}`;
+    updateRangeBar();
   });
 
-  priceMax.addEventListener('input', function() {
-    if (parseInt(priceMax.value) < parseInt(priceMin.value)) {
-      priceMax.value = priceMin.value;  // Evitar que el máximo sea menor que el mínimo
-    }
-    priceMaxDisplay.textContent = `$${parseInt(priceMax.value).toLocaleString()}`;
-    updateProducts();  // Actualizar los productos filtrados
+  maxPriceRange.addEventListener('input', function() {
+    priceDisplayMax.textContent = `$${parseInt(maxPriceRange.value).toLocaleString()}`;
+    updateRangeBar();
   });
 
-  // Limpiar filtros al hacer clic en el botón
-  clearFiltersButton.addEventListener('click', function() {
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-      checkbox.checked = false;
-    });
-    priceMin.value = 1000;
-    priceMax.value = 250000;
-    priceMinDisplay.textContent = '$1.000';
-    priceMaxDisplay.textContent = '$250.000';
-    updateProducts();  // Resetear los productos filtrados
-  });
+  // Actualizar la barra de rango entre los dos valores
+  function updateRangeBar() {
+    const minVal = parseInt(minPriceRange.value);
+    const maxVal = parseInt(maxPriceRange.value);
+    const bar = document.querySelector('.price-range-bar');
 
-  // Función para actualizar los productos según los filtros
-  function updateProducts() {
-    // Lógica para actualizar los productos basados en el rango de precio y otros filtros
+    const minPercent = (minVal / parseInt(minPriceRange.max)) * 100;
+    const maxPercent = (maxVal / parseInt(maxPriceRange.max)) * 100;
+
+    bar.style.left = minPercent + '%';
+    bar.style.right = (100 - maxPercent) + '%';
   }
+
+  // Inicializar la barra de rango
+  updateRangeBar();
 });
 
 /*--------------------------------------------------- */
