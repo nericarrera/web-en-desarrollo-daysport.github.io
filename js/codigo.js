@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Detalles del producto
       const productDetails = document.createElement('div');
-      productDetails.className = 'product-details';
+      productDetails.className = 'product-details1';
 
       const productPrice = document.createElement('p');
       productPrice.className = 'product-price';
