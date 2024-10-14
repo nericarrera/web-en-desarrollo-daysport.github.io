@@ -887,20 +887,20 @@
     font-size: 14px;
   }
   
-  .product-price {
+  .product-price1 {
     font-weight: bold;
     color: #000;
     margin-bottom: 5px;
   }
   
-  .product-name {
+  .product-name1 {
     font-size: 16px;
     font-weight: 600;
   }
   
-  .product-category,
-  .product-colors,
-  .product-status {
+  .product-category1,
+  .product-colors1,
+  .product-status1 {
     color: #666;
     font-size: 12px;
     margin: 2px 0;

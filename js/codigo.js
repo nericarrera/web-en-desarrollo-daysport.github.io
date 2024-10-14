@@ -183,23 +183,23 @@ document.addEventListener('DOMContentLoaded', function() {
       productDetails.className = 'product-details1';
 
       const productPrice = document.createElement('p');
-      productPrice.className = 'product-price';
+      productPrice.className = 'product-price1';
       productPrice.textContent = `$${product.price.toLocaleString()}`;
 
       const productName = document.createElement('p');
-      productName.className = 'product-name';
+      productName.className = 'product-name1';
       productName.textContent = product.name;
 
       const productCategory = document.createElement('p');
-      productCategory.className = 'product-category';
+      productCategory.className = 'product-category1';
       productCategory.textContent = product.category;
 
       const productColors = document.createElement('p');
-      productColors.className = 'product-colors';
+      productColors.className = 'product-colors1';
       productColors.textContent = `${product.colors.length} colores`;
 
       const productStatus = document.createElement('p');
-      productStatus.className = 'product-status';
+      productStatus.className = 'product-status1';
       productStatus.textContent = product.status;
 
       productDetails.appendChild(productPrice);
