@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "bermudas",
       images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3"],
       colors: ["Beige", "Tostado", "Negro"],
-      status: "Nuevo"
+      status: ""
     },
     // Añade más productos aquí
   ];
