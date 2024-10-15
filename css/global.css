@@ -913,6 +913,7 @@
     margin: 2px 0;
     font-family: 'Montserrat';
     padding: 5px;
+    margin-bottom: -5px;
   }
 
   .product-status1 {
