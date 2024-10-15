@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
       price: 25000,
       gender: "hombre",
       category: "bermudas",
-      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3"],
+      images: ["img//hombre/bermudas-cargo-nike/bermuda-cargo-nike 1", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3"],
       colors: ["Beige", "Tostado", "Negro"],
       status: ""
     },
