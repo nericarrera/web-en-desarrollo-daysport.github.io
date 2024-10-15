@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
       price: 7500,
       gender: "mujer",
       category: "remeras",
-      images: ["img//mujer/remeras-modal-viscosa/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 5.jpeg" ],
+      images: ["img//mujer/remeras-modal-viscosa/remera modal viscosa 2.jpeg", "img//mujer/remeras-modal-viscosa/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 5.jpeg" ],
       colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
       status: "Nuevo"
     },
