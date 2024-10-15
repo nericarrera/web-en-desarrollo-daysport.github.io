@@ -894,6 +894,7 @@
     letter-spacing: 1px;
     font-weight: 700;
     padding: 5px;
+    margin-bottom: -5px;
   }
   
   .product-name1 {
