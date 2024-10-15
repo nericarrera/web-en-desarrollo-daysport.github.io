@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
       price: 7500,
       gender: "mujer",
       category: "remeras",
-      images: ["img/hombre/bermudas-cargo-nike/download (1).jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
-      colors: ["Beige", "Tostado", "Negro"],
+      images: ["img/mujer/remera-modal-soft-cuelloR/remera-comdal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-comdal-soft-cuelloR 2.jpeg"],
+      colors: ["celeste", "Negro"],
       status: ""
     },
 
