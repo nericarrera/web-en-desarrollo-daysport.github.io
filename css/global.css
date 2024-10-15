@@ -843,7 +843,8 @@
   }
   
   .product-card {
-    width: calc(33.333% - 20px);
+    width: 383px;
+    height: 497px;
     border: 1px solid #ddd;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -861,7 +862,8 @@
   
   .main-image {
     width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
   }
   
   .thumbnails-container {
