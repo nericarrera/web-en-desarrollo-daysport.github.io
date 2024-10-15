@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       id: 1,
       name: "Remera Modal Viscosa",
-      price: 7.500,
+      price: 7500,
       gender: "mujer",
       category: "remeras",
       images: ["img//mujer/remeras-modal-viscosa/remera modal viscosa 1.jpeg", "img/mujer/remeras-modal-viscosa/remera modal viscosa 2.jpeg"],
