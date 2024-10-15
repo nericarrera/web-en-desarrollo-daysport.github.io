@@ -136,12 +136,12 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       id: 2,
-      name: "Remera Mujer Training",
-      price: 15000,
-      gender: "mujer",
-      category: "remeras",
-      images: ["img/mujer/remera1.jpg", "img/mujer/remera2.jpg"],
-      colors: ["Blanco", "Negro"],
+      name: "Bermuda Cargo Nike",
+      price: 25000,
+      gender: "hombre",
+      category: "bermudas",
+      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3"],
+      colors: ["Beige", "Tostado", "Negro"],
       status: "Nuevo"
     },
     // Añade más productos aquí
