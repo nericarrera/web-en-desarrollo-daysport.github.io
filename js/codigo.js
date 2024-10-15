@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const mainImageContainer = document.createElement('div');
       mainImageContainer.className = 'main-image-container';
       const mainImage = document.createElement('img');
-      mainImage.src = product.images[1];  // La primera imagen como principal
+      mainImage.src = product.images[0];  // La primera imagen como principal
       mainImage.alt = product.name;
       mainImage.className = 'main-image';
       mainImageContainer.appendChild(mainImage);
