@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "remeras",
       images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
       colors: ["celeste", "Negro"],
-      status: ""
+      status: "Nuevo"
     },
 
     // Añade más productos aquí
