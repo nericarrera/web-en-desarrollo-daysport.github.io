@@ -891,7 +891,10 @@
     font-weight: bold;
     color: #000;
     margin-bottom: 5px;
-    font-family: "Dosis", sans-serif;
+    font-family: "Arvo", sans-serif;
+    font-style: normal;
+    letter-spacing: 1px;
+    font-weight: 700;
   }
   
   .product-name1 {
