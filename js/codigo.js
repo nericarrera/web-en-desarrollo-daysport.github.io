@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       id: 3,
-      name: "Remera Modal Sof",
+      name: "Remera Modal Soft",
       price: 7500,
       gender: "mujer",
       category: "remeras",
-      images: ["img/mujer/remera-modal-soft-cuelloR/remera-comdal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-comdal-soft-cuelloR 2.jpeg"],
+      images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
       colors: ["celeste", "Negro"],
       status: ""
     },
