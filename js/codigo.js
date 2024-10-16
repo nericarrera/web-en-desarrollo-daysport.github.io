@@ -103,6 +103,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-------------------------------------------------------------------- */
 
+/*---------------------BOTON LIMPIAR FILTRO-------------------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const clearFiltersButton = document.getElementById('clear-filters');
+  
+  // Escucha el clic en el botón de limpiar filtros
+  clearFiltersButton.addEventListener('click', function() {
+    // Limpiar todos los checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+
+    // Reiniciar el rango de precios
+    document.getElementById('min-price-range').value = 1000;
+    document.getElementById('max-price-range').value = 250000;
+    document.getElementById('price-display-min').textContent = '$1.000';
+    document.getElementById('price-display-max').textContent = '$250.000';
+
+    // Limpiar los filtros activos
+    filters.gender = [];
+    filters.category = [];
+    filters.size = [];
+    filters.color = [];
+
+    // Actualizar los productos para mostrar todos
+    updateProducts();
+  });
+
+  // Función para actualizar los productos según los filtros
+  function updateProducts() {
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+      const productGender = product.getAttribute('data-gender');
+      const productCategory = product.getAttribute('data-category');
+      const productSize = product.getAttribute('data-size');
+      const productColor = product.getAttribute('data-color');
+
+      const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+      const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
+      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+
+      if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
+        product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+      } else {
+        product.style.display = 'none';   // Ocultar el producto si no coincide
+      }
+    });
+  }
+
+  // Inicialmente, mostrar todos los productos
+  updateProducts();
+});
+
 /*-----------------------FILTRO DESPLEGABLE--------------- */
 document.addEventListener('DOMContentLoaded', function() {
   const toggleHeaders = document.querySelectorAll('.toggle-header');
@@ -201,7 +255,6 @@ function updateProducts() {
 });
 /*----------------------------------------------------------------------------------------- */
 
-
 /*-----------------FILTRO precio-------------------- */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -239,9 +292,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /*--------------------------------------------------- */
-
-/*---------------------------FILTRO RAIZ----------------------- */
-
 
 
 /*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
