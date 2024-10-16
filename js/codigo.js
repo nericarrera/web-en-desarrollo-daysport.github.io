@@ -107,6 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function() {
   const clearFiltersButton = document.getElementById('clear-filters');
   
+  const filters = {
+    gender: [],
+    category: [],
+    size: [],
+    color: []
+  };
+
   // Escucha el clic en el botón de limpiar filtros
   clearFiltersButton.addEventListener('click', function() {
     // Limpiar todos los checkboxes
@@ -127,28 +134,33 @@ document.addEventListener('DOMContentLoaded', function() {
     filters.color = [];
 
     // Actualizar los productos para mostrar todos
-    updateProducts();
+    updateProducts(true); // Pasamos 'true' para indicar que queremos mostrar todos los productos
   });
 
   // Función para actualizar los productos según los filtros
-  function updateProducts() {
+  function updateProducts(showAll = false) {
     const products = document.querySelectorAll('.product-card');
 
     products.forEach(product => {
-      const productGender = product.getAttribute('data-gender');
-      const productCategory = product.getAttribute('data-category');
-      const productSize = product.getAttribute('data-size');
-      const productColor = product.getAttribute('data-color');
-
-      const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
-      const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
-      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
-
-      if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-        product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+      if (showAll) {
+        // Si queremos mostrar todos los productos
+        product.style.display = 'block';
       } else {
-        product.style.display = 'none';   // Ocultar el producto si no coincide
+        const productGender = product.getAttribute('data-gender');
+        const productCategory = product.getAttribute('data-category');
+        const productSize = product.getAttribute('data-size');
+        const productColor = product.getAttribute('data-color');
+
+        const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+        const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+        const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
+        const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+
+        if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
+          product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+        } else {
+          product.style.display = 'none';   // Ocultar el producto si no coincide
+        }
       }
     });
   }
@@ -156,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicialmente, mostrar todos los productos
   updateProducts();
 });
+
 
 /*-----------------------FILTRO DESPLEGABLE--------------- */
 document.addEventListener('DOMContentLoaded', function() {
