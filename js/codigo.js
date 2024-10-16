@@ -82,162 +82,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------*/
 
-/*-----------------FILTRO precio-------------------- */
+/* -----------BOTON PARA AGREGAR AL CARRITO--------------*/
 
-document.addEventListener('DOMContentLoaded', function() {
-  const minPriceRange = document.getElementById('min-price-range');
-  const maxPriceRange = document.getElementById('max-price-range');
-  const priceDisplayMin = document.getElementById('price-display-min');
-  const priceDisplayMax = document.getElementById('price-display-max');
+// Esperar a que el DOM cargue completamente
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtener todos los botones con clase "btn-agregar"
+  var botones = document.querySelectorAll(".btn-agregar");
 
-  // Actualizar los valores al mover los controles de rango
-  minPriceRange.addEventListener('input', function() {
-    priceDisplayMin.textContent = `$${parseInt(minPriceRange.value).toLocaleString()}`;
-    updateRangeBar();
-  });
+  // Añadir evento de clic a cada botón
+  botones.forEach(function (boton) {
+      boton.addEventListener("click", function () {
+          // Obtener el producto del atributo data-producto
+          var producto = boton.getAttribute("data-producto");
 
-  maxPriceRange.addEventListener('input', function() {
-    priceDisplayMax.textContent = `$${parseInt(maxPriceRange.value).toLocaleString()}`;
-    updateRangeBar();
-  });
-
-  // Actualizar la barra de rango entre los dos valores
-  function updateRangeBar() {
-    const minVal = parseInt(minPriceRange.value);
-    const maxVal = parseInt(maxPriceRange.value);
-    const bar = document.querySelector('.price-range-bar');
-
-    const minPercent = (minVal / parseInt(minPriceRange.max)) * 100;
-    const maxPercent = (maxVal / parseInt(maxPriceRange.max)) * 100;
-
-    bar.style.left = minPercent + '%';
-    bar.style.right = (100 - maxPercent) + '%';
-  }
-
-  // Inicializar la barra de rango
-  updateRangeBar();
-});
-
-/*--------------------------------------------------- */
-
-
-/*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
-document.addEventListener('DOMContentLoaded', function() {
-  const products = [
-    {
-      id: 1,
-      name: "Remera modal viscosa - cuello en V",
-      price: 7500,
-      gender: "mujer",
-      category: "remeras",
-      images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
-      colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
-      status: "Nuevo"
-    },
-    {
-      id: 2,
-      name: "Bermuda Cargo Nike",
-      price: 25000,
-      gender: "hombre",
-      category: "bermudas",
-      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
-      colors: ["Beige", "Tostado", "Negro"],
-      status: ""
-    },
-    {
-      id: 3,
-      name: "Remera Modal Soft",
-      price: 7500,
-      gender: "mujer",
-      category: "remeras",
-      images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-      colors: ["celeste", "Negro"],
-      status: "Nuevo"
-    },
-
-    // Añade más productos aquí
-  ];
-
-  function displayProducts(productsToShow) {
-    const productsGrid = document.querySelector('.products-grid');
-    productsGrid.innerHTML = ''; // Limpiar la cuadrícula antes de agregar productos
-
-    productsToShow.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.className = 'product-card';
-
-      // Imagen principal
-      const mainImageContainer = document.createElement('div');
-      mainImageContainer.className = 'main-image-container';
-      const mainImage = document.createElement('img');
-      mainImage.src = product.images[0];  // La primera imagen como principal
-      mainImage.alt = product.name;
-      mainImage.className = 'main-image';
-      mainImageContainer.appendChild(mainImage);
-
-      // Miniaturas
-      const thumbnailsContainer = document.createElement('div');
-      thumbnailsContainer.className = 'thumbnails-container';
-      product.images.forEach((imgSrc, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imgSrc;
-        thumbnail.alt = `Vista color ${index + 1}`;
-        thumbnail.className = 'thumbnail';
-        thumbnail.addEventListener('click', () => {
-          mainImage.src = imgSrc;  // Cambiar la imagen principal
-        });
-        thumbnailsContainer.appendChild(thumbnail);
+          // Redirigir a la página de producto correspondiente
+          window.location.href = "index-producto.html?producto=" + producto;
       });
-
-      // Detalles del producto
-      const productDetails = document.createElement('div');
-      productDetails.className = 'product-details1';
-
-      const productPrice = document.createElement('p');
-      productPrice.className = 'product-price1';
-      productPrice.textContent = `$${product.price.toLocaleString()}`;
-
-      const productName = document.createElement('p');
-      productName.className = 'product-name1';
-      productName.textContent = product.name;
-
-      const productCategory = document.createElement('p');
-      productCategory.className = 'product-category1';
-      productCategory.textContent = product.category;
-
-      const productColors = document.createElement('p');
-      productColors.className = 'product-colors1';
-      productColors.textContent = `${product.colors.length} colores`;
-
-      const productStatus = document.createElement('p');
-      productStatus.className = 'product-status1';
-      productStatus.textContent = product.status;
-
-      productDetails.appendChild(productPrice);
-      productDetails.appendChild(productName);
-      productDetails.appendChild(productCategory);
-      productDetails.appendChild(productColors);
-      productDetails.appendChild(productStatus);
-
-      // Añadir todo al producto
-      productDiv.appendChild(mainImageContainer);
-      productDiv.appendChild(thumbnailsContainer);
-      productDiv.appendChild(productDetails);
-      productsGrid.appendChild(productDiv);
-    });
-  }
-
-  // Mostrar los productos al cargar la página
-  displayProducts(products);
-});
-
-/*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
-document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
-  thumbnail.addEventListener('click', function() {
-    const mainImage = this.closest('.product-card').querySelector('.product-main-image img');
-    mainImage.src = this.src; // Cambia la imagen principal al hacer clic en la miniatura
   });
 });
+
+/*-------------------------------------------------------------------- */
 
 /*-----------------------FILTRO DESPLEGABLE--------------- */
 document.addEventListener('DOMContentLoaded', function() {
@@ -282,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+/*------------------------------------------------------------------------------*/
 
 /*----------------FILTRO POR COLORES------------------------------------------------ */
 
@@ -335,6 +200,196 @@ document.addEventListener('DOMContentLoaded', function() {
   updateProducts();
 });
 /*----------------------------------------------------------------------------------------- */
+
+
+/*-----------------FILTRO precio-------------------- */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const minPriceRange = document.getElementById('min-price-range');
+  const maxPriceRange = document.getElementById('max-price-range');
+  const priceDisplayMin = document.getElementById('price-display-min');
+  const priceDisplayMax = document.getElementById('price-display-max');
+
+  // Actualizar los valores al mover los controles de rango
+  minPriceRange.addEventListener('input', function() {
+    priceDisplayMin.textContent = `$${parseInt(minPriceRange.value).toLocaleString()}`;
+    updateRangeBar();
+  });
+
+  maxPriceRange.addEventListener('input', function() {
+    priceDisplayMax.textContent = `$${parseInt(maxPriceRange.value).toLocaleString()}`;
+    updateRangeBar();
+  });
+
+  // Actualizar la barra de rango entre los dos valores
+  function updateRangeBar() {
+    const minVal = parseInt(minPriceRange.value);
+    const maxVal = parseInt(maxPriceRange.value);
+    const bar = document.querySelector('.price-range-bar');
+
+    const minPercent = (minVal / parseInt(minPriceRange.max)) * 100;
+    const maxPercent = (maxVal / parseInt(maxPriceRange.max)) * 100;
+
+    bar.style.left = minPercent + '%';
+    bar.style.right = (100 - maxPercent) + '%';
+  }
+
+  // Inicializar la barra de rango
+  updateRangeBar();
+});
+
+/*--------------------------------------------------- */
+
+/*---------------------------FILTRO RAIZ----------------------- */
+function updateProducts() {
+  const products = document.querySelectorAll('.product-card');  // Asegurarse de seleccionar las tarjetas de producto correctas
+
+  products.forEach(product => {
+    const productGender = product.getAttribute('data-gender');
+    const productCategory = product.getAttribute('data-category');
+    const productSize = product.getAttribute('data-size');
+    const productColor = product.getAttribute('data-color').split(','); // Dividimos los colores en un array
+
+    const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+    const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+    const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
+    const colorMatch = filters.color.length === 0 || filters.color.some(color => productColor.includes(color.toLowerCase()));
+
+    if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
+      product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+    } else {
+      product.style.display = 'none';   // Ocultar el producto si no coincide
+    }
+  });
+}
+
+
+/*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const products = [
+    {
+      id: 1,
+      name: "Remera modal viscosa - cuello en V",
+      price: 7500,
+      gender: "mujer",
+      category: "remeras",
+      images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
+      colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
+      status: "Nuevo"
+    },
+    {
+      id: 2,
+      name: "Bermuda Cargo Nike",
+      price: 25000,
+      gender: "hombre",
+      category: "bermudas",
+      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
+      colors: ["Beige", "Tostado", "Negro"],
+      status: ""
+    },
+    {
+      id: 3,
+      name: "Remera Modal Soft",
+      price: 7500,
+      gender: "mujer",
+      category: "remeras",
+      images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+      colors: ["celeste", "Negro"],
+      status: "Nuevo"
+    },
+
+    // Añade más productos aquí
+  ];
+
+  function displayProducts(productsToShow) {
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar la cuadrícula antes de agregar productos
+  
+    productsToShow.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+  
+      // Añadir los atributos de filtro
+      productDiv.setAttribute('data-gender', product.gender);
+      productDiv.setAttribute('data-category', product.category);
+      productDiv.setAttribute('data-size', product.size || ""); // Si tienes talles
+      productDiv.setAttribute('data-color', product.colors.join(',').toLowerCase());
+  
+      // Imagen principal
+      const mainImageContainer = document.createElement('div');
+      mainImageContainer.className = 'main-image-container';
+      const mainImage = document.createElement('img');
+      mainImage.src = product.images[0];  // La primera imagen como principal
+      mainImage.alt = product.name;
+      mainImage.className = 'main-image';
+      mainImageContainer.appendChild(mainImage);
+  
+      // Miniaturas
+      const thumbnailsContainer = document.createElement('div');
+      thumbnailsContainer.className = 'thumbnails-container';
+      product.images.forEach((imgSrc, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Vista color ${index + 1}`;
+        thumbnail.className = 'thumbnail';
+        thumbnail.addEventListener('click', () => {
+          mainImage.src = imgSrc;  // Cambiar la imagen principal
+        });
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+  
+      // Detalles del producto
+      const productDetails = document.createElement('div');
+      productDetails.className = 'product-details1';
+  
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price1';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+  
+      const productName = document.createElement('p');
+      productName.className = 'product-name1';
+      productName.textContent = product.name;
+  
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category1';
+      productCategory.textContent = product.category;
+  
+      const productColors = document.createElement('p');
+      productColors.className = 'product-colors1';
+      productColors.textContent = `${product.colors.length} colores`;
+  
+      const productStatus = document.createElement('p');
+      productStatus.className = 'product-status1';
+      productStatus.textContent = product.status;
+  
+      productDetails.appendChild(productPrice);
+      productDetails.appendChild(productName);
+      productDetails.appendChild(productCategory);
+      productDetails.appendChild(productColors);
+      productDetails.appendChild(productStatus);
+  
+      // Añadir todo al producto
+      productDiv.appendChild(mainImageContainer);
+      productDiv.appendChild(thumbnailsContainer);
+      productDiv.appendChild(productDetails);
+      productsGrid.appendChild(productDiv);
+    });
+  }
+
+  // Mostrar los productos al cargar la página
+  displayProducts(products);
+});
+
+/*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
+document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
+  thumbnail.addEventListener('click', function() {
+    const mainImage = this.closest('.product-card').querySelector('.product-main-image img');
+    mainImage.src = this.src; // Cambia la imagen principal al hacer clic en la miniatura
+  });
+});
+
+
+
 
 
 /*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
@@ -405,24 +460,5 @@ window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
-
-/* -----------BOTON PARA AGREGAR AL CARRITO--------------*/
-
-// Esperar a que el DOM cargue completamente
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtener todos los botones con clase "btn-agregar"
-    var botones = document.querySelectorAll(".btn-agregar");
-
-    // Añadir evento de clic a cada botón
-    botones.forEach(function (boton) {
-        boton.addEventListener("click", function () {
-            // Obtener el producto del atributo data-producto
-            var producto = boton.getAttribute("data-producto");
-
-            // Redirigir a la página de producto correspondiente
-            window.location.href = "index-producto.html?producto=" + producto;
-        });
-    });
-});
 
 
