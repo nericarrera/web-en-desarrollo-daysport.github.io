@@ -291,12 +291,11 @@ document.addEventListener('DOMContentLoaded', function() {
     productsToShow.forEach(product => {
       const productDiv = document.createElement('div');
       productDiv.className = 'product-card';
-  
-      // Añadir los atributos de filtro
       productDiv.setAttribute('data-gender', product.gender);
       productDiv.setAttribute('data-category', product.category);
-      productDiv.setAttribute('data-size', product.size || ""); // Si tienes talles
-      productDiv.setAttribute('data-color', product.colors.join(',').toLowerCase());
+      productDiv.setAttribute('data-size', product.sizes.join(',')); // Atributo para los talles
+      productDiv.setAttribute('data-color', product.colors.join(',')); // Atributo para los colores
+  
   
       // Imagen principal
       const mainImageContainer = document.createElement('div');
