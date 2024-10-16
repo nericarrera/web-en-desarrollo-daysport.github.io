@@ -433,7 +433,7 @@ document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
   });
 });
 
-
+/*----------------------*/
 
 
 
