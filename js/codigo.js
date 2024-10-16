@@ -158,43 +158,43 @@ document.addEventListener('DOMContentLoaded', function() {
     color: []
   };
 
-  // Escucha los cambios en los checkboxes
-  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-      const filterType = this.name; // Puede ser 'gender', 'category', 'size', o 'color'
-      const filterValue = this.value;
+ // Escucha los cambios en los checkboxes
+ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const filterType = this.name; // Puede ser 'gender', 'category', 'size', o 'color'
+    const filterValue = this.value;
 
-      if (this.checked) {
-        filters[filterType].push(filterValue);
-      } else {
-        filters[filterType] = filters[filterType].filter(value => value !== filterValue);
-      }
+    if (this.checked) {
+      filters[filterType].push(filterValue);
+    } else {
+      filters[filterType] = filters[filterType].filter(value => value !== filterValue);
+    }
 
-      updateProducts();
-    });
+    updateProducts();
   });
+});
 
-  function updateProducts() {
-    const products = document.querySelectorAll('.product-card');
+function updateProducts() {
+  const products = document.querySelectorAll('.product-card');
 
-    products.forEach(product => {
-      const productGender = product.getAttribute('data-gender');
-      const productCategory = product.getAttribute('data-category');
-      const productSize = product.getAttribute('data-size'); // Toma el valor de data-size
-      const productColor = product.getAttribute('data-color');
+  products.forEach(product => {
+    const productGender = product.getAttribute('data-gender');
+    const productCategory = product.getAttribute('data-category');
+    const productSize = product.getAttribute('data-size'); // Toma el valor de data-size
+    const productColor = product.getAttribute('data-color');
 
-      const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
-      const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size)); // Verifica si el producto tiene alguno de los talles seleccionados
-      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+    const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+    const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+    const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size)); // Verifica si el producto tiene alguno de los talles seleccionados
+    const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
 
-      if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-        product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
-      } else {
-        product.style.display = 'none';   // Ocultar el producto si no coincide
-      }
-    });
-  }
+    if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
+      product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+    } else {
+      product.style.display = 'none';   // Ocultar el producto si no coincide
+    }
+  });
+}
 
   // Inicialmente, mostrar todos los productos
   updateProducts();
