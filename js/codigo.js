@@ -154,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const filters = {
     gender: [],
     category: [],
-    size: [],
-    color: [] // Propiedad para filtrar por color
+    size: [], // Filtro por talles
+    color: []
   };
 
   // Escucha los cambios en los checkboxes
@@ -175,19 +175,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function updateProducts() {
-    const products = document.querySelectorAll('.product-card');  // Asegurarse de seleccionar las tarjetas de producto correctas
-  
+    const products = document.querySelectorAll('.product-card');
+
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
-      const productSize = product.getAttribute('data-size');
-      const productColor = product.getAttribute('data-color').split(','); // Dividimos los colores en un array
-  
+      const productSize = product.getAttribute('data-size'); // Toma el valor de data-size
+      const productColor = product.getAttribute('data-color');
+
       const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
       const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-      const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
-      const colorMatch = filters.color.length === 0 || filters.color.some(color => productColor.includes(color.toLowerCase()));
-  
+      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size)); // Verifica si el producto tiene alguno de los talles seleccionados
+      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+
       if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
         product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
       } else {
@@ -255,6 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "remeras",
       images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
       colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
+      sizes: ["S", "M", "L"], // Talles disponibles
       status: "Nuevo"
     },
     {
@@ -265,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "bermudas",
       images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
       colors: ["Beige", "Tostado", "Negro"],
+      sizes: ["M", "L", "XL"], // Talles disponibles
       status: ""
     },
     {
@@ -275,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
       category: "remeras",
       images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
       colors: ["celeste", "Negro"],
+      sizes: ["M", "L", "XL"], // Talles disponibles
       status: "Nuevo"
     },
 
