@@ -175,19 +175,19 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function updateProducts() {
-    const products = document.querySelectorAll('.product');
-
+    const products = document.querySelectorAll('.product-card');  // Asegurarse de seleccionar las tarjetas de producto correctas
+  
     products.forEach(product => {
       const productGender = product.getAttribute('data-gender');
       const productCategory = product.getAttribute('data-category');
       const productSize = product.getAttribute('data-size');
-      const productColor = product.getAttribute('data-color');
-
+      const productColor = product.getAttribute('data-color').split(','); // Dividimos los colores en un array
+  
       const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
       const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
       const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
-      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
-
+      const colorMatch = filters.color.length === 0 || filters.color.some(color => productColor.includes(color.toLowerCase()));
+  
       if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
         product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
       } else {
@@ -241,27 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /*--------------------------------------------------- */
 
 /*---------------------------FILTRO RAIZ----------------------- */
-function updateProducts() {
-  const products = document.querySelectorAll('.product-card');  // Asegurarse de seleccionar las tarjetas de producto correctas
 
-  products.forEach(product => {
-    const productGender = product.getAttribute('data-gender');
-    const productCategory = product.getAttribute('data-category');
-    const productSize = product.getAttribute('data-size');
-    const productColor = product.getAttribute('data-color').split(','); // Dividimos los colores en un array
-
-    const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
-    const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-    const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
-    const colorMatch = filters.color.length === 0 || filters.color.some(color => productColor.includes(color.toLowerCase()));
-
-    if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-      product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
-    } else {
-      product.style.display = 'none';   // Ocultar el producto si no coincide
-    }
-  });
-}
 
 
 /*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
