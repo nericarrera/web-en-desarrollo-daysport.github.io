@@ -426,6 +426,38 @@ document.addEventListener('DOMContentLoaded', function() {
   displayProducts(products);
 });
 
+/*----------------------------------------------------------------*/
+
+/*-----------------CAPTURA INFORMACION AL HACER CLICK EN EL PRODUCTO-------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get('id');
+
+  // Simulación de productos
+  const products = [
+    // Aquí debes tener los productos que has definido antes, incluyendo id, name, price, etc.
+  ];
+
+  // Encuentra el producto que coincide con el ID
+  const product = products.find(p => p.id == productId);
+
+  if (product) {
+    document.querySelector('.product-name').textContent = product.name;
+    document.querySelector('.product-price').textContent = `$${product.price}`;
+    document.querySelector('.product-category').textContent = product.category;
+
+    // Agrega los talles disponibles
+    const sizesContainer = document.querySelector('.product-sizes');
+    product.sizes.forEach(size => {
+      const sizeElement = document.createElement('span');
+      sizeElement.textContent = size;
+      sizesContainer.appendChild(sizeElement);
+    });
+
+    // Aquí añades las imágenes, videos, etc.
+  }
+});
+
 /*--------------------CAMBIAR DE IMAGEN PARA CONTENEDOR DE PRODUCTOS--------------*/
 document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
   thumbnail.addEventListener('click', function() {
