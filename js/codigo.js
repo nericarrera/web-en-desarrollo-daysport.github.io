@@ -354,11 +354,6 @@ document.addEventListener('DOMContentLoaded', function() {
     productsToShow.forEach(product => {
       const productDiv = document.createElement('div');
       productDiv.className = 'product-card';
-      productDiv.setAttribute('data-gender', product.gender);
-      productDiv.setAttribute('data-category', product.category);
-      productDiv.setAttribute('data-size', product.sizes.join(',')); // Atributo para los talles
-      productDiv.setAttribute('data-color', product.colors.join(',')); // Atributo para los colores
-  
   
       // Imagen principal
       const mainImageContainer = document.createElement('div');
@@ -412,6 +407,12 @@ document.addEventListener('DOMContentLoaded', function() {
       productDetails.appendChild(productCategory);
       productDetails.appendChild(productColors);
       productDetails.appendChild(productStatus);
+  
+      // Botón que lleva a la página del producto
+      const productLink = document.createElement('a');
+      productLink.href = `producto.html?id=${product.id}`;  // Pasamos el id del producto por la URL
+      productLink.textContent = "Ver producto";
+      productDetails.appendChild(productLink);
   
       // Añadir todo al producto
       productDiv.appendChild(mainImageContainer);
