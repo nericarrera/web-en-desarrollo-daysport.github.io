@@ -316,9 +316,9 @@ document.addEventListener('DOMContentLoaded', function() {
       price: 7500,
       gender: "mujer",
       category: "remeras",
+      size: ["S", "M", "L", "XL"],
       images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
       colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
-      sizes: ["S", "M", "L"], // Talles disponibles
       status: "Nuevo"
     },
     {
@@ -327,34 +327,22 @@ document.addEventListener('DOMContentLoaded', function() {
       price: 25000,
       gender: "hombre",
       category: "bermudas",
+      size: ["M", "L", "XL"],
       images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
       colors: ["Beige", "Tostado", "Negro"],
-      sizes: ["M", "L", "XL"], // Talles disponibles
       status: ""
     },
-    {
-      id: 3,
-      name: "Remera Modal Soft",
-      price: 7500,
-      gender: "mujer",
-      category: "remeras",
-      images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-      colors: ["celeste", "Negro"],
-      sizes: ["M", "L", "XL"], // Talles disponibles
-      status: "Nuevo"
-    },
-
-    // Añade más productos aquí
+    // Agrega más productos aquí...
   ];
 
   function displayProducts(productsToShow) {
     const productsGrid = document.querySelector('.products-grid');
     productsGrid.innerHTML = ''; // Limpiar la cuadrícula antes de agregar productos
-  
+
     productsToShow.forEach(product => {
       const productDiv = document.createElement('div');
       productDiv.className = 'product-card';
-  
+
       // Imagen principal
       const mainImageContainer = document.createElement('div');
       mainImageContainer.className = 'main-image-container';
@@ -363,7 +351,12 @@ document.addEventListener('DOMContentLoaded', function() {
       mainImage.alt = product.name;
       mainImage.className = 'main-image';
       mainImageContainer.appendChild(mainImage);
-  
+
+      // Redirección al hacer clic en el producto
+      productDiv.addEventListener('click', () => {
+        window.location.href = `index-producto.html?id=${product.id}`; // Redirigir a la página de producto
+      });
+
       // Miniaturas
       const thumbnailsContainer = document.createElement('div');
       thumbnailsContainer.className = 'thumbnails-container';
@@ -372,52 +365,33 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnail.src = imgSrc;
         thumbnail.alt = `Vista color ${index + 1}`;
         thumbnail.className = 'thumbnail';
-        thumbnail.addEventListener('click', () => {
-          mainImage.src = imgSrc;  // Cambiar la imagen principal
-        });
         thumbnailsContainer.appendChild(thumbnail);
       });
-  
+
       // Detalles del producto
       const productDetails = document.createElement('div');
-      productDetails.className = 'product-details1';
-  
+      productDetails.className = 'product-details';
+
       const productPrice = document.createElement('p');
-      productPrice.className = 'product-price1';
+      productPrice.className = 'product-price';
       productPrice.textContent = `$${product.price.toLocaleString()}`;
-  
+
       const productName = document.createElement('p');
-      productName.className = 'product-name1';
+      productName.className = 'product-name';
       productName.textContent = product.name;
-  
-      const productCategory = document.createElement('p');
-      productCategory.className = 'product-category1';
-      productCategory.textContent = product.category;
-  
+
       const productColors = document.createElement('p');
-      productColors.className = 'product-colors1';
+      productColors.className = 'product-colors';
       productColors.textContent = `${product.colors.length} colores`;
-  
-      const productStatus = document.createElement('p');
-      productStatus.className = 'product-status1';
-      productStatus.textContent = product.status;
-  
+
       productDetails.appendChild(productPrice);
       productDetails.appendChild(productName);
-      productDetails.appendChild(productCategory);
       productDetails.appendChild(productColors);
-      productDetails.appendChild(productStatus);
-  
-      // Botón que lleva a la página del producto
-      const productLink = document.createElement('a');
-      productLink.href = `producto.html?id=${product.id}`; // Enlace a la página de producto con el ID
-      productLink.textContent = 'Ver producto';
-      productDetails.appendChild(productLink);
-  
-      // Añadir todo al producto
+
       productDiv.appendChild(mainImageContainer);
       productDiv.appendChild(thumbnailsContainer);
       productDiv.appendChild(productDetails);
+
       productsGrid.appendChild(productDiv);
     });
   }
