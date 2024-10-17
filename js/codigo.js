@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Botón que lleva a la página del producto
       const productLink = document.createElement('a');
-      productLink.href = `inedx-producto.html?id=${product.id}`;  // Pasamos el id del producto por la URL
+      productLink.href = `index-producto.html?id=${product.id}`;  // Pasamos el id del producto por la URL
       productLink.textContent = "Ver producto";
       productDetails.appendChild(productLink);
   
