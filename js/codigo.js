@@ -410,8 +410,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Botón que lleva a la página del producto
       const productLink = document.createElement('a');
-      productLink.href = `index-producto.html?id=${product.id}`;  // Pasamos el id del producto por la URL
-      productLink.textContent = "Ver producto";
+      productLink.href = `producto.html?id=${product.id}`; // Enlace a la página de producto con el ID
+      productLink.textContent = 'Ver producto';
       productDetails.appendChild(productLink);
   
       // Añadir todo al producto
@@ -427,6 +427,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /*----------------------------------------------------------------*/
+
+/*-----------------RE DIRIGE A LA PAGINA DE PRODUCTO------------ */
+// Redirige al usuario a la página de producto cuando haga clic en un producto
+document.addEventListener('DOMContentLoaded', function() {
+  const products = document.querySelectorAll('.product-card'); // O tu clase para los productos
+
+  products.forEach(product => {
+    product.addEventListener('click', function() {
+      const productId = product.getAttribute('data-id'); // Asegúrate de que cada producto tenga un data-id único
+      window.location.href = `producto.html?id=${productId}`; // Redirige a la página del producto
+    });
+  });
+});
+
+/*------------------------------------------------------------------- */
 
 /*-----------------CAPTURA INFORMACION AL HACER CLICK EN EL PRODUCTO-------------*/
 document.addEventListener('DOMContentLoaded', function() {
