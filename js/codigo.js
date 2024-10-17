@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
   products.forEach(product => {
     product.addEventListener('click', function() {
       const productId = product.getAttribute('data-id'); // Asegúrate de que cada producto tenga un data-id único
-      window.location.href = `producto.html?id=${productId}`; // Redirige a la página del producto
+      window.location.href = `index-producto.html?id=${productId}`; // Redirige a la página del producto
     });
   });
 });
