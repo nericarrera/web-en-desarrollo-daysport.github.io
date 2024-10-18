@@ -310,93 +310,96 @@ document.addEventListener('DOMContentLoaded', function() {
 /*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
 document.addEventListener('DOMContentLoaded', function() {
   const products = [
-    {
-      id: 1,
-      name: "Remera modal viscosa - cuello en V",
-      price: 7500,
-      gender: "mujer",
-      category: "remeras",
-      size: ["S", "M", "L", "XL"],
-      images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
-      colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
-      status: "Nuevo"
-    },
-    {
-      id: 2,
-      name: "Bermuda Cargo Nike",
-      price: 25000,
-      gender: "hombre",
-      category: "bermudas",
-      size: ["M", "L", "XL"],
-      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
-      colors: ["Beige", "Tostado", "Negro"],
-      status: ""
-    },
-    // Agrega más productos aquí...
+      {
+          id: 1,
+          name: "Remera modal viscosa - cuello en V",
+          price: 7500,
+          gender: "mujer",
+          category: "remeras",
+          images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
+          colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
+          status: "Nuevo",
+          sizes: ["S", "M", "L", "XL", "XXL"]
+      },
+      {
+          id: 2,
+          name: "Bermuda Cargo Nike",
+          price: 25000,
+          gender: "hombre",
+          category: "bermudas",
+          images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
+          colors: ["Beige", "Tostado", "Negro"],
+          status: "",
+          sizes: ["M", "L", "XL"]
+      },
+      {
+          id: 3,
+          name: "Remera Modal Soft",
+          price: 7500,
+          gender: "mujer",
+          category: "remeras",
+          images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+          colors: ["celeste", "Negro"],
+          status: "Nuevo",
+          sizes: ["S", "M", "L", "XL"]
+      }
   ];
 
   function displayProducts(productsToShow) {
-    const productsGrid = document.querySelector('.products-grid');
-    productsGrid.innerHTML = ''; // Limpiar la cuadrícula antes de agregar productos
+      const productsGrid = document.querySelector('.products-grid');
+      productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
 
-    productsToShow.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.className = 'product-card';
+      productsToShow.forEach(product => {
+          const productDiv = document.createElement('div');
+          productDiv.className = 'product-card';
 
-      // Imagen principal
-      const mainImageContainer = document.createElement('div');
-      mainImageContainer.className = 'main-image-container';
-      const mainImage = document.createElement('img');
-      mainImage.src = product.images[0];  // La primera imagen como principal
-      mainImage.alt = product.name;
-      mainImage.className = 'main-image';
-      mainImageContainer.appendChild(mainImage);
+          // Imagen principal
+          const mainImage = document.createElement('img');
+          mainImage.src = product.images[0];
+          mainImage.alt = product.name;
+          mainImage.className = 'product-image';
 
-      // Redirección al hacer clic en el producto
-      productDiv.addEventListener('click', () => {
-        window.location.href = `index-producto.html?id=${product.id}`; // Redirigir a la página de producto
+          // Enlace solo en la imagen principal grande
+          mainImage.addEventListener('click', function() {
+              window.location.href = `index-producto.html?id=${product.id}`;
+          });
+
+          // Miniaturas
+          const thumbnailsContainer = document.createElement('div');
+          thumbnailsContainer.className = 'thumbnails-container';
+          product.images.forEach((imgSrc, index) => {
+              const thumbnail = document.createElement('img');
+              thumbnail.src = imgSrc;
+              thumbnail.alt = `Vista color ${index + 1}`;
+              thumbnail.className = 'thumbnail';
+              
+              // Cambiar la imagen principal al hacer clic en la miniatura
+              thumbnail.addEventListener('click', (e) => {
+                  e.stopPropagation(); // Evita la redirección
+                  mainImage.src = imgSrc;  // Cambiar la imagen principal
+              });
+
+              thumbnailsContainer.appendChild(thumbnail);
+          });
+
+          // Nombre del producto y detalles
+          const productName = document.createElement('p');
+          productName.className = 'product-name';
+          productName.textContent = product.name;
+
+          const productPrice = document.createElement('p');
+          productPrice.className = 'product-price';
+          productPrice.textContent = `$${product.price.toLocaleString()}`;
+
+          productDiv.appendChild(mainImage);  // Imagen principal
+          productDiv.appendChild(thumbnailsContainer);  // Miniaturas
+          productDiv.appendChild(productName);  // Nombre
+          productDiv.appendChild(productPrice);  // Precio
+          productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
-
-      // Miniaturas
-      const thumbnailsContainer = document.createElement('div');
-      thumbnailsContainer.className = 'thumbnails-container';
-      product.images.forEach((imgSrc, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imgSrc;
-        thumbnail.alt = `Vista color ${index + 1}`;
-        thumbnail.className = 'thumbnail';
-        thumbnailsContainer.appendChild(thumbnail);
-      });
-
-      // Detalles del producto
-      const productDetails = document.createElement('div');
-      productDetails.className = 'product-details';
-
-      const productPrice = document.createElement('p');
-      productPrice.className = 'product-price';
-      productPrice.textContent = `$${product.price.toLocaleString()}`;
-
-      const productName = document.createElement('p');
-      productName.className = 'product-name';
-      productName.textContent = product.name;
-
-      const productColors = document.createElement('p');
-      productColors.className = 'product-colors';
-      productColors.textContent = `${product.colors.length} colores`;
-
-      productDetails.appendChild(productPrice);
-      productDetails.appendChild(productName);
-      productDetails.appendChild(productColors);
-
-      productDiv.appendChild(mainImageContainer);
-      productDiv.appendChild(thumbnailsContainer);
-      productDiv.appendChild(productDetails);
-
-      productsGrid.appendChild(productDiv);
-    });
   }
 
-  // Mostrar los productos al cargar la página
+  // Mostrar todos los productos al cargar la página
   displayProducts(products);
 });
 
