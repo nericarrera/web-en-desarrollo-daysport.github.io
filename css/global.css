@@ -928,8 +928,24 @@
     margin-bottom: -5px;
   }
   
-  .product-category1,
-  .product-colors1,
+  .product-category1 {
+    color: #5e5e5e;
+    font-size: 13px;
+    margin: 2px 0;
+    font-family: 'Montserrat';
+    padding: 5px;
+    margin-bottom: -5px;
+  }
+  
+  .product-colors1 {
+    color: #5e5e5e;
+    font-size: 13px;
+    margin: 2px 0;
+    font-family: 'Montserrat';
+    padding: 5px;
+    margin-bottom: -5px;
+  }
+
   .product-status1 {
     color: #5e5e5e;
     font-size: 13px;
