@@ -395,11 +395,21 @@ document.addEventListener('DOMContentLoaded', function() {
           productCategory.className = 'product-category1';
           productPrice.textContent = product.category;
 
+          const productColors = document.createElement('p');
+          productColors.className = 'product-colors1';
+          productPrice.textContent = product.colors;
+
+          const productStatus = document.createElement('p');
+          productStatus.className = 'product-status1';
+          productPrice.textContent = product.status;
+
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
           productDiv.appendChild(productPrice);  // precio
           productDiv.appendChild(productName);  // nombre
           productDiv.appendChild(productCategory);
+          productDiv.appendChild(productColors);
+          productDiv.appendChild(productStatus);
           productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
   }
