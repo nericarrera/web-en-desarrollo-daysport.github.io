@@ -391,10 +391,15 @@ document.addEventListener('DOMContentLoaded', function() {
           productName.className = 'product-name1';
           productName.textContent = product.name;
 
+          const productCategory = document.createElement('p');
+          productCategory.className = 'product-category1';
+          productPrice.textContent = product.category
+
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
           productDiv.appendChild(productPrice);  // precio
           productDiv.appendChild(productName);  // nombre
+          productDiv.appendChild(productCategory);
           productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
   }
