@@ -395,12 +395,12 @@ document.addEventListener('DOMContentLoaded', function() {
           // Categoría
           const productCategory = document.createElement('p');
           productCategory.className = 'product-category1';
-          productCategory.textContent = `Categoría: ${product.category}`;
+          productCategory.textContent = `${product.category}`;
 
           // Colores
           const productColors = document.createElement('p');
           productColors.className = 'product-colors1';
-          productColors.textContent = `Colores: ${product.colors.join(", ")}`;
+          productColors.textContent = `${product.colors.join(", ")}`;
 
           // Estado (sin la palabra "Estado:")
           const productStatus = document.createElement('p');
