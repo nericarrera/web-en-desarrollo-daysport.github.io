@@ -876,7 +876,9 @@
   .thumbnails-container {
     display: flex;
     gap: 5px;
-    padding: 5px;
+    padding: 5px;  
+    margin-top: -25px;
+    margin-left: 10px;
   }
 
   .thumbnails-container img{
