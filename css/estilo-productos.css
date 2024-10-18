@@ -610,8 +610,6 @@
 
 /* ------DETALLES PRODUCTO----- */
 
-
-
 .product-details-section {
     flex: 1;
     max-width: 50%;
@@ -625,7 +623,7 @@
 
 }
 
-.product-title {
+.product-title3 {
     font-size: 30px;
     color: #000000;
     font-family: "Poppins", sans-serif;
@@ -636,7 +634,7 @@
     width: 280px;
 }
 
-.product-details{
+.product-details3 {
   width: 280px;
   font-size: 17px;
   font-family: "Dosis", sans-serif;
@@ -648,7 +646,7 @@
     color: #000000;    
 }
 
-.product-price {
+.product-price3 {
   font-size: 14px;
   color: #000000;
   font-family: "Arvo", serif;
@@ -658,7 +656,7 @@
   letter-spacing: 1px;
 }
 
-.product-colors{
+.product-colors3 {
     margin-top: 28px;
 }
 
@@ -670,7 +668,7 @@
   letter-spacing: 0.5px;
 }
 
-.product-size{
+.product-size3 {
   margin-top: 45px;
 }
 
