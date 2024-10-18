@@ -16,6 +16,43 @@ nextRelatedArrow.addEventListener('click', () => {
     relatedGallery.scrollBy({ left: 200, behavior: 'smooth' });
 });
 
+/*--------ID DE PAGINA PRINCIPAL ---------- */
+// Función para obtener los parámetros de la URL
+function getProductIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');  // Obtiene el valor del parámetro 'id'
+  }
+
+  /*------------------------------------------------------------------------- */
+
+  /*-------------------DETALLE DE PRODUCTO-------------- */
+  const products = [
+    {
+      id: 1,
+      name: "Remera modal viscosa - cuello en V",
+      price: 7500,
+      gender: "mujer",
+      category: "remeras",
+      size: ["S", "M", "L", "XL"],
+      images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
+      colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
+      status: "Nuevo"
+    },
+    {
+      id: 2,
+      name: "Bermuda Cargo Nike",
+      price: 25000,
+      gender: "hombre",
+      category: "bermudas",
+      size: ["M", "L", "XL"],
+      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
+      colors: ["Beige", "Tostado", "Negro"],
+      status: ""
+    },
+    // Agrega más productos aquí...
+  ];
+
+  /*---------------- */
 
 // Esperar a que el DOM cargue completamente
 document.addEventListener("DOMContentLoaded", function () {
