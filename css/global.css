@@ -888,6 +888,10 @@
     height: 65px;
     object-fit: cover;
   }
+
+  .thumbnails-container img:hover{
+    cursor: pointer;
+  }
   
   .thumbnail {
     width: 45px;
