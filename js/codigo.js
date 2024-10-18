@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           const productCategory = document.createElement('p');
           productCategory.className = 'product-category1';
-          productPrice.textContent = product.category
+          productPrice.textContent = product.category;
 
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
