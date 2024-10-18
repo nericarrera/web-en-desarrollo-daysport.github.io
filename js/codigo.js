@@ -393,8 +393,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
-          productDiv.appendChild(productName);  // Nombre
-          productDiv.appendChild(productPrice);  // Precio
+          productDiv.appendChild(productPrice);  // precio
+          productDiv.appendChild(productName);  // nombre
           productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
   }
