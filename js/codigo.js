@@ -395,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
           productDiv.appendChild(productPrice);  // precio
           productDiv.appendChild(productName);  // nombre
-          productDiv.appendChild(productCategory);
           productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
   }
