@@ -130,52 +130,46 @@ function getProductIdFromURL() {
   });
 
   /*-------------------DETALLE DE PRODUCTO-------------- */
-  const products = [
-    {
-      id: 1,
-      name: "Remera modal viscosa - cuello en V",
-      price: 7500,
-      gender: "mujer",
-      category: "remeras",
-      size: ["S", "M", "L", "XL"],
-      images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 4.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 5.jpeg"],
-      colors: ["Rosa", "Gris", "Negro", "Verde oliva"],
-      status: "Nuevo"
-    },
-    {
-      id: 2,
-      name: "Bermuda Cargo Nike",
-      price: 25000,
-      gender: "hombre",
-      category: "bermudas",
-      size: ["M", "L", "XL"],
-      images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 3.jpeg"],
-      colors: ["Beige", "Tostado", "Negro"],
-      status: ""
-    },
-    // Agrega más productos aquí...
-  ];
-
-  /*---------------- */
-
-// Esperar a que el DOM cargue completamente
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtener el parámetro "producto" de la URL
-    var params = new URLSearchParams(window.location.search);
-    var producto = params.get("producto");
-
-    // Cambiar el contenido dinámicamente dependiendo del producto
-    if (producto === "campera-puffer") {
-        document.querySelector(".product-title").textContent = "CAMPERA PUFFER TNF";
-        document.querySelector(".product-price").textContent = "$60.000";
-        document.querySelector("#mainImage").src = "img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg";
-    } else if (producto === "conjunto-tech-premium") {
-        document.querySelector(".product-title").textContent = "Conjunto Tech Premium";
-        document.querySelector(".product-price").textContent = "$60.000";
-        document.querySelector("#mainImage").src = "img/hombre/conjuntos/WhatsApp Image 2024-07-06 at 22.29.24 (1)-fotor-2024070717438.png";
+  document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+  
+    const products = [
+      {
+        id: 1,
+        name: "Remera modal viscosa - cuello en V",
+        price: 7500,
+        gender: "mujer",
+        category: "remeras",
+        images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg"],
+        colors: ["Rosa", "Gris", "Negro"],
+        sizes: ["S", "M", "L", "XL"],
+        status: "Nuevo"
+      }
+      // Otros productos...
+    ];
+  
+    const product = products.find(p => p.id == productId);
+  
+    if (product) {
+      document.querySelector('.product-title').textContent = product.name;
+      document.querySelector('.product-price').textContent = `$${product.price.toLocaleString()}`;
+      document.querySelector('.product-category').textContent = product.category;
+      document.querySelector('.product-colors').textContent = product.colors.join(", ");
+      
+      const sizesContainer = document.querySelector('.size-options');
+      product.sizes.forEach(size => {
+        const sizeBtn = document.createElement('button');
+        sizeBtn.textContent = size;
+        sizeBtn.classList.add('size-btn');
+        sizesContainer.appendChild(sizeBtn);
+      });
+  
+      // Aquí añades las imágenes, videos, etc.
+      const mainImage = document.querySelector('.zoom-container img');
+      mainImage.src = product.images[0]; // Mostrar la primera imagen
     }
-    // Puedes agregar más casos para otros productos...
-});
+  });
 
 window.addEventListener('scroll', function () {
     const sidebar = document.querySelector('.product-details-sidebar');
