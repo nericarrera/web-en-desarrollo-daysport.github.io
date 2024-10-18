@@ -95,36 +95,35 @@
            </ul>
        </div>
     
-    
-      <div class="conteiner-buscador-carrito">
+       <div class="conteiner-buscador-carrito">
         <div class="cart-icon-container">
-         <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
-         <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
-       </div>
+            <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
+            <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
+        </div>
 
         <div id="cart-dropdown" class="cart-dropdown hidden">
-         <h4>Carrito de compras</h4>
-         <ul id="cart-items-list">
-        <!-- Aquí se mostrarán los productos añadidos -->
-         </ul>
-        <div class="cart-summary">
-         <p>Total: <span id="cart-total">$0</span></p>
-         <button id="checkout-btn">Finalizar compra</button>
-         <button id="view-cart-btn">Ver carrito</button>
+            <h4>Carrito de compras</h4>
+            <ul id="cart-items-list">
+                <!-- Aquí se mostrarán los productos añadidos -->
+            </ul>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">$0</span></p>
+                <button id="checkout-btn">Finalizar compra</button>
+                <button id="view-cart-btn">Ver carrito</button>
+            </div>
         </div>
-     </div>
 
-  <div class="user-icon-container">
-    <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
- </div>
+        <div class="user-icon-container">
+            <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
+        </div>
 
-  <div class="buscador">
-     <input type="text" id="search" placeholder="Buscar"><a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
-  </div>
- </div>
-  </nav>
+        <div class="buscador">
+            <input type="text" id="search" placeholder="Buscar">
+            <a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
+        </div>
+    </div>
 
-      <section class="section-conteiner-volver">
+    <section class="section-conteiner-volver">
         <div class="conteiner-volver">
             <div class="volver">
                 <a class="volver-a" href="index.html">
@@ -137,49 +136,30 @@
     
     <div class="product-page">
         <div class="product-gallery">
-          <div class="zoom-container">
-            <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (1).jpeg" alt="Producto 1" class="zoom-img">
-        </div>      
-        <div class="zoom-container">
-            <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (2).jpeg" alt="Producto 2" class="zoom-img">
+            <div class="zoom-container">
+                <img id="main-product-image" src="" alt="Producto" class="zoom-img">
+            </div>
+            <div id="product-thumbnails" class="thumbnails-container"></div>
+            <video id="product-video" src="video.mp4" controls class="zoom-video"></video>
         </div>
-        <div class="zoom-container">
-            <img src="img/hombre/Camperas de Abrigo/WhatsApp Image 2024-04-30 at 15.56.00 (1).jpeg" alt="Producto 3" class="zoom-img">
-        </div>
-        <video src="video.mp4" controls class="zoom-video"></video>
-    </div>
 
-    
         <!-- Detalles del producto -->
         <div class="product-details-section">
-            <h1 class="product-title3">CAMPERA PUFFER TNF</h1>
-            
-            <p class="product-price3">$60.000</p>
+            <h1 class="product-title3" id="product-title">Cargando...</h1>
+            <p class="product-price3" id="product-price">$0</p>
+            <p class="product-details3" id="product-description">Descripción del producto...</p>
 
-            <p class="product-details3">Campera de abrigo, sin piel.
-              combinada de origen importado.
-            </p>
-            
-            <div class="product-colors3">
-                <h3>Colores</h3>
-                <img src="color1.jpg" alt="Color 1">
-                <img src="color2.jpg" alt="Color 2">
-                <!-- Más colores -->
+            <div class="product-colors3" id="product-colors">
+                <h3>Colores:</h3>
             </div>
-    
+
             <!-- Selección de talles -->
             <div class="product-size3">
                 <h3>Selecciona tu talla:</h3>
-                <div class="size-options">
-                    <button class="size-btn">S</button>
-                    <button class="size-btn">M</button>
-                    <button class="size-btn">L</button>
-                    <button class="size-btn">XL</button>
-                    <button class="size-btn">XXL</button>
-                </div>
+                <div class="size-options" id="product-sizes"></div>
                 <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
             </div>
-    
+
             <!-- Cantidad y botón de compra -->
             <div class="product-quantity3">
                 <label for="quantity">Cantidad:</label>
@@ -189,7 +169,7 @@
             <button class="btn-add-to-cart3">Agregar al carrito</button>
         </div>
     </div>
-    
+
     <div id="sizeChartModal" class="modal hidden">
       <div class="modal-content">
           <span class="close" onclick="toggleSizeChart(event)">&times;</span>
@@ -229,13 +209,11 @@
       </div>
     </div>
 
-    
     <div class="product-details-rating">
       <!-- Sección de Valoraciones -->
       <details>
           <summary>Valoraciones (36) <span class="rating">4.9 ★★★★★</span></summary>
           <p>¡Este producto ha recibido excelentes comentarios!</p>
-          <!-- Aquí puedes agregar un formulario para que los usuarios puedan dejar una nueva reseña -->
           <form action="#" method="POST">
               <label for="comment">Deja tu comentario:</label><br>
               <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Escribe tu opinión..."></textarea><br>
@@ -249,48 +227,19 @@
               </select><br><br>
               <button type="submit">Enviar reseña</button>
           </form>
-           <!-- Lista de comentarios anteriores -->
         <div class="previous-comments">
           <h4>COMENTARIOS ANTERIORES</h4>
           <ul id="comments-list">
-              <li>
-                  <strong>Usuario1</strong>: ¡Excelente producto! Lo recomiendo.
-              </li>
-              <li>
-                  <strong>Usuario2</strong>: La calidad es increíble, mejor de lo que esperaba.
-              </li>
-              <!-- Puedes agregar más comentarios aquí dinámicamente -->
+              <li><strong>Usuario1</strong>: ¡Excelente producto! Lo recomiendo.</li>
+              <li><strong>Usuario2</strong>: La calidad es increíble, mejor de lo que esperaba.</li>
           </ul>
       </div>
       </details>
-  
-      <!-- Sección de Descripción -->
-      <details>
-          <summary>Descripción</summary>
-          <p>Descripción detallada del producto. Aquí puedes hablar sobre los materiales, el uso, y otras características importantes.</p>
-      </details>
-  
-      <!-- Sección de Detalles -->
-      <details>
-          <summary>Detalles</summary>
-          <ul>
-              <li>Material: 100% algodón</li>
-              <li>Ajuste regular</li>
-              <li>Cierre frontal</li>
-          </ul>
-      </details>
-  
-      <!-- Sección de Cuidados -->
-      <details>
-          <summary>Cuidados</summary>
-          <p>Instrucciones de cuidado: lavar a mano con agua fría, no usar blanqueador, planchar a baja temperatura.</p>
-      </details>
-  
-      <!-- Sección de Presume tu look -->
-      <details>
-          <summary>Presume tu look</summary>
-          <p>Comparte tu estilo usando #MiLook. ¡Sube una foto en nuestras redes sociales!</p>
-      </details>
+      <!-- Sección de Descripción, Cuidados y Detalles -->
+      <details><summary>Descripción</summary><p>Descripción detallada del producto.</p></details>
+      <details><summary>Detalles</summary><ul><li>Material: 100% algodón</li><li>Ajuste regular</li></ul></details>
+      <details><summary>Cuidados</summary><p>Instrucciones de cuidado: lavar a mano con agua fría.</p></details>
+      <details><summary>Presume tu look</summary><p>Comparte tu estilo usando #MiLook.</p></details>
   </div>
   
 
