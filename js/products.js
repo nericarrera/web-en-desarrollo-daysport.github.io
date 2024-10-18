@@ -280,6 +280,16 @@ document.querySelectorAll('.zoom-container').forEach(container => {
         img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
         img.style.cursor = 'zoom-out';
     });
+
+    container.addEventListener('mouseenter', function () {
+        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+    });
+
+    container.addEventListener('mouseleave', function () {
+        if (isZoomed) {
+            this.style.cursor = 'zoom-out';
+        }
+    });
 });
 /*----------------------------------------------------------------------*/
 
