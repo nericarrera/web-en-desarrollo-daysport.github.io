@@ -473,6 +473,17 @@ document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
 
 /*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
 
+document.addEventListener('DOMContentLoaded', function() {
+  const element = document.querySelector('.element-class');
+  
+  if (element) {
+      const width = element.offsetWidth;
+      // Resto del código...
+  } else {
+      console.error('El elemento no existe en el DOM.');
+  }
+});
+
 let currentPosition = 0;
 const productWrapper = document.querySelector('.product-wrapper');
 const productCards = document.querySelectorAll('.product-card2');
