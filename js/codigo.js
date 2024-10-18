@@ -383,12 +383,12 @@ document.addEventListener('DOMContentLoaded', function() {
           });
 
           const productPrice = document.createElement('p');
-          productPrice.className = 'product-price';
+          productPrice.className = 'product-price1';
           productPrice.textContent = `$${product.price.toLocaleString()}`;
 
           // Nombre del producto y detalles
           const productName = document.createElement('p');
-          productName.className = 'product-name';
+          productName.className = 'product-name1';
           productName.textContent = product.name;
 
           productDiv.appendChild(mainImage);  // Imagen principal
@@ -434,9 +434,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const product = products.find(p => p.id == productId);
 
   if (product) {
-    document.querySelector('.product-name').textContent = product.name;
-    document.querySelector('.product-price').textContent = `$${product.price}`;
-    document.querySelector('.product-category').textContent = product.category;
+    document.querySelector('.product-name1').textContent = product.name;
+    document.querySelector('.product-price1').textContent = `$${product.price}`;
+    document.querySelector('.product-category1').textContent = product.category;
 
     // Agrega los talles disponibles
     const sizesContainer = document.querySelector('.product-sizes');
