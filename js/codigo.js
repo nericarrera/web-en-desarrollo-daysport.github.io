@@ -402,10 +402,10 @@ document.addEventListener('DOMContentLoaded', function() {
           productColors.className = 'product-colors1';
           productColors.textContent = `Colores: ${product.colors.join(", ")}`;
 
-          // Estado
+          // Estado (sin la palabra "Estado:")
           const productStatus = document.createElement('p');
           productStatus.className = 'product-status1';
-          productStatus.textContent = `Estado: ${product.status || "N/A"}`;
+          productStatus.textContent = product.status;  // Aquí solo muestra el valor del estado, sin "Estado:"
 
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
