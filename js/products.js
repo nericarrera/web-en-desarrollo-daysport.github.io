@@ -16,17 +16,10 @@ nextRelatedArrow.addEventListener('click', () => {
     relatedGallery.scrollBy({ left: 200, behavior: 'smooth' });
 });
 
-/*--------ID DE PAGINA PRINCIPAL ---------- */
-// Función para obtener los parámetros de la URL
-function getProductIdFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('id');  // Obtiene el valor del parámetro 'id'
-  }
+/*----------------------------------------------------------------------------------------------------*/
 
-  /*------------------------------------------------------------------------- */
-
-  /*--------------------BUSCADOR DE PRODUCTO---------------*/
-  document.addEventListener('DOMContentLoaded', function() {
+ /*--------------------BUSCADOR DE PRODUCTO---------------*/
+ document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
     const productId = getProductIdFromURL();
   
@@ -78,6 +71,7 @@ function getProductIdFromURL() {
 
   /*----------------------------------------------------------*/
 
+ 
   /*----------------MOSTRAR EL PRODUCTO DE LA PAGINA INDEX------------ */
   document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
@@ -130,149 +124,166 @@ function getProductIdFromURL() {
   });
 
   /*-------------------DETALLE DE PRODUCTO-------------- */
-  document.addEventListener('DOMContentLoaded', function() {
+  // Obtiene el ID del producto desde la URL
+function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
-  
-    const products = [
-      {
+    return params.get('id');
+}
+
+// Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
+const products = [
+    {
         id: 1,
         name: "Remera modal viscosa - cuello en V",
         price: 7500,
-        gender: "mujer",
-        category: "remeras",
-        images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg"],
+        description: "Remera de cuello en V suave al tacto.",
+        images: [
+            "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg",
+            "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg"
+        ],
         colors: ["Rosa", "Gris", "Negro"],
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        status: "Nuevo"
+    },
+    {
+        id: 2,
+        name: "Bermuda Cargo Nike",
+        price: 25000,
+        description: "Bermuda cómoda de Nike ideal para verano.",
+        images: [
+            "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg",
+            "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg"
+        ],
+        colors: ["Beige", "Tostado", "Negro"],
+        sizes: ["M", "L", "XL"],
+        status: ""
+    },
+    {
+        id: 3,
+        name: "Remera Modal Soft",
+        price: 7500,
+        description: "Remera modal suave para un uso cómodo.",
+        images: [
+            "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg",
+            "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"
+        ],
+        colors: ["Celeste", "Negro"],
         sizes: ["S", "M", "L", "XL"],
         status: "Nuevo"
-      }
-      // Otros productos...
-    ];
-  
-    const product = products.find(p => p.id == productId);
-  
-    if (product) {
-      document.querySelector('.product-title').textContent = product.name;
-      document.querySelector('.product-price').textContent = `$${product.price.toLocaleString()}`;
-      document.querySelector('.product-category').textContent = product.category;
-      document.querySelector('.product-colors').textContent = product.colors.join(", ");
-      
-      const sizesContainer = document.querySelector('.size-options');
-      product.sizes.forEach(size => {
-        const sizeBtn = document.createElement('button');
-        sizeBtn.textContent = size;
-        sizeBtn.classList.add('size-btn');
-        sizesContainer.appendChild(sizeBtn);
-      });
-  
-      // Aquí añades las imágenes, videos, etc.
-      const mainImage = document.querySelector('.zoom-container img');
-      mainImage.src = product.images[0]; // Mostrar la primera imagen
     }
-  });
+];
 
-window.addEventListener('scroll', function () {
-    const sidebar = document.querySelector('.product-details-sidebar');
-    const footer = document.querySelector('footer'); // Asumiendo que el footer tiene esta etiqueta
-    const sidebarTop = sidebar.offsetTop;
-    const footerTop = footer.offsetTop;
-    const windowScroll = window.scrollY;
-    const sidebarHeight = sidebar.offsetHeight;
-    const footerHeight = footer.offsetHeight;
-    
-    // Limite inferior (donde se debe detener)
-    const limit = footerTop - sidebarHeight;
-    
-    // Guardar el valor de "right" o "left" original del contenedor
-    const sidebarRight = window.innerWidth - sidebar.getBoundingClientRect().right + 'px';
+// Cargar el producto en la página de producto
+document.addEventListener('DOMContentLoaded', function () {
+    const productId = getProductIdFromURL();
+    const product = products.find(p => p.id == productId);
 
-    if (windowScroll >= sidebarTop && windowScroll <= limit) {
-        // Si el scroll está en el área entre el inicio del sidebar y el footer
-        sidebar.style.position = 'fixed';
-        sidebar.style.top = '10px'; // Puedes ajustar este valor
-        sidebar.style.right = sidebarRight; // Mantener la posición a la derecha
-    } else if (windowScroll > limit) {
-        // Si el scroll supera el límite (para evitar que se solape con el footer)
-        sidebar.style.position = 'absolute';
-        sidebar.style.top = limit + 'px';
-        sidebar.style.right = '0px'; // Vuelve a la posición original al detenerse
+    if (product) {
+        // Actualiza el título, precio y descripción
+        document.querySelector('.product-title3').textContent = product.name;
+        document.querySelector('.product-price3').textContent = `$${product.price.toLocaleString()}`;
+        document.querySelector('.product-details3').textContent = product.description;
+
+        // Galería de imágenes y miniaturas
+        const gallery = document.querySelector('.product-gallery');
+        gallery.innerHTML = '';  // Limpiar la galería
+        product.images.forEach((imageSrc, index) => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageSrc;
+            imgElement.alt = `Vista ${index + 1}`;
+            imgElement.classList.add('zoom-img');
+            gallery.appendChild(imgElement);
+        });
+
+        // Colores disponibles
+        const colorsContainer = document.querySelector('.product-colors3');
+        colorsContainer.innerHTML = '<h3>Colores</h3>';
+        product.colors.forEach(color => {
+            const colorElement = document.createElement('span');
+            colorElement.textContent = color;
+            colorsContainer.appendChild(colorElement);
+        });
+
+        // Talles disponibles
+        const sizeOptions = document.querySelector('.size-options');
+        sizeOptions.innerHTML = '';  // Limpiar los talles antes de agregarlos
+        product.sizes.forEach(size => {
+            const sizeBtn = document.createElement('button');
+            sizeBtn.classList.add('size-btn');
+            sizeBtn.textContent = size;
+            sizeOptions.appendChild(sizeBtn);
+        });
+
+        // Mostrar estado si existe
+        if (product.status) {
+            const productStatus = document.createElement('p');
+            productStatus.classList.add('product-status3');
+            productStatus.textContent = product.status;
+            document.querySelector('.product-details-section').appendChild(productStatus);
+        }
     } else {
-        // Si el scroll está arriba del contenedor, lo ponemos de nuevo en su posición original
-        sidebar.style.position = 'static';
+        // Redirigir si no se encuentra el producto
+        alert('Producto no encontrado');
+        window.location.href = 'index.html';
     }
 });
 
+// Tabla de talles (modal)
+function toggleSizeChart(event) {
+    event.preventDefault();
+    const sizeChartModal = document.getElementById('sizeChartModal');
+    sizeChartModal.classList.toggle('hidden');
+}
 
+// Zoom en las imágenes del producto
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
     let startX, startY;
 
-    // Clic para hacer zoom
     container.addEventListener('click', function (e) {
         const img = this.querySelector('img, video');
         const rect = this.getBoundingClientRect();
 
         if (!isZoomed) {
             isZoomed = true;
-            this.classList.add('zoomed');
-            img.style.transform = 'scale(2)';  // Zoom al 200%
-            this.style.cursor = 'zoom-out';  // Cambia a la lupa de zoom out
+            img.style.transform = 'scale(2)';
+            this.style.cursor = 'zoom-out';
             startX = e.pageX - rect.left;
             startY = e.pageY - rect.top;
         } else {
             isZoomed = false;
-            this.classList.remove('zoomed');
-            img.style.transform = 'scale(1)';  // Vuelve al tamaño original
+            img.style.transform = 'scale(1)';
             img.style.left = '0';
             img.style.top = '0';
-            this.style.cursor = 'zoom-in';  // Cambia a la lupa de zoom in
+            this.style.cursor = 'zoom-in';
         }
     });
 
-    // Movimiento del mouse para hacer scroll en la imagen cuando está en zoom
     container.addEventListener('mousemove', function (e) {
         if (!isZoomed) return;
 
         const img = this.querySelector('img, video');
         const rect = this.getBoundingClientRect();
 
-        // Posición del mouse relativa al contenedor
         const mouseX = e.pageX - rect.left;
         const mouseY = e.pageY - rect.top;
 
-        // Obtener el tamaño de la imagen
-        const imgRect = img.getBoundingClientRect();
-
-        // Calcular cuánto puede moverse la imagen sin salirse del contenedor
-        const moveX = ((mouseX / rect.width) * 300 - 150);  // Mayor sensibilidad de movimiento
+        const moveX = ((mouseX / rect.width) * 300 - 150);
         const moveY = ((mouseY / rect.height) * 300 - 150);
 
-        // Limitar el movimiento para que no se salga del borde
-        const maxTranslateX = Math.max(0, (imgRect.width - rect.width) / 8);  
-        const maxTranslateY = Math.max(0, (imgRect.height - rect.height) / 8);
+        const maxTranslateX = Math.max(0, (img.getBoundingClientRect().width - rect.width) / 8);
+        const maxTranslateY = Math.max(0, (img.getBoundingClientRect().height - rect.height) / 8);
 
-        // Aplicar el límite de movimiento asegurando que no se vea fuera del borde
         const translateX = Math.min(maxTranslateX, Math.max(-maxTranslateX, moveX));
         const translateY = Math.min(maxTranslateY, Math.max(-maxTranslateY, moveY));
 
-        // Mover la imagen dentro de los límites
         img.style.transform = `scale(2) translate(${translateX}px, ${translateY}px)`;
-        img.style.cursor = 'zoom-out';  // Cambia el cursor a lupa mientras esté en zoom
-    });
-
-    // Cambiar el cursor a lupa cuando esté dentro del contenedor en estado de zoom
-    container.addEventListener('mouseenter', function () {
-        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';  // Muestra la lupa correctamente
-    });
-
-    // Cambiar el cursor a lupa incluso al salir del área de zoom
-    container.addEventListener('mouseleave', function () {
-        if (isZoomed) {
-            this.style.cursor = 'zoom-out';  // Se mantiene el cursor de lupa al salir del área
-        }
+        img.style.cursor = 'zoom-out';
     });
 });
+/*----------------------------------------------------------------------*/
 
+/*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
 
 // Simula una carga de comentarios desde un servidor o base de datos
 const comments = [
@@ -334,3 +345,5 @@ function loadCommentsFromAPI() {
             });
         });
 }
+
+/*----------------------------------------------------------------------------- */
