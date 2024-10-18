@@ -382,14 +382,14 @@ document.addEventListener('DOMContentLoaded', function() {
               thumbnailsContainer.appendChild(thumbnail);
           });
 
+          const productPrice = document.createElement('p');
+          productPrice.className = 'product-price';
+          productPrice.textContent = `$${product.price.toLocaleString()}`;
+
           // Nombre del producto y detalles
           const productName = document.createElement('p');
           productName.className = 'product-name';
           productName.textContent = product.name;
-
-          const productPrice = document.createElement('p');
-          productPrice.className = 'product-price';
-          productPrice.textContent = `$${product.price.toLocaleString()}`;
 
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
