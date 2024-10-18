@@ -382,34 +382,38 @@ document.addEventListener('DOMContentLoaded', function() {
               thumbnailsContainer.appendChild(thumbnail);
           });
 
+          // Precio
           const productPrice = document.createElement('p');
           productPrice.className = 'product-price1';
           productPrice.textContent = `$${product.price.toLocaleString()}`;
 
-          // Nombre del producto y detalles
+          // Nombre del producto
           const productName = document.createElement('p');
           productName.className = 'product-name1';
           productName.textContent = product.name;
 
+          // Categoría
           const productCategory = document.createElement('p');
           productCategory.className = 'product-category1';
-          productPrice.textContent = product.category;
+          productCategory.textContent = `Categoría: ${product.category}`;
 
+          // Colores
           const productColors = document.createElement('p');
           productColors.className = 'product-colors1';
-          productPrice.textContent = product.colors;
+          productColors.textContent = `Colores: ${product.colors.join(", ")}`;
 
+          // Estado
           const productStatus = document.createElement('p');
           productStatus.className = 'product-status1';
-          productPrice.textContent = product.status;
+          productStatus.textContent = `Estado: ${product.status || "N/A"}`;
 
           productDiv.appendChild(mainImage);  // Imagen principal
           productDiv.appendChild(thumbnailsContainer);  // Miniaturas
           productDiv.appendChild(productPrice);  // precio
           productDiv.appendChild(productName);  // nombre
-          productDiv.appendChild(productCategory);
-          productDiv.appendChild(productColors);
-          productDiv.appendChild(productStatus);
+          productDiv.appendChild(productCategory);  // categoría
+          productDiv.appendChild(productColors);  // colores
+          productDiv.appendChild(productStatus);  // estado
           productsGrid.appendChild(productDiv);  // Añadir el producto al grid
       });
   }
