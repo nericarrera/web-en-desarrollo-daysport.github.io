@@ -481,7 +481,7 @@ document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
 
 let currentPosition = 0;
 const productWrapper = document.querySelector('.product-wrapper');
-const productCards = document.querySelectorAll('.product-card');
+const productCards = document.querySelectorAll('.product-card2');
 const cardWidth = productCards[0].offsetWidth + 15; // Ancho de cada tarjeta + el espacio (gap)
 const totalWidth = cardWidth * productCards.length; // Ancho total de todas las tarjetas
 
