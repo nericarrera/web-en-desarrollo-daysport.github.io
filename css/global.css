@@ -143,7 +143,7 @@
 }
 
 
-#cart-dropdown {
+.cart-dropdown {
     position: absolute;
     top: 70px; /* Ajusta esto para que el carrito se despliegue correctamente */
     right: 10px;
