@@ -216,9 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
     color: []
   };
 
+  // Escucha los cambios en los checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-      const filterType = this.name;
+      const filterType = this.name;  // Puede ser 'gender', 'category', 'size', o 'color'
       const filterValue = this.value;
 
       if (this.checked) {
@@ -227,6 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filters[filterType] = filters[filterType].filter(value => value !== filterValue);
       }
 
+      // Actualizar los productos después de cada cambio
       updateProducts();
     });
   });
@@ -246,13 +248,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
 
       if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-        product.style.display = 'block';  
+        product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
       } else {
-        product.style.display = 'none';  
+        product.style.display = 'none';   // Ocultar el producto si no coincide
       }
     });
   }
 
+  // Mostrar todos los productos inicialmente
   updateProducts();
 });
 /*----------------------------------------------------------------------------------------- */
