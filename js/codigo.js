@@ -469,10 +469,7 @@ document.querySelectorAll('.product-thumbnails img').forEach(thumbnail => {
 
 /*----------------------*/
 
-
-
-/*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
-
+/*-----------------------CORRIJIENDO ERRORES DE CLASES---------------*/
 document.addEventListener('DOMContentLoaded', function() {
   const element = document.querySelector('.element-class');
   
@@ -483,6 +480,11 @@ document.addEventListener('DOMContentLoaded', function() {
       console.error('El elemento no existe en el DOM.');
   }
 });
+
+/*------------------------------------------------------------------- */
+
+
+/*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
 
 let currentPosition = 0;
 const productWrapper = document.querySelector('.product-wrapper');
