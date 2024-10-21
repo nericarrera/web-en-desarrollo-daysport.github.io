@@ -162,6 +162,7 @@
     position: relative;
     margin: auto;
     background: #ccc;
+    justify-content: flex-end;
 }
 
 .titulo-carrito{
