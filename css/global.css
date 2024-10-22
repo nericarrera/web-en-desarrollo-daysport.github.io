@@ -713,7 +713,7 @@
 /*-------------------------------------------*/
 
   #clear-filters {
-    background-color: #a30dfa;
+    background-color: #c76afd;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -723,6 +723,11 @@
     font-weight: 600;
     font-style: normal;
     letter-spacing: 0.5px;
+  }
+
+  #clear-filters:hover {
+    background-color: #a30dfa;
+    transition: all 500ms ease;
   }
 
   .label-1 {
