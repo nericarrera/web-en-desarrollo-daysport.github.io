@@ -216,11 +216,11 @@ document.addEventListener('DOMContentLoaded', function() {
     color: []
   };
 
-  // Escucha los cambios en los checkboxes
+  // Escuchar cambios en los checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
-      const filterType = this.name;  // Puede ser 'gender', 'category', 'size', o 'color'
-      const filterValue = this.value;
+      const filterType = this.name; // Puede ser 'gender', 'category', 'size', o 'color'
+      const filterValue = this.value.toLowerCase(); // Convertimos a minúsculas para asegurar coincidencias
 
       if (this.checked) {
         filters[filterType].push(filterValue);
@@ -228,7 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
         filters[filterType] = filters[filterType].filter(value => value !== filterValue);
       }
 
-      // Actualizar los productos después de cada cambio
       updateProducts();
     });
   });
@@ -237,25 +236,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = document.querySelectorAll('.product-card');
 
     products.forEach(product => {
-      const productGender = product.getAttribute('data-gender');
-      const productCategory = product.getAttribute('data-category');
-      const productSize = product.getAttribute('data-size');
-      const productColor = product.getAttribute('data-color');
+      const productGender = product.getAttribute('data-gender').toLowerCase();
+      const productCategory = product.getAttribute('data-category').toLowerCase();
+      const productSize = product.getAttribute('data-size').toLowerCase();
+      const productColors = product.getAttribute('data-color').toLowerCase().split(','); // Convertimos en array
+      const productPrice = parseInt(product.getAttribute('data-price'));
 
       const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
       const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-      const sizeMatch = filters.size.length === 0 || filters.size.includes(productSize);
-      const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
+      const colorMatch = filters.color.length === 0 || filters.color.some(color => productColors.includes(color));
 
       if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-        product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+        product.style.display = 'block';  // Mostrar el producto si coincide con los filtros
       } else {
         product.style.display = 'none';   // Ocultar el producto si no coincide
       }
     });
   }
 
-  // Mostrar todos los productos inicialmente
+  // Inicialmente, mostrar todos los productos
   updateProducts();
 });
 /*----------------------------------------------------------------------------------------- */
