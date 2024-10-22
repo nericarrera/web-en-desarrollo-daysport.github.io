@@ -411,6 +411,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  // Dentro de la función displayProducts
+productDiv.setAttribute('data-gender', product.gender);
+productDiv.setAttribute('data-category', product.category);
+productDiv.setAttribute('data-size', product.sizes.join(", "));  // Si un producto tiene más de un tamaño
+productDiv.setAttribute('data-color', product.colors.join(", "));
+
   // Mostrar todos los productos al cargar la página
   displayProducts(products);
 });
