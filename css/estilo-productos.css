@@ -688,11 +688,20 @@
   letter-spacing: 0.5px;
 }
 
-.product-quantity3{
+.product-quantity3 {
   font-family: "Dosis", sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
+}
+
+#quantity {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  letter-spacing: 1px;
+
 }
 
 .size-options button {
