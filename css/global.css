@@ -1813,6 +1813,7 @@ form {
 .listafooter {
     display: grid;
    width: 150px;
+   gap: 7px;
 }
 
 .listafooter a{
