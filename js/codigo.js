@@ -424,15 +424,15 @@ document.addEventListener('DOMContentLoaded', function() {
       productName.className = 'product-name';
       productName.textContent = product.name;
 
-      // Categoría
-      const productCategory = document.createElement('p');
-      productCategory.className = 'product-category';
-      productCategory.textContent = `${product.category}`;
-
       // Colores
       const productColors = document.createElement('p');
       productColors.className = 'product-colors';
       productColors.textContent = `${product.colors.join(", ")}`;
+
+      // Categoría
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category';
+      productCategory.textContent = `${product.category}`;
 
       // Estado
       const productStatus = document.createElement('p');
