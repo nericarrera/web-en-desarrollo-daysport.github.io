@@ -916,11 +916,11 @@
 }
 
 .products-grid .product-price {
-  font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
+  font-family: "Arvo", serif;
+    font-weight: 700;
     font-style: normal;
-    letter-spacing: 0.5px;
+    color: #000000;
+    letter-spacing: 1px;
 }
 
 
