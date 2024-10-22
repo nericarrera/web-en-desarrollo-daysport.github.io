@@ -234,24 +234,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateProducts() {
     const products = document.querySelectorAll('.product-card');
-
+  
+    const minPrice = parseInt(document.getElementById('min-price-range').value);
+    const maxPrice = parseInt(document.getElementById('max-price-range').value);
+  
     products.forEach(product => {
-      const productGender = product.getAttribute('data-gender').toLowerCase();
-      const productCategory = product.getAttribute('data-category').toLowerCase();
-      const productSize = product.getAttribute('data-size').toLowerCase();
-      const productColors = product.getAttribute('data-color').toLowerCase().split(','); // Convertimos en array
-      const productPrice = parseInt(product.getAttribute('data-price'));
-
-      const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
-      const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
-      const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
-      const colorMatch = filters.color.length === 0 || filters.color.some(color => productColors.includes(color));
-
-      if (genderMatch && categoryMatch && sizeMatch && colorMatch) {
-        product.style.display = 'block';  // Mostrar el producto si coincide con los filtros
-      } else {
-        product.style.display = 'none';   // Ocultar el producto si no coincide
-      }
+        const productGender = product.getAttribute('data-gender');
+        const productCategory = product.getAttribute('data-category');
+        const productSize = product.getAttribute('data-size');
+        const productColor = product.getAttribute('data-color');
+        const productPrice = parseInt(product.getAttribute('data-price'));
+  
+        const genderMatch = filters.gender.length === 0 || filters.gender.includes(productGender);
+        const categoryMatch = filters.category.length === 0 || filters.category.includes(productCategory);
+        const sizeMatch = filters.size.length === 0 || filters.size.some(size => productSize.includes(size));
+        const colorMatch = filters.color.length === 0 || filters.color.includes(productColor);
+        const priceMatch = productPrice >= minPrice && productPrice <= maxPrice;
+  
+        if (genderMatch && categoryMatch && sizeMatch && colorMatch && priceMatch) {
+            product.style.display = 'block';  // Mostrar el producto si coincide con todos los filtros
+        } else {
+            product.style.display = 'none';   // Ocultar el producto si no coincide
+        }
     });
   }
 
@@ -259,6 +263,19 @@ document.addEventListener('DOMContentLoaded', function() {
   updateProducts();
 });
 /*----------------------------------------------------------------------------------------- */
+
+/*-------------------------LLAMADO DE FILTRO DE PRECIOS-------------------- */
+document.getElementById('min-price-range').addEventListener('input', function() {
+  document.getElementById('price-display-min').textContent = `$${parseInt(this.value).toLocaleString()}`;
+  updateProducts();  // Actualiza los productos al mover el rango
+});
+
+document.getElementById('max-price-range').addEventListener('input', function() {
+  document.getElementById('price-display-max').textContent = `$${parseInt(this.value).toLocaleString()}`;
+  updateProducts();  // Actualiza los productos al mover el rango
+});
+
+/*----------------------------------------------------------------------------- */
 
 /*-----------------FILTRO precio-------------------- */
 
