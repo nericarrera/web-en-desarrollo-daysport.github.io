@@ -338,18 +338,18 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   function displayProducts(productsToShow) {
-      const productsGrid = document.querySelector('.products-grid');
-      productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
-
-      productsToShow.forEach(product => {
-          const productDiv = document.createElement('div');
-          productDiv.className = 'product-card';
-          productDiv.setAttribute('data-id', product.id);
-          productDiv.setAttribute('data-price', product.price);  // Añadir el atributo de precio
-          productDiv.setAttribute('data-gender', product.gender);  // Añadir el atributo de género
-          productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
-          productDiv.setAttribute('data-color', product.colors.join(','));  // Añadir el atributo de colores
-          productDiv.setAttribute('data-size', product.sizes.join(','));  // Añadir el atributo de talles
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
+  
+    productsToShow.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product-card';
+        productDiv.setAttribute('data-id', product.id);
+        productDiv.setAttribute('data-gender', product.gender);  // Para filtro por género
+        productDiv.setAttribute('data-category', product.category);  // Para filtro por categoría
+        productDiv.setAttribute('data-size', product.sizes.join(','));  // Para filtro por talles
+        productDiv.setAttribute('data-color', product.colors.join(','));  // Para filtro por colores
+        productDiv.setAttribute('data-price', product.price);  // Para filtro por precio
 
           // Imagen principal
           const mainImage = document.createElement('img');
