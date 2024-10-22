@@ -264,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 /*----------------------------------------------------------------------------------------- */
 
+
 /*-------------------------LLAMADO DE FILTRO DE PRECIOS-------------------- */
 document.getElementById('min-price-range').addEventListener('input', function() {
   document.getElementById('price-display-min').textContent = `$${parseInt(this.value).toLocaleString()}`;
@@ -276,6 +277,7 @@ document.getElementById('max-price-range').addEventListener('input', function() 
 });
 
 /*----------------------------------------------------------------------------- */
+
 
 /*-----------------FILTRO precio-------------------- */
 
