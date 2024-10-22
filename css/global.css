@@ -915,7 +915,8 @@
     text-align: left;
 }
 
-.products-grid .product-price, 
+.products-grid .product-price,
+.products-grid .product-name, 
 .products-grid .product-category, 
 .products-grid .product-colors {
   font-weight: bold;
