@@ -706,6 +706,10 @@
 
 }
 
+.product-quantity3 label {
+  margin-top: 10px;
+}
+
 .size-options button {
     width: 60px;  
     height: 40px;
