@@ -552,7 +552,7 @@
 
 
 .card-imagenes:hover{
-    background: #f3ff05;
+    background: #c053ff;
    transition: all 680ms ease;
    cursor: pointer;
 }
