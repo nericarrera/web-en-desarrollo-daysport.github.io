@@ -381,8 +381,8 @@ document.addEventListener('DOMContentLoaded', function() {
       productDiv.setAttribute('data-id', product.id);
       productDiv.setAttribute('data-price', product.price);  // Añadir el atributo de precio
       productDiv.setAttribute('data-gender', product.gender);  // Añadir el atributo de género
-      productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
       productDiv.setAttribute('data-color', product.colors.join(','));  // Añadir el atributo de colores
+      productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
       productDiv.setAttribute('data-size', product.sizes.join(','));  // Añadir el atributo de talles
 
       // Imagen principal
