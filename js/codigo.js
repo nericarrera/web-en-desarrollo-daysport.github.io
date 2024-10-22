@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
           gender: "mujer",
           category: "remeras",
           images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg", "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg"],
-          colors: ["rosa", "gris", "negro"],
+          colors: ["Rosa", "Gris", "Negro"],
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL", "XXL"]
       },
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
           gender: "hombre",
           category: "bermudas",
           images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg"],
-          colors: ["beige", "tostado", "negro"],
+          colors: ["Beige", "Tostado", "Negro"],
           status: "",
           sizes: ["M", "L", "XL"]
       },
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
           gender: "mujer",
           category: "remeras",
           images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-          colors: ["celeste", "negro"],
+          colors: ["Celeste", "Negro"],
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL"]
       }
