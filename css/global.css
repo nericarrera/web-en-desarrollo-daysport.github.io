@@ -917,8 +917,7 @@
 
 .products-grid .product-price, 
 .products-grid .product-category, 
-.products-grid .product-colors, 
-.products-grid .product-status {
+.products-grid .product-colors {
   font-weight: bold;
   color: #000;
   font-family: 'Questrial';
@@ -935,9 +934,6 @@
     font-size: 14px;
   }
   
-  .product-price1 {
-  
-  }
   
   .product-name1 {
     font-size: 14px;
@@ -968,7 +964,7 @@
     text-align: left;
   }
 
-  .product-status1 {
+  .products-grid .product-status {
     color: #5e5e5e;
     font-size: 13px;
     margin: 2px 0;
