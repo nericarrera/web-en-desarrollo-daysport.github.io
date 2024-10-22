@@ -688,6 +688,13 @@
   letter-spacing: 0.5px;
 }
 
+.product-quantity3{
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
 .size-options button {
     width: 60px;  
     height: 40px;
