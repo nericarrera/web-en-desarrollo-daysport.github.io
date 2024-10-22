@@ -657,7 +657,11 @@
 }
 
 .product-colors3 {
-    margin-top: 28px;
+    margin-top: 20px;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.5px;
 }
 
 .product-colors h3{
