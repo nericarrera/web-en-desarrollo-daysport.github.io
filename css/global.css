@@ -905,6 +905,16 @@
   .thumbnail:hover {
     border-color: #a30dfa;
   }
+
+  /* Aplica una fuente solo a los productos dentro del filtro */
+.products-grid .product-card {
+  font-size: 14px;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    padding: 5px;
+    margin-bottom: -5px;
+    text-align: left;
+}
   
   .product-details1 {
     text-align: left;
