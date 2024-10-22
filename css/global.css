@@ -533,19 +533,18 @@
 
 .card-imagenes{
     height: 205px;
-    width: 220px;
+    width: 177px;
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
     justify-content: center;
-    border: 0.5px solid #bbbbbb;
     border-radius: 45px;
     box-shadow: 1px 1px 20px 1px #674275;
 }
 
 .card-imagenes img{
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
     padding: 5px;
     margin-bottom: -35px;
 }
