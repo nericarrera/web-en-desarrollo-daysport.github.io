@@ -350,89 +350,104 @@ document.addEventListener('DOMContentLoaded', function() {
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL"]
       }
+      // Añadir más productos aquí
   ];
 
-  function displayProducts(productsToShow) {
-      const productsGrid = document.querySelector('.products-grid');
-      productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
+  const productsGrid = document.querySelector('.products-grid');
+  const productsPerLoad = 6;  // Cuántos productos cargar por scroll
+  let currentPage = 1;  // Página actual (para cargar más productos)
 
-      productsToShow.forEach(product => {
-          const productDiv = document.createElement('div');
-          productDiv.className = 'product-card';
-          productDiv.setAttribute('data-id', product.id);
-          productDiv.setAttribute('data-price', product.price);  // Añadir el atributo de precio
-          productDiv.setAttribute('data-gender', product.gender);  // Añadir el atributo de género
-          productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
-          productDiv.setAttribute('data-color', product.colors.join(','));  // Añadir el atributo de colores
-          productDiv.setAttribute('data-size', product.sizes.join(','));  // Añadir el atributo de talles
+  // Función para cargar productos
+  function displayProducts(page) {
+    const startIndex = (page - 1) * productsPerLoad;
+    const endIndex = startIndex + productsPerLoad;
+    const productsToShow = products.slice(startIndex, endIndex);  // Solo muestra los productos de esta "página"
 
-          // Imagen principal
-          const mainImage = document.createElement('img');
-          mainImage.src = product.images[0];
-          mainImage.alt = product.name;
-          mainImage.className = 'product-image';
+    productsToShow.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+      productDiv.setAttribute('data-id', product.id);
+      productDiv.setAttribute('data-price', product.price);  // Añadir el atributo de precio
+      productDiv.setAttribute('data-gender', product.gender);  // Añadir el atributo de género
+      productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
+      productDiv.setAttribute('data-color', product.colors.join(','));  // Añadir el atributo de colores
+      productDiv.setAttribute('data-size', product.sizes.join(','));  // Añadir el atributo de talles
 
-          // Redirige a la página de producto cuando se haga clic en la imagen principal
-          mainImage.addEventListener('click', function() {
-              window.location.href = `index-producto.html?id=${product.id}`;
-          });
+      // Imagen principal
+      const mainImage = document.createElement('img');
+      mainImage.src = product.images[0];
+      mainImage.alt = product.name;
+      mainImage.className = 'product-image';
 
-          // Miniaturas
-          const thumbnailsContainer = document.createElement('div');
-          thumbnailsContainer.className = 'thumbnails-container';
-          product.images.forEach((imgSrc, index) => {
-              const thumbnail = document.createElement('img');
-              thumbnail.src = imgSrc;
-              thumbnail.alt = `Vista color ${index + 1}`;
-              thumbnail.className = 'thumbnail';
-              
-              // Cambiar la imagen principal al hacer clic en una miniatura
-              thumbnail.addEventListener('click', (e) => {
-                  e.stopPropagation(); // Evita la redirección
-                  mainImage.src = imgSrc;  // Cambiar la imagen principal
-              });
-
-              thumbnailsContainer.appendChild(thumbnail);
-          });
-
-          // Precio
-          const productPrice = document.createElement('p');
-          productPrice.className = 'product-price';
-          productPrice.textContent = `$${product.price.toLocaleString()}`;
-
-          // Nombre del producto
-          const productName = document.createElement('p');
-          productName.className = 'product-name';
-          productName.textContent = product.name;
-
-          // Categoría
-          const productCategory = document.createElement('p');
-          productCategory.className = 'product-category';
-          productCategory.textContent = `Categoría: ${product.category}`;
-
-          // Colores
-          const productColors = document.createElement('p');
-          productColors.className = 'product-colors';
-          productColors.textContent = `Colores: ${product.colors.join(", ")}`;
-
-          // Estado
-          const productStatus = document.createElement('p');
-          productStatus.className = 'product-status';
-          productStatus.textContent = product.status;
-
-          productDiv.appendChild(mainImage);  // Imagen principal
-          productDiv.appendChild(thumbnailsContainer);  // Miniaturas
-          productDiv.appendChild(productPrice);  // Precio
-          productDiv.appendChild(productName);  // Nombre
-          productDiv.appendChild(productCategory);  // Categoría
-          productDiv.appendChild(productColors);  // Colores
-          productDiv.appendChild(productStatus);  // Estado
-          productsGrid.appendChild(productDiv);  // Añadir el producto al grid
+      // Redirige a la página de producto cuando se haga clic en la imagen principal
+      mainImage.addEventListener('click', function() {
+          window.location.href = `index-producto.html?id=${product.id}`;
       });
+
+      // Miniaturas
+      const thumbnailsContainer = document.createElement('div');
+      thumbnailsContainer.className = 'thumbnails-container';
+      product.images.forEach((imgSrc, index) => {
+          const thumbnail = document.createElement('img');
+          thumbnail.src = imgSrc;
+          thumbnail.alt = `Vista color ${index + 1}`;
+          thumbnail.className = 'thumbnail';
+          
+          // Cambiar la imagen principal al hacer clic en una miniatura
+          thumbnail.addEventListener('click', (e) => {
+              e.stopPropagation(); // Evita la redirección
+              mainImage.src = imgSrc;  // Cambiar la imagen principal
+          });
+
+          thumbnailsContainer.appendChild(thumbnail);
+      });
+
+      // Precio
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+
+      // Nombre del producto
+      const productName = document.createElement('p');
+      productName.className = 'product-name';
+      productName.textContent = product.name;
+
+      // Categoría
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category';
+      productCategory.textContent = `${product.category}`;
+
+      // Colores
+      const productColors = document.createElement('p');
+      productColors.className = 'product-colors';
+      productColors.textContent = `${product.colors.join(", ")}`;
+
+      // Estado
+      const productStatus = document.createElement('p');
+      productStatus.className = 'product-status';
+      productStatus.textContent = product.status;
+
+      productDiv.appendChild(mainImage);  // Imagen principal
+      productDiv.appendChild(thumbnailsContainer);  // Miniaturas
+      productDiv.appendChild(productPrice);  // Precio
+      productDiv.appendChild(productName);  // Nombre
+      productDiv.appendChild(productCategory);  // Categoría
+      productDiv.appendChild(productColors);  // Colores
+      productDiv.appendChild(productStatus);  // Estado
+      productsGrid.appendChild(productDiv);  // Añadir el producto al grid
+    });
   }
 
-  // Mostrar todos los productos al cargar la página
-  displayProducts(products);
+  // Cargar los primeros productos al cargar la página
+  displayProducts(currentPage);
+
+  // Función para detectar el final del scroll
+  window.addEventListener('scroll', function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      currentPage++;  // Incrementar la página
+      displayProducts(currentPage);  // Cargar más productos
+    }
+  });
 });
 
 /*----------------------------------------------------------------*/
