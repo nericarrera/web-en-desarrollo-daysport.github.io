@@ -600,7 +600,7 @@
   }
 
   .filter-section:hover {
-    background: #dfdfdf;
+    background-color: #c76afd;
     transition: all 500ms ease;
   }
 
