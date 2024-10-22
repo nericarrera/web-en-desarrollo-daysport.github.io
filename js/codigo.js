@@ -262,10 +262,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*-------------------------LLAMADO DE FILTRO DE PRECIOS-------------------- */
-document.getElementById('min-price-range').addEventListener('input', function() {
-  document.getElementById('price-display-min').textContent = `$${parseInt(this.value).toLocaleString()}`;
-  updateProducts();  // Actualiza los productos al mover el rango
-});
 
 document.getElementById('max-price-range').addEventListener('input', function() {
   document.getElementById('price-display-max').textContent = `$${parseInt(this.value).toLocaleString()}`;
