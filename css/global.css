@@ -915,7 +915,15 @@
     text-align: left;
 }
 
-.products-grid .product-price,
+.products-grid .product-price {
+  font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.5px;
+}
+
+
 .products-grid .product-name, 
 .products-grid .product-category, 
 .products-grid .product-colors {
