@@ -338,77 +338,82 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   function displayProducts(productsToShow) {
-      const productsGrid = document.querySelector('.products-grid');
-      productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
-
-      productsToShow.forEach(product => {
-          const productDiv = document.createElement('div');
-          productDiv.className = 'product-card';
-          productDiv.setAttribute('data-id', product.id);
-
-          // Imagen principal
-          const mainImage = document.createElement('img');
-          mainImage.src = product.images[0];
-          mainImage.alt = product.name;
-          mainImage.className = 'product-image';
-
-          // Redirige a la página de producto cuando se haga clic en la imagen principal
-          mainImage.addEventListener('click', function() {
-              window.location.href = `index-producto.html?id=${product.id}`;
-          });
-
-          // Miniaturas
-          const thumbnailsContainer = document.createElement('div');
-          thumbnailsContainer.className = 'thumbnails-container';
-          product.images.forEach((imgSrc, index) => {
-              const thumbnail = document.createElement('img');
-              thumbnail.src = imgSrc;
-              thumbnail.alt = `Vista color ${index + 1}`;
-              thumbnail.className = 'thumbnail';
-              
-              // Cambiar la imagen principal al hacer clic en una miniatura
-              thumbnail.addEventListener('click', (e) => {
-                  e.stopPropagation(); // Evita la redirección
-                  mainImage.src = imgSrc;  // Cambiar la imagen principal
-              });
-
-              thumbnailsContainer.appendChild(thumbnail);
-          });
-
-          // Precio
-          const productPrice = document.createElement('p');
-          productPrice.className = 'product-price';
-          productPrice.textContent = `$${product.price.toLocaleString()}`;
-
-          // Nombre del producto
-          const productName = document.createElement('p');
-          productName.className = 'product-name';
-          productName.textContent = product.name;
-
-          // Categoría
-          const productCategory = document.createElement('p');
-          productCategory.className = 'product-category';
-          productCategory.textContent = `Categoría: ${product.category}`;
-
-          // Colores
-          const productColors = document.createElement('p');
-          productColors.className = 'product-colors';
-          productColors.textContent = `Colores: ${product.colors.join(", ")}`;
-
-          // Estado (sin la palabra "Estado:")
-          const productStatus = document.createElement('p');
-          productStatus.className = 'product-status';
-          productStatus.textContent = product.status;  // Aquí solo muestra el valor del estado, sin "Estado:"
-
-          productDiv.appendChild(mainImage);  // Imagen principal
-          productDiv.appendChild(thumbnailsContainer);  // Miniaturas
-          productDiv.appendChild(productPrice);  // Precio
-          productDiv.appendChild(productName);  // Nombre
-          productDiv.appendChild(productCategory);  // Categoría
-          productDiv.appendChild(productColors);  // Colores
-          productDiv.appendChild(productStatus);  // Estado
-          productsGrid.appendChild(productDiv);  // Añadir el producto al grid
+    const productsGrid = document.querySelector('.products-grid');
+    productsGrid.innerHTML = ''; // Limpiar el grid antes de agregar productos
+  
+    productsToShow.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+      
+      // Añadir los atributos data-* para que funcionen con el filtro
+      productDiv.setAttribute('data-gender', product.gender);
+      productDiv.setAttribute('data-category', product.category);
+      productDiv.setAttribute('data-size', product.sizes.join(", "));  // Si tiene múltiples talles
+      productDiv.setAttribute('data-color', product.colors.join(", "));
+  
+      // Imagen principal
+      const mainImage = document.createElement('img');
+      mainImage.src = product.images[0];
+      mainImage.alt = product.name;
+      mainImage.className = 'product-image';
+  
+      // Redirige a la página de producto cuando se haga clic en la imagen principal
+      mainImage.addEventListener('click', function() {
+        window.location.href = `index-producto.html?id=${product.id}`;
       });
+  
+      // Miniaturas
+      const thumbnailsContainer = document.createElement('div');
+      thumbnailsContainer.className = 'thumbnails-container';
+      product.images.forEach((imgSrc, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Vista color ${index + 1}`;
+        thumbnail.className = 'thumbnail';
+        
+        // Cambiar la imagen principal al hacer clic en una miniatura
+        thumbnail.addEventListener('click', (e) => {
+          e.stopPropagation(); // Evita la redirección
+          mainImage.src = imgSrc;  // Cambiar la imagen principal
+        });
+  
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+  
+      // Precio
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+  
+      // Nombre del producto
+      const productName = document.createElement('p');
+      productName.className = 'product-name';
+      productName.textContent = product.name;
+  
+      // Categoría
+      const productCategory = document.createElement('p');
+      productCategory.className = 'product-category';
+      productCategory.textContent = `Categoría: ${product.category}`;
+  
+      // Colores
+      const productColors = document.createElement('p');
+      productColors.className = 'product-colors';
+      productColors.textContent = `Colores: ${product.colors.join(", ")}`;
+  
+      // Estado (sin la palabra "Estado:")
+      const productStatus = document.createElement('p');
+      productStatus.className = 'product-status';
+      productStatus.textContent = product.status;
+  
+      productDiv.appendChild(mainImage);  // Imagen principal
+      productDiv.appendChild(thumbnailsContainer);  // Miniaturas
+      productDiv.appendChild(productPrice);  // Precio
+      productDiv.appendChild(productName);  // Nombre
+      productDiv.appendChild(productCategory);  // Categoría
+      productDiv.appendChild(productColors);  // Colores
+      productDiv.appendChild(productStatus);  // Estado
+      productsGrid.appendChild(productDiv);  // Añadir el producto al grid
+    });
   }
 
 
