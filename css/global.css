@@ -921,13 +921,15 @@
     font-style: normal;
     color: #000000;
     letter-spacing: 1px;
-    margin-left: 8px;
+    margin-left: 4px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 
-.products-grid .product-name, 
-.products-grid .product-category, 
-.products-grid .product-colors {
+.products-grid .product-name,  
+.products-grid .product-colors,
+.products-grid .product-category {
   font-weight: bold;
   color: #000;
   font-family: 'Questrial';
