@@ -333,10 +333,10 @@ document.addEventListener('DOMContentLoaded', function() {
           name: "Bermuda Cargo Nike",
           price: 25000,
           gender: "hombre",
-          category: "bermudas",
           images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg"],
           colors: ["Beige", "Tostado", "Negro"],
           status: "",
+          category: "bermudas",
           sizes: ["M", "L", "XL"]
       },
       {
@@ -344,9 +344,9 @@ document.addEventListener('DOMContentLoaded', function() {
           name: "Remera Modal Soft",
           price: 7500,
           gender: "mujer",
-          category: "remeras",
           images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
           colors: ["Celeste", "Negro"],
+          category: "remeras",
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL"]
       },
@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', function() {
         name: "Remera Modal Soft",
         price: 7500,
         gender: "mujer",
-        category: "remeras",
         images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
         colors: ["Celeste", "Negro"],
+        category: "remeras",
         status: "Nuevo",
         sizes: ["S", "M", "L", "XL"]
     }
