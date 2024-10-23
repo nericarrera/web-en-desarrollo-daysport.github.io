@@ -552,11 +552,11 @@
 .card-imagenes:hover{
     background: #c053ff;
    transition: all 680ms ease;
-   cursor: pointer;
+   
 }
 
 .card-imagenes p:hover{
-    font-weight: 600;
+    background: #fdfdfd;
 }
 
 
