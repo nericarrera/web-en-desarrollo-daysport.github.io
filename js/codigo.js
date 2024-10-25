@@ -329,10 +329,10 @@ document.addEventListener('DOMContentLoaded', function() {
           name: "Bermuda Cargo Nike",
           price: 25000,
           gender: "hombre",
+          category: "bermudas",
           images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg", "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg"],
           colors: ["Beige", "Tostado", "Negro"],
           status: "",
-          category: "bermudas",
           sizes: ["M", "L", "XL"]
       },
       {
@@ -340,80 +340,84 @@ document.addEventListener('DOMContentLoaded', function() {
           name: "Remera Modal Soft",
           price: 7500,
           gender: "mujer",
+          category: "remeras",
           images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
           colors: ["Celeste", "Negro"],
-          category: "remeras",
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL"]
       },
       {
-        id: 4,
-        name: "Campera Rompeviento Puma Women",
-        price: 35000,
-        gender: "mujer",
-        images: ["img/mujer/campera rompeviento/campera-rompeviento-puma 1.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 6.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 4.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 5.jpeg"],
-        colors: ["Negro", "Rosa", "Violeta", "Verde Agua"],
-        category: "camperas",
-        status: "Nuevo",
-        sizes: ["S", "M", "L", "XL"]
-    },
-    {
-      id: 5,
-      name: "Conjunto Nike Women",
-      price: 35000,
-      gender: "mujer",
-      images: ["img/mujer/conjuntos/conjunto-verano-nike-mujer 1.jpeg", "img/mujer/conjuntos/conjunto-verano-nike-mujer 2.jpeg"],
-      colors: ["Blanco", "Negro"],
-      category: "conjuntos",
-      status: "Nuevo",
-      sizes: ["S", "M", "L", "XL", "XXL"]
-  },
-  {
-    id: 6,
-    name: "Campera Puffer Nike con piel",
-    price: 65000,
-    gender: "hombre",
-    images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
-    colors: ["Combinado"],
-    category: "camperas",
-    status: "Nuevo",
-    sizes: ["L"]
-  },
-  {
-    id: 7,
-    name: "Blusa Modal Strass",
-    price: 8000,
-    gender: "mujer",
-    images: ["img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 1.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 2.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 3.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 4.jpeg"],
-    colors: ["Negro", "Azul Marino"],
-    category: "Remeras",
-    status: "Nuevo",
-    sizes: ["L", "XL"]
-  },
-
-      
-      // Añadir más productos aquí
+          id: 4,
+          name: "Campera Rompeviento Puma Women",
+          price: 35000,
+          gender: "mujer",
+          category: "camperas",
+          images: ["img/mujer/campera rompeviento/campera-rompeviento-puma 1.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 6.jpeg"],
+          colors: ["Negro", "Rosa", "Violeta", "Verde Agua"],
+          status: "Nuevo",
+          sizes: ["S", "M", "L", "XL"]
+      },
+      {
+          id: 5,
+          name: "Conjunto Nike Women",
+          price: 35000,
+          gender: "mujer",
+          category: "conjuntos",
+          images: ["img/mujer/conjuntos/conjunto-verano-nike-mujer 1.jpeg", "img/mujer/conjuntos/conjunto-verano-nike-mujer 2.jpeg"],
+          colors: ["Blanco", "Negro"],
+          status: "Nuevo",
+          sizes: ["S", "M", "L", "XL", "XXL"]
+      },
+      {
+          id: 6,
+          name: "Campera Puffer Nike con piel",
+          price: 65000,
+          gender: "hombre",
+          category: "camperas",
+          images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
+          colors: ["Combinado"],
+          status: "Nuevo",
+          sizes: ["L"]
+      },
+      {
+          id: 7,
+          name: "Blusa Modal Strass",
+          price: 8000,
+          gender: "mujer",
+          category: "remeras",
+          images: ["img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 1.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 2.jpeg"],
+          colors: ["Negro", "Azul Marino"],
+          status: "Nuevo",
+          sizes: ["L", "XL"]
+      },
+      // Puedes añadir más productos aquí
   ];
 
   const productsGrid = document.querySelector('.products-grid');
-  const productsPerLoad = 7;  // Cuántos productos cargar por scroll
-  let currentPage = 1;  // Página actual (para cargar más productos)
+  const productsPerLoad = 3; // Cuántos productos cargar por cada vez que se hace clic en el botón
+  let currentPage = 1; // Página actual
+
+  // Crear el botón de "Cargar Más"
+  const loadMoreButton = document.createElement('button');
+  loadMoreButton.textContent = "Cargar Más Productos";
+  loadMoreButton.className = "load-more-button";
+  document.body.appendChild(loadMoreButton);
 
   // Función para cargar productos
   function displayProducts(page) {
     const startIndex = (page - 1) * productsPerLoad;
     const endIndex = startIndex + productsPerLoad;
-    const productsToShow = products.slice(startIndex, endIndex);  // Solo muestra los productos de esta "página"
+    const productsToShow = products.slice(startIndex, endIndex);
 
     productsToShow.forEach(product => {
       const productDiv = document.createElement('div');
       productDiv.className = 'product-card';
       productDiv.setAttribute('data-id', product.id);
-      productDiv.setAttribute('data-price', product.price);  // Añadir el atributo de precio
-      productDiv.setAttribute('data-gender', product.gender);  // Añadir el atributo de género
-      productDiv.setAttribute('data-color', product.colors.join(','));  // Añadir el atributo de colores
-      productDiv.setAttribute('data-category', product.category);  // Añadir el atributo de categoría
-      productDiv.setAttribute('data-size', product.sizes.join(','));  // Añadir el atributo de talles
+      productDiv.setAttribute('data-price', product.price);
+      productDiv.setAttribute('data-gender', product.gender);
+      productDiv.setAttribute('data-category', product.category);
+      productDiv.setAttribute('data-color', product.colors.join(','));
+      productDiv.setAttribute('data-size', product.sizes.join(','));
 
       // Imagen principal
       const mainImage = document.createElement('img');
@@ -434,11 +438,11 @@ document.addEventListener('DOMContentLoaded', function() {
           thumbnail.src = imgSrc;
           thumbnail.alt = `Vista color ${index + 1}`;
           thumbnail.className = 'thumbnail';
-          
+
           // Cambiar la imagen principal al hacer clic en una miniatura
           thumbnail.addEventListener('click', (e) => {
-              e.stopPropagation(); // Evita la redirección
-              mainImage.src = imgSrc;  // Cambiar la imagen principal
+              e.stopPropagation();
+              mainImage.src = imgSrc;
           });
 
           thumbnailsContainer.appendChild(thumbnail);
@@ -457,38 +461,42 @@ document.addEventListener('DOMContentLoaded', function() {
       // Colores
       const productColors = document.createElement('p');
       productColors.className = 'product-colors';
-      productColors.textContent = `${product.colors.join(", ")}`;
+      productColors.textContent = `Colores: ${product.colors.join(", ")}`;
 
       // Categoría
       const productCategory = document.createElement('p');
       productCategory.className = 'product-category';
-      productCategory.textContent = `${product.category}`;
+      productCategory.textContent = `Categoría: ${product.category}`;
 
       // Estado
       const productStatus = document.createElement('p');
       productStatus.className = 'product-status';
       productStatus.textContent = product.status;
 
-      productDiv.appendChild(mainImage);  // Imagen principal
-      productDiv.appendChild(thumbnailsContainer);  // Miniaturas
-      productDiv.appendChild(productPrice);  // Precio
-      productDiv.appendChild(productName);  // Nombre
-      productDiv.appendChild(productCategory);  // Categoría
-      productDiv.appendChild(productColors);  // Colores
-      productDiv.appendChild(productStatus);  // Estado
-      productsGrid.appendChild(productDiv);  // Añadir el producto al grid
+      // Añadir todos los elementos al div del producto
+      productDiv.appendChild(mainImage);
+      productDiv.appendChild(thumbnailsContainer);
+      productDiv.appendChild(productPrice);
+      productDiv.appendChild(productName);
+      productDiv.appendChild(productCategory);
+      productDiv.appendChild(productColors);
+      productDiv.appendChild(productStatus);
+      productsGrid.appendChild(productDiv);
     });
+
+    // Ocultar el botón si ya se han mostrado todos los productos
+    if (endIndex >= products.length) {
+      loadMoreButton.style.display = 'none';
+    }
   }
 
-  // Cargar los primeros productos al cargar la página
+  // Mostrar los primeros productos al cargar la página
   displayProducts(currentPage);
 
-  // Función para detectar el final del scroll
-  window.addEventListener('scroll', function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      currentPage++;  // Incrementar la página
-      displayProducts(currentPage);  // Cargar más productos
-    }
+  // Evento para cargar más productos al hacer clic en el botón
+  loadMoreButton.addEventListener('click', function() {
+    currentPage++;  // Incrementa la página
+    displayProducts(currentPage);  // Cargar más productos
   });
 });
 
