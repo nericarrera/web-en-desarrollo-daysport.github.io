@@ -359,15 +359,26 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       id: 5,
-      name: "Campera Puffer Nike con piel",
-      price: 65000,
-      gender: "hombre",
-      images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
-      colors: ["Combinado"],
-      category: "camperas",
+      name: "Conjunto Nike Women",
+      price: 35000,
+      gender: "mujer",
+      images: ["img/mujer/conjuntos/conjunto-verano-nike-mujer 1.jpeg", "img/mujer/conjuntos/conjunto-verano-nike-mujer 2.jpeg"],
+      colors: ["Blanco", "Negro"],
+      category: "conjuntos",
       status: "Nuevo",
-      sizes: ["L"]
-  }
+      sizes: ["S", "M", "L", "XL", "XXL"]
+  },
+  {
+    id: 5,
+    name: "Campera Puffer Nike con piel",
+    price: 65000,
+    gender: "hombre",
+    images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
+    colors: ["Combinado"],
+    category: "camperas",
+    status: "Nuevo",
+    sizes: ["L"]
+}
       
       // Añadir más productos aquí
   ];
