@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const productsGrid = document.querySelector('.products-grid');
-  const productsPerLoad = 3;
+  const productsPerLoad = 4;
   let currentPage = 1;
 
   const loadMoreButton = document.createElement('button');
