@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function() {
           sizes: ["S", "M", "L", "XL"]
       },
       {
-        id: 3,
+        id: 4,
         name: "Remera Modal Soft",
         price: 7500,
         gender: "mujer",
@@ -356,7 +356,18 @@ document.addEventListener('DOMContentLoaded', function() {
         category: "remeras",
         status: "Nuevo",
         sizes: ["S", "M", "L", "XL"]
-    }
+    },
+    {
+      id: 5,
+      name: "Campera Puffer Nike",
+      price: 6500,
+      gender: "hombre",
+      images: ["img/hombre/Camperas de Abrigo/campera-puffer-nike-convinada 1.jpeg"],
+      colors: ["Combinado"],
+      category: "camperas",
+      status: "Nuevo",
+      sizes: ["L"]
+  }
       
       // Añadir más productos aquí
   ];
