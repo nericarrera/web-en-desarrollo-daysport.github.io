@@ -170,6 +170,17 @@ const products = [
         colors: ["Celeste", "Negro"],
         sizes: ["S", "M", "L", "XL"],
         status: "Nuevo"
+    },
+    {
+        id: 5,
+        name: "Campera Puffer Nike con piel",
+        price: 65000,
+        gender: "hombre",
+        images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
+        colors: ["Combinado"],
+        category: "camperas",
+        status: "Nuevo",
+        sizes: ["L"]
     }
 ];
 
