@@ -1001,6 +1001,24 @@
     text-align: left;
   }
 
+  /*----------------BOTON CDARGAR MAS-------------------*/
+
+  .load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .load-more-button:hover {
+    background-color: #0056b3;
+  }
+
 /*--------- TITULO DE (DESTACADO)----------- */
 .destacado{
     display: flex;
