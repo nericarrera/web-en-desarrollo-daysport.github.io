@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const productsGrid = document.querySelector('.products-grid');
-  const productsPerLoad = 3; // Cuántos productos cargar por cada vez que se hace clic en el botón
+  const productsPerLoad = 6; // Cuántos productos cargar por cada vez que se hace clic en el botón
   let currentPage = 1; // Página actual
 
   // Crear el botón de "Cargar Más"
