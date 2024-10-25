@@ -1004,6 +1004,7 @@
 
   /*----------------BOTON CARGAR MAS-------------------*/
   .products-grid-container {
+    width: 100%;
     text-align: center; /* Centra el botón en el contenedor */
   }
   
