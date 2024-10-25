@@ -143,8 +143,9 @@
 }
 
 #cart-count:hover {
-  background-color: #d3e005;
+  background-color: #f3ff05;
   transition: all 500ms ease;
+  color: #000000;
   
 }
 
