@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const productsGrid = document.querySelector('.products-grid');
-  const productsPerLoad = 6;  // Cuántos productos cargar por scroll
+  const productsPerLoad = 7;  // Cuántos productos cargar por scroll
   let currentPage = 1;  // Página actual (para cargar más productos)
 
   // Función para cargar productos
