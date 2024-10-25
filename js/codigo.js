@@ -452,11 +452,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const productColors = document.createElement('p');
       productColors.className = 'product-colors';
-      productColors.textContent = `Colores: ${product.colors.join(", ")}`;
+      productColors.textContent = `${product.colors.join(", ")}`;
 
       const productCategory = document.createElement('p');
       productCategory.className = 'product-category';
-      productCategory.textContent = `Categoría: ${product.category}`;
+      productCategory.textContent = `${product.category}`;
 
       const productStatus = document.createElement('p');
       productStatus.className = 'product-status';
