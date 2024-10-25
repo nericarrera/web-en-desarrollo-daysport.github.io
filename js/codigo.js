@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
       name: "Campera Puffer Nike con piel",
       price: 65000,
       gender: "hombre",
-      images: ["img/hombre/CamperasdeAbrigo/campera-puffer-nike-convinada 1.jpeg"],
+      images: ["img/hombre/Camperas de Abrigo/campera-puffer-nike-conbinada 1.jpeg"],
       colors: ["Combinado"],
       category: "camperas",
       status: "Nuevo",
