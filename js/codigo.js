@@ -394,16 +394,14 @@ document.addEventListener('DOMContentLoaded', function() {
   ];
 
   const productsGrid = document.querySelector('.products-grid');
-  const productsPerLoad = 7; // Cuántos productos cargar por cada vez que se hace clic en el botón
-  let currentPage = 1; // Página actual
+  const productsPerLoad = 6;
+  let currentPage = 1;
 
-  // Crear el botón de "Cargar Más"
   const loadMoreButton = document.createElement('button');
   loadMoreButton.textContent = "Cargar Más Productos";
   loadMoreButton.className = "load-more-button";
-  document.body.appendChild(loadMoreButton);
+  productsGrid.parentElement.appendChild(loadMoreButton);
 
-  // Función para cargar productos
   function displayProducts(page) {
     const startIndex = (page - 1) * productsPerLoad;
     const endIndex = startIndex + productsPerLoad;
@@ -419,18 +417,15 @@ document.addEventListener('DOMContentLoaded', function() {
       productDiv.setAttribute('data-color', product.colors.join(','));
       productDiv.setAttribute('data-size', product.sizes.join(','));
 
-      // Imagen principal
       const mainImage = document.createElement('img');
       mainImage.src = product.images[0];
       mainImage.alt = product.name;
       mainImage.className = 'product-image';
 
-      // Redirige a la página de producto cuando se haga clic en la imagen principal
       mainImage.addEventListener('click', function() {
           window.location.href = `index-producto.html?id=${product.id}`;
       });
 
-      // Miniaturas
       const thumbnailsContainer = document.createElement('div');
       thumbnailsContainer.className = 'thumbnails-container';
       product.images.forEach((imgSrc, index) => {
@@ -438,8 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
           thumbnail.src = imgSrc;
           thumbnail.alt = `Vista color ${index + 1}`;
           thumbnail.className = 'thumbnail';
-
-          // Cambiar la imagen principal al hacer clic en una miniatura
+          
           thumbnail.addEventListener('click', (e) => {
               e.stopPropagation();
               mainImage.src = imgSrc;
@@ -448,32 +442,26 @@ document.addEventListener('DOMContentLoaded', function() {
           thumbnailsContainer.appendChild(thumbnail);
       });
 
-      // Precio
       const productPrice = document.createElement('p');
       productPrice.className = 'product-price';
       productPrice.textContent = `$${product.price.toLocaleString()}`;
 
-      // Nombre del producto
       const productName = document.createElement('p');
       productName.className = 'product-name';
       productName.textContent = product.name;
 
-      // Colores
       const productColors = document.createElement('p');
       productColors.className = 'product-colors';
       productColors.textContent = `Colores: ${product.colors.join(", ")}`;
 
-      // Categoría
       const productCategory = document.createElement('p');
       productCategory.className = 'product-category';
       productCategory.textContent = `Categoría: ${product.category}`;
 
-      // Estado
       const productStatus = document.createElement('p');
       productStatus.className = 'product-status';
       productStatus.textContent = product.status;
 
-      // Añadir todos los elementos al div del producto
       productDiv.appendChild(mainImage);
       productDiv.appendChild(thumbnailsContainer);
       productDiv.appendChild(productPrice);
@@ -484,22 +472,18 @@ document.addEventListener('DOMContentLoaded', function() {
       productsGrid.appendChild(productDiv);
     });
 
-    // Ocultar el botón si ya se han mostrado todos los productos
     if (endIndex >= products.length) {
       loadMoreButton.style.display = 'none';
     }
   }
 
-  // Mostrar los primeros productos al cargar la página
   displayProducts(currentPage);
 
-  // Evento para cargar más productos al hacer clic en el botón
   loadMoreButton.addEventListener('click', function() {
-    currentPage++;  // Incrementa la página
-    displayProducts(currentPage);  // Cargar más productos
+    currentPage++;
+    displayProducts(currentPage);
   });
 });
-
 /*----------------------------------------------------------------*/
 
 /*-----------------RE DIRIGE A LA PAGINA DE PRODUCTO------------ */
