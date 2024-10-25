@@ -1003,7 +1003,9 @@
   }
 
   /*----------------BOTON CARGAR MAS-------------------*/
-
+  .products-grid-container {
+    text-align: center; /* Centra el botón en el contenedor */
+  }
   
   .load-more-button {
     display: inline-block; /* Para que el botón respete la alineación central del contenedor */
