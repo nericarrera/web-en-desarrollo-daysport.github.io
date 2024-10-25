@@ -598,7 +598,6 @@
     border: 1px solid #ddd;
     padding: 20px;
     width: 230px;
-    height: 400px;
   }
   
   .filter-section {
@@ -742,7 +741,7 @@
   }
 
   .label-1 {
-    font-size: 15px;
+    font-size: 20px;
     font-family: "Dosis", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
