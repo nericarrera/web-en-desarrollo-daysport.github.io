@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
-    id: 5,
+    id: 6,
     name: "Campera Puffer Nike con piel",
     price: 65000,
     gender: "hombre",
@@ -378,7 +378,19 @@ document.addEventListener('DOMContentLoaded', function() {
     category: "camperas",
     status: "Nuevo",
     sizes: ["L"]
-}
+  },
+  {
+    id: 7,
+    name: "Blusa Modal Strass",
+    price: 8000,
+    gender: "mujer",
+    images: ["img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 1.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 2.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 3.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 4.jpeg"],
+    colors: ["Negro", "Azul Marino"],
+    category: "Remeras",
+    status: "Nuevo",
+    sizes: ["L", "XL"]
+  },
+
       
       // Añadir más productos aquí
   ];
