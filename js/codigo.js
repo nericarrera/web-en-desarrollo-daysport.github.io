@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const products = [
       {
           id: 1,
-          name: "Remera modal viscosa - cuello en V",
+          name: "Remera modal viscosa con cuello en V",
           price: 7500,
           gender: "mujer",
           category: "remeras",
@@ -348,11 +348,11 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       {
         id: 4,
-        name: "Remera Modal Soft",
-        price: 7500,
+        name: "Campera Rompeviento Puma Women",
+        price: 35000,
         gender: "mujer",
         images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-        colors: ["Celeste", "Negro"],
+        colors: ["Rosa", "Violeta"],
         category: "remeras",
         status: "Nuevo",
         sizes: ["S", "M", "L", "XL"]
