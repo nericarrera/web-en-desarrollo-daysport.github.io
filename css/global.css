@@ -1004,8 +1004,12 @@
 
   /*----------------BOTON CARGAR MAS-------------------*/
 
+  .products-grid-container {
+    text-align: center; /* Centra el botón en el contenedor */
+  }
+  
   .load-more-button {
-    display: block;
+    display: inline-block; /* Para que el botón respete la alineación central del contenedor */
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
