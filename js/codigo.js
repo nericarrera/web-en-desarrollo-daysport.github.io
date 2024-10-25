@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: "Campera Rompeviento Puma Women",
         price: 35000,
         gender: "mujer",
-        images: ["img/mujer/campera rompeviento/campera-rompeviento-puma 1.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 2.jpeg.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 3.jpeg"],
+        images: ["img/mujer/campera rompeviento/campera-rompeviento-puma 1.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 2.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 3.jpeg"],
         colors: ["Negro", "Violeta", "Verde Agua", "Rosa"],
         category: "remeras",
         status: "Nuevo",
