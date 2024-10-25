@@ -855,7 +855,7 @@
 
 /*---------------PRODUCTOS PARA EL FILTRO-------------*/
 .products-grid {
-    width: 75%;
+    width: 99%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
