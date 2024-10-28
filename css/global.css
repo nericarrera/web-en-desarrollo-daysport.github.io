@@ -1344,6 +1344,7 @@
     font-family: "Dosis", sans-serif;
   font-weight: 500;
   font-style: normal;
+  text-decoration-thickness: 5px;
 }
 
 .subtitulo-tarjeta1 a{
