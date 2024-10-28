@@ -1262,7 +1262,7 @@
 .conteiner-tarjetas {
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
+    width: 97%;
     height: auto;
     justify-content: center;
     margin:auto;
