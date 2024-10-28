@@ -1336,6 +1336,11 @@
   font-style: normal;
 }
 
+.subtitulo-tarjeta-hombre a{
+  display: flex;
+  text-align: left;
+}
+
 .contetarjeta img:hover{
   transform: scale(1.02);
    transition: all 380ms ease;
