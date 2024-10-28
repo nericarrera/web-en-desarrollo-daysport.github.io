@@ -1299,8 +1299,8 @@
 }
 
 .tarjetas video {
-  width: 100%;
-  height: 355px;
+  width: 110%;
+  height: 380px;
   object-fit: cover;
   text-decoration: none;
 }
