@@ -1298,6 +1298,12 @@
     border-radius: 5px;
 }
 
+.tarjeta video {
+  width: 100%;
+    height: 93%;
+    object-fit: cover;
+}
+
 .tarjeta img {
     width: 100%;
     height: 93%;
