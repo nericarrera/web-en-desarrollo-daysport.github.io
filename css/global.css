@@ -1338,6 +1338,7 @@
 .subtitulo-tarjeta-hombre a{
   display: flex;
   text-align: left;
+  text-decoration: none;
 }
 
 .contetarjeta img:hover{
