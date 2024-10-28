@@ -1291,8 +1291,8 @@
 .tarjetas {
     flex-wrap: wrap;
     justify-content: center;
-    width: 290px;
-    height: 345px;
+    width: 280px;
+    height: 380px;
     margin: 20px;
     padding: 10px;
     border-radius: 5px;
