@@ -1297,18 +1297,16 @@
     border-radius: 5px;
 }
 
-.tarjetas video, a {
+.tarjetas video {
   width: 100%;
-    height: 93%;
-    object-fit: cover;
-    text-decoration: none;
+  object-fit: cover;
+  text-decoration: none;
 }
 
-.tarjetas img {
-    width: 100%;
-    height: 93%;
-    border-radius: 15px;
+.tarjetas a{
+  text-decoration: none;
 }
+
 
 .tarjeta-conteiner-descripcion {
   width: auto;
