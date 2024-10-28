@@ -1351,14 +1351,13 @@
    transition: all 380ms ease;
 }
 
-
-
  /*---------------- MOTIVATE------------------ */
 
 .motivate {
     display: flex;
     width: 90%;
     height: 180px;
+    margin-top: 50px;
     text-align: center;
     align-items: center; 
     margin: auto;
