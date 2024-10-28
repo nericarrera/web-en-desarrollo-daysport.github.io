@@ -1316,8 +1316,8 @@
 }
 
 .tarjeta-conteiner-descripcion img {
-  width: 100%;
-  height: auto;
+  width: 118%;
+  height: 380px;
   object-fit: cover;
 }
 
