@@ -1315,7 +1315,7 @@
   height: auto;
 }
 
-.titulo-tarjeta-hombre {
+.titulo-tarjeta1 {
     font-size: 20px;
     text-align: center;
     text-decoration: none;
@@ -1326,11 +1326,11 @@
     width: auto;
 }
 
-.titulo-tarjeta-hombre a{
+.titulo-tarjeta1 a{
   text-decoration: none;
 }
 
-.subtitulo-tarjeta-hombre {
+.subtitulo-tarjeta1 {
     justify-content: left;
     color: #242424;
     font-size: 15px;
@@ -1339,16 +1339,13 @@
   font-style: normal;
 }
 
-.subtitulo-tarjeta-hombre a{
+.subtitulo-tarjeta1 a{
   display: flex;
   text-align: left;
   text-decoration: none;
 }
 
-.contetarjeta img:hover{
-  transform: scale(1.02);
-   transition: all 380ms ease;
-}
+
 
  /*---------------- MOTIVATE------------------ */
 
