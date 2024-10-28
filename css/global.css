@@ -1315,6 +1315,12 @@
   height: auto;
 }
 
+.tarjeta-conteiner-descripcion img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .titulo-tarjeta1 {
     font-size: 20px;
     text-decoration: none;
