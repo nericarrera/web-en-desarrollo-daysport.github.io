@@ -1311,9 +1311,9 @@
 }
 
 .tarjeta-conteiner-descripcion {
-  width: 280px;
+  width: auto;
   position: relative;
-  height: 150px;
+  height: auto;
 }
 
 .titulo-tarjeta-hombre {
