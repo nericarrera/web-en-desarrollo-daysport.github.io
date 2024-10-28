@@ -1312,7 +1312,7 @@
 
 .tarjeta-conteiner-descripcion {
   width: auto;
-  position: relative;
+  display: flex;
   height: auto;
 }
 
