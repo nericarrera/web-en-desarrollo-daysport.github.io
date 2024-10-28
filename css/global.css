@@ -1297,14 +1297,14 @@
     border-radius: 5px;
 }
 
-.tarjeta video, a {
+.tarjetas video, a {
   width: 100%;
     height: 93%;
     object-fit: cover;
     text-decoration: none;
 }
 
-.tarjeta img {
+.tarjetas img {
     width: 100%;
     height: 93%;
     border-radius: 15px;
