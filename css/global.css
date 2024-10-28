@@ -1290,7 +1290,6 @@
 
 .tarjeta {
     flex-wrap: wrap;
-    overflow: hidden;
     justify-content: center;
     width: 290px;
     height: 465px;
