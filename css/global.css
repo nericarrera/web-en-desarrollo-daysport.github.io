@@ -1258,7 +1258,7 @@
 }
 
 
-/* TARJETA DE 3 PARTES */
+/*--------------- TARJETA DE 3 PARTES--------------- */
 .conteiner-tarjetas {
     display: flex;
     flex-wrap: wrap;
@@ -1270,13 +1270,13 @@
     margin-bottom: 30px;
 }
 
-.titulo-conteiner-tarjeta {
+.conteiner-tarjeta-titulo {
     width: 95%;
     height: 100px;
     margin:auto;
 }
 
-.contetarjeta__p {
+.titulo-conteiner-tarjeta {
     display: inline-block;
     font-size: 45px;
     font-weight: 300;
@@ -1308,6 +1308,12 @@
     width: 100%;
     height: 93%;
     border-radius: 15px;
+}
+
+.tarjeta-conteiner-descripcion {
+  width: auto;
+  position: relative;
+  height: auto;
 }
 
 .titulo-tarjeta-hombre {
