@@ -1326,6 +1326,10 @@
     width: auto;
 }
 
+.titulo-tarjeta-hombre a{
+  text-decoration: none;
+}
+
 .subtitulo-tarjeta-hombre {
     justify-content: left;
     color: #242424;
