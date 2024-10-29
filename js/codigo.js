@@ -7,8 +7,22 @@ const slides = document.querySelectorAll('.banner-slide');
 function changeSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Ajuste de tiempo según el tipo de contenido
+    const currentSlide = slides[currentIndex];
+    const isVideo = currentSlide.querySelector('video');
+
+    let delay = 5000; // Duración predeterminada para imágenes (5 segundos)
+
+    if (isVideo) {
+        delay = isVideo.duration * 1000 || 10000; // Duración del video o 10 seg si no se carga
+    }
+
+    setTimeout(changeSlide, delay);
 }
-setInterval(changeSlide, 25000);  // Cambia cada 25 segundos
+
+// Inicia el carrusel con el tiempo adecuado
+setTimeout(changeSlide, 5000);  // Primero se espera 5 segundos
 
 /*----------------------------*/
 

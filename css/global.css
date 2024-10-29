@@ -408,41 +408,64 @@
 
 /*----------------------BANNER PORTADA------------------*/
 .banner {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.banner-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.banner-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.banner-slide img,
+.banner-slide video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-content {
+  .banner {
     position: relative;
-    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
 }
 
 .banner-track {
     display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .banner-slide {
     min-width: 100%;
-    height: 100%;
+    box-sizing: border-box;
 }
 
-.banner-slide img {
+.banner-slide img,
+.banner-slide video {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-/* Contenido del banner */
 .banner-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #ffffff;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    color: white;
 }
+}
+
+/* Contenido del banner */
+
 
 .banner h1 {
     font-size: 48px;
