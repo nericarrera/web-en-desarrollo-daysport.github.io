@@ -5,31 +5,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.banner-slide');
   let currentIndex = 0;
 
-  function changeSlide() {
-      const currentSlide = slides[currentIndex];
-      const video = currentSlide.querySelector('video');
-      
-      let duration;
-
-      // Detectar la duración del video, o usar 5 segundos como tiempo por defecto si falla
-      if (video && video.readyState >= 1) {
-          duration = video.duration * 1000; // Convertimos la duración a milisegundos
-      } else {
-          duration = 5000; // Tiempo por defecto (5 segundos)
-      }
-
-      // Cambiar al siguiente slide después de la duración
+  function playNextSlide() {
+      // Cambiar al siguiente slide
       currentIndex = (currentIndex + 1) % slides.length;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      setTimeout(changeSlide, duration); // Llamar recursivamente después del tiempo establecido
+      const currentSlide = slides[currentIndex];
+      const video = currentSlide.querySelector('video');
+
+      // Si hay un video en el slide actual, esperar a que termine
+      if (video) {
+          video.currentTime = 0; // Asegurar que el video comience desde el inicio
+          video.play();
+          video.addEventListener('ended', playNextSlide, { once: true });
+      } else {
+          // Si no es un video, cambiar al siguiente slide después de 5 segundos
+          setTimeout(playNextSlide, 5000);
+      }
   }
 
-  // Iniciar el carrusel después de cargar los metadatos del primer video
-  const firstVideo = slides[0].querySelector('video');
-  firstVideo.addEventListener('loadedmetadata', () => {
-      setTimeout(changeSlide, firstVideo.duration * 1000 || 5000); // Usar la duración del primer video o 5s
-  });
+  // Iniciar la primera reproducción
+  const firstSlide = slides[0];
+  const firstVideo = firstSlide.querySelector('video');
+
+  if (firstVideo) {
+      firstVideo.play();
+      firstVideo.addEventListener('ended', playNextSlide, { once: true });
+  } else {
+      setTimeout(playNextSlide, 5000); // Si no es video, usar 5 segundos por defecto
+  }
 });
 
 /*----------------------------*/
