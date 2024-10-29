@@ -15,7 +15,7 @@ function changeSlide() {
     let delay = 5000; // Duración predeterminada para imágenes (5 segundos)
 
     if (isVideo) {
-        delay = isVideo.duration * 1000 || 10000; // Duración del video o 10 seg si no se carga
+        delay = isVideo.duration * 1000 || 180000; // Duración del video o 10 seg si no se carga
     }
 
     setTimeout(changeSlide, delay);
