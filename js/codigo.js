@@ -22,7 +22,7 @@ function changeSlide() {
 }
 
 // Inicia el carrusel con el tiempo adecuado
-setTimeout(changeSlide, 5000);  // Primero se espera 5 segundos
+setTimeout(changeSlide, 8000);  // Primero se espera 5 segundos
 
 /*----------------------------*/
 
