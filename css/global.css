@@ -1225,7 +1225,7 @@
 /*----------- BANNER DESCUENTO------------ */
 .conteiner-descuento{
     width: 97%;
-    height: 230px;
+    height: auto;
     display: flex; 
     justify-content: space-between; 
     background: #33042b;
@@ -1236,7 +1236,7 @@
 
 .conteiner-descuento-descuento{
     width: 355px;
-    height: auto;
+    height: 405;
     display: flex;
     justify-content: center;
     border-radius: 15px;
