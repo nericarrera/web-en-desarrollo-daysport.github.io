@@ -1354,6 +1354,14 @@
   text-decoration: none;
 }
 
+.btn-tarjeta-elegir-ir {
+  background: #000000;
+  font-size: 15px;
+  font-family: 'Dosis';
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 
 
  /*---------------- MOTIVATE------------------ */
