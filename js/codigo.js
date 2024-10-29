@@ -1,28 +1,36 @@
 /*--------BANNER--------*/
 
-let currentIndex = 0;
-const track = document.querySelector('.banner-track');
-const slides = document.querySelectorAll('.banner-slide');
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.banner-track');
+  const slides = document.querySelectorAll('.banner-slide');
+  let currentIndex = 0;
 
-function changeSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  function changeSlide() {
+      const currentSlide = slides[currentIndex];
+      const video = currentSlide.querySelector('video');
+      
+      let duration;
 
-    // Ajuste de tiempo según el tipo de contenido
-    const currentSlide = slides[currentIndex];
-    const isVideo = currentSlide.querySelector('video');
+      // Detectar la duración del video, o usar 5 segundos como tiempo por defecto si falla
+      if (video && video.readyState >= 1) {
+          duration = video.duration * 1000; // Convertimos la duración a milisegundos
+      } else {
+          duration = 5000; // Tiempo por defecto (5 segundos)
+      }
 
-    let delay = 5000; // Duración predeterminada para imágenes (5 segundos)
+      // Cambiar al siguiente slide después de la duración
+      currentIndex = (currentIndex + 1) % slides.length;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    if (isVideo) {
-        delay = isVideo.duration * 1000 || 180000; // Duración del video o 10 seg si no se carga
-    }
+      setTimeout(changeSlide, duration); // Llamar recursivamente después del tiempo establecido
+  }
 
-    setTimeout(changeSlide, delay);
-}
-
-// Inicia el carrusel con el tiempo adecuado
-setTimeout(changeSlide, 8000);  // Primero se espera 5 segundos
+  // Iniciar el carrusel después de cargar los metadatos del primer video
+  const firstVideo = slides[0].querySelector('video');
+  firstVideo.addEventListener('loadedmetadata', () => {
+      setTimeout(changeSlide, firstVideo.duration * 1000 || 5000); // Usar la duración del primer video o 5s
+  });
+});
 
 /*----------------------------*/
 
