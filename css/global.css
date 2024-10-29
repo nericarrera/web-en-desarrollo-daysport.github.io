@@ -408,7 +408,6 @@
 
 /*----------------------BANNER PORTADA------------------*/
 .banner {
-  display: flex;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -432,36 +431,12 @@
 }
 
 .banner-content {
-  .banner {
-    overflow: hidden;
-    width: 100%;
-}
-
-.banner-track {
-    display: flex;
-    transition: transform 8s ease;
-}
-
-.banner-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.banner-slide img,
-.banner-slide video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
 /* Contenido del banner */
