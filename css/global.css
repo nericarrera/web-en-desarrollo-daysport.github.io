@@ -1299,7 +1299,7 @@
 }
 
 .tarjetas video {
-  width: 118%;
+  width: 100%;
   height: 380px;
   object-fit: cover;
   text-decoration: none;
@@ -1316,7 +1316,7 @@
 }
 
 .tarjeta-conteiner-descripcion img {
-  width: 118%;
+  width: 100%;
   height: 380px;
   object-fit: cover;
 }
