@@ -414,6 +414,13 @@
     color: #360353;
     transition: all 890ms ease;
   }
+
+  .menu .menu-ul:hover .submenu5 {
+    display: flex;
+    background: #ffffff;
+    color: #360353;
+    transition: all 890ms ease;
+  }
   
   /* Estilo para las imágenes de los iconos */
   .submenu-item img {
