@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Accesorios Deportivos y Urbanos | Daysport</title>
+  <meta name="keywords" content="accesorios deportivos, mochilas, gorras, guantes, accesorios deportivos, ropa urbana, daysport">
+  <meta name="description" content="Encuentra accesorios deportivos y urbanos en Daysport. Mochilas, gorras, guantes y más para complementar tu estilo.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="icon" href="img/iconos/Copia de Negro y Azul Rectángulo Abogado Logo (1).png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Questrial&family=AdihausDIN&family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/estilo-productos.css">
+  <link rel="stylesheet" href="css/estilo-accesorios.css"> <!-- CSS específico para la sección Accesorios -->
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inicio-env">
+      <p>ENVIOS A TODO EL PAIS !</p>
+    </div>
+  </header>
+
+  <!-- Navegador -->
+  <nav class="nav">
+    <div class="logo">
+      <a class="a" href="index.html"><img class="logo1" src="img/logo/Copia de daysport (2).png"></a>
+    </div> 
+    <div class="menu">
+      <ul class="menu-ul">
+        <li class="menu-li"><a class="menu-li-a" href="mujer.html" data-filter="mujer">MUJER</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="hombre.html" data-filter="hombre">HOMBRE</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="ninos.html" data-filter="ninos">NIÑ@S</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="accesorios.html" data-filter="accesorios">ACCESORIOS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner específico para Accesorios -->
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Completa tu Look con Accesorios</h1>
+      <p>Mochilas, gorras, guantes y mucho más para tu día a día.</p>
+      <a href="#products" class="banner-button">Explorar Accesorios</a>
+    </div>
+  </div>
+
+  <!-- Contenedor de filtros -->
+  <div class="container">
+    <aside class="filters">
+      <p class="filter-titulo">FILTRAR TU BÚSQUEDA POR:</p>
+
+      <button id="clear-filters">Limpiar Filtros</button>
+
+      <!-- Filtros específicos para Accesorios -->
+      <div class="filter-section">
+        <p class="filter-titulo-section toggle-header" data-target="indumentaria-options">Tipo de Accesorio<span class="arrow">▼</span></p>
+        <div id="indumentaria-options" class="filter-options toggle-content">
+          <div><input type="checkbox" id="mochilas" name="category" value="mochilas"><label for="mochilas">Mochilas</label></div>
+          <div><input type="checkbox" id="gorras" name="category" value="gorras"><label for="gorras">Gorras</label></div>
+          <div><input type="checkbox" id="guantes" name="category" value="guantes"><label for="guantes">Guantes</label></div>
+          <div><input type="checkbox" id="riñoneras" name="category" value="riñoneras"><label for="riñoneras">Riñoneras</label></div>
+          <div><input type="checkbox" id="medias" name="category" value="medias"><label for="medias">Medias</label></div>
+        </div>
+      </div>
+
+      <!-- Colores -->
+      <div class="filter-section">
+        <p class="filter-titulo-section toggle-header" data-target="color-options">Colores<span class="arrow">▼</span></p>
+        <div id="color-options" class="filter-options toggle-content">
+          <div><input type="checkbox" id="color-negro" name="color" value="negro"><label for="color-negro">Negro</label></div>
+          <div><input type="checkbox" id="color-blanco" name="color" value="blanco"><label for="color-blanco">Blanco</label></div>
+          <div><input type="checkbox" id="color-azul" name="color" value="azul"><label for="color-azul">Azul</label></div>
+          <div><input type="checkbox" id="color-rojo" name="color" value="rojo"><label for="color-rojo">Rojo</label></div>
+        </div>
+      </div>
+
+      <!-- Precio -->
+      <div class="filter-section">
+        <p class="filter-titulo-section">Precio</p>
+        <div class="price-display">
+          <span id="price-display-min">$500</span>
+          <span id="price-display-max">$50.000</span>
+        </div>
+        <div class="price-range-container">
+          <input type="range" id="min-price-range" min="500" max="50000" step="500" value="500">
+          <input type="range" id="max-price-range" min="500" max="50000" step="500" value="50000">
+        </div>
+      </div>
+    </aside>
+
+    <!-- Productos de la sección Accesorios -->
+    <section id="products" class="products-grid">
+      <article class="product-card">
+        <img src="img/accesorios/mochila-deportiva.jpg" alt="Mochila Deportiva">
+        <h5>Mochila Deportiva</h5>
+        <p>$10.000</p>
+        <button class="btn-agregar">Agregar</button>
+      </article>
+      <!-- Más productos específicos de Accesorios -->
+    </section>
+  </div>
+
+  <!-- Footer específico para Accesorios -->
+  <footer class="footer">
+    <div class="conteiner-footer">
+      <div class="conteiner-titulo-footer"><p>ACCESORIOS</p></div>
+      <div class="listafooter">
+        <a href="#">Mochilas</a>
+        <a href="#">Gorras</a>
+        <a href="#">Guantes</a>
+        <a href="#">Riñoneras</a>
+        <a href="#">Medias</a>
+      </div>
+    </div>
+    <!-- Más secciones del footer -->
+  </footer>
+
+  <script src="js/codigo.js"></script>
+</body>
+</html>
