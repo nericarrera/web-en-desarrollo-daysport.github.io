@@ -1,6 +1,39 @@
 /*--------BANNER--------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.banner-track');
+  const slides = document.querySelectorAll('.banner-slide');
+  let currentIndex = 0;
 
+  function playNextSlide() {
+      // Cambiar al siguiente slide
+      currentIndex = (currentIndex + 1) % slides.length;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+      const currentSlide = slides[currentIndex];
+      const video = currentSlide.querySelector('video');
+
+      // Si hay un video en el slide actual, esperar a que termine
+      if (video) {
+          video.currentTime = 0; // Asegurar que el video comience desde el inicio
+          video.play();
+          video.addEventListener('ended', playNextSlide, { once: true });
+      } else {
+          // Si no es un video, cambiar al siguiente slide después de 5 segundos
+          setTimeout(playNextSlide, 5000);
+      }
+  }
+
+  // Iniciar la primera reproducción
+  const firstSlide = slides[0];
+  const firstVideo = firstSlide.querySelector('video');
+
+  if (firstVideo) {
+      firstVideo.play();
+      firstVideo.addEventListener('ended', playNextSlide, { once: true });
+  } else {
+      setTimeout(playNextSlide, 5000); // Si no es video, usar 5 segundos por defecto
+  }
+});
 
 /*----------------------------*/
 
