@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ropa Deportiva y Urbana para Hombre | Daysport</title>
+  <meta name="keywords" content="ropa para hombre, ropa deportiva hombre, moda urbana hombre, buzos hombre, camperas hombre, pantalones hombre, remeras deportivas, daysport">
+  <meta name="description" content="Explora la mejor ropa deportiva y urbana para hombre en Daysport. Encuentra buzos, camperas, pantalones, remeras y más para cada estilo y necesidad.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="icon" href="img/iconos/Copia de Negro y Azul Rectángulo Abogado Logo (1).png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Questrial&family=AdihausDIN&family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="css/global.css"> 
+  <link rel="stylesheet" href="estilo-hombre.css">
+  <link rel="stylesheet" href="css/estilo-productos.css">
+
+</head>   
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inicio-env">
+      <p>ENVIOS A TODO EL PAIS !</p>
+    </div>
+  </header>
+
+  <!-- Navegador -->
+  <nav class="nav">
+    <div class="logo">
+      <a class="a" href="index.html"><img class="logo1" src="img/logo/Copia de daysport (2).png"></a>
+    </div> 
+    <div class="menu">
+      <ul class="menu-ul">
+        <li class="menu-li"><a class="menu-li-a" href="mujer.html">MUJER</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="hombre.html" data-filter="hombre">HOMBRE</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="ninos.html">NIÑ@S</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="bravas.html">BRAVAS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner específico para Hombre -->
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Encuentra tu Estilo Deportivo</h1>
+      <p>Ropa y accesorios para hombre, hechos para durar y destacar.</p>
+      <a href="#products" class="banner-button">Explorar Colección</a>
+    </div>
+  </div>
+
+  <!-- Contenedor de filtros -->
+  <div class="container">
+    <aside class="filters">
+      <p class="filter-titulo">FILTRAR TU BÚSQUEDA POR:</p>
+
+      <button id="clear-filters">Limpiar Filtros</button>
+      
+      <!-- Filtros específicos para Hombre -->
+      <div class="filter-section">
+        <p class="filter-titulo-section toggle-header" data-target="indumentaria-options">Indumentaria<span class="arrow">▼</span></p>
+        <div id="indumentaria-options" class="filter-options toggle-content">
+          <div><input type="checkbox" id="buzos" name="category" value="buzos"><label for="buzos">Buzos</label></div>
+          <div><input type="checkbox" id="camperas" name="category" value="camperas"><label for="camperas">Camperas</label></div>
+          <div><input type="checkbox" id="conjuntos" name="category" value="conjuntos"><label for="conjuntos">Conjuntos</label></div>
+          <div><input type="checkbox" id="pantalones" name="category" value="pantalones"><label for="pantalones">Pantalones</label></div>
+          <div><input type="checkbox" id="remeras" name="category" value="remeras"><label for="remeras">Remeras</label></div>
+          <div><input type="checkbox" id="shorts" name="category" value="shorts"><label for="shorts">Shorts</label></div>
+        </div>
+      </div>
+
+      <!-- Talles -->
+      <div class="filter-section">
+        <p class="filter-titulo-section toggle-header" data-target="talles-options">Talles <span class="arrow">▼</span></p>
+        <div id="talles-options" class="filter-options toggle-content">
+          <div><input type="checkbox" id="S" name="size" value="S"><label for="S">S</label></div>
+          <div><input type="checkbox" id="M" name="size" value="M"><label for="M">M</label></div>
+          <div><input type="checkbox" id="L" name="size" value="L"><label for="L">L</label></div>
+          <div><input type="checkbox" id="XL" name="size" value="XL"><label for="XL">XL</label></div>
+          <div><input type="checkbox" id="XXL" name="size" value="XXL"><label for="XXL">XXL</label></div>
+        </div>
+      </div>
+
+      <!-- Colores -->
+      <div class="filter-section">
+        <p class="filter-titulo-section toggle-header" data-target="color-options">Colores<span class="arrow">▼</span></p>
+        <div id="color-options" class="filter-options toggle-content">
+          <div><input type="checkbox" id="color-negro" name="color" value="negro"><label for="color-negro">Negro</label></div>
+          <div><input type="checkbox" id="color-blanco" name="color" value="blanco"><label for="color-blanco">Blanco</label></div>
+          <div><input type="checkbox" id="color-rojo" name="color" value="rojo"><label for="color-rojo">Rojo</label></div>
+          <!-- Añadir más colores según sea necesario -->
+        </div>
+      </div>
+
+      <!-- Precio -->
+      <div class="filter-section">
+        <p class="filter-titulo-section">Precio</p>
+        <div class="price-display">
+          <span id="price-display-min">$1.000</span>
+          <span id="price-display-max">$250.000</span>
+        </div>
+        <div class="price-range-container">
+          <input type="range" id="min-price-range" min="1000" max="250000" step="1000" value="1000">
+          <input type="range" id="max-price-range" min="1000" max="250000" step="1000" value="250000">
+        </div>
+      </div>
+    </aside>
+
+    <!-- Productos de la sección Hombre -->
+    <section id="products" class="products-grid">
+      <article class="product-card">
+        <img src="img/hombre/campera.jpg" alt="Campera Hombre">
+        <h5>Campera Puffer Invierno Hombre</h5>
+        <p>$60.000</p>
+        <button class="btn-agregar">Agregar</button>
+      </article>
+      <!-- Añadir más productos específicos de Hombre -->
+    </section>
+  </div>
+
+  <footer class="footer">
+    <!-- Footer con enlaces de la sección Hombre -->
+    <div class="conteiner-footer">
+      <div class="conteiner-titulo-footer"><p>HOMBRE</p></div>
+      <div class="listafooter">
+        <a href="#">Pantalones</a>
+        <a href="#">Remeras</a>
+        <a href="#">Buzos</a>
+        <a href="#">Camperas</a>
+        <a href="#">Short</a>
+        <a href="#">Calzas</a>
+      </div>
+    </div>
+    <!-- Más secciones del footer -->
+  </footer>
+
+  <script src="js/codigo.js"></script>
+</body>
+</html>
