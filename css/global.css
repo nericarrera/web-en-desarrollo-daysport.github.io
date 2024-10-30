@@ -554,6 +554,8 @@
 }
 
 .compra-tu-look-item {
+  width: 380px;
+  height: 300px;
   position: relative;
   flex: 1;
   overflow: hidden;
