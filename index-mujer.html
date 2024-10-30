@@ -34,27 +34,102 @@
 
 <body>
 
-  <!-- Header -->
+  <!------------------------------- header -------------------------------------->
+
   <header class="header">
     <div class="header__inicio-env">
       <p>ENVIOS A TODO EL PAIS !</p>
     </div>
   </header>
 
-  <!-- Navegador -->
+  <!--------------------------------- navegador ---------------------------------->
+  
   <nav class="nav">
     <div class="logo">
       <a class="a" href="index.html"><img class="logo1" src="img/logo/Copia de daysport (2).png"></a>
     </div> 
     <div class="menu">
       <ul class="menu-ul">
-        <li class="menu-li"><a class="menu-li-a" href="index-mujer.html" data-filter="mujer">MUJER</a></li>
-        <li class="menu-li"><a class="menu-li-a" href="hombre.html" data-filter="hombre">HOMBRE</a></li>
-        <li class="menu-li"><a class="menu-li-a" href="ninos.html" data-filter="ninos">NIÑ@S</a></li>
-        <li class="menu-li"><a class="menu-li-a" href="bravas.html" data-filter="bravas">BRAVAS</a></li>
+        <li class="menu-li"><a class="menu-li-a" href="index-mujer.html" data-filter="mujer">MUJER</a>
+          <ul class="submenu1">
+            <li class="submenu-item" alt="Buzos"><a href="index-mujer.html" data-filter="buzos">Buzos</a></li>
+            <li class="submenu-item" alt="Camperas"><a href="index-mujer.html" data-filter="camperas">Camperas</a></li>
+            <li class="submenu-item" alt="Calzas"><a href="index-mujer.html" data-filter="calzas">Calzas</a></li>
+            <li class="submenu-item" alt="Conjuntos"><a href="index-mujer.html" data-filter="conjuntos">Conjuntos</a></li>
+            <li class="submenu-item" alt="Pantalones"><a href="index-mujer.html" data-filter="pantalones">Pantalones</a></li>
+            <li class="submenu-item" alt="Remeras"><a href="index-mujer.html" data-filter="remeras">Remeras</a></li>
+            <li class="submenu-item" alt="Shorts"><a href="index-mujer.html" data-filter="shorts">Shorts</a></li>
+          </ul>
+        </li>
+     </ul>
+       <ul class="menu-ul">
+        <li class="menu-li"><a class="menu-li-a" href="#" data-filter="hombre">HOMBRE</a>
+          <ul class="submenu2">
+            <li class="submenu-item" alt="Buzos"><a href="#" data-filter="buzos">Buzos</a></li>
+            <li class="submenu-item" alt="Camperas"><a href="#" data-filter="camperas">Camperas</a></li>
+            <li class="submenu-item" alt="Conjuntos"><a href="#" data-filter="conjuntos">Conjuntos</a></li>
+            <li class="submenu-item" alt="Pantalones"><a href="#" data-filter="pantalones">Pantalones</a></li>
+            <li class="submenu-item" alt="Remeras"><a href="#" data-filter="remeras">Remeras</a></li>
+            <li class="submenu-item" alt="Shorts"><a href="#" data-filter="shorts">Shorts</a></li>                                                     
+          </ul>
+        </li>
+     </ul>
+      <ul class="menu-ul">
+        <li class="menu-li"><a class="menu-li-a" href="ninas.html" data-filter="niñ@s">NIÑ@S</a>
+          <ul class="submenu3">
+            <li class="submenu-item" alt="Pantalones"><a href="#" data-filter="pantalones">Pantalones</a></li>
+            <li class="submenu-item" alt="Calzas"><a href="#" data-filter="calzas">Calzas</a></li>
+            <li class="submenu-item" alt="Shorts"><a href="#" data-filter="shorts">Shorts</a></li>
+            <li class="submenu-item" alt="Remeras"><a href="#" data-filter="remeras">Remeras</a></li>
+            <li class="submenu-item" alt="Buzos"><a href="#" data-filter="buzos">Buzos</a></li>
+            <li class="submenu-item" alt="Camperas"><a href="#" data-filter="camperas">Camperas</a></li>
+            <li class="submenu-item" alt="Conjuntos"><a href="#" data-filter="conjuntos">Conjuntos</a></li>
+          </ul>
+        </li>
       </ul>
+       <ul class="menu-ul">
+        <li class="menu-li"><a class="menu-li-a" href="#" data-filter="bravas">BRAVAS</a></li>
+          <ul class="submenu4">
+            <li class="submenu-item" alt="jeans"><a href="#" data-filter="jeans">Jeans</a></li>
+       </ul>
     </div>
+    
+    <!--------------------------- CARRITO / USUARIO / BUSCADOR-------------------- -->
+       <div class="conteiner-buscador-carrito">
+        <div class="cart-icon-container">
+           <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
+           <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
+        </div>
+        <div class="user-icon-container">
+         <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
+       </div>
+
+        <div class="buscador">
+         <input type="text" id="search" placeholder="Buscar"><a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
+        </div>
+     </div>
+     </div>
   </nav>
+
+  <!-----------------------------------CARRITO------------------------------------>
+
+  <div id="cart-dropdown" class="cart-dropdown-hidden">
+    <p class="titulo-carrito">Carrito de compras</p>
+     <ul id="cart-items-list">
+     <!-- Aquí se mostrarán los productos añadidos -->
+     </ul>
+     <div class="cart-summary">
+      <p>Total: <span id="cart-total">$0</span></p>
+    <button id="checkout-btn">Finalizar compra</button>
+    <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
+   </div>
+ </div>
+
+<div class="sub-banner0">
+  <img src="img/banner/sub-banner-gocuotas0.png" alt="sub-banner-campaña-en-cuotas">
+</div>
+
+<!------------------------------------------------------------------------------------>
 
   <!-- Banner específico para Mujeres -->
   <div class="banner">
