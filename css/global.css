@@ -43,6 +43,7 @@
 }
 
 /*-------- NAV--- * ---LOGO-- *--- BUSCADOR --*-- IMPUT---  */
+
 .logo {
     display: flex;
     width: 130px;
@@ -147,9 +148,7 @@
   background-color: #f3ff05;
   transition: all 500ms ease;
   color: #000000;
-  
 }
-
 
 .cart-dropdown {
     position: absolute;
@@ -371,14 +370,12 @@
     transition: all 430ms ease;
     transform: scale(1.2);
     cursor: pointer;
-
   }
 
   .submenu-item a{
     font-family: 'Oswald', sans-serif;
     color: #000;
     text-decoration: none;
-
   }
 
   .submenu-item a:hover{
@@ -438,7 +435,6 @@
   width: 100%;
 }
 
-
 /*----------------------BANNER PORTADA------------------*/
 .banner {
   position: relative;
@@ -472,8 +468,7 @@
   color: white;
 }
 
-/* Contenido del banner */
-
+/*---------------- Contenido del banner------------------- */
 
 .banner h1 {
     font-size: 48px;
@@ -527,6 +522,7 @@
 }
 
 /*------------ TITULO - MAKE A DIFFERENCE---------------- */
+
 .article__conteiner {
     display: flex;
     position: relative;
@@ -547,76 +543,6 @@
     -webkit-text-stroke: 2px #000;
 }
 
-/*----------- SERVICIOS---------- */
-.conteiner-servicios{
-    display: flex;
-    width: 100%;
-    margin: auto;
-    margin-top: 15px;
-	  text-align: center;
-    justify-content: space-between; 
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    justify-content: center;
-  }
-
-.conteiner-row{
-    display: flex;
-    width: 97%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
-}
-
-.card-imagenes{
-    height: 205px;
-    width: 177px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px;
-    justify-content: center;
-    box-shadow: 1px 1px 20px 1px #674275;
-    background-image: linear-gradient(#ffffff, #a30dfa);
-}
-
-.card-imagenes img{
-    width: 75px;
-    height: 75px;
-    padding: 5px;
-    margin-bottom: -35px;
-}
-
-
-.card-imagenes:hover{
-    background: #c053ff;
-   transition: all 680ms ease;
-   
-}
-
-.card-imagenes p:hover{
-    background: #fdfdfd;
-}
-
-
-.card-imagenes h2{
-    display: block;
-    width: 180px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
-}
-
-.card-imagenes p{
-    margin-top: -40px;
-    width: 210px;
-    height: 50px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 300;
-    font-family: "AdihausDIN",Helvetica,Arial,sans-serif;
-    color: #000000;
-}
 
 /*-----------------FILTROS---------------*/
 .container {
