@@ -81,3 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /*---------------------------------------------------------------------------- */
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+  
+    filterDropdownToggle.addEventListener('click', () => {
+      filterDropdown.classList.toggle('show');
+    });
+  });
