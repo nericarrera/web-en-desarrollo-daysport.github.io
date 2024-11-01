@@ -1,85 +1,38 @@
 
 /*-------------FILTRO MUJER----------------*/
-document.addEventListener('DOMContentLoaded', function() {
-    // Array de productos específicos para la sección Mujer
-    const productosMujer = [
-      {
-        id: 1,
-        name: "Remera modal viscosa con cuello en V",
-        price: 7500,
-        gender: "mujer",
-        category: "remeras",
-        images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg"],
-        colors: ["Rosa", "Gris", "Negro"],
-        status: "Nuevo",
-        sizes: ["S", "M", "L", "XL", "XXL"]
-      },
-      {
-        id: 2,
-        name: "Campera Rompeviento Puma",
-        price: 35000,
-        gender: "mujer",
-        category: "camperas",
-        images: ["img/mujer/campera-rompeviento/campera-rompeviento-puma.jpeg"],
-        colors: ["Negro", "Rosa"],
-        status: "",
-        sizes: ["S", "M", "L", "XL"]
-      },
-      // Puedes seguir añadiendo productos de la misma forma
-    ];
+document.addEventListener('DOMContentLoaded', () => {
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const products = document.querySelectorAll('.product-card');
   
-    // Seleccionar el contenedor de productos de mujer
-    const productsGridMujer = document.querySelector('.mujer-products-grid');
+    // Alternar la visibilidad del menú desplegable
+    filterDropdownToggle.addEventListener('click', () => {
+      filterDropdown.classList.toggle('show');
+    });
   
-    // Función para mostrar los productos en la cuadrícula
-    function displayProductsMujer(products) {
-      productsGridMujer.innerHTML = ''; // Limpiar productos existentes
+    // Filtrar productos al cambiar los filtros
+    filterDropdown.addEventListener('change', applyFilters);
+  
+    function applyFilters() {
+      const selectedColor = document.getElementById('color').value;
+      const selectedTalla = document.getElementById('talla').value;
   
       products.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.className = 'mujer-product-card';
-        productDiv.setAttribute('data-id', product.id);
-        productDiv.setAttribute('data-price', product.price);
-        productDiv.setAttribute('data-gender', product.gender);
-        productDiv.setAttribute('data-category', product.category);
-        productDiv.setAttribute('data-color', product.colors.join(','));
-        productDiv.setAttribute('data-size', product.sizes.join(','));
+        const productColor = product.getAttribute('data-color');
+        const productTalla = product.getAttribute('data-talla');
   
-        // Imagen principal
-        const mainImage = document.createElement('img');
-        mainImage.src = product.images[0];
-        mainImage.alt = product.name;
-        mainImage.className = 'mujer-product-image';
+        // Comprobamos si el producto coincide con los filtros seleccionados
+        const matchesColor = selectedColor === "" || productColor === selectedColor;
+        const matchesTalla = selectedTalla === "" || productTalla === selectedTalla;
   
-        // Redirige a la página de producto cuando se haga clic en la imagen principal
-        mainImage.addEventListener('click', function() {
-            window.location.href = `index-producto.html?id=${product.id}`;
-        });
-  
-        // Precio
-        const productPrice = document.createElement('p');
-        productPrice.className = 'mujer-product-price';
-        productPrice.textContent = `$${product.price.toLocaleString()}`;
-  
-        // Nombre del producto
-        const productName = document.createElement('p');
-        productName.className = 'mujer-product-name';
-        productName.textContent = product.name;
-  
-        // Añadir elementos al contenedor del producto
-        productDiv.appendChild(mainImage);
-        productDiv.appendChild(productPrice);
-        productDiv.appendChild(productName);
-  
-        // Añadir el producto a la cuadrícula
-        productsGridMujer.appendChild(productDiv);
+        if (matchesColor && matchesTalla) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
       });
     }
-  
-    // Mostrar todos los productos al cargar la página
-    displayProductsMujer(productosMujer);
   });
-
   /*---------------------------------------------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
