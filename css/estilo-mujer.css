@@ -403,6 +403,129 @@
     margin: 0 auto 10px;
   }
 
+  /*--------------------FILTRO MUJER----------------------*/
+  /* Contenedor del filtro */
+.mujer-filters-container {
+  width: 250px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.mujer-filters-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filter-section label {
+  display: block;
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.filter-section input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.mujer-filter-min-price,
+.mujer-filter-max-price {
+  width: 100px;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Contenedor de productos */
+.mujer-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.mujer-products-grid .product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.mujer-products-grid .product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .product-price {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.product-card .product-name {
+  font-size: 1.1em;
+  color: #555;
+  margin: 10px;
+}
+
+.product-card .product-category,
+.product-card .product-colors {
+  font-size: 0.9em;
+  color: #777;
+  margin: 0 10px 10px;
+}
+
+/* Estilo para los botones */
+.banner-button,
+.mujer-products-grid .load-more-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.banner-button:hover,
+.mujer-products-grid .load-more-button:hover {
+  background-color: #555;
+}
+
+/* Opcional: Estilos específicos para ajustar la visibilidad de la cuadrícula y el filtro en pantallas pequeñas */
+@media (max-width: 768px) {
+  .mujer-filters-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .mujer-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
 
 
 
