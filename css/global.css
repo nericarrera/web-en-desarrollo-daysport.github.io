@@ -556,11 +556,14 @@
 }
 
 .new-products-carousel h2 {
-  font-size: 16px;
-  margin-bottom: 1em;
-  font-family: 'Dosis' sans-serif;
-  letter-spacing: 0.5px;
-  font-weight: 600;
+  font-size: 22px;
+    margin-bottom: 3em;
+    font-family: 'Dosis';
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin: 20px;
+    border: 0px solid #000;
+    text-align: left;
 
 }
 
