@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = [
         {
             id: 1,
-            name: "Remera Modal Soft",
-            price: 7500,
-            talla: "XL",
-            color: "Celeste",
-            categoria: "remeras",
-            imageUrl: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg"],
+            name: "Campera Negra",
+            price: 15000,
+            talla: "M",
+            color: "negro",
+            categoria: "camperas",
+            imageUrl: "img/mujer/campera1.jpg",
             status: "nuevo"
         },
         {
@@ -71,6 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
             displayProducts(filter);
         });
     });
+
+    // Aplicar filtros adicionales (color y talla)
+    const applyFilters = () => {
+        const selectedColor = document.getElementById('color').value;
+        const selectedTalla = document.getElementById('talla').value;
+
+        document.querySelectorAll('.product-card').forEach(product => {
+            const productColor = product.getAttribute('data-color');
+            const productTalla = product.getAttribute('data-talla');
+
+            // Comprobar si el producto coincide con los filtros seleccionados
+            const matchesColor = selectedColor === "" || productColor === selectedColor;
+            const matchesTalla = selectedTalla === "" || productTalla === selectedTalla;
+
+            if (matchesColor && matchesTalla) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    };
+
+    document.getElementById('color').addEventListener('change', applyFilters);
+    document.getElementById('talla').addEventListener('change', applyFilters);
 });
   /*---------------------------------------------------------------------------- */
 
