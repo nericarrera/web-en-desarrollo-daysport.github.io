@@ -326,6 +326,94 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------------------- */
 
+/*--------------------PRODUCTOS NUEVOS DINAMICO-------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const products = [
+      {
+          id: 1,
+          name: "Remera modal viscosa con cuello en V",
+          price: 7500,
+          gender: "mujer",
+          category: "remeras",
+          images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg"],
+          colors: ["Rosa", "Gris", "Negro"],
+          status: "Nuevo",
+          sizes: ["S", "M", "L", "XL", "XXL"]
+      },
+      {
+          id: 2,
+          name: "Bermuda Cargo Nike",
+          price: 25000,
+          gender: "hombre",
+          category: "bermudas",
+          images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg"],
+          colors: ["Beige", "Tostado", "Negro"],
+          status: "",
+          sizes: ["M", "L", "XL"]
+      },
+      // Añadir más productos aquí
+  ];
+
+  const carouselTrack = document.querySelector('.carousel-track');
+  const newProducts = products.filter(product => product.status === "Nuevo");
+
+  function createProductCard(product) {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+      productDiv.setAttribute('data-id', product.id);
+
+      const productImage = document.createElement('img');
+      productImage.src = product.images[0];
+      productImage.alt = product.name;
+      productImage.className = 'product-image';
+
+      const productName = document.createElement('p');
+      productName.className = 'product-name';
+      productName.textContent = product.name;
+
+      const productPrice = document.createElement('p');
+      productPrice.className = 'product-price';
+      productPrice.textContent = `$${product.price.toLocaleString()}`;
+
+      productDiv.appendChild(productImage);
+      productDiv.appendChild(productName);
+      productDiv.appendChild(productPrice);
+
+      productImage.addEventListener('click', () => {
+          window.location.href = `index-producto.html?id=${product.id}`;
+      });
+
+      return productDiv;
+  }
+
+  newProducts.forEach(product => {
+      const productCard = createProductCard(product);
+      carouselTrack.appendChild(productCard);
+  });
+
+  // Carousel Navigation
+  let currentIndex = 0;
+
+  function updateCarousel() {
+      const cardWidth = carouselTrack.querySelector('.product-card').offsetWidth;
+      carouselTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  document.querySelector('.carousel-button.next').addEventListener('click', () => {
+      if (currentIndex < newProducts.length - 1) {
+          currentIndex++;
+          updateCarousel();
+      }
+  });
+
+  document.querySelector('.carousel-button.prev').addEventListener('click', () => {
+      if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+      }
+  });
+});
+
 
 /*--------------------AGREGAR PRODUCTOS AL FILTRO-----------------*/
 document.addEventListener('DOMContentLoaded', function() {
