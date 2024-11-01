@@ -7,30 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
   function changeSlide() {
       const currentSlide = slides[currentIndex];
       const video = currentSlide.querySelector('video');
-      
-      let duration;
 
-      // Detectar la duración del video, o usar 5 segundos como tiempo por defecto si falla
-      if (video && video.readyState >= 1) {
-          duration = video.duration * 1000; // Convertimos la duración a milisegundos
-      } else {
-          duration = 5000; // Tiempo por defecto (5 segundos)
-      }
-
-      // Cambiar al siguiente slide después de la duración
+      // Mover el track al siguiente video
       currentIndex = (currentIndex + 1) % slides.length;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      setTimeout(changeSlide, duration); // Llamar recursivamente después del tiempo establecido
+      // Escuchar el evento 'ended' del siguiente video para la transición
+      const nextSlide = slides[currentIndex];
+      const nextVideo = nextSlide.querySelector('video');
+      
+      // Reproducir el siguiente video y esperar hasta que termine para cambiar al siguiente
+      nextVideo.currentTime = 0;  // Reiniciar el video
+      nextVideo.play();
+      nextVideo.addEventListener('ended', changeSlide, { once: true });
   }
 
-  // Iniciar el carrusel después de cargar los metadatos del primer video
+  // Iniciar el carrusel con el primer video
   const firstVideo = slides[0].querySelector('video');
-  firstVideo.addEventListener('loadedmetadata', () => {
-      setTimeout(changeSlide, firstVideo.duration * 1000 || 5000); // Usar la duración del primer video o 5s
-  });
+  firstVideo.play();
+  firstVideo.addEventListener('ended', changeSlide, { once: true });
 });
-
 /*----------------------------*/
 
 /*------------CARRITO------------*/
