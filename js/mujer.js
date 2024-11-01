@@ -2,95 +2,82 @@
 /*-------------FILTRO MUJER----------------*/
 document.addEventListener('DOMContentLoaded', function() {
     // Array de productos específicos para la sección Mujer
-    const products = [
+    const productosMujer = [
       {
         id: 1,
-        name: "Calza Deportiva Mujer",
-        price: 7000,
-        category: "calzas",
-        images: ["img/mujer/calza1.jpg"],
-        colors: ["Negro", "Rosa"],
-        sizes: ["S", "M", "L"],
-        status: "Nuevo"
+        name: "Remera modal viscosa con cuello en V",
+        price: 7500,
+        gender: "mujer",
+        category: "remeras",
+        images: ["img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg"],
+        colors: ["Rosa", "Gris", "Negro"],
+        status: "Nuevo",
+        sizes: ["S", "M", "L", "XL", "XXL"]
       },
       {
         id: 2,
-        name: "Remera Deportiva Mujer",
-        price: 4500,
-        category: "remeras",
-        images: ["img/mujer/remera1.jpg"],
-        colors: ["Blanco", "Gris"],
-        sizes: ["M", "L", "XL"],
-        status: ""
+        name: "Campera Rompeviento Puma",
+        price: 35000,
+        gender: "mujer",
+        category: "camperas",
+        images: ["img/mujer/campera-rompeviento/campera-rompeviento-puma.jpeg"],
+        colors: ["Negro", "Rosa"],
+        status: "",
+        sizes: ["S", "M", "L", "XL"]
       },
-      // Añade más productos según sea necesario
+      // Puedes seguir añadiendo productos de la misma forma
     ];
   
-    // Elemento donde se mostrarán los productos
-    const productsGrid = document.querySelector('.products-grid');
+    // Seleccionar el contenedor de productos de mujer
+    const productsGridMujer = document.querySelector('.mujer-products-grid');
   
-    // Función para mostrar los productos
-    function displayProducts(productsToShow) {
-      productsGrid.innerHTML = ''; // Limpiar el grid antes de mostrar los productos
+    // Función para mostrar los productos en la cuadrícula
+    function displayProductsMujer(products) {
+      productsGridMujer.innerHTML = ''; // Limpiar productos existentes
   
-      productsToShow.forEach(product => {
+      products.forEach(product => {
         const productDiv = document.createElement('div');
-        productDiv.className = 'product-card';
+        productDiv.className = 'mujer-product-card';
         productDiv.setAttribute('data-id', product.id);
-        productDiv.setAttribute('data-category', product.category);
         productDiv.setAttribute('data-price', product.price);
+        productDiv.setAttribute('data-gender', product.gender);
+        productDiv.setAttribute('data-category', product.category);
         productDiv.setAttribute('data-color', product.colors.join(','));
         productDiv.setAttribute('data-size', product.sizes.join(','));
   
-        // Imagen principal del producto
+        // Imagen principal
         const mainImage = document.createElement('img');
         mainImage.src = product.images[0];
         mainImage.alt = product.name;
-        mainImage.className = 'product-image';
+        mainImage.className = 'mujer-product-image';
   
-        // Redirige a la página de producto cuando se hace clic en la imagen principal
+        // Redirige a la página de producto cuando se haga clic en la imagen principal
         mainImage.addEventListener('click', function() {
-          window.location.href = `index-producto.html?id=${product.id}`;
+            window.location.href = `index-producto.html?id=${product.id}`;
         });
+  
+        // Precio
+        const productPrice = document.createElement('p');
+        productPrice.className = 'mujer-product-price';
+        productPrice.textContent = `$${product.price.toLocaleString()}`;
   
         // Nombre del producto
         const productName = document.createElement('p');
-        productName.className = 'product-name';
+        productName.className = 'mujer-product-name';
         productName.textContent = product.name;
   
-        // Precio del producto
-        const productPrice = document.createElement('p');
-        productPrice.className = 'product-price';
-        productPrice.textContent = `$${product.price.toLocaleString()}`;
-  
-        // Añadir los elementos al contenedor del producto
+        // Añadir elementos al contenedor del producto
         productDiv.appendChild(mainImage);
-        productDiv.appendChild(productName);
         productDiv.appendChild(productPrice);
+        productDiv.appendChild(productName);
   
-        productsGrid.appendChild(productDiv);
+        // Añadir el producto a la cuadrícula
+        productsGridMujer.appendChild(productDiv);
       });
     }
   
-    // Mostrar los productos al cargar la página
-    displayProducts(products);
-  
-    // Función para aplicar filtros (por ahora solo filtra por categoría, se pueden añadir más)
-    function applyFilters() {
-      const selectedCategory = document.querySelector('input[name="category"]:checked')?.value;
-      let filteredProducts = products;
-  
-      if (selectedCategory) {
-        filteredProducts = filteredProducts.filter(product => product.category === selectedCategory);
-      }
-  
-      displayProducts(filteredProducts);
-    }
-  
-    // Escuchar cambios en los filtros y aplicar los filtros
-    document.querySelectorAll('input[name="category"]').forEach(input => {
-      input.addEventListener('change', applyFilters);
-    });
+    // Mostrar todos los productos al cargar la página
+    displayProductsMujer(productosMujer);
   });
 
   /*---------------------------------------------------------------------------- */
