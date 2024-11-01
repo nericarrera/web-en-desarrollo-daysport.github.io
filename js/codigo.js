@@ -342,14 +342,14 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       {
           id: 2,
-          name: "Bermuda Cargo Nike",
-          price: 25000,
-          gender: "hombre",
+          name: "Remera Modal Soft cuello Redondo",
+          price: 7500,
+          gender: "mujer",
           category: "bermudas",
-          images: ["img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg"],
-          colors: ["Beige", "Tostado", "Negro"],
+          images: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
+          colors: ["Celeste","Negro"],
           status: "",
-          sizes: ["M", "L", "XL"]
+          sizes: ["L", "XL"]
       },
       // Añadir más productos aquí
   ];
