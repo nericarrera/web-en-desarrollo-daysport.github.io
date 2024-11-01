@@ -489,6 +489,28 @@
 }
 
 
+/*---------------MENU DESPLEGABLE-------------*/
+/* Ajuste del botón y menú de filtros adicionales */
+.filter-dropdown-toggle {
+  cursor: pointer;
+}
+
+.filter-dropdown {
+  display: none; /* Oculto inicialmente */
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.filter-dropdown.show {
+  display: block; /* Se muestra al activar la clase 'show' */
+}
+
 
 
 
