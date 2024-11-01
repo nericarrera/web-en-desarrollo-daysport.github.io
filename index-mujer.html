@@ -152,7 +152,56 @@
 
   <!-----------------------FILTRO DE MUJER ------------------->
 
-
+  <div class="mujer-filters-container">
+    <h2>Filtrar por:</h2>
+  
+    <!-- Filtro de Categoría -->
+    <div class="filter-section">
+      <h3>Categoría</h3>
+      <label><input type="checkbox" class="mujer-filter-category" value="remeras"> Remeras</label>
+      <label><input type="checkbox" class="mujer-filter-category" value="pantalones"> Pantalones</label>
+      <label><input type="checkbox" class="mujer-filter-category" value="camperas"> Camperas</label>
+      <label><input type="checkbox" class="mujer-filter-category" value="conjuntos"> Conjuntos</label>
+      <!-- Agrega más opciones según tus necesidades -->
+    </div>
+  
+    <!-- Filtro de Color -->
+    <div class="filter-section">
+      <h3>Color</h3>
+      <label><input type="checkbox" class="mujer-filter-color" value="Negro"> Negro</label>
+      <label><input type="checkbox" class="mujer-filter-color" value="Blanco"> Blanco</label>
+      <label><input type="checkbox" class="mujer-filter-color" value="Rosa"> Rosa</label>
+      <label><input type="checkbox" class="mujer-filter-color" value="Azul"> Azul</label>
+      <!-- Agrega más opciones de color -->
+    </div>
+  
+    <!-- Filtro de Talle -->
+    <div class="filter-section">
+      <h3>Talle</h3>
+      <label><input type="checkbox" class="mujer-filter-size" value="S"> S</label>
+      <label><input type="checkbox" class="mujer-filter-size" value="M"> M</label>
+      <label><input type="checkbox" class="mujer-filter-size" value="L"> L</label>
+      <label><input type="checkbox" class="mujer-filter-size" value="XL"> XL</label>
+      <!-- Agrega más talles -->
+    </div>
+  
+    <!-- Filtro de Precio -->
+    <div class="filter-section">
+      <h3>Rango de Precio</h3>
+      <label for="min-price">Mínimo:</label>
+      <input type="number" class="mujer-filter-min-price" id="min-price" placeholder="Mínimo">
+      <label for="max-price">Máximo:</label>
+      <input type="number" class="mujer-filter-max-price" id="max-price" placeholder="Máximo">
+    </div>
+  </div>
+  
+  <!-- Grid de Productos para la Sección Mujer -->
+  <div class="mujer-products-grid">
+    <!-- Aquí se cargarán dinámicamente los productos filtrados con JavaScript -->
+  </div>
+  
+  <!-- Enlace al archivo JavaScript específico de la sección Mujer -->
+  <script src="js/mujer.js"></script>
 
   
 
