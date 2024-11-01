@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "XL",
             color: "Celeste",
             categoria: "remeras",
-            imageUrl: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
+            imageUrl: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg"],
             status: "nuevo"
         },
         {
