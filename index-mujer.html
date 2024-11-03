@@ -168,29 +168,43 @@
     <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
   </div>
   
-  
-  <div class="filter-dropdown">
-    <div class="filter-option">
-        <label for="color">Color:</label>
-        <select id="color">
-            <option value="">Todos</option>
-            <option value="negro">Negro</option>
-            <option value="blanco">Blanco</option>
-            <!-- Añadir más opciones de color -->
-        </select>
+ 
+<div class="filter-overlay hidden">
+  <div class="filter-sidebar">
+    <div class="filter-sidebar-header">
+      <h2>Filtrar y ordenar</h2>
+      <a href="#" id="clear-filters">Borrar Todo</a>
+      <span class="close-filter">&times;</span>
     </div>
-    <div class="filter-option">
-        <label for="talla">Talla:</label>
-        <select id="talla">
-            <option value="">Todas</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <!-- Añadir más opciones de talla -->
-        </select>
+    <div class="filter-section">
+      <h3 class="filter-title">Ordenar por</h3>
+      <ul class="filter-options">
+        <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
+        <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
+        <li><input type="radio" name="sort" value="new"> Novedades</li>
+        <li><input type="radio" name="sort" value="bestseller"> Los más vendidos</li>
+      </ul>
     </div>
-    <div class="filter-apply-button">
-        <button id="apply-filters">Aplicar Filtros</button>
+    <div class="filter-section">
+      <h3 class="filter-title">Color</h3>
+      <ul class="filter-options">
+        <li><input type="checkbox" name="color" value="negro"> Negro</li>
+        <li><input type="checkbox" name="color" value="blanco"> Blanco</li>
+        <!-- Agrega más colores aquí -->
+      </ul>
     </div>
+    <div class="filter-section">
+      <h3 class="filter-title">Talle</h3>
+      <ul class="filter-options">
+        <li><input type="checkbox" name="size" value="S"> S</li>
+        <li><input type="checkbox" name="size" value="M"> M</li>
+        <li><input type="checkbox" name="size" value="L"> L</li>
+        <!-- Agrega más talles aquí -->
+      </ul>
+    </div>
+    <!-- Agrega más secciones como "Descuentos", "Tipo de producto", etc. -->
+    <button id="apply-filters" class="apply-button">Aplicar</button>
+  </div>
 </div>
 
   

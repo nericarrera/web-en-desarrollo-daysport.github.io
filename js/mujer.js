@@ -86,19 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*---------------------MENU DESPLEGABLE FILTRAR Y ORDENAR---------- */
  
-/*--------------------------------------------------------------------------------- */
 
+
+
+/*-------------------------FILTRO DESPLEGABLE------------------ */
 document.addEventListener('DOMContentLoaded', () => {
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown');
-
-    // Verificación para asegurar que ambos elementos existen
-    if (filterDropdownToggle && filterDropdown) {
-        filterDropdownToggle.addEventListener('click', () => {
-            filterDropdown.classList.toggle('show');
-            console.log("Botón de filtro clickeado, clase 'show' alternada");
-        });
-    } else {
-        console.error("No se encontraron los elementos para el botón de filtro o el menú desplegable.");
-    }
-});
+    const filterOverlay = document.querySelector('.filter-overlay');
+    const closeFilterButton = document.querySelector('.close-filter');
+    const applyFiltersButton = document.getElementById('apply-filters');
+  
+    // Mostrar el menú lateral
+    filterDropdownToggle.addEventListener('click', () => {
+      filterOverlay.classList.add('show');
+    });
+  
+    // Cerrar el menú lateral
+    closeFilterButton.addEventListener('click', () => {
+      filterOverlay.classList.remove('show');
+    });
+  
+    // Aplicar filtros
+    applyFiltersButton.addEventListener('click', () => {
+      // Aquí iría la lógica para aplicar los filtros seleccionados
+      filterOverlay.classList.remove('show'); // Cerrar el menú después de aplicar
+    });
+  });
