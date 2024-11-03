@@ -449,6 +449,11 @@
   letter-spacing: 0.5px;
 }
 
+.mujer-filter-button:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
 .mujer-filter-button.active {
   font-weight: bold;
   border-bottom: 2px solid #000;
