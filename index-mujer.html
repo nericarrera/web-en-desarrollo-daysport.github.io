@@ -154,46 +154,45 @@
 
   <div class="horizontal-filter">
     <div class="filter-categories">
-      <button class="mujer-filter-button active" data-filter="all">Ver Todo</button>
+      <button class="mujer-filter-button active" data-filter="all">Ver Toda la Ropa</button>
       <button class="mujer-filter-button" data-filter="novedades">Novedades</button>
-      <button class="mujer-filter-button" data-filter="buzos">Buzos</button>
-      <button class="mujer-filter-button" data-filter="calzas">Calzas</button>
+      <button class="mujer-filter-button" data-filter="camisetas-futbol">Camisetas de Fútbol</button>
+      <button class="mujer-filter-button" data-filter="uniformes">Uniformes de Fútbol</button>
+      <button class="mujer-filter-button" data-filter="originals">Originals</button>
       <button class="mujer-filter-button" data-filter="camperas">Camperas</button>
-      <button class="mujer-filter-button" data-filter="jeans">Jeans</button>
-      <button class="mujer-filter-button" data-filter="remeras">Remeras</button>
-      <button class="mujer-filter-button" data-filter="ropa-urbana">Ropa Urbana</button>
-      <button class="mujer-filter-button" data-filter="shorts">Shorts</button>
+      <button class="mujer-filter-button" data-filter="buzos">Buzos</button>
+      <!-- Añadir más categorías si es necesario -->
+    </div>
+    <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
+  </div>
+  
+  <div class="filter-dropdown hidden">
+    <div class="filter-option">
+      <label for="color">Color:</label>
+      <select id="color">
+        <option value="">Todos</option>
+        <option value="negro">Negro</option>
+        <option value="blanco">Blanco</option>
+        <!-- Añadir más opciones de color -->
+      </select>
+    </div>
+    <div class="filter-option">
+      <label for="talla">Talla:</label>
+      <select id="talla">
+        <option value="">Todas</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <!-- Añadir más opciones de talla -->
+      </select>
+    </div>
+    <div class="filter-apply-button">
+      <button id="apply-filters">Aplicar Filtros</button>
     </div>
   </div>
   
-  
-    <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
-</div>
-  
- <!-- Menú desplegable de filtros adicionales -->
- <div class="filter-dropdown hidden">
-  <div class="filter-option">
-      <label for="color">Color:</label>
-      <select id="color">
-          <option value="">Todos</option>
-          <option value="negro">Negro</option>
-          <option value="blanco">Blanco</option>
-      </select>
+  <div class="products-grid mujer-products-grid">
+    <!-- Aquí se insertarán los productos dinámicamente -->
   </div>
-  <div class="filter-option">
-      <label for="talla">Talla:</label>
-      <select id="talla">
-          <option value="">Todas</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-      </select>
-  </div>
-</div>
-
-<!-- Contenedor de productos -->
-<div class="products-grid mujer-products-grid">
-  <!-- Aquí se insertarán los productos dinámicamente -->
-</div>
 
      
 

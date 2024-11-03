@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const applyFiltersButton = document.getElementById('apply-filters');
   
     // Array de productos para la sección Mujer
     const productosMujer = [
@@ -12,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         precio: 15000,
         categoria: "buzos",
         imagen: "img/mujer/buzo-deportivo.jpg",
+        color: "negro",
+        talla: "M",
         etiqueta: "nuevo"
       },
       {
@@ -20,18 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
         precio: 12000,
         categoria: "calzas",
         imagen: "img/mujer/calzas-entrenamiento.jpg",
+        color: "blanco",
+        talla: "S",
         etiqueta: "novedades"
       },
-      // Añade más productos con el formato adecuado
+      // Añade más productos
     ];
   
     // Función para mostrar los productos
-    function mostrarProductos(categoria = "all") {
-      mujerProductsGrid.innerHTML = ""; // Limpiar contenedor
+    function mostrarProductos(categoria = "all", color = "", talla = "") {
+      mujerProductsGrid.innerHTML = ""; // Limpiar el grid de productos
   
-      const productosFiltrados = categoria === "all"
-        ? productosMujer
-        : productosMujer.filter(producto => producto.categoria === categoria);
+      const productosFiltrados = productosMujer.filter(producto => {
+        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+        const matchesColor = !color || producto.color === color;
+        const matchesTalla = !talla || producto.talla === talla;
+        return matchesCategoria && matchesColor && matchesTalla;
+      });
   
       productosFiltrados.forEach(producto => {
         const productoDiv = document.createElement('div');
@@ -45,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
-    // Evento de filtro por categoría
+    // Cambiar filtro por categoría
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -55,54 +65,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
+    // Mostrar y ocultar el menú de filtros adicionales
+    filterDropdownToggle.addEventListener('click', () => {
+      filterDropdown.classList.toggle('show');
+    });
+  
+    // Aplicar filtros adicionales
+    applyFiltersButton.addEventListener('click', () => {
+      const selectedColor = document.getElementById('color').value;
+      const selectedTalla = document.getElementById('talla').value;
+      const activeCategoryButton = document.querySelector('.mujer-filter-button.active');
+      const categoria = activeCategoryButton ? activeCategoryButton.getAttribute('data-filter') : "all";
+      mostrarProductos(categoria, selectedColor, selectedTalla);
+      filterDropdown.classList.remove('show'); // Ocultar el menú de filtros
+    });
+  
     // Mostrar todos los productos al cargar la página
     mostrarProductos();
   });
   /*---------------------------------------------------------------------------- */
 
   /*---------------------MENU DESPLEGABLE FILTRAR Y ORDENAR---------- */
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown');
-
-    // Toggle del menú desplegable de filtros adicionales
-    filterDropdownToggle.addEventListener('click', () => {
-        filterDropdown.classList.toggle('show');
-    });
-
-    // Aplicar filtros adicionales
-    const applyFilters = () => {
-        const selectedColor = document.getElementById('color').value;
-        const selectedTalla = document.getElementById('talla').value;
-        
-        document.querySelectorAll('.product-card').forEach(product => {
-            const productColor = product.getAttribute('data-color');
-            const productTalla = product.getAttribute('data-talla');
-
-            // Comprobar si el producto coincide con los filtros seleccionados
-            const matchesColor = selectedColor === "" || productColor === selectedColor;
-            const matchesTalla = selectedTalla === "" || productTalla === selectedTalla;
-
-            if (matchesColor && matchesTalla) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    };
-
-    // Aplicar los filtros al cambiar la selección
-    document.getElementById('color').addEventListener('change', applyFilters);
-    document.getElementById('talla').addEventListener('change', applyFilters);
-});
-
-  /*-------------------------------------------------------------------- */
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown');
-  
-    filterDropdownToggle.addEventListener('click', () => {
-      filterDropdown.classList.toggle('show');
-    });
-  });
+ 
