@@ -118,11 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*-------------FILTRO OPCIONES DESPLEGABLES-------------*/
   document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+    const collapsibleSections = document.querySelectorAll('collapsible-section');
   
     collapsibleSections.forEach(section => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
+      const toggleButton = section.querySelector('collapsible-toggle');
+      const content = section.querySelector('collapsible-content');
   
       if (toggleButton) { // Verificamos si toggleButton existe
         toggleButton.addEventListener('click', () => {
