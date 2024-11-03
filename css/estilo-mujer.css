@@ -429,6 +429,7 @@
   padding: 10px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  position: relative; /* Asegura que el menú desplegable se alinee bien */
 }
 
 .filter-categories {
@@ -463,20 +464,21 @@
 }
 
 .filter-dropdown {
-  display: none;
+  display: none; /* Oculto inicialmente */
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   position: absolute;
-  top: 100%;
+  top: 60px; /* Ajuste la altura si es necesario */
   right: 20px;
-  z-index: 100;
+  z-index: 200; /* Asegura que esté por encima de otros elementos */
   width: 300px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para mayor visibilidad */
   transition: all 0.3s ease;
 }
 
 .filter-dropdown.show {
-  display: block;
+  display: block; /* Se muestra al hacer clic en el botón */
 }
 
 .filter-option {
@@ -500,6 +502,11 @@
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
+  transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.mujer-product-card:hover {
+  transform: scale(1.05); /* Agranda ligeramente en hover */
 }
 
 .mujer-product-card img {
