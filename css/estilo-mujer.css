@@ -462,9 +462,8 @@
   gap: 5px;
 }
 
-/* Estilos del menú desplegable */
 .filter-dropdown {
-  display: none; /* Oculto inicialmente */
+  display: none;
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
