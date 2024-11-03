@@ -11,22 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosMujer = [
       {
         id: 1,
-        nombre: "Buzo Deportivo",
-        precio: 15000,
-        categoria: "buzos",
-        imagen: "img/mujer/buzo-deportivo.jpg",
-        color: "negro",
-        talla: "M",
+        nombre: "Remera Modal Soft",
+        precio: 7500,
+        categoria: "remeras",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
+        color: "celeste",
+        talla: "XL",
         etiqueta: "nuevo"
       },
       {
         id: 2,
-        nombre: "Calzas de Entrenamiento",
-        precio: 12000,
-        categoria: "calzas",
-        imagen: "img/mujer/calzas-entrenamiento.jpg",
-        color: "blanco",
-        talla: "S",
+        nombre: "Remera Modal Soft",
+        precio: 7500,
+        categoria: "remeras",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpg",
+        color: "Negro",
+        talla: "L",
         etiqueta: "novedades"
       },
       // Añade más productos
