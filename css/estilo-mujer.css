@@ -403,6 +403,16 @@
     margin: 0 auto 10px;
   }
 
+  /*----------------BANNER CONTENEDOR------------------*/
+  .banner-mujer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-content-mujer {
+
+  }
   /*--------------------FILTRO MUJER----------------------*/
 /* Estilo del filtro horizontal */
 .horizontal-filter {
