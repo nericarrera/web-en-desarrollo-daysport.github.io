@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = [
         {
             id: 1,
-            name: "Campera Negra",
-            price: 15000,
+            name: "Remera Modal Soft",
+            price: 7500,
             talla: "M",
-            color: "negro",
-            categoria: "camperas",
+            color: "celeste",
+            categoria: "remeras",
             imageUrl: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
             status: "nuevo"
         },
