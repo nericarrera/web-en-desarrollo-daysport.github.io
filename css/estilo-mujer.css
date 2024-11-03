@@ -463,22 +463,23 @@
   gap: 5px;
 }
 
+/* Estilos del menú desplegable */
 .filter-dropdown {
   display: none; /* Oculto inicialmente */
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   position: absolute;
-  top: 60px; /* Ajuste la altura si es necesario */
+  top: 60px; /* Ajusta según sea necesario */
   right: 20px;
-  z-index: 200; /* Asegura que esté por encima de otros elementos */
+  z-index: 200;
   width: 300px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para mayor visibilidad */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para mayor visibilidad */
   transition: all 0.3s ease;
 }
 
 .filter-dropdown.show {
-  display: block; /* Se muestra al hacer clic en el botón */
+  display: block;
 }
 
 .filter-option {
