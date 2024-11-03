@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Mostrar y ocultar el menú de filtros adicionales
     filterDropdownToggle.addEventListener('click', () => {
-      filterDropdown.classList.toggle('filter-dropdown.show'); // Alterna la clase 'show' para mostrar/ocultar el menú
+      filterDropdown.classList.toggle('show'); // Alterna la clase 'show' para mostrar/ocultar el menú
     });
   
     // Aplicar filtros adicionales
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeCategoryButton = document.querySelector('.mujer-filter-button.active');
       const categoria = activeCategoryButton ? activeCategoryButton.getAttribute('data-filter') : "all";
       mostrarProductos(categoria, selectedColor, selectedTalla);
-      filterDropdown.classList.remove('filter-dropdown.show'); // Ocultar el menú de filtros después de aplicar
+      filterDropdown.classList.remove('show'); // Ocultar el menú de filtros después de aplicar
     });
   
     // Mostrar todos los productos al cargar la página
