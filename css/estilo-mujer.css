@@ -450,7 +450,7 @@
 }
 
 .mujer-filter-button:hover {
-  text-decoration: underline;
+  text-decoration: underline 2px #000;
   color: #000;
 }
 
