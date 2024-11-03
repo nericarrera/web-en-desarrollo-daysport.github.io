@@ -533,74 +533,68 @@
 .filter-overlay {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  display: none; /* Oculto inicialmente */
+  z-index: 100;
 }
 
+/* Barra lateral del filtro (contenedor del filtro en el lado derecho) */
 .filter-sidebar {
-  display: none; /* Oculto inicialmente */
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: 0; /* Posicionarlo en el lado derecho */
-  width: 300px; /* Ajusta el ancho según necesites */
-  height: 100vh;
+  right: 0;
+  width: 300px;
+  height: 100%;
   background-color: #fff;
-  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  z-index: 100;
-  overflow-y: auto;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%); /* Inicialmente oculto fuera de la vista a la derecha */
   transition: transform 0.3s ease;
+}
 
+/* Mostrar la barra lateral cuando se activa */
+.filter-overlay.show .filter-sidebar {
+  transform: translateX(0); /* Mover dentro de la vista */
 }
 
 .filter-sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  
-}
-
-.filter-sidebar-header h2 {
-  margin: 0;
 }
 
 .close-filter {
-  font-size: 24px;
   cursor: pointer;
-}
-
-.filter-section {
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
 }
 
 .filter-title {
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 20px;
 }
 
 .filter-options {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  margin: 10px 0 0 0;
-  display: none;
 }
 
 .filter-options li {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .apply-button {
   width: 100%;
+  padding: 10px;
   background-color: #000;
   color: #fff;
-  padding: 10px;
   border: none;
   cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
 }
 
 /* Mostrar el overlay y la barra lateral */
