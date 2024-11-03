@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
   document.addEventListener('DOMContentLoaded', () => {
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown');
+    const filterDropdown = document.querySelector('.filter-dropdown hidden');
 
     // Mostrar y ocultar el menú de filtros adicionales
     filterDropdownToggle.addEventListener('click', () => {
