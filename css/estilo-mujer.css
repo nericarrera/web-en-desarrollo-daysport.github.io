@@ -526,7 +526,37 @@
   font-weight: bold;
 }
 
+/*--------------------------------*/
+.filter-dropdown {
+  display: none; /* Mantenerlo oculto por defecto */
+  position: fixed; /* Cambia a posición fija para que esté en el lado derecho */
+  top: 0;
+  right: 0; /* Cambia 'left' por 'right' para moverlo a la derecha */
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 100;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* Posición inicial fuera de la pantalla a la derecha */
+}
 
+.filter-dropdown.show {
+  transform: translateX(0); /* Cuando está visible, vuelve a la posición normal */
+}
+
+/* Ajuste para el botón de cerrar en la parte superior derecha */
+.filter-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Cambiar a la esquina derecha */
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
 
 /*-----------------FILTRO DESPLEGABLE--------------*/
 /* Estilos para el overlay del filtro */
