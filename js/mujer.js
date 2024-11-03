@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown.show');
+    const filterDropdown = document.querySelector('.filter-dropdown');
     const applyFiltersButton = document.getElementById('apply-filters');
 
     const productosMujer = [
