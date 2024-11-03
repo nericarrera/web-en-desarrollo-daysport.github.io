@@ -479,7 +479,7 @@
 }
 
 .filter-dropdown.show {
-  display: block;
+  display: flex;
 }
 
 .filter-option {
