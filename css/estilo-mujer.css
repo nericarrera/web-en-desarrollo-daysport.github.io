@@ -477,7 +477,7 @@
   transition: all 0.3s ease;
 }
 
-.filter-dropdown.show {
+#filter-dropdown.show {
   display: block; /* Se muestra al hacer clic en el botón */
 }
 
