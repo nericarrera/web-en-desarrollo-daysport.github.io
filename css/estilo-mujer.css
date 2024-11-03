@@ -464,7 +464,7 @@
 }
 
 /* Estilos del menú desplegable */
-.filter-dropdown hidden {
+.filter-dropdown{
   display: none; /* Oculto inicialmente */
   padding: 20px;
   border: 1px solid #ddd;
@@ -479,7 +479,7 @@
 }
 
 .filter-dropdown.show {
-  display: flex;
+  display: block;
 }
 
 .filter-option {

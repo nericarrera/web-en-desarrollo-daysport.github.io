@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown hidden');
+    const filterDropdown = document.querySelector('.filter-dropdown');
     const applyFiltersButton = document.getElementById('apply-filters');
 
     const productosMujer = [
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
   document.addEventListener('DOMContentLoaded', () => {
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const filterDropdown = document.querySelector('.filter-dropdown hidden');
+    const filterDropdown = document.querySelector('.filter-dropdown');
 
     // Mostrar y ocultar el menú de filtros adicionales
     filterDropdownToggle.addEventListener('click', () => {
