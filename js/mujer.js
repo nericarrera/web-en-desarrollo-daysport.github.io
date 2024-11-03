@@ -119,10 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /*-------------FILTRO OPCIONES DESPLEGABLES-------------*/
   document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const closeFilterButton = document.querySelector('.close-filter');
-    const applyFiltersButton = document.getElementById('apply-filters');
-
+   
   
     collapsibleSections.forEach(section => {
       const toggleButton = section.querySelector('.collapsible-toggle');
@@ -143,50 +140,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*---------------------------------------- */
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterOverlay = document.querySelector('.filter-overlay');
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const closeFilterButton = document.querySelector('.close-filter');
-    const applyFiltersButton = document.getElementById('apply-filters');
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    // Mostrar el filtro lateral
-    filterDropdownToggle.addEventListener('click', () => {
-        filterOverlay.classList.toggle('show');
-        filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
-    });
-
-    // Cerrar el filtro al hacer clic en el botón de cerrar
-    closeFilterButton.addEventListener('click', () => {
-        filterOverlay.classList.remove('show');
-        setTimeout(() => {
-            filterOverlay.style.display = 'none';
-        }, 300);
-    });
-
-    // Cerrar el filtro al hacer clic fuera del área de filtro
-    filterOverlay.addEventListener('click', (e) => {
-        if (e.target === filterOverlay) {
-            filterOverlay.classList.remove('show');
-            setTimeout(() => {
-                filterOverlay.style.display = 'none';
-            }, 300);
-        }
-    });
-
-    // Colapsar y expandir secciones al hacer clic en el título
-    collapsibleSections.forEach(section => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
-
-        toggleButton.addEventListener('click', () => {
-            // Alternar visibilidad de la sección colapsable
-            content.classList.toggle('hidden');
-
-            // Cambiar el símbolo del desplegable
-            const symbol = toggleButton.querySelector('span');
-            symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-        });
-    });
-});
-  
