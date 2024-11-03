@@ -599,7 +599,7 @@
 }
 
 .collapsible-section.active .collapsible-content {
-  max-height: 200px; /* Puedes ajustar esta altura según el contenido */
+  max-height: 200px; /* Ajusta según el contenido */
 }
 
 .collapsible-toggle {

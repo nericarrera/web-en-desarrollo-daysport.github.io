@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const content = section.querySelector('.collapsible-content');
   
       toggleButton.addEventListener('click', () => {
-        section.classList.toggle('active'); // Activa/desactiva la clase "active"
-        
+        section.classList.toggle('active'); // Alterna la clase "active" en la sección
+  
         // Cambiar el símbolo de desplegar/cerrar
         toggleButton.textContent = section.classList.contains('active') ? '▲' : '▼';
       });
