@@ -84,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   /*---------------------------------------------------------------------------- */
 
-  /*---------------------MENU DESPLEGABLE FILTRAR Y ORDENAR---------- */
- 
-
-
 
 /*-------------------------FILTRO DESPLEGABLE------------------ */
 document.addEventListener('DOMContentLoaded', () => {

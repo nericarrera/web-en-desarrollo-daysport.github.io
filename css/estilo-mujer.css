@@ -589,7 +589,24 @@
 .filter-sidebar.show {
   transform: translateX(0);
 }
-/*----------------------------------------------------*/
+
+/*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
+/* Estilo para la sección colapsable */
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.collapsible-section.active .collapsible-content {
+  max-height: 200px; /* Puedes ajustar esta altura según el contenido */
+}
+
+.collapsible-toggle {
+  float: right;
+  cursor: pointer;
+  font-size: 0.9em;
+}
 
 
 
