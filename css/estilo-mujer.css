@@ -444,6 +444,9 @@
   color: #333;
   cursor: pointer;
   padding: 5px 10px;
+  font-family: 'Questrial';
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .mujer-filter-button.active {
