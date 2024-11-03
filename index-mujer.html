@@ -169,46 +169,56 @@
   </div>
   
  
-<div class="filter-overlay hidden">
-  <div class="filter-sidebar">
-    <div class="filter-sidebar-header">
-      <h2>Filtrar y ordenar</h2>
-      <a href="#" id="clear-filters">Borrar Todo</a>
-      <span class="close-filter">&times;</span>
+  <div class="filter-overlay hidden">
+    <div class="filter-sidebar">
+      <div class="filter-sidebar-header">
+        <h2>Filtrar y ordenar</h2>
+        <a href="#" id="clear-filters">Borrar Todo</a>
+        <span class="close-filter">&times;</span>
+      </div>
+  
+      <!-- Sección Ordenar por -->
+      <div class="filter-section collapsible-section">
+        <h3 class="filter-title">Ordenar por <span class="collapsible-toggle">▼</span></h3>
+        <div class="collapsible-content">
+          <ul class="filter-options">
+            <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
+            <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
+            <li><input type="radio" name="sort" value="new"> Novedades</li>
+            <li><input type="radio" name="sort" value="bestseller"> Los más vendidos</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Sección Color -->
+      <div class="filter-section collapsible-section">
+        <h3 class="filter-title">Color <span class="collapsible-toggle">▼</span></h3>
+        <div class="collapsible-content">
+          <ul class="filter-options">
+            <li><input type="checkbox" name="color" value="negro"> Negro</li>
+            <li><input type="checkbox" name="color" value="blanco"> Blanco</li>
+            <!-- Agrega más colores aquí -->
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Sección Talle -->
+      <div class="filter-section collapsible-section">
+        <h3 class="filter-title">Talle <span class="collapsible-toggle">▼</span></h3>
+        <div class="collapsible-content">
+          <ul class="filter-options">
+            <li><input type="checkbox" name="size" value="S"> S</li>
+            <li><input type="checkbox" name="size" value="M"> M</li>
+            <li><input type="checkbox" name="size" value="L"> L</li>
+            <!-- Agrega más talles aquí -->
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Más secciones aquí -->
+      <button id="apply-filters" class="apply-button">Aplicar</button>
     </div>
-    <div class="filter-section">
-      <h3 class="filter-title">Ordenar por</h3>
-      <ul class="filter-options">
-        <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
-        <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
-        <li><input type="radio" name="sort" value="new"> Novedades</li>
-        <li><input type="radio" name="sort" value="bestseller"> Los más vendidos</li>
-      </ul>
-    </div>
-    <div class="filter-section">
-      <h3 class="filter-title">Color</h3>
-      <ul class="filter-options">
-        <li><input type="checkbox" name="color" value="negro"> Negro</li>
-        <li><input type="checkbox" name="color" value="blanco"> Blanco</li>
-        <!-- Agrega más colores aquí -->
-      </ul>
-    </div>
-    <div class="filter-section">
-      <h3 class="filter-title">Talle</h3>
-      <ul class="filter-options">
-        <li><input type="checkbox" name="size" value="S"> S</li>
-        <li><input type="checkbox" name="size" value="M"> M</li>
-        <li><input type="checkbox" name="size" value="L"> L</li>
-        <li><input type="checkbox" name="size" value="XL"> XL</li>
-        <li><input type="checkbox" name="size" value="XXL"> XXL</li>
-        <li><input type="checkbox" name="size" value="XXXL"> XXXL</li>
-        <!-- Agrega más talles aquí -->
-      </ul>
-    </div>
-    <!-- Agrega más secciones como "Descuentos", "Tipo de producto", etc. -->
-    <button id="apply-filters" class="apply-button">Aplicar</button>
   </div>
-</div>
 
   
   <div class="products-grid mujer-products-grid">
