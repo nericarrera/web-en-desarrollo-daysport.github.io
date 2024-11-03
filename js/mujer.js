@@ -115,3 +115,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /*-------------FILTRO OPCIONES DESPLEGABLES-------------*/
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+  
+    collapsibleSections.forEach(section => {
+      const toggleButton = section.querySelector('.collapsible-toggle');
+      const content = section.querySelector('.collapsible-content');
+  
+      toggleButton.addEventListener('click', () => {
+        section.classList.toggle('active'); // Activa/desactiva la clase "active"
+        
+        // Cambiar el símbolo de desplegar/cerrar
+        toggleButton.textContent = section.classList.contains('active') ? '▲' : '▼';
+      });
+    });
+  });
+
+  
