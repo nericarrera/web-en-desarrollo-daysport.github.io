@@ -94,21 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
     const closeFilterButton = document.querySelector('.close-filter');
-    const applyFiltersButton = document.getElementById('apply-filters');
   
-    // Mostrar el menú lateral
+    // Mostrar el filtro en el lado derecho al hacer clic en "Filtrar y Ordenar"
     filterDropdownToggle.addEventListener('click', () => {
       filterOverlay.classList.add('show');
+      filterOverlay.style.display = 'block';
     });
   
-    // Cerrar el menú lateral
+    // Cerrar el filtro al hacer clic en el botón de cerrar
     closeFilterButton.addEventListener('click', () => {
       filterOverlay.classList.remove('show');
+      setTimeout(() => {
+        filterOverlay.style.display = 'none';
+      }, 300); // Espera el tiempo de la transición antes de ocultar
     });
   
-    // Aplicar filtros
-    applyFiltersButton.addEventListener('click', () => {
-      // Aquí iría la lógica para aplicar los filtros seleccionados
-      filterOverlay.classList.remove('show'); // Cerrar el menú después de aplicar
+    // Cerrar el filtro al hacer clic fuera de la barra lateral
+    filterOverlay.addEventListener('click', (e) => {
+      if (e.target === filterOverlay) {
+        filterOverlay.classList.remove('show');
+        setTimeout(() => {
+          filterOverlay.style.display = 'none';
+        }, 300);
+      }
     });
   });
