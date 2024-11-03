@@ -86,3 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*---------------------MENU DESPLEGABLE FILTRAR Y ORDENAR---------- */
  
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+
+    // Mostrar y ocultar el menú de filtros adicionales
+    filterDropdownToggle.addEventListener('click', () => {
+        filterDropdown.classList.toggle('show');
+    });
+});
+
+filterDropdownToggle.addEventListener('click', () => {
+    filterDropdown.classList.toggle('show');
+    console.log("Botón de filtro clickeado, clase 'show' alternada");
+});

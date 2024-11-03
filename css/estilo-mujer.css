@@ -464,7 +464,7 @@
 }
 
 /* Estilos del menú desplegable */
-.filter-dropdown {
+.filter-dropdown hidden {
   display: none; /* Oculto inicialmente */
   padding: 20px;
   border: 1px solid #ddd;
