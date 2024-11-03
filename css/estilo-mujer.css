@@ -454,11 +454,6 @@
   border-bottom: 2px solid #000;
 }
 
-.mujer-filter-button.active:hover {
-  border-bottom: 2px solid #ffffff;
-}
-
-
 .filter-dropdown-toggle {
   background-color: #000;
   color: #fff;
