@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nombre: "Remera Modal Soft",
         precio: 7500,
         categoria: "remeras",
-        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg",
         color: "celeste",
         talla: "XL",
         etiqueta: "nuevo"
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nombre: "Remera Modal Soft",
         precio: 7500,
         categoria: "remeras",
-        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpg",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg",
         color: "Negro",
         talla: "L",
         etiqueta: "novedades"
