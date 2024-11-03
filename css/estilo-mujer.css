@@ -429,7 +429,6 @@
   padding: 10px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  position: relative;
 }
 
 .filter-categories {
@@ -465,7 +464,7 @@
 
 /* Estilos del menú desplegable */
 .filter-dropdown {
-  display: none;
+  display: none; /* Oculto inicialmente */
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
@@ -488,6 +487,8 @@
 .filter-option label {
   margin-right: 10px;
 }
+
+/*-------------------PRODUCTOS GRID MUJER-----------------*/
 
 .products-grid {
   display: grid;
