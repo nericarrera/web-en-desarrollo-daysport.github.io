@@ -124,14 +124,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const toggleButton = section.querySelector('.collapsible-toggle');
       const content = section.querySelector('.collapsible-content');
   
-      toggleButton.addEventListener('click', () => {
-        section.classList.toggle('active'); // Alterna la clase "active" en la sección
+      if (toggleButton) { // Verificamos si toggleButton existe
+        toggleButton.addEventListener('click', () => {
+          section.classList.toggle('active'); // Alterna la clase "active" en la sección
   
-        // Cambiar el símbolo de desplegar/cerrar
-        const symbol = toggleButton.querySelector('span');
-        symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
-      });
+          // Cambiar el símbolo de desplegar/cerrar
+          const symbol = toggleButton.querySelector('span');
+          symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
+        });
+      } else {
+        console.error("Elemento 'collapsible-toggle' no encontrado en:", section);
+      }
     });
   });
-
   
