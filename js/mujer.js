@@ -117,26 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /*-------------FILTRO OPCIONES DESPLEGABLES-------------*/
-  document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-  
-    collapsibleSections.forEach(section => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
-  
-      if (toggleButton) { // Verificamos si toggleButton existe
-        toggleButton.addEventListener('click', () => {
-          section.classList.toggle('active'); // Alterna la clase "active" en la sección
-  
-          // Cambiar el símbolo de desplegar/cerrar
-          const symbol = toggleButton.querySelector('span');
-          symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
-        });
-      } else {
-        console.error("Elemento 'collapsible-toggle' no encontrado en:", section);
-      }
-    });
-  });
+ 
 
   /*---------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
