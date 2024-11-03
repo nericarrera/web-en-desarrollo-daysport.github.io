@@ -6,103 +6,101 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-
+  
     const productosMujer = [
-        {
-            id: 1,
-            nombre: "Remera Modal Soft",
-            precio: 7500,
-            categoria: "remeras",
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg",
-            color: "celeste",
-            talla: "XL",
-            etiqueta: "nuevo"
-        },
-        {
-            id: 2,
-            nombre: "Remera Modal Soft",
-            precio: 7500,
-            categoria: "remeras",
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg",
-            color: "Negro",
-            talla: "L",
-            etiqueta: "novedades"
-        },
-        // Agrega más productos según sea necesario
+      {
+        id: 1,
+        nombre: "Remera Modal Soft",
+        precio: 7500,
+        categoria: "remeras",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg",
+        color: "celeste",
+        talla: "XL",
+        etiqueta: "nuevo"
+      },
+      {
+        id: 2,
+        nombre: "Remera Modal Soft",
+        precio: 7500,
+        categoria: "remeras",
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg",
+        color: "Negro",
+        talla: "L",
+        etiqueta: "novedades"
+      },
+      // Agrega más productos según sea necesario
     ];
-
+  
     // Función para mostrar los productos filtrados
     function mostrarProductos(categoria = "all", color = "", talla = "") {
-        mujerProductsGrid.innerHTML = "";
-        const productosFiltrados = productosMujer.filter(producto => {
-            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-            const matchesColor = !color || producto.color === color;
-            const matchesTalla = !talla || producto.talla === talla;
-            return matchesCategoria && matchesColor && matchesTalla;
-        });
-
-        productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
-            productoDiv.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p class="mujer-product-name">${producto.nombre}</p>
-                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-            `;
-            mujerProductsGrid.appendChild(productoDiv);
-        });
+      mujerProductsGrid.innerHTML = "";
+      const productosFiltrados = productosMujer.filter(producto => {
+        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+        const matchesColor = !color || producto.color === color;
+        const matchesTalla = !talla || producto.talla === talla;
+        return matchesCategoria && matchesColor && matchesTalla;
+      });
+  
+      productosFiltrados.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('mujer-product-card');
+        productoDiv.innerHTML = `
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <p class="mujer-product-name">${producto.nombre}</p>
+          <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+        `;
+        mujerProductsGrid.appendChild(productoDiv);
+      });
     }
-
-    // Mostrar y ocultar el filtro lateral
+  
+    // Muestra y oculta el filtro lateral
     filterDropdownToggle.addEventListener('click', () => {
-        filterOverlay.classList.toggle('show');
-        filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
+      filterOverlay.classList.toggle('show');
+      filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
     });
-
+  
     // Cerrar el filtro al hacer clic en el botón de cerrar o fuera del área de filtro
     closeFilterButton.addEventListener('click', () => {
+      filterOverlay.classList.remove('show');
+      setTimeout(() => {
+        filterOverlay.style.display = 'none';
+      }, 300);
+    });
+    
+    filterOverlay.addEventListener('click', (e) => {
+      if (e.target === filterOverlay) {
         filterOverlay.classList.remove('show');
         setTimeout(() => {
-            filterOverlay.style.display = 'none';
+          filterOverlay.style.display = 'none';
         }, 300);
+      }
     });
-
-    filterOverlay.addEventListener('click', (e) => {
-        if (e.target === filterOverlay) {
-            filterOverlay.classList.remove('show');
-            setTimeout(() => {
-                filterOverlay.style.display = 'none';
-            }, 300);
-        }
-    });
-
+  
     // Habilitar colapsables en secciones del filtro
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
     collapsibleSections.forEach(section => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
-        
-        toggleButton.addEventListener('click', () => {
-            content.classList.toggle('hidden');
-            toggleButton.querySelector('span').textContent = content.classList.contains('hidden') ? '▼' : '▲';
-        });
+      const toggleButton = section.querySelector('.collapsible-toggle');
+      const content = section.querySelector('.collapsible-content');
+      toggleButton.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        toggleButton.querySelector('span').textContent = content.classList.contains('hidden') ? '▼' : '▲';
+      });
     });
-
+  
     // Aplicar filtros al hacer clic en "Aplicar"
     applyFiltersButton.addEventListener('click', () => {
-        const selectedColor = document.querySelector('[name="color"]:checked')?.value || "";
-        const selectedTalla = document.querySelector('[name="size"]:checked')?.value || "";
-        mostrarProductos("all", selectedColor, selectedTalla);
-        filterOverlay.classList.remove('show');
-        setTimeout(() => {
-            filterOverlay.style.display = 'none';
-        }, 300);
+      const selectedColor = document.querySelector('[name="color"]:checked')?.value || "";
+      const selectedTalla = document.querySelector('[name="size"]:checked')?.value || "";
+      mostrarProductos("all", selectedColor, selectedTalla);
+      filterOverlay.classList.remove('show');
+      setTimeout(() => {
+        filterOverlay.style.display = 'none';
+      }, 300);
     });
-
+  
     // Mostrar todos los productos al cargar la página
     mostrarProductos();
-});
-
+  });
   /*---------------------------------------------------------------------------- */
 
 
