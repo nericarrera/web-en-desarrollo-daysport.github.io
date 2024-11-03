@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "M",
             color: "negro",
             categoria: "camperas",
-            imageUrl: "img/mujer/campera1.jpg",
+            imageUrl: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
             status: "nuevo"
         },
         {
