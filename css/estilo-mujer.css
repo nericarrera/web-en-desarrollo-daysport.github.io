@@ -593,19 +593,19 @@
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 /* Estilo para la sección colapsable */
 .collapsible-content {
-  max-height: 0;
-  overflow: hidden;
+  display: none;
   transition: max-height 0.3s ease;
 }
 
 .collapsible-section.active .collapsible-content {
-  max-height: 200px; /* Ajusta según el contenido */
+  display: block;
 }
 
-.collapsible-toggle {
-  float: right;
+.filter-title {
   cursor: pointer;
-  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
