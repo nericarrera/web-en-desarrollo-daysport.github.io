@@ -1,101 +1,63 @@
 
 /*-------------FILTRO MUJER----------------*/
 document.addEventListener('DOMContentLoaded', () => {
-    // Array de productos para la sección 'Mujer'
-    const products = [
-        {
-            id: 1,
-            name: "Remera Modal Soft",
-            price: 7500,
-            talla: "M",
-            color: "celeste",
-            categoria: "remeras",
-            imageUrl: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpg",
-            status: "nuevo"
-        },
-        {
-            id: 2,
-            name: "Remera Blanca",
-            price: 5000,
-            talla: "S",
-            color: "blanco",
-            categoria: "remeras",
-            imageUrl: "img/mujer/remera1.jpg",
-            status: "nuevo"
-        },
-        // Agrega más productos con las propiedades necesarias
+    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
+    const filterButtons = document.querySelectorAll('.mujer-filter-button');
+  
+    // Array de productos para la sección Mujer
+    const productosMujer = [
+      {
+        id: 1,
+        nombre: "Buzo Deportivo",
+        precio: 15000,
+        categoria: "buzos",
+        imagen: "img/mujer/buzo-deportivo.jpg",
+        etiqueta: "nuevo"
+      },
+      {
+        id: 2,
+        nombre: "Calzas de Entrenamiento",
+        precio: 12000,
+        categoria: "calzas",
+        imagen: "img/mujer/calzas-entrenamiento.jpg",
+        etiqueta: "novedades"
+      },
+      // Añade más productos con el formato adecuado
     ];
-
-    const productsGrid = document.querySelector('.products-grid');
-    const filterButtons = document.querySelectorAll('.filter-button');
-
-    // Función para mostrar productos según la categoría
-    function displayProducts(filter) {
-        productsGrid.innerHTML = ''; // Limpiar productos actuales
-
-        const filteredProducts = products.filter(product => {
-            return filter === 'all' || product.categoria === filter || (filter === 'novedades' && product.status === 'nuevo');
-        });
-
-        filteredProducts.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.classList.add('product-card');
-            productDiv.setAttribute('data-color', product.color);
-            productDiv.setAttribute('data-talla', product.talla);
-            productDiv.setAttribute('data-category', product.categoria);
-
-            productDiv.innerHTML = `
-                <img src="${product.imageUrl}" alt="${product.name}">
-                <p>${product.name}</p>
-                <p>$${product.price.toLocaleString()}</p>
-            `;
-
-            // Redirige a la página de producto al hacer clic en el producto
-            productDiv.addEventListener('click', () => {
-                window.location.href = `index-producto.html?id=${product.id}`;
-            });
-
-            productsGrid.appendChild(productDiv);
-        });
+  
+    // Función para mostrar los productos
+    function mostrarProductos(categoria = "all") {
+      mujerProductsGrid.innerHTML = ""; // Limpiar contenedor
+  
+      const productosFiltrados = categoria === "all"
+        ? productosMujer
+        : productosMujer.filter(producto => producto.categoria === categoria);
+  
+      productosFiltrados.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('mujer-product-card');
+        productoDiv.innerHTML = `
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <p class="mujer-product-name">${producto.nombre}</p>
+          <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+        `;
+        mujerProductsGrid.appendChild(productoDiv);
+      });
     }
-
-    // Mostrar todos los productos al cargar la página
-    displayProducts('all');
-
-    // Configurar el filtro de categorías
+  
+    // Evento de filtro por categoría
     filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const filter = button.getAttribute('data-filter');
-            displayProducts(filter);
-        });
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const categoria = button.getAttribute('data-filter');
+        mostrarProductos(categoria);
+      });
     });
-
-    // Aplicar filtros adicionales (color y talla)
-    const applyFilters = () => {
-        const selectedColor = document.getElementById('color').value;
-        const selectedTalla = document.getElementById('talla').value;
-
-        document.querySelectorAll('.product-card').forEach(product => {
-            const productColor = product.getAttribute('data-color');
-            const productTalla = product.getAttribute('data-talla');
-
-            // Comprobar si el producto coincide con los filtros seleccionados
-            const matchesColor = selectedColor === "" || productColor === selectedColor;
-            const matchesTalla = selectedTalla === "" || productTalla === selectedTalla;
-
-            if (matchesColor && matchesTalla) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    };
-
-    document.getElementById('color').addEventListener('change', applyFilters);
-    document.getElementById('talla').addEventListener('change', applyFilters);
-});
+  
+    // Mostrar todos los productos al cargar la página
+    mostrarProductos();
+  });
   /*---------------------------------------------------------------------------- */
 
   /*---------------------MENU DESPLEGABLE FILTRAR Y ORDENAR---------- */
