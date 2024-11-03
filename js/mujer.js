@@ -120,17 +120,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
   
-    collapsibleSections.forEach(section => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
+    // Verifica que haya secciones colapsables antes de agregar eventos
+    if (collapsibleSections.length > 0) {
+      collapsibleSections.forEach(section => {
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
   
-      toggleButton.addEventListener('click', () => {
-        section.classList.toggle('active'); // Alterna la clase "active" en la sección
+        // Verifica que toggleButton y content existan antes de agregar el evento
+        if (toggleButton && content) {
+          toggleButton.addEventListener('click', () => {
+            section.classList.toggle('active'); // Alterna la clase "active" en la sección
   
-        // Cambiar el símbolo de desplegar/cerrar
-        toggleButton.textContent = section.classList.contains('active') ? '▲' : '▼';
+            // Cambiar el símbolo de desplegar/cerrar
+            toggleButton.textContent = section.classList.contains('active') ? '▲' : '▼';
+          });
+        }
       });
-    });
+    } else {
+      console.warn("No se encontraron secciones colapsables.");
+    }
   });
 
   
