@@ -122,8 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
    
   
     collapsibleSections.forEach(section => {
+      section.addEventListener('click'), function() {
       const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
+      const toggleContent = document.querySelector('.collapsible-content');
   
       if (toggleButton) { // Verificamos si toggleButton existe
         toggleButton.addEventListener('click', () => {
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         console.error("Elemento 'collapsible-toggle' no encontrado en:", section);
       }
-    });
+    }});
   });
 
   /*---------------------------------------- */
