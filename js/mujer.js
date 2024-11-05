@@ -114,25 +114,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 
-  // Configuración de secciones colapsables
-  const collapsibleSections = document.querySelectorAll('.collapsible-section');
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-  collapsibleSections.forEach(section => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
+    collapsibleSections.forEach(section => {
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
 
-      if (toggleButton) {
-          toggleButton.addEventListener('click', () => {
-              // Alterna la visibilidad del contenido
-              content.classList.toggle('hidden');
-              section.classList.toggle('active');
+        if (toggleButton && content) {
+            toggleButton.addEventListener('click', () => {
+                section.classList.toggle('active'); // Alterna la clase 'active' en la sección
+                content.classList.toggle('hidden'); // Alterna la visibilidad del contenido
 
-              // Cambiar el símbolo desplegable
-              const symbol = toggleButton.querySelector('span');
-              symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
-          });
-      }
-  });
+                // Cambia el símbolo de desplegar/cerrar
+                const symbol = toggleButton.querySelector('span');
+                symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
+            });
+        } else {
+            console.error("Elemento 'collapsible-toggle' o 'collapsible-content' no encontrado en la sección:", section);
+        }
+    });
 });
 
   /*---------------------------------------- */
@@ -156,4 +157,5 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("No se encontró 'collapsible-toggle' en:", section);
         }
     });
+  });
 });
