@@ -139,9 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alterna la clase 'hidden' para mostrar/ocultar
-
-                // Cambiar el símbolo de desplegar/cerrar
+                content.classList.toggle('hidden');
+                
+                // Cambia el símbolo de despliegue (▲ o ▼)
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
@@ -149,4 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
+
+    console.log("Se cargaron los scripts correctamente. Verifica si el filtro funciona como se espera.");
 });
