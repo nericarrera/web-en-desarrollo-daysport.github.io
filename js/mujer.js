@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyFiltersButton = document.getElementById('apply-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    // Verificación inicial
+    // Verificación inicial de elementos esenciales
     if (!filterDropdownToggle || !filterOverlay || !closeFilterButton || !applyFiltersButton) {
         console.error("Falta uno o más elementos esenciales para el filtro. Verifica el HTML y asegúrate de que todos los elementos están presentes.");
         return; // Detenemos el script si faltan elementos cruciales
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Configuración de las secciones colapsables
-    collapsibleSections.forEach(section => {
+    collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
 
@@ -188,13 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
         } else {
-            console.warn("No se encontraron elementos completos (toggle y contenido) en la sección:", section);
+            console.warn(`No se encontraron elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
 
     console.log("Se cargaron los scripts correctamente. Verifica si el filtro funciona como se espera.");
 });
-
 /*-------------------------FILTRO DESPLEGABLE------------------ */
 
   /*---------------------------------------- */
