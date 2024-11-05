@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             toggleButton.addEventListener('click', () => {
                 content.classList.toggle('hidden'); // Alterna la visibilidad del contenido
                 
@@ -150,5 +151,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    console.log("Se cargaron los scripts correctamente. Verifica si el filtro funciona como se espera.");
+    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
