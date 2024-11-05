@@ -10,8 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
   const productosMujer = [
-      { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
-      { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "Negro", talla: "L", etiqueta: "novedades" },
+      { id: 1, nombre: "Remera Modal Soft", 
+        precio: 7500, 
+        categoria: "remeras", 
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", 
+        color: "celeste", 
+        talla: "XL", 
+        etiqueta: "nuevo" 
+      },
+      
+        { id: 2, 
+          nombre: "Remera Modal Soft", 
+          precio: 7500, 
+          categoria: "remeras", 
+          imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", 
+          color: "Negro", 
+          talla: "L", 
+          etiqueta: "novedades" 
+        },
   ];
 
   // Función para mostrar productos
