@@ -9,6 +9,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyFiltersButton = document.getElementById('apply-filters');
   const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
+  // Mostrar/Ocultar el modal de filtro al hacer clic en "FILTRAR Y ORDENAR"
+  if (filterDropdownToggle && filterOverlay) {
+      filterDropdownToggle.addEventListener('click', () => {
+          filterOverlay.classList.toggle('show');
+          filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
+      });
+  }
+
+  // Cerrar el modal de filtro al hacer clic en la 'X' o al hacer clic fuera del modal
+  if (closeFilterButton) {
+      closeFilterButton.addEventListener('click', () => {
+          filterOverlay.classList.remove('show');
+          setTimeout(() => {
+              filterOverlay.style.display = 'none';
+          }, 300);
+      });
+  }
+  if (filterOverlay) {
+      filterOverlay.addEventListener('click', (e) => {
+          if (e.target === filterOverlay) {
+              filterOverlay.classList.remove('show');
+              setTimeout(() => {
+                  filterOverlay.style.display = 'none';
+              }, 300);
+          }
+      });
+  }
+
+  // Configuración de secciones colapsables dentro del modal
+  collapsibleSections.forEach((section) => {
+      const toggleButton = section.querySelector('.collapsible-toggle');
+      const content = section.querySelector('.collapsible-content');
+      toggleButton.addEventListener('click', () => {
+          content.classList.toggle('hidden');
+          const symbol = toggleButton.querySelector('span');
+          symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+      });
+  });
+
+  // Función para aplicar filtros (simple ejemplo)
+  applyFiltersButton.addEventListener('click', () => {
+      // Puedes agregar la lógica de filtros aquí si lo necesitas
+      filterOverlay.classList.remove('show');
+      setTimeout(() => {
+          filterOverlay.style.display = 'none';
+      }, 300);
+  });
+});
+
+
   // Lista de productos de ejemplo
   const productosMujer = [
       { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
@@ -118,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mostrar todos los productos al cargar la página
   mostrarProductos();
-});
+
+
+
   /*---------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -149,60 +201,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----------------FILTRO DESPLEGABLE--------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-  const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-  const filterButtons = document.querySelectorAll('.mujer-filter-button');
-  const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-  const filterOverlay = document.querySelector('.filter-overlay');
-  const closeFilterButton = document.querySelector('.close-filter');
-  const applyFiltersButton = document.getElementById('apply-filters');
-  const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-  // Mostrar/Ocultar el modal de filtro al hacer clic en "FILTRAR Y ORDENAR"
-  if (filterDropdownToggle && filterOverlay) {
-      filterDropdownToggle.addEventListener('click', () => {
-          filterOverlay.classList.toggle('show');
-          filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
-      });
-  }
-
-  // Cerrar el modal de filtro al hacer clic en la 'X' o al hacer clic fuera del modal
-  if (closeFilterButton) {
-      closeFilterButton.addEventListener('click', () => {
-          filterOverlay.classList.remove('show');
-          setTimeout(() => {
-              filterOverlay.style.display = 'none';
-          }, 300);
-      });
-  }
-  if (filterOverlay) {
-      filterOverlay.addEventListener('click', (e) => {
-          if (e.target === filterOverlay) {
-              filterOverlay.classList.remove('show');
-              setTimeout(() => {
-                  filterOverlay.style.display = 'none';
-              }, 300);
-          }
-      });
-  }
-
-  // Configuración de secciones colapsables dentro del modal
-  collapsibleSections.forEach((section) => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
-      toggleButton.addEventListener('click', () => {
-          content.classList.toggle('hidden');
-          const symbol = toggleButton.querySelector('span');
-          symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-      });
-  });
-
-  // Función para aplicar filtros (simple ejemplo)
-  applyFiltersButton.addEventListener('click', () => {
-      // Puedes agregar la lógica de filtros aquí si lo necesitas
-      filterOverlay.classList.remove('show');
-      setTimeout(() => {
-          filterOverlay.style.display = 'none';
-      }, 300);
-  });
-});
