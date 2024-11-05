@@ -136,13 +136,14 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-
+        
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alterna la visibilidad del contenido
+                content.classList.toggle('hidden');
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
                 
-                // Cambia el símbolo de despliegue (▲ o ▼)
+                // Cambiar símbolo
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
