@@ -136,26 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+});
   /*---------------------------------------- */
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    collapsibleSections.forEach(section => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
-
-        if (toggleButton) {
-            toggleButton.addEventListener('click', () => {
-                console.log("Clic detectado en:", toggleButton.textContent);
-                content.classList.toggle('hidden');
-                
-                const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-            });
-        } else {
-            console.error("No se encontró 'collapsible-toggle' en:", section);
-        }
-    });
-  });
-});
