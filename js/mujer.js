@@ -131,39 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /*---------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
-    const filterOverlay = document.querySelector('.filter-overlay');
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
-    const closeFilterButton = document.querySelector('.close-filter');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    // Mostrar y ocultar el filtro lateral al hacer clic en el botón "FILTRAR Y ORDENAR"
-    filterDropdownToggle.addEventListener('click', () => {
-        filterOverlay.classList.toggle('hidden');
-    });
-
-    // Cerrar el filtro al hacer clic en el botón de cierre (X)
-    closeFilterButton.addEventListener('click', () => {
-        filterOverlay.classList.add('hidden');
-    });
-
-    // Cerrar el filtro al hacer clic fuera de la barra lateral
-    filterOverlay.addEventListener('click', (e) => {
-        if (e.target === filterOverlay) {
-            filterOverlay.classList.add('hidden');
-        }
-    });
-
-    // Configuración de las secciones colapsables para desplegar/ocultar opciones
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alterna la visibilidad
+                // Alternar visibilidad
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+
+                // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
+        } else {
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
+
+    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
