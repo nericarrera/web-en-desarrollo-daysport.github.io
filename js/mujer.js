@@ -140,17 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             
+            // Agrega o quita la clase "active" para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                    toggleButton.querySelector('span').textContent = '▼';
-                    console.log(`Contenido de la sección ${index + 1} ahora está oculto`);
-                } else {
-                    content.style.display = 'block';
-                    toggleButton.querySelector('span').textContent = '▲';
-                    console.log(`Contenido de la sección ${index + 1} ahora está visible`);
-                }
+                content.classList.toggle('active'); // Activa o desactiva el contenido
+                
+                // Cambia el símbolo de desplegar/cerrar
+                const symbol = toggleButton.querySelector('span');
+                symbol.textContent = content.classList.contains('active') ? '▲' : '▼';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('active') ? 'visible' : 'oculto'}`);
             });
         } else {
             console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
