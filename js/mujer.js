@@ -141,11 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alterna la visibilidad
+                // Alternar visibilidad usando toggle
+                content.classList.toggle('hidden'); 
 
-                // Alternar el símbolo de despliegue/cierre
+                // Alternar símbolo de despliegue/cierre
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
             });
         } else {
