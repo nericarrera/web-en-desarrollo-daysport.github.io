@@ -148,27 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyFiltersButton = document.getElementById('apply-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    // Verificación y mensajes de consola
-    if (!filterDropdownToggle) console.error("Elemento '.filter-dropdown-toggle' no encontrado en el DOM.");
-    if (!filterOverlay) console.error("Elemento '.filter-overlay' no encontrado en el DOM.");
-    if (!closeFilterButton) console.error("Elemento '.close-filter' no encontrado en el DOM.");
-    if (!applyFiltersButton) console.error("Elemento '#apply-filters' no encontrado en el DOM.");
-    if (collapsibleSections.length === 0) console.warn("No se encontraron secciones colapsables en el DOM.");
+    // Verificación inicial
+    if (!filterDropdownToggle || !filterOverlay || !closeFilterButton || !applyFiltersButton) {
+        console.error("Falta uno o más elementos esenciales para el filtro. Verifica el HTML y asegúrate de que todos los elementos están presentes.");
+        return; // Detenemos el script si faltan elementos cruciales
+    }
 
     // Mostrar y ocultar el menú lateral
-    filterDropdownToggle?.addEventListener('click', () => {
+    filterDropdownToggle.addEventListener('click', () => {
         filterOverlay.classList.add('show');
         filterOverlay.style.display = 'block';
     });
 
-    closeFilterButton?.addEventListener('click', () => {
+    closeFilterButton.addEventListener('click', () => {
         filterOverlay.classList.remove('show');
         setTimeout(() => {
             filterOverlay.style.display = 'none';
         }, 300);
     });
 
-    filterOverlay?.addEventListener('click', (e) => {
+    filterOverlay.addEventListener('click', (e) => {
         if (e.target === filterOverlay) {
             filterOverlay.classList.remove('show');
             setTimeout(() => {
@@ -189,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
         } else {
-            console.warn("No se encontraron elementos colapsables completos en la sección:", section);
+            console.warn("No se encontraron elementos completos (toggle y contenido) en la sección:", section);
         }
     });
 
