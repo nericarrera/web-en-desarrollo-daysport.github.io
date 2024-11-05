@@ -598,8 +598,9 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
+
 .collapsible-content.hidden {
   display: none;
 }
