@@ -178,3 +178,9 @@ function mostrarProductos(categoria = "all", color = "", talla = "") {
 }
   /*---------------------------------------- */
 
+  toggleButton.addEventListener('click', () => 
+    { section.classList.toggle('active'); 
+      content.classList.toggle('hidden'); 
+      console.log('Sección activa:', section.classList.contains('active')); 
+      console.log('Contenido oculto:', content.classList.contains('hidden')); 
+    });
