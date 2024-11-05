@@ -139,6 +139,59 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   /*---------------------------------------------------------------------------- */
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
+    const filterButtons = document.querySelectorAll('.mujer-filter-button');
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterOverlay = document.querySelector('.filter-overlay');
+    const closeFilterButton = document.querySelector('.close-filter');
+    const applyFiltersButton = document.getElementById('apply-filters');
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+
+    if (!filterDropdownToggle || !filterOverlay || !closeFilterButton || !applyFiltersButton) {
+        console.error("Uno o más elementos de filtro no se encontraron. Verifica el HTML.");
+    }
+
+    // Mostrar y ocultar el menú lateral
+    filterDropdownToggle?.addEventListener('click', () => {
+        filterOverlay.classList.add('show');
+        filterOverlay.style.display = 'block';
+    });
+
+    closeFilterButton?.addEventListener('click', () => {
+        filterOverlay.classList.remove('show');
+        setTimeout(() => {
+            filterOverlay.style.display = 'none';
+        }, 300);
+    });
+
+    filterOverlay?.addEventListener('click', (e) => {
+        if (e.target === filterOverlay) {
+            filterOverlay.classList.remove('show');
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
+        }
+    });
+
+    // Secciones colapsables en el filtro
+    collapsibleSections.forEach(section => {
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
+        
+        if (toggleButton && content) {
+            toggleButton.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+                const symbol = toggleButton.querySelector('span');
+                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+            });
+        } else {
+            console.warn("Sección colapsable o contenido no encontrado en:", section);
+        }
+    });
+
+    console.log("Se cargaron los scripts correctamente. Verifica si el filtro funciona como se espera.");
+});
 
 /*-------------------------FILTRO DESPLEGABLE------------------ */
 
