@@ -141,16 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden');
+                // Alternar visibilidad
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
                 
+                // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                if (content.classList.contains('hidden')) {
-                    symbol.textContent = '▼';
-                    console.log(`Contenido de la sección ${index + 1} ahora está oculto`);
-                } else {
-                    symbol.textContent = '▲';
-                    console.log(`Contenido de la sección ${index + 1} ahora está visible`);
-                }
+                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
             console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
