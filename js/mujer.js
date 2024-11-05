@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden');
+                content.classList.toggle('hidden'); // Alterna la visibilidad del contenido
                 
                 // Cambia el símbolo de despliegue (▲ o ▼)
                 const symbol = toggleButton.querySelector('span');
