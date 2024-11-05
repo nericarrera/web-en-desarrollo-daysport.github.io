@@ -87,55 +87,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*-------------------------FILTRO DESPLEGABLE------------------ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Mostrar y ocultar el filtro al hacer clic en el botón "Filtrar y Ordenar"
-  const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+  // Selección de elementos y verificación de su existencia antes de usarlos
   const filterOverlay = document.querySelector('.filter-overlay');
+  const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
   const closeFilterButton = document.querySelector('.close-filter');
+  const applyFiltersButton = document.getElementById('apply-filters');
+  const mujerProductsGrid = document.querySelector('.mujer-products-grid');
 
-  filterDropdownToggle.addEventListener('click', () => {
-      filterOverlay.classList.add('show');
-      filterOverlay.style.display = 'block';
-  });
+  if (filterDropdownToggle && filterOverlay) {
+      // Mostrar el filtro en el lado derecho
+      filterDropdownToggle.addEventListener('click', () => {
+          filterOverlay.classList.add('show');
+          filterOverlay.style.display = 'block';
+      });
+  }
 
-  closeFilterButton.addEventListener('click', () => {
-      filterOverlay.classList.remove('show');
-      setTimeout(() => {
-          filterOverlay.style.display = 'none';
-      }, 300);
-  });
-
-  // Cerrar el filtro al hacer clic fuera de la barra lateral
-  filterOverlay.addEventListener('click', (e) => {
-      if (e.target === filterOverlay) {
+  if (closeFilterButton) {
+      // Cerrar el filtro al hacer clic en el botón de cerrar
+      closeFilterButton.addEventListener('click', () => {
           filterOverlay.classList.remove('show');
           setTimeout(() => {
               filterOverlay.style.display = 'none';
           }, 300);
+      });
+  }
+
+  if (filterOverlay) {
+      // Cerrar el filtro al hacer clic fuera de la barra lateral
+      filterOverlay.addEventListener('click', (e) => {
+          if (e.target === filterOverlay) {
+              filterOverlay.classList.remove('show');
+              setTimeout(() => {
+                  filterOverlay.style.display = 'none';
+              }, 300);
+          }
+      });
+  }
+
+  // Funcionalidad de secciones colapsables
+  const collapsibleSections = document.querySelectorAll('.collapsible-section');
+
+  collapsibleSections.forEach(section => {
+      const toggleButton = section.querySelector('.collapsible-toggle');
+      const content = section.querySelector('.collapsible-content');
+
+      if (toggleButton && content) {
+          toggleButton.addEventListener('click', () => {
+              section.classList.toggle('active');
+              content.classList.toggle('hidden');
+
+              // Cambiar el símbolo de desplegar/cerrar
+              const symbol = toggleButton.querySelector('span');
+              symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
+          });
+      } else {
+          console.error("Elemento 'collapsible-toggle' o 'collapsible-content' no encontrado en la sección:", section);
       }
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    collapsibleSections.forEach(section => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
-
-        if (toggleButton && content) {
-            toggleButton.addEventListener('click', () => {
-                section.classList.toggle('active'); // Alterna la clase 'active' en la sección
-                content.classList.toggle('hidden'); // Alterna la visibilidad del contenido
-
-                // Cambia el símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('span');
-                symbol.textContent = section.classList.contains('active') ? '▲' : '▼';
-            });
-        } else {
-            console.error("Elemento 'collapsible-toggle' o 'collapsible-content' no encontrado en la sección:", section);
-        }
-    });
+  // Aplicar filtros al hacer clic en "Aplicar"
+  if (applyFiltersButton) {
+      applyFiltersButton.addEventListener('click', () => {
+          const selectedColor = document.querySelector('[name="color"]:checked')?.value || "";
+          const selectedTalla = document.querySelector('[name="size"]:checked')?.value || "";
+          mostrarProductos("all", selectedColor, selectedTalla);
+          filterOverlay.classList.remove('show');
+          setTimeout(() => {
+              filterOverlay.style.display = 'none';
+          }, 300);
+      });
+  }
 });
 
-});
+// Función para mostrar productos (asegúrate de tenerla en el código)
+function mostrarProductos(categoria = "all", color = "", talla = "") {
+  // Implementación de la lógica de filtrado y despliegue de productos
+}
   /*---------------------------------------- */
 
