@@ -130,4 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   /*---------------------------------------- */
 
- 
+  document.addEventListener('DOMContentLoaded', () => {
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
+
+    collapsibleSections.forEach((section, index) => {
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
+
+        if (toggleButton && content) {
+            toggleButton.addEventListener('click', () => {
+                content.classList.toggle('hidden'); // Alterna la clase 'hidden' para mostrar/ocultar
+
+                // Cambiar el símbolo de desplegar/cerrar
+                const symbol = toggleButton.querySelector('span');
+                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+            });
+        } else {
+            console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
+        }
+    });
+});
