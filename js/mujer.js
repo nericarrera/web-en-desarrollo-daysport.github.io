@@ -136,14 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-        
+
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+            
             toggleButton.addEventListener('click', () => {
                 content.classList.toggle('hidden');
+                
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
+                if (content.classList.contains('hidden')) {
+                    symbol.textContent = '▼';
+                    console.log(`Contenido de la sección ${index + 1} ahora está oculto`);
+                } else {
+                    symbol.textContent = '▲';
+                    console.log(`Contenido de la sección ${index + 1} ahora está visible`);
+                }
             });
         } else {
             console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
