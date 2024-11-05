@@ -9,18 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyFiltersButton = document.getElementById('apply-filters');
   const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
+  // Productos de ejemplo
   const productosMujer = [
       { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
-      { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "Negro", talla: "L", etiqueta: "novedades" },
+      { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "negro", talla: "L", etiqueta: "novedades" },
+      // Añadir más productos si es necesario
   ];
 
-  // Función para mostrar productos
+  // Variables para filtros seleccionados
+  let selectedCategory = "all";
+  let selectedColor = "";
+  let selectedTalla = "";
+
+  // Función para mostrar productos filtrados
   function mostrarProductos(categoria = "all", color = "", talla = "") {
       mujerProductsGrid.innerHTML = ""; // Limpiar el grid de productos
 
       const productosFiltrados = productosMujer.filter(producto => {
           const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-          const matchesColor = !color || producto.color === color;
+          const matchesColor = !color || producto.color.toLowerCase() === color.toLowerCase();
           const matchesTalla = !talla || producto.talla === talla;
           return matchesCategoria && matchesColor && matchesTalla;
       });
@@ -37,24 +44,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // Cambiar filtro por categoría
+  // Filtro horizontal: Cambiar categoría
   filterButtons.forEach(button => {
       button.addEventListener('click', () => {
           filterButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
-          const categoria = button.getAttribute('data-filter');
-          mostrarProductos(categoria);
+          selectedCategory = button.getAttribute('data-filter');
+          mostrarProductos(selectedCategory, selectedColor, selectedTalla);
       });
   });
 
-  // Mostrar y ocultar el filtro lateral
+  // Mostrar y ocultar el modal de filtros adicionales
   if (filterDropdownToggle && filterOverlay) {
       filterDropdownToggle.addEventListener('click', () => {
-          filterOverlay.classList.add('show');
-          filterOverlay.style.display = 'block';
+          filterOverlay.classList.toggle('show');
+          filterOverlay.style.display = filterOverlay.classList.contains('show') ? 'block' : 'none';
       });
   }
 
+  // Cerrar el filtro lateral con el botón 'X' o al hacer clic fuera del modal
   if (closeFilterButton) {
       closeFilterButton.addEventListener('click', () => {
           filterOverlay.classList.remove('show');
@@ -63,8 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 300);
       });
   }
-
-  // Cerrar el filtro al hacer clic fuera de la barra lateral
   if (filterOverlay) {
       filterOverlay.addEventListener('click', (e) => {
           if (e.target === filterOverlay) {
@@ -76,54 +82,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-  // Configuración de las secciones colapsables
-  collapsibleSections.forEach((section, index) => {
+  // Aplicar filtros adicionales al hacer clic en el botón "Aplicar filtros"
+  if (applyFiltersButton) {
+      applyFiltersButton.addEventListener('click', () => {
+          const selectedOrder = document.querySelector('input[name="sort"]:checked')?.value;
+          selectedColor = Array.from(document.querySelectorAll('input[name="color"]:checked')).map(cb => cb.value)[0] || "";
+          selectedTalla = Array.from(document.querySelectorAll('input[name="size"]:checked')).map(cb => cb.value)[0] || "";
+
+          // Ordenar los productos si es necesario
+          if (selectedOrder === 'price-asc') {
+              productosMujer.sort((a, b) => a.precio - b.precio);
+          } else if (selectedOrder === 'price-desc') {
+              productosMujer.sort((a, b) => b.precio - a.precio);
+          }
+
+          mostrarProductos(selectedCategory, selectedColor, selectedTalla); // Mostrar productos filtrados
+          filterOverlay.classList.remove('show'); // Cerrar el modal de filtro
+          setTimeout(() => {
+              filterOverlay.style.display = 'none';
+          }, 300);
+      });
+  }
+
+  // Configuración de las secciones colapsables en el modal
+  collapsibleSections.forEach((section) => {
       const toggleButton = section.querySelector('.collapsible-toggle');
       const content = section.querySelector('.collapsible-content');
 
-      if (toggleButton && content) {
-          toggleButton.addEventListener('click', () => {
-              content.classList.toggle('hidden');
-              const symbol = toggleButton.querySelector('span');
-              symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-          });
-      } else {
-          console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
-      }
+      toggleButton.addEventListener('click', () => {
+          content.classList.toggle('hidden');
+          const symbol = toggleButton.querySelector('span');
+          symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+      });
   });
-
-  // Aplicar filtros adicionales
-  if (applyFiltersButton) {
-      applyFiltersButton.addEventListener('click', () => {
-          const selectedColorElement = document.getElementById('color');
-          const selectedTallaElement = document.getElementById('talla');
-          const selectedColor = selectedColorElement ? selectedColorElement.value : "";
-          const selectedTalla = selectedTallaElement ? selectedTallaElement.value : "";
-
-          const activeCategoryButton = document.querySelector('.mujer-filter-button.active');
-          const categoria = activeCategoryButton ? activeCategoryButton.getAttribute('data-filter') : "all";
-          mostrarProductos(categoria, selectedColor, selectedTalla);
-
-          if (filterOverlay) {
-              filterOverlay.classList.remove('show');
-              setTimeout(() => {
-                  filterOverlay.style.display = 'none';
-              }, 300);
-          }
-      });
-  } else {
-      console.error("Botón de aplicar filtros no encontrado.");
-  }
-
-  // Verificación de elementos adicionales del filtro
-  const elementosFiltro = document.querySelectorAll('.filter-options input');
-  if (elementosFiltro.length === 0) {
-      console.warn("Elementos de filtro adicional no encontrados. Verifica que los inputs de filtro estén correctamente definidos.");
-  } else {
-      elementosFiltro.forEach((elemento, index) => {
-          console.log(`Elemento de filtro encontrado en posición ${index + 1}:`, elemento);
-      });
-  }
 
   // Mostrar todos los productos al cargar la página
   mostrarProductos();
