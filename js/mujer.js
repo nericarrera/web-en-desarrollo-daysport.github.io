@@ -140,19 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
   /*---------------------------------------------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
-    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-    const filterButtons = document.querySelectorAll('.mujer-filter-button');
-    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const closeFilterButton = document.querySelector('.close-filter');
-    const applyFiltersButton = document.getElementById('apply-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    // Verificación inicial de elementos esenciales
-    if (!filterDropdownToggle || !filterOverlay || !closeFilterButton || !applyFiltersButton) {
-        console.error("Falta uno o más elementos esenciales para el filtro. Verifica el HTML y asegúrate de que todos los elementos están presentes.");
-        return; // Detenemos el script si faltan elementos cruciales
-    }
 
     // Mostrar y ocultar el menú lateral
     filterDropdownToggle.addEventListener('click', () => {
