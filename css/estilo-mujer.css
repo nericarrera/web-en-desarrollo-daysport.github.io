@@ -598,7 +598,7 @@
 }
 
 .hidden {
-  display: flex;
+  display: none;
 }
 .collapsible-content.hidden {
   display: none;
