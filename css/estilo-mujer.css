@@ -597,6 +597,9 @@
   transition: max-height 0.3s ease;
 }
 
+.hidden {
+  display: none;
+}
 .collapsible-content.hidden {
   display: none;
 }
