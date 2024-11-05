@@ -146,26 +146,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     // Mostrar y ocultar el menú lateral
-    filterDropdownToggle.addEventListener('click', () => {
-        filterOverlay.classList.add('show');
-        filterOverlay.style.display = 'block';
-    });
+    if (filterDropdownToggle) {
+        filterDropdownToggle.addEventListener('click', () => {
+            filterOverlay.classList.add('show');
+            filterOverlay.style.display = 'block';
+        });
+    } else {
+        console.warn("El botón de 'Filtrar y Ordenar' no fue encontrado.");
+    }
 
-    closeFilterButton.addEventListener('click', () => {
-        filterOverlay.classList.remove('show');
-        setTimeout(() => {
-            filterOverlay.style.display = 'none';
-        }, 300);
-    });
-
-    filterOverlay.addEventListener('click', (e) => {
-        if (e.target === filterOverlay) {
+    if (closeFilterButton) {
+        closeFilterButton.addEventListener('click', () => {
             filterOverlay.classList.remove('show');
             setTimeout(() => {
                 filterOverlay.style.display = 'none';
             }, 300);
-        }
-    });
+        });
+    } else {
+        console.warn("El botón de cerrar en el filtro no fue encontrado.");
+    }
+
+    if (filterOverlay) {
+        filterOverlay.addEventListener('click', (e) => {
+            if (e.target === filterOverlay) {
+                filterOverlay.classList.remove('show');
+                setTimeout(() => {
+                    filterOverlay.style.display = 'none';
+                }, 300);
+            }
+        });
+    } else {
+        console.warn("El overlay de filtro no fue encontrado.");
+    }
 
     // Configuración de las secciones colapsables
     collapsibleSections.forEach((section, index) => {
@@ -179,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
         } else {
-            console.warn(`No se encontraron elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
 
