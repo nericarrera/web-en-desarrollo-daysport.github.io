@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
+            console.log(`Se encontraron elementos en la sección de filtro número ${index + 1}.`);
             toggleButton.addEventListener('click', () => {
                 content.classList.toggle('hidden');
                 const symbol = toggleButton.querySelector('span');
