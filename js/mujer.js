@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad de la sección de contenido
+                // Alternar visibilidad
                 if (content.style.display === 'block') {
                     content.style.display = 'none';
                     toggleButton.querySelector('span').textContent = '▼';

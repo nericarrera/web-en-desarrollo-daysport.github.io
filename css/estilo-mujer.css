@@ -594,7 +594,6 @@
 /* Estilo para la sección colapsable */
 .collapsible-content {
   display: none;
-  transition: max-height 0.3s ease;
 }
 
 .hidden {
