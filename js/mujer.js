@@ -148,11 +148,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyFiltersButton = document.getElementById('apply-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    if (!filterDropdownToggle) console.error("Elemento '.filter-dropdown-toggle' no encontrado.");
-    if (!filterOverlay) console.error("Elemento '.filter-overlay' no encontrado.");
-    if (!closeFilterButton) console.error("Elemento '.close-filter' no encontrado.");
-    if (!applyFiltersButton) console.error("Elemento '#apply-filters' no encontrado.");
-    if (collapsibleSections.length === 0) console.warn("Secciones colapsables no encontradas.");
+    // Verificación y mensajes de consola
+    if (!filterDropdownToggle) console.error("Elemento '.filter-dropdown-toggle' no encontrado en el DOM.");
+    if (!filterOverlay) console.error("Elemento '.filter-overlay' no encontrado en el DOM.");
+    if (!closeFilterButton) console.error("Elemento '.close-filter' no encontrado en el DOM.");
+    if (!applyFiltersButton) console.error("Elemento '#apply-filters' no encontrado en el DOM.");
+    if (collapsibleSections.length === 0) console.warn("No se encontraron secciones colapsables en el DOM.");
 
     // Mostrar y ocultar el menú lateral
     filterDropdownToggle?.addEventListener('click', () => {
@@ -176,11 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Secciones colapsables en el filtro
+    // Configuración de las secciones colapsables
     collapsibleSections.forEach(section => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-        
+
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
                 content.classList.toggle('hidden');
@@ -188,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
             });
         } else {
-            console.warn("Sección colapsable o contenido no encontrado en:", section);
+            console.warn("No se encontraron elementos colapsables completos en la sección:", section);
         }
     });
 
