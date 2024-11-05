@@ -148,9 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyFiltersButton = document.getElementById('apply-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    if (!filterDropdownToggle || !filterOverlay || !closeFilterButton || !applyFiltersButton) {
-        console.error("Uno o más elementos de filtro no se encontraron. Verifica el HTML.");
-    }
+    if (!filterDropdownToggle) console.error("Elemento '.filter-dropdown-toggle' no encontrado.");
+    if (!filterOverlay) console.error("Elemento '.filter-overlay' no encontrado.");
+    if (!closeFilterButton) console.error("Elemento '.close-filter' no encontrado.");
+    if (!applyFiltersButton) console.error("Elemento '#apply-filters' no encontrado.");
+    if (collapsibleSections.length === 0) console.warn("Secciones colapsables no encontradas.");
 
     // Mostrar y ocultar el menú lateral
     filterDropdownToggle?.addEventListener('click', () => {
