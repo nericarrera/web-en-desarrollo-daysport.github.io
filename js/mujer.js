@@ -201,7 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
 /*-------------------------FILTRO DESPLEGABLE------------------ */
 
 // Verificación de elementos adicionales del filtro
-const elementosFiltro = document.querySelectorAll('.filter-options input');
+// Verificación de elementos adicionales del filtro
+let elementosFiltro = document.querySelectorAll('.filter-options input');
 if (elementosFiltro.length === 0) {
     console.warn("Elementos de filtro adicional no encontrados. Verifica que los inputs de filtro estén correctamente definidos.");
 } else {
@@ -209,7 +210,6 @@ if (elementosFiltro.length === 0) {
         console.log(`Elemento de filtro encontrado en posición ${index + 1}:`, elemento);
     });
 }
-
   /*---------------------------------------- */
 
  
