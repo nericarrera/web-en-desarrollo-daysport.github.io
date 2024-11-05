@@ -420,6 +420,13 @@
     font-weight: 600;
     letter-spacing: 0.5px;
   }
+
+  .banner-content-mujer p {
+    font-family: 'Dosis';
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
   /*--------------------FILTRO MUJER----------------------*/
 /* Estilo del filtro horizontal */
 .horizontal-filter {
