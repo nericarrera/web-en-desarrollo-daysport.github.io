@@ -564,6 +564,12 @@
   color: #333;
 }
 
+#mujer-clear-filters {
+  font-family: 'Questrial';
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 .filter-title {
   font-size: 1.2em;
   margin-top: 20px;
