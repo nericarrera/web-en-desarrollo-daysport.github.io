@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
             
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad
+                // Alternar visibilidad usando clase 'hidden'
                 content.classList.toggle('hidden');
                 
                 // Alternar símbolo de desplegar/cerrar
