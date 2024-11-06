@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterOverlay = document.querySelector('.filter-overlay');
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
-    const clearFiltersButton = document.getElementById('clear-filters');
+    const clearFiltersButton = document.getElementById('mujer-clear-filters');
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
     const colorCheckboxes = document.querySelectorAll('input[name="color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
