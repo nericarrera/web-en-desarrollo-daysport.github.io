@@ -20,33 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Función para mostrar productos
-    function mostrarProductos(categoria = "all", color = "", talla = "") {
-        mujerProductsGrid.innerHTML = ""; // Limpiar el grid de productos
+    function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
+        mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
-        const productosFiltrados = productosMujer.filter(producto => {
-            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-            const matchesColor = !color || producto.color === color;
-            const matchesTalla = !talla || producto.talla === talla;
-            return matchesCategoria && matchesColor && matchesTalla;
+        let productosFiltrados = productosMujer.filter(producto => {
+          const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+          const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
+          const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
+          return matchesCategoria && matchesColor && matchesTalla;
         });
+    
+        // Ordenar los productos si se selecciona una opción
+        if (ordenar === "price-asc") {
+          productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (ordenar === "price-desc") {
+          productosFiltrados.sort((a, b) => b.precio - a.precio);
+        }
     
         productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
-    
-            // Añade un evento de click que redirige a la página de detalles
-            productoDiv.addEventListener('click', () => {
-                window.location.href = `index-producto.html?productId=${producto.id}`;
-            });
-    
-            productoDiv.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p class="mujer-product-name">${producto.nombre}</p>
-                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-            `;
-            mujerProductsGrid.appendChild(productoDiv);
+          const productoDiv = document.createElement('div');
+          productoDiv.classList.add('mujer-product-card');
+          productoDiv.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <p class="mujer-product-name">${producto.nombre}</p>
+            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+          `;
+          mujerProductsGrid.appendChild(productoDiv);
         });
-    }
+      }
+    
 
     // Cambiar filtro por categoría
     filterButtons.forEach(button => {
