@@ -589,6 +589,9 @@
 
 .filter-options li {
   margin: 10px 0;
+  font-family: 'Dosis';
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .apply-button {
