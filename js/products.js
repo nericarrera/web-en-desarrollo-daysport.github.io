@@ -368,3 +368,26 @@ function loadCommentsFromAPI() {
 }
 
 /*----------------------------------------------------------------------------- */
+
+/*----------------------CODIGO REDIRECCION MUJER----------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('productId');
+
+    if (productId) {
+        const producto = productosMujer.find(p => p.id === parseInt(productId));
+
+        if (producto) {
+            document.querySelector('.producto-nombre').textContent = producto.nombre;
+            document.querySelector('.producto-precio').textContent = `$${producto.precio.toLocaleString()}`;
+            document.querySelector('.producto-imagen-principal').src = producto.imagen;
+            // Cargar más fotos o videos si están disponibles
+        } else {
+            console.error("Producto no encontrado");
+        }
+    } else {
+        console.error("ID de producto no especificado en la URL");
+    }
+});
+
+/*--------------------------------------------------------------------------- */
