@@ -1,8 +1,6 @@
 
 /*-------------FILTRO MUJER----------------*/
 document.addEventListener('DOMContentLoaded', () => {
-  const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-  const filterButtons = document.querySelectorAll('.mujer-filter-button');
   const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
   const filterOverlay = document.querySelector('.filter-overlay');
   const closeFilterButton = document.querySelector('.close-filter');
@@ -61,8 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lista de productos de ejemplo
   const productosMujer = [
-      { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
-      { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "negro", talla: "L", etiqueta: "novedades" },
+      { id: 1, nombre: "Remera Modal Soft", 
+        precio: 7500, categoria: "remeras", 
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", 
+        color: "celeste", 
+        talla: "XL", 
+        etiqueta: "nuevo" 
+    },
+      { id: 2, nombre: "Remera Modal Soft", 
+        precio: 7500, categoria: "remeras", 
+        imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", 
+        color: "negro", 
+        talla: "L", 
+        etiqueta: "novedades" },
       // Añade más productos si es necesario
   ];
 
