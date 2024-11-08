@@ -155,21 +155,27 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-
+        
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
-
+            
+            // Configuramos el evento de clic en el botón de despliegue
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
-
-                // Alternar símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
+                const isVisible = !content.classList.contains('hidden');
+                
+                // Alternar visibilidad con la clase 'hidden'
+                if (isVisible) {
+                    content.classList.add('hidden'); // Oculta el contenido
+                    toggleButton.querySelector('span').textContent = '▼'; // Cambia el símbolo
+                    console.log(`Contenido de la sección ${index + 1} ahora está oculto`);
+                } else {
+                    content.classList.remove('hidden'); // Muestra el contenido
+                    toggleButton.querySelector('span').textContent = '▲'; // Cambia el símbolo
+                    console.log(`Contenido de la sección ${index + 1} ahora está visible`);
+                }
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
 
