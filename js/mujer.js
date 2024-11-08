@@ -151,29 +151,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
-  
+
     collapsibleSections.forEach((section, index) => {
-      const toggleButton = section.querySelector('.collapsible-toggle');
-      const content = section.querySelector('.collapsible-content');
-      const symbol = toggleButton.querySelector('span');
-  
-      if (toggleButton && content) {
-        console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
-  
-        toggleButton.addEventListener('click', () => {
-          // Alternar la clase 'hidden' para mostrar/ocultar el contenido
-          content.classList.toggle('hidden');
-          
-          // Cambiar el símbolo según el estado
-          symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-  
-          console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
-        });
-      } else {
-        console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
-      }
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
+
+        if (toggleButton && content) {
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+
+            toggleButton.addEventListener('click', () => {
+                // Alternar visibilidad
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+
+                // Alternar símbolo de desplegar/cerrar
+                const symbol = toggleButton.querySelector('span');
+                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
+            });
+        } else {
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+        }
     });
-  
+
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
-  });
+});
+
 /*----------------FILTRO DESPLEGABLE--------------------- */
