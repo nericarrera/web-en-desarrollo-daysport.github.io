@@ -149,31 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*---------------------------------------- */
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    collapsibleSections.forEach((section, index) => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
-
-        if (toggleButton && content) {
-            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
-
-            toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
-
-                // Alternar símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
-            });
-        } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleHeaders = document.querySelectorAll('.toggle-header');
+  
+    toggleHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        const targetId = header.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+  
+        if (targetContent) {
+          targetContent.classList.toggle('toggle-content'); // Muestra/oculta el contenido
+          header.classList.toggle('expanded'); // Cambia la flecha
         }
+      });
     });
-
-    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
-});
+  });
 
 /*----------------FILTRO DESPLEGABLE--------------------- */

@@ -641,6 +641,18 @@
   border-bottom: 2px solid #333;
 }
 
+/*--------------------DESPLEGABLE NUEVO -----------------*/
+/* Oculta el contenido cuando no está desplegado */
+.toggle-content {
+  display: none;
+}
+
+/* Alterna el símbolo de flecha */
+.toggle-header.expanded span {
+  transform: rotate(180deg); /* Ajusta según tu diseño */
+  transition: transform 0.3s ease;
+}
+
 
 
 
