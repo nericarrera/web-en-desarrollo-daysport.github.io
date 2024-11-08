@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Alternar la clase 'hidden' para mostrar/ocultar el contenido
           content.classList.toggle('hidden');
           
-          // Cambiar el símbolo de desplegar/cerrar
+          // Cambiar el símbolo según el estado
           symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
   
           console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
@@ -176,5 +176,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
   });
-
 /*----------------FILTRO DESPLEGABLE--------------------- */
