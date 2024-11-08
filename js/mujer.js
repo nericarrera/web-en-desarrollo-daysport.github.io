@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /*---------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Selecciona todos los headers que deben ser clicables para desplegar contenido
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     collapsibleSections.forEach((section, index) => {
@@ -136,23 +135,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Añade el evento de clic en el botón de despliegue
             toggleButton.addEventListener('click', () => {
-                // Alternar la clase 'hidden' para mostrar/ocultar
-                content.classList.toggle('hidden'); // Alterna ocultar y mostrar
+                // Alternar visibilidad
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+
+                // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                
-                // Cambia el símbolo en función del estado de 'hidden'
-                if (content.classList.contains('hidden')) {
-                    symbol.textContent = '▼';
-                    console.log(`Contenido de la sección ${index + 1} ahora está oculto`);
-                } else {
-                    symbol.textContent = '▲';
-                    console.log(`Contenido de la sección ${index + 1} ahora está visible`);
-                }
+                symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
-            console.warn(`No se encontraron los elementos completos (toggle y contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
 
