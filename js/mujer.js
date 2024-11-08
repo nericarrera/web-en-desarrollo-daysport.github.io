@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
-            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 2}`);
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
