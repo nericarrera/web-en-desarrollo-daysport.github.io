@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
-            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 2}`);
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
+                console.log(`Contenido de la sección ${index + 2} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 2}.`);
         }
     });
 
