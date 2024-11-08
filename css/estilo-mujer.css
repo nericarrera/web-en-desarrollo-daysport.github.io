@@ -492,7 +492,6 @@
 .mujer-product-card {
   width: 250px;
   border: 1px solid #ddd;
-  padding: 10px;
   text-align: center;
   transition: transform 0.3s ease;
   height: 480px;
@@ -512,11 +511,13 @@
   font-size: 1em;
   color: #333;
   margin: 5px 0;
+  font-family: 'Questrial';
 }
 
 .mujer-product-price {
   color: #000;
   font-weight: bold;
+  font-family: 'Questrial';
 }
 
 /*-----------------FILTRO DESPLEGABLE--------------*/
