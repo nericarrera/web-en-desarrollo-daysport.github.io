@@ -645,6 +645,9 @@
   border-bottom: 2px solid #333;
 }
 
+span {
+  display: flex;
+}
 /*--------------------DESPLEGABLE NUEVO -----------------*/
 
 
