@@ -545,7 +545,7 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  max-height: 80vh; /* Ajusta la altura máxima al 80% de la altura de la ventana */
+  max-height: 100vh; /* Ajusta la altura máxima al 80% de la altura de la ventana */
   overflow-y: auto; /* Activa el desplazamiento vertical si el contenido excede la altura */
    padding-right: 10px; /* Añade un poco de espacio para que el scroll no esté pegado al borde */
 }
