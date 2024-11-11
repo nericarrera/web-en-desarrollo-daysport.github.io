@@ -649,12 +649,12 @@
 .collapsible-content.expanded {
   max-height: 500px; /* Ajusta según la altura del contenido */
 }
-.hidden2 {
+.expanded {
   display: none;
   visibility: hidden;
 }
 
-.collapsible-content.hidden2 {
+.collapsible-content.expanded {
   display: none;
 }
 
