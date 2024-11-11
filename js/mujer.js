@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
     const clearFiltersButton = document.getElementById('mujer-clear-filters');
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
     const colorCheckboxes = document.querySelectorAll('input[name="mujer-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
@@ -20,17 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Agrega más productos según sea necesario
     ];
 
-    // Función para contar productos por color y actualizar el contador
-    function actualizarContadorDeColores() {
+    // Función para contar productos por color y talla
+    function actualizarContadores() {
         const colorCounts = {};
+        const tallaCounts = {};
 
-        // Contar productos por color
+        // Contar productos por color y talla
         productosMujer.forEach(producto => {
             const color = producto.color.toLowerCase();
+            const talla = producto.talla.toUpperCase();
+
             colorCounts[color] = (colorCounts[color] || 0) + 1;
+            tallaCounts[talla] = (tallaCounts[talla] || 0) + 1;
         });
 
-        // Actualizar contadores en el HTML
+        // Actualizar contadores en el HTML para colores
         colorCheckboxes.forEach(checkbox => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
@@ -39,38 +42,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemCount.textContent = `(${count})`;
             }
         });
+
+        // Actualizar contadores en el HTML para tallas
+        sizeCheckboxes.forEach(checkbox => {
+            const talla = checkbox.value.toUpperCase();
+            const count = tallaCounts[talla] || 0;
+            const itemCount = checkbox.parentElement.querySelector('.item-count');
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
+        });
     }
 
     // Llamar a la función para inicializar los contadores
-    actualizarContadorDeColores();
+    actualizarContadores();
 
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
         let productosFiltrados = productosMujer.filter(producto => {
-          const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-          const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
-          const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-          return matchesCategoria && matchesColor && matchesTalla;
+            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
+            const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
+            return matchesCategoria && matchesColor && matchesTalla;
         });
     
         // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
-          productosFiltrados.sort((a, b) => a.precio - b.precio);
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
         } else if (ordenar === "price-desc") {
-          productosFiltrados.sort((a, b) => b.precio - a.precio);
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
     
         productosFiltrados.forEach(producto => {
-          const productoDiv = document.createElement('div');
-          productoDiv.classList.add('mujer-product-card');
-          productoDiv.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-             <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-            <p class="mujer-product-name">${producto.nombre}</p>`
-           ;
-          mujerProductsGrid.appendChild(productoDiv);
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('mujer-product-card');
+            productoDiv.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                <p class="mujer-product-name">${producto.nombre}</p>`;
+            mujerProductsGrid.appendChild(productoDiv);
         });
     }
     
@@ -129,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarProductos(); // Muestra todos los productos nuevamente
     });
 
-    // Inicializar contadores de colores cuando la página se carga
-    actualizarContadorDeColores();
+    // Inicializar contadores de colores y tallas cuando la página se carga
+    actualizarContadores();
 });
 
 
