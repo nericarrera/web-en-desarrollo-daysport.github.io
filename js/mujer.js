@@ -160,11 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                content.style.display = content.style.display === 'block' ? 'none' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.style.display === 'none' ? '▼' : '▲';
+                symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'visible' : 'oculto'}`);
             });
         } else {
