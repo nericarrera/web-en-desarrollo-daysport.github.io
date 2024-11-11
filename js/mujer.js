@@ -153,18 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
+        const symbol = toggleButton.querySelector('span');
 
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
+            // Inicialmente, aseguramos que el contenido esté oculto
+            content.classList.add('hidden');
+
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad mediante una clase
-                content.style.dysplay = content.style.display === ('block');
+                content.classList.toggle('hidden'); // Alternar la clase 'hidden' para mostrar/ocultar
 
                 // Alternar símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.classList.contains('hidden') ? '▲' : '▼';
-
+                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
             });
         } else {
