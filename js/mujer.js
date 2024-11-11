@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad mediante una clase
-                content.style.dysplay = content.style.display === ('hidden');
+                content.style.dysplay = content.style.display === ('block');
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
