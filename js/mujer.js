@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarContadores();
 });
 
-
   /*---------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -160,12 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
-                content.style.display = content.style.display === 'block' ? 'block' : 'none';
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.style.display === 'block' ? '▲' : '▼' ;
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'block' : 'oculto'}`);
+                symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
             console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
