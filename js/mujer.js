@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.classList.toggle('hidden2');
                 
                 // Alternar el símbolo de desplegar/cerrar
-                symbol.textContent = content.classList.contains('.desplegar') ? '▼' : '▲';
+                symbol.textContent = content.classList.contains('hidden2') ? '▼' : '▲';
 
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden2') ? 'oculto' : 'visible'}`);
             });
         } else {
             console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
