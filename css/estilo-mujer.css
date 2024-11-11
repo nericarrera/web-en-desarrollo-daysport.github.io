@@ -650,7 +650,7 @@
 }
 
 .collapsible-content.hidden {
-  display: none;
+  display: none !important;
 }
 
 .collapsible-section.active .collapsible-content {

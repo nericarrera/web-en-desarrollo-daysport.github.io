@@ -162,7 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
             content.classList.add('hidden');
 
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alternar la clase 'hidden' para mostrar/ocultar
+                console.log('Toggle clicado');  // Este mensaje debería aparecer cada vez que haces clic
+                content.classList.toggle('hidden'); 
 
                 // Alternar símbolo de desplegar/cerrar
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
