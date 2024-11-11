@@ -158,17 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Inicializamos con la clase .hidden en el contenido
-            content.classList.add('hidden2');
-
             toggleButton.addEventListener('click', () => {
-                // Alternar la clase .hidden
-                content.classList.toggle('hidden2');
+                // Alternar la clase .expanded
+                content.classList.toggle('expanded');
                 
                 // Alternar el símbolo de desplegar/cerrar
-                symbol.textContent = content.classList.contains('hidden2') ? '▼' : '▲';
+                symbol.textContent = content.classList.contains('expanded') ? '▲' : '▼';
 
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden2') ? 'oculto' : 'visible'}`);
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('expanded') ? 'visible' : 'oculto'}`);
             });
         } else {
             console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
