@@ -155,6 +155,60 @@
     <div class="filter-categories">
         <button class="mujer-filter-button active" data-filter="all">Ver Todo</button>
         <button class="mujer-filter-button" data-filter="novedades">Novedades</button>
+        <button class="mujer-filter-button" data-filter="deportivo">Deportivo</button>
+        <!-- Agrega más botones de categorías según sea necesario -->
+    </div>
+    <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
+</div>
+
+<div class="filter-overlay hidden">
+    <div class="filter-sidebar">
+        <div class="filter-sidebar-header">
+            <h2>Filtrar y ordenar</h2>
+            <a href="#" id="mujer-clear-filters">Borrar Todo</a>
+            <span class="close-filter">&times;</span>
+        </div>
+
+        <div class="filter-section" id="mujer-sort-section">
+            <h3 class="filter-title collapsible-toggle">Ordenar por <span>▼</span></h3>
+            <ul class="filter-options collapsible-content hidden">
+                <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
+                <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
+                <li><input type="radio" name="sort" value="novedades"> Novedades</li>
+                <li><input type="radio" name="sort" value="mas-vendido"> Lo más vendido</li>
+            </ul>
+        </div>
+
+        <div class="filter-section" id="mujer-color-section">
+            <h3 class="filter-title collapsible-toggle">Color <span>▼</span></h3>
+            <ul class="filter-options collapsible-content hidden">
+                <!-- Agrega más opciones de color -->
+                <li><input type="checkbox" name="mujer-color" value="azul"> <span class="color-box" style="background-color: #0000FF;"></span> Azul <span class="item-count">(0)</span></li>
+            </ul>
+        </div>
+
+        <div class="filter-section" id="mujer-size-section">
+            <h3 class="filter-title collapsible-toggle">Talle <span>▼</span></h3>
+            <ul class="filter-options collapsible-content hidden">
+                <!-- Agrega más opciones de talles -->
+                <li><input type="checkbox" name="size" value="M"> M <span class="item-count">(0)</span></li>
+            </ul>
+        </div>
+
+        <button id="apply-filters" class="apply-button">Aplicar</button>
+    </div>
+</div>
+
+<div class="products-grid mujer-products-grid">
+  <!-- Aquí se insertarán los productos dinámicamente -->
+</div>
+
+<!---
+
+  <div class="horizontal-filter">
+    <div class="filter-categories">
+        <button class="mujer-filter-button active" data-filter="all">Ver Todo</button>
+        <button class="mujer-filter-button" data-filter="novedades">Novedades</button>
       <button class="mujer-filter-button" data-filter="Deportivo">Deportivo</button>
       <button class="mujer-filter-button" data-filter="buzos">Buzos</button>
       <button class="mujer-filter-button" data-filter="calzas">Calzas</button>
@@ -207,7 +261,7 @@
           <li><input type="checkbox" name="mujer-color" value="dorado"> <span class="color-box" style="background-color: #FFD700;"></span> Dorado <span class="item-count">(0)</span></li>
           <li><input type="checkbox" name="mujer-color" value="azul-marino"> <span class="color-box" style="background-color: #000080;"></span> Azul Marino <span class="item-count">(0)</span></li>
           <li><input type="checkbox" name="mujer-color" value="multicolor"> <span class="color-box" style="background: linear-gradient(45deg, red, yellow, green, blue);"></span> Multicolor <span class="item-count">(0)</span></li>
-          <!-- Agrega el resto de colores siguiendo el mismo formato -->
+          < Agrega el resto de colores siguiendo el mismo formato 
       </ul>
   </div>
 
@@ -236,11 +290,8 @@
     </div>
 </div>
 
+--><!-----
   
-  <div class="products-grid mujer-products-grid">
-    <!-- Aquí se insertarán los productos dinámicamente -->
-  </div>
-
  
      
 
