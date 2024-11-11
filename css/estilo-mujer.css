@@ -645,12 +645,12 @@
   display: none;
 }
 
-.hidden {
+.hidden2 {
   display: none;
   visibility: hidden;
 }
 
-.collapsible-content.hidden {
+.collapsible-content.hidden2 {
   display: none;
 }
 

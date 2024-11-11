@@ -159,14 +159,14 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
             // Inicializamos con la clase .hidden en el contenido
-            content.classList.add('hidden');
+            content.classList.add('hidden2');
 
             toggleButton.addEventListener('click', () => {
                 // Alternar la clase .hidden
-                content.classList.toggle('hidden');
+                content.classList.toggle('hidden2');
                 
                 // Alternar el símbolo de desplegar/cerrar
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+                symbol.textContent = content.classList.contains('hidden2') ? '▼' : '▲';
 
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
             });
