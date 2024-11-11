@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
     const clearFiltersButton = document.getElementById('mujer-clear-filters');
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
     const colorCheckboxes = document.querySelectorAll('input[name="mujer-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
@@ -19,50 +20,84 @@ document.addEventListener('DOMContentLoaded', () => {
         // Agrega más productos según sea necesario
     ];
 
-    // Función para contar los productos por color
-    function contarColores() {
+    // Función para contar productos por color y actualizar el contador
+    function actualizarContadorDeColores() {
         const colorCounts = {};
 
+        // Contar productos por color
         productosMujer.forEach(producto => {
             const color = producto.color.toLowerCase();
             colorCounts[color] = (colorCounts[color] || 0) + 1;
         });
 
+        // Actualizar contadores en el HTML
         colorCheckboxes.forEach(checkbox => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
-            const label = checkbox.nextSibling;
-            label.textContent = `${label.textContent.trim().split(' ')[0]} (${count})`;
+            const itemCount = checkbox.parentElement.querySelector('.item-count');
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
         });
     }
+
+    // Llamar a la función para inicializar los contadores
+    actualizarContadorDeColores();
 
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
         let productosFiltrados = productosMujer.filter(producto => {
-            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-            const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
-            const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-            return matchesCategoria && matchesColor && matchesTalla;
+          const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+          const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
+          const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
+          return matchesCategoria && matchesColor && matchesTalla;
         });
     
         // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
-            productosFiltrados.sort((a, b) => a.precio - b.precio);
+          productosFiltrados.sort((a, b) => a.precio - b.precio);
         } else if (ordenar === "price-desc") {
-            productosFiltrados.sort((a, b) => b.precio - a.precio);
+          productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
     
         productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
-            productoDiv.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p class="mujer-product-name">${producto.nombre}</p>
-                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-            `;
-            mujerProductsGrid.appendChild(productoDiv);
+          const productoDiv = document.createElement('div');
+          productoDiv.classList.add('mujer-product-card');
+          productoDiv.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+             <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+            <p class="mujer-product-name">${producto.nombre}</p>`
+           ;
+          mujerProductsGrid.appendChild(productoDiv);
+        });
+    }
+    
+    // Cambiar filtro por categoría
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const categoria = button.getAttribute('data-filter');
+            mostrarProductos(categoria);
+        });
+    });
+
+    // Mostrar y ocultar el filtro lateral
+    if (filterDropdownToggle && filterOverlay) {
+        filterDropdownToggle.addEventListener('click', () => {
+            filterOverlay.classList.add('show');
+            filterOverlay.style.display = 'block';
+        });
+    }
+
+    if (closeFilterButton) {
+        closeFilterButton.addEventListener('click', () => {
+            filterOverlay.classList.remove('show');
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
         });
     }
 
@@ -76,10 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value.toUpperCase());
 
-        const selectedSort = Array.from(sortRadios)
-            .find(radio => radio.checked)?.value || "";
-
-        mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort);
+        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
 
         // Cerrar el filtro lateral después de aplicar
         filterOverlay.classList.remove('show');
@@ -89,7 +121,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Limpiar todos los filtros seleccionados
-    clearFiltersButton.addEventListener
+    clearFiltersButton.addEventListener('click', () => {
+        sortRadios.forEach(radio => (radio.checked = false));
+        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
+        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
+
+        mostrarProductos(); // Muestra todos los productos nuevamente
+    });
+
+    // Inicializar contadores de colores cuando la página se carga
+    actualizarContadorDeColores();
 });
 
 
