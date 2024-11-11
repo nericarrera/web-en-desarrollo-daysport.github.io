@@ -642,7 +642,13 @@
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 /* Estilo para la sección colapsable */
 .collapsible-content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.expanded {
+  max-height: 500px; /* Aumenta este valor si el contenido es más alto */
 }
 
 .hidden2 {
