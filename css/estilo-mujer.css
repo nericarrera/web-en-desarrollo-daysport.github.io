@@ -651,7 +651,7 @@
 }
 
 .collapsible-content.hidden {
-  display: none !important;
+  display: none;
 }
 
 .collapsible-section.active .collapsible-content {
