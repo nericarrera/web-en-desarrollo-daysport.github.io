@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-        const symbol = toggleButton.querySelector('.desplegar');
+        const symbol = toggleButton.querySelector('span');
 
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
