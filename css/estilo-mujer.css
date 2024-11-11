@@ -646,15 +646,8 @@
   transition: max-height 0.3s ease-out;
 }
 
-.collapsible-content .expanded {
-  max-height: 500px; /* Ajusta según la altura del contenido */
-}
-.expanded {
-  display: none;
-  visibility: hidden;
-}
 
-.collapsible-content.expanded {
+.collapsible-content.hidden {
   display: none;
 }
 
