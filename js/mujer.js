@@ -152,14 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content hidden');
+        const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad mediante una clase
-                content.classList.toggle('hidden');
+                content.style.dysplay.toggle('hidden');
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
