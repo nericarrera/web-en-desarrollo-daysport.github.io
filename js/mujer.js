@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.classList.toggle('hidden2');
                 
                 // Alternar el símbolo de desplegar/cerrar
-                symbol.textContent = content.classList.contains('hidden2') ? '▼' : '▲';
+                symbol.textContent = content.classList.contains('.desplegar') ? '▼' : '▲';
 
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
             });
