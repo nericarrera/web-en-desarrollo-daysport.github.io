@@ -272,9 +272,9 @@
   .submenu1 {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 73%;
-    transform: translateX(-28%);
+    top: 103%;
+    left: 77%;
+    transform: translateX(-33%);
     width: auto;
     background-color: #ffffff;
     justify-content: center;
@@ -283,7 +283,7 @@
     color: #000000;
     border-radius: 15px;
     list-style-type: none;
-    width: 1661%;
+    width: 2209%;
   }
 
   .submenu2 {
