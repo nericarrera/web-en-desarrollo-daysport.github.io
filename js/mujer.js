@@ -158,7 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Alterna la clase 'hidden'
+                // Alternar visibilidad con la clase 'hidden'
+                content.classList.toggle('hidden');
+
+                // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
 
