@@ -14,36 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        { id: 1, 
-            nombre: "Remera Modal Soft",
-            precio: 7500, 
-            categoria: "remeras",
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", 
-            color: "celeste", 
-            talla: "XL", 
-            etiqueta: "nuevo" 
-        },
-        { id: 2, 
-            nombre: "Remera Modal Soft", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", 
-            color: "Negro", 
-            talla: "L", 
-            etiqueta: "novedades" 
-        },
-        
-        { id: 3, 
-            nombre: "Remera Modal viscosa", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", 
-            color: "Blanco", 
-            talla: "L", 
-            etiqueta: "novedades" 
-        },
+        { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
+        { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "negro", talla: "L", etiqueta: "novedades" },
+        { id: 3, nombre: "Remera Modal viscosa", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", color: "blanco", talla: "L", etiqueta: "novedades" },
         // Agrega más productos según sea necesario
     ];
+
+    // Función para contar productos por color y actualizar el contador
+    function actualizarContadorDeColores() {
+        const colorCounts = {};
+
+        // Contar productos por color
+        productosMujer.forEach(producto => {
+            const color = producto.color.toLowerCase();
+            colorCounts[color] = (colorCounts[color] || 0) + 1;
+        });
+
+        // Actualizar contadores en el HTML
+        colorCheckboxes.forEach(checkbox => {
+            const color = checkbox.value.toLowerCase();
+            const count = colorCounts[color] || 0;
+            const itemCount = checkbox.parentElement.querySelector('.item-count');
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
+        });
+    }
+
+    // Llamar a la función para inicializar los contadores
+    actualizarContadorDeColores();
 
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
@@ -73,9 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
           `;
           mujerProductsGrid.appendChild(productoDiv);
         });
-      }
+    }
     
-
     // Cambiar filtro por categoría
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -103,32 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cerrar el filtro al hacer clic fuera de la barra lateral
-    if (filterOverlay) {
-        filterOverlay.addEventListener('click', (e) => {
-            if (e.target === filterOverlay) {
-                filterOverlay.classList.remove('show');
-                setTimeout(() => {
-                    filterOverlay.style.display = 'none';
-                }, 300);
-            }
-        });
-    }
-
     // Aplicar filtros seleccionados
     applyFiltersButton.addEventListener('click', () => {
         const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
         const selectedColors = Array.from(colorCheckboxes)
             .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
+            .map(checkbox => checkbox.value.toLowerCase());
         const selectedSizes = Array.from(sizeCheckboxes)
             .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
+            .map(checkbox => checkbox.value.toUpperCase());
 
-        const selectedColor = selectedColors.length > 0 ? selectedColors[0] : "";
-        const selectedTalla = selectedSizes.length > 0 ? selectedSizes[0] : "";
-
-        mostrarProductos(selectedCategory, selectedColor, selectedTalla);
+        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
 
         // Cerrar el filtro lateral después de aplicar
         filterOverlay.classList.remove('show');
@@ -146,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarProductos(); // Muestra todos los productos nuevamente
     });
 
+    // Inicializar contadores de colores cuando la página se carga
+    actualizarContadorDeColores();
 });
 
 
