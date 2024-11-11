@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "novedades" 
         },
         
-        { id: 2, 
+        { id: 3, 
             nombre: "Remera Modal viscosa", 
             precio: 7500, 
             categoria: "remeras", 
