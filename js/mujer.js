@@ -8,18 +8,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
     const clearFiltersButton = document.getElementById('mujer-clear-filters');
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
     const colorCheckboxes = document.querySelectorAll('input[name="mujer-color"]');
-    const sizeCheckboxes = document.querySelectorAll('input[name="mujer-size"]');
-    const sortRadios = document.querySelectorAll('input[name="mujer-sort"]');
+    const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
+    const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
         { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
-        { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "Negro", talla: "L", etiqueta: "novedades" },
-        { id: 3, nombre: "Remera Modal viscosa", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", color: "Blanco", talla: "L", etiqueta: "novedades" },
+        { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "negro", talla: "L", etiqueta: "novedades" },
+        { id: 3, nombre: "Remera Modal viscosa", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", color: "blanco", talla: "L", etiqueta: "novedades" },
         // Agrega más productos según sea necesario
     ];
 
+    // Función para contar los productos por color
+    function contarColores() {
+        const colorCounts = {};
+
+        productosMujer.forEach(producto => {
+            const color = producto.color.toLowerCase();
+            colorCounts[color] = (colorCounts[color] || 0) + 1;
+        });
+
+        colorCheckboxes.forEach(checkbox => {
+            const color = checkbox.value.toLowerCase();
+            const count = colorCounts[color] || 0;
+            const label = checkbox.nextSibling;
+            label.textContent = `${label.textContent.trim().split(' ')[0]} (${count})`;
+        });
+    }
+
+    // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
@@ -49,33 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cambiar filtro por categoría
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const categoria = button.getAttribute('data-filter');
-            mostrarProductos(categoria);
-        });
-    });
-
-    // Mostrar y ocultar el filtro lateral
-    if (filterDropdownToggle && filterOverlay) {
-        filterDropdownToggle.addEventListener('click', () => {
-            filterOverlay.classList.add('show');
-            filterOverlay.style.display = 'block';
-        });
-    }
-
-    if (closeFilterButton) {
-        closeFilterButton.addEventListener('click', () => {
-            filterOverlay.classList.remove('show');
-            setTimeout(() => {
-                filterOverlay.style.display = 'none';
-            }, 300);
-        });
-    }
-
     // Aplicar filtros seleccionados
     applyFiltersButton.addEventListener('click', () => {
         const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
@@ -86,11 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.value.toUpperCase());
 
-        const selectedColor = selectedColors.length > 0 ? selectedColors : [];
-        const selectedTalla = selectedSizes.length > 0 ? selectedSizes : [];
+        const selectedSort = Array.from(sortRadios)
+            .find(radio => radio.checked)?.value || "";
 
-        mostrarProductos(selectedCategory, selectedColor, selectedTalla);
+        mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort);
 
+        // Cerrar el filtro lateral después de aplicar
         filterOverlay.classList.remove('show');
         setTimeout(() => {
             filterOverlay.style.display = 'none';
@@ -98,13 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Limpiar todos los filtros seleccionados
-    clearFiltersButton.addEventListener('click', () => {
-        sortRadios.forEach(radio => (radio.checked = false));
-        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
-        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
-
-        mostrarProductos(); // Muestra todos los productos nuevamente
-    });
+    clearFiltersButton.addEventListener
 });
 
 
