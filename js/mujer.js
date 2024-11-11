@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
                 content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                content.style.display = content.style.display === 'bolck' ? 'none' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
