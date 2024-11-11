@@ -646,7 +646,7 @@
   transition: max-height 0.3s ease-out;
 }
 
-.collapsible-content.expanded {
+.collapsible-content .expanded {
   max-height: 500px; /* Ajusta según la altura del contenido */
 }
 .expanded {
