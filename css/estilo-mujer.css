@@ -640,7 +640,6 @@
 }
 
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
-/* Estilo para la sección colapsable */
 .collapsible-content {
   max-height: 0;
   overflow: hidden;
@@ -648,9 +647,8 @@
 }
 
 .collapsible-content.expanded {
-  max-height: 500px; /* Aumenta este valor si el contenido es más alto */
+  max-height: 500px; /* Ajusta según la altura del contenido */
 }
-
 .hidden2 {
   display: none;
   visibility: hidden;
