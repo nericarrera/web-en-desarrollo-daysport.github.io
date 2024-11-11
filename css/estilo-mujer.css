@@ -649,9 +649,6 @@
   display: none;
 }
 
-.collapsible-content.hidden {
-  display: none;
-}
 
 .collapsible-section.active .collapsible-content {
   display: block;
