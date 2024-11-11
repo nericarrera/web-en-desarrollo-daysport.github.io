@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = content.style.display === 'none' ? '▲' : '▼' ;
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'none' : 'oculto'}`);
+                symbol.textContent = content.style.display === 'block' ? '▲' : '▼' ;
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'block' ? 'none' : 'oculto'}`);
             });
         } else {
             console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
