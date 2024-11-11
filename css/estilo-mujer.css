@@ -527,6 +527,7 @@
   margin: 5px 0;
   font-family: 'Questrial';
   text-align: left;
+  margin-left: 5px;
 }
 
 .mujer-product-price {
@@ -534,7 +535,7 @@
   font-weight: bold;
   font-family: 'Questrial';
   text-align: left;
-  margin: 5px;
+  margin-left: 5px;
 }
 
 /*-----------------FILTRO DESPLEGABLE--------------*/
