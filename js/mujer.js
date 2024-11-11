@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /*---------------------------------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.filter-section');
+    const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
@@ -156,18 +156,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const symbol = toggleButton.querySelector('span');
 
         if (toggleButton && content) {
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+
             toggleButton.addEventListener('click', () => {
-                content.classList.toggle('hidden'); // Toggle visibility
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲'; // Update symbol
+                // Alternar visibilidad y símbolo de desplegar/cerrar
+                content.classList.toggle('hidden');
+                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección número ${index + 1}.`);
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
 
-    console.log("Scripts cargados correctamente.");
+    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
-
 
 
   /*
