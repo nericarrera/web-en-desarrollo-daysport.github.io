@@ -153,35 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
-        const symbol = toggleButton.querySelector('span');
-
-        if (toggleButton && content) {
-            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
-
-            toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad y símbolo de desplegar/cerrar
-                content.classList.toggle('hidden');
-                symbol.textContent = content.classList.contains('hidden') ? '▼' : '▲';
-
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.classList.contains('hidden') ? 'oculto' : 'visible'}`);
-            });
-        } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
-        }
-    });
-
-    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
-});
-
-
-  /*
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const collapsibleSections = document.querySelectorAll('.collapsible-section');
-
-    collapsibleSections.forEach((section, index) => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
