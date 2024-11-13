@@ -149,29 +149,35 @@
 
   <!----------------------NUEVO----------------------------->
 
-  <div class="horizontal-filter">
-    <button class="filter-button" data-toggle="sort-options">Ordenar por ▼</button>
-    <div class="dropdown-content hidden" id="sort-options">
-        <label><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</label>
-        <label><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</label>
-        <label><input type="radio" name="sort" value="new"> Novedades</label>
-        <label><input type="radio" name="sort" value="bestseller"> Lo más vendido</label>
+  <div class="filter-container">
+    <div class="filter-category">
+        <button class="filter-toggle" data-target="sort-options">Ordenar por <span>▼</span></button>
+        <div id="sort-options" class="filter-content hidden">
+            <label><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</label>
+            <label><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</label>
+            <label><input type="radio" name="sort" value="new"> Novedades</label>
+            <label><input type="radio" name="sort" value="bestseller"> Lo más vendido</label>
+        </div>
     </div>
 
-    <button class="filter-button" data-toggle="color-options">Color ▼</button>
-    <div class="dropdown-content hidden" id="color-options">
-        <label><input type="checkbox" name="color" value="amarillo"> Amarillo</label>
-        <label><input type="checkbox" name="color" value="azul"> Azul</label>
-        <label><input type="checkbox" name="color" value="negro"> Negro</label>
-        <label><input type="checkbox" name="color" value="rosa"> Rosa</label>
+    <div class="filter-category">
+        <button class="filter-toggle" data-target="color-options">Color <span>▼</span></button>
+        <div id="color-options" class="filter-content hidden">
+            <label><input type="checkbox" name="color" value="amarillo"> Amarillo</label>
+            <label><input type="checkbox" name="color" value="azul"> Azul</label>
+            <label><input type="checkbox" name="color" value="negro"> Negro</label>
+            <label><input type="checkbox" name="color" value="rosa"> Rosa</label>
+        </div>
     </div>
 
-    <button class="filter-button" data-toggle="size-options">Talle ▼</button>
-    <div class="dropdown-content hidden" id="size-options">
-        <label><input type="checkbox" name="size" value="S"> S</label>
-        <label><input type="checkbox" name="size" value="M"> M</label>
-        <label><input type="checkbox" name="size" value="L"> L</label>
-        <label><input type="checkbox" name="size" value="XL"> XL</label>
+    <div class="filter-category">
+        <button class="filter-toggle" data-target="size-options">Talle <span>▼</span></button>
+        <div id="size-options" class="filter-content hidden">
+            <label><input type="checkbox" name="size" value="S"> S</label>
+            <label><input type="checkbox" name="size" value="M"> M</label>
+            <label><input type="checkbox" name="size" value="L"> L</label>
+            <label><input type="checkbox" name="size" value="XL"> XL</label>
+        </div>
     </div>
 </div>
 

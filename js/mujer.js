@@ -148,32 +148,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*---------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-button');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
+    const filterToggles = document.querySelectorAll('.filter-toggle');
+
+    filterToggles.forEach(toggle => {
+        toggle.addEventListener('click', (event) => {
+            event.stopPropagation();
             
-            // Obtener el id de la sección a mostrar
-            const targetId = button.getAttribute('data-toggle');
+            // Obtener el contenido que corresponde al botón clicado
+            const targetId = toggle.getAttribute('data-target');
             const targetContent = document.getElementById(targetId);
-            
-            // Cerrar otros desplegables
-            document.querySelectorAll('.dropdown-content').forEach(content => {
+
+            // Ocultar todos los contenidos excepto el actual
+            document.querySelectorAll('.filter-content').forEach(content => {
                 if (content !== targetContent) {
                     content.classList.remove('show');
                 }
             });
 
-            // Alternar el estado del contenido actual
+            // Alternar el contenido actual
             targetContent.classList.toggle('show');
+
+            // Actualizar el símbolo de despliegue
+            toggle.querySelector('span').textContent = targetContent.classList.contains('show') ? '▲' : '▼';
         });
     });
 
-    // Cerrar desplegables al hacer clic fuera de ellos
+    // Cerrar todos los desplegables al hacer clic fuera de ellos
     document.addEventListener('click', () => {
-        document.querySelectorAll('.dropdown-content').forEach(content => {
+        document.querySelectorAll('.filter-content').forEach(content => {
             content.classList.remove('show');
+        });
+        filterToggles.forEach(toggle => {
+            toggle.querySelector('span').textContent = '▼';
         });
     });
 });
