@@ -151,29 +151,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-button');
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
             const targetId = button.getAttribute('data-toggle');
             const targetContent = document.getElementById(`${targetId}-options`);
 
-            // Cerrar todos los desplegables excepto el que se hace clic
+            // Evitar que el clic en el botón cierre inmediatamente el desplegable
+            e.stopPropagation();
+
+            // Cerrar otros desplegables
             document.querySelectorAll('.dropdown-content').forEach(content => {
                 if (content !== targetContent) {
                     content.classList.remove('show');
                 }
             });
 
-            // Alternar visibilidad del desplegable clicado
+            // Alternar el desplegable actual
             targetContent.classList.toggle('show');
         });
     });
 
-    // Cerrar desplegable si se hace clic fuera de él
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.filter-button') && !e.target.closest('.dropdown-content')) {
-            document.querySelectorAll('.dropdown-content').forEach(content => {
-                content.classList.remove('show');
-            });
-        }
+    // Cerrar desplegable si se hace clic fuera de los elementos
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.dropdown-content').forEach(content => {
+            content.classList.remove('show');
+        });
     });
 });
 
