@@ -149,15 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /*---------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-button');
-
+    
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            const targetId = button.getAttribute('data-toggle');
-            const targetContent = document.getElementById(`${targetId}-options`);
-
-            // Evitar que el clic en el botón cierre inmediatamente el desplegable
             e.stopPropagation();
-
+            
+            // Obtener el id de la sección a mostrar
+            const targetId = button.getAttribute('data-toggle');
+            const targetContent = document.getElementById(targetId);
+            
             // Cerrar otros desplegables
             document.querySelectorAll('.dropdown-content').forEach(content => {
                 if (content !== targetContent) {
@@ -165,12 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Alternar el desplegable actual
+            // Alternar el estado del contenido actual
             targetContent.classList.toggle('show');
         });
     });
 
-    // Cerrar desplegable si se hace clic fuera de los elementos
+    // Cerrar desplegables al hacer clic fuera de ellos
     document.addEventListener('click', () => {
         document.querySelectorAll('.dropdown-content').forEach(content => {
             content.classList.remove('show');
