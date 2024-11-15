@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Crear la imagen principal
             productoDiv.innerHTML = `
                 <div class="product-image">
-                    <img id="mainImage-${producto.id}" src="${producto.imagenes[0]}" alt="${producto.nombre}">
+                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}">
                 </div>
                 <div class="product-thumbnails">
                     ${producto.imagenes.map((img, index) => `
