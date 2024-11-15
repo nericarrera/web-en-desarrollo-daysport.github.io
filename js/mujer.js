@@ -184,14 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-
-
-
-
-
-  /*
+/*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
