@@ -650,11 +650,11 @@
   transition: max-height 0.3s ease-out;
 }
 
-.hidden {
+.hidden-mujer {
   display: none;
 }
 
-.collapsible-content .hidden {
+.collapsible-content hidden-mujer {
   display: none;
 }
 
