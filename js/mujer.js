@@ -1,6 +1,6 @@
 
 /*-------------FILTRO MUJER----------------*/
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
