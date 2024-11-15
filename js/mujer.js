@@ -14,9 +14,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", color: "celeste", talla: "XL", etiqueta: "nuevo" },
-        { id: 2, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", color: "negro", talla: "L", etiqueta: "novedades" },
-        { id: 3, nombre: "Remera Modal viscosa", precio: 7500, categoria: "remeras", imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", color: "blanco", talla: "L", etiqueta: "novedades" },
+        { id: 1, 
+            nombre: "Remera Modal Soft", 
+            precio: 7500, 
+            categoria: "remeras", 
+            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", 
+            color: "celeste", 
+            talla: "XL", 
+            etiqueta: "nuevo" 
+        },
+        { id: 2, 
+            nombre: "Remera Modal Soft", 
+            precio: 7500, 
+            categoria: "remeras", 
+            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", 
+            color: "negro", 
+            talla: "L", 
+            etiqueta: "novedades" 
+        },
+        { id: 3, 
+            nombre: "Remera Modal viscosa", 
+            precio: 7500, 
+            categoria: "remeras", 
+            imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", 
+            color: "blanco", 
+            talla: "L", 
+            etiqueta: "novedades" 
+        },
+        { id: 4, 
+            nombre: "Remera Modal viscosa", 
+            precio: 7500, 
+            categoria: "remeras", 
+            imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", 
+            color: "blanco", 
+            talla: "L", 
+            etiqueta: "novedades" 
+        },
+
         // Agrega más productos según sea necesario
     ];
 
