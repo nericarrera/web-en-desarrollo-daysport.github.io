@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", 
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"], 
             color: "celeste", 
             talla: "XL", 
             etiqueta: "nuevo" 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg", 
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
             color: "negro", 
             talla: "L", 
             etiqueta: "novedades" 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal viscosa", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", 
+            imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
             color: "blanco", 
             talla: "L", 
             etiqueta: "novedades" 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal viscosa", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: "img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg", 
+            imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
             color: "blanco", 
             talla: "L", 
             etiqueta: "novedades" 
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llamar a la función para inicializar los contadores
     actualizarContadores();
 
+    /*---------------PRODUCTO CON IMAGEN MINIATURA---------------------*/
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
@@ -109,6 +110,35 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (ordenar === "price-desc") {
             productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
+    
+        productosFiltrados.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('mujer-product-card');
+    
+            // Crear la imagen principal
+            productoDiv.innerHTML = `
+                <div class="product-image">
+                    <img id="mainImage-${producto.id}" src="${producto.imagenes[0]}" alt="${producto.nombre}">
+                </div>
+                <div class="product-thumbnails">
+                    ${producto.imagenes.map((img, index) => `
+                        <img src="${img}" alt="${producto.nombre} color ${index + 1}" onclick="changeImage('${img}', 'mainImage-${producto.id}')">
+                    `).join('')}
+                </div>
+                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                <p class="mujer-product-name">${producto.nombre}</p>
+            `;
+            
+            mujerProductsGrid.appendChild(productoDiv);
+        });
+
+        function changeImage(imageUrl, mainImageId) {
+            const mainImage = document.getElementById(mainImageId);
+            if (mainImage) {
+                mainImage.src = imageUrl;
+            }
+        }    
+    /*----------------------------------------------------------------------------- */
     
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
