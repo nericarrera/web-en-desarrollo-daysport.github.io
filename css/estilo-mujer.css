@@ -538,61 +538,9 @@
   margin-left: 5px;
 }
 
-/*----------------------NUEVO-------------------------*/
-.filter-container {
-  width: 100%;
-  padding: 20px;
-  background-color: #f7f7f7;
-}
-
-.filter-category {
-  margin-bottom: 10px;
-}
-
-.filter-toggle {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-}
-
-.filter-content {
-  display: none;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-
-.filter-content label {
-  display: block;
-  padding: 5px 0;
-}
-
-.filter-content.show {
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-----------------FILTRO DESPLEGABLE--------------*/
 /* Estilos para el overlay del filtro */
-/*
+
 .filter-overlay {
   position: fixed;
   top: 0;
@@ -605,7 +553,7 @@
 }
 
 /* Barra lateral del filtro (contenedor del filtro en el lado derecho) */
-/*
+
 .filter-sidebar {
   position: absolute;
   top: 0;
@@ -617,13 +565,12 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  max-height: 100vh; /* Ajusta la altura máxima al 80% de la altura de la ventana *//*
-  overflow-y: auto; /* Activa el desplazamiento vertical si el contenido excede la altura *//*
-   padding-right: 10px; /* Añade un poco de espacio para que el scroll no esté pegado al borde *//*
+  max-height: 100vh; 
+  overflow-y: auto;  
+   padding-right: 10px;
 }
 
-
-/* Mostrar la barra lateral cuando se activa *//*
+/* Mostrar la barra lateral cuando se activa */
 .filter-overlay.show .filter-sidebar {
   transform: translateX(0);
 }
@@ -685,7 +632,7 @@
   margin-top: 20px;
 }
 
-/* Mostrar el overlay y la barra lateral *//*
+/* Mostrar el overlay y la barra lateral */
 .filter-overlay.show {
   display: block;
 }
@@ -694,7 +641,7 @@
   transform: translateX(0);
 }
 
-/*--------------FILTRO OPCIONES DESPLEGABLES-----------------*//*
+/*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 .collapsible-content {
   display: block;
   max-height: 0;
@@ -722,7 +669,6 @@
   height: 33px;
   border-bottom: 2px solid #333;
 }
-
 
 /*--------------------DESPLEGABLE NUEVO -----------------*/
 
