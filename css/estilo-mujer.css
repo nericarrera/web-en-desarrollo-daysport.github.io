@@ -428,43 +428,7 @@
   }
   /*--------------------FILTRO MUJER----------------------*/
 /* Estilo del filtro horizontal */
-.horizontal-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
-.filter-categories {
-  display: flex;
-  gap: 15px;
-}
-
-.mujer-filter-button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.mujer-filter-button.active {
-  background-color: #007bff;
-  color: white;
-}
-
-.filter-dropdown-toggle {
-  padding: 10px 15px;
-  border: none;
-  background-color: #f0f0f0;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-
-
-/*
 .horizontal-filter {
   display: flex;
   align-items: center;
@@ -473,8 +437,8 @@
   background-color: #fff;
   border-bottom: 1px solid #ddd;
   position: relative; /* Asegura que el menú desplegable se alinee bien */
-  
-/*
+}
+
 .filter-categories {
   display: flex;
   gap: 15px;
