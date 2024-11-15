@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}">
                 </div>
                 <div class="product-thumbnails">
-                    ${producto.imagenes.map((img, index) => `
+                    ${producto.imagen.map((img, index) => `
                         <img src="${img}" alt="${producto.nombre} color ${index + 1}" onclick="changeImage('${img}', 'mainImage-${producto.id}')">
                     `).join('')}
                 </div>
