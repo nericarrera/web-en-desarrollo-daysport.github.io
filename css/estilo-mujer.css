@@ -539,9 +539,8 @@
   margin-left: 5px;
 }
 
-/*-----------------FILTRO DESPLEGABLE--------------*/
+/*-----------------BOTON FILTRO DESPLEGABLE--------------*/
 /* Estilos para el overlay del filtro */
-
 .filter-overlay {
   position: fixed;
   top: 0;
@@ -648,6 +647,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
+}
+
+.filter-section {
+  display: flex;
 }
 
 .hidden-mujer {
