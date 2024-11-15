@@ -653,7 +653,7 @@
   display: none;
 }
 
-.collapsible-content {
+.collapsible-content, .hidden {
   display: none;
 }
 
