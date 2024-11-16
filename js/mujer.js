@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('span');
+                const symbol = toggleButton.querySelector('hidden-mujer');
                 symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
