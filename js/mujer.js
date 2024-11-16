@@ -231,8 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.filter-content').forEach(content => {
             content.classList.remove('span');
         });
-        filterToggles.forEach(header => {
-            header.querySelector('span').textContent = '▼';
+        filterToggles.forEach(toggle => {
+            toggle.querySelector('span').textContent = '▼';
         });
     });
 
