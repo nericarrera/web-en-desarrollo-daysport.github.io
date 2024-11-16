@@ -137,19 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mainImage) {
                 mainImage.src = imageUrl;
             }
-        }    
+        }
+    }    
     /*----------------------------------------------------------------------------- */
-
-        productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
-            productoDiv.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                <p class="mujer-product-name">${producto.nombre}</p>`;
-            mujerProductsGrid.appendChild(productoDiv);
-        });
-    }
     
     // Cambiar filtro por categoría
     filterButtons.forEach(button => {
@@ -215,8 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterToggles = document.querySelectorAll('.filter-toggle');
 
     filterToggles.forEach(toggle => {
-        toggle.addEventListener('click', (event) => {
-            event.stopPropagation();
+        toggle.addEventListener('click', function() {
             
             // Obtener el contenido que corresponde al botón clicado
             const targetId = toggle.getAttribute('data-target');
@@ -233,14 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
             targetContent.classList.toggle('show');
 
             // Actualizar el símbolo de despliegue
-            toggle.querySelector('span').textContent = targetContent.classList.contains('hidden-mujer') ? '▲' : '▼';
+            toggle.querySelector('span').textContent = targetContent.classList.contains('span') ? '▲' : '▼';
         });
     });
 
     // Cerrar todos los desplegables al hacer clic fuera de ellos
     document.addEventListener('click', () => {
         document.querySelectorAll('.filter-content').forEach(content => {
-            content.classList.remove('hidden-mujer');
+            content.classList.remove('span');
         });
         filterToggles.forEach(toggle => {
             toggle.querySelector('span').textContent = '▼';
