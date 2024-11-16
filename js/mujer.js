@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             targetContent.classList.toggle('show');
 
             // Actualizar el símbolo de despliegue
-            toggle.querySelector('span').textContent = targetContent.classList.contains('span') ? '▲' : '▼';
+            header.querySelector('span').textContent = targetContent.classList.contains('span') ? '▲' : '▼';
         });
     });
 
