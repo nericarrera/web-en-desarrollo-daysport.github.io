@@ -212,11 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetContent = document.getElementById(targetId);
 
             // Ocultar todos los contenidos excepto el actual
-            document.querySelectorAll('.filter-content').forEach(content => {
-                if (content !== targetContent) {
-                    content.classList.remove('show');
-                }
-            });
+            if (targetContent) {
+                targetContent.classList.toggle('hidden-mujer')
+                header.classList.toggle ('span');
+            }
+    }); 
+        
 
             // Alternar el contenido actual
             targetContent.classList.toggle('show');
@@ -235,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.querySelector('span').textContent = '▼';
         });
     });
-});
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
