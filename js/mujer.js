@@ -233,14 +233,14 @@ document.addEventListener('DOMContentLoaded', () => {
             targetContent.classList.toggle('show');
 
             // Actualizar el símbolo de despliegue
-            toggle.querySelector('span').textContent = targetContent.classList.contains('show') ? '▲' : '▼';
+            toggle.querySelector('span').textContent = targetContent.classList.contains('hidden-mujer') ? '▲' : '▼';
         });
     });
 
     // Cerrar todos los desplegables al hacer clic fuera de ellos
     document.addEventListener('click', () => {
         document.querySelectorAll('.filter-content').forEach(content => {
-            content.classList.remove('show');
+            content.classList.remove('hidden-mujer');
         });
         filterToggles.forEach(toggle => {
             toggle.querySelector('span').textContent = '▼';
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
-                const symbol = toggleButton.querySelector('hidden-mujer');
+                const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
