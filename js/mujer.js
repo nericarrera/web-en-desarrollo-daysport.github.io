@@ -204,11 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const filterToggles = document.querySelectorAll('.filter-toggle');
 
-    filterToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            
+    filterToggles.forEach(header => {
+        header.addEventListener('click', function() {
             // Obtener el contenido que corresponde al botón clicado
-            const targetId = toggle.getAttribute('data-target');
+            const targetId = header.getAttribute('data-target');
             const targetContent = document.getElementById(targetId);
 
             // Ocultar todos los contenidos excepto el actual
