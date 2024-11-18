@@ -50,6 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "L", 
             etiqueta: "novedades" 
         },
+        { id: 5, 
+            nombre: "Blusa de Lino", 
+            precio: 8500, 
+            categoria: "remeras", 
+            imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
+            color: "blanco", 
+            talla: "L", 
+            etiqueta: "novedades" 
+        },
 
         // Agrega más productos según sea necesario
     ];
