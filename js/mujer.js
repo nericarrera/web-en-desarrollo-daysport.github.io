@@ -226,15 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cerrar todos los desplegables al hacer clic fuera de ellos
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.filter-sidebar').forEach(content => {
-            content.classList.remove('span');
-        });
-        filterToggles.forEach(toggle => {
-            toggle.querySelector('span').textContent = '▼';
-        });
-    });
+  
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
