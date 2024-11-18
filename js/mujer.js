@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 8500, 
             categoria: "remeras", 
             imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
-            color: "blanco", 
-            talla: "L", 
+            color: "negro", 
+            talla: "XL", 
             etiqueta: "novedades" 
         },
 
