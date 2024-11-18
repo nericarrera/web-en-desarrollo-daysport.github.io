@@ -683,6 +683,7 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: border 0.3s;
+  object-fit: cover;
 }
 
 .product-thumbnails img:hover {
