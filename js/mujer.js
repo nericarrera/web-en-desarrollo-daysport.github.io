@@ -115,10 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
         
+            // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container">
                     <div class="product-image">
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails hidden-thumbnails">
+                            ${producto.imagen.map((img, index) => `
+                                <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
+                            `).join('')}
+                        </div>
                     </div>
                     <div class="product-details">
                         <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
@@ -126,27 +132,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="mujer-product-categoria">${producto.categoria}</p>
                         <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
                     </div>
-                    <div class="product-thumbnails hidden-thumbnails">
-                        ${producto.imagen.map((img, index) => `
-                            <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
-                        `).join('')}
-                    </div>
                 </div>
             `;
         
             mujerProductsGrid.appendChild(productoDiv);
         });
-    }
-
-    document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('thumbnail-image')) {
-            const mainImageId = event.target.dataset.mainImageId;
-            const mainImage = document.getElementById(mainImageId);
-            if (mainImage) {
-                mainImage.src = event.target.src;
+        
+        // Evento global para cambiar la imagen principal al hacer clic en las miniaturas
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('thumbnail-image')) {
+                const mainImageId = event.target.dataset.mainImageId;
+                const mainImage = document.getElementById(mainImageId);
+                if (mainImage) {
+                    mainImage.src = event.target.src;
+                }
             }
-        }  
-    });
+        });
+        
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
