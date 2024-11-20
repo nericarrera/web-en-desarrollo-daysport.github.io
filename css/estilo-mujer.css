@@ -441,7 +441,8 @@
 
 .filter-categories {
   display: flex;
-  gap: 6px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .mujer-filter-button {
