@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = event.target.src;
                 }
             }  
+        });
     /*----------------------------------------------------------------------------- */
     
     // Cambiar filtro por categoría
@@ -216,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar contadores de colores y tallas cuando la página se carga
     actualizarContadores();
 });
+
 
   /*---------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
