@@ -437,6 +437,7 @@
   background-color: #fff;
   border-bottom: 1px solid #ddd;
   position: relative; /* Asegura que el menú desplegable se alinee bien */
+  flex-wrap: wrap;
 }
 
 .filter-categories {
