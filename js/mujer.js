@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
             color: "celeste", 
             talla: "XL", 
-            etiqueta: "nuevo" 
+            etiqueta: " " 
         },
         { id: 2, 
             nombre: "Remera Modal Soft", 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
             color: "negro", 
             talla: "XL", 
-            etiqueta: "novedades" 
+            etiqueta: " " 
         },
 
         // Agrega más productos según sea necesario
