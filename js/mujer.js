@@ -147,9 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = event.target.src;
                 }
             }
-        });
-        
+        }); 
+    }
 
+    
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarContadores();
-});
+    });
 
   
 
