@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
                 <p class="mujer-product-name">${producto.nombre}</p>
                 <p class="mujer-product-categoria">${producto.categoria}</p>
+                <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
             `;
             
             mujerProductsGrid.appendChild(productoDiv);
