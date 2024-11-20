@@ -229,7 +229,6 @@
     display: flex;
     list-style: none;
     padding: 1px;
-    margin: auto;
     margin-top: 17px;
     justify-content: space-evenly;
   }
