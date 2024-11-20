@@ -59,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "XL", 
             etiqueta: " " 
         },
-
-        // Agrega más productos según sea necesario
     ];
 
     // Función para contar productos por color y talla
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const colorCounts = {};
         const tallaCounts = {};
 
-        // Contar productos por color y talla
         productosMujer.forEach(producto => {
             const color = producto.color.toLowerCase();
             const talla = producto.talla.toUpperCase();
@@ -77,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             tallaCounts[talla] = (tallaCounts[talla] || 0) + 1;
         });
 
-        // Actualizar contadores en el HTML para colores
         colorCheckboxes.forEach(checkbox => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
@@ -87,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Actualizar contadores en el HTML para tallas
         sizeCheckboxes.forEach(checkbox => {
             const talla = checkbox.value.toUpperCase();
             const count = tallaCounts[talla] || 0;
@@ -98,13 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Llamar a la función para inicializar los contadores
     actualizarContadores();
 
-    /*---------------PRODUCTO CON IMAGEN MINIATURA---------------------*/
-    // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-        mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+        mujerProductsGrid.innerHTML = ""; 
     
         let productosFiltrados = productosMujer.filter(producto => {
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
@@ -113,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return matchesCategoria && matchesColor && matchesTalla;
         });
     
-        // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
             productosFiltrados.sort((a, b) => a.precio - b.precio);
         } else if (ordenar === "price-desc") {
@@ -124,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
         
-            // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container">
                     <div class="product-image">
@@ -146,20 +136,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
             mujerProductsGrid.appendChild(productoDiv);
         });
-        
-        // Evento global para cambiar la imagen principal con las miniaturas
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('thumbnail-image')) {
-                const mainImageId = event.target.dataset.mainImageId;
-                const mainImage = document.getElementById(mainImageId);
-                if (mainImage) {
-                    mainImage.src = event.target.src;
-                }
-            }  
-        });
-    /*----------------------------------------------------------------------------- */
-    
-    // Cambiar filtro por categoría
+    }
+
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('thumbnail-image')) {
+            const mainImageId = event.target.dataset.mainImageId;
+            const mainImage = document.getElementById(mainImageId);
+            if (mainImage) {
+                mainImage.src = event.target.src;
+            }
+        }  
+    });
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -169,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mostrar y ocultar el filtro lateral
     if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
             filterOverlay.classList.add('show');
@@ -186,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Aplicar filtros seleccionados
     applyFiltersButton.addEventListener('click', () => {
         const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
         const selectedColors = Array.from(colorCheckboxes)
@@ -198,52 +184,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mostrarProductos(selectedCategory, selectedColors, selectedSizes);
 
-        // Cerrar el filtro lateral después de aplicar
         filterOverlay.classList.remove('show');
         setTimeout(() => {
             filterOverlay.style.display = 'none';
         }, 300);
     });
 
-    // Limpiar todos los filtros seleccionados
     clearFiltersButton.addEventListener('click', () => {
         sortRadios.forEach(radio => (radio.checked = false));
         colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
         sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
 
-        mostrarProductos(); // Muestra todos los productos nuevamente
+        mostrarProductos();
     });
 
-    // Inicializar contadores de colores y tallas cuando la página se carga
     actualizarContadores();
 });
-
-
-  /*---------------------------------------- */
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterToggles = document.querySelectorAll('.filter-toggle');
-
-    filterToggles.forEach(header => {
-        header.addEventListener('click', function() {
-            // Obtener el contenido que corresponde al botón clicado
-            const targetId = header.getAttribute('data-target');
-            const targetContent = document.getElementById(targetId);
-
-            // Ocultar todos los contenidos excepto el actual
-            if (targetContent) {
-                targetContent.classList.toggle('hidden-mujer')
-                header.classList.toggle ('span');
-            }
-    }); 
-        
-
-            // Alternar el contenido actual
-            targetContent.classList.toggle('show');
-
-            // Actualizar el símbolo de despliegue
-            header.querySelector('span').textContent = targetContent.classList.contains('span') ? '▲' : '▼';
-        });
-    });
 
   
 
