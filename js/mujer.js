@@ -123,33 +123,39 @@ document.addEventListener('DOMContentLoaded', () => {
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
-    
-            // Crear la imagen principal
+        
+            // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
-                <div class="product-image">
-                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}">
+                <div class="product-container">
+                    <div class="product-image">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                    </div>
+                    <div class="product-details">
+                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="mujer-product-name">${producto.nombre}</p>
+                        <p class="mujer-product-categoria">${producto.categoria}</p>
+                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                    </div>
+                    <div class="product-thumbnails hidden-thumbnails">
+                        ${producto.imagen.map((img, index) => `
+                            <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
+                        `).join('')}
+                    </div>
                 </div>
-                <div class="product-thumbnails">
-                    ${producto.imagen.map((img, index) => `
-                        <img src="${img}" alt="${producto.nombre} color ${index + 1}" onclick="changeImage('${img}', 'mainImage-${producto.id}')">
-                    `).join('')}
-                </div>
-                <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                <p class="mujer-product-name">${producto.nombre}</p>
-                <p class="mujer-product-categoria">${producto.categoria}</p>
-                <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
             `;
-            
+        
             mujerProductsGrid.appendChild(productoDiv);
         });
-
-        function changeImage(imageUrl, mainImageId) {
-            const mainImage = document.getElementById(mainImageId);
-            if (mainImage) {
-                mainImage.src = imageUrl;
-            }
-        }
-    }    
+        
+        // Evento global para cambiar la imagen principal con las miniaturas
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('thumbnail-image')) {
+                const mainImageId = event.target.dataset.mainImageId;
+                const mainImage = document.getElementById(mainImageId);
+                if (mainImage) {
+                    mainImage.src = event.target.src;
+                }
+            }  
     /*----------------------------------------------------------------------------- */
     
     // Cambiar filtro por categoría
@@ -267,4 +273,4 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
 
-/*----------------FILTRO DESPLEGABLE--------------------- */
+/*----------------FILTRO DESPLEGABLE---------------------*/
