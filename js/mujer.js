@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
             // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
-                <div class="product-container">
+                <div class="product-container-mujer">
                     <div class="product-image">
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                         <div class="product-thumbnails hidden-thumbnails">
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             `).join('')}
                         </div>
                     </div>
-                    <div class="product-details">
+                    <div class="product-details-mujer">
                         <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
                         <p class="mujer-product-name">${producto.nombre}</p>
                         <p class="mujer-product-categoria">${producto.categoria}</p>
