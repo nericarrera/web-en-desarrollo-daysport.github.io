@@ -566,7 +566,7 @@
 /* Mostrar miniaturas al hacer hover */
 .mujer-product-card:hover .hidden-thumbnails {
   display: flex;
-  justify-content: center;
+  
 }
 .mujer-product-card img {
   width: 100%;
