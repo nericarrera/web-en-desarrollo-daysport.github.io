@@ -562,9 +562,6 @@
   transition: transform 0.2s ease;
 }
 
-.hidden-thumbnails img:hover {
-  transform: scale(1.1);
-}
 
 /* Mostrar miniaturas al hacer hover */
 .mujer-product-card:hover .hidden-thumbnails {
