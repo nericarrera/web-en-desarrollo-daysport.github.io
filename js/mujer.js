@@ -41,16 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "L", 
             etiqueta: "novedades" 
         },
+        
         { id: 4, 
-            nombre: "Remera Modal viscosa", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
-            color: "blanco", 
-            talla: "L", 
-            etiqueta: "novedades" 
-        },
-        { id: 5, 
             nombre: "Blusa de Lino", 
             precio: 8500, 
             categoria: "remeras", 
