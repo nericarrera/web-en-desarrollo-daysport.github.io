@@ -564,11 +564,6 @@
 }
 
 
-/* Mostrar miniaturas al hacer hover */
-.mujer-product-card:hover .hidden-thumbnails {
-  display: flex;
-  
-}
 .mujer-product-card img {
   width: 100%;
   height: auto;
@@ -576,6 +571,8 @@
 
 /* Mostrar miniaturas al hacer hover */
 .mujer-product-card:hover .hidden-thumbnails {
+  width: 230px;
+  height: 100px;
   display: flex;
   justify-content: left;
   opacity: 1; /* Mostrar con transición */
