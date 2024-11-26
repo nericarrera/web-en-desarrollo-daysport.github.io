@@ -745,7 +745,7 @@
 /*--------------------FOTO MINIATURA -----------------*/
 .product-thumbnails {
   display: flex;
-  gap: 5px;
+  gap: 3px;
   margin-top: 10px;
   margin-bottom: 7px;
 }
