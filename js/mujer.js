@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
+            imagen: ["img/"], 
             color: "negro", 
             talla: "L", 
             etiqueta: "novedades" 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
-        
+            
             // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
@@ -135,10 +135,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         
+            // Agregar el evento hover
+            const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+            productoDiv.addEventListener('mouseover', () => {
+                // Cambiar la imagen principal al hacer hover
+                if (producto.imagen[1]) { // Asegurarse de que haya una segunda imagen
+                    productImage.src = producto.imagen[1];
+                }
+            });
+        
+            productoDiv.addEventListener('mouseout', () => {
+                // Restaurar la imagen principal al salir del hover
+                productImage.src = producto.imagen[0];
+            });
+        
             mujerProductsGrid.appendChild(productoDiv);
         });
         
-        // Evento global para cambiar la imagen principal al hacer clic en las miniaturas
+        // Evento global para cambiar la imagen principal con las miniaturas
         document.addEventListener('click', (event) => {
             if (event.target.classList.contains('thumbnail-image')) {
                 const mainImageId = event.target.dataset.mainImageId;
@@ -147,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = event.target.src;
                 }
             }
-        }); 
+        });
     }
 
     
