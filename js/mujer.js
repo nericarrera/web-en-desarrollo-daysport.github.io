@@ -136,6 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
+
+            mujerProductsGrid.appendChild(productoDiv);
+    
         
             // Agregar el evento hover
             const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
