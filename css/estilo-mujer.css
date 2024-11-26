@@ -546,7 +546,6 @@
 /* Miniaturas ocultas completamente al cargar */
 .hidden-thumbnails {
   display: none; /* Totalmente ocultas al inicio */
-  position: absolute;
   bottom: 10px;
   left: 0;
   right: 0;
