@@ -546,13 +546,13 @@
 /* Miniaturas ocultas completamente al cargar */
 .hidden-thumbnails {
   display: none; /* Totalmente ocultas al inicio */
-  bottom: 10px;
-  left: 0;
-  right: 0;
+  top: 0; /* Mover miniaturas hacia arriba */
+  left: 10px; /* Alinear al lado izquierdo */
+  width: auto; /* Asegurar que no ocupen todo el ancho */
   background: rgba(255, 255, 255, 0.9);
   padding: 5px;
-  text-align: center;
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinear miniaturas a la izquierda */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   opacity: 0; /* Oculto visualmente */
   transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: hidden; /* Oculto para eventos */
@@ -579,7 +579,7 @@
 /* Mostrar miniaturas al hacer hover */
 .mujer-product-card:hover .hidden-thumbnails {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   opacity: 1; /* Mostrar con transición */
   visibility: visible; /* Habilitar interacción */
 }
