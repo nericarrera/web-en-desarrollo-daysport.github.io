@@ -580,6 +580,7 @@
   justify-content: left;
   opacity: 1; /* Mostrar con transición */
   visibility: visible; /* Habilitar interacción */
+  cursor: pointer;
 }
 
 .mujer-product-name {
