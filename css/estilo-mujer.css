@@ -507,7 +507,7 @@
 }
 
 .mujer-product-card {
-  width: 220px;
+  width: 230px;
   text-align: center;
   height: 490px;
   margin-bottom: 20px;
@@ -601,10 +601,11 @@
 }
 
 .mujer-product-categoria {
-  color: #000;
+  color: #bcbcbc;
   font-family: 'Dosis';
   text-align: left;
   margin-left: 5px;
+  margin-bottom: 12px;
 }
 
 .mujer-product-etiqueta {
