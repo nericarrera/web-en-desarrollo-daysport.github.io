@@ -85,6 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    console.log(`Filtrando productos por categoría: ${categoria}`);
+    console.log(productosFiltrados);
+
     actualizarContadores();
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
