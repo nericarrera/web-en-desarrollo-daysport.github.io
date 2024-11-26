@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
-                    <div class="product-image">
+                    <div class="product-image-mujer">
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                         <div class="product-thumbnails hidden-thumbnails">
                             ${producto.imagen.map((img, index) => `
