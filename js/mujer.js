@@ -90,13 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
-        
+    
         let productosFiltrados = productosMujer.filter(producto => {
+            // Verifica si la categoría es 'novedades' y filtra por etiqueta
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesEtiqueta = categoria === "novedades" 
+                ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades")
+                : true;
             const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
             const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-            const matchesEtiqueta = categoria === "novedades" ? producto.etiqueta.toLowerCase() === "novedades" : true; // Filtra por etiqueta si es "Novedades"
-            return matchesCategoria && matchesColor && matchesTalla && matchesEtiqueta;
+            
+            return matchesCategoria && matchesEtiqueta && matchesColor && matchesTalla;
         });
         
         // Ordenar los productos si se selecciona una opción
