@@ -549,7 +549,6 @@
   top: 0; /* Mover miniaturas hacia arriba */
   left: 10px; /* Alinear al lado izquierdo */
   width: auto; /* Asegurar que no ocupen todo el ancho */
-  background: rgba(255, 255, 255, 0.9);
   padding: 5px;
   text-align: left; /* Alinear miniaturas a la izquierda */
   opacity: 0; /* Oculto visualmente */
