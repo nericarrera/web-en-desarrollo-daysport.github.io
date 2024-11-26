@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/"], 
             color: "negro", 
             talla: "L", 
-            etiqueta: "Novedades" 
+            etiqueta: "novedades" 
         },
         { id: 3, 
             nombre: "Remera Modal viscosa", 
