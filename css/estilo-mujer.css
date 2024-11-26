@@ -503,6 +503,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
   margin-top: 20px;
+  padding: 20px;
 }
 
 .mujer-product-card {
