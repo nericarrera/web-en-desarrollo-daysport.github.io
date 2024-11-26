@@ -89,24 +89,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
-    
+        
         let productosFiltrados = productosMujer.filter(producto => {
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
             const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
             const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-            const matchesEtiqueta = categoria === "novedades" 
-                ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades")
-                : true; // Comparar etiqueta para "novedades"
+            const matchesEtiqueta = categoria === "novedades" ? producto.etiqueta.toLowerCase() === "novedades" : true; // Filtra por etiqueta si es "Novedades"
             return matchesCategoria && matchesColor && matchesTalla && matchesEtiqueta;
         });
+        
+        // Ordenar los productos si se selecciona una opción
+        if (ordenar === "price-asc") {
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (ordenar === "price-desc") {
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
+        }
     
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
+            
+            // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
                     <div class="product-image-mujer">
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails hidden-thumbnails">
+                            ${producto.imagen.map((img, index) => `
+                                <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
+                            `).join('')}
+                        </div>
                     </div>
                     <div class="product-details-mujer">
                         <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
@@ -116,8 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
+
             mujerProductsGrid.appendChild(productoDiv);
-            
+    
         
             // Agregar el evento hover
             const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
