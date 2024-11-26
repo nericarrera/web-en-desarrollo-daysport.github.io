@@ -85,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    console.log(`Filtrando productos por categoría: ${categoria}`);
-    console.log(productosFiltrados);
 
     actualizarContadores();
 
@@ -249,3 +247,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----------------FILTRO DESPLEGABLE---------------------*/
+console.log(`Filtrando productos por categoría: ${categoria}`);
+console.log(productosFiltrados);
