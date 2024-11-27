@@ -97,6 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "XL",  
             etiqueta: "novedades" 
         },
+        { id: 10, 
+            nombre: "Calza Adidas Original", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
+            color: "negro", 
+            talla: "M",  
+            etiqueta: " " 
+        },
     ];
 
     // Función para contar productos por color y talla
