@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
             color: "negro", 
-            talla: ["S", "M", "L", "XL", "XXL"],  
+            talla: "S",  
             etiqueta: "novedades" 
         },
         { id: 3, 
