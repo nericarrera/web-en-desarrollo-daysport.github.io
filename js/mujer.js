@@ -70,6 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "S",  
             etiqueta: "novedades" 
         },
+        { id: 7, 
+            nombre: "Calza Nike Grofada", 
+            precio: 16500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
+            color: "negro", 
+            talla: "S",  
+            etiqueta: "novedades" 
+        },
+        { id: 8, 
+            nombre: "Calza Nike Speak", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
+            color: "negro", 
+            talla: "S",  
+            etiqueta: "novedades" 
+        },
+        { id: 9, 
+            nombre: "Calza Nike Fluorecent", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg"], 
+            color: "fucsia", 
+            talla: "XL",  
+            etiqueta: "novedades" 
+        },
     ];
 
     // Función para contar productos por color y talla
