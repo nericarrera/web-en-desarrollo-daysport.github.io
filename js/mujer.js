@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "camperas", 
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             color: "negro", 
-            talla: ["S", "M", "L", "XL", "XXL"], 
+            talla: "S", 
             etiqueta: "" 
         },
         { id: 6, 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
             color: ["negro", "gris"], 
-            talla: ["S", "M", "L", "XL", "XXL"],  
+            talla: "S",  
             etiqueta: "novedades" 
         },
     ];
