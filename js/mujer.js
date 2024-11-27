@@ -58,8 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "camperas", 
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             color: "negro", 
-            talla: "XL", 
+            talla: ["S", "M", "L", "XL", "XXL"], 
             etiqueta: "" 
+        },
+        { id: 6, 
+            nombre: "Calza Nike Radeon", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
+            color: ["negro", "gris"], 
+            talla: ["S", "M", "L", "XL", "XXL"],  
+            etiqueta: "novedades" 
         },
     ];
 
