@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Fluorecent", 
             precio: 13500, 
             categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg"], 
+            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
             color: "fucsia", 
             talla: "XL",  
             etiqueta: "novedades" 
