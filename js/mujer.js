@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "XL", 
             etiqueta: "" 
         },
+
+        { id: 5, 
+            nombre: "Campera Deportiva Nike", 
+            precio: 23000, 
+            categoria: "camperas", 
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike1.jpeg"], 
+            color: "negro", 
+            talla: "XL", 
+            etiqueta: "" 
+        },
     ];
 
     // Función para contar productos por color y talla
