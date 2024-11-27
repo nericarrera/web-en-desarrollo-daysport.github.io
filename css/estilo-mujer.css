@@ -581,6 +581,11 @@
   cursor: pointer;
 }
 
+.product-details-mujer {
+  width: auto;
+  height: auto;
+}
+
 .mujer-product-name {
   font-size: 15px;
   color: #333;
@@ -747,7 +752,7 @@
   display: flex;
   gap: 3px;
   margin-bottom: 7px;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .product-thumbnails img {
