@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "" 
         },
         { id: 2, 
-            nombre: "Remera Modal Soft", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: ["img/"], 
+            nombre: "Calza Nike Pro", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
             color: "negro", 
-            talla: "L", 
+            talla: ["S", "M", "L", "XL", "XXL"],  
             etiqueta: "novedades" 
         },
         { id: 3, 
