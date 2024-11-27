@@ -525,6 +525,7 @@
   background: #fff;
   transition: box-shadow 0.3s ease;
   height: auto;
+  z-index: 10;
 }
 
 .mujer-product-card:hover {
