@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Campera Deportiva Nike", 
             precio: 23000, 
             categoria: "camperas", 
-            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike1.jpeg"], 
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], 
             color: "negro", 
             talla: "XL", 
             etiqueta: "" 
