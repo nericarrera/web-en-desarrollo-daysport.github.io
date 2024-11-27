@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-            color: ["negro", "gris"], 
+            color: "negro", 
             talla: "S",  
             etiqueta: "novedades" 
         },
