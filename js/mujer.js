@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 7500, 
             categoria: "remeras", 
             imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"], 
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
+            
             etiqueta: "Novedades"
         },
         { 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 8500, 
             categoria: "remeras", 
             imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
-            miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
+            
             etiqueta: " "
         },
         { id: 3, 
