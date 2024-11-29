@@ -221,8 +221,19 @@ document.addEventListener('DOMContentLoaded', () => {
             mujerProductsGrid.appendChild(productoDiv);
         });
           
-    
-        /*----------------BOTONES DE FILTRO---------------- */
+
+        
+        // Evento global para cambiar la imagen principal con las miniaturas
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('thumbnail-image')) {
+                const mainImageId = event.target.dataset.mainImageId;
+                const mainImage = document.getElementById(mainImageId);
+                if (mainImage) {
+                    mainImage.src = event.target.src;
+                }
+            }
+        });
+    }
 
     
     filterButtons.forEach(button => {
@@ -276,7 +287,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarContadores();
-}});
+    });
+
+  
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -306,3 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
 
+/*----------------FILTRO DESPLEGABLE---------------------*/
+console.log(`Filtrando productos por categoría: ${categoria}`);
+console.log(productosFiltrados);
