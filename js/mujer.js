@@ -14,23 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        { id: 1, 
+        {  id: 1, 
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
-            color: "celeste", 
-            talla: "XL", 
-            etiqueta: "" 
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"], 
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
+            etiqueta: "Novedades"
         },
-        { id: 2, 
-            nombre: "Calza Nike Pro", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
+        { 
+            id: 2, 
+            nombre: "Blusa de Lino", 
+            precio: 8500, 
+            categoria: "remeras", 
+            imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
+            miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
+            etiqueta: " "
         },
         { id: 3, 
             nombre: "Remera Modal viscosa", 
@@ -165,49 +164,68 @@ document.addEventListener('DOMContentLoaded', () => {
             productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
     
-        productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
-            
-            // Crear la estructura HTML del producto
-            productoDiv.innerHTML = `
-                <div class="product-container-mujer">
-                    <div class="product-image-mujer">
-                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+        function mostrarProductos() {
+            mujerProductsGrid.innerHTML = "";
+    
+            productosMujer.forEach(producto => {
+                const productoDiv = document.createElement('div');
+                productoDiv.classList.add('mujer-product-card');
+    
+                productoDiv.innerHTML = `
+                    <div class="product-container-mujer">
+                        <div class="product-image-mujer">
+                            <img id="mainImage-${producto.id}" 
+                                src="${producto.imagen[0]}" 
+                                alt="${producto.nombre}" 
+                                class="main-product-image">
+                        </div>
                         <div class="product-thumbnails hidden-thumbnails">
-                            ${producto.imagen.map((img, index) => `
-                                <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
+                            ${producto.miniaturas.map((img, index) => `
+                                <img src="${img}" 
+                                    alt="Miniatura ${index + 1}" 
+                                    class="thumbnail-image" 
+                                    data-main-image-id="mainImage-${producto.id}">
                             `).join('')}
                         </div>
+                        <div class="product-details-mujer">
+                            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                            <p class="mujer-product-name">${producto.nombre}</p>
+                            <p class="mujer-product-categoria">${producto.categoria}</p>
+                            <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                        </div>
                     </div>
-                    <div class="product-details-mujer">
-                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                        <p class="mujer-product-name">${producto.nombre}</p>
-                        <p class="mujer-product-categoria">${producto.categoria}</p>
-                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                    </div>
-                </div>
-            `;
-
-            mujerProductsGrid.appendChild(productoDiv);
+                `;
+    
+                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
     
         
-            // Agregar el evento hover
-            const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            productoDiv.addEventListener('mouseover', () => {
-                // Cambiar la imagen principal al hacer hover
-                if (producto.imagen[1]) { // Asegurarse de que haya una segunda imagen
-                    productImage.src = producto.imagen[1];
-                }
+             // Hover en la imagen principal
+             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+                mainImage.src = producto.imagen[1]; // Cambiar a imagen de hover
             });
-        
-            productoDiv.addEventListener('mouseout', () => {
-                // Restaurar la imagen principal al salir del hover
-                productImage.src = producto.imagen[0];
+
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
+                mainImage.src = producto.imagen[0]; // Volver a imagen inicial
             });
-        
+
+            // Hover en las miniaturas
+            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('mouseover', () => {
+                    mainImage.src = thumbnail.src; // Cambiar a la miniatura
+                });
+
+                thumbnail.addEventListener('mouseout', () => {
+                    mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+                });
+            });
+
             mujerProductsGrid.appendChild(productoDiv);
         });
+    }
+
+    mostrarProductos();
+
         
         // Evento global para cambiar la imagen principal con las miniaturas
         document.addEventListener('click', (event) => {
