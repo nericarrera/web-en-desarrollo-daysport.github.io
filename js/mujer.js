@@ -14,22 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        {  id: 1, 
+        { id: 1, 
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"], 
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
-            etiqueta: "Novedades"
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
+            color: "celeste", 
+            talla: "XL", 
+            etiqueta: "" 
         },
-        { 
-            id: 2, 
-            nombre: "Blusa de Lino", 
-            precio: 8500, 
-            categoria: "remeras", 
-            imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
-            miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
-            etiqueta: " "
+        { id: 2, 
+            nombre: "Calza Nike Pro", 
+            precio: 13500, 
+            categoria: "calzas", 
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
+            color: "negro", 
+            talla: "S",  
+            etiqueta: "novedades" 
         },
         { id: 3, 
             nombre: "Remera Modal viscosa", 
