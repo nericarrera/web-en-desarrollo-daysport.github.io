@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        {  id: 1, 
+        { 
+            id: 1, 
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
             miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
             etiqueta: " "
-        },
+        }, /*
         { id: 3, 
             nombre: "Remera Modal viscosa", 
             precio: 7500, 
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             color: "negro", 
             talla: "M",  
             etiqueta: " " 
-        },
+        }, */
     ];
 
     // Función para contar productos por color y talla
@@ -178,14 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                 src="${producto.imagen[0]}" 
                                 alt="${producto.nombre}" 
                                 class="main-product-image">
-                        </div>
-                        <div class="product-thumbnails hidden-thumbnails">
-                            ${producto.miniaturas.map((img, index) => `
-                                <img src="${img}" 
-                                    alt="Miniatura ${index + 1}" 
-                                    class="thumbnail-image" 
-                                    data-main-image-id="mainImage-${producto.id}">
-                            `).join('')}
+                            <div class="product-thumbnails hidden-thumbnails">
+                                ${producto.miniaturas.map((img, index) => `
+                                    <img src="${img}" 
+                                        alt="Miniatura ${index + 1}" 
+                                        class="thumbnail-image" 
+                                        data-main-image-id="mainImage-${producto.id}">
+                                `).join('')}
+                            </div>
                         </div>
                         <div class="product-details-mujer">
                             <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
@@ -198,34 +199,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
     
-        
-             // Hover en la imagen principal
-             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                mainImage.src = producto.imagen[1]; // Cambiar a imagen de hover
-            });
-
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = producto.imagen[0]; // Volver a imagen inicial
-            });
-
-            // Hover en las miniaturas
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('mouseover', () => {
-                    mainImage.src = thumbnail.src; // Cambiar a la miniatura
+                // Hover en la imagen principal
+                productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+                    mainImage.src = producto.imagen[1]; // Cambiar a imagen de hover
                 });
-
-                thumbnail.addEventListener('mouseout', () => {
+    
+                productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
                     mainImage.src = producto.imagen[0]; // Volver a imagen inicial
                 });
+    
+                // Hover en las miniaturas
+                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('mouseover', () => {
+                        mainImage.src = thumbnail.src; // Cambiar a la miniatura
+                    });
+    
+                    thumbnail.addEventListener('mouseout', () => {
+                        mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+                    });
+                });
+    
+                mujerProductsGrid.appendChild(productoDiv);
             });
-
-            mujerProductsGrid.appendChild(productoDiv);
-        });
-    }
-
-    mostrarProductos();
-
+        }
+    
+        mostrarProductos();
+    
         
         // Evento global para cambiar la imagen principal con las miniaturas
         document.addEventListener('click', (event) => {
