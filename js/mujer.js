@@ -164,39 +164,31 @@ document.addEventListener('DOMContentLoaded', () => {
             productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
     
-        function mostrarProductos() {
-            mujerProductsGrid.innerHTML = "";
-    
-            productosMujer.forEach(producto => {
-                const productoDiv = document.createElement('div');
-                productoDiv.classList.add('mujer-product-card');
-    
-                productoDiv.innerHTML = `
-                    <div class="product-container-mujer">
-                        <div class="product-image-mujer">
-                            <img id="mainImage-${producto.id}" 
-                                src="${producto.imagen[0]}" 
-                                alt="${producto.nombre}" 
-                                class="main-product-image">
-                        </div>
+        productosFiltrados.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('mujer-product-card');
+            
+            // Crear la estructura HTML del producto
+            productoDiv.innerHTML = `
+                <div class="product-container-mujer">
+                    <div class="product-image-mujer">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                         <div class="product-thumbnails hidden-thumbnails">
-                            ${producto.miniaturas.map((img, index) => `
-                                <img src="${img}" 
-                                    alt="Miniatura ${index + 1}" 
-                                    class="thumbnail-image" 
-                                    data-main-image-id="mainImage-${producto.id}">
+                            ${producto.imagen.map((img, index) => `
+                                <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
                             `).join('')}
                         </div>
-                        <div class="product-details-mujer">
-                            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                            <p class="mujer-product-name">${producto.nombre}</p>
-                            <p class="mujer-product-categoria">${producto.categoria}</p>
-                            <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                        </div>
                     </div>
-                `;
-    
-                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+                    <div class="product-details-mujer">
+                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="mujer-product-name">${producto.nombre}</p>
+                        <p class="mujer-product-categoria">${producto.categoria}</p>
+                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                    </div>
+                </div>
+            `;
+
+            mujerProductsGrid.appendChild(productoDiv);
     
         
             // Agregar el evento hover
