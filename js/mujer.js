@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     actualizarContadores();
   /*----------------CONTADORES------------------------------- */
+  
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
