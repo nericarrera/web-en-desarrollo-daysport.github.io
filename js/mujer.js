@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Blusa de Lino", 
             precio: 8500, 
             categoria: "remeras", 
-            imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
-            miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-5"], 
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-2", "img/mujer/camperas-deportivas/campera-deportiva-nike-3", "img/mujer/camperas-deportivas/campera-deportiva-nike-4"],
             etiqueta: ""
         },
         { 
