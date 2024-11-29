@@ -14,103 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-
-        { id: 1, nombre: "Remera Modal Soft", 
-            precio: 7500, categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
-            color: "celeste", 
-            talla: "XL", 
-            etiqueta: "" },
-
-        { id: 2, nombre: "Calza Nike Pro", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
-            color: "negro", 
-            talla: "S", 
-            etiqueta: "novedades" },
-
-        { id: 3, 
-            nombre: "Remera Modal viscosa", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
-            color: "blanco", 
-            talla: "L", 
-            etiqueta: "novedades" },
-        // Más productos...
-    
-        
-        { id: 4, 
-            nombre: "Blusa de Lino", 
-            precio: 8500, 
-            categoria: "remeras", 
-            imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
-            color: "negro", 
-            talla: "XL", 
-            etiqueta: "" 
-        },
-
-        { id: 5, 
-            nombre: "Campera Deportiva Nike", 
-            precio: 23000, 
-            categoria: "camperas", 
-            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
-            color: "negro", 
-            talla: "S", 
-            etiqueta: "" 
-        },
-        { id: 6, 
-            nombre: "Calza Nike Radeon", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
-        },
-        { id: 7, 
-            nombre: "Calza Nike Grofada", 
-            precio: 16500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
-        },
-        { id: 8, 
-            nombre: "Calza Nike Speak", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
-        },
-        { id: 9, 
-            nombre: "Calza Nike Fluorecent", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
-            color: "fucsia", 
-            talla: "XL",  
-            etiqueta: "novedades" 
-        },
-        { id: 10, 
-            nombre: "Calza Adidas Original", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
-            color: "negro", 
-            talla: "M",  
-            etiqueta: " " 
-        },
+        { id: 1, nombre: "Remera Modal Soft", precio: 7500, categoria: "remeras", imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], color: "celeste", talla: "XL", etiqueta: "" },
+        { id: 2, nombre: "Calza Nike Pro", precio: 13500, categoria: "calzas", imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], color: "negro", talla: "S", etiqueta: "novedades" },
+        { id: 3, nombre: "Remera Modal viscosa", precio: 7500, categoria: "remeras", imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], color: "blanco", talla: "L", etiqueta: "novedades" },
+        // Agrega más productos aquí si es necesario...
     ];
 
-
-    /*----------------CONTADORES------------------------------- */
-
-    // Función para contar productos por color y talla
+    // Función para actualizar contadores de filtros (opcional)
     function actualizarContadores() {
         const colorCounts = {};
         const tallaCounts = {};
@@ -141,34 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-  
-    actualizarContadores();
-  /*----------------CONTADORES------------------------------- */
-  
 
+    actualizarContadores();
+
+    // Función para mostrar productos
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
-    
+
         let productosFiltrados = productosMujer.filter(producto => {
-            // Verifica si la categoría es 'novedades' y filtra por etiqueta
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-            const matchesEtiqueta = categoria === "novedades" 
-                ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades")
-                : true;
+            const matchesEtiqueta = categoria === "novedades" ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades") : true;
             const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
             const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-            
             return matchesCategoria && matchesEtiqueta && matchesColor && matchesTalla;
         });
-        
-        // Ordenar los productos si se selecciona una opción
-        if (ordenar === "price-asc") {
-            productosFiltrados.sort((a, b) => a.precio - b.precio);
-        } else if (ordenar === "price-desc") {
-            productosFiltrados.sort((a, b) => b.precio - a.precio);
-        }
-    
-          productosFiltrados.forEach(producto => {
+
+        productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
 
@@ -194,48 +92,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
 
-
             // Hover en la imagen principal
             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.imagen[1]) { // Cambiar a imagen de hover si existe
-                    mainImage.src = producto.imagen[1];
+                if (producto.imagen[1]) {
+                    mainImage.src = producto.imagen[1]; // Cambia a la imagen de hover
                 }
             });
 
             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+                mainImage.src = producto.imagen[0]; // Vuelve a la imagen principal
             });
 
-             // Hover en las miniaturas
-             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-             thumbnails.forEach(thumbnail => {
-                 thumbnail.addEventListener('mouseover', () => {
-                     mainImage.src = thumbnail.src; // Cambiar a la miniatura
-                 });
-
+            // Hover en las miniaturas
+            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('mouseover', () => {
+                    mainImage.src = thumbnail.src; // Cambia temporalmente a la miniatura
+                });
 
                 thumbnail.addEventListener('mouseout', () => {
-                    mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+                    mainImage.src = producto.imagen[0]; // Vuelve a la imagen principal
                 });
             });
 
             mujerProductsGrid.appendChild(productoDiv);
         });
-          
-
-        
-        // Evento global para cambiar la imagen principal con las miniaturas
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('thumbnail-image')) {
-                const mainImageId = event.target.dataset.mainImageId;
-                const mainImage = document.getElementById(mainImageId);
-                if (mainImage) {
-                    mainImage.src = event.target.src;
-                }
-            }
-        });
     }
 
+    // Evento para aplicar filtros al seleccionar una categoría
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const categoria = button.getAttribute('data-filter');
+            mostrarProductos(categoria);
+        });
+    });
+
+    // Inicializar mostrando todos los productos
+    mostrarProductos();
+});
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -284,8 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
         sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
 
-        mostrarProductos();
-    });
 
     actualizarContadores();
     });
