@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     actualizarContadores();
   /*----------------CONTADORES------------------------------- */
-  
+
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
@@ -167,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
             productosFiltrados.sort((a, b) => b.precio - a.precio);
         }
     
-        productosFiltrados.forEach(producto => {
+          productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
-            
+
             // Crear la estructura HTML del producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
@@ -191,37 +191,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
+            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+
+
+            // Hover en la imagen principal
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+                if (producto.imagen[1]) { // Cambiar a imagen de hover si existe
+                    mainImage.src = producto.imagen[1];
+                }
+            });
+
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
+                mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+            });
+
+             // Hover en las miniaturas
+             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+             thumbnails.forEach(thumbnail => {
+                 thumbnail.addEventListener('mouseover', () => {
+                     mainImage.src = thumbnail.src; // Cambiar a la miniatura
+                 });
+
+
+                thumbnail.addEventListener('mouseout', () => {
+                    mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+                });
+            });
+
             mujerProductsGrid.appendChild(productoDiv);
+        });
+          
     
-        
-            // Agregar el evento hover
-            const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            productoDiv.addEventListener('mouseover', () => {
-                // Cambiar la imagen principal al hacer hover
-                if (producto.imagen[1]) { // Asegurarse de que haya una segunda imagen
-                    productImage.src = producto.imagen[1];
-                }
-            });
-        
-            productoDiv.addEventListener('mouseout', () => {
-                // Restaurar la imagen principal al salir del hover
-                productImage.src = producto.imagen[0];
-            });
-        
-            mujerProductsGrid.appendChild(productoDiv);
-        });
-        
-        // Evento global para cambiar la imagen principal con las miniaturas
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('thumbnail-image')) {
-                const mainImageId = event.target.dataset.mainImageId;
-                const mainImage = document.getElementById(mainImageId);
-                if (mainImage) {
-                    mainImage.src = event.target.src;
-                }
-            }
-        });
-    }
+        /*----------------BOTONES DE FILTRO---------------- */
 
     
     filterButtons.forEach(button => {
@@ -275,9 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarContadores();
-    });
-
-  
+}});
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -307,6 +306,3 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
 
-/*----------------FILTRO DESPLEGABLE---------------------*/
-console.log(`Filtrando productos por categoría: ${categoria}`);
-console.log(productosFiltrados);
