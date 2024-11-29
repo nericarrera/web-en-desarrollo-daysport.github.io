@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Campera deportiva Nike", 
             precio: 2500, 
             categoria: "camperas", 
-            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-5"], 
-            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-2", "img/mujer/camperas-deportivas/campera-deportiva-nike-3", "img/mujer/camperas-deportivas/campera-deportiva-nike-4"],
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], 
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"],
             etiqueta: ""
         },
         { 
