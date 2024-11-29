@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "L", 
             etiqueta: "novedades" },
         // Más productos...
-    ];
-        /*
+    
+        
         { id: 4, 
             nombre: "Blusa de Lino", 
             precio: 8500, 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: " " 
         },
     ];
-        */
+
 
     /*----------------CONTADORES------------------------------- */
 
