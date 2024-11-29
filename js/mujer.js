@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar todos los productos inicialmente
     mostrarProductos();
-});
+
 
     
     filterButtons.forEach(button => {
