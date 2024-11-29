@@ -14,13 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        { 
-            id: 1, 
+        {  id: 1, 
             nombre: "Remera Modal Soft", 
             precio: 7500, 
             categoria: "remeras", 
             imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"], 
-            
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
             etiqueta: "Novedades"
         },
         { 
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 8500, 
             categoria: "remeras", 
             imagen: ["img/mujer/blusa-lino/front.jpeg", "img/mujer/blusa-lino/back.jpeg"], 
-            
+            miniaturas: ["img/mujer/blusa-lino/black.jpeg", "img/mujer/blusa-lino/white.jpeg"],
             etiqueta: " "
         },
         { id: 3, 
@@ -200,33 +199,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
     
         
-             // Hover en la imagen principal
-             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                mainImage.src = producto.imagen[1]; // Cambiar a imagen de hover
+            // Agregar el evento hover
+            const productImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+            productoDiv.addEventListener('mouseover', () => {
+                // Cambiar la imagen principal al hacer hover
+                if (producto.imagen[1]) { // Asegurarse de que haya una segunda imagen
+                    productImage.src = producto.imagen[1];
+                }
             });
-
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = producto.imagen[0]; // Volver a imagen inicial
+        
+            productoDiv.addEventListener('mouseout', () => {
+                // Restaurar la imagen principal al salir del hover
+                productImage.src = producto.imagen[0];
             });
-
-            // Hover en las miniaturas
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('mouseover', () => {
-                    mainImage.src = thumbnail.src; // Cambiar a la miniatura
-                });
-
-                thumbnail.addEventListener('mouseout', () => {
-                    mainImage.src = producto.imagen[0]; // Volver a imagen inicial
-                });
-            });
-
+        
             mujerProductsGrid.appendChild(productoDiv);
         });
-    }
-
-    mostrarProductos();
-
         
         // Evento global para cambiar la imagen principal con las miniaturas
         document.addEventListener('click', (event) => {
