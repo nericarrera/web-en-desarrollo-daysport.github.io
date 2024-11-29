@@ -14,24 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-        { id: 1, 
-            nombre: "Remera Modal Soft", 
-            precio: 7500, 
-            categoria: "remeras", 
+
+        { id: 1, nombre: "Remera Modal Soft", 
+            precio: 7500, categoria: "remeras", 
             imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
             color: "celeste", 
             talla: "XL", 
-            etiqueta: "" 
-        },
-        { id: 2, 
-            nombre: "Calza Nike Pro", 
+            etiqueta: "" },
+
+        { id: 2, nombre: "Calza Nike Pro", 
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
             color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
-        },
+            talla: "S", 
+            etiqueta: "novedades" },
+
         { id: 3, 
             nombre: "Remera Modal viscosa", 
             precio: 7500, 
@@ -39,9 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
             color: "blanco", 
             talla: "L", 
-            etiqueta: "novedades" 
-        },
-        
+            etiqueta: "novedades" },
+        // Más productos...
+    ];
+        /*
         { id: 4, 
             nombre: "Blusa de Lino", 
             precio: 8500, 
@@ -107,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: " " 
         },
     ];
+        */
+
+    /*----------------CONTADORES------------------------------- */
 
     // Función para contar productos por color y talla
     function actualizarContadores() {
@@ -139,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-
+  
     actualizarContadores();
-
+  /*----------------CONTADORES------------------------------- */
+  
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
         mujerProductsGrid.innerHTML = ""; // Limpiar el grid
     
