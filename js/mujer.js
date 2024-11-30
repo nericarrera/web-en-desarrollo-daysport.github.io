@@ -181,14 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
 
-            // Crear la estructura HTML del producto
+            // Renderiza el producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
                     <div class="product-image-mujer">
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                         <div class="product-thumbnails hidden-thumbnails">
-                            ${producto.imagen.map((img, index) => `
-                                <img src="${img}" alt="${producto.nombre} color ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}">
+                            ${producto.miniaturas.map((img, index) => `
+                                <img src="${img}" alt="Miniatura ${index + 1}" class="thumbnail-image" data-main-image-id="mainImage-${producto.id}" data-hover-index="${index}">
                             `).join('')}
                         </div>
                     </div>
