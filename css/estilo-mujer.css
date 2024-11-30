@@ -588,9 +588,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.mujer-product-card:hover .product-image-mujer {
-  transform: scale(1.1); /* Agranda la imagen principal */
-}
 
 .product-details-mujer {
   width: 220px;
