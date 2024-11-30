@@ -238,10 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         
-            mujerProductsGrid.appendChild(productoDiv);
-        });
         
-    }        
+            mujerProductsGrid.appendChild(productoDiv);
+     });
+        
+    } 
 
     /*-------------BOTON DE FILTRO--------------------- */
 
