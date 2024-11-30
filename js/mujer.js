@@ -15,20 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const productosMujer = [
 
-        { id: 1, nombre: "Remera Modal Soft", 
-            precio: 7500, categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"], 
-            color: "celeste", 
-            talla: "XL", 
-            etiqueta: "" },
+        { id: 1,
+            nombre: "Remera Modal Soft",
+            precio: 7500,
+            categoria: "remeras",
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
+            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/mini-azul.jpeg", "img/mujer/remera-modal-soft-cuelloR/mini-rojo.jpeg"],
+            color: "celeste",
+            talla: "XL",
+            etiqueta: ""
+        },
 
-        { id: 2, nombre: "Calza Nike Pro", 
-            precio: 13500, 
-            categoria: "calzas", 
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], 
-            color: "negro", 
-            talla: "S", 
-            etiqueta: "novedades" },
+        { id: 2,
+            nombre: "Calza Nike Pro",
+            precio: 13500,
+            categoria: "calzas",
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+            miniaturas: ["img/mujer/calzas/mini-negro.jpeg", "img/mujer/calzas/mini-gris.jpeg"],
+            color: "negro",
+            talla: "S",
+            etiqueta: "novedades"
+        },
 
         { id: 3, 
             nombre: "Remera Modal viscosa", 
@@ -144,6 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     actualizarContadores();
   /*----------------CONTADORES------------------------------- */
+
+  function mostrarProductos() {
+    mujerProductsGrid.innerHTML = ""; // Limpia el contenedor
   
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
@@ -290,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarContadores();
 
     mostrarProductos("all");
-    });
+    }});
 
   
 
