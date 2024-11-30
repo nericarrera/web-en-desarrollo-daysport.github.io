@@ -39,13 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "novedades"
         },
 
-        { id: 3, 
-            nombre: "Remera Modal viscosa", 
-            precio: 7500, 
-            categoria: "remeras", 
-            imagen: ["img/mujer/remera-modal-viscosa-cuelloR/remera-modal-viscosa-cuelloR 1.jpeg"], 
-            color: "blanco", 
-            talla: "L", 
+        { id: 3,
+            nombre: "Campera Deportiva NIke",
+            precio: 13500,
+            categoria: "camperas",
+            imagen: ["img/mujer/camperas/campera-deportiva-nike-1.jpeg"],
+            hoverImagenes: ["img/mujer/camperas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas/campera-deportiva-nike-3.jpeg"],
+            color: "negro",
+            talla: "S",
             etiqueta: "novedades" },
         // Más productos...
     
@@ -205,11 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             // Hover en la imagen principal
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.imagen[1]) { // Cambiar a imagen de hover si existe
-                    mainImage.src = producto.imagen[1];
-                }
-            });
+        productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+            if (producto.hoverImagenes && producto.hoverImagenes[0]) { // Usar hoverImagenes si existen
+                mainImage.src = producto.hoverImagenes[0];
+            }
+        });
 
             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
                 mainImage.src = producto.imagen[0]; // Volver a imagen inicial
