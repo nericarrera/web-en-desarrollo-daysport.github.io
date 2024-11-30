@@ -183,69 +183,76 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
         
-            productosFiltrados.forEach(producto => {
-                const productoDiv = document.createElement('div');
-                productoDiv.classList.add('mujer-product-card');
-            
-                // Renderiza el producto
-                productoDiv.innerHTML = `
-                    <div class="product-container-mujer">
-                        <div class="product-image-mujer">
-                            <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                            <div class="product-thumbnails hidden-thumbnails">
-                                ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                                    <img src="${img}" alt="Miniatura ${index + 1}" 
-                                         class="thumbnail-image" 
-                                         data-main-image-id="mainImage-${producto.id}">
-                                `).join('') : ''}
-                            </div>
-                        </div>
-                        <div class="product-details-mujer">
-                            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                            <p class="mujer-product-name">${producto.nombre}</p>
-                            <p class="mujer-product-categoria">${producto.categoria}</p>
-                            <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+            // Renderiza el producto
+            productoDiv.innerHTML = `
+                <div class="product-container-mujer">
+                    <div class="product-image-mujer">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails hidden-thumbnails">
+                            ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
+                                <img src="${img}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image" 
+                                     data-main-image-id="mainImage-${producto.id}" 
+                                     data-hover-index="${index}">
+                            `).join('') : ''}
                         </div>
                     </div>
-                `;
-            
-                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-                let currentImage = producto.imagen[0]; // Mantener el estado de la imagen actual
-            
-                // Hover en la imagen principal (cambiar a hoverImagenes si existen)
-                productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                    if (producto.hoverImagenes && producto.hoverImagenes[0]) {
-                        mainImage.src = producto.hoverImagenes[0];
-                    }
-                });
-            
-                productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                    mainImage.src = currentImage; // Restaurar la última imagen seleccionada
-                });
-            
-                // Hover en las miniaturas
-                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-                if (thumbnails.length > 0) {
-                    thumbnails.forEach(thumbnail => {
-                        thumbnail.addEventListener('mouseover', () => {
-                            mainImage.src = thumbnail.src; // Cambiar a la miniatura al pasar el mouse
-                        });
-            
-                        thumbnail.addEventListener('mouseleave', () => {
-                            mainImage.src = currentImage; // Volver a la imagen actual seleccionada
-                        });
-            
-                        thumbnail.addEventListener('mouseenter', () => {
-                            currentImage = thumbnail.src; // Actualizar el estado actual a la miniatura seleccionada
-                        });
-                    });
+                    <div class="product-details-mujer">
+                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="mujer-product-name">${producto.nombre}</p>
+                        <p class="mujer-product-categoria">${producto.categoria}</p>
+                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                    </div>
+                </div>
+            `;
+        
+            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+            let currentImage = producto.imagen[0]; // Mantener el estado de la imagen actual
+        
+            // Hover en la imagen principal (cambiar a hoverImagenes si existen)
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+                if (producto.hoverImagenes && producto.hoverImagenes[0]) {
+                    mainImage.src = producto.hoverImagenes[0];
                 }
-            
-                mujerProductsGrid.appendChild(productoDiv);
             });
         
-        }
-    }
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
+                mainImage.src = currentImage; // Restaurar la última imagen seleccionada
+            });
+        
+            // Hover en las miniaturas (cambiar la imagen principal sin necesidad de clic)
+            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+            if (thumbnails.length > 0) {
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('mouseover', () => {
+                        mainImage.src = thumbnail.src; // Cambiar a la miniatura al pasar el mouse
+                    });
+        
+                    thumbnail.addEventListener('mouseout', () => {
+                        mainImage.src = currentImage; // Volver a la imagen actual seleccionada
+                    });
+        
+                    thumbnail.addEventListener('mouseenter', () => {
+                        currentImage = thumbnail.src; // Actualizar el estado actual a la miniatura seleccionada
+                    });
+                });
+            }
+        
+            mujerProductsGrid.appendChild(productoDiv);
+        });
+        
+        // Evento global para cambiar la imagen principal con las miniaturas al hacer clic
+        document.addEventListener('click', (event) => {
+            if (event.target.classList.contains('thumbnail-image')) {
+                const mainImageId = event.target.dataset.mainImageId;
+                const mainImage = document.getElementById(mainImageId);
+                if (mainImage) {
+                    mainImage.src = event.target.src;
+                }
+            }
+        })};
+        
+
     /*-------------BOTON DE FILTRO--------------------- */
 
     
