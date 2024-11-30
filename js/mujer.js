@@ -241,17 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mujerProductsGrid.appendChild(productoDiv);
         });
         
-        // Evento global para cambiar la imagen principal con las miniaturas al hacer clic
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('thumbnail-image')) {
-                const mainImageId = event.target.dataset.mainImageId;
-                const mainImage = document.getElementById(mainImageId);
-                if (mainImage) {
-                    mainImage.src = event.target.src;
-                }
-            }
-        })};
-        
+    }        
 
     /*-------------BOTON DE FILTRO--------------------- */
 
