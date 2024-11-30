@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
         
-            // Renderiza el producto
+            // Renderizar el producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
                     <div class="product-image-mujer">
@@ -192,8 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
                                 <img src="${img}" alt="Miniatura ${index + 1}" 
                                      class="thumbnail-image" 
-                                     data-main-image-id="mainImage-${producto.id}" 
-                                     data-hover-index="${index}">
+                                     data-main-image-id="mainImage-${producto.id}">
                             `).join('') : ''}
                         </div>
                     </div>
@@ -207,51 +206,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            let currentImage = producto.imagen[0]; // Mantener el estado de la imagen actual
         
-            // Hover en la imagen principal (cambiar a hoverImagenes si existen)
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.hoverImagenes && producto.hoverImagenes[0]) {
-                    mainImage.src = producto.hoverImagenes[0];
-                }
-            });
-        
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = currentImage; // Restaurar la última imagen seleccionada
-            });
-        
-            // Hover en las miniaturas (cambiar la imagen principal sin necesidad de clic)
+            // Hover en las miniaturas
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
             if (thumbnails.length > 0) {
                 thumbnails.forEach(thumbnail => {
                     thumbnail.addEventListener('mouseover', () => {
-                        mainImage.src = thumbnail.src; // Cambiar a la miniatura al pasar el mouse
+                        mainImage.src = thumbnail.src; // Cambiar la imagen principal al pasar el mouse
                     });
         
                     thumbnail.addEventListener('mouseout', () => {
-                        mainImage.src = currentImage; // Volver a la imagen actual seleccionada
-                    });
-        
-                    thumbnail.addEventListener('mouseenter', () => {
-                        currentImage = thumbnail.src; // Actualizar el estado actual a la miniatura seleccionada
+                        mainImage.src = producto.imagen[0]; // Restaurar la imagen inicial al salir
                     });
                 });
             }
         
             mujerProductsGrid.appendChild(productoDiv);
         });
-        
-        // Evento global para cambiar la imagen principal con las miniaturas al hacer clic
-        document.addEventListener('click', (event) => {
-            if (event.target.classList.contains('thumbnail-image')) {
-                const mainImageId = event.target.dataset.mainImageId;
-                const mainImage = document.getElementById(mainImageId);
-                if (mainImage) {
-                    mainImage.src = event.target.src;
-                }
-            }
-        })};
-        
+    }
+       
 
     /*-------------BOTON DE FILTRO--------------------- */
 
