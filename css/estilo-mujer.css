@@ -506,7 +506,6 @@
   padding: 20px;
 }
 
-/* Contenedor del producto */
 .mujer-product-card {
   width: 230px;
   text-align: center;
@@ -520,6 +519,10 @@
   transition: all 0.3s ease-in-out;
   z-index: 1;
 }
+
+
+
+
 
 .mujer-product-card:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
@@ -746,16 +749,7 @@
 
 /*--------------------FOTO MINIATURA -----------------*/
 .product-thumbnails {
-  position: absolute; /* Permite que las miniaturas floten */
-  bottom: -50px; /* Ajusta para que inicialmente estén fuera del contenedor */
-  left: 0;
-  width: 100%;
   display: flex;
-  justify-content: center;
-
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
   gap: 3px;
   margin-bottom: 7px;
   margin-top: -3px;
