@@ -216,18 +216,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = currentImage; // Restaurar la última imagen seleccionada
-            });
-        
-            // Hover en las miniaturas
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('mouseover', () => {
-                    currentImage = thumbnail.src; // Actualizar el estado de la imagen actual
-                    mainImage.src = currentImage; // Cambiar a la miniatura
-                });
-            });
+         // Hover en las miniaturas
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('mouseover', () => {
+        const mainImageId = thumbnail.dataset.mainImageId; // Obtener el id de la imagen principal
+        const mainImage = document.getElementById(mainImageId); // Vincular con la imagen principal
+        if (mainImage) {
+            mainImage.src = thumbnail.src; // Cambiar la imagen principal a la miniatura seleccionada
+        }
+    });
+});
         
             mujerProductsGrid.appendChild(productoDiv);
         });
