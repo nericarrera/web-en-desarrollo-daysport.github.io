@@ -509,7 +509,7 @@
 .mujer-product-card {
   width: 230px;
   text-align: center;
-  height: 490px;
+  height: 410px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
   background: #fff;
@@ -517,7 +517,7 @@
   position: relative; /* Relativo al contenedor */
   overflow: hidden; /* Evita que el contenido salga del contenedor */
   transition: all 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 }
 
 
