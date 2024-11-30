@@ -228,13 +228,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentImage = thumbnail.src; // Actualizar el estado de la imagen actual
                         mainImage.src = currentImage; // Cambiar a la miniatura
                     });
+        
+                    thumbnail.addEventListener('mouseout', () => {
+                        mainImage.src = currentImage; // Mantener la última miniatura seleccionada
+                    });
                 });
             }
         
             mujerProductsGrid.appendChild(productoDiv);
         });
         
-        // Evento global para cambiar la imagen principal con las miniaturas
+        // Evento global para cambiar la imagen principal con las miniaturas al hacer clic
         document.addEventListener('click', (event) => {
             if (event.target.classList.contains('thumbnail-image')) {
                 const mainImageId = event.target.dataset.mainImageId;
