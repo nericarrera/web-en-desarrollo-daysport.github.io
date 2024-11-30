@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
         
-            // Renderizar el producto
+            // Renderiza el producto
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
                     <div class="product-image-mujer">
@@ -206,29 +206,35 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            let selectedImage = producto.imagen[0]; // Mantener el estado de la imagen seleccionada
-        
-            // Hover en la imagen principal (cambiar a hoverImagenes si existen)
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.hoverImagenes && producto.hoverImagenes[0]) {
-                    mainImage.src = producto.hoverImagenes[0];
-                }
-            });
-        
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
-                mainImage.src = selectedImage; // Restaurar la última imagen seleccionada
-            });
+            let selectedImage = producto.imagen[0]; // Mantener la última miniatura seleccionada
+            let isInsideProduct = false; // Estado para saber si el mouse está dentro del producto
         
             // Hover en las miniaturas
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
             if (thumbnails.length > 0) {
                 thumbnails.forEach(thumbnail => {
                     thumbnail.addEventListener('mouseover', () => {
-                        selectedImage = thumbnail.src; // Actualizar el estado de la imagen seleccionada
-                        mainImage.src = selectedImage; // Cambiar a la miniatura
+                        selectedImage = thumbnail.src; // Actualizar a la miniatura actual
+                        mainImage.src = selectedImage; // Cambiar la imagen principal
                     });
                 });
             }
+        
+            // Detectar entrada al área del producto
+            productoDiv.addEventListener('mouseover', () => {
+                isInsideProduct = true; // El mouse está dentro del producto
+            });
+        
+            // Detectar salida del área del producto
+            productoDiv.addEventListener('mouseout', () => {
+                isInsideProduct = false; // El mouse salió del producto
+                setTimeout(() => {
+                    if (!isInsideProduct) {
+                        mainImage.src = producto.imagen[0]; // Restaurar imagen inicial
+                        selectedImage = producto.imagen[0]; // Resetear a la inicial
+                    }
+                }, 100); // Esperar un pequeño tiempo para detectar si realmente salió
+            });
         
             mujerProductsGrid.appendChild(productoDiv);
         });
