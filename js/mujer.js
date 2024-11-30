@@ -144,6 +144,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
     actualizarContadores();
   /*----------------CONTADORES------------------------------- */
+
+   // Función para mostrar productos
+   function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
+    mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+
+    // Filtrar productos
+    let productosFiltrados = productosMujer.filter(producto => {
+        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+        return matchesCategoria;
+    });
   
 
     function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
@@ -288,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarContadores();
-    });
+   }});
 
   
 
