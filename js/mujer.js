@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-            miniaturas: [""],
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
             color: "celeste",
             talla: "XL",
             etiqueta: ""
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
             hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-            miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+            miniaturas: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
             color: "negro",
             talla: "S",
             etiqueta: "novedades"
@@ -246,6 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    /*-------------BOTON DE FILTRO--------------------- */
 
     
     filterButtons.forEach(button => {
