@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "calzas",
             imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
             hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-            miniaturas: ["img/mujer/calzas/mini-negro.jpeg", "img/mujer/calzas/mini-gris.jpeg"],
+            miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
             color: "negro",
             talla: "S",
             etiqueta: "novedades"
