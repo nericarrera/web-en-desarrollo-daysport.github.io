@@ -506,27 +506,24 @@
   padding: 20px;
 }
 
+/* Contenedor del producto */
 .mujer-product-card {
   width: 230px;
   text-align: center;
   height: 490px;
   margin-bottom: 20px;
-  position: relative;
-  
-  background: #fff;
-  transition: box-shadow 0.3s ease;
-}
-
-
-/* Contenedor del producto */
-.mujer-product-card {
-  position: relative;
   border: 1px solid #ddd;
   background: #fff;
   transition: box-shadow 0.3s ease;
-  height: auto;
-  z-index: 10;
+  position: relative; /* Relativo al contenedor */
+  overflow: hidden; /* Evita que el contenido salga del contenedor */
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
+
+
+
+
 
 .mujer-product-card:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
