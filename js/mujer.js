@@ -220,17 +220,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainImage.src = currentImage; // Restaurar la última imagen seleccionada
             });
         
-            // Hover en las miniaturas
+            // Hover en las miniaturas (cambiar la imagen principal sin necesidad de clic)
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
             if (thumbnails.length > 0) {
                 thumbnails.forEach(thumbnail => {
                     thumbnail.addEventListener('mouseover', () => {
-                        currentImage = thumbnail.src; // Actualizar el estado de la imagen actual
-                        mainImage.src = currentImage; // Cambiar a la miniatura
+                        mainImage.src = thumbnail.src; // Cambiar a la miniatura al pasar el mouse
                     });
         
                     thumbnail.addEventListener('mouseout', () => {
-                        mainImage.src = currentImage; // Mantener la última miniatura seleccionada
+                        mainImage.src = currentImage; // Volver a la imagen actual seleccionada
+                    });
+        
+                    thumbnail.addEventListener('mouseenter', () => {
+                        currentImage = thumbnail.src; // Actualizar el estado actual a la miniatura seleccionada
                     });
                 });
             }
