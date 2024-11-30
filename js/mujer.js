@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
             hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
             miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
             color: "negro",
