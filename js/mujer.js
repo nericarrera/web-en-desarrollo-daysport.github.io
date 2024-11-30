@@ -247,8 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = event.target.src;
                 }
             }
-        });
-    }
+        })};
+        
 
     /*-------------BOTON DE FILTRO--------------------- */
 
