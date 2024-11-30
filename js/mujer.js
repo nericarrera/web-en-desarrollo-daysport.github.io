@@ -209,14 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
             let currentImage = producto.imagen[0]; // Mantener el estado de la imagen actual
         
-            // Hover en la imagen principal (cambiar a hoverImagenes si existen)
-            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.hoverImagenes && producto.hoverImagenes[0]) {
-                    mainImage.src = producto.hoverImagenes[0];
-                }
-            });
-        
-         // Hover en las miniaturas
+           // Hover en las miniaturas
 thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener('mouseover', () => {
         const mainImageId = thumbnail.dataset.mainImageId; // Obtener el id de la imagen principal
