@@ -209,8 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Hover en la imagen principal
             productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
-                if (producto.imagen[1]) { // Cambiar a imagen de hover si existe
-                    mainImage.src = producto.imagen[1];
+                if (producto.imagen[0]) { // Cambiar a imagen de hover si existe
+                    mainImage.src = producto.imagen[0];
                 }
             });
 
