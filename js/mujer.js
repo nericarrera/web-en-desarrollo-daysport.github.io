@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 7500,
             categoria: "remeras",
             imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
-            hoverImagenes: [""],
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+            miniaturas: [""],
             color: "celeste",
             talla: "XL",
             etiqueta: ""
