@@ -206,17 +206,26 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+            let selectedImage = producto.imagen[0]; // Mantener el estado de la imagen seleccionada
+        
+            // Hover en la imagen principal (cambiar a hoverImagenes si existen)
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseover', () => {
+                if (producto.hoverImagenes && producto.hoverImagenes[0]) {
+                    mainImage.src = producto.hoverImagenes[0];
+                }
+            });
+        
+            productoDiv.querySelector('.product-image-mujer').addEventListener('mouseout', () => {
+                mainImage.src = selectedImage; // Restaurar la última imagen seleccionada
+            });
         
             // Hover en las miniaturas
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
             if (thumbnails.length > 0) {
                 thumbnails.forEach(thumbnail => {
                     thumbnail.addEventListener('mouseover', () => {
-                        mainImage.src = thumbnail.src; // Cambiar la imagen principal al pasar el mouse
-                    });
-        
-                    thumbnail.addEventListener('mouseout', () => {
-                        mainImage.src = producto.imagen[0]; // Restaurar la imagen inicial al salir
+                        selectedImage = thumbnail.src; // Actualizar el estado de la imagen seleccionada
+                        mainImage.src = selectedImage; // Cambiar a la miniatura
                     });
                 });
             }
