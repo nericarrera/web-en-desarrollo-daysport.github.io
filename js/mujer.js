@@ -288,6 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     actualizarContadores();
+
+    mostrarProductos("all");
     });
 
   
