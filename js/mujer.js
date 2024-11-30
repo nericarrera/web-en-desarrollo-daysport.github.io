@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "camperas",
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
-            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
             color: "negro",
             talla: "S",
             etiqueta: "novedades" },
