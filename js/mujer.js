@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
             miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
+            etiqueta: "",
             variantes: [
                 { color: "celeste", talla: "S", stock: 3 },
                 { color: "rojo", talla: "M", stock: 0 }, // Sin stock
