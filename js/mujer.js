@@ -158,14 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
 
-  function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
+ // Verificar que productosMujer esté bien definido
+console.log('Productos Mujer:', productosMujer);
+
+// Mostrar productos con filtro
+function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
     mujerProductsGrid.innerHTML = ""; // Limpiar el grid
 
-    // Inicializar productosFiltrados con un array vacío
-    let productosFiltrados = [];
+    if (!Array.isArray(productosMujer)) {
+        console.error('Error: productosMujer no es un array. Verifica su inicialización.');
+        return; // Salir si no es un array válido
+    }
 
-    // Filtrar productos
-    productosFiltrados = productosMujer.filter(producto => {
+    let productosFiltrados = productosMujer.filter(producto => {
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
 
         const matchesColor = color.length === 0 || 
@@ -177,37 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return matchesCategoria && matchesColor && matchesTalla;
     });
 
-        // Ordenar los productos si se selecciona una opción
-        if (ordenar === "price-asc") {
-            productosFiltrados.sort((a, b) => a.precio - b.precio);
-        } else if (ordenar === "price-desc") {
-            productosFiltrados.sort((a, b) => b.precio - a.precio);
-        }
-
-        /*----------------------MOSTRAR PRODUCTOS--------------------------------- */
-     // Renderizar productos
-     productosFiltrados.forEach(producto => {
+    // Renderizar productos filtrados
+    productosFiltrados.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('mujer-product-card');
 
-        const variantesDisponibles = producto.variantes.filter(v => v.stock > 0);
-
-        // Crear miniaturas dinámicas según las variantes
-        const miniaturasHTML = variantesDisponibles.map(vari => `
-            <img src="${producto.miniaturas[0]}" alt="Miniatura ${vari.color}" 
-                 class="thumbnail-image"
-                 data-color="${vari.color}" 
-                 data-size="${vari.talla}">
-        `).join('');
-
-        
-            // Renderiza el producto
-            productoDiv.innerHTML = `
+        productoDiv.innerHTML = `
             <div class="product-container-mujer">
                 <div class="product-image-mujer">
                     <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                     <div class="product-thumbnails hidden-thumbnails">
-                        ${miniaturasHTML}
+                        ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
+                            <img src="${img}" alt="Miniatura ${index + 1}" 
+                                 class="thumbnail-image" 
+                                 data-main-image-id="mainImage-${producto.id}">
+                        `).join('') : ''}
                     </div>
                 </div>
                 <div class="product-details-mujer">
@@ -313,7 +302,7 @@ console.log('Color:', color);
 console.log('Talla:', talla);
 console.log('Productos:', productosMujer);
 
-  
+console.log('Productos Mujer:', productosMujer);
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
   document.addEventListener('DOMContentLoaded', () => {
