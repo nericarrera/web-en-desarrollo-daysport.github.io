@@ -125,19 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*----------------CONTADORES------------------------------- */
 
-    // Función para contar productos por color y talla
     function actualizarContadores() {
         const colorCounts = {};
         const tallaCounts = {};
-
+    
         productosMujer.forEach(producto => {
-            const color = producto.color.toLowerCase();
-            const talla = producto.talla.toUpperCase();
-
-            colorCounts[color] = (colorCounts[color] || 0) + 1;
-            tallaCounts[talla] = (tallaCounts[talla] || 0) + 1;
+            // Verifica si el producto tiene color y talla definidos
+            if (producto.color) {
+                const color = producto.color.toLowerCase();
+                colorCounts[color] = (colorCounts[color] || 0) + 1;
+            }
+    
+            if (producto.talla) {
+                const talla = producto.talla.toUpperCase();
+                tallaCounts[talla] = (tallaCounts[talla] || 0) + 1;
+            }
         });
-
+    
         colorCheckboxes.forEach(checkbox => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
@@ -146,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemCount.textContent = `(${count})`;
             }
         });
-
+    
         sizeCheckboxes.forEach(checkbox => {
             const talla = checkbox.value.toUpperCase();
             const count = tallaCounts[talla] || 0;
