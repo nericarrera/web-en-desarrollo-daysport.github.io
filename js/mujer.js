@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /*----------------------------------------------- */
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
+  mujerProductsGrid.innerHTML = ""; // Limpiar el grid antes de renderizar
 
  // Verificar que productosMujer esté bien definido
 console.log('Productos Mujer:', productosMujer);
@@ -279,14 +280,7 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
         });
     });
 
-    
-    const filterButton = document.querySelectorAll('.mujer-filter-button');
-filterButton.forEach(button => {
-    button.addEventListener('click', () => {
-        const categoria = button.getAttribute('data-filter');
-        mostrarProductos(categoria); // Pasar categoría al filtrar
-    });
-});
+   
 
     if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
