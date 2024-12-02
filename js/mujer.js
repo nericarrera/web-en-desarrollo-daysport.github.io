@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "celeste", talla: "XL", stock: 1 },
                 { color: "blanco", talla: "M", stock: 1 },
-                { color: "negro", talla: "L", stock: 0 } // Sin stock
+                { color: "negro", talla: "L", stock: 0 }, // Sin stock
             ]
         },
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "",
             variantes: [
                 { color: "negro", talla: "L", stock: 1 },
-                { color: "gris", talla: "M", stock: 1 }
+                { color: "gris", talla: "M", stock: 1 },
             ]
         },
 
