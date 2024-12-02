@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/front.jpeg", "img/mujer/calzas/back.jpeg"],
             miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
             hoverImagenes: ["img/mujer/calzas/hover1.jpeg"],
-            etiqueta: "novedades",
+            etiqueta: "Novedades",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "Novedades",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "Novedades",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
