@@ -160,15 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
 
+  // **Función para mostrar productos en el grid**
   function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
     mujerProductsGrid.innerHTML = ""; // Limpiar el grid
 
+    // **Filtrar productos según categoría, color, talla y stock**
     let productosFiltrados = productosMujer.filter(producto => {
-        // Filtrar variantes con stock
         const tieneStock = producto.variantes.some(v => v.stock > 0);
         if (!tieneStock) return false;
 
-        // Filtrar por categoría, color y talla
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
         const matchesColor = color.length === 0 || producto.variantes.some(v => color.includes(v.color));
         const matchesTalla = talla.length === 0 || producto.variantes.some(v => talla.includes(v.talla));
@@ -244,6 +244,37 @@ document.addEventListener('DOMContentLoaded', () => {
             mujerProductsGrid.appendChild(productoDiv);
         });
     }
+
+     // **Inicializar la vista mostrando todos los productos**
+     mostrarProductos("all");
+
+      // **Agregar eventos a los botones del filtro**
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const categoria = button.getAttribute('data-filter');
+            mostrarProductos(categoria);
+        });
+    });
+
+    // **Eventos para el botón de ordenar**
+    applyFiltersButton.addEventListener('click', () => {
+        const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
+        const selectedColors = Array.from(colorCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase());
+        const selectedSizes = Array.from(sizeCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toUpperCase());
+
+        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
+    });
+
+    clearFiltersButton.addEventListener('click', () => {
+        sortRadios.forEach(radio => (radio.checked = false));
+        colorCheckboxes.forEach(cb => (cb.checked = false));
+        sizeCheckboxes.forEach(cb => (cb.checked = false));
+
+        mostrarProductos("all");
+    });
+
 
     /*-----------REDUCIR STOCK------------------------- */
     function reducirStock(productoId, color, talla) {
