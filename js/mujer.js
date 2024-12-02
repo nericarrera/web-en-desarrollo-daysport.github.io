@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ]
         },
-/*
+
         { id: 3,
             nombre: "Campera Deportiva NIke",
             precio: 13500,
@@ -52,11 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            color: "negro",
-            talla: "S",
-            etiqueta: "novedades" },
-    
-        
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
+        },
+            
         { id: 4, 
             nombre: "Blusa de Lino", 
             precio: 8500, 
@@ -121,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "M",  
             etiqueta: " " 
         },
-        */
+        
     ];
 
 
