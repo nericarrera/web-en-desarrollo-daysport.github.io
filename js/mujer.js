@@ -163,7 +163,9 @@ console.log('Productos Mujer:', productosMujer);
 
 // Mostrar productos con filtro
 function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-    mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+    console.log(`Filtrando por categoría: ${categoria}`); // Depuración
+    // Lógica de filtrado aquí
+
 
     if (!Array.isArray(productosMujer)) {
         console.error('Error: productosMujer no es un array. Verifica su inicialización.');
@@ -241,6 +243,27 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
        
 
     /*-------------BOTON DE FILTRO--------------------- */
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remover la clase activa de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+    
+            // Agregar la clase activa al botón clicado
+            button.classList.add('active');
+    
+            // Obtener el valor de data-filter
+            const categoria = button.getAttribute('data-filter');
+    
+            // Depuración (opcional)
+            console.log('Categoría seleccionada:', categoria);
+    
+            // Llamar a mostrarProductos con la categoría seleccionada
+            mostrarProductos(categoria);
+        });
+    });
+
+    console.log('Categoría seleccionada:', categoria);
 
     
     const filterButton = document.querySelectorAll('.mujer-filter-button');
