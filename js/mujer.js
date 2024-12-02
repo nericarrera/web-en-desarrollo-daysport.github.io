@@ -15,31 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const productosMujer = [
 
-        {  id: 1,
+        { id: 1,
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"],
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
-            etiqueta: "novedades",
-            variantes: [
-                { color: "celeste", talla: "XL", stock: 1 },
-                { color: "blanco", talla: "M", stock: 1 },
-                { color: "negro", talla: "L", stock: 0 }, // Sin stock
-            ]
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
+            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
+            color: "celeste",
+            talla: "XL",
+            etiqueta: ""
         },
 
         { id: 2,
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-            miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
-            etiqueta: "",
-            variantes: [
-                { color: "negro", talla: "L", stock: 1 },
-                { color: "gris", talla: "M", stock: 1 },
-            ]
+            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            hoverImagenes: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            miniaturas: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+            color: "negro",
+            talla: "S",
+            etiqueta: "novedades"
         },
 
         { id: 3,
@@ -160,55 +157,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
 
-  // **Función para mostrar productos en el grid**
-  function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-    mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+    function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
+        mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+    
+        let productosFiltrados = productosMujer.filter(producto => {
+            // Verifica si la categoría es 'novedades' y filtra por etiqueta
+            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesEtiqueta = categoria === "novedades" 
+                ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades")
+                : true;
+            const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
+            const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
+            
+            return matchesCategoria && matchesEtiqueta && matchesColor && matchesTalla;
+        });
+        
+        // Ordenar los productos si se selecciona una opción
+        if (ordenar === "price-asc") {
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (ordenar === "price-desc") {
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
+        }
 
-    // **Filtrar productos según categoría, color, talla y stock**
-    let productosFiltrados = productosMujer.filter(producto => {
-        const tieneStock = producto.variantes.some(v => v.stock > 0);
-        if (!tieneStock) return false;
-
-        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-        const matchesColor = color.length === 0 || producto.variantes.some(v => color.includes(v.color));
-        const matchesTalla = talla.length === 0 || producto.variantes.some(v => talla.includes(v.talla));
-
-        return matchesCategoria && matchesColor && matchesTalla;
-    });
-
-    // Ordenar los productos si se selecciona una opción
-    if (ordenar === "price-asc") {
-        productosFiltrados.sort((a, b) => a.precio - b.precio);
-    } else if (ordenar === "price-desc") {
-        productosFiltrados.sort((a, b) => b.precio - a.precio);
-    }
-
-    // Mostrar los productos filtrados
-    productosFiltrados.forEach(producto => {
-        const productoDiv = document.createElement('div');
-        productoDiv.classList.add('mujer-product-card');
+        /*----------------------MOSTRAR PRODUCTOS--------------------------------- */
+    
+        productosFiltrados.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('mujer-product-card');
         
             // Renderiza el producto
             productoDiv.innerHTML = `
-            <div class="product-container-mujer">
-                <div class="product-image-mujer">
-                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                    <div class="product-thumbnails hidden-thumbnails">
-                        ${producto.miniaturas.map((img, index) => `
-                            <img src="${img}" alt="Miniatura ${index + 1}" 
-                                class="thumbnail-image" 
-                                data-main-image-id="mainImage-${producto.id}">
-                        `).join('')}
+                <div class="product-container-mujer">
+                    <div class="product-image-mujer">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails hidden-thumbnails">
+                            ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
+                                <img src="${img}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image" 
+                                     data-main-image-id="mainImage-${producto.id}">
+                            `).join('') : ''}
+                        </div>
+                    </div>
+                    <div class="product-details-mujer">
+                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="mujer-product-name">${producto.nombre}</p>
+                        <p class="mujer-product-categoria">${producto.categoria}</p>
+                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
                     </div>
                 </div>
-                <div class="product-details-mujer">
-                    <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                    <p class="mujer-product-name">${producto.nombre}</p>
-                    <p class="mujer-product-categoria">${producto.categoria}</p>
-                    <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                </div>
-            </div>
-        `;
+            `;
         
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
             let selectedImage = producto.imagen[0]; // Mantener la última miniatura seleccionada
@@ -244,55 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mujerProductsGrid.appendChild(productoDiv);
         });
     }
-
-     // **Inicializar la vista mostrando todos los productos**
-     mostrarProductos("all");
-
-      // **Agregar eventos a los botones del filtro**
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const categoria = button.getAttribute('data-filter');
-            mostrarProductos(categoria);
-        });
-    });
-
-    // **Eventos para el botón de ordenar**
-    applyFiltersButton.addEventListener('click', () => {
-        const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
-        const selectedColors = Array.from(colorCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase());
-        const selectedSizes = Array.from(sizeCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toUpperCase());
-
-        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
-    });
-
-    clearFiltersButton.addEventListener('click', () => {
-        sortRadios.forEach(radio => (radio.checked = false));
-        colorCheckboxes.forEach(cb => (cb.checked = false));
-        sizeCheckboxes.forEach(cb => (cb.checked = false));
-
-        mostrarProductos("all");
-    });
-
-
-    /*-----------REDUCIR STOCK------------------------- */
-    function reducirStock(productoId, color, talla) {
-        const producto = productosMujer.find(p => p.id === productoId);
-        if (producto) {
-            const variante = producto.variantes.find(v => v.color === color && v.talla === talla);
-            if (variante && variante.stock > 0) {
-                variante.stock -= 1; // Reduce el stock
-                console.log(`Stock actualizado: ${variante.stock}`);
-            } else {
-                console.log("Este producto está agotado.");
-            }
-        }
-    }
-    
-    // Ejemplo de uso
-    reducirStock(1, "celeste", "XL");
-
        
 
     /*-------------BOTON DE FILTRO--------------------- */
