@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/front.jpeg", "img/mujer/calzas/back.jpeg"],
             miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
             hoverImagenes: ["img/mujer/calzas/hover1.jpeg"],
+            etiqueta: "Novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
