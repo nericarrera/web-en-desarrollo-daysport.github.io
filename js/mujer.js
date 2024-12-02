@@ -269,8 +269,6 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
         });
     });
 
-    console.log('Categoría seleccionada:', categoria);
-
     
     const filterButton = document.querySelectorAll('.mujer-filter-button');
 filterButton.forEach(button => {
@@ -335,7 +333,7 @@ filterButton.forEach(button => {
     console.log('Productos:', productosMujer);
     console.log('Productos Mujer:', productosMujer);
 
-    
+
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
 
   document.addEventListener('DOMContentLoaded', () => {
