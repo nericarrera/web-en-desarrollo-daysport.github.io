@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "S",
             etiqueta: "novedades"
         },
-
+/*
         { id: 3,
             nombre: "Campera Deportiva NIke",
             precio: 13500,
@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             talla: "M",  
             etiqueta: " " 
         },
+        */
     ];
 
 
@@ -157,21 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
 
-    function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-        mujerProductsGrid.innerHTML = ""; // Limpiar el grid
-    
-        let productosFiltrados = productosMujer.filter(producto => {
-            // Verifica si la categoría es 'novedades' y filtra por etiqueta
-            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-            const matchesEtiqueta = categoria === "novedades" 
-                ? (producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades")
-                : true;
-            const matchesColor = color.length === 0 || color.includes(producto.color.toLowerCase());
-            const matchesTalla = talla.length === 0 || talla.includes(producto.talla.toUpperCase());
-            
-            return matchesCategoria && matchesEtiqueta && matchesColor && matchesTalla;
-        });
-        
+  function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
+    mujerProductsGrid.innerHTML = ""; // Limpiar el grid
+
+    // Filtrar productos por categoría, color, talla y verificar stock
+    let productosFiltrados = productosMujer.filter(producto => {
+        const tieneStock = producto.variantes.some(v => v.stock > 0);
+        if (!tieneStock) return false; // Excluir productos sin stock
+
+        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+        const matchesColor = color.length === 0 || producto.variantes.some(v => color.includes(v.color));
+        const matchesTalla = talla.length === 0 || producto.variantes.some(v => talla.includes(v.talla));
+
+        return matchesCategoria && matchesColor && matchesTalla;
+    });
         // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
             productosFiltrados.sort((a, b) => a.precio - b.precio);
@@ -180,67 +180,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         /*----------------------MOSTRAR PRODUCTOS--------------------------------- */
-    
-        productosFiltrados.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
+     // Renderizar productos
+     productosFiltrados.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('mujer-product-card');
+
+        const variantesDisponibles = producto.variantes.filter(v => v.stock > 0);
+
+        // Crear miniaturas dinámicas según las variantes
+        const miniaturasHTML = variantesDisponibles.map(vari => `
+            <img src="${producto.miniaturas[0]}" alt="Miniatura ${vari.color}" 
+                 class="thumbnail-image"
+                 data-color="${vari.color}" 
+                 data-size="${vari.talla}">
+        `).join('');
+
         
             // Renderiza el producto
             productoDiv.innerHTML = `
-                <div class="product-container-mujer">
-                    <div class="product-image-mujer">
-                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                        <div class="product-thumbnails hidden-thumbnails">
-                            ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                                <img src="${img}" alt="Miniatura ${index + 1}" 
-                                     class="thumbnail-image" 
-                                     data-main-image-id="mainImage-${producto.id}">
-                            `).join('') : ''}
-                        </div>
-                    </div>
-                    <div class="product-details-mujer">
-                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                        <p class="mujer-product-name">${producto.nombre}</p>
-                        <p class="mujer-product-categoria">${producto.categoria}</p>
-                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+            <div class="product-container-mujer">
+                <div class="product-image-mujer">
+                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                    <div class="product-thumbnails hidden-thumbnails">
+                        ${miniaturasHTML}
                     </div>
                 </div>
-            `;
-        
-            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            let selectedImage = producto.imagen[0]; // Mantener la última miniatura seleccionada
-            let isInsideProduct = false; // Estado para saber si el mouse está dentro del producto
-        
-            // Hover en las miniaturas
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            if (thumbnails.length > 0) {
-                thumbnails.forEach(thumbnail => {
-                    thumbnail.addEventListener('mouseover', () => {
-                        selectedImage = thumbnail.src; // Actualizar a la miniatura actual
-                        mainImage.src = selectedImage; // Cambiar la imagen principal
-                    });
-                });
-            }
-        
-            // Detectar entrada al área del producto
-            productoDiv.addEventListener('mouseover', () => {
-                isInsideProduct = true; // El mouse está dentro del producto
+                <div class="product-details-mujer">
+                    <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                    <p class="mujer-product-name">${producto.nombre}</p>
+                    <p class="mujer-product-categoria">${producto.categoria}</p>
+                    <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                </div>
+            </div>
+        `;
+
+        const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+        let selectedImage = producto.imagen[0];
+        let isInsideProduct = false;
+
+        // Manejo del hover en miniaturas
+        const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('mouseover', () => {
+                selectedImage = thumbnail.src;
+                mainImage.src = selectedImage;
             });
-        
-            // Detectar salida del área del producto
-            productoDiv.addEventListener('mouseout', () => {
-                isInsideProduct = false; // El mouse salió del producto
-                setTimeout(() => {
-                    if (!isInsideProduct) {
-                        mainImage.src = producto.imagen[0]; // Restaurar imagen inicial
-                        selectedImage = producto.imagen[0]; // Resetear a la inicial
-                    }
-                }, 100); // Esperar un pequeño tiempo para detectar si realmente salió
-            });
-        
-            mujerProductsGrid.appendChild(productoDiv);
         });
-    }
+
+        // Detectar entrada y salida del producto
+        productoDiv.addEventListener('mouseover', () => {
+            isInsideProduct = true;
+        });
+
+        productoDiv.addEventListener('mouseout', () => {
+            isInsideProduct = false;
+            setTimeout(() => {
+                if (!isInsideProduct) {
+                    mainImage.src = producto.imagen[0];
+                }
+            }, 100);
+        });
+
+        mujerProductsGrid.appendChild(productoDiv);
+    });
+}
        
 
     /*-------------BOTON DE FILTRO--------------------- */
