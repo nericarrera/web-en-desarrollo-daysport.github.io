@@ -161,26 +161,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
     mujerProductsGrid.innerHTML = ""; // Limpiar el grid
 
-    // Filtrar productos por categoría, color, talla y verificar stock
+    // Inicializar productosFiltrados con un array vacío
+    let productosFiltrados = [];
+
+    // Filtrar productos
     productosFiltrados = productosMujer.filter(producto => {
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-        const matchesColor = color.length === 0 || color.some(c => producto.color.toLowerCase().includes(c));
-        const matchesTalla = talla.length === 0 || talla.some(t => producto.talla.toUpperCase().includes(t));
-        return matchesCategoria && matchesColor && matchesTalla;
-    });
 
-    let productosFiltrados = productosMujer.filter(producto => {
-        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-    
         const matchesColor = color.length === 0 || 
             (producto.color && color.some(c => producto.color.toLowerCase().includes(c)));
-    
+
         const matchesTalla = talla.length === 0 || 
             (producto.talla && talla.some(t => producto.talla.toUpperCase().includes(t)));
-    
+
         return matchesCategoria && matchesColor && matchesTalla;
     });
-    
 
         // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
@@ -259,14 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /*-------------BOTON DE FILTRO--------------------- */
 
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const categoria = button.getAttribute('data-filter');
-            mostrarProductos(categoria);
-        });
+    const filterButton = document.querySelectorAll('.mujer-filter-button');
+filterButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const categoria = button.getAttribute('data-filter');
+        mostrarProductos(categoria); // Pasar categoría al filtrar
     });
+});
 
     if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
@@ -313,6 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mostrarProductos("all");
     });
+
+    console.log('Categoría:', categoria);
+console.log('Color:', color);
+console.log('Talla:', talla);
+console.log('Productos:', productosMujer);
 
   
 
