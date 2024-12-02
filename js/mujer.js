@@ -64,9 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 8500, 
             categoria: "remeras", 
             imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
-            color: "negro", 
-            talla: "XL", 
-            etiqueta: "" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
 
         { id: 5, 
@@ -74,54 +78,78 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 23000, 
             categoria: "camperas", 
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
-            color: "negro", 
-            talla: "S", 
-            etiqueta: "" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         { id: 6, 
             nombre: "Calza Nike Radeon", 
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         { id: 7, 
             nombre: "Calza Nike Grofada", 
             precio: 16500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         { id: 8, 
             nombre: "Calza Nike Speak", 
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
-            color: "negro", 
-            talla: "S",  
-            etiqueta: "novedades" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         { id: 9, 
             nombre: "Calza Nike Fluorecent", 
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
-            color: "fucsia", 
-            talla: "XL",  
-            etiqueta: "novedades" 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         { id: 10, 
             nombre: "Calza Adidas Original", 
             precio: 13500, 
             categoria: "calzas", 
             imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
-            color: "negro", 
-            talla: "M",  
-            etiqueta: " " 
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "Novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ] 
         },
         
     ];
