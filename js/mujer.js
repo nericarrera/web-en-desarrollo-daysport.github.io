@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
  // Verificar que productosMujer esté bien definido
 console.log('Productos Mujer:', productosMujer);
 
-// Mostrar productos con filtro
 function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-    console.log(`Filtrando por categoría: ${categoria}`); // Depuración
-    // Lógica de filtrado aquí
+    console.log(`Filtrando por categoría: ${categoria}`);
+    // Lógica de filtrado
+
 
 
     if (!Array.isArray(productosMujer)) {
@@ -252,13 +252,19 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
             // Agregar la clase activa al botón clicado
             button.classList.add('active');
     
-            // Obtener el valor de data-filter
+            // Obtener la categoría desde el atributo data-filter
             const categoria = button.getAttribute('data-filter');
     
-            // Depuración (opcional)
+            // Verificar si la categoría es válida
+            if (!categoria) {
+                console.error('Categoría no encontrada en el botón clicado.');
+                return;
+            }
+    
+            // Mostrar depuración
             console.log('Categoría seleccionada:', categoria);
     
-            // Llamar a mostrarProductos con la categoría seleccionada
+            // Llamar a la función mostrarProductos con la categoría
             mostrarProductos(categoria);
         });
     });
@@ -320,14 +326,18 @@ filterButton.forEach(button => {
     mostrarProductos("all");
     });
 
+    mostrarProductos("all"); // Correcto
+    mostrarProductos();      // Esto podría causar el error
+
     console.log('Categoría:', categoria);
-console.log('Color:', color);
-console.log('Talla:', talla);
-console.log('Productos:', productosMujer);
+    console.log('Color:', color);
+    console.log('Talla:', talla);
+    console.log('Productos:', productosMujer);
+    console.log('Productos Mujer:', productosMujer);
 
-console.log('Productos Mujer:', productosMujer);
-
+    
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
+
   document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
