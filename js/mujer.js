@@ -197,15 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /*----------------------------------------------- */
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
-  mujerProductsGrid.innerHTML = ""; // Limpiar el grid antes de renderizar
-
- // Verificar que productosMujer esté bien definido
-console.log('Productos Mujer:', productosMujer);
-
+  
 function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
     console.log(`Filtrando por categoría: ${categoria}`);
     // Lógica de filtrado
-
+    mujerProductsGrid.innerHTML = ""; // Limpiar el grid antes de renderizar
 
 
     if (!Array.isArray(productosMujer)) {
@@ -215,16 +211,14 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
     let productosFiltrados = productosMujer.filter(producto => {
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-
         const matchesColor = color.length === 0 || 
             (producto.color && color.some(c => producto.color.toLowerCase().includes(c)));
-
         const matchesTalla = talla.length === 0 || 
             (producto.talla && talla.some(t => producto.talla.toUpperCase().includes(t)));
 
         return matchesCategoria && matchesColor && matchesTalla;
     });
-
+    
     // Renderizar productos filtrados
     productosFiltrados.forEach(producto => {
         const productoDiv = document.createElement('div');
