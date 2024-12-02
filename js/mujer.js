@@ -334,14 +334,7 @@ filterButton.forEach(button => {
     mostrarProductos("all");
     });
 
-    mostrarProductos("all"); // Correcto
-    mostrarProductos();      // Esto podría causar el error
-
-    console.log('Categoría:', categoria);
-    console.log('Color:', color);
-    console.log('Talla:', talla);
-    console.log('Productos:', productosMujer);
-    console.log('Productos Mujer:', productosMujer);
+ 
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
