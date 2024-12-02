@@ -14,29 +14,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     const productosMujer = [
-
-        { id: 1,
+        {
+            id: 1,
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
-            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg"],
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"],
-            color: "celeste",
-            talla: "XL",
-            etiqueta: ""
+            imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"],
+            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
+            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
+            variantes: [
+                { color: "celeste", talla: "S", stock: 3 },
+                { color: "rojo", talla: "M", stock: 0 }, // Sin stock
+                { color: "azul", talla: "L", stock: 5 }
+            ]
         },
 
-        { id: 2,
+        {
+            id: 2,
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
-            imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-            hoverImagenes: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-            miniaturas: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg", "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-            color: "negro",
-            talla: "S",
-            etiqueta: "novedades"
+            imagen: ["img/mujer/calzas/front.jpeg", "img/mujer/calzas/back.jpeg"],
+            miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
+            hoverImagenes: ["img/mujer/calzas/hover1.jpeg"],
+            variantes: [
+                { color: "negro", talla: "S", stock: 2 },
+                { color: "gris", talla: "M", stock: 1 }
+            ]
         },
 /*
         { id: 3,
