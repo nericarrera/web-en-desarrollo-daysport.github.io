@@ -162,16 +162,26 @@ document.addEventListener('DOMContentLoaded', () => {
     mujerProductsGrid.innerHTML = ""; // Limpiar el grid
 
     // Filtrar productos por categoría, color, talla y verificar stock
-    let productosFiltrados = productosMujer.filter(producto => {
-        const tieneStock = producto.variantes.some(v => v.stock > 0);
-        if (!tieneStock) return false; // Excluir productos sin stock
-
+    productosFiltrados = productosMujer.filter(producto => {
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-        const matchesColor = color.length === 0 || producto.variantes.some(v => color.includes(v.color));
-        const matchesTalla = talla.length === 0 || producto.variantes.some(v => talla.includes(v.talla));
-
+        const matchesColor = color.length === 0 || color.some(c => producto.color.toLowerCase().includes(c));
+        const matchesTalla = talla.length === 0 || talla.some(t => producto.talla.toUpperCase().includes(t));
         return matchesCategoria && matchesColor && matchesTalla;
     });
+
+    let productosFiltrados = productosMujer.filter(producto => {
+        const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+    
+        const matchesColor = color.length === 0 || 
+            (producto.color && color.some(c => producto.color.toLowerCase().includes(c)));
+    
+        const matchesTalla = talla.length === 0 || 
+            (producto.talla && talla.some(t => producto.talla.toUpperCase().includes(t)));
+    
+        return matchesCategoria && matchesColor && matchesTalla;
+    });
+    
+
         // Ordenar los productos si se selecciona una opción
         if (ordenar === "price-asc") {
             productosFiltrados.sort((a, b) => a.precio - b.precio);
