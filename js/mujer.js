@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
-            imagen: ["img/mujer/remera-modal-soft-cuelloR/front.jpeg", "img/mujer/remera-modal-soft-cuelloR/back.jpeg"],
-            miniaturas: ["img/mujer/remera-modal-soft-cuelloR/blue.jpeg", "img/mujer/remera-modal-soft-cuelloR/red.jpeg"],
+            imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
+            miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
             variantes: [
                 { color: "celeste", talla: "S", stock: 3 },
