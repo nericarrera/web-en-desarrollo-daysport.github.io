@@ -736,7 +736,7 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
 
 function mostrarCarruselNovedades() {
-  const carruselContainer = document.querySelector('.carrusel-container');
+  const carruselContainer = document.querySelector('.carrusel-container-mujer');
 
   if (!carruselContainer) {
       console.error("El contenedor del carrusel no se encontró en el DOM.");
