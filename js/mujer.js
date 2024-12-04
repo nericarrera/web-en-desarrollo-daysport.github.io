@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remeras-lino/blusalino-negro 1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedades",
+            etiqueta: "Novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedades",
+            etiqueta: "Novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -276,7 +276,6 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
     });
 }
        
-
     /*-------------BOTON DE FILTRO--------------------- */
 
     filterButtons.forEach(button => {
@@ -304,7 +303,6 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
         });
     });
 
-   
 
     if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
@@ -352,7 +350,11 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
     mostrarProductos("all");
     });
 
- 
+/*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
+
+function obtenerProductosNovedad() {
+    return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
+}
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */

@@ -1,6 +1,3 @@
-
-
-
 * {
     margin-top: 0;
     padding: 0;
@@ -8,7 +5,6 @@
     margin-right: 0;
     box-sizing: border-box;
 }
-
 
 /*--------------HEADER--------------- */
 
@@ -227,6 +223,7 @@
 }
 
   /*------------- MENÚ Y SUBMENÚ ---------------*/
+
 .menu {
     display: flex;
     list-style: none;
@@ -269,7 +266,7 @@
     transition: all 420ms ease;
   }
   
-  /* Estilo para el submenú */
+  /*-------------- Estilo para el submenú ----------------*/
   
   .submenu1 {
     display: none;
@@ -351,7 +348,8 @@
     list-style-type: none;
   }
 
-  /* Estilo para los elementos del submenú */
+  /*--------------- Estilo para los elementos del submenú ----------------*/
+
   .submenu-item {
     text-align: center;
     margin: 0 20px;
@@ -427,6 +425,7 @@
   }
 
 /*----------------SUB BANNER- CAMPAÑA CUOTAS-----------------*/
+
 .sub-banner0 {
   width: 100%;
 }
@@ -436,6 +435,7 @@
 }
 
 /*----------------------BANNER PORTADA------------------*/
+
 .banner {
   position: relative;
   overflow: hidden;
@@ -546,56 +546,32 @@
 
 
 /*-------------------PRODUCTO NUEVOS DINAMICO---------------*/
-.new-products-carousel {
-  position: relative;
-  overflow: hidden;
+.carrusel-novedades {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.new-products-carousel h2 {
-  font-size: 22px;
-    margin-bottom: 3em;
-    font-family: 'Dosis';
-    letter-spacing: 0.5px;
-    font-weight: 600;
-    margin: 20px;
-    border: 0px solid #000;
-    text-align: left;
-
-}
-
-.carousel-track {
+  overflow-x: auto;
   display: flex;
-  transition: transform 0.5s ease;
+  gap: 1rem;
 }
 
-.carousel-track .product-card {
-  min-width: 250px;
-  margin: 0 1em;
-  flex-shrink: 0;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2em;
+.carrusel-item {
+  min-width: 200px;
   cursor: pointer;
-  padding: 0.5em;
+  transition: transform 0.3s ease;
 }
 
-.carousel-button.prev {
-  left: 0;
+.carrusel-item:hover {
+  transform: scale(1.05);
 }
 
-.carousel-button.next {
-  right: 0;
+.carrusel-imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carrusel-detalles {
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 
