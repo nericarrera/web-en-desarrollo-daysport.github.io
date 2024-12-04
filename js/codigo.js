@@ -734,22 +734,26 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
-
 function mostrarCarruselNovedades() {
-  const carruselContainer = document.querySelector('.carrusel-container-mujer');
+  const carruselContainer = document.querySelector('.carrusel-container');
 
   if (!carruselContainer) {
-      console.error("El contenedor del carrusel no se encontró en el DOM.");
+      console.error("El contenedor del carrusel no existe en el DOM.");
       return;
   }
 
-  // Limpiar carrusel
-  carruselContainer.innerHTML = "";
-
-  // Obtener los productos de novedad desde mujer.js
+  // Obtener los productos con etiqueta 'novedad'
   const productosNovedad = obtenerProductosNovedad();
 
-  // Generar el contenido del carrusel
+  // Limpiar el contenido del carrusel
+  carruselContainer.innerHTML = "";
+
+  if (productosNovedad.length === 0) {
+      carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
+      return;
+  }
+
+  // Crear los elementos del carrusel
   productosNovedad.forEach(producto => {
       const productoDiv = document.createElement('div');
       productoDiv.classList.add('carrusel-item');
@@ -764,7 +768,7 @@ function mostrarCarruselNovedades() {
           </div>
       `;
 
-      // Agregar evento para redirigir a la página de detalles del producto
+      // Evento para redirigir a la página de detalles
       productoDiv.addEventListener('click', () => {
           window.location.href = `pagina-detalle-producto.html?id=${producto.id}`;
       });

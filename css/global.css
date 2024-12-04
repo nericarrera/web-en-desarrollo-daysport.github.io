@@ -546,16 +546,24 @@
 
 
 /*-------------------PRODUCTO NUEVOS DINAMICO---------------*/
-.carrusel-novedades-mujer {
-  width: 100%;
-  overflow-x: auto;
+.carrusel-novedades {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.carrusel-container {
   display: flex;
   gap: 1rem;
+  overflow-x: auto;
 }
 
 .carrusel-item {
-  min-width: 200px;
+  flex: 0 0 auto;
+  width: 200px;
   cursor: pointer;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -570,8 +578,15 @@
 }
 
 .carrusel-detalles {
-  text-align: center;
   margin-top: 0.5rem;
+}
+
+.carrusel-nombre {
+  font-weight: bold;
+}
+
+.carrusel-precio {
+  color: #ff5733;
 }
 
 
