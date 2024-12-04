@@ -452,17 +452,6 @@ document.addEventListener('DOMContentLoaded', function() {
           sizes: ["S", "M", "L", "XL"]
       },
       {
-          id: 4,
-          name: "Campera Rompeviento Puma Women",
-          price: 35000,
-          gender: "mujer",
-          category: "camperas",
-          images: ["img/mujer/campera rompeviento/campera-rompeviento-puma 1.jpeg", "img/mujer/campera rompeviento/campera-rompeviento-puma 6.jpeg"],
-          colors: ["Negro", "Rosa", "Violeta", "Verde Agua"],
-          status: "Nuevo",
-          sizes: ["S", "M", "L", "XL"]
-      },
-      {
           id: 5,
           name: "Conjunto Nike Women",
           price: 35000,
