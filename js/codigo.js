@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function() {
           price: 35000,
           gender: "mujer",
           category: "conjuntos",
-          images: ["img/mujer/conjuntos/conjunto-verano-nike-mujer 1.jpeg", "img/mujer/conjuntos/conjunto-verano-nike-mujer 2.jpeg"],
+          images: ["img/mujer/conjuntos/conjunto-verano-nike-mujer%201.jpeg", "img/mujer/conjuntos/conjunto-verano-nike-mujer 2.jpeg"],
           colors: ["Blanco", "Negro"],
           status: "Nuevo",
           sizes: ["S", "M", "L", "XL", "XXL"]
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
           price: 65000,
           gender: "hombre",
           category: "camperas",
-          images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
+          images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada%201.jpeg"],
           colors: ["Combinado"],
           status: "Nuevo",
           sizes: ["L"]
@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
           price: 8000,
           gender: "mujer",
           category: "remeras",
-          images: ["img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 1.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 2.jpeg"],
+          images: ["img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR%201.jpeg", "img/mujer/blusa-modal-strass-cuelloR/blusa-modal-strass-cuelloR 2.jpeg"],
           colors: ["Negro", "Azul Marino"],
           status: "Nuevo",
           sizes: ["L", "XL"]
