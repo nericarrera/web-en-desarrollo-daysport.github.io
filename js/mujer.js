@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
             miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 2.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
-            etiqueta: "",
+            etiqueta: "novedad",
             variantes: [
                 { color: "celeste", talla: "S", stock: 3 },
                 { color: "rojo", talla: "M", stock: 0 }, // Sin stock
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/front.jpeg", "img/mujer/calzas/back.jpeg"],
             miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
             hoverImagenes: ["img/mujer/calzas/hover1.jpeg"],
-            etiqueta: "Novedades",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -353,7 +353,9 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
 function obtenerProductosNovedad() {
-    return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
+    const productosNovedad = productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
+    console.log("Productos con etiqueta novedad:", productosNovedad);
+    return productosNovedad;
 }
 
 

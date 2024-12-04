@@ -735,52 +735,46 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
 function mostrarCarruselNovedades() {
-  const carruselContainer = document.querySelector('.carrusel-container');
+    const carruselContainer = document.querySelector('.carrusel-container');
+    if (!carruselContainer) {
+        console.error("El contenedor del carrusel no existe en el DOM.");
+        return;
+    }
 
-  if (!carruselContainer) {
-      console.error("El contenedor del carrusel no existe en el DOM.");
-      return;
-  }
+    const productosNovedad = obtenerProductosNovedad();
+    console.log("Productos para el carrusel:", productosNovedad); // Depuración
 
-  // Obtener los productos con etiqueta 'novedad'
-  const productosNovedad = obtenerProductosNovedad();
+    if (productosNovedad.length === 0) {
+        carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
+        return;
+    }
 
-  // Limpiar el contenido del carrusel
-  carruselContainer.innerHTML = "";
+    carruselContainer.innerHTML = "";
+    productosNovedad.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('carrusel-item');
+        productoDiv.innerHTML = `
+            <div class="carrusel-producto">
+                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
+                <div class="carrusel-detalles">
+                    <p class="carrusel-nombre">${producto.nombre}</p>
+                    <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
+                </div>
+            </div>
+        `;
+        productoDiv.addEventListener('click', () => {
+            window.location.href = `pagina-detalle-producto.html?id=${producto.id}`;
+        });
 
-  if (productosNovedad.length === 0) {
-      carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
-      return;
-  }
-
-  // Crear los elementos del carrusel
-  productosNovedad.forEach(producto => {
-      const productoDiv = document.createElement('div');
-      productoDiv.classList.add('carrusel-item');
-
-      productoDiv.innerHTML = `
-          <div class="carrusel-producto">
-              <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
-              <div class="carrusel-detalles">
-                  <p class="carrusel-nombre">${producto.nombre}</p>
-                  <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
-              </div>
-          </div>
-      `;
-
-      // Evento para redirigir a la página de detalles
-      productoDiv.addEventListener('click', () => {
-          window.location.href = `pagina-detalle-producto.html?id=${producto.id}`;
-      });
-
-      carruselContainer.appendChild(productoDiv);
-  });
+        carruselContainer.appendChild(productoDiv);
+    });
 }
-
-/*---------LLAMADO PARA CARGAR PAGINA-------------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
   mostrarCarruselNovedades();
 });
+
+/*---------LLAMADO PARA CARGAR PAGINA-------------------*/
+
 
 
