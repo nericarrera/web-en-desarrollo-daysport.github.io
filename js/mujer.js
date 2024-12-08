@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
-            imagen: ["img/mujer/calzas/front.jpeg", "img/mujer/calzas/back.jpeg"],
-            miniaturas: ["img/mujer/calzas/mini1.jpeg", "img/mujer/calzas/mini2.jpeg"],
-            hoverImagenes: ["img/mujer/calzas/hover1.jpeg"],
+            imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
