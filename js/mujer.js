@@ -358,6 +358,54 @@ function obtenerProductosNovedad() {
     return productosNovedad;
 }
 
+console.log(obtenerProductosNovedad());
+
+function mostrarCarruselNovedades() {
+    const carruselContainer = document.querySelector('.carrusel-container');
+    if (!carruselContainer) {
+        console.error("El contenedor del carrusel no existe en el DOM.");
+        return;
+    }
+
+    // Obtener productos con etiqueta novedad
+    const productosNovedad = obtenerProductosNovedad();
+    console.log("Productos con etiqueta novedad:", productosNovedad);
+
+    // Si no hay productos, muestra un mensaje
+    if (productosNovedad.length === 0) {
+        carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
+        return;
+    }
+
+    // Limpia el contenido previo
+    carruselContainer.innerHTML = "";
+
+    // Renderiza los productos en el carrusel
+    productosNovedad.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('carrusel-item');
+        productoDiv.innerHTML = `
+            <div class="carrusel-producto">
+                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
+                <div class="carrusel-detalles">
+                    <p class="carrusel-nombre">${producto.nombre}</p>
+                    <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
+                </div>
+            </div>
+        `;
+        carruselContainer.appendChild(productoDiv);
+    });
+
+    console.log("Carrusel actualizado con productos novedad.");
+}
+
+// Llama a la función al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarCarruselNovedades();
+});
+
+
+
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
 
