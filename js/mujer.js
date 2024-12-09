@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "Novedad",
+            etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
