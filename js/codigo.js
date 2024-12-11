@@ -196,7 +196,7 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
-import { productosMujer } from '.exp-products.js';
+import { productosMujer } from './exp-products.js';
 
 function obtenerProductosNovedad() {
     return productosMujer.filter(producto => 
