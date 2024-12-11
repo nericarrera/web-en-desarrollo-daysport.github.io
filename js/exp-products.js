@@ -7,7 +7,7 @@ export const productosMujer = [
         nombre: "Remera Modal Soft",
         precio: 7500,
         categoria: "remeras",
-        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
+        imagen: ["img/mujer/remeras/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
         etiqueta: "Novedad",
         variantes: [{ color: "celeste", talla: "S", stock: 3 }]
     },
