@@ -353,15 +353,15 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
 function obtenerProductosNovedad() {
-    const productosNovedad = productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
-    console.log("Productos con etiqueta novedad:", productosNovedad);
-    return productosNovedad;
+    return productosMujer.filter(producto => 
+        producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad"
+    );
 }
 
 // Prueba inicial: Mostrar en la consola
 console.log("Productos con etiqueta 'novedad':", obtenerProductosNovedad());
 
-
+console.log(obtenerProductosNovedad());
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
