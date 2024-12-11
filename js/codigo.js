@@ -196,47 +196,27 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
-import { productosMujer } from '..js/exp-products.js';
+import { productosMujer } from './js/exp-products.js';
 
-function obtenerProductosNovedad() {
-    return productosMujer.filter(producto => 
-        producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad"
-    );
-}
+// Verifica si los productos están cargando
+console.log(productosMujer);
 
+// Filtra los productos con etiqueta "novedad" y muestra en el carrusel
 function mostrarCarruselNovedades() {
     const carruselContainer = document.querySelector('.carrusel-container');
-    if (!carruselContainer) {
-        console.error("El contenedor del carrusel no existe en el DOM.");
-        return;
-    }
-
-    const productosNovedad = obtenerProductosNovedad();
-    if (productosNovedad.length === 0) {
-        carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'Novedad'.</p>`;
-        return;
-    }
-
-    carruselContainer.innerHTML = ""; // Limpiar contenido previo
-
-    productosNovedad.forEach(producto => {
-        const productoDiv = document.createElement('div');
-        productoDiv.classList.add('carrusel-item');
-        productoDiv.innerHTML = `
-            <div class="carrusel-producto">
-                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
-                <div class="carrusel-detalles">
-                    <p class="carrusel-nombre">${producto.nombre}</p>
-                    <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
-                </div>
-            </div>
-        `;
-        carruselContainer.appendChild(productoDiv);
-    });
+    const productosNovedad = productosMujer.filter(producto => producto.etiqueta === 'novedad');
+    
+    carruselContainer.innerHTML = productosNovedad.map(producto => `
+        <div class="carrusel-item">
+            <img src="${producto.imagen[0]}" alt="${producto.nombre}" />
+            <p>${producto.nombre}</p>
+            <p>$${producto.precio.toLocaleString()}</p>
+        </div>
+    `).join('');
 }
 
-// Llama a la función al cargar la página
-document.addEventListener('DOMContentLoaded', mostrarCarruselNovedades);
+// Ejecutar la función
+mostrarCarruselNovedades();
 
 /*---------LLAMADO PARA CARGAR PAGINA-------------------*/
 
