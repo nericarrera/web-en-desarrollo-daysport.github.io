@@ -196,37 +196,47 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 
 
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
-function mostrarCarruselNovedades() {
-  const carruselContainer = document.querySelector('.carrusel-container');
-  if (!carruselContainer) {
-      console.error("El contenedor del carrusel no existe en el DOM.");
-      return;
-  }
+import { productosMujer } from '.exp-products.js';
 
-  const productosNovedad = obtenerProductosNovedad();
-  console.log("Productos con etiqueta novedad:", productosNovedad);
-
-  if (productosNovedad.length === 0) {
-      carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
-      return;
-  }
-
-  carruselContainer.innerHTML = "";
-  productosNovedad.forEach(producto => {
-      const productoDiv = document.createElement('div');
-      productoDiv.classList.add('carrusel-item');
-      productoDiv.innerHTML = `
-          <div class="carrusel-producto">
-              <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
-              <div class="carrusel-detalles">
-                  <p class="carrusel-nombre">${producto.nombre}</p>
-                  <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
-              </div>
-          </div>
-      `;
-      carruselContainer.appendChild(productoDiv);
-  });
+function obtenerProductosNovedad() {
+    return productosMujer.filter(producto => 
+        producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad"
+    );
 }
+
+function mostrarCarruselNovedades() {
+    const carruselContainer = document.querySelector('.carrusel-container');
+    if (!carruselContainer) {
+        console.error("El contenedor del carrusel no existe en el DOM.");
+        return;
+    }
+
+    const productosNovedad = obtenerProductosNovedad();
+    if (productosNovedad.length === 0) {
+        carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'Novedad'.</p>`;
+        return;
+    }
+
+    carruselContainer.innerHTML = ""; // Limpiar contenido previo
+
+    productosNovedad.forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('carrusel-item');
+        productoDiv.innerHTML = `
+            <div class="carrusel-producto">
+                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
+                <div class="carrusel-detalles">
+                    <p class="carrusel-nombre">${producto.nombre}</p>
+                    <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
+                </div>
+            </div>
+        `;
+        carruselContainer.appendChild(productoDiv);
+    });
+}
+
+// Llama a la función al cargar la página
+document.addEventListener('DOMContentLoaded', mostrarCarruselNovedades);
 
 /*---------LLAMADO PARA CARGAR PAGINA-------------------*/
 
