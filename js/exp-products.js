@@ -7,7 +7,7 @@ export const productosMujer = [
         nombre: "Remera Modal Soft",
         precio: 7500,
         categoria: "remeras",
-        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR 1.jpeg"],
+        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
         etiqueta: "Novedad",
         variantes: [{ color: "celeste", talla: "S", stock: 3 }]
     },
@@ -16,7 +16,7 @@ export const productosMujer = [
         nombre: "Calza Nike Pro",
         precio: 13500,
         categoria: "calzas",
-        imagen: ["img/mujer/calzas/front.jpeg"],
+        imagen: ["img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
         etiqueta: "Novedad",
         variantes: [{ color: "negro", talla: "S", stock: 2 }]
     },
