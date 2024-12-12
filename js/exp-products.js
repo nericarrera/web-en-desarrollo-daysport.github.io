@@ -8,7 +8,7 @@ export const productosMujer = [
         precio: 7500,
         categoria: "remeras",
         imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        etiqueta: "Novedad",
+        etiqueta: "novedad",
         variantes: [
             { color: "celeste", talla: "S", stock: 3 },
             { color: "rojo", talla: "M", stock: 0 },
