@@ -360,31 +360,44 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    // Configurar las secciones colapsables
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
-            // Asegurar que todas las secciones empiecen cerradas
+            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
+
+            // Asegurar que el contenido esté oculto inicialmente
             content.style.display = 'none';
 
+            // Evento para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad del contenido
-                const isCurrentlyVisible = content.style.display === 'block';
-                if (content.classList.contains('show')) {
-                    content.classList.remove('show');
-                    console.log(`Sección ${index + 1} ahora está cerrada`);
-                } else {
-                    content.classList.add('show');
-                    console.log(`Sección ${index + 1} ahora está abierta`);
-                }
-            }}
+                const isVisible = content.style.display === 'block';
 
-    console.log("Configuración de secciones colapsables completa.");
+                // Alternar visibilidad
+                if (isVisible) {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+
+                // Actualizar el símbolo en el botón
+                const symbol = toggleButton.querySelector('span');
+                if (symbol) {
+                    symbol.textContent = isVisible ? '▼' : '▲';
+                }
+
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display}`);
+            });
+        } else {
+            console.warn(`Faltan elementos (toggle o contenido) en la sección ${index + 1}.`);
+        }
+    });
+
+    console.log("Secciones colapsables configuradas correctamente.");
 });
 
-document.querySelector('.collapsible-content').style.display = 'block';
+
 /*----------------FILTRO DESPLEGABLE---------------------*/
 
 
