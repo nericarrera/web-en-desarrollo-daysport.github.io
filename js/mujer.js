@@ -1,3 +1,5 @@
+import { productosMujer } from './exp-products.js';
+
 
 /*-------------FILTRO MUJER----------------*/
 
