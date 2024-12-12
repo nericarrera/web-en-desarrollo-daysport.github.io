@@ -367,39 +367,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Asegurar que el contenido esté oculto inicialmente
+            // Aseguramos que inicialmente el contenido esté oculto
             content.style.display = 'none';
 
             // Evento para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                const isVisible = content.style.display === 'block';
+                const isContentVisible = content.style.display === 'block';
 
-                // Alternar visibilidad
-                if (isVisible) {
-                    content.style.display = 'none';
-                } else {
-                    content.style.display = 'block';
-                }
+                // Alternar entre mostrar y ocultar
+                content.style.display = isContentVisible ? 'none' : 'block';
 
-                // Actualizar el símbolo en el botón
+                // Alternar símbolo
                 const symbol = toggleButton.querySelector('span');
                 if (symbol) {
-                    symbol.textContent = isVisible ? '▼' : '▲';
+                    symbol.textContent = isContentVisible ? '▼' : '▲';
                 }
 
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección ${index + 1}.`);
+            console.warn(`Elementos faltantes en la sección ${index + 1}: toggleButton o content.`);
         }
     });
 
     console.log("Secciones colapsables configuradas correctamente.");
 });
 
-
 /*----------------FILTRO DESPLEGABLE---------------------*/
-
+console.log(`Filtrando productos por categoría: ${categoria}`);
+console.log(productosFiltrados);
 
 
 /*----------------------------------------------------------------*/
