@@ -360,24 +360,19 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
-    // Cerrar todas las secciones al cargar la página
-    collapsibleSections.forEach((section, index) => {
-        const content = section.querySelector('.collapsible-content');
-        if (content) {
-            content.style.display = 'none'; // Todas las secciones cerradas inicialmente
-        }
-        console.log(`Sección ${index + 1} inicializada como cerrada.`);
-    });
-
+    // Configurar las secciones colapsables
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
+            // Asegurar que todas las secciones empiecen cerradas
+            content.style.display = 'none';
+
             toggleButton.addEventListener('click', () => {
+                // Alternar visibilidad del contenido
                 const isCurrentlyVisible = content.style.display === 'block';
 
-                // Alternar visibilidad
                 if (isCurrentlyVisible) {
                     content.style.display = 'none';
                     console.log(`Sección ${index + 1} ahora está cerrada`);
