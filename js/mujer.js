@@ -353,6 +353,12 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
+const contenedorProductos = document.querySelector('.mujer-products-grid');
+if (!contenedorProductos) {
+    console.error("El contenedor de productos mujer no existe en el DOM.");
+    return;
+}
+
 const filterButtons = document.querySelectorAll('.mujer-filter-button');
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
