@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content.classList.add('show');
                     console.log(`Sección ${index + 1} ahora está abierta`);
                 }
-            })}; 
+            }}
 
     console.log("Configuración de secciones colapsables completa.");
 });
