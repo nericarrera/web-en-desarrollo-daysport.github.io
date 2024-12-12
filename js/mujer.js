@@ -357,7 +357,7 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
 
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     collapsibleSections.forEach((section, index) => {
@@ -367,18 +367,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Inicialmente oculta el contenido
-            content.style.display = 'none';
-
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad
-                const isContentVisible = content.style.display === 'block';
-                content.style.display = isContentVisible ? 'none' : 'block';
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = isContentVisible ? '▼' : '▲';
-
+                symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
