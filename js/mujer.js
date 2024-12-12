@@ -396,3 +396,13 @@ console.log("Productos Novedades:", obtenerProductosNovedad());
 /*----------------FILTRO DESPLEGABLE---------------------*/
 console.log(`Filtrando productos por categoría: ${categoria}`);
 console.log(productosFiltrados);
+
+
+/*----------------------------------------------------------------*/
+
+const myElement = document.querySelector('.mi-clase');
+if (myElement) {
+  myElement.addEventListener('click', () => {
+    console.log('¡Evento añadido!');
+  });
+}
