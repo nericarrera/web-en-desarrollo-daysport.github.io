@@ -198,25 +198,34 @@ window.addEventListener('resize', updateDimensions); // Recalcula en caso de cam
 /*-------------------SECCION NODEDAD MUJER-----------------------*/
 import { productosMujer } from './exp-products.js';
 
-// Verifica si los productos están cargando
-console.log(productosMujer);
+console.log("Productos Mujer:", productosMujer);
 
-// Filtra los productos con etiqueta "novedad" y muestra en el carrusel
+// Lógica para mostrar productos en el carrusel de novedades
 function mostrarCarruselNovedades() {
     const carruselContainer = document.querySelector('.carrusel-container');
-    const productosNovedad = productosMujer.filter(producto => producto.etiqueta === 'novedad');
-    
+    if (!carruselContainer) {
+        console.error("El contenedor del carrusel no existe en el DOM.");
+        return;
+    }
+
+    const productosNovedad = productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === 'novedad');
+    console.log("Productos con etiqueta novedad:", productosNovedad);
+
+    if (productosNovedad.length === 0) {
+        carruselContainer.innerHTML = `<p>No hay productos con la etiqueta 'novedad'.</p>`;
+        return;
+    }
+
     carruselContainer.innerHTML = productosNovedad.map(producto => `
         <div class="carrusel-item">
-            <img src="${producto.imagen[0]}" alt="${producto.nombre}" />
+            <img src="${producto.imagen[0]}" alt="${producto.nombre}">
             <p>${producto.nombre}</p>
             <p>$${producto.precio.toLocaleString()}</p>
         </div>
     `).join('');
 }
 
-// Ejecutar la función
-mostrarCarruselNovedades();
+document.addEventListener('DOMContentLoaded', mostrarCarruselNovedades);
 
 /*---------LLAMADO PARA CARGAR PAGINA-------------------*/
 
