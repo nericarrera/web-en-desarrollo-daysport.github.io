@@ -361,22 +361,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     collapsibleSections.forEach((section, index) => {
-        const toggleButton = section.querySelector('.collapsible-toggle'); // Botón para abrir/cerrar
-        const content = section.querySelector('.collapsible-content'); // Contenido colapsable
+        const toggleButton = section.querySelector('.collapsible-toggle');
+        const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
-                const isActive = section.classList.contains('active'); // Verifica si está abierto
+                const isActive = section.classList.contains('active');
 
-                // Cerrar todas las demás secciones antes de abrir/cerrar esta
+                // Cerrar todas las demás secciones
                 collapsibleSections.forEach(s => s.classList.remove('active'));
 
-                // Alternar esta sección
+                // Si esta sección no estaba activa, ábrela
                 if (!isActive) {
-                    section.classList.add('active'); // Abre esta sección
+                    section.classList.add('active');
+                    console.log(`Sección ${index + 1} ahora está abierta`);
+                } else {
+                    console.log(`Sección ${index + 1} ahora está cerrada`);
                 }
-
-                console.log(`Sección ${index + 1} ahora está ${!isActive ? 'abierta' : 'cerrada'}`);
             });
         } else {
             console.warn(`Faltan elementos en la sección ${index + 1}`);
