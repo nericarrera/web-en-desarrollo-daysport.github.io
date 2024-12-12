@@ -163,16 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const tallaCounts = {};
     
         productosMujer.forEach(producto => {
-            // Verifica si el producto tiene color y talla definidos
-            if (producto.color) {
-                const color = producto.color.toLowerCase();
-                colorCounts[color] = (colorCounts[color] || 0) + 1;
-            }
-    
-            if (producto.talla) {
-                const talla = producto.talla.toUpperCase();
-                tallaCounts[talla] = (tallaCounts[talla] || 0) + 1;
-            }
+            producto.variantes.forEach(vari => {
+                if (vari.color) {
+                    const color = vari.color.toLowerCase();
+                    colorCounts[color] = (colorCounts[color] || 0) + (vari.stock > 0 ? 1 : 0);
+                }
+                if (vari.talla) {
+                    const talla = vari.talla.toUpperCase();
+                    tallaCounts[talla] = (tallaCounts[talla] || 0) + (vari.stock > 0 ? 1 : 0);
+                }
+            });
         });
     
         colorCheckboxes.forEach(checkbox => {
