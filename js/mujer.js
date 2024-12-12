@@ -368,15 +368,17 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleButton.addEventListener('click', () => {
                 const isActive = section.classList.contains('active');
 
-                // Cerrar todas las demás secciones
+                // Cerrar todas las secciones antes de abrir/cerrar la seleccionada
                 collapsibleSections.forEach(s => s.classList.remove('active'));
 
-                // Si esta sección no estaba activa, ábrela
-                if (!isActive) {
+                if (isActive) {
+                    // Si estaba activa, ahora se cierra
+                    section.classList.remove('active');
+                    console.log(`Sección ${index + 1} ahora está cerrada`);
+                } else {
+                    // Si no estaba activa, ahora se abre
                     section.classList.add('active');
                     console.log(`Sección ${index + 1} ahora está abierta`);
-                } else {
-                    console.log(`Sección ${index + 1} ahora está cerrada`);
                 }
             });
         } else {
