@@ -199,26 +199,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
   
-function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "") {
-    console.log(`Filtrando por categoría: ${categoria}`);
-    // Lógica de filtrado
+  function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "") {
+    console.log(`Filtrando por categoría: ${categoria}, colores: ${coloresSeleccionados}, talles: ${tallesSeleccionados}, orden: ${orden}`);
     mujerProductsGrid.innerHTML = ""; // Limpiar el grid antes de renderizar
-
 
     if (!Array.isArray(productosMujer)) {
         console.error('Error: productosMujer no es un array. Verifica su inicialización.');
         return; // Salir si no es un array válido
     }
 
+    // Filtrar productos
     let productosFiltrados = productosMujer.filter(producto => {
         const matchesCategoria = categoria === "all" || producto.categoria === categoria;
-        const matchesColor = color.length === 0 || 
-            (producto.color && color.some(c => producto.color.toLowerCase().includes(c)));
-        const matchesTalla = talla.length === 0 || 
-            (producto.talla && talla.some(t => producto.talla.toUpperCase().includes(t)));
+        const matchesColor = coloresSeleccionados.length === 0 || 
+            producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
+        const matchesTalla = tallesSeleccionados.length === 0 || 
+            producto.variantes.some(vari => tallesSeleccionados.includes(vari.talla.toUpperCase()));
 
         return matchesCategoria && matchesColor && matchesTalla;
     });
+
+    // Ordenar productos
+    if (orden === "price-asc") {
+        productosFiltrados.sort((a, b) => a.precio - b.precio);
+    } else if (orden === "price-desc") {
+        productosFiltrados.sort((a, b) => b.precio - a.precio);
+    } else if (orden === "novedades") {
+        productosFiltrados.sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
+    }
 
     // Renderizar productos filtrados
     productosFiltrados.forEach(producto => {
@@ -276,6 +284,27 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
         mujerProductsGrid.appendChild(productoDiv);
     });
 }
+
+/*---------------------------------------------------------------*/
+
+applyFiltersButton.addEventListener('click', () => {
+    const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
+    const selectedColors = Array.from(colorCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+    const selectedSizes = Array.from(sizeCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toUpperCase());
+    const selectedSort = document.querySelector('input[name="sort"]:checked')?.value || "";
+
+    mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort);
+
+    // Cerrar el filtro después de aplicar
+    filterOverlay.classList.remove('show');
+    setTimeout(() => {
+        filterOverlay.style.display = 'none';
+    }, 300);
+});
        
     /*-------------BOTON DE FILTRO--------------------- */
 
