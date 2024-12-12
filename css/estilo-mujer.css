@@ -726,9 +726,12 @@
 
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 .collapsible-content {
-  display: block;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  display: none; /* Ocultar por defecto */
+  transition: all 0.3s ease; /* Animación opcional */
+}
+
+.collapsible-content.show {
+  display: block; /* Mostrar al activar */
 }
 
 .hidden-mujer {

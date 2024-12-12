@@ -367,26 +367,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Aseguramos que inicialmente el contenido esté oculto
+            // Asegurar que el contenido esté oculto inicialmente
             content.style.display = 'none';
 
             // Evento para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                const isContentVisible = content.style.display === 'block';
+                const isVisible = content.style.display === 'block';
 
-                // Alternar entre mostrar y ocultar
-                content.style.display = isContentVisible ? 'none' : 'block';
+                // Alternar visibilidad
+                if (isVisible) {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
 
-                // Alternar símbolo
+                // Actualizar el símbolo en el botón
                 const symbol = toggleButton.querySelector('span');
                 if (symbol) {
-                    symbol.textContent = isContentVisible ? '▼' : '▲';
+                    symbol.textContent = isVisible ? '▼' : '▲';
                 }
 
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display}`);
             });
         } else {
-            console.warn(`Elementos faltantes en la sección ${index + 1}: toggleButton o content.`);
+            console.warn(`Faltan elementos (toggle o contenido) en la sección ${index + 1}.`);
         }
     });
 
