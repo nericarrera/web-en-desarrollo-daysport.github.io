@@ -367,26 +367,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Inicialmente oculta el contenido
+            // Aseguramos que inicialmente el contenido esté oculto
             content.style.display = 'none';
 
+            // Evento para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                // Alternar visibilidad
                 const isContentVisible = content.style.display === 'block';
+
+                // Alternar entre mostrar y ocultar
                 content.style.display = isContentVisible ? 'none' : 'block';
 
-                // Alternar símbolo de desplegar/cerrar
+                // Alternar símbolo
                 const symbol = toggleButton.querySelector('span');
-                symbol.textContent = isContentVisible ? '▼' : '▲';
+                if (symbol) {
+                    symbol.textContent = isContentVisible ? '▼' : '▲';
+                }
 
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
+                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`Elementos faltantes en la sección ${index + 1}: toggleButton o content.`);
         }
     });
 
-    console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
+    console.log("Secciones colapsables configuradas correctamente.");
 });
 
 /*----------------FILTRO DESPLEGABLE---------------------*/
