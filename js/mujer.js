@@ -354,7 +354,9 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
-import { productosMujer } from './exp-products.js';
+import { productosMujer } from './js/exp-products.js';
+
+console.log(productosMujer);
 
 function obtenerProductosNovedad() {
     return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades");
@@ -406,3 +408,4 @@ if (myElement) {
     console.log('¡Evento añadido!');
   });
 }
+
