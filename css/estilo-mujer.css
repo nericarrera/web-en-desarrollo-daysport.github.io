@@ -726,9 +726,9 @@
 
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 .collapsible-content {
-  max-height: 0;
+  max-height: 0; /* El contenido está colapsado por defecto */
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease; /* Animación suave */
 }
 
 .collapsible-content.show {
@@ -736,19 +736,11 @@
 }
 
 .collapsible-section.active .collapsible-content {
-  max-height: 200px; /* Ajusta según el contenido esperado */
+  max-height: 200px; /* Altura máxima cuando está desplegado */
 }
 
 .hidden-mujer {
-  display: none;
-}
-
-.collapsible-content {
-  display: none;
-}
-
-.collapsible-section.active .collapsible-content {
-  display: block;
+  display: none; /* Solo para el overlay o elementos ocultos permanentemente */
 }
 
 .filter-title {

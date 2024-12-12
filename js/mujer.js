@@ -361,24 +361,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
     collapsibleSections.forEach((section, index) => {
-        const toggleButton = section.querySelector('.collapsible-toggle');
-        const content = section.querySelector('.collapsible-content');
+        const toggleButton = section.querySelector('.collapsible-toggle'); // Botón para abrir/cerrar
+        const content = section.querySelector('.collapsible-content'); // Contenido colapsable
 
         if (toggleButton && content) {
-            console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
-
             toggleButton.addEventListener('click', () => {
-                const isActive = section.classList.contains('active');
+                const isActive = section.classList.contains('active'); // Verifica si está abierto
 
-                // Alternar la clase activa
-                section.classList.toggle('active', !isActive);
+                // Cerrar todas las demás secciones antes de abrir/cerrar esta
+                collapsibleSections.forEach(s => s.classList.remove('active'));
 
-                console.log(`Contenido de la sección ${index + 1} ahora está ${isActive ? 'oculto' : 'visible'}`);
+                // Alternar esta sección
+                if (!isActive) {
+                    section.classList.add('active'); // Abre esta sección
+                }
+
+                console.log(`Sección ${index + 1} ahora está ${!isActive ? 'abierta' : 'cerrada'}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
+            console.warn(`Faltan elementos en la sección ${index + 1}`);
         }
     });
+
+    console.log("Configuración de secciones colapsables completa.");
 });
 
 document.querySelector('.collapsible-content').style.display = 'block';
