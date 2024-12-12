@@ -544,8 +544,8 @@
     -webkit-text-stroke: 2px #000;
 }
 
-
 /*-------------------PRODUCTO NUEVOS DINAMICO---------------*/
+
 .carrusel-container {
   display: flex;
   overflow-x: auto;
@@ -582,7 +582,6 @@
   font-size: 14px;
   color: #333;
 }
-
 
 
 /*--------------------------------------------------*/
