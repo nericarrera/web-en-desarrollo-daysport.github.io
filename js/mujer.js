@@ -353,56 +353,6 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
-const contenedorProductos = document.querySelector('.mujer-products-grid');
-if (!contenedorProductos) {
-    console.error("El contenedor de productos mujer no existe en el DOM.");
-    return;
-}
-
-const filterButtons = document.querySelectorAll('.mujer-filter-button');
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const categoria = button.getAttribute('data-filter');
-        console.log(`Categoría seleccionada: ${categoria}`);
-    });
-});
-
-const categoria = button.getAttribute('data-filter');
-if (!categoria) {
-    console.error('Categoría no encontrada.');
-    return;
-}
-
-
-function obtenerProductosNovedad() {
-    return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades");
-}
-
-// Llamada a la función y depuración
-console.log("Productos Novedades:", obtenerProductosNovedad());
-
-
-import { productosMujer } from './exp-products.js';
-
-console.log("Productos Mujer:", productosMujer);
-
-function mostrarProductosMujer() {
-    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-    if (!mujerProductsGrid) {
-        console.error("El contenedor de productos mujer no existe en el DOM.");
-        return;
-    }
-
-    mujerProductsGrid.innerHTML = productosMujer.map(producto => `
-        <div class="mujer-product-card">
-            <img src="${producto.imagen[0]}" alt="${producto.nombre}">
-            <p>${producto.nombre}</p>
-            <p>$${producto.precio.toLocaleString()}</p>
-        </div>
-    `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', mostrarProductosMujer);
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
