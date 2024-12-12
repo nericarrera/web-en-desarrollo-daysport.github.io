@@ -353,6 +353,14 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
+const filterButtons = document.querySelectorAll('.mujer-filter-button');
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const categoria = button.getAttribute('data-filter');
+        console.log(`Categoría seleccionada: ${categoria}`);
+    });
+});
+
 const categoria = button.getAttribute('data-filter');
 if (!categoria) {
     console.error('Categoría no encontrada.');
