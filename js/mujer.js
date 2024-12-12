@@ -397,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Secciones colapsables configuradas correctamente.");
 });
 
+document.querySelector('.collapsible-content').style.display = 'block';
 /*----------------FILTRO DESPLEGABLE---------------------*/
 
 
