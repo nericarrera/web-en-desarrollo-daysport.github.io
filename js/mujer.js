@@ -366,19 +366,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
+                // Verificar si la sección está activa
                 const isActive = section.classList.contains('active');
 
-                // Cerrar todas las secciones antes de abrir/cerrar la seleccionada
-                collapsibleSections.forEach(s => s.classList.remove('active'));
+                // Cerrar todas las secciones antes de proceder
+                collapsibleSections.forEach(s => {
+                    s.classList.remove('active');
+                    const contentElement = s.querySelector('.collapsible-content');
+                    if (contentElement) contentElement.style.display = 'none';
+                });
 
-                if (isActive) {
-                    // Si estaba activa, ahora se cierra
-                    section.classList.remove('active');
-                    console.log(`Sección ${index + 1} ahora está cerrada`);
-                } else {
-                    // Si no estaba activa, ahora se abre
+                if (!isActive) {
+                    // Si no está activa, la abrimos
                     section.classList.add('active');
+                    content.style.display = 'block';
                     console.log(`Sección ${index + 1} ahora está abierta`);
+                } else {
+                    // Si estaba activa, simplemente la cerramos
+                    content.style.display = 'none';
+                    console.log(`Sección ${index + 1} ahora está cerrada`);
                 }
             });
         } else {
