@@ -13,15 +13,5 @@ export const productosMujer = [
     // Otros productos
   ];
  
-    {
-        id: 2,
-        nombre: "Calza Nike Pro",
-        precio: 13500,
-        categoria: "calzas",
-        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-        etiqueta: "Novedad",
-        variantes: [{ color: "negro", talla: "S", stock: 2 }]
-    },
-    // Otros productos...
-];
+
 
