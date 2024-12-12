@@ -354,16 +354,14 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
+import { productosMujer } from './exp-products.js';
+
 function obtenerProductosNovedad() {
-    return productosMujer.filter(producto => 
-        producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad"
-    );
+    return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades");
 }
 
-// Prueba inicial: Mostrar en la consola
-console.log("Productos con etiqueta 'novedad':", obtenerProductosNovedad());
-
-console.log(obtenerProductosNovedad());
+// Llamada a la función y depuración
+console.log("Productos Novedades:", obtenerProductosNovedad());
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
