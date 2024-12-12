@@ -360,31 +360,30 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 document.addEventListener('DOMContentLoaded', () => {
     const collapsibleSections = document.querySelectorAll('.collapsible-section');
 
+    // Cerrar todas las secciones al cargar la página
+    collapsibleSections.forEach((section, index) => {
+        const content = section.querySelector('.collapsible-content');
+        if (content) {
+            content.style.display = 'none'; // Todas las secciones cerradas inicialmente
+        }
+        console.log(`Sección ${index + 1} inicializada como cerrada.`);
+    });
+
     collapsibleSections.forEach((section, index) => {
         const toggleButton = section.querySelector('.collapsible-toggle');
         const content = section.querySelector('.collapsible-content');
 
         if (toggleButton && content) {
             toggleButton.addEventListener('click', () => {
-                // Verificar si la sección está activa
-                const isActive = section.classList.contains('active');
+                const isCurrentlyVisible = content.style.display === 'block';
 
-                // Cerrar todas las secciones antes de proceder
-                collapsibleSections.forEach(s => {
-                    s.classList.remove('active');
-                    const contentElement = s.querySelector('.collapsible-content');
-                    if (contentElement) contentElement.style.display = 'none';
-                });
-
-                if (!isActive) {
-                    // Si no está activa, la abrimos
-                    section.classList.add('active');
-                    content.style.display = 'block';
-                    console.log(`Sección ${index + 1} ahora está abierta`);
-                } else {
-                    // Si estaba activa, simplemente la cerramos
+                // Alternar visibilidad
+                if (isCurrentlyVisible) {
                     content.style.display = 'none';
                     console.log(`Sección ${index + 1} ahora está cerrada`);
+                } else {
+                    content.style.display = 'block';
+                    console.log(`Sección ${index + 1} ahora está abierta`);
                 }
             });
         } else {
