@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorCheckboxes = document.querySelectorAll('input[name="mujer-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
-    const categoria = button.getAttribute('data-filter');
 
     const productosMujer = [
         {
@@ -353,6 +352,12 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
     });
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
+
+const categoria = button.getAttribute('data-filter');
+if (!categoria) {
+    console.error('Categoría no encontrada.');
+    return;
+}
 
 
 function obtenerProductosNovedad() {
