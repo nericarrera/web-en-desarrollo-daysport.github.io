@@ -372,19 +372,14 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleButton.addEventListener('click', () => {
                 // Alternar visibilidad del contenido
                 const isCurrentlyVisible = content.style.display === 'block';
-
-                if (isCurrentlyVisible) {
-                    content.style.display = 'none';
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
                     console.log(`Sección ${index + 1} ahora está cerrada`);
                 } else {
-                    content.style.display = 'block';
+                    content.classList.add('show');
                     console.log(`Sección ${index + 1} ahora está abierta`);
                 }
-            });
-        } else {
-            console.warn(`Faltan elementos en la sección ${index + 1}`);
-        }
-    });
+            })}; 
 
     console.log("Configuración de secciones colapsables completa.");
 });
