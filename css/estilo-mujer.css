@@ -726,12 +726,17 @@
 
 /*--------------FILTRO OPCIONES DESPLEGABLES-----------------*/
 .collapsible-content {
-  display: none; /* Ocultar por defecto */
-  transition: all 0.3s ease; /* Animación opcional */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .collapsible-content.show {
   display: block; /* Mostrar al activar */
+}
+
+.collapsible-section.active .collapsible-content {
+  max-height: 200px; /* Ajusta según el contenido esperado */
 }
 
 .hidden-mujer {
@@ -753,6 +758,15 @@
   align-items: center;
   height: 33px;
   border-bottom: 2px solid #333;
+}
+
+.filter-title span {
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-section.active .filter-title span {
+  transform: rotate(180deg);
 }
 
 /*--------------------FOTO MINIATURA -----------------*/
