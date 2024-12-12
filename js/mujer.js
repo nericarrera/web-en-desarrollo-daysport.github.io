@@ -354,9 +354,6 @@ function mostrarProductos(categoria = "all", color = [], talla = [], ordenar = "
 
 /*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
 
-import { productosMujer } from './exp-products.js';
-
-console.log(productosMujer);
 
 function obtenerProductosNovedad() {
     return productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedades");
@@ -364,6 +361,29 @@ function obtenerProductosNovedad() {
 
 // Llamada a la función y depuración
 console.log("Productos Novedades:", obtenerProductosNovedad());
+
+
+import { productosMujer } from './exp-products.js';
+
+console.log("Productos Mujer:", productosMujer);
+
+function mostrarProductosMujer() {
+    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
+    if (!mujerProductsGrid) {
+        console.error("El contenedor de productos mujer no existe en el DOM.");
+        return;
+    }
+
+    mujerProductsGrid.innerHTML = productosMujer.map(producto => `
+        <div class="mujer-product-card">
+            <img src="${producto.imagen[0]}" alt="${producto.nombre}">
+            <p>${producto.nombre}</p>
+            <p>$${producto.precio.toLocaleString()}</p>
+        </div>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', mostrarProductosMujer);
 
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
