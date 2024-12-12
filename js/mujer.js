@@ -367,34 +367,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggleButton && content) {
             console.log(`Configurando despliegue en la sección de filtro número ${index + 1}`);
 
-            // Asegurar que el contenido esté oculto inicialmente
-            content.style.display = 'none';
-
-            // Evento para alternar visibilidad
             toggleButton.addEventListener('click', () => {
-                const isVisible = content.style.display === 'block';
+                const isActive = section.classList.contains('active');
 
-                // Alternar visibilidad
-                if (isVisible) {
-                    content.style.display = 'none';
-                } else {
-                    content.style.display = 'block';
-                }
+                // Alternar la clase activa
+                section.classList.toggle('active', !isActive);
 
-                // Actualizar el símbolo en el botón
-                const symbol = toggleButton.querySelector('span');
-                if (symbol) {
-                    symbol.textContent = isVisible ? '▼' : '▲';
-                }
-
-                console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display}`);
+                console.log(`Contenido de la sección ${index + 1} ahora está ${isActive ? 'oculto' : 'visible'}`);
             });
         } else {
-            console.warn(`Faltan elementos (toggle o contenido) en la sección ${index + 1}.`);
+            console.warn(`Faltan elementos (toggle o contenido) en la sección de filtro número ${index + 1}.`);
         }
     });
-
-    console.log("Secciones colapsables configuradas correctamente.");
 });
 
 document.querySelector('.collapsible-content').style.display = 'block';
