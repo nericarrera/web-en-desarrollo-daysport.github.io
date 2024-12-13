@@ -430,7 +430,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Obtener ID y sección desde la URL
+function getProductDetailsFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        id: parseInt(params.get('id'), 10),
+        seccion: params.get('seccion'),
+    };
+}
 
+
+// Función para cargar detalles del producto
 function cargarDetallesProducto(producto) {
     document.querySelector('#product-title').textContent = producto.nombre;
     document.querySelector('#product-price').textContent = `$${producto.precio.toLocaleString()}`;
@@ -439,15 +449,15 @@ function cargarDetallesProducto(producto) {
     // Cargar imágenes
     const gallery = document.querySelector('.product-gallery');
     gallery.innerHTML = '';
-    producto.imagen.forEach((imgSrc, index) => {
+    producto.imagen.forEach(imgSrc => {
         const img = document.createElement('img');
         img.src = imgSrc;
-        img.alt = `Vista ${index + 1} del producto`;
+        img.alt = producto.nombre;
         img.classList.add('zoom-img');
         gallery.appendChild(img);
     });
 
-    // Colores disponibles
+    // Cargar colores
     const colores = document.querySelector('#product-colors');
     colores.innerHTML = '<h3>Colores disponibles:</h3>';
     producto.variantes.forEach(variant => {
@@ -456,22 +466,40 @@ function cargarDetallesProducto(producto) {
         colores.appendChild(colorItem);
     });
 
-    // Talles disponibles
+    // Cargar talles
     const talles = document.querySelector('#product-sizes');
     talles.innerHTML = '';
     producto.variantes.forEach(variant => {
         const sizeBtn = document.createElement('button');
         sizeBtn.classList.add('size-btn');
         sizeBtn.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-        sizeBtn.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        sizeBtn.disabled = variant.stock === 0;
         talles.appendChild(sizeBtn);
     });
-
-    // Mostrar estado si existe
-    if (producto.status) {
-        const productStatus = document.createElement('p');
-        productStatus.classList.add('product-status3');
-        productStatus.textContent = producto.status;
-        document.querySelector('.product-details-section').appendChild(productStatus);
-    }
 }
+
+// Lógica principal
+document.addEventListener('DOMContentLoaded', () => {
+    const { id, seccion } = getProductDetailsFromURL();
+
+    // Seleccionar la lista de productos según la sección
+    let productos;
+    switch (seccion) {
+        case 'mujer':
+            productos = productosMujer;
+            break;
+        // Agrega más secciones según sea necesario
+        default:
+            alert('Sección desconocida o no definida');
+            return;
+    }
+
+    const producto = productos.find(p => p.id === id);
+
+    if (producto) {
+        cargarDetallesProducto(producto);
+    } else {
+        alert('Producto no encontrado');
+        window.location.href = 'index.html';
+    }
+});
