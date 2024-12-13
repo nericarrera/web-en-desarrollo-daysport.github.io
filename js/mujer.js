@@ -20,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
             miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
+
             etiqueta: "novedad",
             variantes: [
                 { color: "celeste", talla: "S", stock: 3 },
@@ -36,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
             miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
             hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
@@ -50,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Campera Deportiva NIke",
             precio: 13500,
             categoria: "camperas",
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -63,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 4, 
             nombre: "Blusa de Lino", 
             precio: 8500, 
-            categoria: "remeras", 
+            categoria: "remeras",
+            seccion: "mujer",
+            temporada: "invierno", 
             imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -78,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Campera Deportiva Nike", 
             precio: 23000, 
             categoria: "camperas", 
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-4.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -91,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Radeon", 
             precio: 13500, 
             categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -104,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Grofada", 
             precio: 16500, 
             categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -117,6 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Nike Speak", 
             precio: 13500, 
             categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -129,7 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 9, 
             nombre: "Calza Nike Fluorecent", 
             precio: 13500, 
-            categoria: "calzas", 
+            categoria: "calzas",
+            seccion: "mujer",
+            temporada: "invierno", 
             imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -143,6 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: "Calza Adidas Original", 
             precio: 13500, 
             categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "invierno",
             imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
             hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
@@ -427,3 +448,52 @@ if (myElement) {
   });
 }
 
+
+/*-------------------A PAGINA DE PRODUCTO--------------*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
+
+    if (mujerProductsGrid) {
+        mujerProductsGrid.addEventListener('click', (event) => {
+            const target = event.target.closest('.mujer-product-card');
+
+            if (target) {
+                const productId = target.dataset.productId; // Asegúrate de que cada producto tenga un data-product-id
+                const productSection = "mujer"; // Asignar la sección estática
+                const productSeason = target.dataset.productSeason || "actual"; // Temporada
+
+                // Redirigir a la página del producto
+                window.location.href = `index-producto.html?id=${productId}&seccion=${productSection}&temporada=${productSeason}`;
+            }
+        });
+    }
+});
+
+/**---------------------------------------------------------**/
+
+/*----------------------LO QUE ENVIA A PAGINA PRODUCTO---------------- */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const { id, seccion } = getProductDetailsFromURL();
+
+    let productos;
+    switch (seccion) {
+        case 'mujer':
+            productos = productosMujer; // Lista de productos de mujer
+            break;
+        // Aquí puedes añadir otras secciones, por ejemplo: 'hombre', 'niños', 'accesorios'
+        default:
+            console.error(`Sección desconocida: ${seccion}`);
+            return;
+    }
+
+    const producto = productos.find(p => p.id === id);
+
+    if (producto) {
+        cargarDetallesProducto(producto);
+    } else {
+        alert('Producto no encontrado');
+        window.location.href = 'index.html';
+    }
+});

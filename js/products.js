@@ -1,3 +1,4 @@
+
 function toggleSizeChart(event) {
     event.preventDefault();  // Evita que el enlace recargue la página
     const modal = document.getElementById('sizeChartModal');
@@ -391,3 +392,54 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*--------------------------------------------------------------------------- */
+
+/*---------------CODIGO DE SECCION MUJER------------*/
+function getProductDetailsFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const seccion = params.get('seccion');
+    const temporada = params.get('temporada'); // Opcional
+
+    return { id: parseInt(id), seccion, temporada };
+}
+
+/*--------------------------------------------------------------- */
+
+
+
+
+function cargarDetallesProducto(producto) {
+    document.querySelector('#product-title').textContent = producto.nombre;
+    document.querySelector('#product-price').textContent = `$${producto.precio.toLocaleString()}`;
+    document.querySelector('#product-description').textContent = producto.descripcion || 'Descripción no disponible';
+
+    // Cargar imágenes
+    const gallery = document.querySelector('.product-gallery');
+    gallery.innerHTML = '';
+    producto.imagen.forEach((imgSrc, index) => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Vista ${index + 1} del producto`;
+        img.classList.add('zoom-img');
+        gallery.appendChild(img);
+    });
+
+    // Colores disponibles
+    const colores = document.querySelector('#product-colors');
+    colores.innerHTML = '<h3>Colores disponibles:</h3>';
+    producto.variantes.forEach(variant => {
+        const colorItem = document.createElement('span');
+        colorItem.textContent = variant.color;
+        colores.appendChild(colorItem);
+    });
+
+    // Talles disponibles
+    const talles = document.querySelector('#product-sizes');
+    talles.innerHTML = '';
+    producto.variantes.forEach(variant => {
+        const sizeBtn = document.createElement('button');
+        sizeBtn.textContent = `${variant.talla} (${variant.stock} disponibles)`;
+        sizeBtn.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        talles.appendChild(sizeBtn);
+    });
+}
