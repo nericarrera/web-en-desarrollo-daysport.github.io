@@ -405,6 +405,29 @@ function getProductDetailsFromURL() {
 
 /*--------------------------------------------------------------- */
 
+document.addEventListener('DOMContentLoaded', () => {
+    const { id, seccion } = getProductDetailsFromURL();
+
+    let productos;
+    switch (seccion) {
+        case 'mujer':
+            productos = productosMujer; // Cambiar por la lista de productos correcta
+            break;
+        // Agregar más secciones según sea necesario
+        default:
+            console.error(`Sección desconocida: ${seccion}`);
+            return;
+    }
+
+    const producto = productos.find(p => p.id === id);
+
+    if (producto) {
+        cargarDetallesProducto(producto);
+    } else {
+        alert('Producto no encontrado');
+        window.location.href = 'index.html';
+    }
+});
 
 
 
@@ -438,8 +461,17 @@ function cargarDetallesProducto(producto) {
     talles.innerHTML = '';
     producto.variantes.forEach(variant => {
         const sizeBtn = document.createElement('button');
+        sizeBtn.classList.add('size-btn');
         sizeBtn.textContent = `${variant.talla} (${variant.stock} disponibles)`;
         sizeBtn.disabled = variant.stock === 0; // Deshabilitar si no hay stock
         talles.appendChild(sizeBtn);
     });
+
+    // Mostrar estado si existe
+    if (producto.status) {
+        const productStatus = document.createElement('p');
+        productStatus.classList.add('product-status3');
+        productStatus.textContent = producto.status;
+        document.querySelector('.product-details-section').appendChild(productStatus);
+    }
 }

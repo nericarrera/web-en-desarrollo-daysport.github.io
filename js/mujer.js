@@ -474,26 +474,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*----------------------LO QUE ENVIA A PAGINA PRODUCTO---------------- */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const { id, seccion } = getProductDetailsFromURL();
-
-    let productos;
-    switch (seccion) {
-        case 'mujer':
-            productos = productosMujer; // Lista de productos de mujer
-            break;
-        // Aquí puedes añadir otras secciones, por ejemplo: 'hombre', 'niños', 'accesorios'
-        default:
-            console.error(`Sección desconocida: ${seccion}`);
-            return;
-    }
-
-    const producto = productos.find(p => p.id === id);
-
-    if (producto) {
-        cargarDetallesProducto(producto);
-    } else {
-        alert('Producto no encontrado');
-        window.location.href = 'index.html';
-    }
-});
