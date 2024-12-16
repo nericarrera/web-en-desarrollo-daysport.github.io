@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
-    const productosMujer = [
+    
+    export const productosMujer = [
+        
         {
             id: 1,
             nombre: "Remera Modal Soft",
@@ -176,6 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
     ];
 
+
+// Función para filtrar productos con etiqueta "novedad"
+    export function obtenerProductosNovedad() {
+    return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
+}
+
+
+   
 
     /*----------------CONTADORES------------------------------- */
 
@@ -441,34 +451,7 @@ console.log(productosFiltrados);
 
 /*----------------------------------------------------------------*/
 
-const myElement = document.querySelector('.mi-clase');
-if (myElement) {
-  myElement.addEventListener('click', () => {
-    console.log('¡Evento añadido!');
-  });
-}
-
-
 /*-------------------A PAGINA DE PRODUCTO--------------*/
-
-document.addEventListener('DOMContentLoaded', () => {
-    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-
-    if (mujerProductsGrid) {
-        mujerProductsGrid.addEventListener('click', (event) => {
-            const target = event.target.closest('.mujer-product-card');
-
-            if (target) {
-                const productId = target.dataset.productId; // Asegúrate de que cada producto tenga un data-product-id
-                const productSection = "mujer"; // Asignar la sección estática
-                const productSeason = target.dataset.productSeason || "actual"; // Temporada
-
-                // Redirigir a la página del producto
-                window.location.href = `index-producto.html?id=${productId}&seccion=${productSection}&temporada=${productSeason}`;
-            }
-        });
-    }
-});
 
 /**---------------------------------------------------------**/
 

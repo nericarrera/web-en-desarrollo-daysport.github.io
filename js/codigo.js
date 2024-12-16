@@ -120,6 +120,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-------------------------------------------------------------------- */
 
+/*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
+import { obtenerProductosNovedad } from './js/mujer.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carruselContainer = document.querySelector('.carrusel-container-mujer');
+
+    // Obtener los productos con etiqueta "novedad"
+    const productosNovedad = obtenerProductosNovedad();
+
+    // Verificar si hay productos "novedad"
+    if (!productosNovedad || productosNovedad.length === 0) {
+        carruselContainer.innerHTML = '<p>No hay productos de novedad disponibles.</p>';
+        return;
+    }
+
+    // Renderizar los productos "novedad"
+    productosNovedad.slice(0, 5).forEach(producto => {
+        const productoDiv = document.createElement('div');
+        productoDiv.classList.add('carrusel-item');
+
+        productoDiv.innerHTML = `
+            <div class="carrusel-producto">
+                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="carrusel-imagen">
+                <div class="carrusel-detalles">
+                    <p class="carrusel-nombre">${producto.nombre}</p>
+                    <p class="carrusel-precio">$${producto.precio.toLocaleString()}</p>
+                </div>
+            </div>
+        `;
+
+        carruselContainer.appendChild(productoDiv);
+    });
+});
+
 
 
 
@@ -191,11 +225,6 @@ window.addEventListener('load', updateDimensions);
 // Asegúrate de llamar a updateDimensions si se agregan o eliminan tarjetas dinámicamente
 window.addEventListener('resize', updateDimensions); // Recalcula en caso de cambio de tamaño de ventana
 
-
-
-
-
-/*-------------------SECCION NODEDAD MUJER-----------------------*/
 
 
 /*---------LLAMADO PARA CARGAR PAGINA-------------------*/
