@@ -121,21 +121,21 @@ document.addEventListener("DOMContentLoaded", function () {
 /*-------------------------------------------------------------------- */
 
 /*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
-import { obtenerProductosNovedad } from './js/mujer.js';
+import { productosMujer, obtenerProductosNovedad } from './js/mujer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const carruselContainer = document.querySelector('.carrusel-container-mujer');
 
-    // Obtener los productos con etiqueta "novedad"
-    const productosNovedad = obtenerProductosNovedad();
-
-    // Verificar si hay productos "novedad"
-    if (!productosNovedad || productosNovedad.length === 0) {
-        carruselContainer.innerHTML = '<p>No hay productos de novedad disponibles.</p>';
+    // Verificar si el contenedor existe en el DOM
+    if (!carruselContainer) {
+        console.error("El contenedor del carrusel no existe en el DOM.");
         return;
     }
 
-    // Renderizar los productos "novedad"
+    // Obtener productos de novedad
+    const productosNovedad = obtenerProductosNovedad();
+
+    // Renderizar productos
     productosNovedad.slice(0, 5).forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('carrusel-item');
