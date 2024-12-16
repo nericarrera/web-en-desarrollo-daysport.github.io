@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     
-    export const productosMujer = [
+    const productosMujer = [
         
         {
             id: 1,
@@ -179,15 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
             
     ];
-
-// Función para filtrar productos con etiqueta "novedad"
-export function obtenerProductosNovedad() {
-
-    return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad"
-);
-    }
-
-
    
 
     /*----------------CONTADORES------------------------------- */
@@ -447,6 +438,7 @@ applyFiltersButton.addEventListener('click', () => {
     console.log("Scripts cargados correctamente. Verifica si el filtro funciona como se espera.");
 });
 
+
 /*----------------FILTRO DESPLEGABLE---------------------*/
 console.log(`Filtrando productos por categoría: ${categoria}`);
 console.log(productosFiltrados);
@@ -460,3 +452,8 @@ console.log(productosFiltrados);
 
 /*----------------------LO QUE ENVIA A PAGINA PRODUCTO---------------- */
 
+export function obtenerProductosNovedad() {
+
+    return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad"
+);
+    }
