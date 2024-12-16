@@ -121,21 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
 /*-------------------------------------------------------------------- */
 
 /*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
-import { productosMujer, obtenerProductosNovedad } from './js/mujer.js';
+import { productosMujer, obtenerProductosNovedad } from './js/mujer.mjs';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const carruselContainer = document.querySelector('.carrusel-container-mujer');
-
-    // Verificar si el contenedor existe en el DOM
-    if (!carruselContainer) {
-        console.error("El contenedor del carrusel no existe en el DOM.");
-        return;
-    }
-
-    // Obtener productos de novedad
+const carruselContainer = document.querySelector('.carrusel-container-mujer');
+if (carruselContainer) {
     const productosNovedad = obtenerProductosNovedad();
-
-    // Renderizar productos
     productosNovedad.slice(0, 5).forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('carrusel-item');
@@ -152,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         carruselContainer.appendChild(productoDiv);
     });
-});
+}
 
 
 
