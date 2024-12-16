@@ -173,16 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "S", stock: 2 },
                 { color: "gris", talla: "M", stock: 1 }
-            ] 
-        },
+            ]
+            
         
+        },
+            
     ];
 
-
 // Función para filtrar productos con etiqueta "novedad"
-    export function obtenerProductosNovedad() {
+export function obtenerProductosNovedad() {
+
     return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
-}
+    }
 
 
    
