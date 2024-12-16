@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*-------------------------------------------------------------------- */
 
 /*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
-import { productosMujer, obtenerProductosNovedad } from './js/mujer.mjs';
+import { productosMujer, obtenerProductosNovedad } from './mujer.mjs';
 
 const carruselContainer = document.querySelector('.carrusel-container-mujer');
 if (carruselContainer) {

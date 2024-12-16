@@ -183,7 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Función para filtrar productos con etiqueta "novedad"
 export function obtenerProductosNovedad() {
 
-    return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
+    return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad"
+);
     }
 
 
