@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
 import { productosMujer, obtenerProductosNovedad } from './mujer.mjs';
 
+// Seleccionar el contenedor del carrusel
 const carruselContainer = document.querySelector('.carrusel-container-mujer');
 if (carruselContainer) {
     const productosNovedad = obtenerProductosNovedad();
@@ -143,6 +144,35 @@ if (carruselContainer) {
         carruselContainer.appendChild(productoDiv);
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
