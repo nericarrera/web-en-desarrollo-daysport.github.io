@@ -189,6 +189,8 @@ function obtenerProductosNovedad() {
 window.productosMujer = productosMujer;
 window.obtenerProductosNovedad = obtenerProductosNovedad;
 
+
+
     /*----------------CONTADORES------------------------------- */
 
     function actualizarContadores() {
