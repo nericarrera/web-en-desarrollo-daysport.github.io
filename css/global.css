@@ -561,7 +561,8 @@
 /* Tarjeta individual de producto */
 .producto-novedad-mujer {
     flex: 0 0 auto; /* Evitar que las tarjetas se reduzcan */
-    width: 180px; /* Ancho fijo para cada tarjeta */
+    width: 190px; /* Ancho fijo para cada tarjeta */
+    height: 100px;
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 8px;
     background-color: #fff;
