@@ -139,10 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Renderizar los productos en el carrusel
     productosAMostrar.forEach(producto => {
         const productoDiv = document.createElement('div');
-        productoDiv.classList.add('producto-novedad');
+        productoDiv.classList.add('producto-novedad-mujer');
 
         productoDiv.innerHTML = `
-            <div class="product-card">
+            <div class="product-card-novedad-mujer">
                 <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="product-image">
                 <div class="product-info">
                     <h3>${producto.nombre}</h3>

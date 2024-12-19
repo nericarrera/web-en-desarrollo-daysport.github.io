@@ -544,7 +544,7 @@
     -webkit-text-stroke: 2px #000;
 }
 
-/*-------------------PRODUCTO NUEVOS DINAMICO---------------*/
+/*-------------------PRODUCTO NUEVOS DINAMICO MUJER ---------------*/
 
 .carrusel-container-mujer {
   display: flex;
@@ -553,35 +553,6 @@
   padding: 20px;
 }
 
-.carrusel-item {
-  min-width: 200px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.carrusel-imagen {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.carrusel-detalles {
-  margin-top: 10px;
-}
-
-.carrusel-nombre {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.carrusel-precio {
-  font-size: 14px;
-  color: #333;
-}
 
 
 /*--------------------------------------------------*/
