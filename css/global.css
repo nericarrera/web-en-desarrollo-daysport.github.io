@@ -549,7 +549,7 @@
 /* Contenedor principal del carrusel */
 .carrusel-container-mujer {
     display: flex;
-    gap: 20px; /* Espacio entre productos */
+    gap: 12px; /* Espacio entre productos */
     overflow-x: auto; /* Habilitar desplazamiento horizontal */
     padding: 20px 10px; /* Espaciado interno */
     background-color: #f9f9f9; /* Fondo suave */
