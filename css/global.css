@@ -553,6 +553,13 @@
     
 }
 
+.novedad-mujer-titulo {
+    font-family: "Dosis" sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    
+}
+
 /* Contenedor principal del carrusel */
 .carrusel-container-mujer {
     display: flex;
