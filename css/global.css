@@ -579,7 +579,7 @@
 /* Imagen del producto */
 .product-image {
     width: 100%;
-    height: 255px; /* Alto fijo para uniformidad */
+    height: 270px; /* Alto fijo para uniformidad */
     object-fit: cover; /* Ajustar imagen al contenedor */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
