@@ -547,7 +547,7 @@
 /*-------------------PRODUCTO NUEVOS DINAMICO MUJER ---------------*/
 
 .carrusel-mujer-novedad-titulo {
-    display: flex;
+    display: inline-block;
     width: auto;
     height: auto;
     
