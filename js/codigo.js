@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="product-image">
                 <div class="product-info">
                     <h3>${producto.nombre}</h3>
-                    <p>Precio: $${producto.precio.toLocaleString()}</p>
+                    <p>${producto.precio.toLocaleString()}</p>
                 </div>
             </div>
         `;
