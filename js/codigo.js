@@ -194,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 /*-----------------------------CONTENEDOR DE PRUDUCTOS 1 NERI----------------- */
 
 let currentPosition = 0;

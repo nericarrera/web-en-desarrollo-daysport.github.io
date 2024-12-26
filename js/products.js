@@ -188,18 +188,25 @@ const products = [
     }
 ];
 
-// Cargar el producto en la página de producto
-document.addEventListener('DOMContentLoaded', function () {
+/*----------------MOSTRAR EL PRODUCTO DE LA PAGINA INDEX------------ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el ID del producto desde la URL
     const productId = getProductIdFromURL();
-    const product = products.find(p => p.id == productId);
-
+  
+    // Buscar el producto en el array de productos
+    const product = products.find(p => p.id === productId);
+  
     if (product) {
-        // Actualiza el título, precio y descripción
+        // Actualizar el título del producto
         document.querySelector('.product-title3').textContent = product.name;
+  
+        // Actualizar el precio del producto
         document.querySelector('.product-price3').textContent = `$${product.price.toLocaleString()}`;
-        document.querySelector('.product-details3').textContent = product.description;
-
-        // Galería de imágenes y miniaturas
+  
+        // Actualizar los detalles del producto
+        document.querySelector('.product-description3').textContent = product.description;
+  
+        // Actualizar las imágenes
         const gallery = document.querySelector('.product-gallery');
         gallery.innerHTML = '';  // Limpiar la galería
         product.images.forEach((imageSrc, index) => {
@@ -209,8 +216,8 @@ document.addEventListener('DOMContentLoaded', function () {
             imgElement.classList.add('zoom-img');
             gallery.appendChild(imgElement);
         });
-
-        // Colores disponibles
+  
+        // Agregar colores disponibles
         const colorsContainer = document.querySelector('.product-colors3');
         colorsContainer.innerHTML = '<h3>Colores</h3>';
         product.colors.forEach(color => {
@@ -218,9 +225,9 @@ document.addEventListener('DOMContentLoaded', function () {
             colorElement.textContent = color;
             colorsContainer.appendChild(colorElement);
         });
-
-        // Talles disponibles
-        const sizeOptions = document.querySelector('.size-options');
+  
+        // Agregar talles disponibles
+        const sizeOptions = document.querySelector('#product-sizes');
         sizeOptions.innerHTML = '';  // Limpiar los talles antes de agregarlos
         product.sizes.forEach(size => {
             const sizeBtn = document.createElement('button');
@@ -228,20 +235,17 @@ document.addEventListener('DOMContentLoaded', function () {
             sizeBtn.textContent = size;
             sizeOptions.appendChild(sizeBtn);
         });
-
-        // Mostrar estado si existe
-        if (product.status) {
-            const productStatus = document.createElement('p');
-            productStatus.classList.add('product-status3');
-            productStatus.textContent = product.status;
-            document.querySelector('.product-details-section').appendChild(productStatus);
-        }
     } else {
-        // Redirigir si no se encuentra el producto
         alert('Producto no encontrado');
-        window.location.href = 'index.html';
+        window.location.href = 'index.html';  // Redirigir a la página principal
     }
 });
+
+// Función para obtener el ID desde la URL
+function getProductIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');
+}
 
 // Tabla de talles (modal)
 function toggleSizeChart(event) {

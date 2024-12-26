@@ -152,43 +152,41 @@
     <!--------------------------PRODUCTO------------------------->
     
     <div class="product-page">
-        <div class="product-gallery">
+      <div class="product-gallery">
           <div class="zoom-container">
-            <img src="ruta-de-tu-imagen.jpg" alt="Imagen del producto" class="zoom-img">
+              <img src="ruta-de-tu-imagen.jpg" alt="Imagen del producto" class="zoom-img">
           </div>
-            <div id="product-thumbnails" class="thumbnails-container"></div>
-            <video id="product-video" src="video.mp4" controls class="zoom-video"></video>
-        </div>
-      
-
-        <!-- Detalles del producto -->
-        <div class="product-details-section">
-            <h1 class="product-title3" id="product-title">Cargando...</h1>
-            <p class="product-price3" id="product-price">$0</p>
-            <p class="product-details3" id="product-description">Descripción del producto...</p>
-
-            <div class="product-colors3" id="product-colors">
-                <h3>Colores:</h3>
-            </div>
-
-            <!-- Selección de talles -->
-            <div class="product-size3">
-                <h3>Selecciona tu talla:</h3>
-                <div class="size-options" id="product-sizes"></div>
-                <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
-            </div>
-
-            <!-- Cantidad y botón de compra -->
-            <div class="product-quantity3">
-                <label class="label3" for="quantity">Cantidad:</label>
-                <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
-            </div>
-            <button class="btn-buy-now3">COMPRAR</button>
-            <button class="btn-add-to-cart3">Agregar al carrito</button>
-        </div>
-    </div>
-
-    <div id="sizeChartModal" class="modal hidden">
+          <div id="product-thumbnails" class="thumbnails-container"></div>
+          <video id="product-video" src="video.mp4" controls class="zoom-video"></video>
+      </div>
+  
+      <div class="product-details-section">
+          <h1 class="product-title3" id="product-title">Cargando...</h1>
+          <p class="product-price3" id="product-price">$0</p>
+          <p class="product-details3" id="product-description">Descripción del producto...</p>
+  
+          <div class="product-colors3" id="product-colors">
+              <h3>Colores:</h3>
+          </div>
+  
+          <!-- Selección de talles -->
+          <div class="product-size3">
+              <h3>Selecciona tu talla:</h3>
+              <div class="size-options" id="product-sizes"></div>
+              <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
+          </div>
+  
+          <!-- Cantidad y botón de compra -->
+          <div class="product-quantity3">
+              <label class="label3" for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
+          </div>
+          <button class="btn-buy-now3">COMPRAR</button>
+          <button class="btn-add-to-cart3">Agregar al carrito</button>
+      </div>
+  </div>
+  
+  <div id="sizeChartModal" class="modal hidden">
       <div class="modal-content">
           <span class="close" onclick="toggleSizeChart(event)">&times;</span>
           <h2>Tabla de Talles</h2>
@@ -225,7 +223,7 @@
               </tr>
           </table>
       </div>
-    </div>
+  </div>
 
     <div class="product-details-rating">
       <!-- Sección de Valoraciones -->
