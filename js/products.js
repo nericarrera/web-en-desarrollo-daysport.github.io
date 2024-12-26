@@ -149,43 +149,7 @@ const products = [
                 { color: "celeste", talla: "M", stock: 1 },
             ]
     },
-    {
-        id: 2,
-        name: "Bermuda Cargo Nike",
-        price: 25000,
-        description: "Bermuda cómoda de Nike ideal para verano.",
-        images: [
-            "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 1.jpeg",
-            "img/hombre/bermudas-cargo-nike/bermuda-cargo-nike 2.jpeg"
-        ],
-        colors: ["Beige", "Tostado", "Negro"],
-        sizes: ["M", "L", "XL"],
-        status: ""
-    },
-    {
-        id: 3,
-        name: "Remera Modal Soft",
-        price: 7500,
-        description: "Remera modal suave para un uso cómodo.",
-        images: [
-            "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 1.jpeg",
-            "img/mujer/remera-modal-soft-cuelloR/remera-modal-soft-cuelloR 2.jpeg"
-        ],
-        colors: ["Celeste", "Negro"],
-        sizes: ["S", "M", "L", "XL"],
-        status: "Nuevo"
-    },
-    {
-        id: 5,
-        name: "Campera Puffer Nike con piel",
-        price: 65000,
-        gender: "hombre",
-        images: ["img/hombre/camperas-de-abrigo/campera-puffer-nike-combinada 1.jpeg"],
-        colors: ["Combinado"],
-        category: "camperas",
-        status: "Nuevo",
-        sizes: ["L"]
-    }
+   
 ];
 
 /*----------------MOSTRAR EL PRODUCTO DE LA PAGINA INDEX------------ */
