@@ -1,4 +1,5 @@
 /*--------BANNER--------*/
+
 document.addEventListener('DOMContentLoaded', function() {
   const track = document.querySelector('.banner-track');
   const slides = document.querySelectorAll('.banner-slide');
