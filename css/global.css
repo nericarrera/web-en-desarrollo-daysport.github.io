@@ -844,10 +844,7 @@
     height: auto;
     display: flex; 
     justify-content: space-between; 
-    background: #33042b;
-    border-radius: 30px;
     margin:auto;
-    box-shadow: 1px 1px 5px 5px rgb(14, 14, 13);
 }
 
 .conteiner-descuento-descuento{
