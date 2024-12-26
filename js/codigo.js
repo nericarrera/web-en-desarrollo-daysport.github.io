@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosNovedad = window.obtenerProductosNovedad();
 
     // Limitar a 5 productos si hay más
-    const productosAMostrar = productosNovedad.slice(0, 5);
+    const productosAMostrar = productosNovedad.slice(0, 25);
 
     // Renderizar los productos en el carrusel
     productosAMostrar.forEach(producto => {
