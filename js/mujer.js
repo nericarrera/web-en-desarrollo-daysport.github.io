@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             precio: 13500, 
             categoria: "calzas", 
             seccion: "mujer",
-            temporada: "invierno",
+            temporada: "verano",
             imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
-            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 0 },
