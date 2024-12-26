@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             temporada: "verano",
             imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
             hoverImagenes: [],
-            miniaturas: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "S", stock: 0 },
