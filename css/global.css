@@ -604,7 +604,7 @@
 /* Información del producto */
 .product-info {
     padding: 10px;
-    font-family: "Questrial";
+    font-family: "Shadows Into Light";
 }
 
 .product-info h3 {
@@ -615,6 +615,7 @@
 }
 
 .product-info p {
+    font-family: "Questrial";
     font-size: 0.9em;
     color: #666;
     margin: 0;
