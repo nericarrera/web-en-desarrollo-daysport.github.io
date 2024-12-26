@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="product-info">
                 <p>$${producto.precio.toLocaleString()}</p>
                 <h3>${producto.nombre}</h3>
-                <p>${producto.categoria}</p>   
+                <p class="mujer-carrusel-categoria">${producto.categoria}</p>   
                 </div>
             </div>
         `;
