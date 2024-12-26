@@ -606,6 +606,8 @@
 .product-info {
     padding: 7px;
     font-family: "Shadows Into Light";
+    margin: auto;
+    margin-top: -10px;
 }
 
 .product-info h3 {
