@@ -218,6 +218,8 @@ function toggleSizeChart(event) {
     sizeChartModal.classList.toggle('hidden');
 }
 
+/*--------------------------------------------------------- */
+
 // Zoom en las imágenes del producto
 document.querySelectorAll('.zoom-container').forEach(container => {
     let isZoomed = false;
@@ -275,6 +277,11 @@ document.querySelectorAll('.zoom-container').forEach(container => {
     });
 });
 /*----------------------------------------------------------------------*/
+
+
+
+
+
 
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
 
@@ -375,40 +382,6 @@ function getProductDetailsFromURL() {
 }
 
 /*--------------------------------------------------------------- */
-
-document.addEventListener('DOMContentLoaded', () => {
-    const { id, seccion } = getProductDetailsFromURL();
-
-    let productos;
-    switch (seccion) {
-        case 'mujer':
-            productos = productosMujer; // Cambiar por la lista de productos correcta
-            break;
-        // Agregar más secciones según sea necesario
-        default:
-            console.error(`Sección desconocida: ${seccion}`);
-            return;
-    }
-
-    const producto = productos.find(p => p.id === id);
-
-    if (producto) {
-        cargarDetallesProducto(producto);
-    } else {
-        alert('Producto no encontrado');
-        window.location.href = 'index.html';
-    }
-});
-
-
-// Obtener ID y sección desde la URL
-function getProductDetailsFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return {
-        id: parseInt(params.get('id'), 10),
-        seccion: params.get('seccion'),
-    };
-}
 
 
 // Función para cargar detalles del producto
