@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosMujer = [
         
         {
-            id: 1,
+            id: "mujer-1",
             nombre: "Remera Modal Soft",
             precio: 7500,
             categoria: "remeras",
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
         {
-            id: 2,
+            id: "mujer-2",
             nombre: "Calza Nike Pro",
             precio: 13500,
             categoria: "calzas",
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
 
-        { id: 3,
+        { id: "mujer-3",
             nombre: "Campera Deportiva NIke",
             precio: 13500,
             categoria: "camperas",
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ] 
         },
             
-        { id: 4, 
+        { id: "mujer-4", 
             nombre: "Blusa de Lino", 
             precio: 8500, 
             categoria: "remeras",
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ] 
         },
 
-        { id: 5, 
+        { id: "mujer-5", 
             nombre: "Campera Deportiva Nike", 
             precio: 23000, 
             categoria: "camperas", 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ] 
         },
-        { id: 6, 
+        { id: "mujer-6", 
             nombre: "Calza Nike Radeon", 
             precio: 13500, 
             categoria: "calzas", 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ] 
         },
-        { id: 7, 
+        { id: "mujer-7", 
             nombre: "Calza Nike Grofada", 
             precio: 16500, 
             categoria: "calzas", 
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ] 
         },
-        { id: 8, 
+        { id: "mujer-8", 
             nombre: "Calza Nike Speak", 
             precio: 13500, 
             categoria: "calzas", 
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ] 
         },
-        { id: 9, 
+        { id: "mujer-9", 
             nombre: "Calza Nike Fluorecent", 
             precio: 13500, 
             categoria: "calzas",
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 1 }
             ] 
         },
-        { id: 10, 
+        { id: "mujer-10", 
             nombre: "Calza Adidas Original", 
             precio: 13500, 
             categoria: "calzas", 
