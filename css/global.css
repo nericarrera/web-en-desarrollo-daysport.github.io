@@ -580,7 +580,6 @@
     width: 210px; /* Ancho fijo para cada tarjeta */
     height: 370px;
     border: 1px solid #ddd; /* Borde delgado */
-    border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
@@ -597,8 +596,6 @@
     width: 100%;
     height: 270px; /* Alto fijo para uniformidad */
     object-fit: cover; /* Ajustar imagen al contenedor */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 /* Información del producto */
