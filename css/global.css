@@ -621,8 +621,8 @@
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 20px;
+    color: #000000;
     margin: 0;
     font-weight: bold;
 }
