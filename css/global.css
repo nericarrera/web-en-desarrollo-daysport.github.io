@@ -549,7 +549,7 @@
 /*-------------------PRODUCTO NUEVOS DINAMICO MUJER ---------------*/
 
 .carrusel-mujer-novedad-titulo {
-    display: inline-block;
+    display: flex;
     width: auto;
     height: auto;
     margin-left: 25px;
@@ -570,7 +570,7 @@
     display: flex;
     gap: 12px; /* Espacio entre productos */
     overflow-x: auto; /* Habilitar desplazamiento horizontal */
-    padding: 40px 10px; /* Espaciado interno */
+    padding: 10px 10px; /* Espaciado interno */
     background-color: #f9f9f9; /* Fondo suave */
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
