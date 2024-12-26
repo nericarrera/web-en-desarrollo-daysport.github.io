@@ -134,17 +134,20 @@ function getProductIdFromURL() {
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
     {
-        id: 1,
-        name: "Remera modal viscosa - cuello en V",
-        price: 7500,
-        description: "Remera de cuello en V suave al tacto.",
-        images: [
-            "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 2.jpeg",
-            "img/mujer/remeras-modal-viscosa-cuelloV/remera modal viscosa 3.jpeg"
-        ],
-        colors: ["Rosa", "Gris", "Negro"],
-        sizes: ["S", "M", "L", "XL", "XXL"],
-        status: "Nuevo"
+        id: "mujer-1",
+            nombre: "Remera Modal Soft",
+            precio: 8000,
+            categoria: "remeras",
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
+            miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
+            hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
+
+            etiqueta: "novedad",
+            variantes: [
+                { color: "celeste", talla: "M", stock: 1 },
+            ]
     },
     {
         id: 2,
