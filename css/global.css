@@ -571,7 +571,7 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
     scroll-behavior: smooth; /* Desplazamiento suave */
-    justify-content: center;
+    
 }
 
 /* Tarjeta individual de producto */
