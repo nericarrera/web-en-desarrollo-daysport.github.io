@@ -344,7 +344,7 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('productId');
+    const productId = params.get('id');
 
     if (productId) {
         const product = products.find(p => p.id === productId); 
