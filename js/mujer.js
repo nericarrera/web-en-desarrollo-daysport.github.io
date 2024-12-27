@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ] 
         },
 
-        { id: "mujer-7", 
+        { id: "mujer-6", 
             nombre: "Calza Nike Grofada", 
             precio: 15000, 
             categoria: "calzas", 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 0 }
             ] 
         },
-        { id: "mujer-8", 
+        { id: "mujer-7", 
             nombre: "Calza Nike Speak", 
             precio: 13500, 
             categoria: "calzas", 
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "gris", talla: "M", stock: 0 }
             ] 
         },
-        { id: "mujer-9", 
+        { id: "mujer-8", 
             nombre: "Calza Nike Fluorecent", 
             precio: 13500, 
             categoria: "calzas",
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { color: "rosa", talla: "XL", stock: 1 }
             ] 
         },
-        { id: "mujer-10", 
+        { id: "mujer-9", 
             nombre: "Calza Adidas Original", 
             precio: 13500, 
             categoria: "calzas", 

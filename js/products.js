@@ -80,51 +80,46 @@ document.querySelectorAll('.zoom-container').forEach(container => {
  /*--------------------BUSCADOR DE PRODUCTO---------------*/
  document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
-    const productId = params.get('id'); // Usar 'id' como parámetro
-    const product = productosMujer.find(p => p.id === productId); // No convertir a entero
-  
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id'); // 'id' como string
+
+    // Buscar el producto en el array de productos
+    const product = productosMujer.find(p => p.id === productId); // Comparar como cadena
+
     if (product) {
-      // Actualizar el título del producto
-      document.querySelector('.product-title').textContent = product.name;
-  
-      // Actualizar el precio del producto
-      document.querySelector('.product-price').textContent = `$${product.price.toLocaleString()}`;
-  
-      // Actualizar los detalles del producto
-      document.querySelector('.product-details').textContent = `Categoría: ${product.category}`;
-  
-      // Actualizar los talles disponibles
-      const sizeOptions = document.querySelector('.size-options');
-      sizeOptions.innerHTML = ''; // Limpiar los talles antes de agregarlos
-      product.size.forEach(size => {
-        const sizeBtn = document.createElement('button');
-        sizeBtn.classList.add('size-btn');
-        sizeBtn.textContent = size;
-        sizeOptions.appendChild(sizeBtn);
-      });
-  
-      // Actualizar las imágenes
-      const gallery = document.querySelector('.product-gallery');
-      gallery.innerHTML = '';  // Limpiar la galería antes de agregar las nuevas imágenes
-      product.images.forEach(imageSrc => {
-        const imgElement = document.createElement('img');
-        imgElement.src = imageSrc;
-        imgElement.alt = product.name;
-        imgElement.classList.add('zoom-img');
-        gallery.appendChild(imgElement);
-      });
-  
-      // Agregar un video si lo tienes, o lo puedes ocultar si no
-      const videoElement = document.querySelector('video');
-      if (!product.video) {
-        videoElement.style.display = 'none'; // Oculta el video si no hay uno disponible
-      }
+        // Actualizar el título del producto
+        document.querySelector('.product-title').textContent = product.nombre;
+        // Actualizar el precio del producto
+        document.querySelector('.product-price').textContent = `$${product.precio.toLocaleString()}`;
+        // Actualizar los detalles del producto
+        document.querySelector('.product-details').textContent = `Categoría: ${product.categoria}`;
+        // Actualizar los talles disponibles
+        const sizeOptions = document.querySelector('.size-options');
+        sizeOptions.innerHTML = ''; // Limpiar los talles antes de agregarlos
+        product.variantes.forEach(size => {
+            const sizeBtn = document.createElement('button');
+            sizeBtn.classList.add('size-btn');
+            sizeBtn.textContent = size.talla;
+            sizeOptions.appendChild(sizeBtn);
+        });
+
+        // Actualizar las imágenes
+        const gallery = document.querySelector('.product-gallery');
+        gallery.innerHTML = '';  // Limpiar la galería antes de agregar las nuevas imágenes
+        product.imagen.forEach(imageSrc => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageSrc;
+            imgElement.alt = product.nombre;
+            imgElement.classList.add('zoom-img');
+            gallery.appendChild(imgElement);
+        });
     } else {
-      // Si no se encuentra el producto, muestra un mensaje de error o redirige al usuario
-      alert('Producto no encontrado');
-      window.location.href = 'index.html'; // Redirigir a la página principal si no se encuentra el producto
+        // Si no se encuentra el producto, muestra un mensaje de error o redirige al usuario
+        alert('Producto no encontrado');
+        window.location.href = 'index.html'; // Redirigir a la página principal si no se encuentra el producto
     }
-  });
+});
+  
 
   /*----------------------------------------------------------*/
 
@@ -440,7 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+const productId = params.get('id');
+console.log("ID del producto desde la URL: ", productId); // Verifica que el ID sea correcto
 
+const product = productosMujer.find(p => p.id === productId);
+console.log("Producto encontrado: ", product); // Verifica si el producto se encuentra
 
 
 

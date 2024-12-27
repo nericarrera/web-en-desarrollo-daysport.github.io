@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener productos con la etiqueta "novedad"
     const productosNovedad = window.obtenerProductosNovedad();
 
-    // Limitar a 5 productos si hay más
+    // Limitar a 25 productos si hay más
     const productosAMostrar = productosNovedad.slice(0, 25);
 
     // Renderizar los productos en el carrusel
