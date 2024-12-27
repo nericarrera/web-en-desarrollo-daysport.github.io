@@ -193,7 +193,8 @@ function getProductIdFromURL() {
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
     {
-        id: "mujer-1",
+        
+            id: "mujer-1",
             nombre: "Remera Modal Soft",
             precio: 8000,
             categoria: "remeras",
@@ -207,7 +208,134 @@ const products = [
             variantes: [
                 { color: "celeste", talla: "M", stock: 1 },
             ]
-    },
+        },
+
+        {
+            id: "mujer-2",
+            nombre: "Calza Nike Pro",
+            precio: 13500,
+            categoria: "calzas",
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+            hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "L", stock: 1 },
+                { color: "gris", talla: "L", stock: 1 }
+            ]
+        },
+
+        { id: "mujer-3",
+            nombre: "Campera Deportiva Nike",
+            precio: 13500,
+            categoria: "camperas",
+            seccion: "mujer",
+            temporada: "media estacion",
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
+            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "M", stock: 1 },
+                { color: "negro", talla: "L", stock: 1 },
+                { color: "negro", talla: "XL", stock: 0}
+            ] 
+        },
+            
+        { id: "mujer-4", 
+            nombre: "Blusa de Lino", 
+            precio: 9000, 
+            categoria: "remeras",
+            seccion: "mujer",
+            temporada: "verano", 
+            imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "XL", stock: 1 },
+            ] 
+        },
+
+        { id: "mujer-5", 
+            nombre: "Calza Nike Radeon", 
+            precio: 13500, 
+            categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 0 },
+                { color: "gris", talla: "M", stock: 0 }
+            ] 
+        },
+
+        { id: "mujer-7", 
+            nombre: "Calza Nike Grofada", 
+            precio: 15000, 
+            categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 0 },
+                { color: "gris", talla: "M", stock: 0 }
+            ] 
+        },
+        { id: "mujer-8", 
+            nombre: "Calza Nike Speak", 
+            precio: 13500, 
+            categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "S", stock: 0 },
+                { color: "gris", talla: "M", stock: 0 }
+            ] 
+        },
+        { id: "mujer-9", 
+            nombre: "Calza Nike Fluorecent", 
+            precio: 13500, 
+            categoria: "calzas",
+            seccion: "mujer",
+            temporada: "invierno", 
+            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "rosa", talla: "L", stock: 1 },
+                { color: "rosa", talla: "XL", stock: 1 }
+            ] 
+        },
+        { id: "mujer-10", 
+            nombre: "Calza Adidas Original", 
+            precio: 13500, 
+            categoria: "calzas", 
+            seccion: "mujer",
+            temporada: "verano",
+            imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
+            hoverImagenes: [],
+            miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
+            etiqueta: "novedad",
+            variantes: [
+                { color: "negro", talla: "M", stock: 1 },
+                { color: "multicolor", talla: "M", stock: 1 }
+            ]
+            
+        },
    
 ];
 
@@ -219,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = params.get('productId');
 
     if (productId) {
-        const producto = productosMujer.find(p => p.id === parseInt(productId));
+        const product = products.find(p => p.id === productId); 
 
         if (producto) {
             document.querySelector('.producto-nombre').textContent = producto.nombre;
