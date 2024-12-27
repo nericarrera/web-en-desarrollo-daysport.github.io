@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = params.get('id');
 
     if (productId) {
-        const product = products.find(p => p.id === productId); 
+        const product = productosMujer.find(p => p.id === productId); 
 
         if (producto) {
             document.querySelector('.producto-nombre').textContent = producto.nombre;
