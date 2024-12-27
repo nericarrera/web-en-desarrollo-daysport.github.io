@@ -81,7 +81,7 @@ document.querySelectorAll('.zoom-container').forEach(container => {
  document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
     const productId = params.get('id'); // Usar 'id' como parámetro
-    const product = productosMujer.find(p => p.id === productId);
+    const product = productosMujer.find(p => p.id === productId); // No convertir a entero
   
     if (product) {
       // Actualizar el título del producto
