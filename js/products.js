@@ -80,9 +80,7 @@ document.querySelectorAll('.zoom-container').forEach(container => {
  /*--------------------BUSCADOR DE PRODUCTO---------------*/
  document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
-    const productId = getProductIdFromURL();
-  
-    // Buscar el producto en el array de productos
+    const productId = params.get('id'); // Usar 'id' como parámetro
     const product = productosMujer.find(p => p.id === productId);
   
     if (product) {
