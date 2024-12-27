@@ -83,7 +83,7 @@ document.querySelectorAll('.zoom-container').forEach(container => {
     const productId = getProductIdFromURL();
   
     // Buscar el producto en el array de productos
-    const product = products.find(p => p.id === parseInt(productId));
+    const product = productosMujer.find(p => p.id === productId);
   
     if (product) {
       // Actualizar el título del producto
