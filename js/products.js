@@ -291,7 +291,7 @@ function getProductDetailsFromURL() {
     console.log("ID del producto desde la URL:", productId); // Log para depurar
 }
 
-/*--------------------------------------------------------------- */
+/*----------------CARRUSEL MUJER PRODUCTOS----------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
