@@ -293,7 +293,6 @@ function getProductDetailsFromURL() {
 
 /*--------------------------------------------------------------- */
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
@@ -305,7 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Asegurarse de que productosMujer está disponible
     if (!window.productosMujer) {
         console.error("productosMujer no está disponible.");
         alert("Ocurrió un error al cargar los productos.");
@@ -313,24 +311,40 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Buscar el producto
     const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
-        console.log("Producto encontrado:", product);
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Cargar imágenes
+        // Mostrar galería de imágenes
         const gallery = document.querySelector('.product-gallery');
+        const thumbnails = document.querySelector('.product-thumbnails');
         gallery.innerHTML = '';
-        product.imagen.forEach(imgSrc => {
-            const imgElement = document.createElement('img');
-            imgElement.src = imgSrc;
-            imgElement.alt = product.nombre;
-            imgElement.classList.add('zoom-img');
-            gallery.appendChild(imgElement);
+        thumbnails.innerHTML = '';
+
+        product.imagen.forEach((imgSrc, index) => {
+            // Imagen principal
+            if (index === 0) {
+                const mainImage = document.createElement('img');
+                mainImage.src = imgSrc;
+                mainImage.alt = product.nombre;
+                mainImage.classList.add('zoom-img');
+                mainImage.setAttribute('id', 'main-product-image');
+                gallery.appendChild(mainImage);
+            }
+
+            // Miniaturas
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imgSrc;
+            thumbnail.alt = `${product.nombre} - vista ${index + 1}`;
+            thumbnail.classList.add('thumbnail-image');
+            thumbnail.addEventListener('click', () => {
+                const mainImage = document.getElementById('main-product-image');
+                mainImage.src = imgSrc;
+            });
+            thumbnails.appendChild(thumbnail);
         });
 
         // Cargar colores
