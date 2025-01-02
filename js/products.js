@@ -120,12 +120,9 @@ document.querySelectorAll('.zoom-container').forEach(container => {
     }
 });
   
-
-  /*----------------------------------------------------------*/
-
-
  
   /*----------------MOSTRAR EL PRODUCTO DE LA PAGINA INDEX------------ */
+
   document.addEventListener('DOMContentLoaded', function() {
     // Obtener el ID del producto desde la URL
     const productId = getProductIdFromURL();
@@ -337,7 +334,7 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
+    const productId = params.get('data-id');
 
     if (productId) {
         const product = productosMujer.find(p => p.id === productId); 
