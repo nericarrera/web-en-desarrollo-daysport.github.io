@@ -213,7 +213,7 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
     }
   
     actualizarContadores();
-  /*----------------------------------------------- */
+ 
 
   /*----------------------------MOSTRAR PRODUCTOS------------------------- */
   
