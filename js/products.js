@@ -287,6 +287,8 @@ function getProductDetailsFromURL() {
     const temporada = params.get('temporada'); // Opcional
 
     return { id: parseInt(id), seccion, temporada };
+
+    console.log("ID del producto desde la URL:", productId); // Log para depurar
 }
 
 /*--------------------------------------------------------------- */
