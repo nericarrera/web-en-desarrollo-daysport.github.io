@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /*---------------CODIGO DE SECCION MUJER------------*/
 function getProductDetailsFromURL() {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+    const id = params.get('data-id');
     const seccion = params.get('seccion');
     const temporada = params.get('temporada'); // Opcional
 
