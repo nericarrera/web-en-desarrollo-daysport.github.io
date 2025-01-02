@@ -336,19 +336,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
 
-    if (productId) {
-        const product = productosMujer.find(p => p.id === productId); 
+    if (!productId) {
+        alert("Producto no especificado.");
+        window.location.href = 'index.html';
+        return;
+    }
 
-        if (producto) {
-            document.querySelector('.producto-nombre').textContent = producto.nombre;
-            document.querySelector('.producto-precio').textContent = `$${producto.precio.toLocaleString()}`;
-            document.querySelector('.producto-imagen-principal').src = producto.imagen;
-            // Cargar más fotos o videos si están disponibles
-        } else {
-            console.error("Producto no encontrado");
-        }
+    const product = productosMujer.find(p => p.id === productId);
+
+    if (product) {
+        document.querySelector('#product-title').textContent = product.nombre;
+        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
+        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+
+        // Cargar colores
+        const coloresContainer = document.querySelector('#product-colors');
+        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        product.variantes.forEach(variant => {
+            const colorElement = document.createElement('span');
+            colorElement.textContent = variant.color;
+            coloresContainer.appendChild(colorElement);
+        });
+
+        // Cargar talles
+        const tallesContainer = document.querySelector('#product-sizes');
+        tallesContainer.innerHTML = '';
+        product.variantes.forEach(variant => {
+            const sizeElement = document.createElement('button');
+            sizeElement.textContent = `${variant.talla} (${variant.stock} disponibles)`;
+            sizeElement.disabled = variant.stock === 0;
+            tallesContainer.appendChild(sizeElement);
+        });
+
+        // Cargar imágenes
+        const gallery = document.querySelector('.product-gallery');
+        gallery.innerHTML = '';
+        product.imagen.forEach(imgSrc => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imgSrc;
+            imgElement.alt = product.nombre;
+            imgElement.classList.add('zoom-img');
+            gallery.appendChild(imgElement);
+        });
     } else {
-        console.error("ID de producto no especificado en la URL");
+        alert("Producto no encontrado.");
+        window.location.href = 'index.html';
     }
 });
 
