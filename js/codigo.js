@@ -124,36 +124,30 @@ document.addEventListener("DOMContentLoaded", function () {
 /*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
-    
-    // Asegurarse de que el contenedor existe
+
     if (!contenedorCarrusel) {
-        console.error("El contenedor carrusel no se encuentra en el DOM.");
+        console.error("El contenedor del carrusel no está en el DOM.");
         return;
     }
 
-    // Obtener productos con la etiqueta "novedad"
+    // Obtener los productos con la etiqueta "novedad"
     const productosNovedad = window.obtenerProductosNovedad();
 
-    // Limitar a 25 productos si hay más
-    const productosAMostrar = productosNovedad.slice(0, 25);
-
-    // Renderizar los productos en el carrusel
-    productosAMostrar.forEach(producto => {
+    productosNovedad.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto-novedad-mujer');
 
         productoDiv.innerHTML = `
-            <div class="product-card-novedad-mujer">
+            <div class="product-card-novedad-mujer" data-id="${producto.id}">
                 <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="product-image">
                 <div class="product-info">
-                <p>$${producto.precio.toLocaleString()}</p>
-                <h3>${producto.nombre}</h3>
-                <p class="mujer-carrusel-categoria">${producto.categoria}</p>   
+                    <h3>${producto.nombre}</h3>
+                    <p>$${producto.precio.toLocaleString()}</p>
                 </div>
             </div>
         `;
 
-        // Evento para redirigir al producto
+        // Redirigir al producto al hacer clic
         productoDiv.addEventListener('click', () => {
             const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
             window.location.href = url;
