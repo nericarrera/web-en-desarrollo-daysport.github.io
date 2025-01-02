@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
             
         },
-            
+        
     ];
    
     // Función para obtener productos con la etiqueta "novedad"
