@@ -299,15 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productId = params.get('id');
 
     if (!productId) {
-        console.error("Producto no especificado.");
         alert("Producto no especificado.");
-        window.location.href = 'index.html';
-        return;
-    }
-
-    if (!window.productosMujer) {
-        console.error("productosMujer no está disponible.");
-        alert("Ocurrió un error al cargar los productos.");
         window.location.href = 'index.html';
         return;
     }
@@ -317,13 +309,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (product) {
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Mostrar fotos del producto
+        // Mostrar las imágenes
         const gallery = document.querySelector('.product-gallery');
         gallery.innerHTML = '';
-
-        product.imagen.slice(0, 4).forEach((imgSrc, index) => {
+        product.imagen.forEach((imgSrc, index) => {
             const imgElement = document.createElement('img');
             imgElement.src = imgSrc;
             imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
@@ -331,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gallery.appendChild(imgElement);
         });
 
-        // Mostrar video del producto si está disponible
+        // Mostrar video si está disponible
         const videoElement = document.querySelector('#product-video');
         if (product.video) {
             videoElement.src = product.video;
@@ -340,30 +330,21 @@ document.addEventListener('DOMContentLoaded', () => {
             videoElement.style.display = 'none';
         }
 
-        // Mostrar colores
+        // Mostrar colores como miniaturas
+        const coloresContainer = document.querySelector('#product-colors');
+        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
         product.variantes.forEach(variant => {
-            const colorElement = document.createElement('span');
-            colorElement.style.backgroundColor = variant.color.toLowerCase(); // Fondo con el color
-            colorElement.style.width = '20px'; // Tamaño del cuadro
-            colorElement.style.height = '20px';
+            const colorElement = document.createElement('div');
+            colorElement.style.backgroundColor = variant.color;
+            colorElement.style.width = '30px';
+            colorElement.style.height = '30px';
+            colorElement.style.border = '1px solid #000';
+            colorElement.style.borderRadius = '50%';
             colorElement.style.display = 'inline-block';
             colorElement.style.marginRight = '10px';
-            colorElement.style.border = '1px solid #000';
-            colorElement.style.borderRadius = '50%'; // Forma circular
             coloresContainer.appendChild(colorElement);
         });
-
-        // Mostrar talles
-        const tallesContainer = document.querySelector('#product-sizes');
-        tallesContainer.innerHTML = '';
-        product.variantes.forEach(variant => {
-            const sizeElement = document.createElement('button');
-            sizeElement.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-            sizeElement.disabled = variant.stock === 0;
-            tallesContainer.appendChild(sizeElement);
-        });
     } else {
-        console.error("Producto no encontrado.");
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
     }
