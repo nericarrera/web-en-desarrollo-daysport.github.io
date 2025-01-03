@@ -996,26 +996,9 @@ letter-spacing: 0.5px;
     cursor: pointer;
 }
 
-/*-------------------IMAGEN EN PRODUCTOS--------------*/
+/*-------------------MINIATURAS EN PRODUCTOS--------------*/
 
-.product-gallery img {
-  width: 100%;
-  max-width: 300px;
-  margin: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
 
-#product-colors span {
-  display: inline-block;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.product-video {
-  max-width: 100%;
-  margin-top: 20px;
-}
 
 /*---------- DETALLES Y PUNTUACION --------------*/
 
