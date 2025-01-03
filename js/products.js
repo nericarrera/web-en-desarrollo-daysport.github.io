@@ -305,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Asegurarse de que productosMujer está disponible
     if (!window.productosMujer) {
         console.error("productosMujer no está disponible.");
         alert("Ocurrió un error al cargar los productos.");
@@ -313,36 +312,50 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Buscar el producto
     const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
-        console.log("Producto encontrado:", product);
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Cargar imágenes
+        // Mostrar fotos del producto
         const gallery = document.querySelector('.product-gallery');
         gallery.innerHTML = '';
-        product.imagen.forEach(imgSrc => {
+
+        product.imagen.slice(0, 4).forEach((imgSrc, index) => {
             const imgElement = document.createElement('img');
             imgElement.src = imgSrc;
-            imgElement.alt = product.nombre;
-            imgElement.classList.add('zoom-img');
+            imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
+            imgElement.classList.add('product-image');
             gallery.appendChild(imgElement);
         });
 
-        // Cargar colores
+        // Mostrar video del producto si está disponible
+        const videoElement = document.querySelector('#product-video');
+        if (product.video) {
+            videoElement.src = product.video;
+            videoElement.style.display = 'block';
+        } else {
+            videoElement.style.display = 'none';
+        }
+
+        // Mostrar colores
         const coloresContainer = document.querySelector('#product-colors');
         coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
         product.variantes.forEach(variant => {
             const colorElement = document.createElement('span');
-            colorElement.textContent = variant.color;
+            colorElement.style.backgroundColor = variant.color; // Usar el color como fondo
+            colorElement.style.width = '20px';
+            colorElement.style.height = '20px';
+            colorElement.style.display = 'inline-block';
+            colorElement.style.marginRight = '10px';
+            colorElement.style.border = '1px solid #000';
+            colorElement.style.borderRadius = '50%';
             coloresContainer.appendChild(colorElement);
         });
 
-        // Cargar talles
+        // Mostrar talles
         const tallesContainer = document.querySelector('#product-sizes');
         tallesContainer.innerHTML = '';
         product.variantes.forEach(variant => {
