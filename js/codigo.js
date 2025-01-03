@@ -130,16 +130,24 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Obtener los productos con la etiqueta "novedad"
+    // Obtener productos con la etiqueta "novedad"
     const productosNovedad = window.obtenerProductosNovedad();
 
     productosNovedad.forEach(producto => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto-novedad-mujer');
 
+        // Generar un pequeño carrusel dentro del producto
+        const imagenesHTML = producto.imagen
+            .slice(0, 3) // Mostramos hasta 3 imágenes en la vista previa del carrusel
+            .map(imgSrc => `<img src="${imgSrc}" alt="${producto.nombre}" class="product-carousel-image">`)
+            .join('');
+
         productoDiv.innerHTML = `
             <div class="product-card-novedad-mujer" data-id="${producto.id}">
-                <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="product-image">
+                <div class="product-carousel">
+                    ${imagenesHTML}
+                </div>
                 <div class="product-info">
                     <h3>${producto.nombre}</h3>
                     <p>$${producto.precio.toLocaleString()}</p>
@@ -147,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Redirigir al producto al hacer clic
+        // Evento para redirigir al producto
         productoDiv.addEventListener('click', () => {
             const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
             window.location.href = url;
