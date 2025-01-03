@@ -706,9 +706,9 @@
 }
 
 .thumbnail-image:hover {
-    transform: scale(1.1);
+    text-decoration: underline;
     border-color: #000;
-    
+
 }
 
 /*--------------------------------------------------*/
