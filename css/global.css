@@ -706,7 +706,7 @@
 }
 
 .thumbnail-image:hover {
-    border-bottom: 2px #360353;
+    border-bottom: 2px solid #360353;
     transition: all 400ms ease;
     border-color: #000;
 
