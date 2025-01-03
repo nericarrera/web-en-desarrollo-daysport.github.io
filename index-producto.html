@@ -153,12 +153,14 @@
     
     <div class="product-page">
       <div class="product-gallery">
-          <div class="zoom-container">
-              <img src="ruta-de-tu-imagen.jpg" alt="Imagen del producto" class="zoom-img">
-          </div>
-          <div id="product-thumbnails" class="thumbnails-container"></div>
-          <video id="product-video" src="video.mp4" controls class="zoom-video"></video>
+          <!-- Aquí se cargarán las fotos -->
       </div>
+      <video id="product-video" controls class="product-video" style="display: none;">
+          Tu navegador no soporta videos.
+      </video>
+      <div id="product-colors"></div>
+      <div id="product-sizes"></div>
+  </div>
   
       <div class="product-details-section">
           <h1 class="product-title3" id="product-title">Cargando...</h1>
