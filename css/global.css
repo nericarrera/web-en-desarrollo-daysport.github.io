@@ -607,7 +607,7 @@
 .producto-novedad-mujer {
     flex: 0 0 auto; /* Evitar que las tarjetas se reduzcan */
     width: 210px; /* Ancho fijo para cada tarjeta */
-    height: 370px;
+    height: 395px;
     border: 1px solid #ddd; /* Borde delgado */
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
