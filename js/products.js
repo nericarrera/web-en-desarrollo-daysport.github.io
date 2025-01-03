@@ -332,18 +332,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mostrar colores como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-        product.variantes.forEach(variant => {
-            const colorElement = document.createElement('div');
-            colorElement.style.backgroundColor = variant.color;
-            colorElement.style.width = '30px';
-            colorElement.style.height = '30px';
-            colorElement.style.border = '1px solid #000';
-            colorElement.style.borderRadius = '50%';
-            colorElement.style.display = 'inline-block';
-            colorElement.style.marginRight = '10px';
-            coloresContainer.appendChild(colorElement);
-        });
+coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+
+product.variantes.forEach(variant => {
+    // Crear una miniatura para cada color
+    const colorThumbnail = document.createElement('img');
+    colorThumbnail.src = variant.imagenColor; // Imagen específica para ese color
+    colorThumbnail.alt = `Color ${variant.color}`;
+    colorThumbnail.classList.add('color-thumbnail');
+    colorThumbnail.dataset.color = variant.color; // Guardar el color como atributo
+
+    // Evento para cambiar la imagen principal al hacer clic
+    colorThumbnail.addEventListener('click', () => {
+        const mainImage = document.querySelector('#main-product-image');
+        mainImage.src = variant.imagenColor; // Actualizar la imagen principal
+    });
+
+    coloresContainer.appendChild(colorThumbnail);
+});
+
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
