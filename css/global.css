@@ -635,14 +635,14 @@
     margin-top: -10px;
 }
 
-.product-info h3 {
+.product-info-carrusel h3 {
     font-size: 1em;
     font-weight: 600;
     color: #333;
     margin: 0px 0px 0px;
 }
 
-.product-info p {
+.product-info-carrusel p {
   font-family: "Shadows Into Light";
   font-optical-sizing: auto;
   font-weight: weight;
