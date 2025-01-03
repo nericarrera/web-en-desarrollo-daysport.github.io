@@ -597,7 +597,7 @@
     display: flex;
     gap: 12px; /* Espacio entre productos */
     overflow-x: auto; /* Habilitar desplazamiento horizontal */
-    padding: 10px 10px; /* Espaciado interno */
+    padding: 28px 10px; /* Espaciado interno */
     background-color: #f9f9f9; /* Fondo suave */
     scroll-behavior: smooth; /* Desplazamiento suave */
     
