@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*-------------------------------------------------------------------- */
 
-/*---------------------NOVEDAD MUJER EXPORTACION-------------------- */
+/*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
 
@@ -137,23 +137,51 @@ document.addEventListener('DOMContentLoaded', () => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto-novedad-mujer');
 
-        // Generar un pequeño carrusel dentro del producto
-        const imagenesHTML = producto.imagen
-            .slice(0, 3) // Mostramos hasta 3 imágenes en la vista previa del carrusel
-            .map(imgSrc => `<img src="${imgSrc}" alt="${producto.nombre}" class="product-carousel-image">`)
-            .join('');
-
         productoDiv.innerHTML = `
-            <div class="product-card-novedad-mujer" data-id="${producto.id}">
-                <div class="product-carousel">
-                    ${imagenesHTML}
+            <div class="product-container-carrusel">
+                <div class="product-image-carrusel">
+                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                    <div class="product-thumbnails hidden-thumbnails">
+                        ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
+                            <img src="${img}" alt="Miniatura ${index + 1}" 
+                                 class="thumbnail-image" 
+                                 data-main-image-id="mainImage-${producto.id}">
+                        `).join('') : ''}
+                    </div>
                 </div>
-                <div class="product-info">
+                <div class="product-info-carrusel">
                     <h3>${producto.nombre}</h3>
                     <p>$${producto.precio.toLocaleString()}</p>
                 </div>
             </div>
         `;
+
+        const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+        let selectedImage = producto.imagen[0];
+        let isInsideProduct = false;
+
+        // Manejo del hover en miniaturas
+        const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('mouseover', () => {
+                selectedImage = thumbnail.src;
+                mainImage.src = selectedImage;
+            });
+        });
+
+        // Detectar entrada y salida del producto
+        productoDiv.addEventListener('mouseover', () => {
+            isInsideProduct = true;
+        });
+
+        productoDiv.addEventListener('mouseout', () => {
+            isInsideProduct = false;
+            setTimeout(() => {
+                if (!isInsideProduct) {
+                    mainImage.src = producto.imagen[0];
+                }
+            }, 100);
+        });
 
         // Evento para redirigir al producto
         productoDiv.addEventListener('click', () => {
