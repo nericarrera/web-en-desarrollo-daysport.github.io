@@ -997,38 +997,7 @@ letter-spacing: 0.5px;
 }
 
 /*-------------------MINIATURAS EN PRODUCTOS--------------*/
-.product-gallery {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
 
-.product-gallery img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.product-thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.product-thumbnails img {
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: transform 0.2s ease;
-}
-
-.product-thumbnails img:hover {
-  transform: scale(1.1);
-  border-color: #000;
-}
 
 /*---------- DETALLES Y PUNTUACION --------------*/
 
