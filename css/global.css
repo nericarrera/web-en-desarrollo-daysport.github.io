@@ -670,9 +670,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
     transition: box-shadow 0.3s ease;
