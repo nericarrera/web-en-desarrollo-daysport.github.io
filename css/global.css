@@ -685,33 +685,30 @@
 }
 
 .main-product-image {
-    width: 200px;
-    height: 200px;
+    width: 209px;
+    height: 230px;
     object-fit: cover;
-    border-radius: 5px;
-    border: 1px solid #ddd;
 }
 
 .product-thumbnails {
     display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
+    justify-content: flex-start;
+    margin-left: 5px;
+    gap: 2px;
 }
 
 .thumbnail-image {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 55px;
     object-fit: cover;
     cursor: pointer;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     transition: transform 0.2s ease;
 }
 
 .thumbnail-image:hover {
     transform: scale(1.1);
     border-color: #000;
+    
 }
 
 /*--------------------------------------------------*/
