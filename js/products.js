@@ -341,17 +341,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Mostrar colores
-        const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
         product.variantes.forEach(variant => {
             const colorElement = document.createElement('span');
-            colorElement.style.backgroundColor = variant.color; // Usar el color como fondo
-            colorElement.style.width = '20px';
+            colorElement.style.backgroundColor = variant.color.toLowerCase(); // Fondo con el color
+            colorElement.style.width = '20px'; // Tamaño del cuadro
             colorElement.style.height = '20px';
             colorElement.style.display = 'inline-block';
             colorElement.style.marginRight = '10px';
             colorElement.style.border = '1px solid #000';
-            colorElement.style.borderRadius = '50%';
+            colorElement.style.borderRadius = '50%'; // Forma circular
             coloresContainer.appendChild(colorElement);
         });
 
