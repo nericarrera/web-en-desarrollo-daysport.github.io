@@ -299,15 +299,23 @@ function actualizarGaleria(product, color) {
 // Función para actualizar los talles según el color seleccionado
 function actualizarTalles(product, color) {
     const tallesContainer = document.querySelector('#product-sizes');
-    tallesContainer.innerHTML = '<h3>Seleccionar Talle:</h3>';
+    tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
-    const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
+    // Obtener todos los talles posibles
+    const tallesUnicos = [...new Set(product.variantes.map(variant => variant.talla))];
 
-    tallesFiltrados.forEach(variant => {
+    // Mostrar todos los talles
+    tallesUnicos.forEach(talle => {
+        const variant = product.variantes.find(v => v.color === color && v.talla === talle);
+        const stockDisponible = variant ? variant.stock : 0;
+
         const sizeButton = document.createElement('button');
-        sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-        sizeButton.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        sizeButton.textContent = `${talle} (${stockDisponible} disponibles)`;
+        sizeButton.disabled = stockDisponible === 0; // Deshabilitar si no hay stock
         sizeButton.classList.add('size-btn');
+        sizeButton.style.backgroundColor = stockDisponible === 0 ? '#f8d7da' : '#d4edda'; // Cambiar color según disponibilidad
+        sizeButton.style.cursor = stockDisponible === 0 ? 'not-allowed' : 'pointer';
+
         tallesContainer.appendChild(sizeButton);
     });
 }
