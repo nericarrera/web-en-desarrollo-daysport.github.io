@@ -27,11 +27,30 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
             miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
-
             etiqueta: "novedad",
             variantes: [
                 { color: "celeste", talla: "M", stock: 1 },
-            ]
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
 
         {
@@ -48,7 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "L", stock: 1 },
                 { color: "gris", talla: "L", stock: 1 }
-            ]
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
 
         { id: "mujer-3",
@@ -57,15 +96,40 @@ document.addEventListener('DOMContentLoaded', () => {
             categoria: "camperas",
             seccion: "mujer",
             temporada: "media estacion",
-            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
-            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
-            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
+            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
+            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
+            miniaturas: [
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"
+            ], // Miniaturas para el carrusel
             etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "M", stock: 1 },
                 { color: "negro", talla: "L", stock: 1 },
-                { color: "negro", talla: "XL", stock: 0}
-            ] 
+                { color: "rojo", talla: "M", stock: 2 },
+                { color: "azul", talla: "S", stock: 3 }
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
             
         { id: "mujer-4", 
@@ -80,7 +144,27 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "novedad",
             variantes: [
                 { color: "negro", talla: "XL", stock: 1 },
-            ] 
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
 
         { id: "mujer-5", 
@@ -96,7 +180,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "S", stock: 0 },
                 { color: "gris", talla: "M", stock: 0 }
-            ] 
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
 
         { id: "mujer-6", 
@@ -112,7 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "S", stock: 0 },
                 { color: "gris", talla: "M", stock: 0 }
-            ] 
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
         { id: "mujer-7", 
             nombre: "Calza Nike Speak", 
@@ -127,7 +251,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "S", stock: 0 },
                 { color: "gris", talla: "M", stock: 0 }
-            ] 
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
         },
         { id: "mujer-8", 
             nombre: "Calza Nike Fluorecent", 
@@ -142,7 +286,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "rosa", talla: "L", stock: 1 },
                 { color: "rosa", talla: "XL", stock: 1 }
-            ] 
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            } 
         },
         { id: "mujer-9", 
             nombre: "Calza Adidas Original", 
@@ -157,7 +321,27 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "M", stock: 1 },
                 { color: "multicolor", talla: "M", stock: 1 }
-            ]
+            ],
+            imagenColores: { // Imágenes específicas por color para la página de producto
+                negro: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                ],
+                rojo: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                ],
+                azul: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                ]
+            }
             
         },
         

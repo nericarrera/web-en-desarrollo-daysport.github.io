@@ -292,8 +292,6 @@ function getProductDetailsFromURL() {
 }
 
 /*--------------------------------------------------------------- */
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
@@ -307,29 +305,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
+        // Mostrar el título, precio y otros detalles
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
 
-        // Mostrar las imágenes
-        const gallery = document.querySelector('.product-gallery');
-        gallery.innerHTML = '';
-        product.imagen.forEach((imgSrc, index) => {
-            const imgElement = document.createElement('img');
-            imgElement.src = imgSrc;
-            imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
-            imgElement.classList.add('product-image');
-            gallery.appendChild(imgElement);
+        // Mostrar las imágenes del primer color por defecto
+        const colorInicial = product.variantes[0].color; // Seleccionar el primer color disponible
+        actualizarGaleria(product, colorInicial);
+
+        // Mostrar los colores como miniaturas
+        const coloresContainer = document.querySelector('#product-colors');
+        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        product.variantes.forEach(variant => {
+            const colorThumbnail = document.createElement('img');
+            colorThumbnail.src = product.imagenColores[variant.color][0]; // Primera imagen del color
+            colorThumbnail.alt = `Color ${variant.color}`;
+            colorThumbnail.classList.add('color-thumbnail');
+            colorThumbnail.dataset.color = variant.color;
+
+            // Cambiar fotos al seleccionar un color
+            colorThumbnail.addEventListener('click', () => {
+                actualizarGaleria(product, variant.color);
+            });
+
+            coloresContainer.appendChild(colorThumbnail);
         });
+    } else {
+        alert("Producto no encontrado.");
+        window.location.href = 'index.html';
+    }
+});
 
-        // Mostrar video si está disponible
-        const videoElement = document.querySelector('#product-video');
-        if (product.video) {
-            videoElement.src = product.video;
-            videoElement.style.display = 'block';
-        } else {
-            videoElement.style.display = 'none';
-        }
+// Función para actualizar la galería de imágenes según el color seleccionado
+function actualizarGaleria(product, color) {
+    const gallery = document.querySelector('.product-gallery');
+    gallery.innerHTML = ''; // Limpiar la galería
 
+    const imagenesColor = product.imagenColores[color]; // Obtener las imágenes del color seleccionado
+    imagenesColor.forEach((imgSrc, index) => {
+        const imgElement = document.createElement('img');
+        imgElement.src = imgSrc;
+        imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
+        imgElement.classList.add('product-image');
+        gallery.appendChild(imgElement);
+    });
+}
         // Mostrar colores como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
 coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
@@ -351,12 +371,7 @@ product.variantes.forEach(variant => {
     coloresContainer.appendChild(colorThumbnail);
 });
 
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html';
-    }
-});
-
+ 
 
 const product = productosMujer.find(p => p.id === productId);
 console.log("Producto encontrado:", product); // Depuración

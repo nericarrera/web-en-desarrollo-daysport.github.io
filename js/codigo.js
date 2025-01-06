@@ -137,19 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto-novedad-mujer');
 
+        // Mostramos solo 1 foto principal por color en el carrusel
         productoDiv.innerHTML = `
-            <div class="product-container-carrusel">
-                <div class="product-image-carrusel">
-                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                    <div class="product-thumbnails hidden-thumbnails">
-                        ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                            <img src="${img}" alt="Miniatura ${index + 1}" 
-                                 class="thumbnail-image" 
-                                 data-main-image-id="mainImage-${producto.id}">
-                        `).join('') : ''}
-                    </div>
+            <div class="product-card-novedad-mujer" data-id="${producto.id}">
+                <div class="product-image">
+                    <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                 </div>
-                <div class="product-info-carrusel">
+                <div class="product-info">
                     <h3>${producto.nombre}</h3>
                     <p>$${producto.precio.toLocaleString()}</p>
                 </div>
