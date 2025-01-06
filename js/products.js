@@ -373,7 +373,6 @@ function actualizarTalles(product, color) {
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
     const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
-    let talleSeleccionado = null; // Variable para guardar el talle seleccionado
 
     tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
@@ -383,14 +382,14 @@ function actualizarTalles(product, color) {
 
         // Evento para seleccionar el talle
         sizeButton.addEventListener('click', () => {
-            // Remover la clase "selected" de todos los botones
+            // Quitar la clase "selected" de todos los botones
             const botones = tallesContainer.querySelectorAll('.size-btn');
             botones.forEach(boton => boton.classList.remove('selected'));
 
             // Agregar la clase "selected" al botón actual
             sizeButton.classList.add('selected');
             talleSeleccionado = variant.talla; // Guardar el talle seleccionado
-            console.log(`Talle seleccionado: ${talleSeleccionado}`);
+            console.log(`Talle seleccionado: ${talleSeleccionado}`); // Depuración
         });
 
         tallesContainer.appendChild(sizeButton);
