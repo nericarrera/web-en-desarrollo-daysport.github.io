@@ -581,16 +581,11 @@
 }
 
 .product-card-novedad-mujer {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+   
     text-align: center;
 }
 
-.product-card-novedad-mujer:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Contenedor principal del carrusel */
 .carrusel-container-mujer {
