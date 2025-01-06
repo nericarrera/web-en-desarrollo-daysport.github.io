@@ -261,53 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const product = productosMujer.find(p => p.id === productId);
-    const botonComprar = document.querySelector('.btn-buy-now3');
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-    let talleSeleccionado = null; // Inicializamos el talle seleccionado
-
-    actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
-
-    // Botón "Comprar"
-    botonComprar.addEventListener('click', () => {
-        if (!talleSeleccionado) {
-            alert('Por favor selecciona un talle antes de continuar.');
-            return;
-        }
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-            talla: talleSeleccionado,
-            cantidad: 1,
-            imagen: product.imagen[0] // Imagen principal
-        };
-
-        // Redirigir a la página de compra con los datos del producto
-        window.location.href = `checkout.html?producto=${encodeURIComponent(JSON.stringify(productoSeleccionado))}`;
-    });
-
-    // Botón "Agregar al carrito"
-    botonAgregarCarrito.addEventListener('click', () => {
-        if (!talleSeleccionado) {
-            alert('Por favor selecciona un talle antes de continuar.');
-            return;
-        }
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-            talla: talleSeleccionado,
-            cantidad: 1,
-            imagen: product.imagen[0] // Imagen principal
-        };
-
-        agregarAlCarrito(productoSeleccionado);
-    });
-
+    
 
     if (product) {
         // Mostrar título, precio y descripción
@@ -397,94 +351,6 @@ function actualizarTalles(product, color) {
     });
 
     return talleSeleccionado;
-}
-
-/*---------------AGREGAR AL CARRITO ----------------------*/
-
-const botonComprar = document.querySelector('.btn-buy-now3');
-const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-let talleSeleccionado = null; // Inicializamos el talle seleccionado
-
-actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
-
-// Botón "Comprar"
-botonComprar.addEventListener('click', () => {
-    if (!talleSeleccionado) {
-        alert('Por favor selecciona un talle antes de continuar.');
-        return;
-    }
-
-    const productoSeleccionado = {
-        id: product.id,
-        nombre: product.nombre,
-        precio: product.precio,
-        color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-        talla: talleSeleccionado,
-        cantidad: 1,
-        imagen: product.imagen[0] // Imagen principal
-    };
-
-    // Redirigir a la página de compra con los datos del producto
-    window.location.href = `checkout.html?producto=${encodeURIComponent(JSON.stringify(productoSeleccionado))}`;
-});
-
-// Botón "Agregar al carrito"
-botonAgregarCarrito.addEventListener('click', () => {
-    if (!talleSeleccionado) {
-        alert('Por favor selecciona un talle antes de continuar.');
-        return;
-    }
-
-    const productoSeleccionado = {
-        id: product.id,
-        nombre: product.nombre,
-        precio: product.precio,
-        color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-        talla: talleSeleccionado,
-        cantidad: 1,
-        imagen: product.imagen[0] // Imagen principal
-    };
-
-    agregarAlCarrito(productoSeleccionado);
-});
-
-/*-----------GUARDAR DATOS EN LOCALSTOREGE / CARRITO ------------*/
-
-function agregarAlCarrito(producto) {
-    // Obtener el carrito actual de localStorage
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Verificar si el producto ya está en el carrito
-    const productoExistente = carrito.find(item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla);
-
-    if (productoExistente) {
-        // Si ya existe, aumentar la cantidad
-        productoExistente.cantidad += 1;
-    } else {
-        // Si no existe, agregarlo al carrito
-        carrito.push(producto);
-    }
-
-    // Guardar el carrito actualizado en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    // Actualizar el contador del carrito
-    actualizarContadorCarrito();
-
-    // Confirmar que el producto fue agregado
-    alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
-}
-
-/*-------------CONTADOR CARRITO------------*/
-function actualizarContadorCarrito() {
-    // Obtener el carrito actual
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Calcular el total de productos
-    const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
-
-    // Mostrar el total en el contador
-    document.getElementById('cart-count').textContent = totalProductos;
 }
 
 
