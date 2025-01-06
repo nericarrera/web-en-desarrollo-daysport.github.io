@@ -315,21 +315,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mostrar los colores como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-        product.variantes.forEach(variant => {
-            const colorThumbnail = document.createElement('img');
-            colorThumbnail.src = product.imagenColores[variant.color][0]; // Primera imagen del color
-            colorThumbnail.alt = `Color ${variant.color}`;
-            colorThumbnail.classList.add('color-thumbnail');
-            colorThumbnail.dataset.color = variant.color;
+coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
 
-            // Cambiar fotos al seleccionar un color
-            colorThumbnail.addEventListener('click', () => {
-                actualizarGaleria(product, variant.color);
-            });
+// Filtrar variantes únicas por color
+const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
 
-            coloresContainer.appendChild(colorThumbnail);
-        });
+coloresUnicos.forEach(color => {
+    const colorThumbnail = document.createElement('img');
+    colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
+    colorThumbnail.alt = `Color ${color}`;
+    colorThumbnail.classList.add('color-thumbnail');
+    colorThumbnail.dataset.color = color;
+
+    // Cambiar fotos y talles al seleccionar un color
+    colorThumbnail.addEventListener('click', () => {
+        actualizarGaleria(product, color); // Cambiar fotos en la galería
+        actualizarTalles(product, color); // Actualizar talles y stock
+    });
+
+    coloresContainer.appendChild(colorThumbnail);
+});
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
