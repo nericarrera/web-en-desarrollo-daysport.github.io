@@ -321,35 +321,35 @@ function actualizarGaleria(product, color) {
     }
 }
 
-// Función para actualizar los talles según el color seleccionado
 function actualizarTalles(product, color) {
     const tallesContainer = document.querySelector('#product-sizes');
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
     const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
+    let talleSeleccionado = null; // Variable para guardar el talle seleccionado
 
     tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
         sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-        sizeButton.disabled = variant.stock === 0;
+        sizeButton.disabled = variant.stock === 0; // Deshabilitar si no hay stock
         sizeButton.classList.add('size-btn');
 
-        // Asociar la función para agregar al carrito
+        // Evento para seleccionar el talle
         sizeButton.addEventListener('click', () => {
-            const productoSeleccionado = {
-                id: product.id,
-                nombre: product.nombre,
-                precio: product.precio,
-                color: color,
-                talla: variant.talla,
-                cantidad: 1,
-                imagen: product.imagenColores[color][0] // Imagen principal del color seleccionado
-            };
-            agregarAlCarrito(productoSeleccionado);
+            // Remover la clase "selected" de todos los botones
+            const botones = tallesContainer.querySelectorAll('.size-btn');
+            botones.forEach(boton => boton.classList.remove('selected'));
+
+            // Agregar la clase "selected" al botón actual
+            sizeButton.classList.add('selected');
+            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
+            console.log(`Talle seleccionado: ${talleSeleccionado}`);
         });
 
         tallesContainer.appendChild(sizeButton);
     });
+
+    return talleSeleccionado;
 }
 
 
