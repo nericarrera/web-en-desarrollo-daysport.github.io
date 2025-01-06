@@ -261,9 +261,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const product = productosMujer.find(p => p.id === productId);
-       
+    const botonComprar = document.querySelector('.btn-buy-now3');
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
+    let talleSeleccionado = null; // Inicializamos el talle seleccionado
 
     actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
+
+    // Botón "Comprar"
+    botonComprar.addEventListener('click', () => {
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
+
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0] // Imagen principal
+        };
+
+        // Redirigir a la página de compra con los datos del producto
+        window.location.href = `checkout.html?producto=${encodeURIComponent(JSON.stringify(productoSeleccionado))}`;
+    });
+
+    // Botón "Agregar al carrito"
+    botonAgregarCarrito.addEventListener('click', () => {
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
+
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0] // Imagen principal
+        };
+
+        agregarAlCarrito(productoSeleccionado);
+    });
 
 
     if (product) {
@@ -330,6 +373,7 @@ function actualizarTalles(product, color) {
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
     const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
+    let talleSeleccionado = null; // Variable para guardar el talle seleccionado
 
     tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
@@ -339,14 +383,14 @@ function actualizarTalles(product, color) {
 
         // Evento para seleccionar el talle
         sizeButton.addEventListener('click', () => {
-            // Quitar la clase "selected" de todos los botones
+            // Remover la clase "selected" de todos los botones
             const botones = tallesContainer.querySelectorAll('.size-btn');
             botones.forEach(boton => boton.classList.remove('selected'));
 
             // Agregar la clase "selected" al botón actual
             sizeButton.classList.add('selected');
             talleSeleccionado = variant.talla; // Guardar el talle seleccionado
-            console.log(`Talle seleccionado: ${talleSeleccionado}`); // Depuración
+            console.log(`Talle seleccionado: ${talleSeleccionado}`);
         });
 
         tallesContainer.appendChild(sizeButton);
@@ -354,7 +398,6 @@ function actualizarTalles(product, color) {
 
     return talleSeleccionado;
 }
-
 
 /*---------------AGREGAR AL CARRITO ----------------------*/
 
@@ -405,23 +448,6 @@ botonAgregarCarrito.addEventListener('click', () => {
     agregarAlCarrito(productoSeleccionado);
 });
 
-
-function agregarAlCarrito(producto) {
-    console.log("Producto que se va a agregar al carrito:", producto); // Depuración
-
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    const productoExistente = carrito.find(item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla);
-
-    if (productoExistente) {
-        productoExistente.cantidad += 1;
-    } else {
-        carrito.push(producto);
-    }
-
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
-}
 
 
 
