@@ -267,47 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
 
-    // Botón "Comprar"
-    botonComprar.addEventListener('click', () => {
-        if (!talleSeleccionado) {
-            alert('Por favor selecciona un talle antes de continuar.');
-            return;
-        }
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-            talla: talleSeleccionado,
-            cantidad: 1,
-            imagen: product.imagen[0] // Imagen principal
-        };
-
-        // Redirigir a la página de compra con los datos del producto
-        window.location.href = `checkout.html?producto=${encodeURIComponent(JSON.stringify(productoSeleccionado))}`;
-    });
-
-    // Botón "Agregar al carrito"
-    botonAgregarCarrito.addEventListener('click', () => {
-        if (!talleSeleccionado) {
-            alert('Por favor selecciona un talle antes de continuar.');
-            return;
-        }
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
-            talla: talleSeleccionado,
-            cantidad: 1,
-            imagen: product.imagen[0] // Imagen principal
-        };
-
-        agregarAlCarrito(productoSeleccionado);
-    });
-
 
     if (product) {
         // Mostrar título, precio y descripción
@@ -398,6 +357,7 @@ function actualizarTalles(product, color) {
     return talleSeleccionado;
 }
 
+
 /*---------------AGREGAR AL CARRITO ----------------------*/
 
 const botonComprar = document.querySelector('.btn-buy-now3');
@@ -447,6 +407,23 @@ botonAgregarCarrito.addEventListener('click', () => {
     agregarAlCarrito(productoSeleccionado);
 });
 
+
+function agregarAlCarrito(producto) {
+    console.log("Producto que se va a agregar al carrito:", producto); // Depuración
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    const productoExistente = carrito.find(item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla);
+
+    if (productoExistente) {
+        productoExistente.cantidad += 1;
+    } else {
+        carrito.push(producto);
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
+}
 
 
 
