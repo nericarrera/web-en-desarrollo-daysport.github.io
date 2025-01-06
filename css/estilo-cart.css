@@ -184,7 +184,7 @@
     margin-top: 2px;
 }
 
-/* MENÚ Y SUBMENÚ */
+/*----------------------- MENÚ Y SUBMENÚ-------------------------- */
   
   /* Contenedor del menú */
 /* Estilo para el menú principal */
@@ -198,7 +198,7 @@
     justify-content: space-evenly;
   }
   
-  /* Estilo para los elementos del menú */
+  /*------------------ Estilo para los elementos del menú-------------------- */
   .menu-ul {
     position: relative;
     color: #000000;
@@ -231,7 +231,7 @@
     transition: all 420ms ease;
   }
   
-  /* Estilo para el submenú */
+  /* ---------------Estilo para el submenú------------------- */
   
   .submenu1 {
     display: none;
@@ -298,7 +298,7 @@
   }
 
   
-  /* Estilo para los elementos del submenú */
+  /*------------------ Estilo para los elementos del submenú -----------------------*/
   .submenu-item {
     text-align: center;
     margin: 0 20px;
@@ -331,7 +331,7 @@
     transition: all 430ms ease;
   }
 
-  /* Mostrar el submenú al hacer hover */
+  /*--------------- Mostrar el submenú al hacer hover--------------------- */
   .menu .menu-ul:hover .submenu1 {
     display: flex;
     background: #ffffff;
@@ -360,7 +360,7 @@
     transition: all 890ms ease;
   }
   
-  /* Estilo para las imágenes de los iconos */
+  /*--------------------Estilo para las imágenes de los iconos------------------ */
   .submenu-item img {
     display: block;
     margin: 0 auto 10px;
@@ -446,6 +446,43 @@
 
 #checkout-btn:hover {
     background-color: #333;
+}
+
+
+/*-----------------CARRITO NUEVO --------------*/
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.carrito-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 

@@ -28,3 +28,40 @@ function removeFromCart(index) {
 
 // Cargar el carrito al cargar la página
 loadCart();
+
+
+/*--------------MOSTRAR CARRITO--------------*/
+function mostrarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const carritoContainer = document.querySelector('#carrito-items');
+    carritoContainer.innerHTML = '';
+
+    if (carrito.length === 0) {
+        carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+    }
+
+    carrito.forEach(item => {
+        carritoContainer.innerHTML += `
+            <div class="carrito-item">
+                <img src="${item.imagen}" alt="${item.nombre}">
+                <p><strong>${item.nombre}</strong></p>
+                <p>Color: ${item.color}</p>
+                <p>Talle: ${item.talla}</p>
+                <p>Precio: $${item.precio.toLocaleString()}</p>
+                <p>Cantidad: ${item.cantidad}</p>
+            </div>
+        `;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', mostrarCarrito);
+
+
+/*------------------VACIAR EL CARRITO---------------*/
+
+function vaciarCarrito() {
+    localStorage.removeItem('carrito');
+    alert('El carrito ha sido vaciado.');
+    mostrarCarrito();
+}

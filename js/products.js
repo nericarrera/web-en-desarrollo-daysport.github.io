@@ -1,4 +1,29 @@
+/*-------------AGREGAR PRODUCTOS AL CARRITO----------*/
+function agregarAlCarrito(producto) {
+    // Obtener el carrito actual de localStorage
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+    // Verificar si el producto ya está en el carrito
+    const productoExistente = carrito.find(item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla);
+
+    if (productoExistente) {
+        // Si ya existe, aumentar la cantidad
+        productoExistente.cantidad += 1;
+    } else {
+        // Si no existe, agregarlo al carrito
+        carrito.push(producto);
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Confirmar que el producto fue agregado
+    alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
+}
+
+
+
+/*------------------------------------------------------------------------*/
 function toggleSizeChart(event) {
     event.preventDefault();  // Evita que el enlace recargue la página
     const modal = document.getElementById('sizeChartModal');
@@ -301,20 +326,27 @@ function actualizarTalles(product, color) {
     const tallesContainer = document.querySelector('#product-sizes');
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
-    // Obtener todos los talles posibles
-    const tallesUnicos = [...new Set(product.variantes.map(variant => variant.talla))];
+    const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
 
-    // Mostrar todos los talles
-    tallesUnicos.forEach(talle => {
-        const variant = product.variantes.find(v => v.color === color && v.talla === talle);
-        const stockDisponible = variant ? variant.stock : 0;
-
+    tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
-        sizeButton.textContent = `${talle} (${stockDisponible} disponibles)`;
-        sizeButton.disabled = stockDisponible === 0; // Deshabilitar si no hay stock
+        sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
+        sizeButton.disabled = variant.stock === 0;
         sizeButton.classList.add('size-btn');
-        sizeButton.style.backgroundColor = stockDisponible === 0 ? '#f8d7da' : '#d4edda'; // Cambiar color según disponibilidad
-        sizeButton.style.cursor = stockDisponible === 0 ? 'not-allowed' : 'pointer';
+
+        // Asociar la función para agregar al carrito
+        sizeButton.addEventListener('click', () => {
+            const productoSeleccionado = {
+                id: product.id,
+                nombre: product.nombre,
+                precio: product.precio,
+                color: color,
+                talla: variant.talla,
+                cantidad: 1,
+                imagen: product.imagenColores[color][0] // Imagen principal del color seleccionado
+            };
+            agregarAlCarrito(productoSeleccionado);
+        });
 
         tallesContainer.appendChild(sizeButton);
     });
