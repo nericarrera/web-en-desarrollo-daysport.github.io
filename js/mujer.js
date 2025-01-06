@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 negro: [
                     "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
+                    "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
                     "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
                    
                 ],
