@@ -242,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+    
 
         // Mostrar colores únicos como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
