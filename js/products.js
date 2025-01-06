@@ -261,6 +261,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const product = productosMujer.find(p => p.id === productId);
+    const botonComprar = document.querySelector('.btn-buy-now3');
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
+    let talleSeleccionado = null; // Inicializamos el talle seleccionado
+
+    actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
+
+    // Botón "Comprar"
+    botonComprar.addEventListener('click', () => {
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
+
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0] // Imagen principal
+        };
+
+        // Redirigir a la página de compra con los datos del producto
+        window.location.href = `checkout.html?producto=${encodeURIComponent(JSON.stringify(productoSeleccionado))}`;
+    });
+
+    // Botón "Agregar al carrito"
+    botonAgregarCarrito.addEventListener('click', () => {
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
+
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color, // Suponiendo que se selecciona el primer color
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0] // Imagen principal
+        };
+
+        agregarAlCarrito(productoSeleccionado);
+    });
+
 
     if (product) {
         // Mostrar título, precio y descripción
