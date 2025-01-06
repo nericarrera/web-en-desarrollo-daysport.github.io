@@ -350,22 +350,19 @@ function actualizarGaleria(product, color) {
         gallery.appendChild(imgElement);
     });
 }
-        // Mostrar colores como miniaturas
-        const coloresContainer = document.querySelector('#product-colors');
+const coloresContainer = document.querySelector('#product-colors');
 coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
 
 product.variantes.forEach(variant => {
-    // Crear una miniatura para cada color
     const colorThumbnail = document.createElement('img');
-    colorThumbnail.src = variant.imagenColor; // Imagen específica para ese color
+    colorThumbnail.src = product.imagenColores[variant.color][0]; // Primera imagen del color
     colorThumbnail.alt = `Color ${variant.color}`;
-    colorThumbnail.classList.add('color-thumbnail');
-    colorThumbnail.dataset.color = variant.color; // Guardar el color como atributo
+    colorThumbnail.classList.add('color-thumbnail'); // Clase para estilos
+    colorThumbnail.dataset.color = variant.color;
 
-    // Evento para cambiar la imagen principal al hacer clic
+    // Cambiar fotos al seleccionar un color
     colorThumbnail.addEventListener('click', () => {
-        const mainImage = document.querySelector('#main-product-image');
-        mainImage.src = variant.imagenColor; // Actualizar la imagen principal
+        actualizarGaleria(product, variant.color); // Cambiar galería al seleccionar el color
     });
 
     coloresContainer.appendChild(colorThumbnail);
