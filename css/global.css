@@ -565,26 +565,11 @@
 
 }
 
-.product-carousel {
-    display: flex;
-    gap: 10px;
-    overflow-x: scroll;
-}
-
-.product-carousel img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .product-card-novedad-mujer {
    
     text-align: center;
 }
-
 
 
 /* Contenedor principal del carrusel */
