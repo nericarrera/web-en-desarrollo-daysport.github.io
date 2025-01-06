@@ -261,9 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const product = productosMujer.find(p => p.id === productId);
-    const botonComprar = document.querySelector('.btn-buy-now3');
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-    let talleSeleccionado = null; // Inicializamos el talle seleccionado
+       
 
     actualizarTalles(product, product.variantes[0].color); // Mostrar talles iniciales
 
