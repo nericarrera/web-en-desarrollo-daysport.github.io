@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             etiqueta: "novedad",
             variantes: [
                 { color: "celeste", talla: "M", stock: 1 },
+                { color: "negro", talla: "L", stock: 2 }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 celeste: [
