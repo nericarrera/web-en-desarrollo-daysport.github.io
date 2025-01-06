@@ -341,12 +341,26 @@ coloresUnicos.forEach(color => {
     }
 });
 
-// Función para actualizar la galería de imágenes según el color seleccionado
+function actualizarTalles(product, color) {
+    const tallesContainer = document.querySelector('#product-sizes');
+    tallesContainer.innerHTML = '<h3>Seleccionar Talle:</h3>';
+
+    const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
+
+    tallesFiltrados.forEach(variant => {
+        const sizeButton = document.createElement('button');
+        sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
+        sizeButton.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        sizeButton.classList.add('size-btn');
+        tallesContainer.appendChild(sizeButton);
+    });
+}
+
 function actualizarGaleria(product, color) {
     const gallery = document.querySelector('.product-gallery');
-    gallery.innerHTML = ''; // Limpiar la galería
+    gallery.innerHTML = ''; // Limpiar galería
 
-    const imagenesColor = product.imagenColores[color]; // Obtener las imágenes del color seleccionado
+    const imagenesColor = product.imagenColores[color]; // Obtener fotos del color seleccionado
     imagenesColor.forEach((imgSrc, index) => {
         const imgElement = document.createElement('img');
         imgElement.src = imgSrc;
