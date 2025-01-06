@@ -188,7 +188,7 @@
 
 
 
-/* MENÚ Y SUBMENÚ */
+/* -----------------MENÚ Y SUBMENÚ----------------- */
 
 /* Contenedor del menú */
 /* Estilo para el menú principal */
@@ -442,6 +442,22 @@
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
   gap: 1px; /* Espacio entre imágenes */
   width: 70%;
+}
+
+#product-colors img {
+  width: 40px; /* Tamaño fijo para las miniaturas */
+  height: 40px; /* Mantener proporción cuadrada */
+  object-fit: cover; /* Asegurar que la imagen se ajuste */
+  margin: 5px; /* Espaciado entre miniaturas */
+  border: 1px solid #ddd; /* Borde ligero */
+  border-radius: 50%; /* Forma circular */
+  cursor: pointer; /* Mostrar cursor de mano al pasar el mouse */
+  transition: transform 0.2s ease; /* Animación al pasar el mouse */
+}
+
+#product-colors img:hover {
+  transform: scale(1.1); /* Efecto de zoom */
+  border-color: #000; /* Cambiar borde al pasar el mouse */
 }
 
 .product-gallery img, 
