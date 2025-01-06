@@ -238,109 +238,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
+        // Mostrar título, precio y descripción
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Cargar colores
+        // Mostrar colores únicos como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
         coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-        product.variantes.forEach(variant => {
-            const colorElement = document.createElement('span');
-            colorElement.textContent = variant.color;
-            coloresContainer.appendChild(colorElement);
+
+        const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
+        coloresUnicos.forEach(color => {
+            const colorThumbnail = document.createElement('img');
+            colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
+            colorThumbnail.alt = `Color ${color}`;
+            colorThumbnail.classList.add('color-thumbnail');
+            colorThumbnail.dataset.color = color;
+
+            // Cambiar fotos y talles al seleccionar un color
+            colorThumbnail.addEventListener('click', () => {
+                actualizarGaleria(product, color);
+                actualizarTalles(product, color);
+            });
+
+            coloresContainer.appendChild(colorThumbnail);
         });
 
-        // Cargar talles
-        const tallesContainer = document.querySelector('#product-sizes');
-        tallesContainer.innerHTML = '';
-        product.variantes.forEach(variant => {
-            const sizeElement = document.createElement('button');
-            sizeElement.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-            sizeElement.disabled = variant.stock === 0;
-            tallesContainer.appendChild(sizeElement);
-        });
+        // Mostrar imágenes y talles del primer color por defecto
+        const colorInicial = coloresUnicos[0];
+        actualizarGaleria(product, colorInicial);
+        actualizarTalles(product, colorInicial);
 
-        // Cargar imágenes
-        const gallery = document.querySelector('.product-gallery');
-        gallery.innerHTML = '';
-        product.imagen.forEach(imgSrc => {
+        console.log("Producto encontrado:", product); // Depuración
+    } else {
+        alert("Producto no encontrado.");
+        window.location.href = 'index.html';
+    }
+});
+
+// Función para actualizar las imágenes según el color seleccionado
+function actualizarGaleria(product, color) {
+    const gallery = document.querySelector('.product-gallery');
+    gallery.innerHTML = ''; // Limpiar galería
+
+    const imagenesColor = product.imagenColores[color];
+    if (imagenesColor) {
+        imagenesColor.forEach((imgSrc, index) => {
             const imgElement = document.createElement('img');
             imgElement.src = imgSrc;
-            imgElement.alt = product.nombre;
-            imgElement.classList.add('zoom-img');
+            imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
+            imgElement.classList.add('product-image');
             gallery.appendChild(imgElement);
         });
     } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html';
+        console.error(`No se encontraron imágenes para el color: ${color}`);
     }
-});
-
-/*--------------------------------------------------------------------------- */
-
-/*---------------CODIGO DE SECCION MUJER------------*/
-function getProductDetailsFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const seccion = params.get('seccion');
-    const temporada = params.get('temporada'); // Opcional
-
-    return { id: parseInt(id), seccion, temporada };
-
-    console.log("ID del producto desde la URL:", productId); // Log para depurar
 }
 
-/*--------------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
-
-    if (!productId) {
-        alert("Producto no especificado.");
-        window.location.href = 'index.html';
-        return;
-    }
-
-    const product = productosMujer.find(p => p.id === productId);
-
-    if (product) {
-        // Mostrar el título, precio y otros detalles
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-
-        // Mostrar las imágenes del primer color por defecto
-        const colorInicial = product.variantes[0].color; // Seleccionar el primer color disponible
-        actualizarGaleria(product, colorInicial);
-
-        // Mostrar los colores como miniaturas
-        const coloresContainer = document.querySelector('#product-colors');
-coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-
-// Filtrar variantes únicas por color
-const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
-
-coloresUnicos.forEach(color => {
-    const colorThumbnail = document.createElement('img');
-    colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
-    colorThumbnail.alt = `Color ${color}`;
-    colorThumbnail.classList.add('color-thumbnail');
-    colorThumbnail.dataset.color = color;
-
-    // Cambiar fotos y talles al seleccionar un color
-    colorThumbnail.addEventListener('click', () => {
-        actualizarGaleria(product, color); // Cambiar fotos en la galería
-        actualizarTalles(product, color); // Actualizar talles y stock
-    });
-
-    coloresContainer.appendChild(colorThumbnail);
-});
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html';
-    }
-});
-
+// Función para actualizar los talles según el color seleccionado
 function actualizarTalles(product, color) {
     const tallesContainer = document.querySelector('#product-sizes');
     tallesContainer.innerHTML = '<h3>Seleccionar Talle:</h3>';
@@ -355,42 +310,6 @@ function actualizarTalles(product, color) {
         tallesContainer.appendChild(sizeButton);
     });
 }
-
-function actualizarGaleria(product, color) {
-    const gallery = document.querySelector('.product-gallery');
-    gallery.innerHTML = ''; // Limpiar galería
-
-    const imagenesColor = product.imagenColores[color]; // Obtener fotos del color seleccionado
-    imagenesColor.forEach((imgSrc, index) => {
-        const imgElement = document.createElement('img');
-        imgElement.src = imgSrc;
-        imgElement.alt = `${product.nombre} - Vista ${index + 1}`;
-        imgElement.classList.add('product-image');
-        gallery.appendChild(imgElement);
-    });
-}
-const coloresContainer = document.querySelector('#product-colors');
-coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-
-product.variantes.forEach(variant => {
-    const colorThumbnail = document.createElement('img');
-    colorThumbnail.src = product.imagenColores[variant.color][0]; // Primera imagen del color
-    colorThumbnail.alt = `Color ${variant.color}`;
-    colorThumbnail.classList.add('color-thumbnail'); // Clase para estilos
-    colorThumbnail.dataset.color = variant.color;
-
-    // Cambiar fotos al seleccionar un color
-    colorThumbnail.addEventListener('click', () => {
-        actualizarGaleria(product, variant.color); // Cambiar galería al seleccionar el color
-    });
-
-    coloresContainer.appendChild(colorThumbnail);
-});
-
- 
-
-const product = productosMujer.find(p => p.id === productId);
-console.log("Producto encontrado:", product); // Depuración
 
 
 
