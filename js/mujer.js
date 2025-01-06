@@ -40,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 negro: [
                     "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
                     "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                    "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
-                   
+                    "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" 
                 ],
             }
         },
@@ -63,23 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                    "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
                 ],
-                rojo: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                gris: [
+                    "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
                 ],
-                azul: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
-                ]
             }
         },
 
@@ -100,27 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
             variantes: [
                 { color: "negro", talla: "M", stock: 1 },
                 { color: "negro", talla: "L", stock: 1 },
-                { color: "rojo", talla: "M", stock: 2 },
-                { color: "azul", talla: "S", stock: 3 }
+                { color: "rosa", talla: "M", stock: 1 },
+                { color: "gris", talla: "XL", stock: 1 }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg",
                 ],
-                rojo: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+                rosa: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
                 ],
-                azul: [
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
-                    "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
+                gris: [
+                    "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
                 ]
             }
         },
