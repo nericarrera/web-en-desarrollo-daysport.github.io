@@ -356,53 +356,27 @@ function actualizarTalles(product, color) {
 /*-----------BOTON AGREGAR AL CARRITO------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
-
-    if (!productId) {
-        alert("Producto no especificado.");
-        window.location.href = 'index.html';
-        return;
-    }
-
-    const product = productosMujer.find(p => p.id === productId);
     const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-    let talleSeleccionado = null;
 
-    actualizarContadorCarrito();
+    botonAgregarCarrito.addEventListener('click', () => {
+        console.log('Botón "Agregar al carrito" clickeado'); // Depuración
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
 
-    if (product) {
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color,
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0]
+        };
 
-        const colorInicial = product.variantes[0].color;
-        actualizarGaleria(product, colorInicial);
-        actualizarTalles(product, colorInicial);
-
-        // Evento para agregar al carrito
-        botonAgregarCarrito.addEventListener('click', () => {
-            if (!talleSeleccionado) {
-                alert('Por favor selecciona un talle antes de continuar.');
-                return;
-            }
-
-            const productoSeleccionado = {
-                id: product.id,
-                nombre: product.nombre,
-                precio: product.precio,
-                color: colorInicial,
-                talla: talleSeleccionado,
-                cantidad: 1,
-                imagen: product.imagen[0]
-            };
-
-            agregarAlCarrito(productoSeleccionado);
-        });
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html';
-    }
+        agregarAlCarrito(productoSeleccionado);
+    });
 });
 
 
