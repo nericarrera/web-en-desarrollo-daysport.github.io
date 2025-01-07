@@ -3,26 +3,23 @@
 /*-------------AGREGAR AL CARRITO-------------*/
 
 function agregarAlCarrito(producto) {
-    // Obtener el carrito actual de localStorage
+    console.log("Producto que se va a agregar al carrito:", producto); // Depuración
+
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    // Verificar si el producto ya está en el carrito
     const productoExistente = carrito.find(
         item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla
     );
 
     if (productoExistente) {
-        // Si ya existe, aumentar la cantidad
         productoExistente.cantidad += producto.cantidad;
     } else {
-        // Si no existe, agregarlo al carrito
         carrito.push(producto);
     }
 
-    // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    console.log("Carrito actualizado:", carrito); // Depuración
 
-    // Actualizar el contador del carrito
     actualizarContadorCarrito();
 
     alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
@@ -33,6 +30,8 @@ function agregarAlCarrito(producto) {
 function actualizarContadorCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+    console.log("Total productos en el carrito:", totalProductos); // Depuración
+
     document.getElementById('cart-count').textContent = totalProductos;
 }
 
