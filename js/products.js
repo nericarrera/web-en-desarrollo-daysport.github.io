@@ -1,29 +1,6 @@
-/*-------------AGREGAR PRODUCTOS AL CARRITO----------*/
-function agregarAlCarrito(producto) {
-    // Obtener el carrito actual de localStorage
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    // Verificar si el producto ya está en el carrito
-    const productoExistente = carrito.find(item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla);
-
-    if (productoExistente) {
-        // Si ya existe, aumentar la cantidad
-        productoExistente.cantidad += 1;
-    } else {
-        // Si no existe, agregarlo al carrito
-        carrito.push(producto);
-    }
-
-    // Guardar el carrito actualizado en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    // Confirmar que el producto fue agregado
-    alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
-}
-
-
 
 /*------------------------------------------------------------------------*/
+
 function toggleSizeChart(event) {
     event.preventDefault();  // Evita que el enlace recargue la página
     const modal = document.getElementById('sizeChartModal');
