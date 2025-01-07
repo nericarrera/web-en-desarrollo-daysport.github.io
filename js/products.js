@@ -54,6 +54,12 @@ nextRelatedArrow.addEventListener('click', () => {
 
     // Buscar el producto en el array de productos
     const product = productosMujer.find(p => p.id === productId); // Comparar como cadena
+    const productTitle = document.querySelector('#product-title');
+if (productTitle) {
+    productTitle.textContent = product.nombre;
+} else {
+    console.error("Elemento '#product-title' no encontrado en el DOM.");
+}
 
     if (product) {
         // Actualizar el título del producto
@@ -250,6 +256,7 @@ const products = [
 /*--------------------------------------------------------- */
 
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
+
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
