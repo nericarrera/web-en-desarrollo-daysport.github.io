@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*-------------------------------------------------------------------- */
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
+
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
 

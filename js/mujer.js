@@ -461,25 +461,6 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 }
 
 /*---------------------------------------------------------------*/
-
-applyFiltersButton.addEventListener('click', () => {
-    const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
-    const selectedColors = Array.from(colorCheckboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value.toLowerCase());
-    const selectedSizes = Array.from(sizeCheckboxes)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value.toUpperCase());
-    const selectedSort = document.querySelector('input[name="sort"]:checked')?.value || "";
-
-    mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort);
-
-    // Cerrar el filtro después de aplicar
-    filterOverlay.classList.remove('show');
-    setTimeout(() => {
-        filterOverlay.style.display = 'none';
-    }, 300);
-});
        
     /*-------------BOTON DE FILTRO--------------------- */
 
