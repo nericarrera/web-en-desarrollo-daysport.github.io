@@ -301,26 +301,29 @@ function actualizarTalles(product, color) {
 }
 
 /*-----------BOTON AGREGAR AL CARRITO------------*/
-botonAgregarCarrito.addEventListener('click', () => {
-    console.log('Botón "Agregar al carrito" clickeado'); // Depuración
 
-    if (!talleSeleccionado) {
-        alert('Por favor selecciona un talle antes de continuar.');
-        return;
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
 
-    const productoSeleccionado = {
-        id: product.id,
-        nombre: product.nombre,
-        precio: product.precio,
-        color: product.variantes[0].color, // Suponiendo que el primer color está seleccionado
-        talla: talleSeleccionado,
-        cantidad: 1, // Cantidad inicial
-        imagen: product.imagen[0]
-    };
+    botonAgregarCarrito.addEventListener('click', () => {
+        console.log('Botón "Agregar al carrito" clickeado'); // Depuración
+        if (!talleSeleccionado) {
+            alert('Por favor selecciona un talle antes de continuar.');
+            return;
+        }
 
-    console.log("Producto preparado para el carrito:", productoSeleccionado); // Depuración
-    agregarAlCarrito(productoSeleccionado);
+        const productoSeleccionado = {
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            color: product.variantes[0].color,
+            talla: talleSeleccionado,
+            cantidad: 1,
+            imagen: product.imagen[0]
+        };
+
+        agregarAlCarrito(productoSeleccionado);
+    });
 });
 
 
