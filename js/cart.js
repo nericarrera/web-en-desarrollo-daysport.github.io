@@ -27,12 +27,13 @@ function agregarAlCarrito(producto) {
 }
 
 /*--------------ACTUALIZAR CARRITO---------------*/
+
 function actualizarContadorCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
-
     console.log("Total productos en el carrito:", totalProductos); // Depuración
-    document.getElementById('cart-count').textContent = totalProductos; // Actualizar el contador
+
+    document.getElementById('cart-count').textContent = totalProductos;
 }
 
 
