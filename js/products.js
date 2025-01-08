@@ -317,15 +317,13 @@ function actualizarTalles(product, color) {
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
     const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
-    let talleSeleccionado = null; // Variable para guardar el talle seleccionado
 
     tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
         sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-        sizeButton.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        sizeButton.disabled = variant.stock === 0;
         sizeButton.classList.add('size-btn');
 
-        // Evento para seleccionar el talle
         sizeButton.addEventListener('click', () => {
             // Remover la clase "selected" de todos los botones
             const botones = tallesContainer.querySelectorAll('.size-btn');
@@ -333,19 +331,12 @@ function actualizarTalles(product, color) {
 
             // Agregar la clase "selected" al botón actual
             sizeButton.classList.add('selected');
-            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
+            talleSeleccionado = variant.talla; // Actualizar la variable global
             console.log(`Talle seleccionado: ${talleSeleccionado}`);
-        });
-
-        sizeButton.addEventListener('click', () => {
-            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
-            console.log(`Talle seleccionado: ${talleSeleccionado}`); // Depuración
         });
 
         tallesContainer.appendChild(sizeButton);
     });
-
-    return talleSeleccionado;
 }
 
 /*-----------BOTON AGREGAR AL CARRITO------------*/
