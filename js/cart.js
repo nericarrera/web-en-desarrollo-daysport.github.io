@@ -7,6 +7,7 @@ function agregarAlCarrito(producto) {
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+    // Verificar si el producto ya existe en el carrito
     const productoExistente = carrito.find(
         item => item.id === producto.id && item.color === producto.color && item.talla === producto.talla
     );
@@ -17,11 +18,11 @@ function agregarAlCarrito(producto) {
         carrito.push(producto);
     }
 
+    // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
     console.log("Carrito actualizado:", carrito); // Depuración
 
     actualizarContadorCarrito();
-
     alert(`Producto agregado al carrito: ${producto.nombre} - Talle: ${producto.talla}`);
 }
 
