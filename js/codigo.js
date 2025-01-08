@@ -100,11 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*--------------------------------------*/
 
-/* -----------BOTON PARA AGREGAR AL CARRITO--------------*/
 
 
 
-/*-------------------------------------------------------------------- */
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 

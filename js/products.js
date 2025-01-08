@@ -1,51 +1,4 @@
-let talleSeleccionado = null; // Declaración global
 
-document.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
-
-    if (!productId) {
-        alert("Producto no especificado.");
-        window.location.href = 'index.html';
-        return;
-    }
-
-    const product = productosMujer.find(p => p.id === productId);
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-
-    if (product) {
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
-
-        const colorInicial = product.variantes[0].color;
-        actualizarTalles(product, colorInicial);
-
-        botonAgregarCarrito.addEventListener('click', () => {
-            console.log('Botón "Agregar al carrito" clickeado');
-
-            if (!talleSeleccionado) {
-                alert('Por favor selecciona un talle antes de continuar.');
-                return;
-            }
-
-            const productoSeleccionado = {
-                id: product.id,
-                nombre: product.nombre,
-                precio: product.precio,
-                color: colorInicial,
-                talla: talleSeleccionado,
-                cantidad: 1,
-                imagen: product.imagen[0]
-            };
-
-            agregarAlCarrito(productoSeleccionado);
-        });
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html';
-    }
-});
 
 
 /*------------------------------------------------------------------------*/
@@ -317,15 +270,13 @@ function actualizarTalles(product, color) {
     tallesContainer.innerHTML = '<h3>Selecciona tu talla:</h3>';
 
     const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
-    let talleSeleccionado = null; // Variable para guardar el talle seleccionado
 
     tallesFiltrados.forEach(variant => {
         const sizeButton = document.createElement('button');
         sizeButton.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-        sizeButton.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+        sizeButton.disabled = variant.stock === 0;
         sizeButton.classList.add('size-btn');
 
-        // Evento para seleccionar el talle
         sizeButton.addEventListener('click', () => {
             // Remover la clase "selected" de todos los botones
             const botones = tallesContainer.querySelectorAll('.size-btn');
@@ -333,19 +284,12 @@ function actualizarTalles(product, color) {
 
             // Agregar la clase "selected" al botón actual
             sizeButton.classList.add('selected');
-            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
+            talleSeleccionado = variant.talla; // Actualizar la variable global
             console.log(`Talle seleccionado: ${talleSeleccionado}`);
-        });
-
-        sizeButton.addEventListener('click', () => {
-            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
-            console.log(`Talle seleccionado: ${talleSeleccionado}`); // Depuración
         });
 
         tallesContainer.appendChild(sizeButton);
     });
-
-    return talleSeleccionado;
 }
 
 /*-----------BOTON AGREGAR AL CARRITO------------*/
@@ -373,6 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
         agregarAlCarrito(productoSeleccionado);
     });
 });
+
+
 
 
 
