@@ -194,7 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+const botonFiltro = document.querySelector('.mujer-filter-button');
+botonFiltro.addEventListener('click', () => {
+    console.log("Filtro aplicado");
+});
 
 
 
