@@ -1,3 +1,52 @@
+let talleSeleccionado = null; // Declaración global
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    if (!productId) {
+        alert("Producto no especificado.");
+        window.location.href = 'index.html';
+        return;
+    }
+
+    const product = productosMujer.find(p => p.id === productId);
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
+
+    if (product) {
+        document.querySelector('#product-title').textContent = product.nombre;
+        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
+        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+
+        const colorInicial = product.variantes[0].color;
+        actualizarTalles(product, colorInicial);
+
+        botonAgregarCarrito.addEventListener('click', () => {
+            console.log('Botón "Agregar al carrito" clickeado');
+
+            if (!talleSeleccionado) {
+                alert('Por favor selecciona un talle antes de continuar.');
+                return;
+            }
+
+            const productoSeleccionado = {
+                id: product.id,
+                nombre: product.nombre,
+                precio: product.precio,
+                color: colorInicial,
+                talla: talleSeleccionado,
+                cantidad: 1,
+                imagen: product.imagen[0]
+            };
+
+            agregarAlCarrito(productoSeleccionado);
+        });
+    } else {
+        alert("Producto no encontrado.");
+        window.location.href = 'index.html';
+    }
+});
+
 
 /*------------------------------------------------------------------------*/
 
@@ -188,7 +237,6 @@ const products = [
 
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 
-let talleSeleccionado = null; // Declaración global
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
