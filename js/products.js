@@ -281,6 +281,10 @@ function actualizarTalles(product, color) {
             const botones = tallesContainer.querySelectorAll('.size-btn');
             botones.forEach(boton => boton.classList.remove('selected'));
 
+            // Agregar la clase "selected" al botón actual
+            sizeButton.classList.add('selected');
+            talleSeleccionado = variant.talla; // Guardar el talle seleccionado
+            console.log(`Talle seleccionado: ${talleSeleccionado}`);
         });
 
         sizeButton.addEventListener('click', () => {
