@@ -390,6 +390,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
 
 // Simula una carga de comentarios desde un servidor o base de datos
