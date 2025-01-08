@@ -131,6 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    const botonFiltro = document.querySelector('.mujer-filter-button');
+botonFiltro.addEventListener('click', () => {
+    console.log("Filtro aplicado");
+});
+
     // Obtener productos con la etiqueta "novedad"
     const productosNovedad = window.obtenerProductosNovedad();
 
@@ -194,10 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const botonFiltro = document.querySelector('.mujer-filter-button');
-botonFiltro.addEventListener('click', () => {
-    console.log("Filtro aplicado");
-});
+
 
 
 
