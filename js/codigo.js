@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   firstVideo.play();
   firstVideo.addEventListener('ended', changeSlide, { once: true });
 });
-/*----------------------------*/
+
 
 /*------------CARRITO------------*/
 
