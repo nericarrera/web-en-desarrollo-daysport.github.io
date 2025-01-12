@@ -158,58 +158,79 @@
 
     <!--------------------------PRODUCTO------------------------->
     
-    <div class="product-gallery">
-      <!-- Las imágenes se generarán dinámicamente -->
-  </div>
-
-  <!-- Detalles del producto -->
-  <div class="product-details">
-      <h2 id="product-title">Cargando...</h2>
-      <p id="product-price">$0</p>
-      <p id="product-description">Descripción del producto...</p>
-
-      <!-- Colores disponibles -->
-      <div id="product-colors">
-          <h3>Colores disponibles:</h3>
-          <!-- Las miniaturas de colores se generarán dinámicamente -->
+    <div class="product-page">
+      <div class="product-gallery">
+          <div class="zoom-container">
+              
+          </div>
+          <div id="product-thumbnails" class="thumbnails-container"></div>
+          <video id="product-video" src="video.mp4" controls class="zoom-video"></video>
       </div>
-
-      <!-- Selección de talles -->
-      <div id="product-sizes">
-          <h3>Selecciona tu talla:</h3>
-          <!-- Los talles se generarán dinámicamente -->
+  
+      <div class="product-details-section">
+          <h1 class="product-title3" id="product-title">Cargando...</h1>
+          <p class="product-price3" id="product-price">$0</p>
+          <p class="product-details3" id="product-description">Descripción del producto...</p>
+  
+          <div class="product-colors3" id="product-colors">
+              <h3>Colores:</h3>
+          </div>
+  
+          <!-- Selección de talles -->
+          <div class="product-size3">
+              
+              <div class="size-options" id="product-sizes"></div>
+              <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
+          </div>
+  
+          <!-- Cantidad y botón de compra -->
+          <div class="product-quantity3">
+              <label class="label3" for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
+          </div>
+          <button class="btn-buy-now3">COMPRAR</button>
+          <button class="btn-add-to-cart3">Agregar al carrito</button>
       </div>
-
-      <!-- Enlace para ver la tabla de talles -->
-      <a href="#" id="sizeChartLink" onclick="toggleSizeChart(event)">Ver tabla de talles</a>
-
-      <!-- Botones de acciones -->
-      <button class="btn-add-to-cart3">Agregar al carrito</button>
-      <button class="btn-buy-now3">Comprar ahora</button>
   </div>
-</main>
-
-<!-- Modal para la tabla de talles -->
-<div id="sizeChartModal" class="modal hidden">
-  <div class="modal-content">
-      <span class="close" onclick="toggleSizeChart(event)">&times;</span>
-      <h2>Tabla de Talles</h2>
-      <table id="sizeChartTable">
-          <thead>
+  
+  <div id="sizeChartModal" class="modal hidden">
+      <div class="modal-content">
+          <span class="close" onclick="toggleSizeChart(event)">&times;</span>
+          <h2>Tabla de Talles</h2>
+          <table>
               <tr>
                   <th>Talle</th>
                   <th>Pecho (cm)</th>
                   <th>Cintura (cm)</th>
                   <th>Cadera (cm)</th>
               </tr>
-          </thead>
-          <tbody>
-              <!-- Filas generadas dinámicamente -->
-          </tbody>
-      </table>
+              <tr>
+                  <td>S</td>
+                  <td>88-92</td>
+                  <td>76-80</td>
+                  <td>92-96</td>
+              </tr>
+              <tr>
+                  <td>M</td>
+                  <td>93-97</td>
+                  <td>81-85</td>
+                  <td>97-101</td>
+              </tr>
+              <tr>
+                  <td>L</td>
+                  <td>98-102</td>
+                  <td>86-90</td>
+                  <td>102-106</td>
+              </tr>
+              <tr>
+                  <td>XL</td>
+                  <td>103-107</td>
+                  <td>91-95</td>
+                  <td>107-111</td>
+              </tr>
+          </table>
+      </div>
   </div>
-</div>
-
 
     <div class="product-details-rating">
       <!-- Sección de Valoraciones -->
