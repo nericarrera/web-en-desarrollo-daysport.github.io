@@ -163,7 +163,7 @@ const products = [
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
+    const productId = params.get('id'); // Obtener el ID del producto de la URL
 
     if (!productId) {
         alert("Producto no especificado.");
@@ -171,43 +171,47 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const product = productosMujer.find(p => p.id === productId);
+    const product = productosMujer.find(p => p.id === productId); // Buscar el producto por ID
     const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
 
     if (product) {
+        console.log("Producto encontrado:", product); // Depuración
+
         // Mostrar título, precio y descripción
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
-    
+        const productTitle = document.querySelector('#product-title');
+        const productPrice = document.querySelector('#product-price');
+        const productDescription = document.querySelector('#product-description');
+
+        if (productTitle) productTitle.textContent = product.nombre;
+        if (productPrice) productPrice.textContent = `$${product.precio.toLocaleString()}`;
+        if (productDescription) productDescription.textContent = product.descripcion || 'Descripción no disponible';
 
         // Mostrar colores únicos como miniaturas
         const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        if (coloresContainer) {
+            coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+            const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
+            coloresUnicos.forEach(color => {
+                const colorThumbnail = document.createElement('img');
+                colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
+                colorThumbnail.alt = `Color ${color}`;
+                colorThumbnail.classList.add('color-thumbnail');
+                colorThumbnail.dataset.color = color;
 
-        const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
-        coloresUnicos.forEach(color => {
-            const colorThumbnail = document.createElement('img');
-            colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
-            colorThumbnail.alt = `Color ${color}`;
-            colorThumbnail.classList.add('color-thumbnail');
-            colorThumbnail.dataset.color = color;
+                // Cambiar fotos y talles al seleccionar un color
+                colorThumbnail.addEventListener('click', () => {
+                    actualizarGaleria(product, color);
+                    actualizarTalles(product, color);
+                });
 
-            // Cambiar fotos y talles al seleccionar un color
-            colorThumbnail.addEventListener('click', () => {
-                actualizarGaleria(product, color);
-                actualizarTalles(product, color);
+                coloresContainer.appendChild(colorThumbnail);
             });
-
-            coloresContainer.appendChild(colorThumbnail);
-        });
+        }
 
         // Mostrar imágenes y talles del primer color por defecto
-        const colorInicial = coloresUnicos[0];
+        const colorInicial = product.variantes[0].color;
         actualizarGaleria(product, colorInicial);
         actualizarTalles(product, colorInicial);
-
-        console.log("Producto encontrado:", product); // Depuración
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
@@ -217,9 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Función para actualizar las imágenes según el color seleccionado
 function actualizarGaleria(product, color) {
     const gallery = document.querySelector('.product-gallery');
-    gallery.innerHTML = ''; // Limpiar galería
+    if (!gallery) {
+        console.error("La galería no está en el DOM.");
+        return;
+    }
 
+    gallery.innerHTML = ''; // Limpiar galería
     const imagenesColor = product.imagenColores[color];
+
     if (imagenesColor) {
         imagenesColor.forEach((imgSrc, index) => {
             const imgElement = document.createElement('img');
