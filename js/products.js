@@ -226,18 +226,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const product = productosMujer.find(p => p.id === productId);
+    const product = products.find(p => p.id === productId);
 
     if (product) {
         console.log("Producto encontrado:", product);
 
-        // Mostrar título, precio y descripción
+        // Mostrar detalles del producto
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Llenar la tabla de talles
-        actualizarTablaDeTalles(product);
+        const coloresContainer = document.querySelector('#product-colors');
+        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
+
+        coloresUnicos.forEach(color => {
+            const colorThumbnail = document.createElement('img');
+            colorThumbnail.src = product.imagen[0]; // Cambiá si tenés imágenes específicas por color
+            colorThumbnail.alt = `Color ${color}`;
+            colorThumbnail.classList.add('color-thumbnail');
+            colorThumbnail.dataset.color = color;
+
+            // Evento para cambiar medidas y talles
+            colorThumbnail.addEventListener('click', () => {
+                actualizarTablaDeTalles(product, color);
+                actualizarTalles(product, color); // Actualizar talles disponibles
+            });
+
+            coloresContainer.appendChild(colorThumbnail);
+        });
+
+        // Inicializar la tabla de talles con el primer color
+        actualizarTablaDeTalles(product, coloresUnicos[0]);
+        actualizarTalles(product, coloresUnicos[0]);
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
@@ -270,6 +291,34 @@ function actualizarTalles(product, color) {
         });
 
         tallesContainer.appendChild(sizeButton);
+    });
+}
+
+/*----------------ACTUALIZAR TABALA DE TALLES -------------- */
+
+function actualizarTablaDeTalles(product, color) {
+    const sizeChartTable = document.querySelector('#sizeChartTable tbody');
+    if (!sizeChartTable) {
+        console.error("No se encontró la tabla de talles.");
+        return;
+    }
+
+    // Limpiar filas existentes
+    sizeChartTable.innerHTML = '';
+
+    // Filtrar variantes por el color seleccionado
+    const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
+
+    // Llenar la tabla con las variantes filtradas
+    variantesFiltradas.forEach(variant => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${variant.talla}</td>
+            <td>${variant.pecho || 'N/A'}</td>
+            <td>${variant.cintura || 'N/A'}</td>
+            <td>${variant.cadera || 'N/A'}</td>
+        `;
+        sizeChartTable.appendChild(row);
     });
 }
 
