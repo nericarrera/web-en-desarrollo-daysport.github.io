@@ -1,4 +1,37 @@
+/*----------------CARRITO DINAMICO--------------*/
 
+document.addEventListener('DOMContentLoaded', () => {
+    const carritoHTML = `
+        <div class="conteiner-buscador-carrito">
+            <div class="cart-icon-container">
+                <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
+                <span id="cart-count">0</span>
+            </div>
+            <div class="user-icon-container">
+                <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
+            </div>
+            <div class="buscador">
+                <input type="text" id="search" placeholder="Buscar">
+                <a href="#"><img src="img/iconos/icon-shop-user-serch/busqueda (1).png" alt="Buscador-icon" id="serch-icon"></a>
+            </div>
+        </div>
+        <div id="cart-dropdown" class="cart-dropdown-hidden">
+            <p class="titulo-carrito">Carrito de compras</p>
+            <ul id="cart-items-list"></ul>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">$0</span></p>
+                <button id="checkout-btn">Finalizar compra</button>
+                <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
+            </div>
+        </div>
+    `;
+
+    // Insertar el carrito al inicio del body o en el contenedor deseado
+    document.body.insertAdjacentHTML('afterbegin', carritoHTML);
+
+    // Cargar el contenido del carrito y actualizar el contador
+    cargarCarrito();
+});
 
 /*-------------CARGAR CARRITO-------------*/
 
