@@ -1,6 +1,4 @@
 
-
-
   /*-------------------DETALLE DE PRODUCTO-------------- */
 
   // Obtiene el ID del producto desde la URL

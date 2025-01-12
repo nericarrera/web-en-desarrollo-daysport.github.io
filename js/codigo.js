@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Evento para redirigir al producto
         productoDiv.addEventListener('click', () => {
             const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
+            console.log("Redirigiendo a:", url); // Depuración
             window.location.href = url;
         });
 
