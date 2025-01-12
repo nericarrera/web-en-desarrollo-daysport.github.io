@@ -186,7 +186,10 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id');
+const productId = params.get('id'); // Obtener el ID del producto
+const seccion = params.get('seccion'); // Obtener la sección
+console.log("ID del producto:", productId);
+console.log("Sección del producto:", seccion);
 
     if (!productId) {
         alert("Producto no especificado.");
