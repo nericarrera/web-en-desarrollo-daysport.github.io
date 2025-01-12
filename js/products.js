@@ -184,38 +184,6 @@ const products = [
 /*--------------------------------------------------------- */
 
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
-// Función para alternar la visibilidad del modal
-function toggleSizeChart(event) {
-    event.preventDefault();
-    const modal = document.getElementById('sizeChartModal');
-    modal.classList.toggle('hidden');
-}
-
-// Función para llenar la tabla de talles
-function actualizarTablaDeTalles(product) {
-    const sizeChartTable = document.querySelector('#sizeChartTable tbody');
-    if (!sizeChartTable) {
-        console.error("No se encontró la tabla de talles.");
-        return;
-    }
-
-    // Limpiar filas existentes
-    sizeChartTable.innerHTML = '';
-
-    // Llenar la tabla con las variantes del producto
-    product.variantes.forEach(variant => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${variant.talla}</td>
-            <td>${variant.pecho || 'N/A'}</td>
-            <td>${variant.cintura || 'N/A'}</td>
-            <td>${variant.cadera || 'N/A'}</td>
-        `;
-        sizeChartTable.appendChild(row);
-    });
-}
-
-// Al cargar la página, llenamos la tabla de talles
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
@@ -226,44 +194,91 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const product = products.find(p => p.id === productId);
+    // Simulación del array de productos (modifica con tu fuente real de datos)
+    const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
-        console.log("Producto encontrado:", product);
+        console.log("Producto encontrado:", product); // Depuración
 
-        // Mostrar detalles del producto
+        // Título, precio y descripción
         document.querySelector('#product-title').textContent = product.nombre;
         document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
         document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
+        // Galería de imágenes
+        const gallery = document.querySelector('.product-gallery .zoom-container');
+        gallery.innerHTML = ''; // Limpiar cualquier contenido previo
+        product.imagen.forEach(imgSrc => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imgSrc;
+            imgElement.alt = product.nombre;
+            imgElement.classList.add('zoom-img');
+            gallery.appendChild(imgElement);
+        });
+
+        // Miniaturas
+        const thumbnailsContainer = document.querySelector('#product-thumbnails');
+        thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas previas
+        product.miniaturas.forEach(thumbnailSrc => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = thumbnailSrc;
+            thumbnail.alt = `${product.nombre} - Miniatura`;
+            thumbnail.classList.add('thumbnail-image');
+
+            thumbnail.addEventListener('click', () => {
+                document.querySelector('.zoom-img').src = thumbnailSrc; // Cambiar la imagen principal
+            });
+
+            thumbnailsContainer.appendChild(thumbnail);
+        });
+
+        // Colores disponibles
         const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        coloresContainer.innerHTML = '<h3>Colores:</h3>'; // Agregar título
         const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
-
         coloresUnicos.forEach(color => {
-            const colorThumbnail = document.createElement('img');
-            colorThumbnail.src = product.imagen[0]; // Cambiá si tenés imágenes específicas por color
-            colorThumbnail.alt = `Color ${color}`;
+            const colorThumbnail = document.createElement('span');
+            colorThumbnail.textContent = color;
             colorThumbnail.classList.add('color-thumbnail');
-            colorThumbnail.dataset.color = color;
+            colorThumbnail.style.backgroundColor = color; // Usar el color como fondo si es válido
 
-            // Evento para cambiar medidas y talles
             colorThumbnail.addEventListener('click', () => {
-                actualizarTablaDeTalles(product, color);
                 actualizarTalles(product, color); // Actualizar talles disponibles
             });
 
             coloresContainer.appendChild(colorThumbnail);
         });
 
-        // Inicializar la tabla de talles con el primer color
-        actualizarTablaDeTalles(product, coloresUnicos[0]);
-        actualizarTalles(product, coloresUnicos[0]);
+        // Talles disponibles
+        actualizarTalles(product, coloresUnicos[0]); // Mostrar talles del primer color
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
     }
 });
+
+// Función para actualizar talles según el color seleccionado
+function actualizarTalles(product, color) {
+    const tallesContainer = document.querySelector('#product-sizes');
+    tallesContainer.innerHTML = ''; // Limpiar contenido previo
+
+    const tallesFiltrados = product.variantes.filter(variant => variant.color === color);
+    tallesFiltrados.forEach(variant => {
+        const tallaBtn = document.createElement('button');
+        tallaBtn.textContent = `${variant.talla} (${variant.stock} disponibles)`;
+        tallaBtn.classList.add('size-btn');
+        tallaBtn.disabled = variant.stock === 0; // Deshabilitar si no hay stock
+
+        tallaBtn.addEventListener('click', () => {
+            // Destacar el talle seleccionado
+            const botones = tallesContainer.querySelectorAll('.size-btn');
+            botones.forEach(boton => boton.classList.remove('selected'));
+            tallaBtn.classList.add('selected');
+        });
+
+        tallesContainer.appendChild(tallaBtn);
+    });
+}
 
 /*---------------------ACTUALIZAR TALLES -----------------*/
 
