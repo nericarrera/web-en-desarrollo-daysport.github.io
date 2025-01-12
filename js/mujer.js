@@ -571,7 +571,7 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 
 
 /*----------------FILTRO DESPLEGABLE---------------------*/
-console.log(`Filtrando productos por categoría: ${categoria}`);
+
 console.log(productosFiltrados);
 
 

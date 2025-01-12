@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
