@@ -52,9 +52,7 @@ const products = [
         etiqueta: "novedad",
         variantes: [
             {
-                color: "negro",
-                talla: "L",
-                stock: 1,
+                color: "negro", talla: "L", stock: 1,
                 pecho: "100-104",
                 cintura: "86-90",
                 cadera: "102-106"
