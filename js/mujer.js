@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "celeste", talla: "M", stock: 1 },
-                { color: "negro", talla: "L", stock: 2 }
+                { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 celeste: [
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "L", stock: 1 },
-                { color: "gris", talla: "L", stock: 1 }
+                { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -87,10 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ], // Miniaturas para el carrusel
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "M", stock: 1 },
-                { color: "negro", talla: "L", stock: 1 },
-                { color: "rosa", talla: "M", stock: 1 },
-                { color: "gris", talla: "XL", stock: 1 }
+                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "XL", stock: 1 },
+                { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -187,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -222,8 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -257,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "rosa", talla: "L", stock: 1 },
-                { color: "rosa", talla: "XL", stock: 1 }
+                { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
@@ -292,8 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "M", stock: 1 },
-                { color: "multicolor", talla: "M", stock: 1 }
+                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ],
             imagenColores: { // Imágenes específicas por color para la página de producto
                 negro: [
