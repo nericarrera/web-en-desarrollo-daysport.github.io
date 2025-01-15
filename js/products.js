@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Producto encontrado:", product); // Depuración
 
         // Título, precio y descripción
-        const productTitle = document.querySelector('.product-title3');
-        const productPrice = document.querySelector('.product-price3');
+        const productTitle = document.querySelector('#product-title');
+        const productPrice = document.querySelector('#product-price');
         const productDescription = document.querySelector('#product-description');
         
         if (productTitle) productTitle.textContent = product.nombre;
