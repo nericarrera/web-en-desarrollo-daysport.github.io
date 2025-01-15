@@ -164,19 +164,15 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-const productId = params.get('id'); // Obtener el ID del producto
-const seccion = params.get('seccion'); // Obtener la sección
-console.log("ID del producto:", productId);
-console.log("Sección del producto:", seccion);
+    const productId = params.get('id'); // Captura el id de la URL
 
     if (!productId) {
         alert("Producto no especificado.");
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // Redirige si no hay id
         return;
     }
 
-    // Simulación del array de productos (modifica con tu fuente real de datos)
-    const product = productosMujer.find(p => p.id === productId);
+    const product = productosMujer.find(p => p.id === productId); // Busca el producto
 
     if (product) {
         console.log("Producto encontrado:", product); // Depuración
