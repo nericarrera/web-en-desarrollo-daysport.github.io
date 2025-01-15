@@ -22,21 +22,9 @@ const products = [
         etiqueta: "novedad",
         variantes: [
             {
-                color: "celeste",
-                talla: "S",
-                stock: 2,
-                pecho: "88-92",
-                cintura: "76-80",
-                cadera: "92-96"
-            },
+                color: "celeste", talla: "L", stock: 1, pecho: "88-92", cintura: "76-80", cadera: "92-96"},
             {
-                color: "celeste",
-                talla: "M",
-                stock: 1,
-                pecho: "93-97",
-                cintura: "81-85",
-                cadera: "97-101"
-            }
+                color: "negro", talla: "L", stock: 1, pecho: "93-97", cintura: "81-85", cadera: "97-101"}
         ]
     },
     {
@@ -52,19 +40,9 @@ const products = [
         etiqueta: "novedad",
         variantes: [
             {
-                color: "negro", talla: "L", stock: 1,
-                pecho: "100-104",
-                cintura: "86-90",
-                cadera: "102-106"
-            },
+                color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
             {
-                color: "gris",
-                talla: "L",
-                stock: 1,
-                pecho: "100-104",
-                cintura: "86-90",
-                cadera: "102-106"
-            }
+                color: "gris",  talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"}
         ]
     },
 
@@ -80,9 +58,9 @@ const products = [
             miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "M", stock: 1 },
-                { color: "negro", talla: "L", stock: 1 },
-                { color: "negro", talla: "XL", stock: 0}
+                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "negro", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106"}
             ] 
         },
             
@@ -97,7 +75,7 @@ const products = [
             miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "XL", stock: 1 },
+                { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             ] 
         },
 
@@ -112,8 +90,8 @@ const products = [
             miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ] 
         },
 
@@ -128,8 +106,8 @@ const products = [
             miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ] 
         },
         { id: "mujer-8", 
@@ -143,8 +121,8 @@ const products = [
             miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "S", stock: 0 },
-                { color: "gris", talla: "M", stock: 0 }
+                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ] 
         },
         { id: "mujer-9", 
@@ -158,8 +136,8 @@ const products = [
             miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "rosa", talla: "L", stock: 1 },
-                { color: "rosa", talla: "XL", stock: 1 }
+                { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ] 
         },
         { id: "mujer-10", 
@@ -173,8 +151,8 @@ const products = [
             miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
             etiqueta: "novedad",
             variantes: [
-                { color: "negro", talla: "M", stock: 1 },
-                { color: "multicolor", talla: "M", stock: 1 }
+                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+                { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
             ]
             
         },
