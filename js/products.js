@@ -178,9 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Producto encontrado:", product); // Depuración
 
         // Título, precio y descripción
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+        const productTitle = document.querySelector('#product-title');
+        const productPrice = document.querySelector('#product-price');
+        const productDescription = document.querySelector('#product-description');
+        
+        if (productTitle) productTitle.textContent = product.nombre;
+        if (productPrice) productPrice.textContent = `$${product.precio.toLocaleString()}`;
+        if (productDescription) productDescription.textContent = product.descripcion || 'Descripción no disponible';
 
         // Galería de imágenes
         const gallery = document.querySelector('.product-gallery .zoom-container');
