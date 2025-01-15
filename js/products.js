@@ -290,7 +290,7 @@ function actualizarTalles(product, color) {
     });
 }
 
-/*----------------ACTUALIZAR TABALA DE TALLES -------------- */
+/*----------------ACTUALIZAR TABLA DE TALLES -------------- */
 
 function actualizarTablaDeTalles(product, color) {
     const sizeChartTable = document.querySelector('#sizeChartTable tbody');
