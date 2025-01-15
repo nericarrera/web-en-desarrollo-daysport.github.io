@@ -506,22 +506,26 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
         });
     }
 
-    applyFiltersButton.addEventListener('click', () => {
-        const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
-        const selectedColors = Array.from(colorCheckboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value.toLowerCase());
-        const selectedSizes = Array.from(sizeCheckboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value.toUpperCase());
-
-        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
-
-        filterOverlay.classList.remove('show');
-        setTimeout(() => {
-            filterOverlay.style.display = 'none';
-        }, 300);
-    });
+    if (applyFiltersButton) {
+        applyFiltersButton.addEventListener('click', () => {
+            const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
+            const selectedColors = Array.from(colorCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value.toLowerCase());
+            const selectedSizes = Array.from(sizeCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value.toUpperCase());
+    
+            mostrarProductos(selectedCategory, selectedColors, selectedSizes);
+    
+            filterOverlay.classList.remove('show');
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
+        });
+    } else {
+        console.error("El botón 'applyFiltersButton' no se encuentra en el DOM.");
+    }
 
     clearFiltersButton.addEventListener('click', () => {
         sortRadios.forEach(radio => (radio.checked = false));
