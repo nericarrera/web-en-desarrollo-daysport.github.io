@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 /*-------------FILTRO MUJER----------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function obtenerProductosNovedad() {
     return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
 }
+
+// Hacer los datos y funciones disponibles en el ámbito global
+window.productosMujer = productosMujer;
+window.obtenerProductosNovedad = obtenerProductosNovedad;
 
 
 
