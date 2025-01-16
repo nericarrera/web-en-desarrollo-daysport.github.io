@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
-
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
 
@@ -113,8 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Obtener productos con la etiqueta "novedad"
-    const productosNovedad = window.obtenerProductosNovedad();
+    // Obtener productos de novedades
+    const productosNovedad = productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
+
+    if (productosNovedad.length === 0) {
+        console.warn("No se encontraron productos con la etiqueta 'novedad'.");
+        return;
+    }
 
     productosNovedad.forEach(producto => {
         const productoDiv = document.createElement('div');
@@ -124,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="product-container-carrusel">
                 <div class="product-image-carrusel">
                     <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                    <div class="product-thumbnails hidden-thumbnails">
+                    <div class="product-thumbnails">
                         ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
                             <img src="${img}" alt="Miniatura ${index + 1}" 
                                  class="thumbnail-image" 
@@ -139,42 +143,25 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-        let selectedImage = producto.imagen[0];
-        let isInsideProduct = false;
-
         // Manejo del hover en miniaturas
+        const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
         const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('mouseover', () => {
-                selectedImage = thumbnail.src;
-                mainImage.src = selectedImage;
+                mainImage.src = thumbnail.src;
             });
         });
 
-        // Detectar entrada y salida del producto
-        productoDiv.addEventListener('mouseover', () => {
-            isInsideProduct = true;
-        });
-
-        productoDiv.addEventListener('mouseout', () => {
-            isInsideProduct = false;
-            setTimeout(() => {
-                if (!isInsideProduct) {
-                    mainImage.src = producto.imagen[0];
-                }
-            }, 100);
-        });
-
-        // Evento para redirigir al producto
+        // Redirigir al producto al hacer clic
         productoDiv.addEventListener('click', () => {
             const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
-            console.log("URL generada:", url); // Depuración
             window.location.href = url;
         });
 
         contenedorCarrusel.appendChild(productoDiv);
     });
+
+    console.log("Carrusel cargado correctamente.");
 });
 
 

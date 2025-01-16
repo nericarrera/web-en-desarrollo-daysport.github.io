@@ -164,78 +164,67 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id'); // Captura el id de la URL
+    const productId = params.get('id');
 
     if (!productId) {
         alert("Producto no especificado.");
-        window.location.href = 'index.html'; // Redirige si no hay id
+        window.location.href = 'index.html';
         return;
     }
 
-    const product = productosMujer.find(p => p.id === productId); // Busca el producto
+    const product = productosMujer.find(p => p.id === productId);
 
     if (product) {
-        console.log("Producto encontrado:", product); // Depuración
+        console.log("Producto encontrado:", product);
 
-        // Título, precio y descripción
-        const productTitle = document.querySelector('#product-title');
-        const productPrice = document.querySelector('#product-price');
-        const productDescription = document.querySelector('#product-description');
-        
+        // Actualizar detalles del producto
+        document.querySelector('#product-title').textContent = product.nombre;
+        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
+        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-        // Galería de imágenes
-        const gallery = document.querySelector('.product-gallery .zoom-container');
-        gallery.innerHTML = ''; // Limpiar cualquier contenido previo
+        // Actualizar galería de imágenes
+        const gallery = document.querySelector('.zoom-container');
+        gallery.innerHTML = '';
         product.imagen.forEach(imgSrc => {
-            const imgElement = document.createElement('img');
-            imgElement.src = imgSrc;
-            imgElement.alt = product.nombre;
-            imgElement.classList.add('zoom-img');
-            gallery.appendChild(imgElement);
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = product.nombre;
+            img.classList.add('zoom-img');
+            gallery.appendChild(img);
         });
 
-        // Miniaturas
+        // Actualizar miniaturas
         const thumbnailsContainer = document.querySelector('#product-thumbnails');
-        thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas previas
+        thumbnailsContainer.innerHTML = '';
         product.miniaturas.forEach(thumbnailSrc => {
             const thumbnail = document.createElement('img');
             thumbnail.src = thumbnailSrc;
             thumbnail.alt = `${product.nombre} - Miniatura`;
             thumbnail.classList.add('thumbnail-image');
-
-            thumbnail.addEventListener('click', () => {
-                document.querySelector('.zoom-img').src = thumbnailSrc; // Cambiar la imagen principal
-            });
-
             thumbnailsContainer.appendChild(thumbnail);
         });
 
-        // Colores disponibles
+        // Actualizar colores disponibles
         const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores:</h3>'; // Agregar título
+        coloresContainer.innerHTML = '<h3>Colores:</h3>';
         const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
         coloresUnicos.forEach(color => {
             const colorThumbnail = document.createElement('span');
             colorThumbnail.textContent = color;
             colorThumbnail.classList.add('color-thumbnail');
-            colorThumbnail.style.backgroundColor = color; // Usar el color como fondo si es válido
-
-            colorThumbnail.addEventListener('click', () => {
-                actualizarTalles(product, color); // Actualizar talles disponibles
-            });
-
+            colorThumbnail.style.backgroundColor = color;
             coloresContainer.appendChild(colorThumbnail);
         });
 
-        // Talles disponibles
-        actualizarTalles(product, coloresUnicos[0]); // Mostrar talles del primer color
+        // Actualizar talles
+        actualizarTalles(product, coloresUnicos[0]);
     } else {
         alert("Producto no encontrado.");
         window.location.href = 'index.html';
     }
 });
 
-// Función para actualizar talles según el color seleccionado
+// Función para actualizar talles
 function actualizarTalles(product, color) {
     const tallesContainer = document.querySelector('#product-sizes');
     tallesContainer.innerHTML = ''; // Limpiar contenido previo
@@ -257,6 +246,9 @@ function actualizarTalles(product, color) {
         tallesContainer.appendChild(tallaBtn);
     });
 }
+
+
+// Función para actualizar talles según el color seleccionado
 
 /*---------------------ACTUALIZAR TALLES -----------------*/
 
