@@ -3,6 +3,24 @@
 
 import { productosMujer } from 'js/mujerProductos.js'; // Importar los productos desde el archivo modularizado
 
+console.log("Productos importados:", productosMujer); // Verificar si se importan correctamente
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Cargando página Mujer...");
+    console.log("Productos disponibles:", productosMujer);
+    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
+
+    if (!mujerProductsGrid) {
+        console.error("No se encontró el contenedor de productos.");
+        return;
+    }
+
+    // Mostrar productos
+    productosMujer.forEach(producto => {
+        console.log("Renderizando producto:", producto.nombre);
+    });
+});
+
 
 /*-------------FILTRO MUJER----------------*/
 
