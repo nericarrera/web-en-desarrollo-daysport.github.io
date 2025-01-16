@@ -182,9 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const productPrice = document.querySelector('#product-price');
         const productDescription = document.querySelector('#product-description');
         
-        if (productTitle) productTitle.textContent = product.nombre;
-        if (productPrice) productPrice.textContent = `$${product.precio.toLocaleString()}`;
-        if (productDescription) productDescription.textContent = product.descripcion || 'Descripción no disponible';
 
         // Galería de imágenes
         const gallery = document.querySelector('.product-gallery .zoom-container');
