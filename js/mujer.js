@@ -574,7 +574,7 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 
 /*----------------FILTRO DESPLEGABLE---------------------*/
 
-console.log(productosFiltrados);
+
 
 
 /*----------------------------------------------------------------*/
