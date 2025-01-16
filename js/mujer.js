@@ -460,87 +460,6 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
     });
 }
 
-/*---------------------------------------------------------------*/
-       
-    /*-------------BOTON DE FILTRO--------------------- */
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remover la clase activa de todos los botones
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-    
-            // Agregar la clase activa al botón clicado
-            button.classList.add('active');
-    
-            // Obtener la categoría desde el atributo data-filter
-            const categoria = button.getAttribute('data-filter');
-    
-            // Verificar si la categoría es válida
-            if (!categoria) {
-                console.error('Categoría no encontrada en el botón clicado.');
-                return;
-            }
-    
-            // Mostrar depuración
-            console.log('Categoría seleccionada:', categoria);
-    
-            // Llamar a la función mostrarProductos con la categoría
-            mostrarProductos(categoria);
-        });
-    });
-
-
-    if (filterDropdownToggle && filterOverlay) {
-        filterDropdownToggle.addEventListener('click', () => {
-            filterOverlay.classList.add('show');
-            filterOverlay.style.display = 'block';
-        });
-    }
-
-    if (closeFilterButton) {
-        closeFilterButton.addEventListener('click', () => {
-            filterOverlay.classList.remove('show');
-            setTimeout(() => {
-                filterOverlay.style.display = 'none';
-            }, 300);
-        });
-    }
-
-    if (applyFiltersButton) {
-        applyFiltersButton.addEventListener('click', () => {
-            const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
-            const selectedColors = Array.from(colorCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value.toLowerCase());
-            const selectedSizes = Array.from(sizeCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value.toUpperCase());
-    
-            mostrarProductos(selectedCategory, selectedColors, selectedSizes);
-    
-            filterOverlay.classList.remove('show');
-            setTimeout(() => {
-                filterOverlay.style.display = 'none';
-            }, 300);
-        });
-    } 
-
-    clearFiltersButton.addEventListener('click', () => {
-        sortRadios.forEach(radio => (radio.checked = false));
-        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
-        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
-
-        mostrarProductos();
-    });
-
-    actualizarContadores();
-
-    mostrarProductos("all");
-    });
-
-/*-----------------FILTRAR PRODUCTOS NOVEDAD----------------- */
-
-
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
 
@@ -572,16 +491,85 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 });
 
 
-/*----------------FILTRO DESPLEGABLE---------------------*/
+ /*-------------BOTON DE FILTRO--------------------- */
+
+ filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remover la clase activa de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Agregar la clase activa al botón clicado
+        button.classList.add('active');
+
+        // Obtener la categoría desde el atributo data-filter
+        const categoria = button.getAttribute('data-filter');
+
+        // Verificar si la categoría es válida
+        if (!categoria) {
+            console.error('Categoría no encontrada en el botón clicado.');
+            return;
+        }
+
+        // Mostrar depuración
+        console.log('Categoría seleccionada:', categoria);
+
+        // Llamar a la función mostrarProductos con la categoría
+        mostrarProductos(categoria);
+    });
+});
+
+
+if (filterDropdownToggle && filterOverlay) {
+    filterDropdownToggle.addEventListener('click', () => {
+        filterOverlay.classList.add('show');
+        filterOverlay.style.display = 'block';
+    });
+}
+
+if (closeFilterButton) {
+    closeFilterButton.addEventListener('click', () => {
+        filterOverlay.classList.remove('show');
+        setTimeout(() => {
+            filterOverlay.style.display = 'none';
+        }, 300);
+    });
+}
+
+if (applyFiltersButton) {
+    applyFiltersButton.addEventListener('click', () => {
+        const selectedCategory = document.querySelector('.mujer-filter-button.active').getAttribute('data-filter');
+        const selectedColors = Array.from(colorCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value.toLowerCase());
+        const selectedSizes = Array.from(sizeCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value.toUpperCase());
+
+        mostrarProductos(selectedCategory, selectedColors, selectedSizes);
+
+        filterOverlay.classList.remove('show');
+        setTimeout(() => {
+            filterOverlay.style.display = 'none';
+        }, 300);
+    });
+} 
+
+clearFiltersButton.addEventListener('click', () => {
+    sortRadios.forEach(radio => (radio.checked = false));
+    colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
+    sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
+
+    mostrarProductos();
+});
+
+actualizarContadores();
+
+mostrarProductos("all");
+});
 
 
 
 
-/*----------------------------------------------------------------*/
 
-/*-------------------A PAGINA DE PRODUCTO--------------*/
 
-/**---------------------------------------------------------**/
-
-/*----------------------LO QUE ENVIA A PAGINA PRODUCTO---------------- */
 
