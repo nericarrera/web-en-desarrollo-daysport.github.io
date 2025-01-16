@@ -169,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Evento para redirigir al producto
         productoDiv.addEventListener('click', () => {
             const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
+            console.log("URL generada:", url); // Depuración
             window.location.href = url;
-            
         });
 
         contenedorCarrusel.appendChild(productoDiv);
