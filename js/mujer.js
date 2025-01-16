@@ -523,9 +523,7 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
                 filterOverlay.style.display = 'none';
             }, 300);
         });
-    } else {
-        console.error("El botón 'applyFiltersButton' no se encuentra en el DOM.");
-    }
+    } 
 
     clearFiltersButton.addEventListener('click', () => {
         sortRadios.forEach(radio => (radio.checked = false));
