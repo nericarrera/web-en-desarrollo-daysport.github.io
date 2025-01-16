@@ -1,7 +1,7 @@
 
 /*-----------------------------------------*/
 
-import { productosMujer } from '.mujerProductos.js'; // Importar los productos desde el archivo modularizado
+import { productosMujer } from '/js/mujerProductos.js'; // Importar los productos desde el archivo modularizado
 
 console.log("Productos importados:", productosMujer); // Verificar si se importan correctamente
 
