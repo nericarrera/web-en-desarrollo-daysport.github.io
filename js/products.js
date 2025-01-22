@@ -258,21 +258,11 @@ actualizarTalles(product, coloresUnicos[0]);
 
 /*----------------ACTUALIZAR TABLA DE TALLES -------------- */
 
-function actualizarTablaDeTalles(product, color) {
-    const sizeChartTable = document.querySelector('#sizeChartTable tbody');
-    if (!sizeChartTable) {
-        console.error("No se encontró la tabla de talles.");
-        return;
-    }
+function mostrarTablaDeTalles(product) {
+    const modalTable = document.querySelector('#sizeChartModal table tbody');
+    modalTable.innerHTML = ''; // Limpiar la tabla
 
-    // Limpiar filas existentes
-    sizeChartTable.innerHTML = '';
-
-    // Filtrar variantes por el color seleccionado
-    const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
-
-    // Llenar la tabla con las variantes filtradas
-    variantesFiltradas.forEach(variant => {
+    product.variantes.forEach(variant => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${variant.talla}</td>
@@ -280,9 +270,21 @@ function actualizarTablaDeTalles(product, color) {
             <td>${variant.cintura || 'N/A'}</td>
             <td>${variant.cadera || 'N/A'}</td>
         `;
-        sizeChartTable.appendChild(row);
+        modalTable.appendChild(row);
     });
 }
+
+// Evento para mostrar el modal
+document.querySelector('#sizeChartLink').addEventListener('click', (event) => {
+    event.preventDefault();
+    mostrarTablaDeTalles(product); // Llama a la función con el producto actual
+    document.querySelector('#sizeChartModal').classList.remove('hidden');
+});
+
+// Cerrar el modal
+document.querySelector('.close').addEventListener('click', () => {
+    document.querySelector('#sizeChartModal').classList.add('hidden');
+});
 
 /*-----------BOTON AGREGAR AL CARRITO------------*/
 
