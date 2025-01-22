@@ -105,65 +105,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
+    import('./js/mujerProductos.js').then(module => {
+        const productosMujer = module.productosMujer;
 
-    if (!contenedorCarrusel) {
-        console.error("El contenedor del carrusel no está en el DOM.");
-        return;
-    }
+        if (!productosMujer) {
+            console.error("No se encontraron productos para el carrusel.");
+            return;
+        }
 
-    // Obtener productos de novedades
-    const productosNovedad = productosMujer.filter(producto => producto.etiqueta && producto.etiqueta.toLowerCase() === "novedad");
+        const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
+        if (!contenedorCarrusel) {
+            console.error("El contenedor del carrusel no está en el DOM.");
+            return;
+        }
 
-    if (productosNovedad.length === 0) {
-        console.warn("No se encontraron productos con la etiqueta 'novedad'.");
-        return;
-    }
+        const productosNovedad = productosMujer.filter(producto => producto.etiqueta?.toLowerCase() === "novedad");
 
-    productosNovedad.forEach(producto => {
-        const productoDiv = document.createElement('div');
-        productoDiv.classList.add('producto-novedad-mujer');
-
-        productoDiv.innerHTML = `
-            <div class="product-container-carrusel">
-                <div class="product-image-carrusel">
-                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                    <div class="product-thumbnails">
-                        ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                            <img src="${img}" alt="Miniatura ${index + 1}" 
-                                 class="thumbnail-image" 
-                                 data-main-image-id="mainImage-${producto.id}">
-                        `).join('') : ''}
+        productosNovedad.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto-novedad-mujer');
+            productoDiv.innerHTML = `
+                <div class="product-container-carrusel">
+                    <div class="product-image-carrusel">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails">
+                            ${producto.miniaturas.map((img, index) => `
+                                <img src="${img}" alt="Miniatura ${index + 1}" class="thumbnail-image">
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="product-info-carrusel">
+                        <h3>${producto.nombre}</h3>
+                        <p>$${producto.precio.toLocaleString()}</p>
                     </div>
                 </div>
-                <div class="product-info-carrusel">
-                    <h3>${producto.nombre}</h3>
-                    <p>$${producto.precio.toLocaleString()}</p>
-                </div>
-            </div>
-        `;
+            `;
 
-        // Manejo del hover en miniaturas
-        const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-        const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('mouseover', () => {
-                mainImage.src = thumbnail.src;
+            productoDiv.addEventListener('click', () => {
+                const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
+                window.location.href = url;
             });
+
+            contenedorCarrusel.appendChild(productoDiv);
         });
-
-        // Redirigir al producto al hacer clic
-        productoDiv.addEventListener('click', () => {
-            const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
-            window.location.href = url;
-        });
-
-        contenedorCarrusel.appendChild(productoDiv);
-    });
-
-    console.log("Carrusel cargado correctamente.");
+    }).catch(err => console.error("Error al importar productos:", err));
 });
-
 
 
 

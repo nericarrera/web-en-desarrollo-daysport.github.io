@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
-    
-   
    
     // Función para obtener productos con la etiqueta "novedad"
 function obtenerProductosNovedad() {
