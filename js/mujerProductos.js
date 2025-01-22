@@ -61,7 +61,7 @@ export  const productosMujer = [
         categoria: "camperas",
         seccion: "mujer",
         temporada: "media estacion",
-        imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
+        imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         miniaturas: [
             "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
