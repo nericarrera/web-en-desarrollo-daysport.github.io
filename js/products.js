@@ -174,9 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Buscar el producto en los datos exportados
     const product = productosMujer.find(p => p.id === productId);
+if (!product) {
+    console.error("Producto no encontrado.");
+    return;
 
-    if (product) {
-        console.log("Producto encontrado:", product); // Depuración
 
         // Rellenar la información en la página
         if (product) {
