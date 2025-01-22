@@ -263,6 +263,9 @@ function actualizarTalles(product, color) {
     });
 }
 
+const coloresUnicos = [...new Set(product.variantes.map(variant => variant.color))];
+actualizarTalles(product, coloresUnicos[0]);
+
 /*----------------ACTUALIZAR TABLA DE TALLES -------------- */
 
 function actualizarTablaDeTalles(product, color) {
