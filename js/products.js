@@ -179,31 +179,39 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Producto encontrado:", product); // Depuración
 
         // Rellenar la información en la página
-        document.querySelector('#product-title').textContent = product.nombre;
-        document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-        document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
-
-        // Galería de imágenes
-        const gallery = document.querySelector('.product-gallery .zoom-container');
-        gallery.innerHTML = '';
-        product.imagen.forEach(imgSrc => {
-            const imgElement = document.createElement('img');
-            imgElement.src = imgSrc;
-            imgElement.alt = product.nombre;
-            imgElement.classList.add('zoom-img');
-            gallery.appendChild(imgElement);
+        if (product) {
+            // Título, precio y descripción
+            document.querySelector('#product-title').textContent = product.nombre;
+            document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
+            document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+        
+            // Galería de imágenes
+            const gallery = document.querySelector('.product-gallery .zoom-container');
+            gallery.innerHTML = ''; // Limpiar cualquier contenido previo
+            product.imagen.forEach(imgSrc => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imgSrc;
+                imgElement.alt = product.nombre;
+                imgElement.classList.add('zoom-img');
+                gallery.appendChild(imgElement);
         });
 
         // Miniaturas
-        const thumbnailsContainer = document.querySelector('#product-thumbnails');
-        thumbnailsContainer.innerHTML = '';
-        product.miniaturas.forEach(thumbnailSrc => {
-            const thumbnail = document.createElement('img');
-            thumbnail.src = thumbnailSrc;
-            thumbnail.alt = `${product.nombre} - Miniatura`;
-            thumbnail.classList.add('thumbnail-image');
+          const thumbnailsContainer = document.querySelector('#product-thumbnails');
+          thumbnailsContainer.innerHTML = '';
+          product.miniaturas.forEach(thumbnailSrc => {
+          const thumbnail = document.createElement('img');
+          thumbnail.src = thumbnailSrc;
+          thumbnail.alt = `${product.nombre} - Miniatura`;
+          thumbnail.classList.add('thumbnail-image');
+
+         // Evento para cambiar la imagen principal
+         thumbnail.addEventListener('click', () => {
+         document.querySelector('.zoom-img').src = thumbnailSrc;
+         });
+
             thumbnailsContainer.appendChild(thumbnail);
-        });
+         });
 
         // Talles disponibles
         const tallesContainer = document.querySelector('#product-sizes');
@@ -219,7 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Producto no encontrado.");
         window.location.href = 'index.html'; // Redirige si no se encuentra
     }
+}
 });
+
 
 
 // Función para actualizar talles según el color seleccionado
