@@ -179,6 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const product = productosMujer.find(p => p.id === productId);
 
+        if (!product) {
+            alert("Producto no encontrado.");
+            window.location.href = 'index.html';
+            return;
+        }
+
         if (product) {
             console.log("Producto encontrado:", product);
             // Aquí carga los datos del producto en el DOM
@@ -202,20 +208,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*------------------COLORES PRODUCTOS --------------*/
 
-// Colores disponibles
+// Mostrando los colores disponibles
 const coloresContainer = document.querySelector('#product-colors');
-coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>'; // Título de colores
+coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
 
 Object.keys(product.imagenColores).forEach(color => {
     const colorThumbnail = document.createElement('img');
-    colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
+    colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color.
     colorThumbnail.alt = `Color ${color}`;
     colorThumbnail.classList.add('color-thumbnail');
+    colorThumbnail.dataset.color = color;
 
-    // Evento para cambiar imágenes y talles al seleccionar un color
+    // Evento para cambiar imágenes al seleccionar color.
     colorThumbnail.addEventListener('click', () => {
-        actualizarGaleria(product, color);
-        actualizarTalles(product, color);
+        actualizarGaleria(product, color); // Cambiar galería según color.
+        actualizarTalles(product, color); // Actualizar talles según color.
     });
 
     coloresContainer.appendChild(colorThumbnail);
@@ -258,11 +265,15 @@ actualizarTalles(product, coloresUnicos[0]);
 
 /*----------------ACTUALIZAR TABLA DE TALLES -------------- */
 
-function mostrarTablaDeTalles(product) {
-    const modalTable = document.querySelector('#sizeChartModal table tbody');
-    modalTable.innerHTML = ''; // Limpiar la tabla
+function actualizarTablaDeTalles(product, color) {
+    const sizeChartTable = document.querySelector('#sizeChartTable tbody');
+    if (!sizeChartTable) return;
 
-    product.variantes.forEach(variant => {
+    sizeChartTable.innerHTML = ''; // Limpiar la tabla.
+
+    const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
+
+    variantesFiltradas.forEach(variant => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${variant.talla}</td>
@@ -270,9 +281,15 @@ function mostrarTablaDeTalles(product) {
             <td>${variant.cintura || 'N/A'}</td>
             <td>${variant.cadera || 'N/A'}</td>
         `;
-        modalTable.appendChild(row);
+        sizeChartTable.appendChild(row);
     });
 }
+
+document.querySelector('#sizeChartLink').addEventListener('click', event => {
+    event.preventDefault();
+    const colorSeleccionado = document.querySelector('.color-thumbnail.selected')?.dataset.color || Object.keys(product.imagenColores)[0];
+    actualizarTablaDeTalles(product, colorSeleccionado);
+});
 
 // Evento para mostrar el modal
 document.querySelector('#sizeChartLink').addEventListener('click', (event) => {
