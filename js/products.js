@@ -39,14 +39,13 @@
   
       // Miniaturas de colores
       const coloresContainer = document.querySelector('#product-colors');
-      coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-      const coloresUnicos = Object.keys(product.imagenColores);
-  
-      coloresUnicos.forEach(color => {
-          const colorThumbnail = document.createElement('img');
-          colorThumbnail.src = product.imagenColores[color][0]; // Mostrar la primera imagen del color
-          colorThumbnail.alt = `Color ${color}`;
-          colorThumbnail.classList.add('color-thumbnail');
+        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+        Object.keys(product.imagenColores).forEach(color => {
+        const colorThumbnail = document.createElement('img');
+        colorThumbnail.src = product.imagenColores[color][0];
+        colorThumbnail.alt = `Color ${color}`;
+        colorThumbnail.classList.add('color-thumbnail');
+        coloresContainer.appendChild(colorThumbnail);
   
           colorThumbnail.addEventListener('click', () => {
               actualizarGaleria(product, color);
@@ -145,6 +144,26 @@ colorThumbnail.addEventListener('click', () => {
     actualizarTalles(product, color); // Actualizar talles
     actualizarTablaDeTalles(product, color); // Actualizar tabla de talles
 });
+
+
+/*---------------------------------------*/
+
+function toggleSizeChart(event) {
+    event.preventDefault();
+    const sizeChartModal = document.getElementById('sizeChartModal');
+    if (sizeChartModal) {
+        sizeChartModal.classList.toggle('hidden');
+    } else {
+        console.error("No se encontró el modal de tabla de talles.");
+    }
+}
+
+
+
+
+
+
+
 
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
