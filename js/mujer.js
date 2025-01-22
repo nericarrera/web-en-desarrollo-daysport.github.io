@@ -1,7 +1,7 @@
 
 /*-----------------------------------------*/
 
-import { productosMujer } from './js/mujerProductos.js';
+import { productosMujer } from '/js/mujerProductos.js';
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
