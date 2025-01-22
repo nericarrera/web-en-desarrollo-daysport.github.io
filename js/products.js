@@ -39,13 +39,14 @@
   
       // Miniaturas de colores
       const coloresContainer = document.querySelector('#product-colors');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-        Object.keys(product.imagenColores).forEach(color => {
-        const colorThumbnail = document.createElement('img');
-        colorThumbnail.src = product.imagenColores[color][0];
-        colorThumbnail.alt = `Color ${color}`;
-        colorThumbnail.classList.add('color-thumbnail');
-        coloresContainer.appendChild(colorThumbnail);
+      coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+      const coloresUnicos = Object.keys(product.imagenColores);
+  
+      coloresUnicos.forEach(color => {
+          const colorThumbnail = document.createElement('img');
+          colorThumbnail.src = product.imagenColores[color][0]; // Mostrar la primera imagen del color
+          colorThumbnail.alt = `Color ${color}`;
+          colorThumbnail.classList.add('color-thumbnail');
   
           colorThumbnail.addEventListener('click', () => {
               actualizarGaleria(product, color);
@@ -103,32 +104,22 @@
   
           tallesContainer.appendChild(sizeButton);
       });
-    }
-
-      function actualizarTablaDeTalles(product, color) {
-        const sizeChartTableBody = document.getElementById('sizeChartTableBody');
-        if (!sizeChartTableBody) {
-            console.error("No se encontró el cuerpo de la tabla de talles.");
-            return;
-        }
-    
-        sizeChartTableBody.innerHTML = ''; // Limpiar contenido previo
-    
-        // Filtrar variantes por el color seleccionado
-        const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
-    
-        // Llenar la tabla con las variantes filtradas
-        variantesFiltradas.forEach(variant => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${variant.talla}</td>
-                <td>${variant.pecho || 'N/A'}</td>
-                <td>${variant.cintura || 'N/A'}</td>
-                <td>${variant.cadera || 'N/A'}</td>
-            `;
-            sizeChartTableBody.appendChild(row);
-        });
-    }
+  
+      // Actualizar tabla de talles
+      const sizeChartTable = document.querySelector('#sizeChartModal table tbody');
+      sizeChartTable.innerHTML = '';
+  
+      variantesFiltradas.forEach(variant => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+              <td>${variant.talla}</td>
+              <td>${variant.pecho || 'N/A'}</td>
+              <td>${variant.cintura || 'N/A'}</td>
+              <td>${variant.cadera || 'N/A'}</td>
+          `;
+          sizeChartTable.appendChild(row);
+      });
+  }
 
   function toggleSizeChart(event) {
     event.preventDefault();
@@ -139,31 +130,6 @@
         console.error("No se encontró el modal de la tabla de talles.");
     }
 }
-
-colorThumbnail.addEventListener('click', () => {
-    actualizarTalles(product, color); // Actualizar talles
-    actualizarTablaDeTalles(product, color); // Actualizar tabla de talles
-});
-
-
-/*---------------------------------------*/
-
-function toggleSizeChart(event) {
-    event.preventDefault();
-    const sizeChartModal = document.getElementById('sizeChartModal');
-    if (sizeChartModal) {
-        sizeChartModal.classList.toggle('hidden');
-    } else {
-        console.error("No se encontró el modal de tabla de talles.");
-    }
-}
-
-
-
-
-
-
-
 
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
