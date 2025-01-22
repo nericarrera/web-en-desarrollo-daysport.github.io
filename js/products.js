@@ -200,6 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/*------------------COLORES PRODUCTOS --------------*/
+
+// Colores disponibles
+const coloresContainer = document.querySelector('#product-colors');
+coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>'; // Título de colores
+
+Object.keys(product.imagenColores).forEach(color => {
+    const colorThumbnail = document.createElement('img');
+    colorThumbnail.src = product.imagenColores[color][0]; // Primera imagen del color
+    colorThumbnail.alt = `Color ${color}`;
+    colorThumbnail.classList.add('color-thumbnail');
+
+    // Evento para cambiar imágenes y talles al seleccionar un color
+    colorThumbnail.addEventListener('click', () => {
+        actualizarGaleria(product, color);
+        actualizarTalles(product, color);
+    });
+
+    coloresContainer.appendChild(colorThumbnail);
+});
 
 
 // Función para actualizar talles según el color seleccionado
