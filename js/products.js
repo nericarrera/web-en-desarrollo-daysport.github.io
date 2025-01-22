@@ -81,6 +81,7 @@
           gallery.appendChild(imgElement);
       });
   }
+
   
   // Actualizar tabla y botones de talles
   function actualizarTalles(product, color) {
@@ -103,22 +104,32 @@
   
           tallesContainer.appendChild(sizeButton);
       });
-  
-      // Actualizar tabla de talles
-      const sizeChartTable = document.querySelector('#sizeChartModal table tbody');
-      sizeChartTable.innerHTML = '';
-  
-      variantesFiltradas.forEach(variant => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-              <td>${variant.talla}</td>
-              <td>${variant.pecho || 'N/A'}</td>
-              <td>${variant.cintura || 'N/A'}</td>
-              <td>${variant.cadera || 'N/A'}</td>
-          `;
-          sizeChartTable.appendChild(row);
-      });
-  }
+    }
+
+      function actualizarTablaDeTalles(product, color) {
+        const sizeChartTableBody = document.getElementById('sizeChartTableBody');
+        if (!sizeChartTableBody) {
+            console.error("No se encontró el cuerpo de la tabla de talles.");
+            return;
+        }
+    
+        sizeChartTableBody.innerHTML = ''; // Limpiar contenido previo
+    
+        // Filtrar variantes por el color seleccionado
+        const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
+    
+        // Llenar la tabla con las variantes filtradas
+        variantesFiltradas.forEach(variant => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${variant.talla}</td>
+                <td>${variant.pecho || 'N/A'}</td>
+                <td>${variant.cintura || 'N/A'}</td>
+                <td>${variant.cadera || 'N/A'}</td>
+            `;
+            sizeChartTableBody.appendChild(row);
+        });
+    }
 
   function toggleSizeChart(event) {
     event.preventDefault();
