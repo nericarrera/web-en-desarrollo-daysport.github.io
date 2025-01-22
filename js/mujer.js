@@ -1,9 +1,11 @@
 
 /*-----------------------------------------*/
 
-import { productosMujer } from '/js/mujerProductos.js'; // Importar los productos desde el archivo modularizado
+import { productosMujer } from './js/mujerProductos.js';
 
-console.log("Productos importados:", productosMujer); // Verificar si se importan correctamente
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
+const product = productosMujer.find(p => p.id === productId);
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Cargando página Mujer...");
