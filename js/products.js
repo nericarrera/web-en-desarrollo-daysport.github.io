@@ -1,6 +1,8 @@
 
   /*-------------------DETALLE DE PRODUCTO-------------- */
 
+  import { productosMujer } from '/js/mujerProductos.js';
+
   // Obtiene el ID del producto desde la URL
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
