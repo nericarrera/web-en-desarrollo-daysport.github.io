@@ -141,6 +141,11 @@
     }
 }
 
+colorThumbnail.addEventListener('click', () => {
+    actualizarTalles(product, color); // Actualizar talles
+    actualizarTablaDeTalles(product, color); // Actualizar tabla de talles
+});
+
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
     {
