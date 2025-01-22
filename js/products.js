@@ -92,7 +92,7 @@
   
       variantesFiltradas.forEach(variant => {
           const sizeButton = document.createElement('button');
-          sizeButton.textContent = `${variant.talla} ${variant.stock} Stock`;
+          sizeButton.textContent = `${variant.talla} (${variant.stock})`;
           sizeButton.disabled = variant.stock === 0;
           sizeButton.classList.add('size-btn');
   
