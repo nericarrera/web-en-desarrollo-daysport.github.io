@@ -55,12 +55,9 @@
   
           coloresContainer.appendChild(colorThumbnail);
       });
+    });
+      
   
-      // Mostrar talles del primer color por defecto
-      const colorInicial = coloresUnicos[0];
-      actualizarGaleria(product, colorInicial);
-      actualizarTalles(product, colorInicial);
-  });
   
   // Actualizar galería según el color seleccionado
   function actualizarGaleria(product, color) {
