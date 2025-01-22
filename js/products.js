@@ -120,6 +120,16 @@
       });
   }
 
+  function toggleSizeChart(event) {
+    event.preventDefault();
+    const modal = document.getElementById('sizeChartModal');
+    if (modal) {
+        modal.classList.toggle('hidden');
+    } else {
+        console.error("No se encontró el modal de la tabla de talles.");
+    }
+}
+
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
     {
