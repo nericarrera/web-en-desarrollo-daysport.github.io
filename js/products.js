@@ -27,7 +27,7 @@
       document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
   
       // Galería de imágenes inicial
-      const gallery = document.querySelector('.product-gallery');
+      const gallery = document.querySelector('.product-gallery .zoom-container');
       gallery.innerHTML = '';
       product.imagen.forEach(imgSrc => {
           const imgElement = document.createElement('img');
