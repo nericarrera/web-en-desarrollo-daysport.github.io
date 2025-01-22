@@ -166,71 +166,38 @@ const products = [
 /*----------------------CODIGO REDIRECCION MUJER----------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id'); // Captura el id de la URL
+    const productId = params.get('id');
 
     if (!productId) {
         alert("Producto no especificado.");
-        window.location.href = 'index.html'; // Redirige si no hay id
         return;
     }
 
-    // Buscar el producto en los datos exportados
-    const product = productosMujer.find(p => p.id === productId);
-if (!product) {
-    console.error("Producto no encontrado.");
-    return;
+    // Asegúrate de importar los productos correctamente
+    import('/js/mujerProductos.js').then(module => {
+        const productosMujer = module.productosMujer;
 
+        const product = productosMujer.find(p => p.id === productId);
 
-        // Rellenar la información en la página
         if (product) {
-            // Título, precio y descripción
+            console.log("Producto encontrado:", product);
+            // Aquí carga los datos del producto en el DOM
             document.querySelector('#product-title').textContent = product.nombre;
             document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-            document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
-        
-            // Galería de imágenes
+            document.querySelector('#product-description').textContent = product.descripcion || 'Sin descripción';
+
+            // Carga las imágenes del producto
             const gallery = document.querySelector('.product-gallery .zoom-container');
-            gallery.innerHTML = ''; // Limpiar cualquier contenido previo
-            product.imagen.forEach(imgSrc => {
-                const imgElement = document.createElement('img');
-                imgElement.src = imgSrc;
-                imgElement.alt = product.nombre;
-                imgElement.classList.add('zoom-img');
-                gallery.appendChild(imgElement);
-        });
+            gallery.innerHTML = product.imagen.map(imgSrc => `<img src="${imgSrc}" alt="${product.nombre}">`).join('');
 
-        // Miniaturas
-          const thumbnailsContainer = document.querySelector('#product-thumbnails');
-          thumbnailsContainer.innerHTML = '';
-          product.miniaturas.forEach(thumbnailSrc => {
-          const thumbnail = document.createElement('img');
-          thumbnail.src = thumbnailSrc;
-          thumbnail.alt = `${product.nombre} - Miniatura`;
-          thumbnail.classList.add('thumbnail-image');
-
-         // Evento para cambiar la imagen principal
-         thumbnail.addEventListener('click', () => {
-         document.querySelector('.zoom-img').src = thumbnailSrc;
-         });
-
-            thumbnailsContainer.appendChild(thumbnail);
-         });
-
-        // Talles disponibles
-        const tallesContainer = document.querySelector('#product-sizes');
-        tallesContainer.innerHTML = '';
-        product.variantes.forEach(variant => {
-            const tallaBtn = document.createElement('button');
-            tallaBtn.textContent = `${variant.talla} (${variant.stock} disponibles)`;
-            tallaBtn.classList.add('size-btn');
-            tallaBtn.disabled = variant.stock === 0;
-            tallesContainer.appendChild(tallaBtn);
-        });
-    } else {
-        alert("Producto no encontrado.");
-        window.location.href = 'index.html'; // Redirige si no se encuentra
-    }
-}
+            const thumbnails = document.querySelector('#product-thumbnails');
+            thumbnails.innerHTML = product.miniaturas.map(thumbSrc => `<img src="${thumbSrc}" alt="Miniatura">`).join('');
+        } else {
+            alert("Producto no encontrado.");
+        }
+    }).catch(error => {
+        console.error("Error al importar los productos:", error);
+    });
 });
 
 
