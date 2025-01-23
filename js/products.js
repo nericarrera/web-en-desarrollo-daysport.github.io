@@ -121,16 +121,7 @@
       });
   }
 
-  function toggleSizeChart(event) {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-    const modal = document.getElementById('sizeChartModal');
-    if (modal) {
-        modal.classList.toggle('hidden'); // Mostrar u ocultar el modal
-    } else {
-        console.error("No se encontró el modal de la tabla de talles.");
-    }
-}
-
+  
   function toggleSizeChart(event) {
     event.preventDefault(); // Evita la acción predeterminada del enlace
 
