@@ -122,14 +122,27 @@
   }
 
   function toggleSizeChart(event) {
-    event.preventDefault();
+    event.preventDefault(); // Evita la acción predeterminada del enlace
+
     const modal = document.getElementById('sizeChartModal');
-    if (modal) {
-        modal.classList.toggle('hidden');
-    } else {
-        console.error("No se encontró el modal de la tabla de talles.");
+    if (!modal) {
+        console.error("No se encontró el modal con ID 'sizeChartModal'");
+        return;
     }
+
+    // Alternar visibilidad
+    modal.classList.toggle('hidden');
 }
+
+// Cerrar el modal al hacer clic en el botón "close"
+document.addEventListener('DOMContentLoaded', () => {
+    const closeModalButton = document.querySelector('#sizeChartModal .close');
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', toggleSizeChart);
+    }
+});
+
+
 
 // Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
 const products = [
