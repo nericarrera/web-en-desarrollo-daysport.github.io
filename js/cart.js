@@ -55,3 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/*--------------CARRITO - BOTON DE CERRAR -----------------*/
+
+// Botón de cierre
+const cartCloseBtn = document.getElementById('cart-close-btn');
+
+// Evento para cerrar el carrito
+cartCloseBtn.addEventListener('click', () => {
+    cartDropdown.classList.add('cart-dropdown-hidden'); // Oculta el carrito
+});
