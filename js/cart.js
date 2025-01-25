@@ -1,5 +1,3 @@
-/*----------------CARRITO DINAMICO--------------*/
-
 
 /*-------------CARGAR CARRITO-------------*/
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -54,6 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
             addToCart(productName, productPrice);
         });
     });
+});
+
+/*-----------------CERRAR EL MODAL CUANDO SE HACE CLIC AFUERA DEL CARRITO--------*/
+
+// Escuchar clics en todo el documento
+document.addEventListener('click', (event) => {
+    const isClickInside = cartDropdown.contains(event.target); // Verifica si el clic fue dentro del carrito
+    const isCartIcon = cartIcon.contains(event.target); // Verifica si el clic fue en el icono del carrito
+
+    if (!isClickInside && !isCartIcon) {
+        cartDropdown.classList.add('cart-dropdown-hidden'); // Cierra el carrito si el clic fue fuera
+    }
+});
+
+// Prevenir el cierre si se hace clic en el icono del carrito
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation(); // Detiene la propagación para evitar cerrar el modal
+    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Abre/cierra el carrito
 });
 
 /*--------------CARRITO - BOTON DE CERRAR -----------------*/
