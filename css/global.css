@@ -698,7 +698,7 @@
 
 .thumbnail-image {
     width: 42px;
-    height: 55px;
+    height: 42px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.2s ease;
