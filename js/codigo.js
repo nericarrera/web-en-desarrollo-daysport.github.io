@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="product-info-carrusel">
-                        <h3>${producto.nombre}</h3>
-                        <p>$${producto.precio.toLocaleString()}</p>
+                    <p>$${producto.precio.toLocaleString()}</p>
+                    <h3>${producto.nombre}</h3> 
                     </div>
                 </div>
             `;
