@@ -637,6 +637,9 @@
     
     font-family: "Shadows Into Light";
     margin: auto;
+    display: block;
+    width: 200px;
+    justify-items: left;
     
 }
 
@@ -656,8 +659,8 @@
     "slnt" 0;
     font-size: 19px;
     color: #000000;
-    margin: 0;
     font-weight: bold;
+    margin-bottom: 1px;
 }
 
 .product-info .mujer-carrusel-categoria {
