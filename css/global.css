@@ -148,6 +148,50 @@
   color: #000000;
 }
 
+/* Fondo oscuro (overlay) */
+#cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Oculto por defecto */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-overlay-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo del carrito */
+#cart-dropdown {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+    max-height: 80%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    border-radius: 10px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Mostrar el carrito */
+.cart-dropdown-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 #cart-dropdown {
     position: absolute;
     top: 60px;
@@ -216,6 +260,24 @@
 .cart-close-btn:hover {
     color: #e74c3c;
 }
+
+/* Modo móvil */
+@media (max-width: 768px) {
+    #cart-dropdown {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .cart-close-btn {
+        font-size: 1.8rem;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
 
  /*------------------ICONO USUARIO---------------*/
 
