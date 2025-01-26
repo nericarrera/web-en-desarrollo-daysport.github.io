@@ -634,10 +634,10 @@
 
 /* Información del producto */
 .product-info-carrusel {
-    padding: 7px;
+    
     font-family: "Shadows Into Light";
     margin: auto;
-    margin-top: -10px;
+    
 }
 
 .product-info-carrusel h3 {
