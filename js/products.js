@@ -3,8 +3,6 @@
 
   import { productosMujer } from '/js/mujerProductos.js';
 
-  import { productosMujer } from '/js/mujerProductos.js';
-
   function getProductIdFromURL() {
       const params = new URLSearchParams(window.location.search);
       return params.get('id');
