@@ -20,6 +20,8 @@ export  const productosMujer = [
         imagenColores: { // Imágenes específicas por color para la página de producto
             celeste: [
                 "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
                 
             ],
             negro: [
