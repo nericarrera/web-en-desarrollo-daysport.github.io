@@ -3,6 +3,8 @@
 
   import { productosMujer } from '/js/mujerProductos.js';
 
+  import { productosMujer } from '/js/mujerProductos.js';
+
   function getProductIdFromURL() {
       const params = new URLSearchParams(window.location.search);
       return params.get('id');
@@ -26,51 +28,71 @@
       document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
   
       // Contenedor de galería e imágenes
-      const gallery = document.querySelector('.product-gallery .zoom-container');
+      const gallery = document.querySelector('.zoom-container');
       const thumbnailsContainer = document.querySelector('.product-thumbnails');
       const coloresContainer = document.querySelector('#product-colors');
       const tallesContainer = document.querySelector('#product-sizes');
   
-      coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-      thumbnailsContainer.innerHTML = '';
+      // Verificar que hay imágenes en `imagenColores`
+      if (!product.imagenColores || Object.keys(product.imagenColores).length === 0) {
+          console.error("No hay imágenes disponibles para este producto.");
+          gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
+          return;
+      }
   
       // Obtener primer color disponible
       let selectedColor = Object.keys(product.imagenColores)[0];
-      mostrarImagenesColor(selectedColor);
+      if (!selectedColor || !product.imagenColores[selectedColor]) {
+          console.error("No se encontró un color válido con imágenes.");
+          return;
+      }
   
-      // Crear botones para seleccionar colores
+      // Mostrar imágenes del color inicial
+      mostrarImagenesColor(product, selectedColor);
+      actualizarTalles(product, selectedColor);
+  
+      // Crear botones de selección de color
+      coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
       Object.keys(product.imagenColores).forEach(color => {
           const colorButton = document.createElement('button');
           colorButton.classList.add('color-btn');
           colorButton.setAttribute('data-color', color);
-          colorButton.style.backgroundColor = color;
-          colorButton.innerText = color;
+          colorButton.textContent = color;
           coloresContainer.appendChild(colorButton);
   
           colorButton.addEventListener('click', function () {
               selectedColor = this.getAttribute('data-color');
-              mostrarImagenesColor(selectedColor);
+              mostrarImagenesColor(product, selectedColor);
               actualizarTalles(product, selectedColor);
           });
       });
   
-      // Mostrar talles del primer color
-      actualizarTalles(product, selectedColor);
+      function mostrarImagenesColor(product, color) {
+          gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
+          thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
   
-      function mostrarImagenesColor(color) {
-          if (!product.imagenColores[color]) return;
+          const imagenesColor = product.imagenColores[color];
   
-          // Cambiar imagen principal
-          gallery.innerHTML = `<img class="zoom-img" src="${product.imagenColores[color][0]}" alt="${product.nombre}">`;
+          if (!imagenesColor || imagenesColor.length === 0) {
+              console.error(`No hay imágenes para el color ${color}`);
+              gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
+              return;
+          }
   
-          // Limpiar miniaturas y agregar nuevas
-          thumbnailsContainer.innerHTML = "";
-          product.imagenColores[color].forEach(imgSrc => {
+          // Imagen principal
+          const mainImage = document.createElement('img');
+          mainImage.src = imagenesColor[0];
+          mainImage.alt = `${product.nombre} - ${color}`;
+          mainImage.classList.add('zoom-img');
+          gallery.appendChild(mainImage);
+  
+          // Miniaturas
+          imagenesColor.forEach(imgSrc => {
               const thumbnail = document.createElement('img');
               thumbnail.src = imgSrc;
               thumbnail.classList.add('thumbnail-image');
               thumbnail.addEventListener('click', () => {
-                  document.querySelector('.zoom-img').src = imgSrc;
+                  mainImage.src = imgSrc;
               });
               thumbnailsContainer.appendChild(thumbnail);
           });
