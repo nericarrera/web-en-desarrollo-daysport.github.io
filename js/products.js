@@ -3,7 +3,6 @@
 
   import { productosMujer } from '/js/mujerProductos.js';
 
-  // Obtener el ID del producto desde la URL
   function getProductIdFromURL() {
       const params = new URLSearchParams(window.location.search);
       return params.get('id');
@@ -19,322 +18,115 @@
           return;
       }
   
-      console.log("Producto encontrado:", product); // Depuración
+      console.log("Producto encontrado:", product);
   
-      // Mostrar título, precio y descripción
+      // Mostrar datos principales
       document.querySelector('#product-title').textContent = product.nombre;
       document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
       document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
   
-      // Galería de imágenes inicial
+      // Contenedor de galería e imágenes
       const gallery = document.querySelector('.product-gallery .zoom-container');
-      gallery.innerHTML = '';
-      product.imagen.forEach(imgSrc => {
-          const imgElement = document.createElement('img');
-          imgElement.src = imgSrc;
-          imgElement.alt = product.nombre;
-          imgElement.classList.add('zoom-img');
-          gallery.appendChild(imgElement);
-      });
-  
-      // Miniaturas de colores
+      const thumbnailsContainer = document.querySelector('.product-thumbnails');
       const coloresContainer = document.querySelector('#product-colors');
+      const tallesContainer = document.querySelector('#product-sizes');
+  
       coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-      const coloresUnicos = Object.keys(product.imagenColores);
+      thumbnailsContainer.innerHTML = '';
   
-      coloresUnicos.forEach(color => {
-          const colorThumbnail = document.createElement('img');
-          colorThumbnail.src = product.imagenColores[color][0]; // Mostrar la primera imagen del color
-          colorThumbnail.alt = `Color ${color}`;
-          colorThumbnail.classList.add('color-thumbnail');
+      // Obtener primer color disponible
+      let selectedColor = Object.keys(product.imagenColores)[0];
+      mostrarImagenesColor(selectedColor);
   
-          colorThumbnail.addEventListener('click', () => {
-              actualizarGaleria(product, color);
-              actualizarTalles(product, color);
+      // Crear botones para seleccionar colores
+      Object.keys(product.imagenColores).forEach(color => {
+          const colorButton = document.createElement('button');
+          colorButton.classList.add('color-btn');
+          colorButton.setAttribute('data-color', color);
+          colorButton.style.backgroundColor = color;
+          colorButton.innerText = color;
+          coloresContainer.appendChild(colorButton);
+  
+          colorButton.addEventListener('click', function () {
+              selectedColor = this.getAttribute('data-color');
+              mostrarImagenesColor(selectedColor);
+              actualizarTalles(product, selectedColor);
           });
-  
-          coloresContainer.appendChild(colorThumbnail);
       });
   
-      // Mostrar talles del primer color por defecto
-      const colorInicial = coloresUnicos[0];
-      actualizarGaleria(product, colorInicial);
-      actualizarTalles(product, colorInicial);
-  });
+      // Mostrar talles del primer color
+      actualizarTalles(product, selectedColor);
   
-  // Actualizar galería según el color seleccionado
-  function actualizarGaleria(product, color) {
-      const gallery = document.querySelector('.product-gallery .zoom-container');
-      gallery.innerHTML = '';
-      const imagenesColor = product.imagenColores[color];
+      function mostrarImagenesColor(color) {
+          if (!product.imagenColores[color]) return;
   
-      if (!imagenesColor) {
-          console.error(`No hay imágenes para el color ${color}`);
-          return;
+          // Cambiar imagen principal
+          gallery.innerHTML = `<img class="zoom-img" src="${product.imagenColores[color][0]}" alt="${product.nombre}">`;
+  
+          // Limpiar miniaturas y agregar nuevas
+          thumbnailsContainer.innerHTML = "";
+          product.imagenColores[color].forEach(imgSrc => {
+              const thumbnail = document.createElement('img');
+              thumbnail.src = imgSrc;
+              thumbnail.classList.add('thumbnail-image');
+              thumbnail.addEventListener('click', () => {
+                  document.querySelector('.zoom-img').src = imgSrc;
+              });
+              thumbnailsContainer.appendChild(thumbnail);
+          });
       }
   
-      imagenesColor.forEach(imgSrc => {
-          const imgElement = document.createElement('img');
-          imgElement.src = imgSrc;
-          imgElement.alt = `${product.nombre} - ${color}`;
-          imgElement.classList.add('zoom-img');
-          gallery.appendChild(imgElement);
-      });
-  }
-
+      function actualizarTalles(product, color) {
+          tallesContainer.innerHTML = '';
+          const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
   
-  // Actualizar tabla y botones de talles
-  function actualizarTalles(product, color) {
-      const tallesContainer = document.querySelector('#product-sizes');
-      tallesContainer.innerHTML = '';
+          variantesFiltradas.forEach(variant => {
+              const sizeButton = document.createElement('button');
+              sizeButton.textContent = `${variant.talla} (${variant.stock})`;
+              sizeButton.disabled = variant.stock === 0;
+              sizeButton.classList.add('size-btn');
   
-      const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
+              sizeButton.addEventListener('click', () => {
+                  document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+                  sizeButton.classList.add('selected');
+                  console.log(`Talle seleccionado: ${variant.talla}`);
+              });
   
-      variantesFiltradas.forEach(variant => {
-          const sizeButton = document.createElement('button');
-          sizeButton.textContent = `${variant.talla} (${variant.stock})`;
-          sizeButton.disabled = variant.stock === 0;
-          sizeButton.classList.add('size-btn');
-  
-          sizeButton.addEventListener('click', () => {
-              document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-              sizeButton.classList.add('selected');
-              console.log(`Talle seleccionado: ${variant.talla}`);
+              tallesContainer.appendChild(sizeButton);
           });
+      }
+  });
   
-          tallesContainer.appendChild(sizeButton);
+  /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
+  
+  document.addEventListener('DOMContentLoaded', () => {
+      const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
+  
+      botonAgregarCarrito.addEventListener('click', () => {
+          console.log('Botón "Agregar al carrito" clickeado');
+  
+          const selectedSize = document.querySelector('.size-btn.selected');
+          if (!selectedSize) {
+              alert('Por favor selecciona un talle antes de continuar.');
+              return;
+          }
+  
+          const productId = getProductIdFromURL();
+          const product = productosMujer.find(p => p.id === productId);
+  
+          const productoSeleccionado = {
+              id: product.id,
+              nombre: product.nombre,
+              precio: product.precio,
+              color: document.querySelector('.color-btn.selected')?.getAttribute('data-color') || product.variantes[0].color,
+              talla: selectedSize.textContent.split(" ")[0], // Extraer solo la talla
+              cantidad: 1,
+              imagen: product.imagen[0]
+          };
+  
+          agregarAlCarrito(productoSeleccionado);
       });
-  
-      // Actualizar tabla de talles
-      const sizeChartTable = document.querySelector('#sizeChartModal table tbody');
-      sizeChartTable.innerHTML = '';
-  
-      variantesFiltradas.forEach(variant => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-              <td>${variant.talla}</td>
-              <td>${variant.pecho || 'N/A'}</td>
-              <td>${variant.cintura || 'N/A'}</td>
-              <td>${variant.cadera || 'N/A'}</td>
-          `;
-          sizeChartTable.appendChild(row);
-      });
-  }
-
-  
-  function toggleSizeChart(event) {
-    event.preventDefault(); // Evita la acción predeterminada del enlace
-
-    const modal = document.getElementById('sizeChartModal');
-    if (!modal) {
-        console.error("No se encontró el modal con ID 'sizeChartModal'");
-        return;
-    }
-
-    // Alternar visibilidad
-    modal.classList.toggle('hidden');
-}
-
-// Cerrar el modal al hacer clic en el botón "close"
-document.addEventListener('DOMContentLoaded', () => {
-    const closeModalButton = document.querySelector('#sizeChartModal .close');
-    if (closeModalButton) {
-        closeModalButton.addEventListener('click', toggleSizeChart);
-    }
-});
-
-
-
-// Simulación de productos (puedes reemplazar estos datos con tu base de datos real)
-const products = [
-    {
-        id: "mujer-1",
-        nombre: "Remera Modal Soft",
-        precio: 8000,
-        categoria: "remeras",
-        seccion: "mujer",
-        temporada: "verano",
-        descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
-        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
-        etiqueta: "novedad",
-        variantes: [
-            { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-        ],
-        imagenColores: { // Imágenes específicas por color para la página de producto
-            celeste: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                
-            ],
-            negro: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                
-            ],
-        }
-    },
-    {
-        id: "mujer-2",
-        nombre: "Calza Nike Pro",
-        precio: 13500,
-        categoria: "calzas",
-        seccion: "mujer",
-        temporada: "verano",
-        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-        miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
-        etiqueta: "novedad",
-        variantes: [
-            {
-                color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
-            {
-                color: "gris",  talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"}
-        ]
-    },
-
-
-        { id: "mujer-3",
-            nombre: "Campera Deportiva Nike",
-            precio: 13500,
-            categoria: "camperas",
-            seccion: "mujer",
-            temporada: "media estacion",
-            imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"],
-            hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"],
-            miniaturas: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "negro", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106"}
-            ] 
-        },
-            
-        { id: "mujer-4", 
-            nombre: "Blusa de Lino", 
-            precio: 9000, 
-            categoria: "remeras",
-            seccion: "mujer",
-            temporada: "verano", 
-            imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            ] 
-        },
-
-        { id: "mujer-5", 
-            nombre: "Calza Nike Radeon", 
-            precio: 13500, 
-            categoria: "calzas", 
-            seccion: "mujer",
-            temporada: "verano",
-            imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-            ] 
-        },
-
-        { id: "mujer-7", 
-            nombre: "Calza Nike Grofada", 
-            precio: 15000, 
-            categoria: "calzas", 
-            seccion: "mujer",
-            temporada: "verano",
-            imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-            ] 
-        },
-        { id: "mujer-8", 
-            nombre: "Calza Nike Speak", 
-            precio: 13500, 
-            categoria: "calzas", 
-            seccion: "mujer",
-            temporada: "verano",
-            imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-            ] 
-        },
-        { id: "mujer-9", 
-            nombre: "Calza Nike Fluorecent", 
-            precio: 13500, 
-            categoria: "calzas",
-            seccion: "mujer",
-            temporada: "invierno", 
-            imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-            ] 
-        },
-        { id: "mujer-10", 
-            nombre: "Calza Adidas Original", 
-            precio: 13500, 
-            categoria: "calzas", 
-            seccion: "mujer",
-            temporada: "verano",
-            imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
-            hoverImagenes: [],
-            miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
-            etiqueta: "novedad",
-            variantes: [
-                { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-                { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
-            ]
-            
-        },
-   
-];
-
-/*--------------------------------------------------------- */
-
-
-
-/*-----------BOTON AGREGAR AL CARRITO------------*/
-
-document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
-
-    botonAgregarCarrito.addEventListener('click', () => {
-        console.log('Botón "Agregar al carrito" clickeado'); // Depuración
-        if (!talleSeleccionado) {
-            alert('Por favor selecciona un talle antes de continuar.');
-            return;
-        }
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: product.variantes[0].color,
-            talla: talleSeleccionado,
-            cantidad: 1,
-            imagen: product.imagen[0]
-        };
-
-        agregarAlCarrito(productoSeleccionado);
-    });
-});
+  });
 
 
 
