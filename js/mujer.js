@@ -1,5 +1,5 @@
 
-/*-----------------------------------------*/
+/*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
 
 import { productosMujer } from '/js/mujerProductos.js';
 
@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Renderizando producto:", producto.nombre);
     });
 });
+
+/**---------- **/
 
 /*-------------FILTRO MUJER----------------*/
 
@@ -98,7 +100,7 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 
     if (!Array.isArray(productosMujer)) {
         console.error('Error: productosMujer no es un array. Verifica su inicialización.');
-        return; // Salir si no es un array válido
+        return;
     }
 
     // Filtrar productos
@@ -128,21 +130,24 @@ window.obtenerProductosNovedad = obtenerProductosNovedad;
 
         productoDiv.innerHTML = `
             <div class="product-container-mujer">
-                <div class="product-image-mujer">
-                    <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                    <div class="product-thumbnails hidden-thumbnails">
-                        ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                            <img src="${img}" alt="Miniatura ${index + 1}" 
-                                 class="thumbnail-image" 
-                                 data-main-image-id="mainImage-${producto.id}">
-                        `).join('') : ''}
+                <a href="index-producto.html?id=${producto.id}" class="product-link">
+                    <div class="product-image-mujer">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <div class="product-thumbnails hidden-thumbnails">
+                            ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
+                                <img src="${img}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image" 
+                                     data-main-image-id="mainImage-${producto.id}">
+                            `).join('') : ''}
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="product-details-mujer">
                     <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
                     <p class="mujer-product-name">${producto.nombre}</p>
                     <p class="mujer-product-categoria">${producto.categoria}</p>
                     <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                    <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles">Ver detalles</a>
                 </div>
             </div>
         `;
