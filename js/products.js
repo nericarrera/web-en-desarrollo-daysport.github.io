@@ -3,119 +3,119 @@
 
   import { productosMujer } from '/js/mujerProductos.js';
 
-  function getProductIdFromURL() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('id');
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-      const productId = getProductIdFromURL();
-      const product = productosMujer.find(p => p.id === productId);
-  
-      if (!product) {
-          alert('Producto no encontrado.');
-          window.location.href = 'index.html';
-          return;
-      }
-  
-      console.log("Producto encontrado:", product);
-  
-      // Mostrar datos principales
-      document.querySelector('#product-title').textContent = product.nombre;
-      document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
-      document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
-  
-      // Contenedor de galería e imágenes
-      const gallery = document.querySelector('.zoom-container');
-      const thumbnailsContainer = document.querySelector('.product-thumbnails');
-      const coloresContainer = document.querySelector('#product-colors');
-      const tallesContainer = document.querySelector('#product-sizes');
-  
-      // Verificar que hay imágenes en `imagenColores`
-      if (!product.imagenColores || Object.keys(product.imagenColores).length === 0) {
-          console.error("No hay imágenes disponibles para este producto.");
-          gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
-          return;
-      }
-  
-      // Obtener primer color disponible
-      let selectedColor = Object.keys(product.imagenColores)[0];
-      if (!selectedColor || !product.imagenColores[selectedColor]) {
-          console.error("No se encontró un color válido con imágenes.");
-          return;
-      }
-  
-      // Mostrar imágenes del color inicial
-      mostrarImagenesColor(product, selectedColor);
-      actualizarTalles(product, selectedColor);
-  
-      // Crear botones de selección de color
-      coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-      Object.keys(product.imagenColores).forEach(color => {
-          const colorButton = document.createElement('button');
-          colorButton.classList.add('color-btn');
-          colorButton.setAttribute('data-color', color);
-          colorButton.textContent = color;
-          coloresContainer.appendChild(colorButton);
-  
-          colorButton.addEventListener('click', function () {
-              selectedColor = this.getAttribute('data-color');
-              mostrarImagenesColor(product, selectedColor);
-              actualizarTalles(product, selectedColor);
-          });
-      });
-  
-      function mostrarImagenesColor(product, color) {
-          gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
-          thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
-  
-          const imagenesColor = product.imagenColores[color];
-  
-          if (!imagenesColor || imagenesColor.length === 0) {
-              console.error(`No hay imágenes para el color ${color}`);
-              gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
-              return;
-          }
-  
-          // Imagen principal
-          const mainImage = document.createElement('img');
-          mainImage.src = imagenesColor[0];
-          mainImage.alt = `${product.nombre} - ${color}`;
-          mainImage.classList.add('zoom-img');
-          gallery.appendChild(mainImage);
-  
-          // Miniaturas
-          imagenesColor.forEach(imgSrc => {
-              const thumbnail = document.createElement('img');
-              thumbnail.src = imgSrc;
-              thumbnail.classList.add('thumbnail-image');
-              thumbnail.addEventListener('click', () => {
-                  mainImage.src = imgSrc;
-              });
-              thumbnailsContainer.appendChild(thumbnail);
-          });
-      }
-  
-      function actualizarTalles(product, color) {
-          tallesContainer.innerHTML = '';
-          const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
-  
-          variantesFiltradas.forEach(variant => {
-              const sizeButton = document.createElement('button');
-              sizeButton.textContent = `${variant.talla} (${variant.stock})`;
-              sizeButton.disabled = variant.stock === 0;
-              sizeButton.classList.add('size-btn');
-  
-              sizeButton.addEventListener('click', () => {
-                  document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-                  sizeButton.classList.add('selected');
-                  console.log(`Talle seleccionado: ${variant.talla}`);
-              });
-  
-              tallesContainer.appendChild(sizeButton);
-          });
-      }
-  });
+function getProductIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productId = getProductIdFromURL();
+    const product = productosMujer.find(p => p.id === productId);
+
+    if (!product) {
+        alert('Producto no encontrado.');
+        window.location.href = 'index.html';
+        return;
+    }
+
+    console.log("Producto encontrado:", product);
+
+    // Mostrar datos principales
+    document.querySelector('#product-title').textContent = product.nombre;
+    document.querySelector('#product-price').textContent = `$${product.precio.toLocaleString()}`;
+    document.querySelector('#product-description').textContent = product.descripcion || 'Descripción no disponible';
+
+    // Contenedor de galería e imágenes
+    const gallery = document.querySelector('.zoom-container');
+    const thumbnailsContainer = document.querySelector('.product-thumbnails');
+    const coloresContainer = document.querySelector('#product-colors');
+    const tallesContainer = document.querySelector('#product-sizes');
+
+    // Verificar que hay imágenes en `imagenColores`
+    if (!product.imagenColores || Object.keys(product.imagenColores).length === 0) {
+        console.error("No hay imágenes disponibles para este producto.");
+        gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
+        return;
+    }
+
+    // Obtener primer color disponible
+    let selectedColor = Object.keys(product.imagenColores)[0];
+    if (!selectedColor || !product.imagenColores[selectedColor]) {
+        console.error("No se encontró un color válido con imágenes.");
+        return;
+    }
+
+    // Mostrar imágenes del color inicial
+    mostrarImagenesColor(product, selectedColor);
+    actualizarTalles(product, selectedColor);
+
+    // Crear botones de selección de color
+    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+    Object.keys(product.imagenColores).forEach(color => {
+        const colorButton = document.createElement('button');
+        colorButton.classList.add('color-btn');
+        colorButton.setAttribute('data-color', color);
+        colorButton.textContent = color;
+        coloresContainer.appendChild(colorButton);
+
+        colorButton.addEventListener('click', function () {
+            selectedColor = this.getAttribute('data-color');
+            mostrarImagenesColor(product, selectedColor);
+            actualizarTalles(product, selectedColor);
+        });
+    });
+
+    function mostrarImagenesColor(product, color) {
+        gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
+        thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
+
+        const imagenesColor = product.imagenColores[color];
+
+        if (!imagenesColor || imagenesColor.length === 0) {
+            console.error(`No hay imágenes para el color ${color}`);
+            gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
+            return;
+        }
+
+        // Imagen principal
+        const mainImage = document.createElement('img');
+        mainImage.src = imagenesColor[0];
+        mainImage.alt = `${product.nombre} - ${color}`;
+        mainImage.classList.add('zoom-img');
+        gallery.appendChild(mainImage);
+
+        // Miniaturas
+        imagenesColor.forEach(imgSrc => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imgSrc;
+            thumbnail.classList.add('thumbnail-image');
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = imgSrc;
+            });
+            thumbnailsContainer.appendChild(thumbnail);
+        });
+    }
+
+    function actualizarTalles(product, color) {
+        tallesContainer.innerHTML = '';
+        const variantesFiltradas = product.variantes.filter(variant => variant.color === color);
+
+        variantesFiltradas.forEach(variant => {
+            const sizeButton = document.createElement('button');
+            sizeButton.textContent = `${variant.talla} (${variant.stock})`;
+            sizeButton.disabled = variant.stock === 0;
+            sizeButton.classList.add('size-btn');
+
+            sizeButton.addEventListener('click', () => {
+                document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+                sizeButton.classList.add('selected');
+                console.log(`Talle seleccionado: ${variant.talla}`);
+            });
+
+            tallesContainer.appendChild(sizeButton);
+        });
+    }
+});
   
   /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
   
