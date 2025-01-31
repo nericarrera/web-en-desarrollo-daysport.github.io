@@ -117,10 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="product-image-mujer">
                             <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                             <div class="product-thumbnails hidden-thumbnails">
-                                ${producto.miniaturas ? producto.miniaturas.map((img, index) => `
-                                    <img src="${img}" alt="Miniatura ${index + 1}" 
+                                ${producto.miniaturas ? producto.miniaturas.map((miniatura, index) => `
+                                    <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
                                          class="thumbnail-image" 
-                                         data-main-image-id="mainImage-${producto.id}">
+                                         data-main-image-id="mainImage-${producto.id}"
+                                         data-hover="${miniatura.hover}">
                                 `).join('') : ''}
                             </div>
                         </div>
@@ -160,14 +161,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Hover en las miniaturas
             thumbnails.forEach(thumbnail => {
+                const hoverImage = thumbnail.getAttribute('data-hover'); // Obtener la imagen de hover de la miniatura
+    
                 thumbnail.addEventListener('mouseover', () => {
                     // Cambiar la imagen principal a la miniatura seleccionada
                     mainImage.src = thumbnail.src;
                     selectedThumbnail = thumbnail;
     
                     // Si hay una imagen de hover, mostrarla cuando el cursor esté sobre la imagen principal
-                    if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                        const hoverImage = producto.hoverImagenes[0];
+                    if (hoverImage) {
                         mainImage.addEventListener('mouseover', () => {
                             mainImage.src = hoverImage;
                         });
@@ -184,8 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = producto.imagen[0];
     
                     // Restablecer los eventos de hover de la imagen principal
-                    if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                        const hoverImage = producto.hoverImagenes[0];
+                    if (hoverImage) {
                         mainImage.removeEventListener('mouseover', () => {
                             mainImage.src = hoverImage;
                         });
