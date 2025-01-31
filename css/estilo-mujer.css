@@ -632,6 +632,7 @@
   cursor: pointer;
   color: #360353;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-ver-detalles a:hover {
