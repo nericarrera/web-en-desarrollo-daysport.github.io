@@ -526,13 +526,14 @@
   overflow: hidden; /* Evita que el contenido salga del contenedor */
   transition: all 0.3s ease-in-out;
   z-index: 10;
+  cursor: pointer;
 }
 
 .mujer-product-card:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid #000;
   z-index: 10;
-  cursor: pointer;
+  
 }
 
 /* Imagen principal */
@@ -565,6 +566,7 @@
   width: 20%;
   cursor: pointer;
   transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 
@@ -624,6 +626,20 @@
   text-align: left;
   margin-left: 5px;
 }
+
+.btn-ver-detalles {
+  border-radius: 5px;
+  cursor: pointer;
+  background: #360353;
+}
+
+.btn-ver-detalles a{
+  color: #f0f0f0;
+  font-family: "Dosis" sans-serif;
+  font-size: 10px;
+}
+
+
 /*-----------------BOTON FILTRO DESPLEGABLE--------------*/
 /* Estilos para el overlay del filtro */
 .filter-overlay {
