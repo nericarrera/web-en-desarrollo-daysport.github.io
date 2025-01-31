@@ -88,17 +88,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "") {
         mujerProductsGrid.innerHTML = "";
-
+    
         let productosFiltrados = productosMujer.filter(producto => {
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
             const matchesColor = coloresSeleccionados.length === 0 || 
                 producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
             const matchesTalla = tallesSeleccionados.length === 0 || 
                 producto.variantes.some(vari => tallesSeleccionados.includes(vari.talla.toUpperCase()));
-
+    
             return matchesCategoria && matchesColor && matchesTalla;
         });
-
+    
         if (orden === "price-asc") {
             productosFiltrados.sort((a, b) => a.precio - b.precio);
         } else if (orden === "price-desc") {
@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (orden === "novedades") {
             productosFiltrados.sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
         }
-
+    
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('mujer-product-card');
-
+    
             productoDiv.innerHTML = `
                 <div class="product-container-mujer">
                     <a href="index-producto.html?id=${producto.id}" class="product-link">
@@ -134,26 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-
+    
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            mainImage.style.transition = 'opacity 0.3s ease';
-            mainImage.style.opacity = 0;
-
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+    
+            // Variable para almacenar la miniatura seleccionada
+            let selectedThumbnail = null;
+    
+            // Función para cambiar la imagen principal
+            const changeMainImage = (thumbnail) => {
+                mainImage.src = thumbnail.src;
+                selectedThumbnail = thumbnail;
+            };
+    
+            // Evento hover sobre las miniaturas
             thumbnails.forEach(thumbnail => {
                 thumbnail.addEventListener('mouseover', () => {
-                    mainImage.src = thumbnail.src;
-                    mainImage.style.opacity = 1;
+                    changeMainImage(thumbnail);
                 });
             });
-
-            productoDiv.addEventListener('mouseout', () => {
-                setTimeout(() => {
-                    mainImage.src = producto.imagen[0];
-                    mainImage.style.opacity = 1;
-                }, 100);
+    
+            // Evento para restablecer la imagen principal al salir del área del producto
+            productoDiv.addEventListener('mouseleave', () => {
+                if (selectedThumbnail) {
+                    mainImage.src = producto.imagen[0]; // Restablecer a la imagen principal
+                    selectedThumbnail = null; // Limpiar la miniatura seleccionada
+                }
             });
-
+    
             mujerProductsGrid.appendChild(productoDiv);
         });
     }
