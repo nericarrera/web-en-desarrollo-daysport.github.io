@@ -633,7 +633,7 @@
   background: #360353;
 }
 
-.btn-ver-detalles a{
+.btn-ver-detalles a:hover {
   color: #f0f0f0;
   font-family: "Dosis" sans-serif;
   font-size: 10px;
