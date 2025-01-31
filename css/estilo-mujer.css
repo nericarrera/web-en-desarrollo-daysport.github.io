@@ -630,7 +630,8 @@
 .btn-ver-detalles {
   border-radius: 5px;
   cursor: pointer;
-  background: #360353;
+  color: #360353;
+  text-decoration: none;
 }
 
 .btn-ver-detalles a:hover {
