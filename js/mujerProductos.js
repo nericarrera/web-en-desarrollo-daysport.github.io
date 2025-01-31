@@ -9,25 +9,32 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "verano",
         descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
-        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
+        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
+        miniaturas: [
+            {
+                src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg" // Parte trasera de la miniatura 1
+            },
+            {
+                src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
+                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2-hover.jpeg" // Parte trasera de la miniatura 2
+            }
+        ],
+        hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"], // Hover de la imagen principal
         etiqueta: "novedad",
         variantes: [
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
-        imagenColores: { // Imágenes específicas por color para la página de producto
+        imagenColores: {
             celeste: [
                 "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
-                
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"
             ],
             negro: [
                 "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                
-            ],
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2-hover.jpeg"
+            ]
         }
     },
 
