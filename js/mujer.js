@@ -141,25 +141,60 @@ document.addEventListener('DOMContentLoaded', () => {
             // Variable para almacenar la miniatura seleccionada
             let selectedThumbnail = null;
     
-            // Función para cambiar la imagen principal
-            const changeMainImage = (thumbnail) => {
-                mainImage.src = thumbnail.src;
-                selectedThumbnail = thumbnail;
-            };
+            // Hover en la imagen principal
+            if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+                const hoverImage = producto.hoverImagenes[0]; // Usamos la primera imagen de hover
     
-            // Evento hover sobre las miniaturas
+                mainImage.addEventListener('mouseover', () => {
+                    if (!selectedThumbnail) { // Solo cambia si no hay una miniatura seleccionada
+                        mainImage.src = hoverImage;
+                    }
+                });
+    
+                mainImage.addEventListener('mouseout', () => {
+                    if (!selectedThumbnail) { // Solo restablece si no hay una miniatura seleccionada
+                        mainImage.src = producto.imagen[0];
+                    }
+                });
+            }
+    
+            // Hover en las miniaturas
             thumbnails.forEach(thumbnail => {
                 thumbnail.addEventListener('mouseover', () => {
-                    changeMainImage(thumbnail);
-                });
-            });
+                    // Cambiar la imagen principal a la miniatura seleccionada
+                    mainImage.src = thumbnail.src;
+                    selectedThumbnail = thumbnail;
     
-            // Evento para restablecer la imagen principal al salir del área del producto
-            productoDiv.addEventListener('mouseleave', () => {
-                if (selectedThumbnail) {
-                    mainImage.src = producto.imagen[0]; // Restablecer a la imagen principal
-                    selectedThumbnail = null; // Limpiar la miniatura seleccionada
-                }
+                    // Si hay una imagen de hover, mostrarla cuando el cursor esté sobre la imagen principal
+                    if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+                        const hoverImage = producto.hoverImagenes[0];
+                        mainImage.addEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.addEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src; // Volver a la miniatura seleccionada
+                        });
+                    }
+                });
+    
+                thumbnail.addEventListener('mouseout', () => {
+                    // Restablecer la imagen principal cuando el cursor sale de la miniatura
+                    selectedThumbnail = null;
+                    mainImage.src = producto.imagen[0];
+    
+                    // Restablecer los eventos de hover de la imagen principal
+                    if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+                        const hoverImage = producto.hoverImagenes[0];
+                        mainImage.removeEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.removeEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
+                    }
+                });
             });
     
             mujerProductsGrid.appendChild(productoDiv);
