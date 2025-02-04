@@ -1,13 +1,11 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
 
-// Obtener el ID del producto desde la URL
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
 }
 
-// Función para mostrar los detalles del producto
 function mostrarDetallesProducto(product) {
     if (!product) {
         console.error('Producto no encontrado');
@@ -138,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productosMujer.find(p => p.id === productId);
     mostrarDetallesProducto(product);
 });
+
 
 /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
 document.addEventListener('DOMContentLoaded', () => {
