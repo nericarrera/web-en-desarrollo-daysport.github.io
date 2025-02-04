@@ -13,11 +13,11 @@ export  const productosMujer = [
         miniaturas: [
             {
                 src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" // Parte trasera de la miniatura 1
+                hover: "" // Parte trasera de la miniatura 1
             },
             {
                 src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" // Parte trasera de la miniatura 2
+                hover: "" // Parte trasera de la miniatura 2
             }
         ],
         hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"], // Hover de la imagen principal
@@ -29,11 +29,11 @@ export  const productosMujer = [
         imagenColores: {
             celeste: [
                 "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
             ],
             negro: [
                 "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2-hover.jpeg"
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
             ]
         }
     },
