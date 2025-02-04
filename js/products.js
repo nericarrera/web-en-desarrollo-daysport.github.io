@@ -17,9 +17,9 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar el título, precio y descripción
-    document.getElementById('product-title').textContent = product.nombre;
-    document.getElementById('product-price').textContent = `$${product.precio.toLocaleString()}`;
-    document.getElementById('product-description').textContent = product.descripcion || 'Descripción no disponible';
+    document.getElementById('product-title3').textContent = product.nombre;
+    document.getElementById('product-price3').textContent = `$${product.precio.toLocaleString()}`;
+    document.getElementById('product-description3').textContent = product.descripcion || 'Descripción no disponible';
 
     // Contenedores de la galería, miniaturas, colores y talles
     const gallery = document.querySelector('.zoom-container');
