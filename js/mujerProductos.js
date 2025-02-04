@@ -28,7 +28,7 @@ export  const productosMujer = [
                 hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" // Parte trasera de la miniatura 2
             }
         ],
-        hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"], // Hover de la imagen principal
+        hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover de la imagen principal
         etiqueta: "novedad",
         variantes: [
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
