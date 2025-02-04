@@ -10,6 +10,14 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
         imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
+        imagenColores: {
+            celeste: [
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            ],
+            negro: [
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
+            ]
+        },
         miniaturas: [
             {
                 src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
@@ -26,16 +34,7 @@ export  const productosMujer = [
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
-        imagenColores: {
-            celeste: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
-            ],
-            negro: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
-            ]
-        }
+       
     },
 
     {
