@@ -10,31 +10,24 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
         imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
-        imagenColores: {
-            celeste: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            ],
-            negro: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-            ]
-        },
         miniaturas: [
-            {
-                src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" // Parte trasera de la miniatura 1
-            },
-            {
-                src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" // Parte trasera de la miniatura 2
-            }
+            { src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" },
+            { src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" }
         ],
-        hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover de la imagen principal
-        etiqueta: "novedad",
         variantes: [
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
-       
+        imagenColores: {
+            celeste: [
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
+            ],
+            negro: [
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
+                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
+            ]
+        }
     },
 
     {
@@ -46,7 +39,10 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Campera deportiva de alta calidad con diseño moderno y detalles únicos.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-        miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+        miniaturas: [
+           { src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg" }, 
+           { src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg" },
+        ],
         hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
         etiqueta: "novedad",
         variantes: [
