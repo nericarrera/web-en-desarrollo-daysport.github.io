@@ -116,6 +116,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/**-------SECCION MUJER REDIRIGE A PRODUCTOS--------**/
+
+// Importar los productos (asegúrate de que la ruta sea correcta)
+import { productosMujer } from '/js/mujerProductos.js';
+
+// Obtener el ID del producto desde la URL
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
+
+// Buscar el producto en el array productosMujer
+const product = productosMujer.find(p => p.id === productId);
+
+// Función para mostrar los detalles del producto
+function mostrarDetallesProducto(producto) {
+    if (!producto) {
+        console.error('Producto no encontrado');
+        return;
+    }
+
+    // Mostrar la imagen principal
+    const productGallery = document.querySelector('.product-gallery');
+    productGallery.innerHTML = `
+        <div class="zoom-container">
+            <img src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+        </div>
+        <div id="product-thumbnails" class="thumbnails-container">
+            ${producto.miniaturas.map((miniatura, index) => `
+                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" class="thumbnail-image">
+            `).join('')}
+        </div>
+    `;
+
+    // Mostrar el título, precio y descripción
+    document.getElementById('product-title').textContent = producto.nombre;
+    document.getElementById('product-price').textContent = `$${producto.precio.toLocaleString()}`;
+    document.getElementById('product-description').textContent = producto.descripcion;
+
+    // Mostrar los colores disponibles
+    const productColors = document.getElementById('product-colors');
+    productColors.innerHTML = producto.variantes.map(variante => `
+        <div class="color-option" style="background-color: ${variante.color};" data-color="${variante.color}"></div>
+    `).join('');
+
+    // Mostrar los talles disponibles
+    const productSizes = document.getElementById('product-sizes');
+    productSizes.innerHTML = producto.variantes.map(variante => `
+        <button class="size-option" data-talla="${variante.talla}">${variante.talla}</button>
+    `).join('');
+
+    // Mostrar la tabla de talles
+    const sizeChartTableBody = document.getElementById('sizeChartTableBody');
+    sizeChartTableBody.innerHTML = producto.variantes.map(variante => `
+        <tr>
+            <td>${variante.talla}</td>
+            <td>${variante.pecho}</td>
+            <td>${variante.cintura}</td>
+            <td>${variante.cadera}</td>
+        </tr>
+    `).join('');
+}
+
+// Llamar a la función para mostrar los detalles del producto
+if (product) {
+    mostrarDetallesProducto(product);
+} else {
+    console.error('Producto no encontrado');
+}
   
   /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
   
