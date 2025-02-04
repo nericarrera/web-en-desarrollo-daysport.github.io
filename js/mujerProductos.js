@@ -13,11 +13,11 @@ export  const productosMujer = [
         miniaturas: [
             {
                 src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-                hover: "" // Parte trasera de la miniatura 1
+                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" // Parte trasera de la miniatura 1
             },
             {
                 src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                hover: "" // Parte trasera de la miniatura 2
+                hover: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" // Parte trasera de la miniatura 2
             }
         ],
         hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"], // Hover de la imagen principal
