@@ -123,33 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        
-    // Lógica del carrusel
-    const imagenes = [
-        'img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg',
-        'img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg'
-    ];
-
-    const miniaturas = [
-        'img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg',
-        'img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg'
-    ];
-
-    // Mostrar la primera imagen en el carrusel
-    carrusel.innerHTML = `<img src="${imagenes[0]}" alt="Imagen principal" class="main-product-image">`;
-
-    // Mostrar las miniaturas
-    thumbnails.innerHTML = miniaturas.map((miniatura, index) => `
-        <img src="${miniatura}" alt="Miniatura ${index + 1}" class="thumbnail-image">
-    `).join('');
-
-    // Evento para cambiar la imagen principal al hacer clic en una miniatura
-    thumbnails.querySelectorAll('.thumbnail-image').forEach((thumbnail, index) => {
-        thumbnail.addEventListener('click', () => {
-            carrusel.innerHTML = `<img src="${imagenes[index]}" alt="Imagen principal" class="main-product-image">`;
-        });
-    });
-
 
         const productosNovedad = productosMujer.filter(producto => producto.etiqueta?.toLowerCase() === "novedad");
 
