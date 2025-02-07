@@ -105,6 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
+    
+    const carrusel = document.querySelector('.zoom-container');
+    const thumbnails = document.querySelector('.thumbnails-container');
+
     import('/js/mujerProductos.js').then(module => {
         const productosMujer = module.productosMujer;
 
