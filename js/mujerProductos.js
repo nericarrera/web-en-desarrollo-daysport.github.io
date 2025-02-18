@@ -31,7 +31,7 @@ export  const productosMujer = [
     {
         id: "mujer-2",
         nombre: "Calza Nike Pro",
-        precio: 13500,
+        precio: 14000,
         categoria: "calzas",
         seccion: "mujer",
         temporada: "verano",
