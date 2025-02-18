@@ -11,8 +11,8 @@ export  const productosMujer = [
     descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
     miniaturas: [
-        { src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" },
-        { src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" }
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" ,
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
     ],
     hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover en el carrusel
     variantes: [
@@ -40,8 +40,8 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
         miniaturas: [
-           { src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg" }, 
-           { src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg" },
+           "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", 
+           "img/mujer/calzas/calza-nike-pro-neg-1.jpeg",
         ],
         hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], // Hover en el carrusel
         variantes: [
@@ -68,9 +68,9 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
         miniaturas: [
-            { src: "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg" },
-            { src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg" },
-            { src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg" }
+            "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
+            "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
+            "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"
         ], // Miniaturas para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
@@ -102,7 +102,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         miniaturas: [ 
-            { src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg" }
+            "img/mujer/remeras-lino/blusalino-negro-1.jpeg",
 
         ], 
         hoverImagenes: [],
@@ -128,7 +128,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
         miniaturas: [ 
-            { src: "img/mujer/calzas/calza-nike-radeon-1.jpeg" }
+            "img/mujer/calzas/calza-nike-radeon-1.jpeg",
 
         ],
         hoverImagenes: [],
@@ -157,7 +157,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
         miniaturas: [ 
-            { src: "img/mujer/calzas/calza-nike-grofada-1.jpeg" }
+            "img/mujer/calzas/calza-nike-grofada-1.jpeg",
 
         ],
         hoverImagenes: [],
@@ -188,7 +188,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
         miniaturas: [ 
-            { src: "img/mujer/calzas/calza-nike-speak-1.jpeg" }
+            "img/mujer/calzas/calza-nike-speak-1.jpeg",
 
         ],
         hoverImagenes: [],
@@ -216,7 +216,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
         miniaturas: [ 
-            { src: "img/mujer/calzas/calza-nike-fluor-2.jpeg" }
+            "img/mujer/calzas/calza-nike-fluor-2.jpeg",
 
         ],
         hoverImagenes: [],
@@ -242,7 +242,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
         miniaturas: [ 
-            { src: "img/mujer/calzas/calza-adidas-original-1.jpeg" }
+            "img/mujer/calzas/calza-adidas-original-1.jpeg",
         ],
         hoverImagenes: [],
         variantes: [
