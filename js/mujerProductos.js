@@ -123,12 +123,15 @@ export  const productosMujer = [
         miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
         etiqueta: "novedad",
         variantes: [
-            { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "negro", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
                 "img/mujer/calzas/calza-nike-radeon-1.jpeg",
+            ],
+            gris: [
+                "img/mujer/calzas/calza-nike-radeon-1.jpeg"
             ],
            
         }
@@ -153,6 +156,10 @@ export  const productosMujer = [
                 "img/mujer/calzas/calza-nike-grofada-1.jpeg",
                 
             ],
+            gris: [
+                "img/mujer/calzas/calza-nike-grofada-1.jpeg"
+
+            ],
         }
     },
     { id: "mujer-7", 
@@ -171,10 +178,11 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                "img/mujer/calzas/calza-nike-speak-1.jpeg", 
+            ],
+            gris: [
+                "img/mujer/calzas/calza-nike-speak-1.jpeg",
+
             ],
         }
     },
@@ -193,7 +201,7 @@ export  const productosMujer = [
             { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
-            negro: [
+            rosa: [
                 "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
             ],
           
