@@ -251,23 +251,9 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                "img/mujer/calzas/calza-adidas-original-1.jpeg",
+                
             ],
-            rojo: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
-            ],
-            azul: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
-            ]
         }
         
     },
