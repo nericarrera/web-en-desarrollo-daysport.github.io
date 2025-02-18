@@ -23,7 +23,7 @@ function mostrarDetallesProducto(product) {
     document.getElementById('product-description').textContent = product.descripcion || 'Descripción no disponible';
 
     // Contenedores de la galería, miniaturas, colores y talles
-    const gallery = document.querySelector('.zoom-container');
+    const gallery = document.querySelector('.product-gallery');
     const thumbnailsContainer = document.querySelector('.product-thumbnails');
     const coloresContainer = document.getElementById('product-colors');
     const tallesContainer = document.getElementById('product-sizes');
