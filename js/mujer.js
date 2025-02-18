@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Productos disponibles:", productosMujer);
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
 
-    
+    if (!mujerProductsGrid) {
+        console.error("No se encontró el contenedor de productos.");
+        return;
+    }
+
     // Mostrar productos
     productosMujer.forEach(producto => {
         console.log("Renderizando producto:", producto.nombre);
