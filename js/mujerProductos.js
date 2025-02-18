@@ -21,11 +21,9 @@ export  const productosMujer = [
     imagenColores: {
         celeste: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1-hover.jpeg"
         ],
         negro: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2-hover.jpeg"
         ]
     }
 },
@@ -37,7 +35,7 @@ export  const productosMujer = [
         categoria: "calzas",
         seccion: "mujer",
         temporada: "verano",
-        descripcion: "Campera deportiva de alta calidad con diseño moderno y detalles únicos.",
+        descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
         miniaturas: [
            { src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg" }, 
@@ -51,7 +49,7 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
+                "img/mujer/calzas/calza-nike-pro-neg-1.jpeg",
             ],
             gris: [
                 "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
