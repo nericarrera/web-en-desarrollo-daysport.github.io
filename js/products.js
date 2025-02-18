@@ -1,5 +1,5 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
-import { productosMujer } from '/js/mujerProductos.js';
+import { productosMujer } from '..mujerProductos.js';
 
 
 // Obtener el ID del producto desde la URL
