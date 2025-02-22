@@ -489,13 +489,10 @@
 
 /*----------------------ZOOM-------------------*/
 /* Contenedor de la imagen */
-/* Contenedor de la imagen */
 .zoom-container {
-  position: relative;
+  max-width: 500px; /* Ajusta según tu diseño */
+  max-height: 500px; /* Ajusta según tu diseño */
   overflow: hidden;
-  width: auto; /* Ajusta al tamaño de la imagen */
-  height: auto; /* Ajusta al tamaño de la imagen */
-  cursor: zoom-in;
 }
 
 /* Imagen principal */
