@@ -101,7 +101,7 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "verano", 
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
-        imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
+        imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg", "img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         miniaturas: [ 
             {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg"},
 
