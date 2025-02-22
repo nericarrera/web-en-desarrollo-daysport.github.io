@@ -519,6 +519,7 @@
   height: auto; /* Mantiene la proporción */
   transition: transform 0.3s ease;
   transform-origin: center center; /* El zoom se centrará en el cursor */
+  object-fit: cover;
 }
 
 /* Efecto de zoom */
