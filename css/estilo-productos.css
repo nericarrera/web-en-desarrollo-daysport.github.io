@@ -666,6 +666,35 @@
   letter-spacing: 1px;
 }
 
+/*-----------------------------DETALLE COLOR--------------------------*/
+
+.color-btn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+  border-color: #a30dfa;
+}
+
+.color-btn.selected {
+  border-color: #a30dfa;
+  box-shadow: 0 0 10px rgba(163, 13, 250, 0.5);
+}
+
+.color-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .product-colors {
     margin-top: 20px;
     font-family: "Dosis", sans-serif;
@@ -674,28 +703,31 @@
     letter-spacing: 0.5px;
 }
 
-.product-colors h3{
-  font-size: 17px;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
+/*-----------------------------DETALLE - TALLES --------------*/
+.size-btn {
+  padding: 10px 15px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.product-size {
-  margin-top: 30px;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
+.size-btn:hover {
+  background-color: #eaeaea;
 }
 
-.product-size h3 {
-  font-size: 17px;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
+.size-btn.selected {
+  background-color: #a30dfa;
+  color: white;
+  border-color: #a30dfa;
+}
+
+.size-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #888;
 }
 
 .product-quantity {
