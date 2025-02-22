@@ -17,6 +17,9 @@ function mostrarDetallesProducto(product) {
         return;
     }
 
+    const productId = getProductIdFromURL();
+const product = productosMujer.find(p => p.id === productId);
+
     // Mostrar el título, precio y descripción
     document.getElementById('product-title').textContent = product.nombre;
     document.getElementById('product-price').textContent = `$${product.precio.toLocaleString()}`;
