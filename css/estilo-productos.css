@@ -576,6 +576,12 @@
 
 /*--------------------------------BOTON DE COMPRA ---------------------*/
 
+.btn-container-mujer {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 .btn-buy-now, .btn-add-to-cart {
   padding: 12px 24px;
   border: none;
@@ -588,6 +594,7 @@
 .btn-buy-now {
   background-color: #28a745;
   color: white;
+  margin-top: 20px;
 }
 
 .btn-buy-now:hover {
