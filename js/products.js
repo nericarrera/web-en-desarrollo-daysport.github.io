@@ -16,67 +16,23 @@ function mostrarDetallesProducto(product) {
         return;
     }
 
+    // Mostrar el título, precio y descripción
+    document.getElementById('product-title-mujer').textContent = product.nombre;
+    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
+    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
+
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
-    const thumbnailsContainer = document.querySelector('.thumbnails-container');
+    const thumbnailsContainer = document.getElementById('product-thumbnails');
     const tallesContainer = document.getElementById('product-sizes-mujer');
     const quantityContainer = document.getElementById('quantity-container');
     const quantityInput = document.getElementById('quantity');
-
-    // Verificar que los elementos existan
-    if (!zoomContainer || !thumbnailsContainer || !tallesContainer || !quantityContainer || !quantityInput) {
-        console.error('Uno o más elementos del DOM no existen');
-        return;
-    }
 
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
-
-    // Mostrar el título, precio y descripción
-    document.getElementById('product-title-mujer').textContent = product.nombre;
-    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
-    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
-
-    // Función para agregar lupa a una imagen
-    function agregarLupa(imagen, contenedor) {
-        const lupa = document.createElement('div');
-        lupa.classList.add('lupa');
-        contenedor.appendChild(lupa);
-
-        // Mostrar la lupa al pasar el mouse sobre la imagen
-        imagen.addEventListener('mousemove', (e) => {
-            if (!imagen.classList.contains('zoomed')) return;
-
-            const rect = imagen.getBoundingClientRect();
-            const x = e.pageX - rect.left;
-            const y = e.pageY - rect.top;
-
-            // Calcular la posición de la lupa
-            const lupaSize = 150; // Tamaño de la lupa
-            const lupaX = x - lupaSize / 2;
-            const lupaY = y - lupaSize / 2;
-
-            // Mover la lupa
-            lupa.style.left = `${lupaX}px`;
-            lupa.style.top = `${lupaY}px`;
-
-            // Mostrar la porción ampliada de la imagen
-            const zoomLevel = 2; // Nivel de zoom
-            const bgX = (x / rect.width) * 100;
-            const bgY = (y / rect.height) * 100;
-            lupa.style.backgroundImage = `url('${imagen.src}')`;
-            lupa.style.backgroundSize = `${rect.width * zoomLevel}px ${rect.height * zoomLevel}px`;
-            lupa.style.backgroundPosition = `${bgX}% ${bgY}%`;
-        });
-
-        // Ocultar la lupa al salir de la imagen
-        imagen.addEventListener('mouseleave', () => {
-            lupa.style.backgroundImage = 'none';
-        });
-    }
 
     // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
@@ -86,24 +42,16 @@ function mostrarDetallesProducto(product) {
 
         // Mostrar imágenes en zoom-container
         imagenes.forEach((imagenSrc, index) => {
-            const imageWrapper = document.createElement('div');
-            imageWrapper.classList.add('image-wrapper');
-
             const image = document.createElement('img');
             image.src = imagenSrc;
             image.alt = `Imagen ${index + 1}`;
             image.classList.add('main-product-image');
+            zoomContainer.appendChild(image);
 
-            // Agregar lupa al hacer clic
+            // Agregar funcionalidad de zoom
             image.addEventListener('click', () => {
                 image.classList.toggle('zoomed');
-                if (image.classList.contains('zoomed')) {
-                    agregarLupa(image, zoomContainer);
-                }
             });
-
-            imageWrapper.appendChild(image);
-            zoomContainer.appendChild(imageWrapper);
         });
 
         // Mostrar miniaturas
@@ -112,15 +60,13 @@ function mostrarDetallesProducto(product) {
             thumbnail.src = imagenSrc;
             thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
-
-            // Agregar lupa al hacer clic en las miniaturas
             thumbnail.addEventListener('click', () => {
-                thumbnail.classList.toggle('zoomed');
-                if (thumbnail.classList.contains('zoomed')) {
-                    agregarLupa(thumbnail, thumbnailsContainer);
-                }
+                // Cambiar la imagen principal al hacer clic en la miniatura
+                const mainImages = document.querySelectorAll('.main-product-image');
+                mainImages.forEach((img, i) => {
+                    img.src = imagenSrc; // Cambiar todas las imágenes principales
+                });
             });
-
             thumbnailsContainer.appendChild(thumbnail);
         });
     }
