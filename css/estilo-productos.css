@@ -604,7 +604,11 @@
 
 .btn-add-to-cart-mujer {
   background-color: #000000;
+  width: auto;
+  height: 45px;
   color: white;
+  font-family: "Dosis" sans-serif;
+  margin-top: 20px;
   font-family: "Dosis" sans-serif;
 }
 
