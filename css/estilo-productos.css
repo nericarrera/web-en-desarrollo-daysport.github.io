@@ -580,6 +580,7 @@
   display: flex;
   justify-content: center;
   margin: auto;
+  gap: 3px;
 }
 
 .btn-buy-now, .btn-add-to-cart {
