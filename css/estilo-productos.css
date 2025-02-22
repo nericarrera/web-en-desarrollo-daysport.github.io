@@ -491,7 +491,7 @@
 /* Contenedor de la imagen */
 .zoom-container {
   max-width: 500px; /* Ajusta según tu diseño */
-  max-height: 500px; /* Ajusta según tu diseño */
+  max-height: 580px; /* Ajusta según tu diseño */
   overflow: hidden;
 }
 
