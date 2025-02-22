@@ -12,7 +12,7 @@ export  const productosMujer = [
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
     miniaturas: [
         "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
         
     ],
     hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover en el carrusel
