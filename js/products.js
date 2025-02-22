@@ -148,23 +148,29 @@ function mostrarDetallesProducto(product) {
                 sizeButton.classList.add('size-btn');
 
                 sizeButton.addEventListener('click', () => {
-                    // Deseleccionar todos los talles
-                    document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-                    // Seleccionar el talle actual
-                    sizeButton.classList.add('selected');
+                    // Si el talle ya está seleccionado, deseleccionarlo
+                    if (sizeButton.classList.contains('selected')) {
+                        sizeButton.classList.remove('selected');
+                        quantityContainer.classList.add('hidden'); // Ocultar el contador
+                    } else {
+                        // Deseleccionar todos los talles
+                        document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+                        // Seleccionar el talle actual
+                        sizeButton.classList.add('selected');
 
-                    // Mostrar el contador de cantidad
-                    quantityContainer.classList.remove('hidden');
-                    quantityInput.max = variant.stock; // Establecer el máximo según el stock disponible
+                        // Mostrar el contador de cantidad
+                        quantityContainer.classList.remove('hidden');
+                        quantityInput.max = variant.stock; // Establecer el máximo según el stock disponible
 
-                    // Manejar la lógica para agregar al carrito
-                    quantityInput.addEventListener('change', () => {
-                        const cantidad = parseInt(quantityInput.value, 10);
-                        if (cantidad > variant.stock) {
-                            alert(`No hay suficiente stock. Solo quedan ${variant.stock} unidades.`);
-                            quantityInput.value = variant.stock;
-                        }
-                    });
+                        // Manejar la lógica para agregar al carrito
+                        quantityInput.addEventListener('change', () => {
+                            const cantidad = parseInt(quantityInput.value, 10);
+                            if (cantidad > variant.stock) {
+                                alert(`No hay suficiente stock. Solo quedan ${variant.stock} unidades.`);
+                                quantityInput.value = variant.stock;
+                            }
+                        });
+                    }
                 });
 
                 tallesContainer.appendChild(sizeButton);
