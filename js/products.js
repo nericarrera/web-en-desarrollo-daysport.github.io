@@ -17,9 +17,9 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar el título, precio y descripción
-    document.getElementById('product-title').textContent = product.nombre;
-    document.getElementById('product-price').textContent = `$${product.precio.toLocaleString()}`;
-    document.getElementById('product-description').textContent = product.descripcion || 'Descripción no disponible';
+    document.getElementById('product-title-mujer').textContent = product.nombre;
+    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
+    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
 
     // Mostrar la imagen principal
     const gallery = document.querySelector('.zoom-container');
@@ -31,7 +31,7 @@ function mostrarDetallesProducto(product) {
     gallery.appendChild(mainImage);
 
     // Mostrar miniaturas
-    const thumbnailsContainer = document.querySelector('.product-thumbnails');
+    const thumbnailsContainer = document.querySelector('product-thumbnails');
     thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
     if (product.miniaturas && product.miniaturas.length > 0) {
         product.miniaturas.forEach((miniatura, index) => {
@@ -47,7 +47,7 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('.product-colors');
+    const coloresContainer = document.getElementById('product-colors-mujer');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
         const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
@@ -83,7 +83,7 @@ function mostrarDetallesProducto(product) {
 
     // Mostrar talles disponibles
     function actualizarTalles(product, color) {
-        const tallesContainer = document.getElementById('.product-sizes');
+        const tallesContainer = document.getElementById('product-sizes-mujer');
         tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
         const variantesFiltradas = product.variantes.filter(v => v.color === color);
 
