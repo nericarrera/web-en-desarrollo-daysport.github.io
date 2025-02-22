@@ -575,6 +575,25 @@
   color: #fff;
 }
 
+/*--------------------------------CONTADOR -----------------*/
+.hidden {
+  display: none;
+}
+
+.product-quantity {
+  margin-top: 20px;
+}
+
+.product-quantity input {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
+
 /*--------------------------------BOTON DE COMPRA ---------------------*/
 
 .btn-container-mujer {
