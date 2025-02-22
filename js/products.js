@@ -47,7 +47,7 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('product-colors');
+    const coloresContainer = document.getElementById('.product-colors');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
         const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
@@ -83,7 +83,7 @@ function mostrarDetallesProducto(product) {
 
     // Mostrar talles disponibles
     function actualizarTalles(product, color) {
-        const tallesContainer = document.getElementById('product-sizes');
+        const tallesContainer = document.getElementById('.product-sizes');
         tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
         const variantesFiltradas = product.variantes.filter(v => v.color === color);
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
 document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart3');
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart');
 
     botonAgregarCarrito.addEventListener('click', () => {
         console.log('Botón "Agregar al carrito" clickeado');
