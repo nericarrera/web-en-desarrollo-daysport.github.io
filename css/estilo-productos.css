@@ -490,9 +490,10 @@
 /*----------------------ZOOM-------------------*/
 /* Contenedor de la imagen */
 .zoom-container {
-  max-width: 500px; /* Ajusta según tu diseño */
-  max-height: 580px; /* Ajusta según tu diseño */
+  width: auto; /* Ajusta según tu diseño */
+  height: auto; /* Ajusta según tu diseño */
   overflow: hidden;
+  object-fit: cover;
 }
 
 /* Imagen principal */
