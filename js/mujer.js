@@ -16,27 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
-const product = productosMujer.find(p => p.id === productId);
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("Cargando página Mujer...");
-    console.log("Productos disponibles:", productosMujer);
-    const mujerProductsGrid = document.querySelector('.mujer-products-grid');
-
-    if (!mujerProductsGrid) {
-        console.error("No se encontró el contenedor de productos.");
-        return;
-    }
-
-    // Mostrar productos
-    productosMujer.forEach(producto => {
-        console.log("Renderizando producto:", producto.nombre);
-    });
-});
-
-/**---------- **/
 
 /*-------------FILTRO MUJER----------------*/
 

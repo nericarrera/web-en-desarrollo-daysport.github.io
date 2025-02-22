@@ -1,14 +1,11 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
-import { productosMujer } from 'js/mujerProductos.js';
+import { productosMujer } from '/js/mujerProductos.js';
 
-
-// Obtener el ID del producto desde la URL
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
 }
 
-// Función para mostrar los detalles del producto
 function mostrarDetallesProducto(product) {
     if (!product) {
         console.error('Producto no encontrado');
@@ -17,35 +14,22 @@ function mostrarDetallesProducto(product) {
         return;
     }
 
-    const productId = getProductIdFromURL();
-const product = productosMujer.find(p => p.id === productId);
-
     // Mostrar el título, precio y descripción
     document.getElementById('product-title').textContent = product.nombre;
     document.getElementById('product-price').textContent = `$${product.precio.toLocaleString()}`;
     document.getElementById('product-description').textContent = product.descripcion || 'Descripción no disponible';
 
-    // Contenedores de la galería, miniaturas, colores y talles
-    const gallery = document.querySelector('.product-gallery');
-    const thumbnailsContainer = document.querySelector('.product-thumbnails');
-    const coloresContainer = document.getElementById('product-colors');
-    const tallesContainer = document.getElementById('product-sizes');
-
-    // Verificar si hay imágenes disponibles
-    if (!product.imagen || product.imagen.length === 0) {
-        gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles.</p>';
-        return;
-    }
-
     // Mostrar la imagen principal
+    const gallery = document.querySelector('.zoom-container');
+    gallery.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
     const mainImage = document.createElement('img');
-    mainImage.src = product.imagen[0];
+    mainImage.src = product.imagen[0]; // Usar la primera imagen del array
     mainImage.alt = product.nombre;
     mainImage.classList.add('main-product-image');
-    gallery.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
     gallery.appendChild(mainImage);
 
     // Mostrar miniaturas
+    const thumbnailsContainer = document.querySelector('.product-thumbnails');
     thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
     if (product.miniaturas && product.miniaturas.length > 0) {
         product.miniaturas.forEach((miniatura, index) => {
@@ -61,6 +45,7 @@ const product = productosMujer.find(p => p.id === productId);
     }
 
     // Mostrar colores disponibles
+    const coloresContainer = document.getElementById('product-colors');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
         const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
@@ -83,6 +68,7 @@ const product = productosMujer.find(p => p.id === productId);
 
     // Mostrar talles disponibles
     function actualizarTalles(product, color) {
+        const tallesContainer = document.getElementById('product-sizes');
         tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
         const variantesFiltradas = product.variantes.filter(v => v.color === color);
 
