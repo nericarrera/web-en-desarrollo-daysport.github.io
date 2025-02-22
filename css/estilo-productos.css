@@ -238,7 +238,7 @@
 
 /* Estilo para el submenú */
 
-.submenu1, .submenu2, .submenu3, .submenu4  {
+.submenu1 {
   display: none;
   position: absolute;
   top: 100%;
