@@ -1,3 +1,11 @@
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product');
+        const productPrice = button.getAttribute('data-price');
+        addToCart(productName, productPrice);
+    });
+});
+
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
 
