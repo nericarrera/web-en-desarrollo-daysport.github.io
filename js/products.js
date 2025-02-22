@@ -47,7 +47,7 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('product-colors');
+    const coloresContainer = document.getElementById('.product-colors');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
         const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
