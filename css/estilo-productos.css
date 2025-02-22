@@ -430,50 +430,60 @@
 
  /*----------------------- PRODUCTO ---------------------------------  */
 
-.product-page{
+ .product-page {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-top: 1px solid #ededed;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
 }
 
 .product-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 1px; /* Espacio entre imágenes */
-  width: 70%;
+  flex: 1;
+  min-width: 300px;
 }
 
 .zoom-container {
-  grid-template-columns: repeat(2, 1fr);
-  height: auto; /* Ajusta la altura al contenido */
-  min-height: 400px; /* Altura mínima para evitar espacios en blanco */
-  background-color: #f9f9f9; /* Fondo temporal para ver el espacio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 400px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
   overflow: hidden;
 }
 
 .main-product-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+  object-fit: contain;
 }
 
 .thumbnails-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .thumbnail-image {
   width: 80px;
   height: 80px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
   cursor: pointer;
   transition: border-color 0.2s ease;
-  object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
+  object-fit: cover;
 }
 
 .thumbnail-image:hover {
   border-color: #a30dfa;
+}
+
+.product-details-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 #product-colors img {
