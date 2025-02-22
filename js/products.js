@@ -147,6 +147,9 @@ function mostrarDetallesProducto(product) {
                 sizeButton.addEventListener('click', () => {
                     document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
                     sizeButton.classList.add('selected');
+
+                    // Aquí puedes manejar la lógica para agregar al carrito
+                    console.log(`Talle seleccionado: ${variant.talla}, Stock: ${variant.stock}`);
                 });
 
                 tallesContainer.appendChild(sizeButton);
