@@ -131,39 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*--------------------------------------------------*/
 
-function mostrarDetallesProducto(product) {
-    if (!product) {
-        console.error('Producto no encontrado');
-        alert('Producto no encontrado. Redirigiendo a la página principal...');
-        window.location.href = 'index.html';
-        return;
-    }
-
-    // Mostrar la imagen principal
-    const gallery = document.querySelector('.zoom-container');
-    gallery.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
-    const mainImage = document.createElement('img');
-    mainImage.src = product.imagen[0]; // Usar la primera imagen del array
-    mainImage.alt = product.nombre;
-    mainImage.classList.add('main-product-image');
-    gallery.appendChild(mainImage);
-
-    // Mostrar miniaturas
-    const thumbnailsContainer = document.querySelector('.product-thumbnails');
-    thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
-    if (product.miniaturas && product.miniaturas.length > 0) {
-        product.miniaturas.forEach((miniatura, index) => {
-            const thumbnail = document.createElement('img');
-            thumbnail.src = miniatura.src;
-            thumbnail.alt = `Miniatura ${index + 1}`;
-            thumbnail.classList.add('thumbnail-image');
-            thumbnail.addEventListener('click', () => {
-                mainImage.src = miniatura.src; // Cambiar la imagen principal al hacer clic en la miniatura
-            });
-            thumbnailsContainer.appendChild(thumbnail);
-        });
-    }
-}
 
 
 /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
