@@ -1,11 +1,13 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
 
+// Obtener el ID del producto desde la URL
 function getProductIdFromURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get('id');
 }
 
+// Función para mostrar los detalles del producto
 function mostrarDetallesProducto(product) {
     if (!product) {
         console.error('Producto no encontrado');
@@ -53,14 +55,27 @@ function mostrarDetallesProducto(product) {
             const colorButton = document.createElement('button');
             colorButton.classList.add('color-btn');
             colorButton.setAttribute('data-color', color);
-            colorButton.textContent = color;
-            coloresContainer.appendChild(colorButton);
+
+            // Si hay una imagen para el color, usarla; de lo contrario, mostrar un cuadro de color
+            if (product.imagenColores && product.imagenColores[color]) {
+                const colorImage = document.createElement('img');
+                colorImage.src = product.imagenColores[color][0]; // Usar la primera imagen del color
+                colorImage.alt = color;
+                colorImage.classList.add('color-image');
+                colorButton.appendChild(colorImage);
+            } else {
+                colorButton.style.backgroundColor = color; // Mostrar un cuadro de color
+                colorButton.style.width = '50px';
+                colorButton.style.height = '50px';
+            }
 
             colorButton.addEventListener('click', () => {
                 // Actualizar imágenes y talles según el color seleccionado
                 mostrarImagenesColor(product, color);
                 actualizarTalles(product, color);
             });
+
+            coloresContainer.appendChild(colorButton);
         });
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
