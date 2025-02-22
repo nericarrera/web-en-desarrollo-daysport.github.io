@@ -530,6 +530,8 @@
   color: #fff;
 }
 
+/*--------------------------------BOTON DE COMPRA ---------------------*/
+
 .btn-buy-now, .btn-add-to-cart {
   padding: 12px 24px;
   border: none;
@@ -556,6 +558,8 @@
 .btn-add-to-cart:hover {
   background-color: #0056b3;
 }
+
+/*------------------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .product-page {
@@ -639,6 +643,16 @@
     width: 280px;
 }
 
+#product-price-mujer {
+  font-size: 14px;
+  color: #000000;
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
 #product-description-mujer {
   width: 280px;
   font-size: 17px;
@@ -651,15 +665,7 @@
     color: #000000;    
 }
 
-#product-price-mujer {
-  font-size: 14px;
-  color: #000000;
-  font-family: "Arvo", serif;
-  font-weight: 700;
-  font-style: normal;
-  color: #000000;
-  letter-spacing: 1px;
-}
+
 
 /*-----------------------------DETALLE COLOR--------------------------*/
 
