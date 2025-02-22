@@ -16,23 +16,29 @@ function mostrarDetallesProducto(product) {
         return;
     }
 
-    // Mostrar el título, precio y descripción
-    document.getElementById('product-title-mujer').textContent = product.nombre;
-    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
-    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
-
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
-    const thumbnailsWrapper = document.querySelector('.thumbnail-wrapper');
+    const thumbnailsContainer = document.querySelector('.thumbnails-container');
     const tallesContainer = document.getElementById('product-sizes-mujer');
     const quantityContainer = document.getElementById('quantity-container');
     const quantityInput = document.getElementById('quantity');
 
+    // Verificar que los elementos existan
+    if (!zoomContainer || !thumbnailsContainer || !tallesContainer || !quantityContainer || !quantityInput) {
+        console.error('Uno o más elementos del DOM no existen');
+        return;
+    }
+
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
-    thumbnailsWrapper.innerHTML = '';
+    thumbnailsContainer.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
+
+    // Mostrar el título, precio y descripción
+    document.getElementById('product-title-mujer').textContent = product.nombre;
+    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
+    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
 
     // Función para agregar lupa a una imagen
     function agregarLupa(imagen, contenedor) {
@@ -76,7 +82,7 @@ function mostrarDetallesProducto(product) {
     function mostrarImagenes(imagenes) {
         // Limpiar contenedores
         zoomContainer.innerHTML = '';
-        thumbnailsWrapper.innerHTML = '';
+        thumbnailsContainer.innerHTML = '';
 
         // Mostrar imágenes en zoom-container
         imagenes.forEach((imagenSrc, index) => {
@@ -111,11 +117,11 @@ function mostrarDetallesProducto(product) {
             thumbnail.addEventListener('click', () => {
                 thumbnail.classList.toggle('zoomed');
                 if (thumbnail.classList.contains('zoomed')) {
-                    agregarLupa(thumbnail, thumbnailsWrapper);
+                    agregarLupa(thumbnail, thumbnailsContainer);
                 }
             });
 
-            thumbnailsWrapper.appendChild(thumbnail);
+            thumbnailsContainer.appendChild(thumbnail);
         });
     }
 
