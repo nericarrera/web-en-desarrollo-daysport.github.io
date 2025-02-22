@@ -242,6 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarDetallesProducto(product);
 });
 
+
+sizeButton.addEventListener('click', () => {
+    console.log('Talle seleccionado:', variant.talla); // Verifica que el evento se dispare
+    console.log('Contenedor del contador:', quantityContainer); // Verifica que el contenedor exista
+    quantityContainer.classList.remove('hidden');
+    console.log('Clases del contenedor:', quantityContainer.classList); // Verifica que se elimine la clase "hidden"
+});
+
 /*--------------------------------------------------*/
 
 
