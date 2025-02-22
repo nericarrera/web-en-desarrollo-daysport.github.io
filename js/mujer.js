@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="mujer-product-name">${producto.nombre}</p>
                         <p class="mujer-product-categoria">${producto.categoria}</p>
                         <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                        <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles">Ver detalles</a>
+                        <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                     </div>
                 </div>
             `;
