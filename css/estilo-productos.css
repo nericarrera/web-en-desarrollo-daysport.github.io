@@ -577,19 +577,19 @@
 
 /*--------------------------------CONTADOR -----------------*/
 .hidden {
-  display: none;
+  display: none; /* Oculta el contador inicialmente */
 }
 
 .product-quantity {
-  margin-top: 20px;
+  margin-top: 20px; /* Espaciado superior */
 }
 
 .product-quantity input {
-  width: 60px;
-  padding: 5px;
-  text-align: center;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
+  width: 60px; /* Ancho del input */
+  padding: 5px; /* Espaciado interno */
+  text-align: center; /* Texto centrado */
+  font-family: "Dosis", sans-serif; /* Fuente */
+  font-weight: 600; /* Grosor de la fuente */
   font-style: normal;
   letter-spacing: 0.5px;
 }
@@ -912,10 +912,6 @@
   letter-spacing: 0.5px;
 }
 
-
-.hidden {
-  display: none;
-}
 
 .modal {
   position: fixed;
