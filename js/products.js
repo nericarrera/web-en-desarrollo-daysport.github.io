@@ -16,6 +16,10 @@ function mostrarDetallesProducto(product) {
         return;
     }
 
+     // Mostrar talles disponibles desde el principio
+     actualizarTalles(product, product.variantes[0].color); // Muestra talles del primer color por defecto
+
+
     // Mostrar el título, precio y descripción
     document.getElementById('product-title-mujer').textContent = product.nombre;
     document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
@@ -65,7 +69,7 @@ function mostrarDetallesProducto(product) {
             } else {
                 colorButton.style.backgroundColor = color;
                 colorButton.style.width = '50px';
-                colorButton.style.height = '50px';
+                colorButton.style.height= '50px';
             }
 
             colorButton.addEventListener('click', () => {
@@ -79,7 +83,7 @@ function mostrarDetallesProducto(product) {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
 
-    // Mostrar talles disponibles
+    // Función para actualizar talles
     function actualizarTalles(product, color) {
         const tallesContainer = document.getElementById('product-sizes-mujer');
         tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
@@ -103,6 +107,7 @@ function mostrarDetallesProducto(product) {
             tallesContainer.innerHTML += '<p>No hay talles disponibles para este color.</p>';
         }
     }
+
 
     // Mostrar imágenes según el color seleccionado
     function mostrarImagenesColor(product, color) {
