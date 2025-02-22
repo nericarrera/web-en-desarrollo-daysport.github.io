@@ -31,7 +31,7 @@ function mostrarDetallesProducto(product) {
     gallery.appendChild(mainImage);
 
     // Mostrar miniaturas
-    const thumbnailsContainer = document.querySelector('product-thumbnails');
+    const thumbnailsContainer = document.getElementById('product-thumbnails');
     thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
     if (product.miniaturas && product.miniaturas.length > 0) {
         product.miniaturas.forEach((miniatura, index) => {
@@ -46,38 +46,39 @@ function mostrarDetallesProducto(product) {
         });
     }
 
-    function renderizarColores(colores, product) {
-        const coloresContainer = document.getElementById('product-colors-mujer');
-        coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-        colores.forEach(color => {
+    // Mostrar colores disponibles
+    const coloresContainer = document.getElementById('product-colors-mujer');
+    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+    if (product.variantes && product.variantes.length > 0) {
+        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
+        coloresUnicos.forEach(color => {
             const colorButton = document.createElement('button');
             colorButton.classList.add('color-btn');
             colorButton.setAttribute('data-color', color);
-    
+
+            // Si hay una imagen para el color, usarla; de lo contrario, mostrar un cuadro de color
             if (product.imagenColores && product.imagenColores[color]) {
                 const colorImage = document.createElement('img');
-                colorImage.src = product.imagenColores[color][0];
+                colorImage.src = product.imagenColores[color][0]; // Usar la primera imagen del color
                 colorImage.alt = color;
                 colorImage.classList.add('color-image');
                 colorButton.appendChild(colorImage);
             } else {
-                colorButton.style.backgroundColor = color;
+                colorButton.style.backgroundColor = color; // Mostrar un cuadro de color
                 colorButton.style.width = '50px';
                 colorButton.style.height = '50px';
             }
-    
+
             colorButton.addEventListener('click', () => {
-                // Remover la clase 'selected' de todos los botones de color
-                document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('selected'));
-                // Agregar la clase 'selected' al botón clickeado
-                colorButton.classList.add('selected');
                 // Actualizar imágenes y talles según el color seleccionado
                 mostrarImagenesColor(product, color);
                 actualizarTalles(product, color);
             });
-    
+
             coloresContainer.appendChild(colorButton);
         });
+    } else {
+        coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
 
     // Mostrar talles disponibles
@@ -106,22 +107,20 @@ function mostrarDetallesProducto(product) {
         }
     }
 
+    // Mostrar imágenes según el color seleccionado
     function mostrarImagenesColor(product, color) {
-        const gallery = document.querySelector('.zoom-container');
-        const thumbnailsContainer = document.getElementById('product-thumbnails');
-        gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
-        thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
-    
         if (product.imagenColores && product.imagenColores[color]) {
             const imagenesColor = product.imagenColores[color];
-    
+            gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
+            thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
+
             // Mostrar la primera imagen del color seleccionado
             const mainImage = document.createElement('img');
             mainImage.src = imagenesColor[0];
             mainImage.alt = `${product.nombre} - ${color}`;
             mainImage.classList.add('main-product-image');
             gallery.appendChild(mainImage);
-    
+
             // Mostrar miniaturas del color seleccionado
             imagenesColor.forEach(imgSrc => {
                 const thumbnail = document.createElement('img');
@@ -137,13 +136,6 @@ function mostrarDetallesProducto(product) {
         }
     }
 }
-
-// Llamar a la función para mostrar los detalles del producto
-document.addEventListener('DOMContentLoaded', () => {
-    const productId = getProductIdFromURL();
-    const product = productosMujer.find(p => p.id === productId);
-    mostrarDetallesProducto(product);
-});
 
 /*--------------------------------------------------*/
 
