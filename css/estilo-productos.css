@@ -444,6 +444,22 @@
   width: 70%;
 }
 
+.zoom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Ajusta la altura al contenido */
+  min-height: 400px; /* Altura mínima para evitar espacios en blanco */
+  background-color: #f9f9f9; /* Fondo temporal para ver el espacio */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+}
 
 #product-colors img {
   width: 40px; /* Tamaño fijo para las miniaturas */
