@@ -599,7 +599,7 @@
 }
 
 .btn-buy-now:hover {
-  background-color: #218838;
+  background-color: #0fc336;
 }
 
 .btn-add-to-cart-mujer {
@@ -608,7 +608,8 @@
 }
 
 .btn-add-to-cart:hover {
-  background-color: #0056b3;
+  background-color: #014690;
+  
 }
 
 /*------------------------------------------------------------------*/
