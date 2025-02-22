@@ -179,61 +179,8 @@ function mostrarDetallesProducto(product) {
         const primerColor = product.variantes[0].color;
         actualizarTalles(product, primerColor);
     }
-
-
-    // Función para actualizar talles
-    function actualizarTalles(product, color) {
-        const tallesContainer = document.getElementById('product-sizes-mujer');
-        tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
-        const variantesFiltradas = product.variantes.filter(v => v.color === color);
-
-        if (variantesFiltradas.length > 0) {
-            variantesFiltradas.forEach(variant => {
-                const sizeButton = document.createElement('button');
-                sizeButton.textContent = `${variant.talla} (${variant.stock})`;
-                sizeButton.disabled = variant.stock === 0;
-                sizeButton.classList.add('size-btn');
-
-                sizeButton.addEventListener('click', () => {
-                    document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-                    sizeButton.classList.add('selected');
-                });
-
-                tallesContainer.appendChild(sizeButton);
-            });
-        } else {
-            tallesContainer.innerHTML += '<p>No hay talles disponibles para este color.</p>';
-        }
-    }
-
-
-    // Mostrar imágenes según el color seleccionado
-    function mostrarImagenesColor(product, color) {
-        if (product.imagenColores && product.imagenColores[color]) {
-            const imagenesColor = product.imagenColores[color];
-            gallery.innerHTML = '';
-            thumbnailsContainer.innerHTML = '';
-
-            const mainImage = document.createElement('img');
-            mainImage.src = imagenesColor[0];
-            mainImage.alt = `${product.nombre} - ${color}`;
-            mainImage.classList.add('main-product-image');
-            gallery.appendChild(mainImage);
-
-            imagenesColor.forEach(imgSrc => {
-                const thumbnail = document.createElement('img');
-                thumbnail.src = imgSrc;
-                thumbnail.classList.add('thumbnail-image');
-                thumbnail.addEventListener('click', () => {
-                    mainImage.src = imgSrc;
-                });
-                thumbnailsContainer.appendChild(thumbnail);
-            });
-        } else {
-            gallery.innerHTML = '<p style="color: red;">No hay imágenes disponibles para este color.</p>';
-        }
-    }
 }
+
 
 // Llamar a la función para mostrar los detalles del producto
 document.addEventListener('DOMContentLoaded', () => {
