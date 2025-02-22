@@ -23,24 +23,24 @@ function mostrarDetallesProducto(product) {
 
     // Mostrar la imagen principal
     const gallery = document.querySelector('.zoom-container');
-    gallery.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
+    gallery.innerHTML = '';
     const mainImage = document.createElement('img');
-    mainImage.src = product.imagen[0]; // Usar la primera imagen del array
+    mainImage.src = product.imagen[0];
     mainImage.alt = product.nombre;
     mainImage.classList.add('main-product-image');
     gallery.appendChild(mainImage);
 
     // Mostrar miniaturas
     const thumbnailsContainer = document.getElementById('product-thumbnails');
-    thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
+    thumbnailsContainer.innerHTML = '';
     if (product.miniaturas && product.miniaturas.length > 0) {
-        product.miniaturas.forEach((miniatura, index) => {
+        product.miniaturas.forEach((miniatura) => {
             const thumbnail = document.createElement('img');
             thumbnail.src = miniatura.src;
-            thumbnail.alt = `Miniatura ${index + 1}`;
+            thumbnail.alt = miniatura.src;
             thumbnail.classList.add('thumbnail-image');
             thumbnail.addEventListener('click', () => {
-                mainImage.src = miniatura.src; // Cambiar la imagen principal al hacer clic en la miniatura
+                mainImage.src = miniatura.src;
             });
             thumbnailsContainer.appendChild(thumbnail);
         });
@@ -50,27 +50,25 @@ function mostrarDetallesProducto(product) {
     const coloresContainer = document.getElementById('product-colors-mujer');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
-        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
+        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))];
         coloresUnicos.forEach(color => {
             const colorButton = document.createElement('button');
             colorButton.classList.add('color-btn');
             colorButton.setAttribute('data-color', color);
 
-            // Si hay una imagen para el color, usarla; de lo contrario, mostrar un cuadro de color
             if (product.imagenColores && product.imagenColores[color]) {
                 const colorImage = document.createElement('img');
-                colorImage.src = product.imagenColores[color][0]; // Usar la primera imagen del color
+                colorImage.src = product.imagenColores[color][0];
                 colorImage.alt = color;
                 colorImage.classList.add('color-image');
                 colorButton.appendChild(colorImage);
             } else {
-                colorButton.style.backgroundColor = color; // Mostrar un cuadro de color
+                colorButton.style.backgroundColor = color;
                 colorButton.style.width = '50px';
                 colorButton.style.height = '50px';
             }
 
             colorButton.addEventListener('click', () => {
-                // Actualizar imágenes y talles según el color seleccionado
                 mostrarImagenesColor(product, color);
                 actualizarTalles(product, color);
             });
@@ -97,7 +95,6 @@ function mostrarDetallesProducto(product) {
                 sizeButton.addEventListener('click', () => {
                     document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
                     sizeButton.classList.add('selected');
-                    console.log(`Talle seleccionado: ${variant.talla}`);
                 });
 
                 tallesContainer.appendChild(sizeButton);
@@ -111,23 +108,21 @@ function mostrarDetallesProducto(product) {
     function mostrarImagenesColor(product, color) {
         if (product.imagenColores && product.imagenColores[color]) {
             const imagenesColor = product.imagenColores[color];
-            gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas imágenes
-            thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas
+            gallery.innerHTML = '';
+            thumbnailsContainer.innerHTML = '';
 
-            // Mostrar la primera imagen del color seleccionado
             const mainImage = document.createElement('img');
             mainImage.src = imagenesColor[0];
             mainImage.alt = `${product.nombre} - ${color}`;
             mainImage.classList.add('main-product-image');
             gallery.appendChild(mainImage);
 
-            // Mostrar miniaturas del color seleccionado
             imagenesColor.forEach(imgSrc => {
                 const thumbnail = document.createElement('img');
                 thumbnail.src = imgSrc;
                 thumbnail.classList.add('thumbnail-image');
                 thumbnail.addEventListener('click', () => {
-                    mainImage.src = imgSrc; // Cambiar la imagen principal al hacer clic en la miniatura
+                    mainImage.src = imgSrc;
                 });
                 thumbnailsContainer.appendChild(thumbnail);
             });
