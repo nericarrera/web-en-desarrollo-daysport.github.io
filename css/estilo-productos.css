@@ -603,8 +603,9 @@
 }
 
 .btn-add-to-cart-mujer {
-  background-color: #007bff;
+  background-color: #000000;
   color: white;
+  font-family: "Dosis" sans-serif;
 }
 
 .btn-add-to-cart-mujer:hover {
