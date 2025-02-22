@@ -593,13 +593,15 @@
 }
 
 .btn-buy-now-mujer {
-  width: 180px;
+  width: 240px;
   height: 45px;
   position: relative;
   flex-wrap: wrap;
   background-color: #28a745;
   color: white;
   margin-top: 20px;
+  font-family: "Dosis" sans-serif;
+  border: double;
 }
 
 .btn-buy-now-mujer:hover {
@@ -609,12 +611,13 @@
 .btn-add-to-cart-mujer {
   background-color: #000000;
   width: auto;
-  width: 180px;
+  width: 240px;
   height: 45px;
   color: white;
   font-family: "Dosis" sans-serif;
   margin-top: 20px;
-  font-family: "Dosis" sans-serif;
+  border: double;
+  
 }
 
 .btn-add-to-cart-mujer:hover {
