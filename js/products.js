@@ -24,10 +24,12 @@ function mostrarDetallesProducto(product) {
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
     const thumbnailsContainer = document.getElementById('product-thumbnails');
+    const tallesContainer = document.getElementById('product-sizes-mujer');
 
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
+    tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
 
     // Mostrar la imagen principal
     const image = document.createElement('img');
@@ -119,6 +121,9 @@ function mostrarDetallesProducto(product) {
                     isZoomed = false; // Restaurar estado del zoom
                     zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
                 }
+
+                // Actualizar los talles disponibles para el color seleccionado
+                actualizarTalles(product, color);
             });
 
             coloresContainer.appendChild(colorButton);
@@ -126,6 +131,37 @@ function mostrarDetallesProducto(product) {
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
+
+    // Función para actualizar los talles disponibles
+    function actualizarTalles(product, color) {
+        tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
+        const variantesFiltradas = product.variantes.filter(v => v.color === color);
+
+        if (variantesFiltradas.length > 0) {
+            variantesFiltradas.forEach(variant => {
+                const sizeButton = document.createElement('button');
+                sizeButton.textContent = `${variant.talla} (${variant.stock})`;
+                sizeButton.disabled = variant.stock === 0;
+                sizeButton.classList.add('size-btn');
+
+                sizeButton.addEventListener('click', () => {
+                    document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+                    sizeButton.classList.add('selected');
+                });
+
+                tallesContainer.appendChild(sizeButton);
+            });
+        } else {
+            tallesContainer.innerHTML += '<p>No hay talles disponibles para este color.</p>';
+        }
+    }
+
+    // Mostrar talles disponibles para el primer color por defecto
+    if (product.variantes && product.variantes.length > 0) {
+        const primerColor = product.variantes[0].color;
+        actualizarTalles(product, primerColor);
+    }
+
 
 
     // Función para actualizar talles
