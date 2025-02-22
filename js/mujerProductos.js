@@ -169,7 +169,7 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-nike-grofada-1.jpeg",
+                "img/mujer/calzas/calza-nike-grofada-1.jpeg"
                 
             ],
             gris: [
@@ -200,10 +200,10 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-nike-speak-1.jpeg", 
+                "img/mujer/calzas/calza-nike-speak-1.jpeg"
             ],
             gris: [
-                "img/mujer/calzas/calza-nike-speak-1.jpeg",
+                "img/mujer/calzas/calza-nike-speak-1.jpeg"
 
             ],
         }
@@ -228,7 +228,7 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             rosa: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg"
             ],
           
         } 
@@ -253,7 +253,7 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-adidas-original-1.jpeg",
+                "img/mujer/calzas/calza-adidas-original-1.jpeg"
                 
             ],
         }
