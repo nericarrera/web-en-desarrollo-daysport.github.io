@@ -489,18 +489,19 @@
 
 /*----------------------ZOOM-------------------*/
 /* Contenedor de la imagen */
+/* Contenedor de la imagen */
 .zoom-container {
   position: relative;
   overflow: hidden;
-  width: 100%; /* Ajusta según tu diseño */
-  height: 400px; /* Ajusta según tu diseño */
+  width: auto; /* Ajusta al tamaño de la imagen */
+  height: auto; /* Ajusta al tamaño de la imagen */
   cursor: zoom-in;
 }
 
 /* Imagen principal */
 .main-product-image {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Ajusta al 100% del contenedor */
+  height: auto; /* Mantiene la proporción */
   transition: transform 0.3s ease;
   transform-origin: center center; /* El zoom se centrará en el cursor */
 }
