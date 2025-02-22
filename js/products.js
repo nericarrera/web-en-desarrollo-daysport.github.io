@@ -23,77 +23,52 @@ function mostrarDetallesProducto(product) {
 
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
-    const thumbnailsContainer = document.getElementById('product-thumbnails');
+    const thumbnailsWrapper = document.querySelector('.thumbnail-wrapper');
     const tallesContainer = document.getElementById('product-sizes-mujer');
     const quantityContainer = document.getElementById('quantity-container');
     const quantityInput = document.getElementById('quantity');
 
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
-    thumbnailsContainer.innerHTML = '';
+    thumbnailsWrapper.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
-    // Función para agregar zoom y desplazamiento a una imagen
-    function agregarZoomYDesplazamiento(imagen, contenedor) {
-        let isDragging = false;
-        let startX, startY, scrollLeft, scrollTop;
+    // Función para agregar lupa a una imagen
+    function agregarLupa(imagen, contenedor) {
+        const lupa = document.createElement('div');
+        lupa.classList.add('lupa');
+        contenedor.appendChild(lupa);
 
-        // Ajustar el tamaño de la imagen al hacer zoom
-        imagen.addEventListener('click', () => {
-            if (imagen.classList.contains('zoomed')) {
-                // Desactivar zoom
-                imagen.classList.remove('zoomed');
-                imagen.style.transform = 'scale(1)';
-                imagen.style.cursor = 'pointer';
-                contenedor.style.overflow = 'hidden'; // Restaurar el overflow del contenedor
-            } else {
-                // Activar zoom
-                imagen.classList.add('zoomed');
-                imagen.style.transform = 'scale(2)'; // Aumentar el zoom x2
-                imagen.style.cursor = 'grab';
-                contenedor.style.overflow = 'auto'; // Permitir desplazamiento dentro del contenedor
-            }
-        });
-
-        // Iniciar arrastre
-        imagen.addEventListener('mousedown', (e) => {
-            if (imagen.classList.contains('zoomed')) {
-                isDragging = true;
-                startX = e.pageX - contenedor.offsetLeft;
-                startY = e.pageY - contenedor.offsetTop;
-                scrollLeft = contenedor.scrollLeft;
-                scrollTop = contenedor.scrollTop;
-                imagen.style.cursor = 'grabbing';
-            }
-        });
-
-        // Detener arrastre
-        imagen.addEventListener('mouseup', () => {
-            isDragging = false;
-            if (imagen.classList.contains('zoomed')) {
-                imagen.style.cursor = 'grab';
-            }
-        });
-
-        // Mover la imagen durante el arrastre
+        // Mostrar la lupa al pasar el mouse sobre la imagen
         imagen.addEventListener('mousemove', (e) => {
-            if (!isDragging || !imagen.classList.contains('zoomed')) return;
-            e.preventDefault();
-            const x = e.pageX - contenedor.offsetLeft;
-            const y = e.pageY - contenedor.offsetTop;
-            const walkX = (x - startX) * 2; // Ajustar la velocidad del arrastre
-            const walkY = (y - startY) * 2;
-            contenedor.scrollLeft = scrollLeft - walkX;
-            contenedor.scrollTop = scrollTop - walkY;
+            if (!imagen.classList.contains('zoomed')) return;
+
+            const rect = imagen.getBoundingClientRect();
+            const x = e.pageX - rect.left;
+            const y = e.pageY - rect.top;
+
+            // Calcular la posición de la lupa
+            const lupaSize = 150; // Tamaño de la lupa
+            const lupaX = x - lupaSize / 2;
+            const lupaY = y - lupaSize / 2;
+
+            // Mover la lupa
+            lupa.style.left = `${lupaX}px`;
+            lupa.style.top = `${lupaY}px`;
+
+            // Mostrar la porción ampliada de la imagen
+            const zoomLevel = 2; // Nivel de zoom
+            const bgX = (x / rect.width) * 100;
+            const bgY = (y / rect.height) * 100;
+            lupa.style.backgroundImage = `url('${imagen.src}')`;
+            lupa.style.backgroundSize = `${rect.width * zoomLevel}px ${rect.height * zoomLevel}px`;
+            lupa.style.backgroundPosition = `${bgX}% ${bgY}%`;
         });
 
-        // Restablecer el cursor al salir del contenedor
+        // Ocultar la lupa al salir de la imagen
         imagen.addEventListener('mouseleave', () => {
-            isDragging = false;
-            if (imagen.classList.contains('zoomed')) {
-                imagen.style.cursor = 'grab';
-            }
+            lupa.style.backgroundImage = 'none';
         });
     }
 
@@ -101,7 +76,7 @@ function mostrarDetallesProducto(product) {
     function mostrarImagenes(imagenes) {
         // Limpiar contenedores
         zoomContainer.innerHTML = '';
-        thumbnailsContainer.innerHTML = '';
+        thumbnailsWrapper.innerHTML = '';
 
         // Mostrar imágenes en zoom-container
         imagenes.forEach((imagenSrc, index) => {
@@ -113,8 +88,13 @@ function mostrarDetallesProducto(product) {
             image.alt = `Imagen ${index + 1}`;
             image.classList.add('main-product-image');
 
-            // Agregar zoom y desplazamiento
-            agregarZoomYDesplazamiento(image, zoomContainer);
+            // Agregar lupa al hacer clic
+            image.addEventListener('click', () => {
+                image.classList.toggle('zoomed');
+                if (image.classList.contains('zoomed')) {
+                    agregarLupa(image, zoomContainer);
+                }
+            });
 
             imageWrapper.appendChild(image);
             zoomContainer.appendChild(imageWrapper);
@@ -122,19 +102,20 @@ function mostrarDetallesProducto(product) {
 
         // Mostrar miniaturas
         imagenes.forEach((imagenSrc, index) => {
-            const thumbnailWrapper = document.createElement('div');
-            thumbnailWrapper.classList.add('thumbnail-wrapper');
-
             const thumbnail = document.createElement('img');
             thumbnail.src = imagenSrc;
             thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
 
-            // Agregar zoom y desplazamiento a las miniaturas
-            agregarZoomYDesplazamiento(thumbnail, thumbnailsContainer);
+            // Agregar lupa al hacer clic en las miniaturas
+            thumbnail.addEventListener('click', () => {
+                thumbnail.classList.toggle('zoomed');
+                if (thumbnail.classList.contains('zoomed')) {
+                    agregarLupa(thumbnail, thumbnailsWrapper);
+                }
+            });
 
-            thumbnailWrapper.appendChild(thumbnail);
-            thumbnailsContainer.appendChild(thumbnailWrapper);
+            thumbnailsWrapper.appendChild(thumbnail);
         });
     }
 

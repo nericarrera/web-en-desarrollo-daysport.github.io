@@ -486,6 +486,25 @@
 }
 
 /*----------------------ZOOM-------------------*/
+.lupa {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  display: none;
+}
+
+.zoomed {
+  cursor: crosshair;
+}
+
+.zoomed + .lupa {
+  display: block;
+}
+
 /* Contenedor de la imagen */
 .zoom-container {
   width: auto; /* Ajusta según tu diseño */
