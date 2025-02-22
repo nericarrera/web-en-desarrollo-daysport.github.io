@@ -832,39 +832,6 @@
   letter-spacing: 0.5px;
 }
 
-.btn-buy-now3 {
-    padding: 12px 24px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 1rem;
-    font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
-}
-
-.btn-buy-now3:hover {
-    background-color: #218838;
-}
-
-.btn-add-to-cart3{
-  padding: 12px 24px;
-  background-color: #1b41c0;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  font-size: 1rem;
-  font-family: "Dosis", sans-serif;
-font-weight: 600;
-font-style: normal;
-letter-spacing: 0.5px;
-}
-
-
 
 .hidden {
   display: none;
