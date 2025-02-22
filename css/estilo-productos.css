@@ -665,6 +665,17 @@
     color: #000000;    
 }
 
+#product-sizes-mujer {
+  font-size: 17px;
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.5px;
+    margin-top: 30px;
+    color: #000000;    
+}
+
 
 
 /*-----------------------------DETALLE COLOR--------------------------*/
