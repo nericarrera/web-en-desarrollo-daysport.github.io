@@ -488,22 +488,27 @@
 }
 
 /*----------------------ZOOM-------------------*/
-/* Estilos para el zoom */
+/* Contenedor de la imagen */
 .zoom-container {
   position: relative;
   overflow: hidden;
+  width: 100%; /* Ajusta según tu diseño */
+  height: 400px; /* Ajusta según tu diseño */
   cursor: zoom-in;
 }
 
+/* Imagen principal */
 .main-product-image {
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
+  transform-origin: center center; /* El zoom se centrará en el cursor */
 }
 
+/* Efecto de zoom */
 .zoomed {
-  cursor: zoom-out;
-  transform: scale(2); /* Ajusta el nivel de zoom */
+  cursor: grab; /* Cambia el cursor al hacer zoom */
+  transform: scale(2); /* Nivel de zoom */
 }
 /*-------------------------------------------------------------------*/
 
