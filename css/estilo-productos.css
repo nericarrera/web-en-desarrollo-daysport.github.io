@@ -511,6 +511,7 @@
   height: auto; /* Ajusta según tu diseño */
   overflow: hidden;
   object-fit: cover;
+  cursor: pointer;
 }
 
 /* Imagen principal */
