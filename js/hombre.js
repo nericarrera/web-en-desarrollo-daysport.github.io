@@ -6,5 +6,9 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
+
 import { productosHombre } from 'js/hombreProductos.js';
 

@@ -6,6 +6,10 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
+
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
 

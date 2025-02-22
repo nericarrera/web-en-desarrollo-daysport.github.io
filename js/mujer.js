@@ -6,6 +6,10 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
+
 
 /*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
 

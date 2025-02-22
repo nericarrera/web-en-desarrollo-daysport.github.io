@@ -6,5 +6,8 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
 
 import { productosNiños } from 'js/niñosProductos.js';
