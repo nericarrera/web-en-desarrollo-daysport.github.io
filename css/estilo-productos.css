@@ -253,6 +253,54 @@
   visibility: hidden;
 }
 
+.submenu2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 95%;
+  transform: translateX(-50%);
+  width: auto;
+  background-color: #ffffff77;
+  justify-content: center;
+  padding: 10px 0;
+  flex-wrap: nowrap;
+  color: #000000;
+  border-radius: 15px;
+  list-style-type: none;
+}
+
+.submenu3 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-51%);
+  width: auto;
+  background-color: #ffffff77;
+  justify-content: center;
+  padding: 10px 0;
+  flex-wrap: nowrap;
+  color: #000000;
+  border-radius: 15px;
+  list-style-type: none;
+}
+
+.submenu4 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background-color: #ffffff77;
+  justify-content: center;
+  padding: 10px 0;
+  flex-wrap: nowrap;
+  color: #000000;
+  border-radius: 15px;
+  list-style-type: none;
+}
+
 
 /* Estilo para los elementos del submenú */
 .submenu-item {
