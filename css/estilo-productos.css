@@ -427,9 +427,9 @@
   color: #f9f9f9;
 }
 
- /*----------------------- PRODUCTO ---------------------------------  */
+/*----------------------- PRODUCTO ---------------------------------  */
 
-.product-page{
+.product-page {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -444,20 +444,23 @@
 }
 
 .zoom-container {
-  grid-template-columns: repeat(2, 1fr);
-  height: auto; /* Ajusta la altura al contenido */
+  position: relative; /* Necesario para posicionar la lupa */
+  grid-column: 1 / -1; /* Ocupa ambas columnas */
+  height: 500px; /* Altura fija para el contenedor */
   background-color: #f9f9f9; /* Fondo temporal para ver el espacio */
-  overflow: hidden;
+  overflow: hidden; /* Evita que la imagen se desborde */
 }
 
 .main-product-image {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: transform 0.3s ease; /* Animación suave para el zoom */
 }
 
 .thumbnails-container {
-  display: contents;
+  display: flex;
   flex-wrap: wrap;
   gap: 1px;
 }
@@ -474,17 +477,6 @@
   border-color: #a30dfa;
 }
 
-#product-colors img {
-  width: 40px; /* Tamaño fijo para las miniaturas */
-  height: 40px; /* Mantener proporción cuadrada */
-  object-fit: cover; /* Asegurar que la imagen se ajuste */
-  margin: 5px; /* Espaciado entre miniaturas */
-  border: 1px solid #ddd; /* Borde ligero */
-  border-radius: 50%; /* Forma circular */
-  cursor: pointer; /* Mostrar cursor de mano al pasar el mouse */
-  transition: transform 0.2s ease; /* Animación al pasar el mouse */
-}
-
 /*----------------------ZOOM-------------------*/
 .lupa {
   position: absolute;
@@ -495,45 +487,30 @@
   background-repeat: no-repeat;
   pointer-events: none;
   display: none;
+  z-index: 10; /* Asegura que la lupa esté por encima de todo */
 }
 
 .zoomed {
-  cursor: crosshair;
+  cursor: grab; /* Cambia el cursor al hacer zoom */
 }
 
 .zoomed + .lupa {
   display: block;
 }
 
-/* Contenedor de la imagen */
-.zoom-container {
-  width: auto; /* Ajusta según tu diseño */
-  height: auto; /* Ajusta según tu diseño */
-  overflow: hidden;
-  object-fit: cover;
-}
-
-/* Imagen principal */
-.main-product-image {
-  width: 100%; /* Ajusta al 100% del contenedor */
-  height: 500px; /* Mantiene la proporción */
-  transition: transform 0.3s ease;
+/* Efecto de zoom */
+.zoomed {
+  transform: scale(2); /* Nivel de zoom */
   transform-origin: center center; /* El zoom se centrará en el cursor */
 }
 
-/* Efecto de zoom */
-.zoomed {
-  cursor: grab; /* Cambia el cursor al hacer zoom */
-  transform: scale(2); /* Nivel de zoom */
-}
 /*-------------------------------------------------------------------*/
 
-.product-gallery img, 
+.product-gallery img,
 .product-gallery video {
-    width: 99%;
-    height: auto;
-    object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
-    
+  width: 99%;
+  height: auto;
+  object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
 }
 
 .color-btn {
@@ -575,23 +552,6 @@
   border-color: #0056b3;
 }
 
-
-.size-btn {
-  padding: 10px 20px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
-}
-
-.size-btn:hover {
-  background-color: #000;
-  color: #fff;
-}
-
 /*--------------------------------CONTADOR -----------------*/
 .hidden {
   display: none; /* Oculta el contador inicialmente */
@@ -620,7 +580,8 @@
   gap: 3px;
 }
 
-.btn-buy-now-mujer, .btn-add-to-cart-mujer {
+.btn-buy-now-mujer,
+.btn-add-to-cart-mujer {
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
@@ -654,23 +615,21 @@
   font-family: "Dosis" sans-serif;
   margin-top: 20px;
   border: double;
-  
 }
 
 .btn-add-to-cart-mujer:hover {
   background-color: #3c015c;
-  
 }
 
 /*------------------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .product-page {
-      grid-template-columns: 1fr; /* Una columna para dispositivos móviles */
+    grid-template-columns: 1fr; /* Una columna para dispositivos móviles */
   }
-  
+
   .product-gallery {
-      grid-template-columns: 1fr; /* Las imágenes ocuparán toda la pantalla en una fila */
+    grid-template-columns: 1fr; /* Las imágenes ocuparán toda la pantalla en una fila */
   }
 }
 
@@ -678,16 +637,15 @@
   border: 2px solid #000; /* Cambia el color al pasar el mouse */
 }
 
-
 /* Adaptabilidad para pantallas pequeñas */
 @media (max-width: 768px) {
   .main-image-wrapper {
-      width: 100%; /* En pantallas pequeñas la imagen ocupará el 100% del ancho */
+    width: 100%; /* En pantallas pequeñas la imagen ocupará el 100% del ancho */
   }
 
   .thumbnail-gallery img {
-      width: 80px;
-      height: 80px;
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -699,51 +657,48 @@
 .product-image-gallery img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Hace que la imagen rellene el cuadro sin deformarse */
+  object-fit: cover; /* Hace que la imagen rellene el cuadro sin deformarse */
   border-radius: 8px; /* Esto le da un borde redondeado */
 }
 
 .product-image-gallery,
 .product-video-section {
-    width: 100%;
-    aspect-ratio: 16 / 9;  /* Mantiene una proporción 16:9 (la más usada en pantallas) */
-    overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene una proporción 16:9 (la más usada en pantallas) */
+  overflow: hidden;
 }
 
 .product-video-section iframe,
 .product-image-gallery img,
 .product-video-section video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que el video o imagen rellene completamente el cuadro */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video o imagen rellene completamente el cuadro */
 }
-
-
 
 /* ------DETALLES PRODUCTO------------------------------------------- */
 
 .product-details-section {
-    flex: 1;
-    max-width: 50%;
-    position: sticky;
-    top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
-    margin: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 10;
-    padding-left: 35px;
-
+  flex: 1;
+  max-width: 50%;
+  position: sticky;
+  top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
+  margin: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+  padding-left: 35px;
 }
 
 #product-title-mujer {
-    font-size: 30px;
-    color: #000000;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 0.5px;
-    margin-bottom: 0px;
-    width: 280px;
+  font-size: 30px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 0px;
+  width: 280px;
 }
 
 #product-price-mujer {
@@ -764,8 +719,8 @@
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-    margin-top: 30px;
-    color: #000000;    
+  margin-top: 30px;
+  color: #000000;
 }
 
 #product-sizes-mujer {
@@ -775,11 +730,9 @@
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-    margin-top: 30px;
-    color: #000000;    
+  margin-top: 30px;
+  color: #000000;
 }
-
-
 
 /*-----------------------------DETALLE COLOR--------------------------*/
 
@@ -811,11 +764,11 @@
 }
 
 .product-colors {
-    margin-top: 20px;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 0.5px;
+  margin-top: 20px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 /*-----------------------------DETALLE - TALLES --------------*/
@@ -845,7 +798,6 @@
   color: #888;
 }
 
-
 .label {
   margin-top: 10px;
 }
@@ -856,7 +808,6 @@
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
-
 }
 
 .size-btn {
