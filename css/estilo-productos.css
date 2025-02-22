@@ -445,40 +445,31 @@
 }
 
 .zoom-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Espacio entre las imágenes */
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  min-height: 400px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto; /* Ajusta la altura al contenido */
+  min-height: 400px; /* Altura mínima para evitar espacios en blanco */
+  background-color: #f9f9f9; /* Fondo temporal para ver el espacio */
   overflow: hidden;
 }
 
 .main-product-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Asegura que las imágenes se ajusten sin deformarse */
-  border-radius: 8px;
+  object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
 }
 
 .thumbnails-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 1px;
 }
 
 .thumbnail-image {
   width: 80px;
   height: 80px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
   cursor: pointer;
   transition: border-color 0.2s ease;
-  object-fit: cover; /* Asegura que las miniaturas se ajusten sin deformarse */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
 }
 
 .thumbnail-image:hover {
