@@ -26,9 +26,6 @@ export  const productosMujer = [
         { color: "celeste", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         { color: "celeste", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         { color: "celeste", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-        
-        
-        
     ],
     imagenColores: {
         celeste: [
@@ -49,7 +46,7 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
-        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
+        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"},

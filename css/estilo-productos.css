@@ -499,7 +499,7 @@
 /* Imagen principal */
 .main-product-image {
   width: 100%; /* Ajusta al 100% del contenedor */
-  height: auto; /* Mantiene la proporción */
+  height: 500px; /* Mantiene la proporción */
   transition: transform 0.3s ease;
   transform-origin: center center; /* El zoom se centrará en el cursor */
 }
