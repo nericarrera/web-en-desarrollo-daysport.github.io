@@ -11,6 +11,8 @@
   <link rel="icon" href="img/iconos/Copia de Negro y Azul Rectángulo Abogado Logo (1).png"> 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@200;300&family=Questrial&family=AdihausDIN&family=Roboto:wght@300&family=Dosis:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+  <script src="ruta/a/cart.js" defer></script>
+
   <link rel="stylesheet" href="css/global.css"> 
   <link rel="stylesheet" href="css/estilo-productos.css">
   <link rel="stylesheet" href="css/estilo-mujer.css">
@@ -106,17 +108,22 @@
 
   <!-----------------------------------CARRITO------------------------------------>
 
-  <div id="cart-dropdown" class="cart-dropdown-hidden">
+  <!-- Fondo detrás del carrito -->
+<div id="cart-overlay" class="cart-overlay-hidden"></div>
+
+<!-- Modal del carrito -->
+<div id="cart-dropdown" class="cart-dropdown-hidden">
+    <button id="cart-close-btn" class="cart-close-btn">✖</button>
     <p class="titulo-carrito">Carrito de compras</p>
-     <ul id="cart-items-list">
-     <!-- Aquí se mostrarán los productos añadidos -->
-     </ul>
-     <div class="cart-summary">
-      <p>Total: <span id="cart-total">$0</span></p>
-    <button id="checkout-btn">Finalizar compra</button>
-    <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
-   </div>
- </div>
+    <ul id="cart-items-list">
+        <!-- Aquí se mostrarán los productos añadidos -->
+    </ul>
+    <div class="cart-summary">
+        <p>Total: <span id="cart-total">$0</span></p>
+        <button id="checkout-btn">Finalizar compra</button>
+        <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
+    </div>
+</div>
 
 <div class="sub-banner0">
   <img src="img/banner/sub-banner-gocuotas0.png" alt="sub-banner-campaña-en-cuotas">

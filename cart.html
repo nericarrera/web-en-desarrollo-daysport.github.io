@@ -29,6 +29,8 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
+ <script src="ruta/a/cart.js" defer></script>
+
  <link rel="stylesheet" href="css/global.css"> 
  <link rel="stylesheet" href="css/estilo-productos.css">
  <link rel="stylesheet" href="css/estilo-cart.css">
@@ -120,18 +122,22 @@
   </nav>
 
   <!-----------------------------------CARRITO------------------------------------>
+<!-- Fondo detrás del carrito -->
+<div id="cart-overlay" class="cart-overlay-hidden"></div>
 
-  <div id="cart-dropdown" class="cart-dropdown-hidden">
+<!-- Modal del carrito -->
+<div id="cart-dropdown" class="cart-dropdown-hidden">
+    <button id="cart-close-btn" class="cart-close-btn">✖</button>
     <p class="titulo-carrito">Carrito de compras</p>
-     <ul id="cart-items-list">
-     <!-- Aquí se mostrarán los productos añadidos -->
-     </ul>
-     <div class="cart-summary">
-      <p>Total: <span id="cart-total">$0</span></p>
-    <button id="checkout-btn">Finalizar compra</button>
-    <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
-   </div>
- </div>
+    <ul id="cart-items-list">
+        <!-- Aquí se mostrarán los productos añadidos -->
+    </ul>
+    <div class="cart-summary">
+        <p>Total: <span id="cart-total">$0</span></p>
+        <button id="checkout-btn">Finalizar compra</button>
+        <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
+    </div>
+</div>
 
  <!-------------BANNER------------------------>
 
