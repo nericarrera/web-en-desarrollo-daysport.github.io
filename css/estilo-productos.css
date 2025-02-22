@@ -459,7 +459,7 @@
 }
 
 .thumbnails-container {
-  display: flex;
+  display: contents;
   flex-wrap: wrap;
   gap: 1px;
 }
@@ -490,7 +490,7 @@
 .product-gallery img, 
 .product-gallery video {
     width: 99%;
-    height: 34%;
+    height: auto;
     object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
     
 }
