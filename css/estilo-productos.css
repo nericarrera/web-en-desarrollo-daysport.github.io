@@ -639,7 +639,7 @@
     width: 280px;
 }
 
-.product-details {
+#product-description-mujer {
   width: 280px;
   font-size: 17px;
   font-family: "Dosis", sans-serif;
@@ -651,7 +651,7 @@
     color: #000000;    
 }
 
-.product-price {
+#product-price-mujer {
   font-size: 14px;
   color: #000000;
   font-family: "Arvo", serif;
