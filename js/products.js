@@ -34,64 +34,47 @@ function mostrarDetallesProducto(product) {
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
-    // Mostrar la imagen principal
-    const image = document.createElement('img');
-    image.src = product.imagen[0]; // Primera imagen por defecto
-    image.alt = product.nombre;
-    image.classList.add('main-product-image');
-    zoomContainer.appendChild(image);
+    // Función para mostrar imágenes en zoom-container y miniaturas
+    function mostrarImagenes(imagenes) {
+        // Limpiar contenedores
+        zoomContainer.innerHTML = '';
+        thumbnailsContainer.innerHTML = '';
 
-    // Variables para el zoom y desplazamiento
-    let isZoomed = false;
-    let offsetX, offsetY;
+        // Mostrar imágenes en zoom-container
+        imagenes.forEach((imagenSrc, index) => {
+            const image = document.createElement('img');
+            image.src = imagenSrc;
+            image.alt = `Imagen ${index + 1}`;
+            image.classList.add('main-product-image');
+            zoomContainer.appendChild(image);
 
-    // Función para calcular el desplazamiento del zoom
-    function handleZoom(event) {
-        if (isZoomed) {
-            const rect = zoomContainer.getBoundingClientRect();
-            const mouseX = event.clientX - rect.left;
-            const mouseY = event.clientY - rect.top;
+            // Agregar funcionalidad de zoom
+            image.addEventListener('click', () => {
+                image.classList.toggle('zoomed');
+            });
+        });
 
-            // Calcular el desplazamiento basado en la posición del mouse
-            offsetX = (mouseX / rect.width) * 100;
-            offsetY = (mouseY / rect.height) * 100;
-
-            // Aplicar el desplazamiento
-            image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
-        }
-    }
-
-    // Activar/desactivar zoom al hacer clic
-    image.addEventListener('click', () => {
-        isZoomed = !isZoomed;
-        image.classList.toggle('zoomed');
-
-        if (isZoomed) {
-            zoomContainer.style.cursor = 'grab'; // Cambiar cursor al hacer zoom
-        } else {
-            zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor al desactivar zoom
-        }
-    });
-
-    // Mover el zoom al mover el mouse
-    zoomContainer.addEventListener('mousemove', handleZoom);
-
-    // Mostrar miniaturas
-    if (product.miniaturas && product.miniaturas.length > 0) {
-        product.miniaturas.forEach((miniatura, index) => {
+        // Mostrar miniaturas
+        imagenes.forEach((imagenSrc, index) => {
             const thumbnail = document.createElement('img');
-            thumbnail.src = miniatura.src;
+            thumbnail.src = imagenSrc;
             thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
             thumbnail.addEventListener('click', () => {
                 // Cambiar la imagen principal al hacer clic en la miniatura
-                image.src = miniatura.src;
-                image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
-                isZoomed = false; // Restaurar estado del zoom
-                zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
+                const mainImages = document.querySelectorAll('.main-product-image');
+                mainImages.forEach((img, i) => {
+                    img.src = imagenSrc; // Cambiar todas las imágenes principales
+                });
             });
             thumbnailsContainer.appendChild(thumbnail);
         });
+    }
+
+    // Mostrar imágenes iniciales (primer color por defecto)
+    const primerColor = product.variantes[0].color;
+    if (product.imagenColores && product.imagenColores[primerColor]) {
+        mostrarImagenes(product.imagenColores[primerColor]);
     }
 
     // Mostrar colores disponibles
@@ -117,12 +100,9 @@ function mostrarDetallesProducto(product) {
             }
 
             colorButton.addEventListener('click', () => {
-                // Actualizar la imagen principal con la del color seleccionado
+                // Actualizar las imágenes y miniaturas con las del color seleccionado
                 if (product.imagenColores && product.imagenColores[color]) {
-                    image.src = product.imagenColores[color][0];
-                    image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
-                    isZoomed = false; // Restaurar estado del zoom
-                    zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
+                    mostrarImagenes(product.imagenColores[color]);
                 }
 
                 // Actualizar los talles disponibles para el color seleccionado
@@ -182,7 +162,6 @@ function mostrarDetallesProducto(product) {
 
     // Mostrar talles disponibles para el primer color por defecto
     if (product.variantes && product.variantes.length > 0) {
-        const primerColor = product.variantes[0].color;
         actualizarTalles(product, primerColor);
     }
 }
