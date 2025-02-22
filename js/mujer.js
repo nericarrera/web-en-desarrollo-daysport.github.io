@@ -3,6 +3,19 @@
 
 import { productosMujer } from '/js/mujerProductos.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+    const productGrid = document.getElementById('mujer-products-grid');
+    productosMujer.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.innerHTML = `
+            <h3>${product.nombre}</h3>
+            <img src="${product.imagen[0]}" alt="${product.nombre}">
+            <a href="producto-detalle.html?id=${product.id}">Ver detalles</a>
+        `;
+        productGrid.appendChild(productCard);
+    });
+});
+
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const product = productosMujer.find(p => p.id === productId);
