@@ -444,12 +444,6 @@
   width: 70%;
 }
 
-.zoom-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
-  gap: 1px; /* Espacio entre imágenes */
-  width: 70%;
-}
 
 #product-colors img {
   width: 40px; /* Tamaño fijo para las miniaturas */
