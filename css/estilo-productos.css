@@ -583,7 +583,7 @@
   gap: 3px;
 }
 
-.btn-buy-now, .btn-add-to-cart {
+.btn-buy-now-mujer, .btn-add-to-cart-mujer {
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
@@ -592,7 +592,7 @@
   transition: background-color 0.2s ease;
 }
 
-.btn-buy-now {
+.btn-buy-now-mujer {
   background-color: #28a745;
   color: white;
   margin-top: 20px;
@@ -602,7 +602,7 @@
   background-color: #218838;
 }
 
-.btn-add-to-cart {
+.btn-add-to-cart-mujer {
   background-color: #007bff;
   color: white;
 }
