@@ -455,8 +455,6 @@
   transition: transform 0.2s ease; /* Animación al pasar el mouse */
 }
 
-
-
 .product-gallery img, 
 .product-gallery video {
     width: 100%;
@@ -514,7 +512,6 @@
   color: white;
   border-color: #0056b3;
 }
-
 
 
 .size-btn {
@@ -616,7 +613,6 @@
 
 
 
-
 /* ------DETALLES PRODUCTO------------------------------------------- */
 
 .product-details-section {
@@ -632,7 +628,7 @@
 
 }
 
-.product-title {
+.product-title-mujer {
     font-size: 30px;
     color: #000000;
     font-family: "Poppins", sans-serif;
