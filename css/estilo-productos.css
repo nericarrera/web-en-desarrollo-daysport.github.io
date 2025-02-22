@@ -445,13 +445,10 @@
 }
 
 .zoom-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
   height: auto; /* Ajusta la altura al contenido */
   min-height: 400px; /* Altura mínima para evitar espacios en blanco */
   background-color: #f9f9f9; /* Fondo temporal para ver el espacio */
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -464,15 +461,12 @@
 .thumbnails-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 1px;
 }
 
 .thumbnail-image {
   width: 80px;
   height: 80px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
   cursor: pointer;
   transition: border-color 0.2s ease;
   object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
