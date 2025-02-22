@@ -148,7 +148,9 @@ function mostrarDetallesProducto(product) {
                 sizeButton.classList.add('size-btn');
 
                 sizeButton.addEventListener('click', () => {
+                    // Deseleccionar todos los talles
                     document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+                    // Seleccionar el talle actual
                     sizeButton.classList.add('selected');
 
                     // Mostrar el contador de cantidad
