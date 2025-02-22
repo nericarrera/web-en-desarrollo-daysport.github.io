@@ -34,6 +34,42 @@ function mostrarDetallesProducto(product) {
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
+    // Función para agregar zoom arrastrable a una imagen
+    function agregarZoomArrastrable(imagen) {
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        imagen.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - imagen.offsetLeft;
+            startY = e.pageY - imagen.offsetTop;
+            scrollLeft = imagen.scrollLeft;
+            scrollTop = imagen.scrollTop;
+            imagen.style.cursor = 'grabbing';
+        });
+
+        imagen.addEventListener('mouseleave', () => {
+            isDragging = false;
+            imagen.style.cursor = 'grab';
+        });
+
+        imagen.addEventListener('mouseup', () => {
+            isDragging = false;
+            imagen.style.cursor = 'grab';
+        });
+
+        imagen.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - imagen.offsetLeft;
+            const y = e.pageY - imagen.offsetTop;
+            const walkX = (x - startX) * 2; // Ajusta la velocidad del arrastre
+            const walkY = (y - startY) * 2;
+            imagen.scrollLeft = scrollLeft - walkX;
+            imagen.scrollTop = scrollTop - walkY;
+        });
+    }
+
     // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
         // Limpiar contenedores
@@ -42,32 +78,52 @@ function mostrarDetallesProducto(product) {
 
         // Mostrar imágenes en zoom-container
         imagenes.forEach((imagenSrc, index) => {
+            const imageWrapper = document.createElement('div');
+            imageWrapper.classList.add('image-wrapper');
+
             const image = document.createElement('img');
             image.src = imagenSrc;
             image.alt = `Imagen ${index + 1}`;
             image.classList.add('main-product-image');
-            zoomContainer.appendChild(image);
 
-            // Agregar funcionalidad de zoom
+            // Agregar zoom arrastrable
             image.addEventListener('click', () => {
                 image.classList.toggle('zoomed');
+                if (image.classList.contains('zoomed')) {
+                    image.style.cursor = 'grab';
+                    agregarZoomArrastrable(image);
+                } else {
+                    image.style.cursor = 'pointer';
+                }
             });
+
+            imageWrapper.appendChild(image);
+            zoomContainer.appendChild(imageWrapper);
         });
 
         // Mostrar miniaturas
         imagenes.forEach((imagenSrc, index) => {
+            const thumbnailWrapper = document.createElement('div');
+            thumbnailWrapper.classList.add('thumbnail-wrapper');
+
             const thumbnail = document.createElement('img');
             thumbnail.src = imagenSrc;
             thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
+
+            // Agregar zoom arrastrable a las miniaturas
             thumbnail.addEventListener('click', () => {
-                // Cambiar la imagen principal al hacer clic en la miniatura
-                const mainImages = document.querySelectorAll('.main-product-image');
-                mainImages.forEach((img, i) => {
-                    img.src = imagenSrc; // Cambiar todas las imágenes principales
-                });
+                thumbnail.classList.toggle('zoomed');
+                if (thumbnail.classList.contains('zoomed')) {
+                    thumbnail.style.cursor = 'grab';
+                    agregarZoomArrastrable(thumbnail);
+                } else {
+                    thumbnail.style.cursor = 'pointer';
+                }
             });
-            thumbnailsContainer.appendChild(thumbnail);
+
+            thumbnailWrapper.appendChild(thumbnail);
+            thumbnailsContainer.appendChild(thumbnailWrapper);
         });
     }
 
