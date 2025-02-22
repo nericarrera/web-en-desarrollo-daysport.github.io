@@ -25,63 +25,81 @@ function mostrarDetallesProducto(product) {
     document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
     document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
 
-    // Mostrar la imagen principal
-    const gallery = document.querySelector('.zoom-container');
-    gallery.innerHTML = '';
-    const mainImage = document.createElement('img');
-    mainImage.src = product.imagen[0];
-    mainImage.alt = product.nombre;
-    mainImage.classList.add('main-product-image');
-    gallery.appendChild(mainImage);
+     // Referencias a los contenedores
+     const zoomContainer = document.querySelector('.zoom-container');
+     const mainImage = zoomContainer.querySelector('.main-product-image');
+     const thumbnailsContainer = document.getElementById('product-thumbnails');
+ 
+     // Limpiar contenedores antes de agregar contenido
+     zoomContainer.innerHTML = '';
+     thumbnailsContainer.innerHTML = '';
+
+
+     // Mostrar la imagen principal
+    const image = document.createElement('img');
+    image.src = product.imagen[0]; // Primera imagen por defecto
+    image.alt = product.nombre;
+    image.classList.add('main-product-image');
+    zoomContainer.appendChild(image);
+
+    // Agregar funcionalidad de zoom
+    image.addEventListener('click', () => {
+        image.classList.toggle('zoomed');
+    });
+
 
     // Mostrar miniaturas
-    const thumbnailsContainer = document.getElementById('product-thumbnails');
-    thumbnailsContainer.innerHTML = '';
     if (product.miniaturas && product.miniaturas.length > 0) {
-        product.miniaturas.forEach((miniatura) => {
+        product.miniaturas.forEach((miniatura, index) => {
             const thumbnail = document.createElement('img');
             thumbnail.src = miniatura.src;
-            thumbnail.alt = miniatura.src;
+            thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
             thumbnail.addEventListener('click', () => {
-                mainImage.src = miniatura.src;
+                // Cambiar la imagen principal al hacer clic en la miniatura
+                image.src = miniatura.src;
+                image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
             });
             thumbnailsContainer.appendChild(thumbnail);
         });
     }
 
-    // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('product-colors-mujer');
-    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
-    if (product.variantes && product.variantes.length > 0) {
-        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))];
-        coloresUnicos.forEach(color => {
-            const colorButton = document.createElement('button');
-            colorButton.classList.add('color-btn');
-            colorButton.setAttribute('data-color', color);
+   // Mostrar colores disponibles
+   const coloresContainer = document.getElementById('product-colors-mujer');
+   coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+   if (product.variantes && product.variantes.length > 0) {
+       const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
+       coloresUnicos.forEach(color => {
+           const colorButton = document.createElement('button');
+           colorButton.classList.add('color-btn');
+           colorButton.setAttribute('data-color', color);
 
-            if (product.imagenColores && product.imagenColores[color]) {
-                const colorImage = document.createElement('img');
-                colorImage.src = product.imagenColores[color][0];
-                colorImage.alt = color;
-                colorImage.classList.add('color-image');
-                colorButton.appendChild(colorImage);
-            } else {
-                colorButton.style.backgroundColor = color;
-                colorButton.style.width = '50px';
-                colorButton.style.height= '50px';
-            }
+           if (product.imagenColores && product.imagenColores[color]) {
+               const colorImage = document.createElement('img');
+               colorImage.src = product.imagenColores[color][0]; // Usar la primera imagen del color
+               colorImage.alt = color;
+               colorImage.classList.add('color-image');
+               colorButton.appendChild(colorImage);
+           } else {
+               colorButton.style.backgroundColor = color; // Mostrar un cuadro de color
+               colorButton.style.width = '50px';
+               colorButton.style.height = '50px';
+           }
 
-            colorButton.addEventListener('click', () => {
-                mostrarImagenesColor(product, color);
-                actualizarTalles(product, color);
-            });
+           colorButton.addEventListener('click', () => {
+               // Actualizar la imagen principal con la del color seleccionado
+               if (product.imagenColores && product.imagenColores[color]) {
+                   image.src = product.imagenColores[color][0];
+                   image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
+               }
+           });
 
-            coloresContainer.appendChild(colorButton);
-        });
-    } else {
-        coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
-    }
+           coloresContainer.appendChild(colorButton);
+       });
+   } else {
+       coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
+   }
+
 
     // Función para actualizar talles
     function actualizarTalles(product, color) {

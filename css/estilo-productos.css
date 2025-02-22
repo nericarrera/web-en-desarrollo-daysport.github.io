@@ -487,6 +487,26 @@
   transition: transform 0.2s ease; /* Animación al pasar el mouse */
 }
 
+/*----------------------ZOOM-------------------*/
+/* Estilos para el zoom */
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.main-product-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.zoomed {
+  cursor: zoom-out;
+  transform: scale(2); /* Ajusta el nivel de zoom */
+}
+/*-------------------------------------------------------------------*/
+
 .product-gallery img, 
 .product-gallery video {
     width: 99%;
