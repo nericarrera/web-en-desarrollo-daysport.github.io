@@ -577,7 +577,7 @@
 
 /*--------------------------------CONTADOR -----------------*/
 .hidden {
-  display: flex; /* Oculta el contador inicialmente */
+  display: none; /* Oculta el contador inicialmente */
 }
 
 .product-quantity {
