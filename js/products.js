@@ -25,11 +25,14 @@ function mostrarDetallesProducto(product) {
     const zoomContainer = document.querySelector('.zoom-container');
     const thumbnailsContainer = document.getElementById('product-thumbnails');
     const tallesContainer = document.getElementById('product-sizes-mujer');
+    const quantityContainer = document.getElementById('quantity-container');
+    const quantityInput = document.getElementById('quantity');
 
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
+    quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
     // Mostrar la imagen principal
     const image = document.createElement('img');
@@ -148,8 +151,18 @@ function mostrarDetallesProducto(product) {
                     document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
                     sizeButton.classList.add('selected');
 
-                    // Aquí puedes manejar la lógica para agregar al carrito
-                    console.log(`Talle seleccionado: ${variant.talla}, Stock: ${variant.stock}`);
+                    // Mostrar el contador de cantidad
+                    quantityContainer.classList.remove('hidden');
+                    quantityInput.max = variant.stock; // Establecer el máximo según el stock disponible
+
+                    // Manejar la lógica para agregar al carrito
+                    quantityInput.addEventListener('change', () => {
+                        const cantidad = parseInt(quantityInput.value, 10);
+                        if (cantidad > variant.stock) {
+                            alert(`No hay suficiente stock. Solo quedan ${variant.stock} unidades.`);
+                            quantityInput.value = variant.stock;
+                        }
+                    });
                 });
 
                 tallesContainer.appendChild(sizeButton);
@@ -164,7 +177,6 @@ function mostrarDetallesProducto(product) {
         const primerColor = product.variantes[0].color;
         actualizarTalles(product, primerColor);
     }
-
 
 
     // Función para actualizar talles
