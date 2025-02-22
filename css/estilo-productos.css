@@ -1,18 +1,18 @@
 
 * {
-    margin-top: 0;
+    margin: 0;
     padding: 0;
-    margin-left: 0;
-    margin-right: 0;
     box-sizing: border-box;
 }
 
 /* HEADER */
 .header{
   background: #000000;
-  text-align: inline-block;
-  height: 30px;
-  width: 100%;      
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;     
 }
 
 .header__inicio-env{
@@ -66,13 +66,13 @@
 
 .nav {
   display: flex;
-  width: 100%;
-  height: 65px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
   background: #fdfdfd;
-  list-style: none;
+  height: 65px;
   position: relative;
   z-index: 10;
-  justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
 }
 
 .conteiner-buscador-carrito {
@@ -238,68 +238,19 @@
 
 /* Estilo para el submenú */
 
-.submenu1 {
+.submenu1, .submenu2, .submenu3, .submenu4  {
   display: none;
   position: absolute;
   top: 100%;
-  left: 73%;
-  transform: translateX(-28%);
-  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #ffffff;
-  justify-content: center;
-  padding: 10px 0;
-  flex-wrap: nowrap;
-  color: #000000;
-  border-radius: 15px;
-  list-style-type: none;
-}
-
-.submenu2 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 95%;
-  transform: translateX(-50%);
-  width: auto;
-  background-color: #ffffff77;
-  justify-content: center;
-  padding: 10px 0;
-  flex-wrap: nowrap;
-  color: #000000;
-  border-radius: 15px;
-  list-style-type: none;
-}
-
-.submenu3 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-51%);
-  width: auto;
-  background-color: #ffffff77;
-  justify-content: center;
-  padding: 10px 0;
-  flex-wrap: nowrap;
-  color: #000000;
-  border-radius: 15px;
-  list-style-type: none;
-}
-
-.submenu4 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  background-color: #ffffff77;
-  justify-content: center;
-  padding: 10px 0;
-  flex-wrap: nowrap;
-  color: #000000;
-  border-radius: 15px;
-  list-style-type: none;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 
