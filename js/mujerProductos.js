@@ -18,7 +18,7 @@ export  const productosMujer = [
     hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover en el carrusel
     variantes: [
         { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-        { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
     ],
     imagenColores: {
         celeste: [
@@ -47,14 +47,14 @@ export  const productosMujer = [
         hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-nike-pro-neg-1.jpeg",
+                "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"
             ],
             gris: [
-                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
+                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"
             ],
         }
     },
@@ -71,25 +71,25 @@ export  const productosMujer = [
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"},
                 {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"},
-                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"}
+                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"},
         ], // Miniaturas para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg",
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"
             ],
             rosa: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"
             ],
             gris: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
-            ]
+                "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"
+            ],
         }
     },
         
@@ -112,7 +112,7 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/remeras-lino/blusalino-negro-1.jpeg",
+                "img/mujer/remeras-lino/blusalino-negro-1.jpeg"
                 
             ],
            
@@ -139,7 +139,7 @@ export  const productosMujer = [
         ],       
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/calzas/calza-nike-radeon-1.jpeg",
+                "img/mujer/calzas/calza-nike-radeon-1.jpeg"
             ],
             gris: [
                 "img/mujer/calzas/calza-nike-radeon-1.jpeg"
@@ -164,7 +164,7 @@ export  const productosMujer = [
         hoverImagenes: [],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -248,7 +248,7 @@ export  const productosMujer = [
         hoverImagenes: [],
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
