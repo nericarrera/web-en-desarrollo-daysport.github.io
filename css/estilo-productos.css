@@ -489,8 +489,8 @@
 
 .product-gallery img, 
 .product-gallery video {
-    width: 100%;
-    height: auto;
+    width: 99%;
+    height: 34%;
     object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
     
 }
