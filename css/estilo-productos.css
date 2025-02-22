@@ -439,7 +439,7 @@
 
 .product-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+  grid-template-columns: repeat(1, 1fr); /* 2 columnas de igual tamaño */
   gap: 1px; /* Espacio entre imágenes */
   width: 70%;
 }
