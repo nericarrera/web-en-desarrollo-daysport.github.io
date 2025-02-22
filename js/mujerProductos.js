@@ -228,7 +228,7 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             rosa: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg"
+                "img/mujer/calzas/calza-nike-fluor-1.jpeg"
             ],
           
         } 
