@@ -34,39 +34,66 @@ function mostrarDetallesProducto(product) {
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
-    // Función para agregar zoom arrastrable a una imagen
-    function agregarZoomArrastrable(imagen) {
+    // Función para agregar zoom y desplazamiento a una imagen
+    function agregarZoomYDesplazamiento(imagen, contenedor) {
         let isDragging = false;
         let startX, startY, scrollLeft, scrollTop;
 
+        // Ajustar el tamaño de la imagen al hacer zoom
+        imagen.addEventListener('click', () => {
+            if (imagen.classList.contains('zoomed')) {
+                // Desactivar zoom
+                imagen.classList.remove('zoomed');
+                imagen.style.transform = 'scale(1)';
+                imagen.style.cursor = 'pointer';
+                contenedor.style.overflow = 'hidden'; // Restaurar el overflow del contenedor
+            } else {
+                // Activar zoom
+                imagen.classList.add('zoomed');
+                imagen.style.transform = 'scale(2)'; // Aumentar el zoom x2
+                imagen.style.cursor = 'grab';
+                contenedor.style.overflow = 'auto'; // Permitir desplazamiento dentro del contenedor
+            }
+        });
+
+        // Iniciar arrastre
         imagen.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - imagen.offsetLeft;
-            startY = e.pageY - imagen.offsetTop;
-            scrollLeft = imagen.scrollLeft;
-            scrollTop = imagen.scrollTop;
-            imagen.style.cursor = 'grabbing';
+            if (imagen.classList.contains('zoomed')) {
+                isDragging = true;
+                startX = e.pageX - contenedor.offsetLeft;
+                startY = e.pageY - contenedor.offsetTop;
+                scrollLeft = contenedor.scrollLeft;
+                scrollTop = contenedor.scrollTop;
+                imagen.style.cursor = 'grabbing';
+            }
         });
 
-        imagen.addEventListener('mouseleave', () => {
-            isDragging = false;
-            imagen.style.cursor = 'grab';
-        });
-
+        // Detener arrastre
         imagen.addEventListener('mouseup', () => {
             isDragging = false;
-            imagen.style.cursor = 'grab';
+            if (imagen.classList.contains('zoomed')) {
+                imagen.style.cursor = 'grab';
+            }
         });
 
+        // Mover la imagen durante el arrastre
         imagen.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
+            if (!isDragging || !imagen.classList.contains('zoomed')) return;
             e.preventDefault();
-            const x = e.pageX - imagen.offsetLeft;
-            const y = e.pageY - imagen.offsetTop;
-            const walkX = (x - startX) * 2; // Ajusta la velocidad del arrastre
+            const x = e.pageX - contenedor.offsetLeft;
+            const y = e.pageY - contenedor.offsetTop;
+            const walkX = (x - startX) * 2; // Ajustar la velocidad del arrastre
             const walkY = (y - startY) * 2;
-            imagen.scrollLeft = scrollLeft - walkX;
-            imagen.scrollTop = scrollTop - walkY;
+            contenedor.scrollLeft = scrollLeft - walkX;
+            contenedor.scrollTop = scrollTop - walkY;
+        });
+
+        // Restablecer el cursor al salir del contenedor
+        imagen.addEventListener('mouseleave', () => {
+            isDragging = false;
+            if (imagen.classList.contains('zoomed')) {
+                imagen.style.cursor = 'grab';
+            }
         });
     }
 
@@ -86,16 +113,8 @@ function mostrarDetallesProducto(product) {
             image.alt = `Imagen ${index + 1}`;
             image.classList.add('main-product-image');
 
-            // Agregar zoom arrastrable
-            image.addEventListener('click', () => {
-                image.classList.toggle('zoomed');
-                if (image.classList.contains('zoomed')) {
-                    image.style.cursor = 'grab';
-                    agregarZoomArrastrable(image);
-                } else {
-                    image.style.cursor = 'pointer';
-                }
-            });
+            // Agregar zoom y desplazamiento
+            agregarZoomYDesplazamiento(image, zoomContainer);
 
             imageWrapper.appendChild(image);
             zoomContainer.appendChild(imageWrapper);
@@ -111,16 +130,8 @@ function mostrarDetallesProducto(product) {
             thumbnail.alt = `Miniatura ${index + 1}`;
             thumbnail.classList.add('thumbnail-image');
 
-            // Agregar zoom arrastrable a las miniaturas
-            thumbnail.addEventListener('click', () => {
-                thumbnail.classList.toggle('zoomed');
-                if (thumbnail.classList.contains('zoomed')) {
-                    thumbnail.style.cursor = 'grab';
-                    agregarZoomArrastrable(thumbnail);
-                } else {
-                    thumbnail.style.cursor = 'pointer';
-                }
-            });
+            // Agregar zoom y desplazamiento a las miniaturas
+            agregarZoomYDesplazamiento(thumbnail, thumbnailsContainer);
 
             thumbnailWrapper.appendChild(thumbnail);
             thumbnailsContainer.appendChild(thumbnailWrapper);
