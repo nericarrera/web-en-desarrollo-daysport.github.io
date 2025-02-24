@@ -621,7 +621,7 @@
   gap: 3px;
 }
 
-.btn-buy-now-mujer, .btn-add-to-cart-mujer {
+.btn-buy-now, .btn-add-to-cart {
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
@@ -630,7 +630,7 @@
   transition: background-color 0.2s ease;
 }
 
-.btn-buy-now-mujer {
+.btn-buy-now {
   width: 240px;
   height: 45px;
   position: relative;
@@ -642,11 +642,11 @@
   border: double;
 }
 
-.btn-buy-now-mujer:hover {
+.btn-buy-now:hover {
   background-color: #0fc336;
 }
 
-.btn-add-to-cart-mujer {
+.btn-add-to-cart {
   background-color: #000000;
   width: auto;
   width: 240px;
@@ -658,7 +658,7 @@
   
 }
 
-.btn-add-to-cart-mujer:hover {
+.btn-add-to-cart:hover {
   background-color: #3c015c;
   
 }
@@ -736,7 +736,7 @@
 
 }
 
-#product-title-mujer {
+#product-title {
     font-size: 30px;
     color: #000000;
     font-family: "Poppins", sans-serif;
@@ -747,7 +747,7 @@
     width: 280px;
 }
 
-#product-price-mujer {
+#product-price {
   font-size: 14px;
   color: #000000;
   font-family: "Arvo", serif;
@@ -757,7 +757,7 @@
   letter-spacing: 1px;
 }
 
-#product-description-mujer {
+#product-description {
   width: 280px;
   font-size: 17px;
   font-family: "Dosis", sans-serif;
@@ -769,7 +769,7 @@
     color: #000000;    
 }
 
-#product-sizes-mujer {
+#product-sizes {
   font-size: 17px;
   font-family: "Dosis", sans-serif;
   font-optical-sizing: auto;
