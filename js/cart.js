@@ -1,19 +1,5 @@
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
-        addToCart(productName, productPrice);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateCart();
-});
-
-
-/*-------------CARGAR CARRITO-------------*/
-
-
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartCount = document.getElementById('cart-count');
 const cartDropdown = document.getElementById('cart-dropdown');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
@@ -67,45 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/*-----------------CERRAR EL MODAL CUANDO SE HACE CLIC AFUERA DEL CARRITO--------*/
-
-// Escuchar clics en todo el documento
-document.addEventListener('click', (event) => {
-    const isClickInside = cartDropdown.contains(event.target); // Verifica si el clic fue dentro del carrito
-    const isCartIcon = cartIcon.contains(event.target); // Verifica si el clic fue en el icono del carrito
-
-    if (!isClickInside && !isCartIcon) {
-        cartDropdown.classList.add('cart-dropdown-hidden'); // Cierra el carrito si el clic fue fuera
-    }
-});
-
-// Prevenir el cierre si se hace clic en el icono del carrito
-cartIcon.addEventListener('click', (event) => {
-    event.stopPropagation(); // Detiene la propagación para evitar cerrar el modal
-    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Abre/cierra el carrito
-});
-
-
-/*-------------------------------------------------------------------------*/
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-function guardarCarrito() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function cargarCarrito() {
-    const carritoGuardado = localStorage.getItem('cart');
-    if (carritoGuardado) {
-        cart = JSON.parse(carritoGuardado);
-    }
-    updateCart();
-}
-
-document.addEventListener('DOMContentLoaded', cargarCarrito);
-
-/*--------------------------------------------------------------------------------
-*/
-
+// Cerrar el modal cuando se hace clic fuera del carrito
 document.addEventListener('click', (event) => {
     const isClickInside = cartDropdown.contains(event.target);
     const isCartIcon = cartIcon.contains(event.target);
@@ -115,11 +63,13 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Prevenir el cierre si se hace clic en el icono del carrito
 cartIcon.addEventListener('click', (event) => {
     event.stopPropagation();
     cartDropdown.classList.toggle('cart-dropdown-hidden');
 });
 
+// Botón de cierre
 const cartCloseBtn = document.getElementById('cart-close-btn');
 cartCloseBtn.addEventListener('click', () => {
     cartDropdown.classList.add('cart-dropdown-hidden');
