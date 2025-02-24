@@ -85,15 +85,6 @@ cartIcon.addEventListener('click', (event) => {
     cartDropdown.classList.toggle('cart-dropdown-hidden'); // Abre/cierra el carrito
 });
 
-/*--------------CARRITO - BOTON DE CERRAR -----------------*/
-
-// Botón de cierre
-const cartCloseBtn = document.getElementById('cart-close-btn');
-
-// Evento para cerrar el carrito
-cartCloseBtn.addEventListener('click', () => {
-    cartDropdown.classList.add('cart-dropdown-hidden'); // Oculta el carrito
-});
 
 /*-------------------------------------------------------------------------*/
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -111,3 +102,25 @@ function cargarCarrito() {
 }
 
 document.addEventListener('DOMContentLoaded', cargarCarrito);
+
+/*--------------------------------------------------------------------------------
+*/
+
+document.addEventListener('click', (event) => {
+    const isClickInside = cartDropdown.contains(event.target);
+    const isCartIcon = cartIcon.contains(event.target);
+
+    if (!isClickInside && !isCartIcon) {
+        cartDropdown.classList.add('cart-dropdown-hidden');
+    }
+});
+
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
+    cartDropdown.classList.toggle('cart-dropdown-hidden');
+});
+
+const cartCloseBtn = document.getElementById('cart-close-btn');
+cartCloseBtn.addEventListener('click', () => {
+    cartDropdown.classList.add('cart-dropdown-hidden');
+});
