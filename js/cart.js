@@ -94,3 +94,20 @@ const cartCloseBtn = document.getElementById('cart-close-btn');
 cartCloseBtn.addEventListener('click', () => {
     cartDropdown.classList.add('cart-dropdown-hidden'); // Oculta el carrito
 });
+
+/*-------------------------------------------------------------------------*/
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function guardarCarrito() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem('cart');
+    if (carritoGuardado) {
+        cart = JSON.parse(carritoGuardado);
+    }
+    updateCart();
+}
+
+document.addEventListener('DOMContentLoaded', cargarCarrito);
