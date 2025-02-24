@@ -14,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 /*-------------CARGAR CARRITO-------------*/
 
 
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartCount = document.getElementById('cart-count');
 const cartDropdown = document.getElementById('cart-dropdown');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
+const cartIcon = document.getElementById('cart-icon');
 
 // Actualizar la visualización del carrito
 function updateCart() {
