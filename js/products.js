@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
 document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart-mujer');
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart');
 
     botonAgregarCarrito.addEventListener('click', () => {
         console.log('Botón "Agregar al carrito" clickeado');
