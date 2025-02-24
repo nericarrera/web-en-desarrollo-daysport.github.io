@@ -114,8 +114,12 @@ function mostrarDetallesProducto(product) {
             colorButton.addEventListener('click', () => {
                 // Actualizar las imágenes y miniaturas con las del color seleccionado
                 if (product.imagenColores && product.imagenColores[color]) {
-                    mostrarImagenes(product.imagenColores[color]);
+                    image.src = product.imagenColores[color][0];
+                    image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
+                    isZoomed = false; // Restaurar estado del zoom
+                    zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
                 }
+                
 
                 // Actualizar los talles disponibles para el color seleccionado
                 actualizarTalles(product, color);
