@@ -240,33 +240,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-/*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
+/*----------- "AGREGAR AL CARRITO" ------------*/
+
+// Función para agregar un producto al carrito
+function agregarAlCarrito(producto) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push(producto);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarCarrito();
+    alert('Producto agregado al carrito!');
+}
+
+// Función para actualizar el contador del carrito
+function actualizarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contadorCarrito = document.getElementById('cart-count');
+    contadorCarrito.textContent = carrito.length;
+}
+
+// Evento para el botón "Agregar al carrito"
 document.addEventListener('DOMContentLoaded', () => {
     const botonAgregarCarrito = document.querySelector('.btn-add-to-cart');
 
     botonAgregarCarrito.addEventListener('click', () => {
-        console.log('Botón "Agregar al carrito" clickeado');
+        // Obtener los datos del producto
+        const nombreProducto = document.getElementById('product-title').textContent;
+        const precioProducto = document.getElementById('product-price').textContent.replace('$', '');
+        const colorSeleccionado = document.querySelector('.color-btn.selected')?.getAttribute('data-color');
+        const talleSeleccionado = document.querySelector('.size-btn.selected')?.textContent.split(' ')[0];
+        const cantidad = document.getElementById('quantity').value;
 
-        const selectedSize = document.querySelector('.size-btn.selected');
-        if (!selectedSize) {
-            alert('Por favor selecciona un talle antes de continuar.');
+        // Validar que se haya seleccionado un talle
+        if (!talleSeleccionado) {
+            alert('Por favor, selecciona un talle antes de continuar.');
             return;
         }
 
-        const productId = getProductIdFromURL();
-        const product = productosMujer.find(p => p.id === productId);
-
-        const productoSeleccionado = {
-            id: product.id,
-            nombre: product.nombre,
-            precio: product.precio,
-            color: document.querySelector('.color-btn.selected')?.getAttribute('data-color') || product.variantes[0].color,
-            talla: selectedSize.textContent.split(" ")[0], // Extraer solo la talla
-            cantidad: 1,
-            imagen: product.imagen[0]
+        // Crear el objeto del producto
+        const producto = {
+            nombre: nombreProducto,
+            precio: parseFloat(precioProducto),
+            color: colorSeleccionado,
+            talla: talleSeleccionado,
+            cantidad: parseInt(cantidad, 10),
         };
 
-        agregarAlCarrito(productoSeleccionado);
+        // Agregar el producto al carrito
+        agregarAlCarrito(producto);
     });
 });
 

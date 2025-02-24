@@ -1,9 +1,39 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const cartCount = document.getElementById('cart-count');
-const cartDropdown = document.getElementById('cart-dropdown');
-const cartItemsList = document.getElementById('cart-items-list');
-const cartTotal = document.getElementById('cart-total');
-const cartIcon = document.getElementById('cart-icon');
+// Función para mostrar los productos en el modal del carrito
+function mostrarProductosEnCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const listaCarrito = document.getElementById('cart-items-list');
+    const totalCarrito = document.getElementById('cart-total');
+
+    listaCarrito.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((producto, index) => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+            ${producto.nombre} - ${producto.color} - Talle ${producto.talla} - $${producto.precio} x ${producto.cantidad}
+            <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        listaCarrito.appendChild(item);
+        total += producto.precio * producto.cantidad;
+    });
+
+    totalCarrito.textContent = `$${total.toFixed(2)}`;
+}
+
+// Función para eliminar un producto del carrito
+function eliminarDelCarrito(index) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(index, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarProductosEnCarrito();
+    actualizarCarrito();
+}
+
+// Cargar los productos del carrito al abrir el modal
+document.getElementById('cart-icon').addEventListener('click', () => {
+    mostrarProductosEnCarrito();
+});
+
 
 // Actualizar la visualización del carrito
 function updateCart() {
