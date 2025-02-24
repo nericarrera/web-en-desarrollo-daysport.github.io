@@ -29,9 +29,9 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar el título, precio y descripción
-    document.getElementById('product-title-mujer').textContent = product.nombre;
-    document.getElementById('product-price-mujer').textContent = `$${product.precio.toLocaleString()}`;
-    document.getElementById('product-description-mujer').textContent = product.descripcion || 'Descripción no disponible';
+    document.getElementById('product-title').textContent = product.nombre;
+    document.getElementById('product-price').textContent = `$${product.precio.toLocaleString()}`;
+    document.getElementById('product-description').textContent = product.descripcion || 'Descripción no disponible';
 
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*----------- BOTÓN "AGREGAR AL CARRITO" ------------*/
 document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart-mujer');
+    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart');
 
     botonAgregarCarrito.addEventListener('click', () => {
         console.log('Botón "Agregar al carrito" clickeado');
