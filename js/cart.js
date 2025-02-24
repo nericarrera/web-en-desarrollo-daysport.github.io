@@ -108,3 +108,28 @@ const cartCloseBtn = document.getElementById('cart-close-btn');
 cartCloseBtn.addEventListener('click', () => {
     cartDropdown.classList.add('cart-dropdown-hidden');
 });
+
+
+
+/*---------------------------------------------------------*/
+
+// Abrir/cerrar el modal del carrito al hacer clic en el ícono
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evitar que el clic se propague
+    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Alternar la visibilidad del modal
+});
+
+// Cerrar el modal al hacer clic fuera de él
+document.addEventListener('click', (event) => {
+    const isClickInside = cartDropdown.contains(event.target);
+    const isCartIcon = cartIcon.contains(event.target);
+
+    if (!isClickInside && !isCartIcon) {
+        cartDropdown.classList.add('cart-dropdown-hidden'); // Cerrar el modal
+    }
+});
+
+// Cerrar el modal al hacer clic en el botón de cierre
+cartCloseBtn.addEventListener('click', () => {
+    cartDropdown.classList.add('cart-dropdown-hidden'); // Cerrar el modal
+});
