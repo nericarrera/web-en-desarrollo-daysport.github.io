@@ -20,6 +20,10 @@ function mostrarProductosEnCarrito() {
     totalCarrito.textContent = `$${total.toFixed(2)}`;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    actualizarCarrito();
+});
+
 // Función para eliminar un producto del carrito
 function eliminarDelCarrito(index) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
