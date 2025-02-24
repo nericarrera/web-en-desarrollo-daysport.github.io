@@ -72,3 +72,9 @@ cartCloseBtn.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCarrito();
 });
+
+
+document.getElementById('cart-icon').addEventListener('click', () => {
+    const cartDropdown = document.getElementById('cart-dropdown');
+    cartDropdown.classList.toggle('cart-dropdown-hidden');
+});

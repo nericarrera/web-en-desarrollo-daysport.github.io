@@ -185,6 +185,16 @@
   margin-top: 2px;
 }
 
+/*-----------------------------CARRITO-----------------------------*/
+.cart-dropdown-hidden {
+  display: none;
+}
+
+.cart-dropdown {
+  display: block;
+  /* Otros estilos para el modal */
+}
+
 
 
 /* -----------------MENÚ Y SUBMENÚ----------------- */
