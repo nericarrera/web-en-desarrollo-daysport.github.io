@@ -46,6 +46,34 @@ function mostrarDetallesProducto(product) {
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
+     // Mostrar la imagen principal
+     const image = document.createElement('img');
+     image.src = product.imagen[0]; // Primera imagen por defecto
+     image.alt = product.nombre;
+     image.classList.add('main-product-image');
+     zoomContainer.appendChild(image);
+ 
+     // Variables para el zoom y desplazamiento
+     let isZoomed = false;
+     let offsetX, offsetY;
+ 
+     // Función para calcular el desplazamiento del zoom
+     function handleZoom(event) {
+         if (isZoomed) {
+             const rect = zoomContainer.getBoundingClientRect();
+             const mouseX = event.clientX - rect.left;
+             const mouseY = event.clientY - rect.top;
+ 
+             // Calcular el desplazamiento basado en la posición del mouse
+             offsetX = (mouseX / rect.width) * 100;
+             offsetY = (mouseY / rect.height) * 100;
+ 
+             // Aplicar el desplazamiento
+             image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
+         }
+     }
+ 
+
     // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
         // Limpiar contenedores
