@@ -6,13 +6,20 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
+
 
 /*-------------CARGAR CARRITO-------------*/
+
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const cartCount = document.getElementById('cart-count');
 const cartDropdown = document.getElementById('cart-dropdown');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
+const cartIcon = document.getElementById('cart-icon');
 
 // Actualizar la visualización del carrito
 function updateCart() {
@@ -62,7 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/*-----------------CERRAR EL MODAL CUANDO SE HACE CLIC AFUERA DEL CARRITO--------*/
+// Cerrar el modal cuando se hace clic fuera del carrito
+document.addEventListener('click', (event) => {
+    const isClickInside = cartDropdown.contains(event.target);
+    const isCartIcon = cartIcon.contains(event.target);
+
+    if (!isClickInside && !isCartIcon) {
+        cartDropdown.classList.add('cart-dropdown-hidden');
+    }
+});
+
+// Prevenir el cierre si se hace clic en el icono del carrito
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
+    cartDropdown.classList.toggle('cart-dropdown-hidden');
+});
+
+// Botón de cierre
+const cartCloseBtn = document.getElementById('cart-close-btn');
+cartCloseBtn.addEventListener('click', () => {
+    cartDropdown.classList.add('cart-dropdown-hidden');
+});
 
 // Escuchar clics en todo el documento
 document.addEventListener('click', (event) => {
@@ -74,18 +101,6 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Prevenir el cierre si se hace clic en el icono del carrito
-cartIcon.addEventListener('click', (event) => {
-    event.stopPropagation(); // Detiene la propagación para evitar cerrar el modal
-    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Abre/cierra el carrito
-});
 
-/*--------------CARRITO - BOTON DE CERRAR -----------------*/
+/*-----------------CERRAR EL MODAL CUANDO SE HACE CLIC AFUERA DEL CARRITO--------*/
 
-// Botón de cierre
-const cartCloseBtn = document.getElementById('cart-close-btn');
-
-// Evento para cerrar el carrito
-cartCloseBtn.addEventListener('click', () => {
-    cartDropdown.classList.add('cart-dropdown-hidden'); // Oculta el carrito
-});

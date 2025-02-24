@@ -5,3 +5,7 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
         addToCart(productName, productPrice);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+});
