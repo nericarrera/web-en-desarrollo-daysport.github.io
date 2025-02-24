@@ -72,6 +72,22 @@ function mostrarDetallesProducto(product) {
              image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
          }
      }
+
+     
+    // Activar/desactivar zoom al hacer clic
+    image.addEventListener('click', () => {
+        isZoomed = !isZoomed;
+        image.classList.toggle('zoomed');
+
+        if (isZoomed) {
+            zoomContainer.style.cursor = 'grab'; // Cambiar cursor al hacer zoom
+        } else {
+            zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor al desactivar zoom
+        }
+    });
+
+    // Mover el zoom al mover el mouse
+    zoomContainer.addEventListener('mousemove', handleZoom);
  
 
     // Función para mostrar imágenes en zoom-container y miniaturas
