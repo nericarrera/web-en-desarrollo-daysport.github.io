@@ -36,7 +36,7 @@ function mostrarDetallesProducto(product) {
     // Referencias a los contenedores
     const zoomContainer = document.querySelector('.zoom-container');
     const thumbnailsContainer = document.getElementById('product-thumbnails');
-    const tallesContainer = document.getElementById('product-sizes-mujer');
+    const tallesContainer = document.getElementById('product-sizes');
     const quantityContainer = document.getElementById('quantity-container');
     const quantityInput = document.getElementById('quantity');
 
@@ -134,7 +134,7 @@ function mostrarDetallesProducto(product) {
     }
 
     // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('product-colors-mujer');
+    const coloresContainer = document.getElementById('product-colors');
     coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
         const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
