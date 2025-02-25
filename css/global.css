@@ -116,6 +116,20 @@
   }
 
   /*----------CARRITO------------------*/
+  /*----------------CARRITO ITEM--------------*/
+
+.cart-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
   .cart-icon-container {
     position: relative;
@@ -174,13 +188,8 @@
     font-style: initial;
 }
 
-.cart-dropdown ul {
-    list-style: none;
-    padding: 0;
-}
 
-
-.cart-dropdown .cart-summary {
+.cart-summary {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -214,7 +223,7 @@
 }
 
 .cart-close-btn:hover {
-    color: #e74c3c;
+    color: #dee73c;
 }
 
  /*------------------ICONO USUARIO---------------*/
@@ -233,20 +242,7 @@
     margin-top: 2px;
 }
 
-/*----------------CARRITO ITEM--------------*/
 
-.cart-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.cart-item-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-}
 
   /*------------- MENÚ Y SUBMENÚ ---------------*/
 
