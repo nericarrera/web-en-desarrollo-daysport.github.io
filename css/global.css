@@ -212,6 +212,12 @@
 
 }
 
+.cart-summary p {
+   margin-bottom: 10px;
+   font-family: "Dosis", sans-serif;
+   font-size: 16px;
+}
+
 .cart-summary button {
     background-color: #a30dfa;
     color: white;
