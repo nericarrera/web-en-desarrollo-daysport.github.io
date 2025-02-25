@@ -149,7 +149,6 @@
 }
 
 
-
 #cart-dropdown {
     position: absolute;
     top: 60px;
@@ -177,11 +176,6 @@
     padding: 0;
 }
 
-.cart-dropdown li {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-}
 
 .cart-dropdown .cart-summary {
     margin-top: 20px;
