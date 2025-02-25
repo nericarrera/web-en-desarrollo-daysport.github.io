@@ -97,6 +97,11 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     });
 });
 
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evitar que el evento se propague
+    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Mostrar/ocultar el modal
+});
+
 // Actualizar el carrito al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
