@@ -165,8 +165,8 @@
 
 #cart-dropdown {
     position: absolute;
-    top: 95px;
-    right: 64px;
+    top: 40px;
+    right: -6px;
     width: 300px;
     background: #fff;
     border: 1px solid #ccc;
