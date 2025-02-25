@@ -100,6 +100,14 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
         const productPrice = button.getAttribute('data-price');
         const productImage = button.getAttribute('data-image');
 
+        // Verificar que los datos se obtuvieron correctamente
+        console.log('Datos del producto:', { productName, productPrice, productImage });
+
+        if (!productName || !productPrice || !productImage) {
+            console.error('Faltan datos en el botón "Agregar al carrito".');
+            return;
+        }
+
         // Agregar el producto al carrito
         addToCart(productName, productPrice, productImage);
     });
