@@ -195,7 +195,7 @@
     justify-content: space-between;
 }
 
-#cart-item-list {
+#cart-item-list p {
     font-family: "Dosis", sans-serif;
     font-size: 19px;
     font-weight: 800;
