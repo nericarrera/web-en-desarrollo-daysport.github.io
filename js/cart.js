@@ -1,8 +1,7 @@
 
-// Variables globales
+// Variables globales (declaradas una sola vez)
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
-const cartCloseBtn = document.getElementById('cart-close-btn');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
@@ -39,24 +38,6 @@ function updateCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Seleccionar todos los botones "Agregar al carrito"
-const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
-
-// Adjuntar el evento de clic a cada botón
-addToCartButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        // Evitar que el evento se dispare múltiples veces
-        event.stopPropagation();
-
-        // Obtener los datos del producto
-        const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
-
-        // Agregar el producto al carrito
-        addToCart(productName, productPrice);
-    });
-});
-
 // Función para agregar un producto al carrito
 function addToCart(productName, productPrice) {
     cart.push({ name: productName, price: productPrice });
@@ -71,38 +52,25 @@ function removeFromCart(index) {
 }
 
 // Mostrar/ocultar el modal del carrito
-cartIcon.addEventListener('click', () => {
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
     cartDropdown.classList.toggle('cart-dropdown-hidden');
     updateCart(); // Actualizar la lista de productos al abrir el modal
 });
 
-// Cerrar el modal al hacer clic en el botón de cierre
-cartCloseBtn.addEventListener('click', () => {
-    cartDropdown.classList.add('cart-dropdown-hidden');
-});
-
 // Cerrar el modal al hacer clic fuera de él
 document.addEventListener('click', (event) => {
-    if (!cartDropdown.contains(event.target)) { // Aquí faltaba un paréntesis de cierre
+    if (!cartDropdown.contains(event.target) && !cartIcon.contains(event.target)) {
         cartDropdown.classList.add('cart-dropdown-hidden');
     }
 });
 
 // Adjuntar eventos a los botones "Agregar al carrito"
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+        event.stopPropagation();
         const productName = button.getAttribute('data-product');
         const productPrice = button.getAttribute('data-price');
         addToCart(productName, productPrice);
     });
-});
-
-cartIcon.addEventListener('click', (event) => {
-    event.stopPropagation(); // Evitar que el evento se propague
-    cartDropdown.classList.toggle('cart-dropdown-hidden'); // Mostrar/ocultar el modal
-});
-
-// Actualizar el carrito al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    updateCart();
 });
