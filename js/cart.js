@@ -6,12 +6,18 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-
 // Cargar el carrito desde localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Función para mostrar los productos en la página del carrito
-function displayCartItems() {
+// Función para agregar un producto al carrito
+function addToCart(productName, productPrice, productImage) {
+    cart.push({ name: productName, price: productPrice, image: productImage });
+    updateCart();
+    alert('Producto añadido al carrito!');
+}
+
+// Función para actualizar el carrito en la interfaz
+function updateCart() {
     // Limpiar la lista de productos
     cartItemsList.innerHTML = '';
 
@@ -37,20 +43,25 @@ function displayCartItems() {
         });
     }
 
-    // Actualizar el total
+    // Actualizar el total y el contador
     cartTotal.textContent = `$${total.toFixed(2)}`;
+    cartCount.textContent = cart.length;
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
     cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    displayCartItems(); // Actualizar la lista de productos
+    updateCart();
 }
 
-// Mostrar los productos al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    displayCartItems();
+// Mostrar/ocultar el modal del carrito
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
+    cartDropdown.classList.toggle('cart-dropdown-hidden');
+    updateCart(); // Actualizar la lista de productos al abrir el modal
 });
 
 const cartCloseBtn = document.getElementById('cart-close-btn');
