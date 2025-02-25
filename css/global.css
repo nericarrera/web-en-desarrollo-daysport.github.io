@@ -122,12 +122,12 @@
     display: inline-block;
     cursor: pointer;
     margin: auto;
- }
+}
 
 #cart-icon {
     width: 20px;
     margin-top: 5px;
- }
+}
 
 #cart-count {
     position: absolute;
@@ -141,14 +141,6 @@
     width: 18px;
     margin: auto;
 }
-
-#cart-count:hover {
-  background-color: #f3ff05;
-  transition: all 500ms ease;
-  color: #000000;
-}
-
-
 
 #cart-dropdown {
     position: absolute;
@@ -165,58 +157,6 @@
 
 .cart-dropdown-hidden {
     display: none;
-}
-
-.titulo-carrito{
-    color: #000000;
-    font-size: 19px;
-}
-
-.cart-dropdown ul {
-    list-style: none;
-    padding: 0;
-}
-
-.cart-dropdown li {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.cart-dropdown .cart-summary {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.cart-summary button {
-    background-color: #a30dfa;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
- }
- 
- .cart-summary button:hover {
-    background-color: #8b06d1;
- }
-
- .cart-close-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.cart-close-btn:hover {
-    color: #e74c3c;
 }
 
  /*------------------ICONO USUARIO---------------*/
