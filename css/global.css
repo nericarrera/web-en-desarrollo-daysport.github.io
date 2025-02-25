@@ -195,10 +195,14 @@
     justify-content: space-between;
 }
 
-#cart-item-list p {
+.item-list-cart {
     font-family: "Dosis", sans-serif;
     font-size: 19px;
     font-weight: 800;
+}
+
+#cart-item-list  {
+    position: relative;
     margin-top: 10px;
 }
 
