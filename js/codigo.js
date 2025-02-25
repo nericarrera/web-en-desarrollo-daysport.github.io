@@ -86,8 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /***--------ENLACE A PAGINA DE PRODUCTOS--------- */
 
-productoDiv.addEventListener('click', () => {
-    const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
-    window.location.href = url; // Redirige a la página de producto
-});
+
 
