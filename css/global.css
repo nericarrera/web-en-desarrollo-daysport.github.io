@@ -254,6 +254,30 @@
     color: #e74c3c;
 }
 
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details p {
+    margin: 0;
+    font-size: 14px;
+}
+
  /*------------------ICONO USUARIO---------------*/
 
 .user-icon-container {
