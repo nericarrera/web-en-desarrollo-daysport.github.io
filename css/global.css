@@ -195,6 +195,13 @@
     justify-content: space-between;
 }
 
+#cart-item-list {
+    font-family: "Dosis", sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
 .cart-summary button {
     background-color: #a30dfa;
     color: white;
