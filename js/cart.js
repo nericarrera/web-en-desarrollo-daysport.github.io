@@ -58,12 +58,25 @@ cartIcon.addEventListener('click', (event) => {
     updateCart(); // Actualizar la lista de productos al abrir el modal
 });
 
+const cartCloseBtn = document.getElementById('cart-close-btn');
+
+if (cartCloseBtn) {
+    cartCloseBtn.addEventListener('click', (event) => {
+        event.stopPropagation(); // Evitar que el evento se propague
+        cartDropdown.classList.add('cart-dropdown-hidden'); // Ocultar el modal
+    });
+} else {
+    console.error('El botón de cierre del carrito no se encontró.');
+}
+
 // Cerrar el modal al hacer clic fuera de él
 document.addEventListener('click', (event) => {
     if (!cartDropdown.contains(event.target) && !cartIcon.contains(event.target)) {
         cartDropdown.classList.add('cart-dropdown-hidden');
     }
 });
+
+
 
 // Adjuntar eventos a los botones "Agregar al carrito"
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
