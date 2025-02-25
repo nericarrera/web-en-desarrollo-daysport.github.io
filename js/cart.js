@@ -1,6 +1,4 @@
 
-
-
 // Variables globales
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
@@ -40,6 +38,24 @@ function updateCart() {
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+// Seleccionar todos los botones "Agregar al carrito"
+const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+
+// Adjuntar el evento de clic a cada botón
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Evitar que el evento se dispare múltiples veces
+        event.stopPropagation();
+
+        // Obtener los datos del producto
+        const productName = button.getAttribute('data-product');
+        const productPrice = button.getAttribute('data-price');
+
+        // Agregar el producto al carrito
+        addToCart(productName, productPrice);
+    });
+});
 
 // Función para agregar un producto al carrito
 function addToCart(productName, productPrice) {
