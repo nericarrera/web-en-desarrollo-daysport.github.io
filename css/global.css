@@ -213,6 +213,7 @@
 }
 
 .cart-summary p {
+    width: auto;
     background: #000000;
     color: #f0f0f0;
    margin-bottom: 10px;
