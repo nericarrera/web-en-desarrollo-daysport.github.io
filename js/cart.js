@@ -1,66 +1,63 @@
 
 
+
 // Variables globales
-const cartDropdown = document.getElementById('cart-dropdown');
 const cartIcon = document.getElementById('cart-icon');
+const cartDropdown = document.getElementById('cart-dropdown');
 const cartCloseBtn = document.getElementById('cart-close-btn');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-// Función para mostrar los productos en el modal del carrito
-function mostrarProductosEnCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    cartItemsList.innerHTML = '';
-    let total = 0;
+// Cargar el carrito desde localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    if (carrito.length === 0) {
+// Función para actualizar el carrito en la interfaz
+function updateCart() {
+    // Limpiar la lista de productos
+    cartItemsList.innerHTML = '';
+
+    // Calcular el total y mostrar los productos
+    let total = 0;
+    if (cart.length === 0) {
         cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
     } else {
-        carrito.forEach((producto, index) => {
-            const item = document.createElement('li');
-            item.innerHTML = `
-                ${producto.nombre} - ${producto.color} - Talle ${producto.talla} - $${producto.precio} x ${producto.cantidad}
-                <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.name} - $${item.price} 
+                <button onclick="removeFromCart(${index})">Eliminar</button>
             `;
-            cartItemsList.appendChild(item);
-            total += producto.precio * producto.cantidad;
+            cartItemsList.appendChild(li);
+            total += parseFloat(item.price);
         });
     }
 
+    // Actualizar el total y el contador
     cartTotal.textContent = `$${total.toFixed(2)}`;
+    cartCount.textContent = cart.length;
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Función para agregar un producto al carrito
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    updateCart();
+    alert('Producto añadido al carrito!');
 }
 
 // Función para eliminar un producto del carrito
-function eliminarDelCarrito(index) {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.splice(index, 1);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    mostrarProductosEnCarrito();
-    actualizarCarrito();
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
 }
 
-// Función para actualizar el contador del carrito
-function actualizarCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    cartCount.textContent = carrito.length;
-}
-
-// Abrir/cerrar el modal del carrito al hacer clic en el ícono
-cartIcon.addEventListener('click', (event) => {
-    event.stopPropagation();
+// Mostrar/ocultar el modal del carrito
+cartIcon.addEventListener('click', () => {
     cartDropdown.classList.toggle('cart-dropdown-hidden');
-    mostrarProductosEnCarrito(); // Mostrar los productos al abrir el modal
-});
-
-// Cerrar el modal al hacer clic fuera de él
-document.addEventListener('click', (event) => {
-    const isClickInside = cartDropdown.contains(event.target);
-    const isCartIcon = cartIcon.contains(event.target);
-
-    if (!isClickInside && !isCartIcon) {
-        cartDropdown.classList.add('cart-dropdown-hidden');
-    }
+    updateCart(); // Actualizar la lista de productos al abrir el modal
 });
 
 // Cerrar el modal al hacer clic en el botón de cierre
@@ -68,13 +65,23 @@ cartCloseBtn.addEventListener('click', () => {
     cartDropdown.classList.add('cart-dropdown-hidden');
 });
 
-// Cargar el carrito al iniciar la página
-document.addEventListener('DOMContentLoaded', () => {
-    actualizarCarrito();
+// Cerrar el modal al hacer clic fuera de él
+document.addEventListener('click', (event) => {
+    if (!cartDropdown.contains(event.target)){
+        cartDropdown.classList.add('cart-dropdown-hidden');
+    }
 });
 
+// Adjuntar eventos a los botones "Agregar al carrito"
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product');
+        const productPrice = button.getAttribute('data-price');
+        addToCart(productName, productPrice);
+    });
+});
 
-document.getElementById('cart-icon').addEventListener('click', () => {
-    const cartDropdown = document.getElementById('cart-dropdown');
-    cartDropdown.classList.toggle('cart-dropdown-hidden');
+// Actualizar el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
 });

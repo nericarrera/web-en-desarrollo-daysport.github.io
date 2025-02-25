@@ -1,14 +1,3 @@
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
-        addToCart(productName, productPrice);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateCart();
-});
 
 /*--------BANNER--------*/
 
@@ -40,79 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
   firstVideo.play();
   firstVideo.addEventListener('ended', changeSlide, { once: true });
 });
-
-
-/*------------CARRITO------------*/
-
-// Variables globales para el carrito
-let cart = JSON.parse(localStorage.getItem('cart')) || [];  // Cargar carrito desde LocalStorage
-const cartIcon = document.getElementById('cart-icon');
-const cartDropdown = document.getElementById('cart-dropdown');
-const cartCount = document.getElementById('cart-count');
-const cartItemsList = document.getElementById('cart-items-list');
-const cartTotal = document.getElementById('cart-total');
-
-// Mostrar u ocultar el carrito al hacer clic en el ícono del carrito
-cartIcon.addEventListener('click', () => {
-  if (cart.length === 0) {
-      alert("El carrito está vacío.");
-  } else {
-      cartDropdown.classList.toggle('cart-dropdown-hidden');  // Mostrar/ocultar el carrito
-  }
-});
-
-// Actualizar la interfaz del carrito
-function updateCart() {
-  cartItemsList.innerHTML = '';  // Limpiar la lista del carrito
-  let total = 0;
-
-  // Si no hay productos en el carrito
-  if (cart.length === 0) {
-      cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
-  } else {
-      cart.forEach((item, index) => {
-          total += parseFloat(item.price);
-          const li = document.createElement('li');
-          li.innerHTML = `${item.name} - $${item.price} <button onclick="removeFromCart(${index})">Eliminar</button>`;
-          cartItemsList.appendChild(li);
-      });
-  }
-
-  cartCount.innerText = cart.length;  // Actualizar el contador
-  cartTotal.innerText = `$${total.toFixed(2)}`;  // Mostrar el total
-  localStorage.setItem('cart', JSON.stringify(cart));  // Guardar el carrito en LocalStorage
-}
-
-// Añadir productos al carrito
-function addToCart(productName, productPrice) {
-  cart.push({ name: productName, price: productPrice });
-  updateCart();
-  alert('Producto añadido al carrito!');
-}
-
-// Eliminar productos del carrito
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCart();  // Actualizar la lista de productos en el carrito
-}
-
-// Enlazar los botones de "Agregar al carrito" para cada producto
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-  button.addEventListener('click', (e) => {
-      const productName = e.target.getAttribute('data-product');
-      const productPrice = e.target.getAttribute('data-price');
-      addToCart(productName, productPrice);
-  });
-});
-
-// Cargar el carrito cuando se carga la página
-document.addEventListener('DOMContentLoaded', function() {
-  updateCart();  // Actualizar el carrito al cargar la página
-});
-
-/*--------------------------------------*/
-
-
 
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
