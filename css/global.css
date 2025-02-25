@@ -206,6 +206,12 @@
     margin-top: 10px;
 }
 
+.cart-summary {
+    display: block;
+    margin-bottom: 13px;
+
+}
+
 .cart-summary button {
     background-color: #a30dfa;
     color: white;
