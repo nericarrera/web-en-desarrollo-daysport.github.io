@@ -1,43 +1,14 @@
 
-// Variables globales (declaradas una sola vez)
+// Variables globales
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
+const cartCloseBtn = document.getElementById('cart-close-btn');
 const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
 // Cargar el carrito desde localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-// Función para agregar un producto al carrito
-function addToCart(productName, productPrice, productImage) {
-    // Crear un objeto con los datos del producto
-    const product = {
-        name: productName,
-        price: parseFloat(productPrice), // Convertir el precio a número
-        image: productImage
-    };
-
-    // Agregar el producto al carrito
-    cart.push(product);
-    updateCart(); // Actualizar la interfaz del carrito
-    alert('Producto añadido al carrito!');
-}
-
-// Adjuntar eventos a los botones "Agregar al carrito"
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.stopPropagation();
-
-        // Obtener los datos del producto desde los atributos del botón
-        const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
-        const productImage = button.getAttribute('data-image');
-
-        // Agregar el producto al carrito
-        addToCart(productName, productPrice, productImage);
-    });
-});
 
 // Función para actualizar el carrito en la interfaz
 function updateCart() {
@@ -56,13 +27,13 @@ function updateCart() {
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <p>${item.name}</p>
-                        <p>$${item.price}</p>
+                        <p>$${item.price.toFixed(2)}</p>
                         <button onclick="removeFromCart(${index})">Eliminar</button>
                     </div>
                 </div>
             `;
             cartItemsList.appendChild(li);
-            total += parseFloat(item.price);
+            total += item.price; // Sumar al total
         });
     }
 
@@ -74,10 +45,25 @@ function updateCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Función para agregar un producto al carrito
+function addToCart(productName, productPrice, productImage) {
+    // Crear un objeto con los datos del producto
+    const product = {
+        name: productName,
+        price: parseFloat(productPrice), // Convertir el precio a número
+        image: productImage
+    };
+
+    // Agregar el producto al carrito
+    cart.push(product);
+    updateCart(); // Actualizar la interfaz del carrito
+    alert('Producto añadido al carrito!');
+}
+
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
     cart.splice(index, 1);
-    updateCart();
+    updateCart(); // Actualizar la interfaz del carrito
 }
 
 // Mostrar/ocultar el modal del carrito
@@ -87,12 +73,11 @@ cartIcon.addEventListener('click', (event) => {
     updateCart(); // Actualizar la lista de productos al abrir el modal
 });
 
-const cartCloseBtn = document.getElementById('cart-close-btn');
-
+// Cerrar el modal al hacer clic en el botón de cierre
 if (cartCloseBtn) {
     cartCloseBtn.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evitar que el evento se propague
-        cartDropdown.classList.add('cart-dropdown-hidden'); // Ocultar el modal
+        event.stopPropagation();
+        cartDropdown.classList.add('cart-dropdown-hidden');
     });
 } else {
     console.error('El botón de cierre del carrito no se encontró.');
@@ -105,13 +90,22 @@ document.addEventListener('click', (event) => {
     }
 });
 
-
 // Adjuntar eventos a los botones "Agregar al carrito"
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     button.addEventListener('click', (event) => {
         event.stopPropagation();
+
+        // Obtener los datos del producto desde los atributos del botón
         const productName = button.getAttribute('data-product');
         const productPrice = button.getAttribute('data-price');
-        addToCart(productName, productPrice);
+        const productImage = button.getAttribute('data-image');
+
+        // Agregar el producto al carrito
+        addToCart(productName, productPrice, productImage);
     });
+});
+
+// Actualizar el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
 });
