@@ -189,7 +189,7 @@
 }
 
 
-.cart-summary {
+.cart-dropdown .cart-summary {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -223,7 +223,7 @@
 }
 
 .cart-close-btn:hover {
-    color: #dee73c;
+    color: #e74c3c;
 }
 
  /*------------------ICONO USUARIO---------------*/
