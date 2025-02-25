@@ -11,10 +11,33 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Función para agregar un producto al carrito
 function addToCart(productName, productPrice, productImage) {
-    cart.push({ name: productName, price: productPrice, image: productImage });
-    updateCart();
+    // Crear un objeto con los datos del producto
+    const product = {
+        name: productName,
+        price: parseFloat(productPrice), // Convertir el precio a número
+        image: productImage
+    };
+
+    // Agregar el producto al carrito
+    cart.push(product);
+    updateCart(); // Actualizar la interfaz del carrito
     alert('Producto añadido al carrito!');
 }
+
+// Adjuntar eventos a los botones "Agregar al carrito"
+document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        // Obtener los datos del producto desde los atributos del botón
+        const productName = button.getAttribute('data-product');
+        const productPrice = button.getAttribute('data-price');
+        const productImage = button.getAttribute('data-image');
+
+        // Agregar el producto al carrito
+        addToCart(productName, productPrice, productImage);
+    });
+});
 
 // Función para actualizar el carrito en la interfaz
 function updateCart() {
