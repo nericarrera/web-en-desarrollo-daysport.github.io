@@ -77,7 +77,6 @@ document.addEventListener('click', (event) => {
 });
 
 
-
 // Adjuntar eventos a los botones "Agregar al carrito"
 document.querySelectorAll('.btn-add-to-cart').forEach(button => {
     button.addEventListener('click', (event) => {
