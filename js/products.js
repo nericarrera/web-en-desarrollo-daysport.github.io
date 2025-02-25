@@ -1,14 +1,4 @@
-document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
-        addToCart(productName, productPrice);
-    });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    updateCart();
-});
 
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
@@ -242,53 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
 
-// Función para agregar un producto al carrito
-function agregarAlCarrito(producto) {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push(producto);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarCarrito();
-    alert('Producto agregado al carrito!');
-}
 
-// Función para actualizar el contador del carrito
-function actualizarCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const contadorCarrito = document.getElementById('cart-count');
-    contadorCarrito.textContent = carrito.length;
-}
-
-// Evento para el botón "Agregar al carrito"
-document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregarCarrito = document.querySelector('.btn-add-to-cart');
-
-    botonAgregarCarrito.addEventListener('click', () => {
-        // Obtener los datos del producto
-        const nombreProducto = document.getElementById('product-title').textContent;
-        const precioProducto = document.getElementById('product-price').textContent.replace('$', '');
-        const colorSeleccionado = document.querySelector('.color-btn.selected')?.getAttribute('data-color');
-        const talleSeleccionado = document.querySelector('.size-btn.selected')?.textContent.split(' ')[0];
-        const cantidad = document.getElementById('quantity').value;
-
-        // Validar que se haya seleccionado un talle
-        if (!talleSeleccionado) {
-            alert('Por favor, selecciona un talle antes de continuar.');
-            return;
-        }
-
-        // Crear el objeto del producto
-        const producto = {
-            nombre: nombreProducto,
-            precio: parseFloat(precioProducto),
-            color: colorSeleccionado,
-            talla: talleSeleccionado,
-            cantidad: parseInt(cantidad, 10),
-        };
-
-        // Agregar el producto al carrito
-        agregarAlCarrito(producto);
-    });
-});
 
 
 
