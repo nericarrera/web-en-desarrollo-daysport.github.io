@@ -67,7 +67,7 @@ cartCloseBtn.addEventListener('click', () => {
 
 // Cerrar el modal al hacer clic fuera de él
 document.addEventListener('click', (event) => {
-    if (!cartDropdown.contains(event.target){
+    if (!cartDropdown.contains(event.target)) { // Aquí faltaba un paréntesis de cierre
         cartDropdown.classList.add('cart-dropdown-hidden');
     }
 });
