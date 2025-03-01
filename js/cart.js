@@ -45,18 +45,10 @@ function updateCart() {
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-    
 }
 
 // Función para agregar un producto al carrito
-function addToCart(productName, productPrice, productImage) {
-    // Crear un objeto con los datos del producto
-    const product = {
-        name: productName,
-        price: parseFloat(productPrice), // Convertir el precio a número
-        image: productImage
-    };
-
+function addToCart(product) {
     // Agregar el producto al carrito
     cart.push(product);
     updateCart(); // Actualizar la interfaz del carrito
@@ -102,17 +94,28 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
         const productName = button.getAttribute('data-product');
         const productPrice = button.getAttribute('data-price');
         const productImage = button.getAttribute('data-image');
+        const productColor = button.getAttribute('data-color') || 'Sin color'; // Obtener el color
+        const productSize = button.getAttribute('data-size') || 'Sin talle'; // Obtener el talle
 
         // Verificar que los datos se obtuvieron correctamente
-        console.log('Datos del producto:', { productName, productPrice, productImage });
+        console.log('Datos del producto:', { productName, productPrice, productImage, productColor, productSize });
 
         if (!productName || !productPrice || !productImage) {
             console.error('Faltan datos en el botón "Agregar al carrito".');
             return;
         }
 
+        // Crear el objeto del producto
+        const product = {
+            name: productName,
+            price: parseFloat(productPrice), // Convertir el precio a número
+            image: productImage,
+            color: productColor,
+            size: productSize
+        };
+
         // Agregar el producto al carrito
-        addToCart(productName, productPrice, productImage);
+        addToCart(product);
     });
 });
 
@@ -120,13 +123,3 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
-
-/*--------------------------------------------------------------*/
-
-// Función para agregar un producto al carrito
-function addToCart(product) {
-    // Agregar el producto al carrito
-    cart.push(product);
-    updateCart(); // Actualizar la interfaz del carrito
-    alert('Producto añadido al carrito!');
-}
