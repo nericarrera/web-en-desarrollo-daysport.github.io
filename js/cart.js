@@ -28,6 +28,8 @@ function updateCart() {
                     <div class="cart-item-details">
                         <p>${item.name}</p>
                         <p>$${item.price.toFixed(2)}</p>
+                        <p>Color: ${item.color}</p>
+                        <p>Talle: ${item.size}</p>
                         <button onclick="removeFromCart(${index})">Eliminar</button>
                     </div>
                 </div>
@@ -43,6 +45,7 @@ function updateCart() {
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
+    
 }
 
 // Función para agregar un producto al carrito
@@ -117,3 +120,13 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
+
+/*--------------------------------------------------------------*/
+
+// Función para agregar un producto al carrito
+function addToCart(product) {
+    // Agregar el producto al carrito
+    cart.push(product);
+    updateCart(); // Actualizar la interfaz del carrito
+    alert('Producto añadido al carrito!');
+}
