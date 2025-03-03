@@ -225,14 +225,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 /*--------------------------------------------------*/
 
 
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
 
+document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
+    // Obtener los datos del producto
+    const productTitle = document.getElementById('product-title').textContent;
+    const productPrice = document.getElementById('product-price').textContent.replace('$', '');
+    const productImage = document.getElementById('product-image').src;
 
+    // Obtener el color seleccionado
+    const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
+
+    // Obtener el talle seleccionado
+    const selectedSize = document.querySelector('.size-btn.selected')?.getAttribute('data-size') || 'Sin talle';
+
+    // Verificar que se haya seleccionado un talle
+    if (selectedSize === 'Sin talle') {
+        alert('Por favor, selecciona un talle antes de continuar.');
+        return;
+    }
+
+    // Crear el objeto del producto
+    const product = {
+        name: productTitle,
+        price: parseFloat(productPrice),
+        image: productImage,
+        color: selectedColor,
+        size: selectedSize
+    };
+
+    // Agregar el producto al carrito
+    addToCart(product);
+});
 
 
 
