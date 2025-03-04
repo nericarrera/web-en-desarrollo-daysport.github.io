@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Hacer los datos y funciones disponibles en el ámbito global
-    window.productosNiños = productosHombre;
+    window.productosNiños = productosNiños;
     window.obtenerProductosNovedad = obtenerProductosNovedad;
 
     // Función para actualizar contadores
