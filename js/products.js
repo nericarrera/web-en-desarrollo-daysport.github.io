@@ -217,16 +217,34 @@ function mostrarDetallesProducto(product) {
     }
 }
 
-// Llamar a la función para mostrar los detalles del producto
 document.addEventListener('DOMContentLoaded', () => {
     const productId = getProductIdFromURL();
+    console.log('ID del producto:', productId); // Depuración
+
+    // Buscar el producto en todas las secciones
     let product = productosMujer.find(p => p.id === productId); // Buscar en productosMujer
 
     if (!product) {
-        product = productosHombre.find(p => p.id === productId); // Buscar en productosHombre si no se encuentra en productosMujer
+        product = productosHombre.find(p => p.id === productId); // Buscar en productosHombre
     }
 
-    mostrarDetallesProducto(product);
+    if (!product) {
+        product = productosNiños.find(p => p.id === productId); // Buscar en productosNiños
+    }
+
+    if (!product) {
+        product = productosAccesorios.find(p => p.id === productId); // Buscar en productosAccesorios
+    }
+
+    console.log('Producto encontrado:', product); // Depuración
+
+    if (product) {
+        mostrarDetallesProducto(product); // Mostrar detalles del producto
+    } else {
+        console.error('Producto no encontrado');
+        alert('Producto no encontrado. Redirigiendo a la página principal...');
+        window.location.href = 'index.html'; // Redirigir si no se encuentra el producto
+    }
 });
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
