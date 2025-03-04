@@ -1,8 +1,6 @@
 
-// Cargar el carrito desde localStorage
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Función para mostrar los productos en la página del carrito
 function renderCart() {
     const cartItemsContainer = document.getElementById('cart-items-container');
     let total = 0;

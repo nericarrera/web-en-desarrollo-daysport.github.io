@@ -253,7 +253,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Obtener los datos del producto dinámicamente
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
-    const productImageElement = document.getElementById('product-image'); // Elemento de la imagen
+    const productImageElement = document.querySelector('.main-product-image'); // Elemento de la imagen
 
     // Verificar que el elemento de la imagen exista
     if (!productImageElement) {
@@ -268,7 +268,11 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
 
     // Obtener el talle seleccionado
-    const selectedSize = document.querySelector('.size-btn.selected')?.getAttribute('data-size') || 'Sin talle';
+    const selectedSize = document.querySelector('.size-btn.selected')?.textContent || 'Sin talle';
+
+    // Obtener la cantidad seleccionada
+    const quantityInput = document.getElementById('quantity');
+    const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
 
     // Verificar que se haya seleccionado un talle
     if (selectedSize === 'Sin talle') {
@@ -283,13 +287,12 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
         image: productImage,
         color: selectedColor,
         size: selectedSize,
-        quantity: 1 // Cantidad por defecto
+        quantity: quantity // Cantidad seleccionada
     };
 
     // Agregar el producto al carrito
     addToCart(product);
 });
-
 
 
 

@@ -12,23 +12,27 @@ const cartCount = document.getElementById('cart-count');
 
 // Función para agregar un producto al carrito
 function addToCart(product) {
-    // Verificar que el producto tenga un precio válido
-    if (typeof product.price === 'undefined' || isNaN(parseFloat(product.price))) {
-        console.error('El precio del producto no es válido:', product.price);
-        alert('Error: El precio del producto no es válido.');
-        return;
+    // Verificar si el producto ya está en el carrito
+    const existingProduct = cart.find(
+        (item) =>
+            item.name === product.name &&
+            item.color === product.color &&
+            item.size === product.size
+    );
+
+    if (existingProduct) {
+        // Si el producto ya está en el carrito, aumentar la cantidad
+        existingProduct.quantity += product.quantity;
+    } else {
+        // Si no está en el carrito, agregarlo
+        cart.push(product);
     }
 
-    // Convertir el precio a número
-    product.price = parseFloat(product.price);
-
-    // Agregar el producto al carrito
-    cart.push(product);
-    updateCart(); // Actualizar la interfaz del carrito
+    // Actualizar el carrito en la interfaz
+    updateCart();
     alert('Producto añadido al carrito!');
 }
 
-// Función para actualizar el carrito en la interfaz
 function updateCart() {
     // Limpiar la lista de productos
     cartItemsList.innerHTML = '';
@@ -39,12 +43,6 @@ function updateCart() {
         cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
     } else {
         cart.forEach((item, index) => {
-            // Verificar que el precio sea un número
-            if (typeof item.price !== 'number') {
-                console.error('El precio no es un número:', item.price);
-                return;
-            }
-
             // Crear el elemento del producto en el carrito
             const li = document.createElement('li');
             li.innerHTML = `
@@ -67,7 +65,7 @@ function updateCart() {
 
     // Actualizar el total y el contador
     cartTotal.textContent = `$${total.toFixed(2)}`;
-    cartCount.textContent = cart.length;
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar las cantidades
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
