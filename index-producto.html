@@ -154,32 +154,41 @@
   <!--------------------------PRODUCTO------------------------->
   <div class="product-page">
     <div class="product-gallery">
-      <div class="zoom-container">
-        <img class="main-product-image" src="" alt="Imagen principal">
-      </div>
-      <div id="product-thumbnails" class="thumbnails-container"></div>
+        <div class="zoom-container">
+            <!-- Imagen principal del producto -->
+            <img class="main-product-image" id="product-image" src="" alt="Imagen principal del producto">
+        </div>
+        <div id="product-thumbnails" class="thumbnails-container"></div>
     </div>
     <div class="product-details-section">
-      <h1 id="product-title"></h1>
-      <p id="product-price"></p>
-      <p id="product-description"></p>
-      <div id="product-colors" class="product-colors"></div>
-      <div id="product-sizes" class="product-size"></div>
+        <!-- Título del producto -->
+        <h1 id="product-title"></h1>
+        <!-- Precio del producto -->
+        <p id="product-price"></p>
+        <!-- Descripción del producto -->
+        <p id="product-description"></p>
 
-      <div id="quantity-container" class="product-quantity hidden">
-        <label for="quantity">Cantidad:</label>
-        <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
-      </div>
+        <!-- Colores disponibles -->
+        <div id="product-colors" class="product-colors">
+            <!-- Los botones de colores se generan dinámicamente -->
+        </div>
 
-      <div class="btn-container">
-        <button class="btn-buy-now">Comprar</button>
-        <button class="btn-add-to-cart" 
-        data-product="Camiseta Deportiva" 
-        data-price="25.99" 
-        data-image="img/camiseta-deportiva.jpg">
-    Agregar al carrito
-</button>
-    </div>
+        <!-- Talles disponibles -->
+        <div id="product-sizes" class="product-size">
+            <!-- Los botones de talles se generan dinámicamente -->
+        </div>
+
+        <!-- Selector de cantidad (opcional) -->
+        <div id="quantity-container" class="product-quantity hidden">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
+        </div>
+
+        <!-- Botones de compra y agregar al carrito -->
+        <div class="btn-container">
+            <button class="btn-buy-now">Comprar</button>
+            <button class="btn-add-to-cart">Agregar al carrito</button>
+        </div>
     </div>
 </div>
 
