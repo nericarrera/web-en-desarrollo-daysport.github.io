@@ -1,6 +1,5 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
-import { productosMujer } from '/js/mujerProductos.js';
-
+ import { productosMujer } from '/js/mujerProductos.js';
 import { productosHombre } from '/js/hombreProductos.js';
 
 // Variable global para la imagen principal
