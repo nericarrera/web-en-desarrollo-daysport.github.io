@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
-    
+            
             accesoriosProductsGrid.appendChild(productoDiv);
         });
     }
