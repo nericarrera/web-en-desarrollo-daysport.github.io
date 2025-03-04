@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
     const clearFiltersButton = document.getElementById('niños-clear-filters');
-    const colorCheckboxes = document.querySelectorAll('input[name="hombre-color"]');
+    const colorCheckboxes = document.querySelectorAll('input[name="niños-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
