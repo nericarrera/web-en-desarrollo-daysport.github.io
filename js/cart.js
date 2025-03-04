@@ -45,6 +45,7 @@ function updateCart() {
                 return;
             }
 
+            // Crear el elemento del producto en el carrito
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="cart-item">
