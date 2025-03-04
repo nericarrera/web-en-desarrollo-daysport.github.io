@@ -4,30 +4,34 @@ export const productosHombre = [
         
     {
         id: "hombre-1",
-        nombre: "Remera Modal Soft",
-        precio: 8000,
-        categoria: "remeras",
-        seccion: "mujer",
-        temporada: "verano",
-        descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
-        imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        miniaturas: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg", "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"],
-        hoverImagenes: ["img/mujer/remera-modal-soft-cuelloR/hover1.jpeg"],
+        nombre: "Campera Boss",
+        precio: 50000,
+        categoria: "camperas",
+        seccion: "hombre",
+        temporada: "invierno",
+        descripcion: "Campera de Invierno Puffer abrigada combinada.",
+        imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg", "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"],
+        miniaturas: ["img/hombre/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", "img/hombre/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg"],
+        hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"],
         etiqueta: "novedad",
         variantes: [
-            { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "negro", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "verde", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "L", stock: 2, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
-            celeste: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            negro : [
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg",
                 
             ],
-            negro: [
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-                "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" 
+            verde: [
+                "img/hombre/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg",
+                
             ],
+            blanco: [
+                "img/hombre/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+            ],
+
         }
     },
 
