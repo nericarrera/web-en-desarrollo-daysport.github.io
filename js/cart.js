@@ -1,3 +1,5 @@
+// Cargar el carrito desde localStorage
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Variables globales
 const cartIcon = document.getElementById('cart-icon');
@@ -7,8 +9,6 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-// Cargar el carrito desde localStorage
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Función para agregar un producto al carrito
 function addToCart(product) {
