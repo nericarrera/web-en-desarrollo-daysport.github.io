@@ -3,24 +3,24 @@ import { productosAccesorios } from '/js/accesoriosProductos.js';
 /*-------------FILTRO MUJER----------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const niñosProductsGrid = document.querySelector('.niños-products-grid');
-    const filterButtons = document.querySelectorAll('.niños-filter-button');
+    const niñosProductsGrid = document.querySelector('.accesorios-products-grid');
+    const filterButtons = document.querySelectorAll('.accesorios-filter-button');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
     const closeFilterButton = document.querySelector('.close-filter');
     const applyFiltersButton = document.getElementById('apply-filters');
-    const clearFiltersButton = document.getElementById('niños-clear-filters');
-    const colorCheckboxes = document.querySelectorAll('input[name="hombre-color"]');
+    const clearFiltersButton = document.getElementById('accesorios-clear-filters');
+    const colorCheckboxes = document.querySelectorAll('input[name="accesorios-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
 
     // Función para obtener productos con la etiqueta "novedad"
     function obtenerProductosNovedad() {
-        return productosNiños.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
+        return productosAccesorios.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
     }
 
     // Hacer los datos y funciones disponibles en el ámbito global
-    window.productosNiños = productosNiños;
+    window.productosAccesorios = productosAccesorios;
     window.obtenerProductosNovedad = obtenerProductosNovedad;
 
     // Función para actualizar contadores
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const colorCounts = {};
         const tallaCounts = {};
 
-        productosNiños.forEach(producto => {
+        productosAccesorios.forEach(producto => {
             producto.variantes.forEach(vari => {
                 if (vari.color) {
                     const color = vari.color.toLowerCase();
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para mostrar productos
     function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "") {
-        niñosProductsGrid.innerHTML = "";
+        accesoriosProductsGrid.innerHTML = "";
     
-        let productosFiltrados = productosNiños.filter(producto => {
+        let productosFiltrados = productosAccesorios.filter(producto => {
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
             const matchesColor = coloresSeleccionados.length === 0 || 
                 producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
@@ -84,12 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
-            productoDiv.classList.add('niños-product-card');
+            productoDiv.classList.add('accesorios-product-card');
     
             productoDiv.innerHTML = `
-                <div class="product-container-niños">
+                <div class="product-container-accesorios">
                     <a href="index-producto.html?id=${producto.id}" class="product-link">
-                        <div class="product-image-hombre">
+                        <div class="product-image-accesorios">
                             <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
                             <div class="product-thumbnails hidden-thumbnails">
                                 ${producto.miniaturas ? producto.miniaturas.map((miniatura, index) => `
@@ -101,11 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                     </a>
-                    <div class="product-details-niños">
-                        <p class="niños-product-price">$${producto.precio.toLocaleString()}</p>
-                        <p class="niños-product-name">${producto.nombre}</p>
-                        <p class="niños-product-categoria">${producto.categoria}</p>
-                        <p class="niños-product-etiqueta">${producto.etiqueta}</p>
+                    <div class="product-details-accesorios">
+                        <p class="accesorios-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="accesorios-product-name">${producto.nombre}</p>
+                        <p class="accesorios-product-categoria">${producto.categoria}</p>
+                        <p class="accesorios-product-etiqueta">${producto.etiqueta}</p>
                         <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                     </div>
                 </div>
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
     
-            niñosProductsGrid.appendChild(productoDiv);
+            accesoriosProductsGrid.appendChild(productoDiv);
         });
     }
 
