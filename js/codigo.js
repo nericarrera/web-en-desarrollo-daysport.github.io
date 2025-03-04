@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
       nextVideo.addEventListener('ended', changeSlide, { once: true });
   }
 
+  // Iniciar el carrusel con el primer video
+  const firstVideo = slides[0].querySelector('video');
+  firstVideo.play();
+  firstVideo.addEventListener('ended', changeSlide, { once: true });
 });
 
 
