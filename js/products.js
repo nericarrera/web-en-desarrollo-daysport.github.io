@@ -1,5 +1,5 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
- import { productosMujer } from '/js/mujerProductos.js';
+import { productosMujer } from '/js/mujerProductos.js';
 import { productosHombre } from '/js/hombreProductos.js';
 import { productosNiños } from '/js/niñosProductos.js'; 
 import { productosAccesorios } from '/js/accesoriosProductos.js'; 
