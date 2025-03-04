@@ -222,12 +222,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
-
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Obtener los datos del producto
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
-    const productImage = document.getElementById('product-image').src;
+    const productImageElement = document.getElementById('product-image');
+
+    // Verificar que el elemento de la imagen exista
+    if (!productImageElement) {
+        console.error('El elemento de la imagen no se encontró.');
+        alert('Error: No se pudo obtener la imagen del producto.');
+        return;
+    }
+
+    const productImage = productImageElement.src;
 
     // Obtener el color seleccionado
     const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';

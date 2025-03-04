@@ -56,6 +56,13 @@ function updateCart() {
 
 // Función para agregar un producto al carrito
 function addToCart(product) {
+    // Verificar que el producto tenga un precio válido
+    if (typeof product.price === 'undefined' || isNaN(parseFloat(product.price))) {
+        console.error('El precio del producto no es válido:', product.price);
+        alert('Error: El precio del producto no es válido.');
+        return;
+    }
+
     // Convertir el precio a número
     product.price = parseFloat(product.price);
 
