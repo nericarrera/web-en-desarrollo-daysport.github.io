@@ -11,7 +11,7 @@ export const productosHombre = [
         temporada: "invierno",
         descripcion: "Campera de Invierno Puffer abrigada combinada.",
         imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg", "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"],
-        miniaturas: ["img/hombre/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", "img/hombre/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg"],
+        miniaturas: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg"],
         hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"],
         etiqueta: "novedad",
         variantes: [
@@ -25,11 +25,11 @@ export const productosHombre = [
                 
             ],
             verde: [
-                "img/hombre/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg",
                 
             ],
             blanco: [
-                "img/hombre/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
             ],
 
         }
