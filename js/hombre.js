@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         productosFiltrados.forEach(producto => {
             const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
+            productoDiv.classList.add('hombre-product-card');
     
             productoDiv.innerHTML = `
                 <div class="product-container-hombre">
