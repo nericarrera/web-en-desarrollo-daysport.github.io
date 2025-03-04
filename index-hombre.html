@@ -143,6 +143,7 @@
   <img src="img/banner/sub-banner-gocuotas0.png" alt="sub-banner-campaña-en-cuotas">
 </div>
 
+<!---------------------------------- BANNER ------------------------------------>
   <!-- Banner específico para Hombre -->
   <div class="banner">
     <div class="banner-content">
@@ -152,16 +153,105 @@
     </div>
   </div>
 
+ <!---------------------------------- PRODUCTOS ------------------------------------>
+
  
+ <div class="horizontal-filter">
+  <div class="filter-categories">
+      <button class="mujer-filter-button active" data-filter="all">Ver Todo</button>
+      <button class="mujer-filter-button" data-filter="deportivo">Deportivo</button>
+      <button class="mujer-filter-button" data-filter="calzas">Calzas</button>
+      <button class="mujer-filter-button" data-filter="camperas">Camperas</button>
+      <button class="mujer-filter-button" data-filter="conjuntos">Conjuntos</button>
+      <button class="mujer-filter-button" data-filter="jeans">Jeans</button>
+      <button class="mujer-filter-button" data-filter="pantalones">Pantalones</button>
+      <button class="mujer-filter-button" data-filter="remeras">Remeras</button>
+      <button class="mujer-filter-button" data-filter="shorts">Shorts</button>
+       
+  </div>
+  <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
+</div>
 
+<div class="filter-overlay hidden-hombre">
+  <div class="filter-sidebar">
+      <div class="filter-sidebar-header">
+          <h2>Filtrar y ordenar</h2>
+          <a href="#" id="hombre-clear-filters">Borrar Todo</a>
+          <span class="close-filter">&times;</span>
+      </div>
 
+      <div class="filter-section collapsible-section">
+        <h3 class="filter-title collapsible-toggle">Ordenar por <span>▼</span></h3>
+        <ul class="filter-options collapsible-content">
+              <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
+              <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
+              <li><input type="radio" name="sort" value="novedades"> Novedades</li>
+              <li><input type="radio" name="sort" value="mas-vendido"> Lo más vendido</li>
+          </ul>
+      </div>
 
+      <div class="filter-section collapsible-section"> 
+        <h3 class="filter-title collapsible-toggle">Color <span>▼</span></h3>
+        <ul class="filter-options collapsible-content">
+            <li><input type="checkbox" name="hombre-color" value="amarillo"> <span class="color-box" style="background-color: #FFFF00;"></span> Amarillo <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="azul"> <span class="color-box" style="background-color: #0000FF;"></span> Azul <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="negro"> <span class="color-box" style="background-color: #000000;"></span> Negro <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="rosa"> <span class="color-box" style="background-color: #FFC0CB;"></span> Rosa <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="blanco"> <span class="color-box" style="background-color: #FFFFFF; border: 1px solid #ccc;"></span> Blanco <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="violeta"> <span class="color-box" style="background-color: #8A2BE2;"></span> Violeta <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="celeste"> <span class="color-box" style="background-color: #87CEEB;"></span> Celeste <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="gris"> <span class="color-box" style="background-color: #808080;"></span> Gris <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="verde"> <span class="color-box" style="background-color: #008000;"></span> Verde <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="naranja"> <span class="color-box" style="background-color: #FFA500;"></span> Naranja <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="beige"> <span class="color-box" style="background-color: #F5F5DC;"></span> Beige <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="marron"> <span class="color-box" style="background-color: #8B4513;"></span> Marron <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="rojo"> <span class="color-box" style="background-color: #FF0000;"></span> Rojo <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="turquesa"> <span class="color-box" style="background-color: #40E0D0;"></span> Turquesa <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="dorado"> <span class="color-box" style="background-color: #FFD700;"></span> Dorado <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="azul-marino"> <span class="color-box" style="background-color: #000080;"></span> Azul Marino <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="hombre-color" value="multicolor"> <span class="color-box" style="background: linear-gradient(45deg, red, yellow, green, blue);"></span> Multicolor <span class="item-count">(0)</span></li>
+        </ul>
+    </div>
 
-
-
-
-
+    <div class="filter-section collapsible-section">
+      <h3 class="filter-title collapsible-toggle">Talle <span>▼</span></h3>
+      <ul class="filter-options collapsible-content">
+          <li><input type="checkbox" name="size" value="S"> S <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="M"> M <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="L"> L <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="XL"> XL <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="XXL"> XXL <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="3XL"> 3XL <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="36"> 36 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="38"> 38 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="40"> 40 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="42"> 42 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="44"> 44 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="46"> 46 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="48"> 48 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="50"> 50 <span class="item-count">(0)</span></li>
+          <li><input type="checkbox" name="size" value="52"> 52 <span class="item-count">(0)</span></li>              
+        </ul>
+  </div>
   
+  <button id="apply-filters" class="apply-button">Aplicar Filtro</button>
+</div>
+</div>
+
+
+<div class="products-grid-h hombre-products-grid">
+<div class="hombre-products-grid"></div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
 
   <footer class="footer">
     <div class="conteiner-footer">
