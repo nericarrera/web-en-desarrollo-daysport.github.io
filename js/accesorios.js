@@ -3,7 +3,7 @@ import { productosAccesorios } from '/js/accesoriosProductos.js';
 /*-------------FILTRO MUJER----------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-    const niñosProductsGrid = document.querySelector('.accesorios-products-grid');
+    const accesoriosProductsGrid = document.querySelector('.accesorios-products-grid');
     const filterButtons = document.querySelectorAll('.accesorios-filter-button');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
