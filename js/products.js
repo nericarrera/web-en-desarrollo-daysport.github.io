@@ -254,7 +254,16 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
 
     // Obtener los datos del producto
     const productTitle = document.getElementById('product-title').textContent;
-    const productPrice = document.getElementById('product-price').textContent.replace('$', '');
+    const productPriceText = document.getElementById('product-price').textContent.replace('$', '');
+    const productPrice = parseFloat(productPriceText); // Convertir el precio a número
+
+    // Verificar que el precio sea un número válido
+    if (isNaN(productPrice)) {
+        console.error('El precio no es un número válido:', productPriceText);
+        alert('Error: El precio del producto no es válido.');
+        return;
+    }
+
     const productImageElement = document.getElementById('product-image'); // Elemento de la imagen
 
     // Verificar que el elemento de la imagen exista
@@ -267,10 +276,10 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     const productImage = productImageElement.src; // Obtener la URL de la imagen
 
     // Obtener el color seleccionado
-    const selectedColor = document.querySelector('.color-btn')?.getAttribute('data-color') || 'Sin color';
+    const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
 
     // Obtener el talle seleccionado
-    const selectedSize = document.querySelector('.size-btn')?.textContent || 'Sin talle';
+    const selectedSize = document.querySelector('.size-btn.selected')?.textContent || 'Sin talle';
 
     // Obtener la cantidad seleccionada
     const quantityInput = document.getElementById('quantity');
@@ -285,7 +294,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Crear el objeto del producto
     const product = {
         name: productTitle,
-        price: parseFloat(productPrice), // Convertir el precio a número
+        price: productPrice, // Precio convertido a número
         image: productImage,
         color: selectedColor,
         size: selectedSize,
@@ -297,7 +306,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Agregar el producto al carrito
     addToCart(product);
 });
-
 
 
 
