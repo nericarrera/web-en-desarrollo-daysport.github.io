@@ -1,6 +1,5 @@
 
 
-import { productosHombre } from 'js/hombreProductos.js';
 
 /*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
 
