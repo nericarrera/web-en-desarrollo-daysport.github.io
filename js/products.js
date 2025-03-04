@@ -219,7 +219,12 @@ function mostrarDetallesProducto(product) {
 // Llamar a la función para mostrar los detalles del producto
 document.addEventListener('DOMContentLoaded', () => {
     const productId = getProductIdFromURL();
-    const product = productosMujer.find(p => p.id === productId);
+    let product = productosMujer.find(p => p.id === productId); // Buscar en productosMujer
+
+    if (!product) {
+        product = productosHombre.find(p => p.id === productId); // Buscar en productosHombre si no se encuentra en productosMujer
+    }
+
     mostrarDetallesProducto(product);
 });
 
