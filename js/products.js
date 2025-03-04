@@ -288,7 +288,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
 
 
 
-
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
 
 // Simula una carga de comentarios desde un servidor o base de datos
