@@ -133,3 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /*--------------------------------------------------------------*/
 
+// Función para eliminar un producto del carrito
+function removeFromCart(index) {
+    // Eliminar el producto del carrito
+    cart.splice(index, 1);
+
+    // Actualizar el carrito en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Actualizar la interfaz del carrito
+    updateCart(); // Si estás en la página del carrito, también debes llamar a renderCart()
+}

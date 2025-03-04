@@ -222,11 +222,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
+
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
-    // Obtener los datos del producto
+    // Obtener los datos del producto dinámicamente
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
-    const productImageElement = document.getElementById('product-image');
+    const productImageElement = document.getElementById('product-image'); // Elemento de la imagen
 
     // Verificar que el elemento de la imagen exista
     if (!productImageElement) {
@@ -235,7 +236,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
         return;
     }
 
-    const productImage = productImageElement.src;
+    const productImage = productImageElement.src; // Obtener la URL de la imagen
 
     // Obtener el color seleccionado
     const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
@@ -255,7 +256,8 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
         price: parseFloat(productPrice), // Convertir el precio a número
         image: productImage,
         color: selectedColor,
-        size: selectedSize
+        size: selectedSize,
+        quantity: 1 // Cantidad por defecto
     };
 
     // Agregar el producto al carrito
