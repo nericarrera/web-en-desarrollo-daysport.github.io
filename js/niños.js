@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const colorCounts = {};
         const tallaCounts = {};
 
-        productosHombre.forEach(producto => {
+        productosNiños.forEach(producto => {
             producto.variantes.forEach(vari => {
                 if (vari.color) {
                     const color = vari.color.toLowerCase();
