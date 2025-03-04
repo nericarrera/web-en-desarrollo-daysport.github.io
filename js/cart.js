@@ -33,6 +33,7 @@ function addToCart(product) {
     alert('Producto añadido al carrito!');
 }
 
+// Función para actualizar el carrito
 function updateCart() {
     // Limpiar la lista de productos
     cartItemsList.innerHTML = '';
@@ -67,9 +68,10 @@ function updateCart() {
     cartTotal.textContent = `$${total.toFixed(2)}`;
     cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar las cantidades
 
-    // Guardar el carrito en localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
+    
+       // Guardar el carrito en localStorage
+       saveCart();
+    }
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {

@@ -250,7 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
 /*----------- "AGREGAR AL CARRITO" ------------*/
 
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
-    // Obtener los datos del producto dinámicamente
+    console.log('Botón "Agregar al carrito" clickeado'); // Depuración
+    // Obtener los datos del producto
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
     const productImageElement = document.querySelector('.main-product-image'); // Elemento de la imagen
@@ -289,6 +290,8 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
         size: selectedSize,
         quantity: quantity // Cantidad seleccionada
     };
+
+    console.log('Producto a agregar:', product); // Depuración
 
     // Agregar el producto al carrito
     addToCart(product);
