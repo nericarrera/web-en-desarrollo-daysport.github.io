@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (applyFiltersButton) {
         applyFiltersButton.addEventListener('click', () => {
-            const selectedCategory = document.querySelector('.niños-filter-button.active').getAttribute('data-filter');
+            const selectedCategory = document.querySelector('.accesorios-filter-button.active').getAttribute('data-filter');
             const selectedColors = Array.from(colorCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toLowerCase());
