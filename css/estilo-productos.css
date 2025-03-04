@@ -517,6 +517,8 @@
 
 /* Contenedor de la imagen */
 .zoom-container {
+  display: flex;
+  flex-wrap: wrap;
   width: auto; /* Ajusta según tu diseño */
   height: auto; /* Ajusta según tu diseño */
   overflow: hidden;
