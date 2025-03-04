@@ -154,73 +154,93 @@
     </div>
   </div>
 
-  <!-- Contenedor de filtros -->
-  <div class="container">
-    <aside class="filters">
-      <p class="filter-titulo">FILTRAR TU BÚSQUEDA POR:</p>
-
-      <button id="clear-filters">Limpiar Filtros</button>
-
-      <!-- Filtros específicos para Niños -->
-      <div class="filter-section">
-        <p class="filter-titulo-section toggle-header" data-target="indumentaria-options">Indumentaria<span class="arrow">▼</span></p>
-        <div id="indumentaria-options" class="filter-options toggle-content">
-          <div><input type="checkbox" id="buzos" name="category" value="buzos"><label for="buzos">Buzos</label></div>
-          <div><input type="checkbox" id="camperas" name="category" value="camperas"><label for="camperas">Camperas</label></div>
-          <div><input type="checkbox" id="calzas" name="category" value="calzas"><label for="calzas">Calzas</label></div>
-          <div><input type="checkbox" id="conjuntos" name="category" value="conjuntos"><label for="conjuntos">Conjuntos</label></div>
-          <div><input type="checkbox" id="pantalones" name="category" value="pantalones"><label for="pantalones">Pantalones</label></div>
-          <div><input type="checkbox" id="remeras" name="category" value="remeras"><label for="remeras">Remeras</label></div>
-          <div><input type="checkbox" id="shorts" name="category" value="shorts"><label for="shorts">Shorts</label></div>
+  <!------------------------------Contenedor de filtros ---------------------------------------->
+  <div class="horizontal-filter">
+    <div class="filter-categories">
+        <button class="niños-filter-button active" data-filter="all">Ver Todo</button>
+        <button class="niños-filter-button" data-filter="deportivo">Deportivo</button>
+        <button class="niños-filter-button" data-filter="calzas">Calzas</button>
+        <button class="niños-filter-button" data-filter="camperas">Camperas</button>
+        <button class="niños-filter-button" data-filter="conjuntos">Conjuntos</button>
+        <button class="niños-filter-button" data-filter="jeans">Jeans</button>
+        <button class="niños-filter-button" data-filter="pantalones">Pantalones</button>
+        <button class="niños-filter-button" data-filter="remeras">Remeras</button>
+        <button class="niños-filter-button" data-filter="shorts">Shorts</button>
+         
+    </div>
+    <button class="filter-dropdown-toggle">FILTRAR Y ORDENAR <span>▼</span></button>
+  </div>
+  
+  <div class="filter-overlay hidden-niños">
+    <div class="filter-sidebar">
+        <div class="filter-sidebar-header">
+            <h2>Filtrar y ordenar</h2>
+            <a href="#" id="niños-clear-filters">Borrar Todo</a>
+            <span class="close-filter">&times;</span>
         </div>
+  
+        <div class="filter-section collapsible-section">
+          <h3 class="filter-title collapsible-toggle">Ordenar por <span>▼</span></h3>
+          <ul class="filter-options collapsible-content">
+                <li><input type="radio" name="sort" value="price-asc"> Precio (de menor a mayor)</li>
+                <li><input type="radio" name="sort" value="price-desc"> Precio (de mayor a menor)</li>
+                <li><input type="radio" name="sort" value="novedades"> Novedades</li>
+                <li><input type="radio" name="sort" value="mas-vendido"> Lo más vendido</li>
+            </ul>
+        </div>
+  
+        <div class="filter-section collapsible-section"> 
+          <h3 class="filter-title collapsible-toggle">Color <span>▼</span></h3>
+          <ul class="filter-options collapsible-content">
+              <li><input type="checkbox" name="niños-color" value="amarillo"> <span class="color-box" style="background-color: #FFFF00;"></span> Amarillo <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="azul"> <span class="color-box" style="background-color: #0000FF;"></span> Azul <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="negro"> <span class="color-box" style="background-color: #000000;"></span> Negro <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="rosa"> <span class="color-box" style="background-color: #FFC0CB;"></span> Rosa <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="blanco"> <span class="color-box" style="background-color: #FFFFFF;"></span> Blanco <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="violeta"> <span class="color-box" style="background-color: #8A2BE2;"></span> Violeta <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="celeste"> <span class="color-box" style="background-color: #87CEEB;"></span> Celeste <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="gris"> <span class="color-box" style="background-color: #808080;"></span> Gris <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="verde"> <span class="color-box" style="background-color: #008000;"></span> Verde <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="naranja"> <span class="color-box" style="background-color: #FFA500;"></span> Naranja <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="beige"> <span class="color-box" style="background-color: #F5F5DC;"></span> Beige <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="marron"> <span class="color-box" style="background-color: #8B4513;"></span> Marron <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="rojo"> <span class="color-box" style="background-color: #FF0000;"></span> Rojo <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="turquesa"> <span class="color-box" style="background-color: #40E0D0;"></span> Turquesa <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="dorado"> <span class="color-box" style="background-color: #FFD700;"></span> Dorado <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="azul-marino"> <span class="color-box" style="background-color: #000080;"></span> Azul Marino <span class="item-count">(0)</span></li>
+              <li><input type="checkbox" name="niños-color" value="multicolor"> <span class="color-box" style="background: linear-gradient(45deg, red, yellow, green, blue);"></span> Multicolor <span class="item-count">(0)</span></li>
+          </ul>
       </div>
-
-      <!-- Talles -->
-      <div class="filter-section">
-        <p class="filter-titulo-section toggle-header" data-target="talles-options">Talles <span class="arrow">▼</span></p>
-        <div id="talles-options" class="filter-options toggle-content">
-          <div><input type="checkbox" id="XS" name="size" value="XS"><label for="XS">XS</label></div>
-          <div><input type="checkbox" id="S" name="size" value="S"><label for="S">S</label></div>
-          <div><input type="checkbox" id="M" name="size" value="M"><label for="M">M</label></div>
-          <div><input type="checkbox" id="L" name="size" value="L"><label for="L">L</label></div>
-        </div>
-      </div>
-
-      <!-- Colores -->
-      <div class="filter-section">
-        <p class="filter-titulo-section toggle-header" data-target="color-options">Colores<span class="arrow">▼</span></p>
-        <div id="color-options" class="filter-options toggle-content">
-          <div><input type="checkbox" id="color-rojo" name="color" value="rojo"><label for="color-rojo">Rojo</label></div>
-          <div><input type="checkbox" id="color-azul" name="color" value="azul"><label for="color-azul">Azul</label></div>
-          <div><input type="checkbox" id="color-amarillo" name="color" value="amarillo"><label for="color-amarillo">Amarillo</label></div>
-          <!-- Añadir más colores según sea necesario -->
-        </div>
-      </div>
-
-      <!-- Precio -->
-      <div class="filter-section">
-        <p class="filter-titulo-section">Precio</p>
-        <div class="price-display">
-          <span id="price-display-min">$1.000</span>
-          <span id="price-display-max">$100.000</span>
-        </div>
-        <div class="price-range-container">
-          <input type="range" id="min-price-range" min="1000" max="100000" step="1000" value="1000">
-          <input type="range" id="max-price-range" min="1000" max="100000" step="1000" value="100000">
-        </div>
-      </div>
-    </aside>
-
-    <!-- Productos de la sección Niños -->
-    <section id="products" class="products-grid">
-      <article class="product-card">
-        <img src="img/ninos/conjunto-deportivo.jpg" alt="Conjunto Deportivo Niños">
-        <h5>Conjunto Deportivo Niños</h5>
-        <p>$30.000</p>
-        <button class="btn-agregar">Agregar</button>
-      </article>
-      <!-- Más productos específicos de Niños -->
-    </section>
+  
+      <div class="filter-section collapsible-section">
+        <h3 class="filter-title collapsible-toggle">Talle <span>▼</span></h3>
+        <ul class="filter-options collapsible-content">
+            <li><input type="checkbox" name="size" value="S"> S <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="M"> M <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="L"> L <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="XL"> XL <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="XXL"> XXL <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="3XL"> 3XL <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="36"> 36 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="38"> 38 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="40"> 40 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="42"> 42 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="44"> 44 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="46"> 46 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="48"> 48 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="50"> 50 <span class="item-count">(0)</span></li>
+            <li><input type="checkbox" name="size" value="52"> 52 <span class="item-count">(0)</span></li>              
+          </ul>
+    </div>
+    
+    <button id="apply-filters" class="apply-button">Aplicar Filtro</button>
+  </div>
+  </div>
+  
+  
+  <div class="products-grid-n niños-products-grid">
+  <div class="niños-products-grid"></div>
+   
   </div>
 
   <footer class="footer">
