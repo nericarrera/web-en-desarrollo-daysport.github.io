@@ -60,11 +60,11 @@ export const productosAccesorios = [
         }
     },
 
-    { id: "hombre-3",
+    { id: "accesorios-3",
         nombre: "Campera Deportiva Nike",
         precio: 13500,
         categoria: "camperas",
-        seccion: "hombre",
+        seccion: "accesorios",
         temporada: "media estacion",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
