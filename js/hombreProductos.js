@@ -21,15 +21,15 @@ export const productosHombre = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro : [
-                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"
                 
             ],
             verde: [
-                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-militar-neg-1.jpeg"
                 
             ],
             blanco: [
-                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg"
             ],
 
         }
