@@ -21,6 +21,12 @@ function updateCart() {
         cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
     } else {
         cart.forEach((item, index) => {
+            // Verificar que el precio sea un número
+            if (typeof item.price !== 'number') {
+                console.error('El precio no es un número:', item.price);
+                return;
+            }
+
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="cart-item">
@@ -30,12 +36,13 @@ function updateCart() {
                         <p>$${item.price.toFixed(2)}</p>
                         <p>Color: ${item.color}</p>
                         <p>Talle: ${item.size}</p>
+                        <p>Cantidad: ${item.quantity}</p>
                         <button onclick="removeFromCart(${index})">Eliminar</button>
                     </div>
                 </div>
             `;
             cartItemsList.appendChild(li);
-            total += item.price; // Sumar al total
+            total += item.price * item.quantity; // Sumar al total considerando la cantidad
         });
     }
 
@@ -45,17 +52,12 @@ function updateCart() {
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-    
 }
 
 // Función para agregar un producto al carrito
-function addToCart(productName, productPrice, productImage) {
-    // Crear un objeto con los datos del producto
-    const product = {
-        name: productName,
-        price: parseFloat(productPrice), // Convertir el precio a número
-        image: productImage
-    };
+function addToCart(product) {
+    // Convertir el precio a número
+    product.price = parseFloat(product.price);
 
     // Agregar el producto al carrito
     cart.push(product);

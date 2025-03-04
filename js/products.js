@@ -244,7 +244,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Crear el objeto del producto
     const product = {
         name: productTitle,
-        price: parseFloat(productPrice),
+        price: parseFloat(productPrice), // Convertir el precio a número
         image: productImage,
         color: selectedColor,
         size: selectedSize
@@ -253,7 +253,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Agregar el producto al carrito
     addToCart(product);
 });
-
 
 
 
