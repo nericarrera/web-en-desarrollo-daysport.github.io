@@ -12,6 +12,9 @@ const cartCount = document.getElementById('cart-count');
 
 // Función para agregar un producto al carrito
 function addToCart(product) {
+    // Convertir el precio a número
+    product.price = parseFloat(product.price);
+
     // Verificar si el producto ya está en el carrito
     const existingProduct = cart.find(
         (item) =>
@@ -33,7 +36,6 @@ function addToCart(product) {
     alert('Producto añadido al carrito!');
 }
 
-// Función para actualizar el carrito
 function updateCart() {
     // Limpiar la lista de productos
     cartItemsList.innerHTML = '';
@@ -44,6 +46,12 @@ function updateCart() {
         cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
     } else {
         cart.forEach((item, index) => {
+            // Verificar que el precio sea un número
+            if (typeof item.price !== 'number') {
+                console.error('El precio no es un número:', item.price);
+                return;
+            }
+
             // Crear el elemento del producto en el carrito
             const li = document.createElement('li');
             li.innerHTML = `
@@ -68,10 +76,9 @@ function updateCart() {
     cartTotal.textContent = `$${total.toFixed(2)}`;
     cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar las cantidades
 
-    
-       // Guardar el carrito en localStorage
-       saveCart();
-    }
+    // Guardar el carrito en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
