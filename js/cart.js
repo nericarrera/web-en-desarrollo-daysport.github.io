@@ -15,6 +15,13 @@ function addToCart(product) {
     // Convertir el precio a número
     product.price = parseFloat(product.price);
 
+    // Verificar si el precio es un número válido
+    if (isNaN(product.price)) {
+        console.error('El precio no es un número válido:', product.price);
+        alert('Error: El precio del producto no es válido.');
+        return;
+    }
+
     // Verificar si el producto ya está en el carrito
     const existingProduct = cart.find(
         (item) =>
