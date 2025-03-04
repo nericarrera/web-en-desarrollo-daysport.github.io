@@ -1,11 +1,6 @@
-
-
-
 /*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
 
 import { productosHombre } from '/js/hombreProductos.js';
-
-
 
 /*-------------FILTRO MUJER----------------*/
 
@@ -241,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarProductos("all");
 });
 
-
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -258,18 +252,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Alternar visibilidad
                 content.style.display = content.style.display === 'none' ? 'block' : 'none';
 
-                toggleButton.addEventListener('click', () => {
-                    content.style.transition = 'max-height 0.3s ease';
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    }
-                });
-
                 // Alternar símbolo de desplegar/cerrar
                 const symbol = toggleButton.querySelector('span');
                 symbol.textContent = content.style.display === 'block' ? '▼' : '▲';
+
+                // Alternar altura máxima para la animación
+                content.style.transition = 'max-height 0.3s ease';
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+
                 console.log(`Contenido de la sección ${index + 1} ahora está ${content.style.display === 'none' ? 'oculto' : 'visible'}`);
             });
         } else {
