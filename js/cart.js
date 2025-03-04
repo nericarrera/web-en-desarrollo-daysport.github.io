@@ -10,6 +10,24 @@ const cartCount = document.getElementById('cart-count');
 // Cargar el carrito desde localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+// Función para agregar un producto al carrito
+function addToCart(product) {
+    // Verificar que el producto tenga un precio válido
+    if (typeof product.price === 'undefined' || isNaN(parseFloat(product.price))) {
+        console.error('El precio del producto no es válido:', product.price);
+        alert('Error: El precio del producto no es válido.');
+        return;
+    }
+
+    // Convertir el precio a número
+    product.price = parseFloat(product.price);
+
+    // Agregar el producto al carrito
+    cart.push(product);
+    updateCart(); // Actualizar la interfaz del carrito
+    alert('Producto añadido al carrito!');
+}
+
 // Función para actualizar el carrito en la interfaz
 function updateCart() {
     // Limpiar la lista de productos
@@ -52,24 +70,6 @@ function updateCart() {
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-// Función para agregar un producto al carrito
-function addToCart(product) {
-    // Verificar que el producto tenga un precio válido
-    if (typeof product.price === 'undefined' || isNaN(parseFloat(product.price))) {
-        console.error('El precio del producto no es válido:', product.price);
-        alert('Error: El precio del producto no es válido.');
-        return;
-    }
-
-    // Convertir el precio a número
-    product.price = parseFloat(product.price);
-
-    // Agregar el producto al carrito
-    cart.push(product);
-    updateCart(); // Actualizar la interfaz del carrito
-    alert('Producto añadido al carrito!');
 }
 
 // Función para eliminar un producto del carrito
