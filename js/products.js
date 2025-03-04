@@ -255,7 +255,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Obtener los datos del producto
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
-    const productImageElement = document.getElementById('image'); // Elemento de la imagen
+    const productImageElement = document.getElementById('product-image'); // Elemento de la imagen
 
     // Verificar que el elemento de la imagen exista
     if (!productImageElement) {
