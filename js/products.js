@@ -226,7 +226,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Obtener los datos del producto
     const productTitle = document.getElementById('product-title').textContent;
     const productPrice = document.getElementById('product-price').textContent.replace('$', '');
-    const productImageElement = document.getElementById('zoom-container').querySelector('img');
+    const productImageElement = document.getElementById('product-image');
 
     // Verificar que el elemento de la imagen exista
     if (!productImageElement) {
