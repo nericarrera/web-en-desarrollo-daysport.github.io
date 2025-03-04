@@ -1,7 +1,8 @@
-
-
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
+
+// Variable global para la imagen principal
+let image;
 
 // Obtener el ID del producto desde la URL
 function getProductIdFromURL() {
@@ -36,34 +37,33 @@ function mostrarDetallesProducto(product) {
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
     quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
 
-     // Mostrar la imagen principal
-     const image = document.createElement('img');
-     image.src = product.imagen[0]; // Primera imagen por defecto
-     image.alt = product.nombre;
-     image.classList.add('main-product-image');
-     zoomContainer.appendChild(image);
- 
-     // Variables para el zoom y desplazamiento
-     let isZoomed = false;
-     let offsetX, offsetY;
- 
-     // Función para calcular el desplazamiento del zoom
-     function handleZoom(event) {
-         if (isZoomed) {
-             const rect = zoomContainer.getBoundingClientRect();
-             const mouseX = event.clientX - rect.left;
-             const mouseY = event.clientY - rect.top;
- 
-             // Calcular el desplazamiento basado en la posición del mouse
-             offsetX = (mouseX / rect.width) * 100;
-             offsetY = (mouseY / rect.height) * 100;
- 
-             // Aplicar el desplazamiento
-             image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
-         }
-     }
+    // Mostrar la imagen principal
+    image = document.createElement('img'); // Usar la variable global
+    image.src = product.imagen[0]; // Primera imagen por defecto
+    image.alt = product.nombre;
+    image.classList.add('main-product-image');
+    zoomContainer.appendChild(image);
 
-     
+    // Variables para el zoom y desplazamiento
+    let isZoomed = false;
+    let offsetX, offsetY;
+
+    // Función para calcular el desplazamiento del zoom
+    function handleZoom(event) {
+        if (isZoomed) {
+            const rect = zoomContainer.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+
+            // Calcular el desplazamiento basado en la posición del mouse
+            offsetX = (mouseX / rect.width) * 100;
+            offsetY = (mouseY / rect.height) * 100;
+
+            // Aplicar el desplazamiento
+            image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
+        }
+    }
+
     // Activar/desactivar zoom al hacer clic
     image.addEventListener('click', () => {
         isZoomed = !isZoomed;
@@ -78,7 +78,6 @@ function mostrarDetallesProducto(product) {
 
     // Mover el zoom al mover el mouse
     zoomContainer.addEventListener('mousemove', handleZoom);
- 
 
     // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
@@ -148,12 +147,11 @@ function mostrarDetallesProducto(product) {
             colorButton.addEventListener('click', () => {
                 // Actualizar las imágenes y miniaturas con las del color seleccionado
                 if (product.imagenColores && product.imagenColores[color]) {
-                    image.src = product.imagenColores[color][0];
+                    image.src = product.imagenColores[color][0]; // Usar la variable global
                     image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
                     isZoomed = false; // Restaurar estado del zoom
                     zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
                 }
-                
 
                 // Actualizar los talles disponibles para el color seleccionado
                 actualizarTalles(product, color);
@@ -216,18 +214,12 @@ function mostrarDetallesProducto(product) {
     }
 }
 
-
 // Llamar a la función para mostrar los detalles del producto
 document.addEventListener('DOMContentLoaded', () => {
     const productId = getProductIdFromURL();
     const product = productosMujer.find(p => p.id === productId);
     mostrarDetallesProducto(product);
 });
-
-
-/*--------------------------------------------------*/
-
-
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
 
@@ -261,7 +253,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Agregar el producto al carrito
     addToCart(product);
 });
-
 
 
 
