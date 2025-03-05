@@ -278,6 +278,138 @@
     font-size: 14px;
 }
 
+/*-------------------------CARRITO PAGINA DEL CARRITO---------------*/
+
+/* Estilos generales para la página del carrito */
+.cart-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-page-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.cart-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilos para la lista de productos */
+.cart-items {
+    flex: 2;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.cart-item-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.cart-item-details p strong {
+    color: #333;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-item-actions button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-item-actions button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para el resumen del pedido */
+.cart-summary {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.cart-summary h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.summary-details p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.summary-details p span {
+    float: right;
+    color: #333;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .cart-content {
+        flex-direction: column;
+    }
+
+    .cart-summary {
+        order: -1; /* Mover el resumen arriba en móviles */
+    }
+}
+
  /*------------------ICONO USUARIO---------------*/
 
 .user-icon-container {
