@@ -590,6 +590,51 @@ body {
   font-size: 14px;
 }
 
+.cart-dropdown .cart-summary {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-list-cart {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#cart-items-list  {
+  position: relative;
+  margin-top: 10px;
+}
+
+.cart-summary {
+  display: block;
+  margin-top: 13px;
+}
+
+.cart-summary p {
+  width: auto;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  padding: 2px;
+}
+
+.cart-summary button {
+  background-color: #a30dfa;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
+}
+
+.cart-summary button:hover {
+  background-color: #8b06d1;
+}
+
 /*-----------------CARRITO NUEVO --------------*/
 
 .carrito-item {
