@@ -4,10 +4,27 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 // Variables globales
 const cartIcon = document.getElementById('cart-icon');
 const cartDropdown = document.getElementById('cart-dropdown');
+const cartOverlay = document.getElementById('cart-overlay');
 const cartCloseBtn = document.getElementById('cart-close-btn');
-const cartItemsList = document.getElementById('cart-items-list');
-const cartTotal = document.getElementById('cart-total');
-const cartCount = document.getElementById('cart-count');
+
+// Mostrar el modal y el overlay
+cartIcon.addEventListener('click', () => {
+    cartDropdown.classList.add('show');
+    cartOverlay.classList.add('show');
+    updateCart(); // Actualizar la lista de productos al abrir el modal
+});
+
+// Ocultar el modal y el overlay al hacer clic en el botón de cierre
+cartCloseBtn.addEventListener('click', () => {
+    cartDropdown.classList.remove('show');
+    cartOverlay.classList.remove('show');
+});
+
+// Ocultar el modal y el overlay al hacer clic fuera del modal
+cartOverlay.addEventListener('click', () => {
+    cartDropdown.classList.remove('show');
+    cartOverlay.classList.remove('show');
+});
 
 function addToCart(product) {
     // Convertir el precio a número
