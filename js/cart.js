@@ -57,6 +57,12 @@ function updateCart() {
                 return;
             }
 
+            // Verificar que la cantidad sea un número
+            if (typeof item.quantity !== 'number' || isNaN(item.quantity)) {
+                console.error('La cantidad no es un número válido:', item.quantity);
+                return;
+            }
+
             // Crear el elemento del producto en el carrito
             const li = document.createElement('li');
             li.innerHTML = `
@@ -79,7 +85,14 @@ function updateCart() {
 
     // Actualizar el total y el contador
     cartTotal.textContent = `$${total.toFixed(2)}`;
-    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar las cantidades
+    cartCount.textContent = cart.reduce((sum, item) => {
+        // Verificar que la cantidad sea un número válido antes de sumar
+        if (typeof item.quantity !== 'number' || isNaN(item.quantity)) {
+            console.error('La cantidad no es un número válido:', item.quantity);
+            return sum;
+        }
+        return sum + item.quantity;
+    }, 0); // Sumar las cantidades
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
