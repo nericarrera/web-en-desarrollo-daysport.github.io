@@ -1,3 +1,4 @@
+
 * {
     margin-top: 0;
     padding: 0;
@@ -526,7 +527,7 @@
 
 /* Ajustes adicionales para evitar superposiciones */
 body {
-    overflow: auto; /* Permite el desplazamiento */
+    overflow: hidden; /* Evita el desplazamiento de la página cuando el modal está abierto */
 }
 
 #cart-dropdown {
@@ -771,6 +772,5 @@ main {
     margin: 0 auto;
     padding: 20px;
     width: 90%;
-    height: auto;
 }
 
