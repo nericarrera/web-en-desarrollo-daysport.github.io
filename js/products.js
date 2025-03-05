@@ -275,7 +275,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     const productImage = productImageElement.src; // Obtener la URL de la imagen
 
     // Obtener el color seleccionado
-    const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
+    const selectedColor = document.querySelector('.color-btn')?.getAttribute('data-color') || 'Sin color';
 
     // Obtener el talle seleccionado
     const selectedSize = document.querySelector('.size-btn.selected')?.textContent || 'Sin talle';
