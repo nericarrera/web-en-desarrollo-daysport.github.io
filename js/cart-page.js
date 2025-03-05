@@ -3,16 +3,16 @@ const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Referencias a los elementos del DOM
 const cartItemsContainer = document.getElementById('cart-items-container');
+const cartSubtotal = document.getElementById('cart-subtotal');
 const cartTotal = document.getElementById('cart-total');
 
-// Función para mostrar los productos en la página del carrito
 // Función para mostrar los productos en la página del carrito
 function renderCart() {
     // Limpiar el contenedor de productos
     cartItemsContainer.innerHTML = '';
 
-    // Calcular el total
-    let total = 0;
+    // Calcular el subtotal y el total
+    let subtotal = 0;
 
     if (cart.length === 0) {
         // Si el carrito está vacío, mostrar un mensaje
@@ -32,22 +32,25 @@ function renderCart() {
             cartItem.innerHTML = `
                 <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                 <div class="cart-item-details">
-                    <p>${item.name}</p>
-                    <p>$${item.price.toFixed(2)}</p>
+                    <p><strong>${item.name}</strong></p>
+                    <p>Precio: $${item.price.toFixed(2)}</p>
                     <p>Color: ${item.color}</p>
                     <p>Talle: ${item.size}</p>
                     <p>Cantidad: ${item.quantity}</p>
+                </div>
+                <div class="cart-item-actions">
                     <button onclick="removeFromCart(${index})">Eliminar</button>
                 </div>
             `;
 
             cartItemsContainer.appendChild(cartItem);
-            total += item.price * item.quantity; // Sumar al total
+            subtotal += item.price * item.quantity; // Sumar al subtotal
         });
     }
 
-    // Mostrar el total
-    cartTotal.textContent = `$${total.toFixed(2)}`;
+    // Mostrar el subtotal y el total
+    cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+    cartTotal.textContent = `$${subtotal.toFixed(2)}`; // En este ejemplo, el envío es gratis
 }
 
 // Función para eliminar un producto del carrito
@@ -64,6 +67,3 @@ function removeFromCart(index) {
 
 // Llamar a la función para renderizar el carrito al cargar la página
 document.addEventListener('DOMContentLoaded', renderCart);
-
-console.log('Carrito actual:', cart); // Depuración
-console.log('Producto a agregar:', product); // Depuración
