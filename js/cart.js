@@ -10,12 +10,11 @@ const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
 
-// Función para agregar un producto al carrito
 function addToCart(product) {
     // Convertir el precio a número
     product.price = parseFloat(product.price);
 
-    // Verificar si el precio es un número válido
+    // Verificar que el precio sea un número válido
     if (isNaN(product.price)) {
         console.error('El precio no es un número válido:', product.price);
         alert('Error: El precio del producto no es válido.');
