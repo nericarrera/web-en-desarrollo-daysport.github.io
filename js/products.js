@@ -1,8 +1,8 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
 import { productosMujer } from '/js/mujerProductos.js';
 import { productosHombre } from '/js/hombreProductos.js';
-import { productosNiños } from '/js/niñosProductos.js'; 
-import { productosAccesorios } from '/js/accesoriosProductos.js'; 
+import { productosNiños } from '/js/niñosProductos.js';
+import { productosAccesorios } from '/js/accesoriosProductos.js';
 
 // Variable global para la imagen principal
 let image;
@@ -263,7 +263,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
         return;
     }
 
-    const productImageElement = document.getElementById('product-image'); // Elemento de la imagen
+    const productImageElement = document.querySelector('.main-product-image'); // Elemento de la imagen
 
     // Verificar que el elemento de la imagen exista
     if (!productImageElement) {
@@ -310,24 +310,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
 
 // Simula una carga de comentarios desde un servidor o base de datos
@@ -348,7 +330,6 @@ function loadComments() {
 
 // Cargar los comentarios automáticamente al cargar la página
 document.addEventListener('DOMContentLoaded', loadComments);
-
 
 // Capturar el formulario y escuchar el evento de envío
 const commentForm = document.getElementById('comment-form');
@@ -376,7 +357,6 @@ commentForm.addEventListener('submit', function(event) {
     commentForm.reset();
 });
 
-
 // Ejemplo para cargar comentarios desde una API simulada
 function loadCommentsFromAPI() {
     fetch('https://mi-api.com/comments')  // Simula la llamada a tu backend
@@ -390,6 +370,3 @@ function loadCommentsFromAPI() {
             });
         });
 }
-
-/*----------------------------------------------------------------------------- */
-
