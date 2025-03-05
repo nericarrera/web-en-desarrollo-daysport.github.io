@@ -538,7 +538,7 @@
 /* Efecto de zoom */
 .zoomed {
   cursor: grab; /* Cambia el cursor al hacer zoom */
-  transform: scale(1); /* Nivel de zoom */
+  transform: scale(2); /* Nivel de zoom */
 }
 /*-------------------------------------------------------------------*/
 
