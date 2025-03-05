@@ -248,7 +248,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
-
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     console.log('Botón "Agregar al carrito" clickeado'); // Depuración
 
