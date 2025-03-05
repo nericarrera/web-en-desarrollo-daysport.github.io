@@ -6,6 +6,7 @@ const cartItemsContainer = document.getElementById('cart-items-container');
 const cartTotal = document.getElementById('cart-total');
 
 // Función para mostrar los productos en la página del carrito
+// Función para mostrar los productos en la página del carrito
 function renderCart() {
     // Limpiar el contenedor de productos
     cartItemsContainer.innerHTML = '';
@@ -19,6 +20,12 @@ function renderCart() {
     } else {
         // Recorrer los productos del carrito y mostrarlos
         cart.forEach((item, index) => {
+            // Verificar que el precio sea un número
+            if (typeof item.price !== 'number') {
+                console.error('El precio no es un número:', item.price);
+                return;
+            }
+
             const cartItem = document.createElement('div');
             cartItem.classList.add('cart-item');
 
@@ -57,3 +64,6 @@ function removeFromCart(index) {
 
 // Llamar a la función para renderizar el carrito al cargar la página
 document.addEventListener('DOMContentLoaded', renderCart);
+
+console.log('Carrito actual:', cart); // Depuración
+console.log('Producto a agregar:', product); // Depuración
