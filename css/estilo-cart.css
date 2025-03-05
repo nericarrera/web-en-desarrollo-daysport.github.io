@@ -448,6 +448,8 @@
   z-index: 1001; /* Asegura que esté por encima del overlay */
   padding: 20px;
   display: none; /* Oculto por defecto */
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es demasiado grande */
+  max-height: 80vh; /* Limita la altura máxima del modal */
 }
 
 /* Mostrar el modal cuando está abierto */
@@ -524,36 +526,46 @@
   background-color: #0056b3;
 }
 
+/* Ajustes adicionales para evitar superposiciones */
+body {
+  overflow: hidden; /* Evita el desplazamiento de la página cuando el modal está abierto */
+}
+
+#cart-dropdown {
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del modal */
+  padding: 20px;
+}
+
 #cart-items-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
 }
 
 #cart-items-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
 .cart-summary {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #checkout-btn {
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
 }
 
 #checkout-btn:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .cart-item {
@@ -579,9 +591,7 @@
   font-size: 14px;
 }
 
-
 /*-----------------CARRITO NUEVO --------------*/
-
 
 .carrito-item {
   display: flex;
