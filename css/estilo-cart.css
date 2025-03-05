@@ -768,8 +768,10 @@ main {
 }
 
 .cart-page-container {
-    max-width: 900px;
+    display: flex;
     margin: 0 auto;
     padding: 20px;
+    width: 90%;
+    height: auto;
 }
 
