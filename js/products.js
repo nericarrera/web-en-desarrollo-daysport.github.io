@@ -83,41 +83,41 @@ function mostrarDetallesProducto(product) {
     zoomContainer.addEventListener('mousemove', handleZoom);
 
     // Función para mostrar imágenes en zoom-container y miniaturas
-    function mostrarImagenes(imagenes) {
-        // Limpiar contenedores
-        zoomContainer.innerHTML = '';
-        thumbnailsContainer.innerHTML = '';
+function mostrarImagenes(imagenes) {
+    // Limpiar contenedores
+    zoomContainer.innerHTML = '';
+    thumbnailsContainer.innerHTML = '';
 
-        // Mostrar imágenes en zoom-container
-        imagenes.forEach((imagenSrc, index) => {
-            const image = document.createElement('img');
-            image.src = imagenSrc;
-            image.alt = `Imagen ${index + 1}`;
-            image.classList.add('main-product-image');
-            zoomContainer.appendChild(image);
+          // Mostrar imágenes en zoom-container
+    imagenes.forEach((imagenSrc, index) => {
+        const image = document.createElement('img');
+        image.src = imagenSrc;
+        image.alt = `Imagen ${index + 1}`;
+        image.classList.add('main-product-image');
+        zoomContainer.appendChild(image);
 
-            // Agregar funcionalidad de zoom
-            image.addEventListener('click', () => {
-                image.classList.toggle('zoomed');
+        // Agregar funcionalidad de zoom
+        image.addEventListener('click', () => {
+            image.classList.toggle('zoomed');
+        });
+    });
+
+       // Mostrar miniaturas
+    imagenes.forEach((imagenSrc, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imagenSrc;
+        thumbnail.alt = `Miniatura ${index + 1}`;
+        thumbnail.classList.add('thumbnail-image');
+        thumbnail.addEventListener('click', () => {
+            // Cambiar la imagen principal al hacer clic en la miniatura
+            const mainImages = document.querySelectorAll('.main-product-image');
+            mainImages.forEach((img, i) => {
+                img.src = imagenSrc; // Cambiar todas las imágenes principales
             });
         });
-
-        // Mostrar miniaturas
-        imagenes.forEach((imagenSrc, index) => {
-            const thumbnail = document.createElement('img');
-            thumbnail.src = imagenSrc;
-            thumbnail.alt = `Miniatura ${index + 1}`;
-            thumbnail.classList.add('thumbnail-image');
-            thumbnail.addEventListener('click', () => {
-                // Cambiar la imagen principal al hacer clic en la miniatura
-                const mainImages = document.querySelectorAll('.main-product-image');
-                mainImages.forEach((img, i) => {
-                    img.src = imagenSrc; // Cambiar todas las imágenes principales
-                });
-            });
-            thumbnailsContainer.appendChild(thumbnail);
-        });
-    }
+        thumbnailsContainer.appendChild(thumbnail);
+    });
+}
 
     // Mostrar imágenes iniciales (primer color por defecto)
     const primerColor = product.variantes[0].color;
@@ -150,12 +150,12 @@ function mostrarDetallesProducto(product) {
             colorButton.addEventListener('click', () => {
                 // Actualizar las imágenes y miniaturas con las del color seleccionado
                 if (product.imagenColores && product.imagenColores[color]) {
-                    image.src = product.imagenColores[color][0]; // Usar la variable global
+                    mostrarImagenes(product.imagenColores[color]); // Llamar a mostrarImagenes con las imágenes del color seleccionado
                     image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
                     isZoomed = false; // Restaurar estado del zoom
                     zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
                 }
-
+            
                 // Actualizar los talles disponibles para el color seleccionado
                 actualizarTalles(product, color);
             });
@@ -275,7 +275,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     const productImage = productImageElement.src; // Obtener la URL de la imagen
 
     // Obtener el color seleccionado
-    const selectedColor = document.querySelector('.color-btn')?.getAttribute('data-color') || 'Sin color';
+    const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
 
     // Obtener el talle seleccionado
     const selectedSize = document.querySelector('.size-btn.selected')?.textContent || 'Sin talle';
