@@ -9,35 +9,37 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-// Función para agregar un producto al carrito
 function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart(); // Asegúrate de actualizar el carrito después de agregar un producto
-}
+    // Convertir el precio a número
+    product.price = parseFloat(product.price);
 
-// Función para actualizar la visualización del carrito
-function updateCartDisplay() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let cartContainer = document.getElementById('cart-container');
-    cartContainer.innerHTML = '';
-
-    if (cart.length === 0) {
-        cartContainer.innerHTML = '<p>El carrito está vacío</p>';
-    } else {
-        cart.forEach(product => {
-            let productElement = document.createElement('div');
-            productElement.innerHTML = `<p>${product.name} - ${product.price}</p>`;
-            cartContainer.appendChild(productElement);
-        });
+    // Verificar que el precio sea un número válido
+    if (isNaN(product.price)) {
+        console.error('El precio no es un número válido:', product.price);
+        alert('Error: El precio del producto no es válido.');
+        return;
     }
-}
 
-// Evento para el botón de ver carrito
-document.getElementById('view-cart-button').addEventListener('click', function() {
-    updateCartDisplay();
-});
+    // Verificar si el producto ya está en el carrito
+    const existingProduct = cart.find(
+        (item) =>
+            item.name === product.name &&
+            item.color === product.color &&
+            item.size === product.size
+    );
+
+    if (existingProduct) {
+        // Si el producto ya está en el carrito, aumentar la cantidad
+        existingProduct.quantity += product.quantity;
+    } else {
+        // Si no está en el carrito, agregarlo
+        cart.push(product);
+    }
+
+    // Actualizar el carrito en la interfaz
+    updateCart();
+    alert('Producto añadido al carrito!');
+}
 
 function updateCart() {
     // Limpiar la lista de productos
@@ -133,14 +135,14 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 
         // Obtener los datos del producto desde los atributos del botón
         const productName = button.getAttribute('data-product');
-        const productPrice = parseFloat(button.getAttribute('data-price')); // Asegúrate de que el precio sea un número
+        const productPrice = button.getAttribute('data-price');
         const productImage = button.getAttribute('data-image');
 
         // Verificar que los datos se obtuvieron correctamente
         console.log('Datos del producto:', { productName, productPrice, productImage });
 
-        if (!productName || isNaN(productPrice) || !productImage) {
-            console.error('Faltan datos en el botón "Agregar al carrito" o el precio no es válido.');
+        if (!productName || !productPrice || !productImage) {
+            console.error('Faltan datos en el botón "Agregar al carrito".');
             return;
         }
 
