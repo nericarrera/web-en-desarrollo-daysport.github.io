@@ -369,6 +369,9 @@
     font-size: 20px;
     margin-bottom: 15px;
     color: #333;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;   
+    
 }
 
 .summary-details p {
