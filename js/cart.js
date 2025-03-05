@@ -9,7 +9,6 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
-
 function addToCart(product) {
     // Convertir el precio a número
     product.price = parseFloat(product.price);
@@ -134,8 +133,18 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
             return;
         }
 
+        // Crear el objeto producto
+        const product = {
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: 1, // Puedes ajustar esto según sea necesario
+            color: 'default', // Ajusta según sea necesario
+            size: 'default' // Ajusta según sea necesario
+        };
+
         // Agregar el producto al carrito
-        addToCart(productName, productPrice, productImage);
+        addToCart(product);
     });
 });
 
@@ -143,17 +152,3 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
-
-/*--------------------------------------------------------------*/
-
-// Función para eliminar un producto del carrito
-function removeFromCart(index) {
-    // Eliminar el producto del carrito
-    cart.splice(index, 1);
-
-    // Actualizar el carrito en localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Actualizar la interfaz del carrito
-    updateCart(); // Si estás en la página del carrito, también debes llamar a renderCart()
-}
