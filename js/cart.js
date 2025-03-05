@@ -66,7 +66,7 @@ function updateCart() {
             // Crear el elemento del producto en el carrito
             const li = document.createElement('li');
             li.innerHTML = `
-                <div class="cart-item">
+                <div class="cart-item-modal">
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <p>${item.name}</p>
