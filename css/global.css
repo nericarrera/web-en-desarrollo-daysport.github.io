@@ -205,7 +205,7 @@
 #cart-items-list  {
     position: relative;
     margin-top: 10px;
-
+    
 }
 
 .cart-summary {
@@ -223,7 +223,15 @@
    padding: 2px;
 }
 
-
+.cart-summary button {
+    background-color: #a30dfa;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+ }
  
  .cart-summary button:hover {
     background-color: #8b06d1;
