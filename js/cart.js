@@ -14,7 +14,7 @@ function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
+    updateCart(); // Asegúrate de actualizar el carrito después de agregar un producto
 }
 
 // Función para actualizar la visualización del carrito
@@ -133,14 +133,14 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 
         // Obtener los datos del producto desde los atributos del botón
         const productName = button.getAttribute('data-product');
-        const productPrice = button.getAttribute('data-price');
+        const productPrice = parseFloat(button.getAttribute('data-price')); // Asegúrate de que el precio sea un número
         const productImage = button.getAttribute('data-image');
 
         // Verificar que los datos se obtuvieron correctamente
         console.log('Datos del producto:', { productName, productPrice, productImage });
 
-        if (!productName || !productPrice || !productImage) {
-            console.error('Faltan datos en el botón "Agregar al carrito".');
+        if (!productName || isNaN(productPrice) || !productImage) {
+            console.error('Faltan datos en el botón "Agregar al carrito" o el precio no es válido.');
             return;
         }
 
