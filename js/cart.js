@@ -9,37 +9,35 @@ const cartItemsList = document.getElementById('cart-items-list');
 const cartTotal = document.getElementById('cart-total');
 const cartCount = document.getElementById('cart-count');
 
+// Función para agregar un producto al carrito
 function addToCart(product) {
-    // Convertir el precio a número
-    product.price = parseFloat(product.price);
-
-    // Verificar que el precio sea un número válido
-    if (isNaN(product.price)) {
-        console.error('El precio no es un número válido:', product.price);
-        alert('Error: El precio del producto no es válido.');
-        return;
-    }
-
-    // Verificar si el producto ya está en el carrito
-    const existingProduct = cart.find(
-        (item) =>
-            item.name === product.name &&
-            item.color === product.color &&
-            item.size === product.size
-    );
-
-    if (existingProduct) {
-        // Si el producto ya está en el carrito, aumentar la cantidad
-        existingProduct.quantity += product.quantity;
-    } else {
-        // Si no está en el carrito, agregarlo
-        cart.push(product);
-    }
-
-    // Actualizar el carrito en la interfaz
-    updateCart();
-    alert('Producto añadido al carrito!');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
 }
+
+// Función para actualizar la visualización del carrito
+function updateCartDisplay() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartContainer = document.getElementById('cart-container');
+    cartContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<p>El carrito está vacío</p>';
+    } else {
+        cart.forEach(product => {
+            let productElement = document.createElement('div');
+            productElement.innerHTML = `<p>${product.name} - ${product.price}</p>`;
+            cartContainer.appendChild(productElement);
+        });
+    }
+}
+
+// Evento para el botón de ver carrito
+document.getElementById('view-cart-button').addEventListener('click', function() {
+    updateCartDisplay();
+});
 
 function updateCart() {
     // Limpiar la lista de productos
