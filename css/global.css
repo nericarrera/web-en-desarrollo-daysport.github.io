@@ -216,6 +216,11 @@
    padding: 2px;
 }
 
+#cart-total {
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+}
+
 .cart-summary button {
     background-color:#360353;
     color: white;
@@ -392,6 +397,7 @@
 
 .cart-item-details {
     flex: 1;
+    font-family: 'DM Sans';
 }
 
 .cart-item p {
