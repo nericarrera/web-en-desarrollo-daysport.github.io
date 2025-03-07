@@ -596,13 +596,11 @@
   position: absolute;
   top: 100%;
   width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
-  background-color: #fff;
+  background-color: #999999;
   z-index: 1000;
   padding: 10px 0;
   text-align: center;
-  display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   transform: translateX(-50%); /* Corrige el centrado */
 }
 
