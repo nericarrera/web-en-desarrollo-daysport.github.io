@@ -316,14 +316,14 @@
 .cart-page-container {
     display: flex;
     justify-content: space-between;
-    max-width: 880px;
+    max-width: 78%;
     margin: 0 auto;
     padding: 20px;
 }
 
 .cart-page-colum1 {
     padding: 5px;
-    width: 60%;
+    width: 64%;
 }
 
 .cart-page-colum2 {
