@@ -430,7 +430,7 @@
 
 .volver{
     display: inline;
-    margin: 15px;
+    margin: 35px;
 }
 
 .volver img{
@@ -448,12 +448,12 @@
     margin: auto;
     margin-left: 5px;
     font-family: 'Oswald', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .volver-titulo:hover{
   transition: all 500ms ease;
-  background: #000000a4;
+  background: #000000c2;
   cursor: pointer;
   color: #f9f9f9;
 }
