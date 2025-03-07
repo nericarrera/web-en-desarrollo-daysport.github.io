@@ -561,6 +561,7 @@
     margin-top: 17px;
     margin-right: 55px;
     justify-content: space-evenly;
+    position: relative;
   }
   
   .menu-ul {
@@ -569,12 +570,16 @@
     list-style-type: none;
     justify-content: center;
     margin: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .menu-li {
     text-decoration: none;
     color: #000000;
     padding: 5px;
+    position: relative;
   }
 
   .menu-li .menu-li-a {
@@ -597,6 +602,30 @@
   
   /*-------------- Estilo para el submenú ----------------*/
   
+  .submenu1, .submenu2, .submenu3, .submenu4, .submenu5 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    background-color: #fff; /* Cambia el color de fondo según tu diseño */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    padding: 10px 0;
+  }
+
+  .menu-li:hover .submenu1,
+  .menu-li:hover .submenu2,
+  .menu-li:hover .submenu3,
+  .menu-li:hover .submenu4,
+  .menu-li:hover .submenu5 {
+    display: block;
+  }
+
+  .submenu-item {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
   .submenu1 {
     display: none;
     position: absolute;
