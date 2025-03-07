@@ -551,7 +551,7 @@
 
 
 
-  /*------------- MENÚ Y SUBMENÚ ---------------*/
+/*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
     display: flex;
@@ -570,18 +570,16 @@
     list-style-type: none;
     justify-content: center;
     margin: 10px;
-    list-style: none;
     padding: 0;
-    margin: 0;
   }
-
+  
   .menu-li {
     text-decoration: none;
     color: #000000;
     padding: 5px;
     position: relative;
   }
-
+  
   .menu-li .menu-li-a {
     text-decoration: none;
     font-family: 'Dosis', sans-serif;
@@ -592,7 +590,7 @@
     list-style-type: none;
     font-size: 15px;
   }
-
+  
   .menu-li .menu-li-a:hover {
     text-decoration: underline;
     color: #ffffff;
@@ -602,108 +600,47 @@
   
   /*-------------- Estilo para el submenú ----------------*/
   
-  .submenu1, .submenu2, .submenu3, .submenu4, .submenu5 {
+  .submenu1,
+  .submenu2,
+  .submenu3,
+  .submenu4,
+  .submenu5 {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100vw; /* Ocupa todo el ancho de la ventana */
-    background-color: #fff; /* Cambia el color de fondo según tu diseño */
+    background-color: #fff; /* Fondo blanco */
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
     padding: 10px 0;
+    text-align: center; /* Centra los elementos del submenú */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una línea */
   }
-
+  
   .menu-li:hover .submenu1,
   .menu-li:hover .submenu2,
   .menu-li:hover .submenu3,
   .menu-li:hover .submenu4,
   .menu-li:hover .submenu5 {
-    display: block;
+    display: flex; /* Muestra el submenú al hacer hover */
   }
-
+  
   .submenu-item {
-    display: inline-block;
-    margin: 0 10px;
+    margin: 0 10px; /* Espaciado entre elementos */
   }
-
-  .submenu1 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 73%;
-    transform: translateX(-28%);
-    width: auto;
-    background-color: #ffffff;
-    justify-content: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    color: #000000;
-    border-radius: 15px;
-    list-style-type: none;
+  
+  .submenu-item a {
+    color: #000000; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 20px; /* Espaciado interno */
+    display: block; /* Hace que el enlace ocupe todo el espacio del li */
   }
-
-  .submenu2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 95%;
-    transform: translateX(-50%);
-    width: auto;
-    background-color: #ffffff77;
-    justify-content: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    color: #000000;
-    border-radius: 15px;
-    list-style-type: none;
-  }
-
-  .submenu3 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-51%);
-    width: auto;
-    background-color: #ffffff77;
-    justify-content: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    color: #000000;
-    border-radius: 15px;
-    list-style-type: none;
-  }
-
-  .submenu4 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    background-color: #ffffff77;
-    justify-content: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    color: #000000;
-    border-radius: 15px;
-    list-style-type: none;
-  }
-
-  .submenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    background-color: #ffffff77;
-    justify-content: center;
-    padding: 10px 0;
-    flex-wrap: nowrap;
-    color: #000000;
-    border-radius: 15px;
-    list-style-type: none;
+  
+  .submenu-item a:hover {
+    background-color: #f0f0f0; /* Color de fondo al hacer hover */
+    border-radius: 5px; /* Bordes redondeados */
   }
 
   /*--------------- Estilo para los elementos del submenú ----------------*/
