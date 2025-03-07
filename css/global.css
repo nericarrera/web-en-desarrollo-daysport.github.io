@@ -415,11 +415,7 @@
 }
 
 /* Estilos para el resumen del pedido */
-.cart-summary {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
+
 
 .cart-summary h2 {
     font-size: 25px;
