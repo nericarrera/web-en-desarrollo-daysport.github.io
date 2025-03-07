@@ -487,6 +487,7 @@
     color: #ffffff;
 }
 .cart-marketin-2 {
+    display: inline-block;
     font-family: 'Dosis', sans-serif;
     font-size: 14px;
     color: #ffffff;
