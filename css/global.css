@@ -66,14 +66,8 @@
   }
   
   .nav {
-    display: flex;
-    width: 100%;
-    height: 65px;
-    background: #fdfdfd;
-    list-style: none;
-    position: relative;
-    z-index: 10;
-    justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    max-width: none; /* Elimina cualquier límite de ancho */
   }
 
   .conteiner-buscador-carrito {
@@ -554,16 +548,12 @@
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
  /*------------- MENÚ Y SUBMENÚ ---------------*/
- .menu {
-    display: flex;
-    list-style: none;
-    padding: 1px;
-    margin: auto;
-    margin-top: 17px;
-    margin-right: 55px;
-    justify-content: space-evenly;
-    position: relative;
-  }
+
+
+.menu {
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  max-width: none; /* Elimina cualquier límite de ancho */
+}
 
   .menu-ul {
     position: relative;
@@ -601,23 +591,26 @@
 
   /*-------------- Estilo para el submenú ----------------*/
   .submenu1,
-  .submenu2,
-  .submenu3,
-  .submenu4,
-  .submenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    background-color: #fff; /* Fondo blanco */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    padding: 10px 0;
-    text-align: center; /* Centra los elementos del submenú */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una línea */
-  }
+.submenu2,
+.submenu3,
+.submenu4,
+.submenu5 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  background-color: #fff;
+  z-index: 1000;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -50vw; /* Ajusta el posicionamiento */
+  left: 50%; /* Centra el submenú */
+  transform: translateX(-50%); /* Corrige el centrado */
+}
 
   .menu-li:hover .submenu1,
   .menu-li:hover .submenu2,
