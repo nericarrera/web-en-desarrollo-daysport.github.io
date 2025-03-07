@@ -305,7 +305,7 @@
     font-size: 14px;
 }
 
-.removeFromCart{
+.btn-remove-modal {
     background-color: #ff0000;
     color: white;
     border: none;

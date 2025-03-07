@@ -74,7 +74,7 @@ function updateCart() {
                         <p>Color: ${item.color}</p>
                         <p>Talle: ${item.size}</p>
                         <p>Cantidad: ${item.quantity}</p>
-                        <button class="btn-remove-modal" onclick="removeFromCart(${index})">Eliminar</button>
+                        <button class="btn-remove-modal" onclick="removeFromCart(${index})">X</button>
                     </div>
                 </div>
             `;
