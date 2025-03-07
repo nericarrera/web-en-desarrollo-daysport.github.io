@@ -593,14 +593,13 @@
 
   /*-------------- Estilo para el submenú ----------------*/
   .submenu1,
-.submenu2,
-.submenu3,
-.submenu4,
-.submenu5 {
+  .submenu2,
+  .submenu3,
+  .submenu4,
+  .submenu5 {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
   width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
   background-color: #fff;
   z-index: 1000;
