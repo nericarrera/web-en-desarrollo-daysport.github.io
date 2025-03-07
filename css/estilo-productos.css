@@ -242,20 +242,6 @@
 
 /* Estilo para el submenú */
 
-.submenu1, .submenu2, 
-.submenu3, .submenu4,
-.submenu5 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  transform: translateX(47%);
-  background-color: #ffffff77;
-  justify-content: center;
-  flex-wrap: nowrap;
-  color: #000000;
-  list-style-type: none;
-}
-
 
 /* Estilo para los elementos del submenú */
 .submenu-item {
