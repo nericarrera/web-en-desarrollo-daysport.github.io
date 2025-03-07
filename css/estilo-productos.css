@@ -169,7 +169,6 @@
   display: none;
 }
 
-
 .user-icon-container {
   position: relative;
   display: inline-block;
@@ -195,8 +194,6 @@
 }
 
 /* -----------------MENÚ Y SUBMENÚ----------------- */
-
-/* Contenedor del menú */
 /* Estilo para el menú principal */
 .menu {
   display: flex;
