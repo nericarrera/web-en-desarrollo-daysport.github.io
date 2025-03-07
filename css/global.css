@@ -385,7 +385,8 @@
     flex: 1;
 }
 
-.cart-item-details p {
+.cart-item p {
+    font-family: 'DM Sans', sans-serif;
     margin: 5px 0;
     font-size: 14px;
     color: #555;
