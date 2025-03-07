@@ -201,10 +201,9 @@
 .menu {
   display: flex;
   list-style: none;
-  padding: 1px;
+  padding: 2px;
   margin: auto;
   margin-top: 17px;
-  margin-right: 55px;
   justify-content: space-evenly;
   
 }
@@ -247,15 +246,12 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 95%;
-  transform: translateX(-50%);
+  transform: translateX(47%);
   width: auto;
   background-color: #ffffff77;
   justify-content: center;
-  padding: 10px 0;
   flex-wrap: nowrap;
   color: #000000;
-  border-radius: 15px;
   list-style-type: none;
 }
 
@@ -264,7 +260,7 @@
   position: absolute;
   top: 100%;
   left: 95%;
-  transform: translateX(-50%);
+  transform: translateX(47%);
   width: auto;
   background-color: #ffffff77;
   justify-content: center;
