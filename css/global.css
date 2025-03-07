@@ -374,9 +374,8 @@
 
 .cart-item img {
     width: 220px;
-    height: 200px;
+    height: 226px;
     object-fit: cover;
-    border-radius: 8px;
     margin-right: 20px;
 }
 
@@ -384,7 +383,6 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 8px;
     margin-right: 20px;
 }
 
