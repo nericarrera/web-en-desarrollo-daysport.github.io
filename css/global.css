@@ -328,6 +328,11 @@
     padding: 20px;
 }
 
+.cart-page-colum1 {
+    width: 50%;
+}
+
+
 .cart-page-title {
     margin-bottom: 20px;
     font-size: 20px;
