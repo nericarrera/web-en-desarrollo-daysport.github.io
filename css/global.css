@@ -588,7 +588,7 @@
 
   /*-------------- Estilo para el submenú ----------------*/
   
-  .submenu2,
+  
   .submenu3,
   .submenu4,
   .submenu5 {
@@ -608,13 +608,26 @@
     display: none;
   position: absolute;
   top: 100%;
-  width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
+  width: 100.05vw; /* Ocupa el 100% del ancho de la ventana */
   background-color: #999999;
   z-index: 1000;
   padding: 10px 0;
   text-align: center;
   justify-content: center;
-  transform: translateX(-50%); /* Corrige el centrado */
+  transform: translateX(-18%); /* Corrige el centrado */
+}
+
+.submenu2 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100.12vw;
+    background-color: #999999;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(-30.2%);
 }
 
   .menu-li:hover .submenu1,
