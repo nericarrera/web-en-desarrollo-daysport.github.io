@@ -374,8 +374,8 @@
 }
 
 .cart-item img {
-    width: 100px;
-    height: 100px;
+    width: 220px;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 20px;
@@ -395,8 +395,8 @@
 
 .cart-item p {
     font-family: 'DM Sans', sans-serif;
-    margin: 5px 0;
-    font-size: 14px;
+    margin: 0px 0px 20px;
+    font-size: 16px;
     color: #555;
 }
 
