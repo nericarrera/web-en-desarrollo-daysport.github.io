@@ -426,9 +426,11 @@
 }
 
 .summary-details p {
+    font-family: 'Dosis', sans-serif;
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 17px;
     color: #555;
+    font-weight: 500;
 }
 
 .summary-details p span {
