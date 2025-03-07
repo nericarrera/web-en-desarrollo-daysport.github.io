@@ -298,16 +298,19 @@
     margin: 5px 0;
 }
 
-.cart-item-details button {
-    background-color: #ff0000;
-    color: #ffffff;
+.btn-remove-from-cart {
+    background-color: transparent;
+    color: #ff0000;
     border: none;
-    padding: 5px 10px;
+    font-size: 1.5em;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-.cart-item-details button:hover {
-    background-color: #cc0000;
+.btn-remove-from-cart:hover {
+    color: #cc0000;
 }
 
 /*-------------------------CARRITO PAGINA DEL CARRITO---------------*/
