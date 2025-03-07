@@ -601,7 +601,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+  width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
   background-color: #fff;
   z-index: 1000;
   padding: 10px 0;
