@@ -336,6 +336,14 @@
     font-weight: 600;
 }
 
+.cart-page-descripcion {
+    text-align: center;
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
 .cart-content {
     display: flex;
     gap: 20px;
