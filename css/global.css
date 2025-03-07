@@ -482,11 +482,14 @@
 }
 
 .cart-marketin-1 {
+    padding: 5px;
     font-family: 'Dosis', sans-serif;
     font-size: 16px;
     color: #ffffff;
 }
 .cart-marketin-2 {
+    margin-top: 10px;
+    padding: 5px;
     font-family: 'Dosis', sans-serif;
     font-size: 14px;
     color: #ffffff;
