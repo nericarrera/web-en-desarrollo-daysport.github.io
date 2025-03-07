@@ -47,6 +47,7 @@ function updateCart() {
 
     // Calcular el total y mostrar los productos
     let total = 0;
+    let productCount = 0;
     if (cart.length === 0) {
         cartItemsList.innerHTML = '<p id="empty-cart-message">El carrito está vacío.</p>';
     } else {
@@ -70,7 +71,7 @@ function updateCart() {
                     <button class="btn-remove-from-cart" onclick="removeFromCart(${index})">✖</button>
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
-                        <p>${item.name}</p>
+                        <p><strong>${item.name}</strong></p>
                         <p>$${item.price.toFixed(2)}</p>
                         <p>Color: ${item.color}</p>
                         <p>Talle: ${item.size}</p>
@@ -80,19 +81,15 @@ function updateCart() {
             `;
             cartItemsList.appendChild(li);
             total += item.price * item.quantity; // Sumar al total considerando la cantidad
+            productCount += item.quantity; // Sumar la cantidad de productos
         });
     }
 
     // Actualizar el total y el contador
     cartTotal.textContent = `$${total.toFixed(2)}`;
-    cartCount.textContent = cart.reduce((sum, item) => {
-        // Verificar que la cantidad sea un número válido antes de sumar
-        if (typeof item.quantity !== 'number' || isNaN(item.quantity)) {
-            console.error('La cantidad no es un número válido:', item.quantity);
-            return sum;
-        }
-        return sum + item.quantity;
-    }, 0); // Sumar las cantidades
+    cartCount.textContent = productCount;
+    document.getElementById('cart-product-count').textContent = productCount;
+    document.getElementById('cart-subtotal').textContent = `$${total.toFixed(2)}`;
 
     // Guardar el carrito en localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
