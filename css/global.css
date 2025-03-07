@@ -423,19 +423,17 @@
 
 /* Estilos para el resumen del pedido */
 .cart-summary {
-    flex: 1;
     background-color: #f9f9f9;
-    padding: 20px;
     border-radius: 8px;
     border: 1px solid #ddd;
 }
 
 .cart-summary h2 {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 15px;
     color: #333;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;   
+    font-family: "Questrial", sans-serif;
+    font-weight: 800;   
 
 }
 
