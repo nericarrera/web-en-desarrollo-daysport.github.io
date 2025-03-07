@@ -329,13 +329,12 @@
 }
 
 .cart-page-colum1 {
-    width: 50%;
+    width: 60%;
 }
 
 .cart-page-colum2 {
     width: 40%;
 }
-
 
 .cart-page-title {
     margin-bottom: 20px;
@@ -347,9 +346,7 @@
 
 .cart-page-descripcion {
     display: flex;
-    width: 60%;
     margin-bottom: 20px;
-    
 }
 
 .cart-page-descripcion p {
