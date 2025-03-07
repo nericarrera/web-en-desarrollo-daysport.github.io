@@ -453,6 +453,17 @@
     margin-top: 20px;
 }
 
+.checkout-btn-pago {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
 #checkout-btn:hover {
     background-color: #0056b3;
 }
