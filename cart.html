@@ -112,11 +112,11 @@
         <span id="cart-count">0</span> <!-- Contador de productos -->
     </div>
     <!-- Modal del carrito -->
-    <div id="cart-dropdown" class="cart-dropdown-hidden">
+    <div id="cart-dropdown" class="cart-dropdown-hidden cart-modal">
       <button id="cart-close-btn" class="cart-close-btn">✖</button>
       <p class="titulo-carrito">Carrito de compras</p>
-      <ul id="cart-items-list"></ul>
-      <div class="cart-summary">
+      <ul id="cart-items-list" class="cart-modal-items"></ul>
+      <div class="cart-summary cart-modal-summary">
           <p>Total: <span id="cart-total">$0</span></p>
           <button id="checkout-btn">Finalizar compra</button>
           <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
@@ -159,29 +159,28 @@
 
     <!------------------------------------------>
   
-      <main>
-        <div class="cart-page-container">
-          <h1>Carrito de Compras</h1>
-          <div class="cart-content">
-              <!-- Lista de productos -->
-              <div class="cart-items">
-                  <div id="cart-items-container"></div> <!-- Contenedor para los productos -->
-              </div>
-  
-              <!-- Resumen del pedido -->
-              <div class="cart-summary">
-                  <h2>Resumen del Pedido</h2>
-                  <div class="summary-details">
-                      <p>Subtotal: <span id="cart-subtotal">$0</span></p>
-                      <p>Envío: <span id="cart-shipping">Gratis</span></p>
-                      <p>Total: <span id="cart-total">$0</span></p>
-                  </div>
-                  <button id="checkout-btn">Proceder al Pago</button>
-              </div>
-          </div>
-      </div>
-        
-    </main>
+<main>
+  <div class="cart-page-container">
+    <h1>Carrito de Compras</h1>
+    <div class="cart-content">
+        <!-- Lista de productos -->
+        <div class="cart-items cart-page-items">
+            <div id="cart-items-container"></div> <!-- Contenedor para los productos -->
+        </div>
+
+        <!-- Resumen del pedido -->
+        <div class="cart-summary cart-page-summary">
+            <h2>Resumen del Pedido</h2>
+            <div class="summary-details">
+                <p>Subtotal: <span id="cart-subtotal">$0</span></p>
+                <p>Envío: <span id="cart-shipping">Gratis</span></p>
+                <p>Total: <span id="cart-total">$0</span></p>
+            </div>
+            <button id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+  </div>
+</main>
 
     <!--------------------FOOTER---------------------------->
 
