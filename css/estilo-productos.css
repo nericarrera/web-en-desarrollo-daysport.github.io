@@ -1247,12 +1247,12 @@ font-style: normal;
 }
 
 .listafooter a{
-  font-size: 16px;
+  font-size: 14px;
   color: #fafafa;
   display: inline;
   font-family: "Questrial", sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
   text-decoration: none;
   -webkit-text-stroke: 0.2px #ffffff;
 }
