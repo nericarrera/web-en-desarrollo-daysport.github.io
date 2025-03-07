@@ -644,13 +644,13 @@
     display: none;
     position: absolute;
     top: 100%;
-    width: 100.45vw;
+    width: 99.45vw;
     background-color: #999999;
     z-index: 1000;
     padding: 10px 0;
     text-align: center;
     justify-content: center;
-    transform: translateX(-43.2%);
+    transform: translateX(-54.2%);
 }
 
   .menu-li:hover .submenu1,
