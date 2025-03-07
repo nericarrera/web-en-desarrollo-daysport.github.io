@@ -609,8 +609,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-left: -50vw; /* Ajusta el posicionamiento */
-  left: 50%; /* Centra el submenú */
   transform: translateX(-50%); /* Corrige el centrado */
 }
 
