@@ -588,7 +588,6 @@
 
   /*-------------- Estilo para el submenú ----------------*/
   
-  .submenu4,
   .submenu5 {
   display: none;
   position: absolute;
@@ -632,13 +631,26 @@
     display: none;
     position: absolute;
     top: 100%;
-    width: 100.12vw;
+    width: 100.45vw;
     background-color: #999999;
     z-index: 1000;
     padding: 10px 0;
     text-align: center;
     justify-content: center;
-    transform: translateX(-30.2%);
+    transform: translateX(-43.2%);
+}
+
+.submenu4 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100.45vw;
+    background-color: #999999;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(-43.2%);
 }
 
   .menu-li:hover .submenu1,
