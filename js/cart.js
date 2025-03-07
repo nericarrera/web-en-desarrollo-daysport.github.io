@@ -48,7 +48,7 @@ function updateCart() {
     // Calcular el total y mostrar los productos
     let total = 0;
     if (cart.length === 0) {
-        cartItemsList.innerHTML = '<p>El carrito está vacío.</p>';
+        cartItemsList.innerHTML = '<p id="empty-cart-message">El carrito está vacío.</p>';
     } else {
         cart.forEach((item, index) => {
             // Verificar que el precio sea un número
