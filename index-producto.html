@@ -110,18 +110,19 @@
     <div class="conteiner-buscador-carrito">
       <div class="cart-icon-container">
         <img src="img/iconos/icon-shop-user-serch/bolsa-de-la-compra.png" alt="Carrito" id="cart-icon">
-        <span id="cart-count">0</span> <!-- Muestra la cantidad de productos en el carrito -->
+        <span id="cart-count">0</span> <!-- Contador de productos -->
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cart-dropdown" class="cart-dropdown-hidden cart-modal">
+      <button id="cart-close-btn" class="cart-close-btn">✖</button>
+      <p class="titulo-carrito">Carrito de compras</p>
+      <ul id="cart-items-list" class="cart-modal-items"></ul>
+      <div class="cart-summary cart-modal-summary">
+          <p>Total: <span id="cart-total">$0</span></p>
+          <button id="checkout-btn-modal" class="cart-modal-checkout-btn">Finalizar compra</button>
+          <a href="cart.html"><button id="view-cart-btn" class="cart-modal-view-cart-btn">Ver carrito</button></a>
       </div>
-      <div id="cart-dropdown" class="cart-dropdown-hidden">
-        <button id="cart-close-btn" class="cart-close-btn">✖</button>
-        <p class="titulo-carrito">Carrito de compras</p>
-        <ul id="cart-items-list"></ul>
-        <div class="cart-summary">
-            <p>Total: <span id="cart-total">$0</span></p>
-            <button id="checkout-btn">Finalizar compra</button>
-            <a href="cart.html"><button id="view-cart-btn">Ver carrito</button></a>
-        </div>
-      </div>
+  </div>
 
       <div class="user-icon-container">
         <img src="img/iconos/icon-shop-user-serch/usuario (1).png" alt="Usuario" id="user-icon">
