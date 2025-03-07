@@ -278,6 +278,45 @@
     font-size: 14px;
 }
 
+#empty-cart-message {
+    font-size: 1.2em;
+    color: #ff0000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-item-modal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.cart-item-details button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart-item-details button:hover {
+    background-color: #cc0000;
+}
+
 /*-------------------------CARRITO PAGINA DEL CARRITO---------------*/
 
 /* Estilos generales para la página del carrito */
