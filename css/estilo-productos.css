@@ -213,10 +213,13 @@
   position: relative;
 }
 
-.menu-li {
-  text-decoration: none;
+.menu-ul {
+  position: relative;
   color: #000000;
-  padding: 5px;
+  list-style-type: none;
+  justify-content: center;
+  margin: 10px;
+  padding: 0;
 }
 
 .menu-li .menu-li-a {
@@ -274,8 +277,6 @@
   color: #FFFFFF;
   transition: all 430ms ease;
 }
-
-
 
 /* Mostrar el submenú al hacer hover */
 .menu .menu-ul:hover .submenu1 {
