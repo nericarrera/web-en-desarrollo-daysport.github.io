@@ -210,12 +210,11 @@
 }
 
 /* Estilo para los elementos del menú */
-.menu-ul {
-  position: relative;
+.menu-li {
+  text-decoration: none;
   color: #000000;
-  list-style-type: none;
-  justify-content: center;
-  margin: 10px;
+  padding: 5px;
+  position: relative;
 }
 
 .menu-li {
