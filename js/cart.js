@@ -67,7 +67,6 @@ function updateCart() {
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="cart-item-modal">
-                    <button class="btn-remove-from-cart" onclick="removeFromCart(${index})">✖</button>
                     <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                     <div class="cart-item-details">
                         <p>${item.name}</p>
@@ -75,6 +74,7 @@ function updateCart() {
                         <p>Color: ${item.color}</p>
                         <p>Talle: ${item.size}</p>
                         <p>Cantidad: ${item.quantity}</p>
+                        <button onclick="removeFromCart(${index})">Eliminar</button>
                     </div>
                 </div>
             `;
