@@ -588,19 +588,6 @@
 
   /*-------------- Estilo para el submenú ----------------*/
   
-  .submenu5 {
-  display: none;
-  position: absolute;
-  top: 100%;
-  width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
-  background-color: #999999;
-  z-index: 1000;
-  padding: 10px 0;
-  text-align: center;
-  justify-content: center;
-  transform: translateX(-50%); /* Corrige el centrado */
-}
-
 .submenu1 {
     display: none;
   position: absolute;
@@ -652,6 +639,19 @@
     justify-content: center;
     transform: translateX(-54.2%);
 }
+
+.submenu5 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 96.2vw; /* Ocupa el 100% del ancho de la ventana */
+    background-color: #999999;
+    z-index: 1000;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(-50%); /* Corrige el centrado */
+  }
 
   .menu-li:hover .submenu1,
   .menu-li:hover .submenu2,
