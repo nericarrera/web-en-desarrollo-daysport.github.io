@@ -219,6 +219,7 @@
 #cart-total {
     font-family: 'Questrial', sans-serif;
     font-size: 16px;
+    font-size: 600;
 }
 
 .cart-summary button {
