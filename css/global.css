@@ -205,13 +205,10 @@
 #cart-items-list  {
     position: relative;
     margin-top: 10px;
-    
 }
 
 .cart-summary {
     display: block;
-    margin-top: 13px;
-
 }
 
 .cart-summary p {
@@ -434,7 +431,6 @@
     color: #333;
     font-family: "Questrial", sans-serif;
     font-weight: 800;   
-
 }
 
 .summary-details p {
