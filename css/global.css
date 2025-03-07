@@ -622,8 +622,7 @@
   .menu-li:hover .submenu1,
   .menu-li:hover .submenu2,
   .menu-li:hover .submenu3,
-  .menu-li:hover .submenu4,
-  .menu-li:hover .submenu5 {
+  .menu-li:hover .submenu4 {
     display: flex; /* Muestra el submenú al hacer hover */
   }
   
