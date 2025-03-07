@@ -326,6 +326,14 @@
     padding: 20px;
 }
 
+.cart-page-title {
+    text-align: center;
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
 .cart-content {
     display: flex;
     gap: 20px;
