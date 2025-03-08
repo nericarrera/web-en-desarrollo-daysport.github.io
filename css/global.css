@@ -549,176 +549,77 @@
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
     max-width: none; /* Elimina cualquier límite de ancho */
     overflow: visible; /* Permite que el submenú se expanda */
-    display: flex;
-    justify-content: center; /* Centra el menú horizontalmente */
-    padding: 0;
-    margin: 0;
+    background-color: #000; /* Fondo negro para el menú */
+    padding: 10px; /* Espaciado interno */
   }
   
   .menu-ul {
-    width: 70px;
-    position: relative;
-    color: #000000;
-    list-style-type: none;
-    justify-content: center;
+    list-style-type: none; /* Elimina los puntos de la lista */
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: space-around; /* Distribuye los elementos del menú */
   }
   
   .menu-li {
-    text-decoration: none;
-    color: #000000;
-    padding: 5px;
-    position: relative;
+    position: relative; /* Necesario para posicionar el modal */
   }
   
   .menu-li .menu-li-a {
-    text-decoration: none;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 0.5px;
-    color: #000000;
-    list-style-type: none;
-    font-size: 15px;
-    padding: 10px 20px;
-    display: block;
-  }
-  
-  .menu-modal-submenu1 {
-    display: none;
-    position: fixed; 
-    width: 100%;
-    background: #ffffff;
-  }
-  .menu-li .menu-li-a:hover {
-    text-decoration: underline;
-    color: #ffffff;
-    background: #a30dfa;
-    transition: all 420ms ease;
-  }
-  
-  /*-------------- Estilo para el submenú ----------------*/
-  
-  .submenu1,
-  .submenu2,
-  .submenu3,
-  .submenu4,
-  .submenu5 {
-    display: none;
-    position: absolute;
-    top: 100%; /* Posición debajo del ítem del menú */
-    left: 0;
-    width: 100vw; /* Ocupa todo el ancho de la ventana */
-    background-color: #999999; /* Color de fondo del submenú */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    padding: 20px 0;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el submenú */
-  }
-  
-  .menu-li:hover .submenu1,
-  .menu-li:hover .submenu2,
-  .menu-li:hover .submenu3,
-  .menu-li:hover .submenu4,
-  .menu-li:hover .submenu5 {
-    display: flex; /* Muestra el submenú al hacer hover */
-  }
-  
-  .submenu-item {
-    margin: 0 10px; /* Espaciado entre elementos */
-  }
-  
-  .submenu-item a {
-    color: #000000; /* Color del texto */
+    color: #fff; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 16px; /* Tamaño de fuente */
     padding: 10px 20px; /* Espaciado interno */
-    display: block; /* Hace que el enlace ocupe todo el espacio del li */
-  }
-  
-  .submenu-item a:hover {
-    background-color: #f0f0f0; /* Color de fondo al hacer hover */
-    border-radius: 5px; /* Bordes redondeados */
-  }
-  /*--------------- Estilo para los elementos del submenú ----------------*/
-
-  .submenu-item {
-    text-align: center;
-    margin: 0 20px;
-    margin-top: 20px;
-  }
-
-  .submenu-item:hover{
-    background: #fff9a6;
-  }
-
-  .submenu-item img{
-    width: 50px;
-  }
-
-  .submenu-item img:hover{
-    transition: all 430ms ease;
-    transform: scale(1.2);
-    cursor: pointer;
-  }
-
-  .submenu-item a{
-    font-family: 'Oswald', sans-serif;
-    color: #000;
-    text-decoration: none;
-  }
-
-  .submenu-item a:hover{
-    background:  #a30dfa;
-    color: #FFFFFF;
-    transition: all 430ms ease;
-  }
-
-  /* Mostrar el submenú al hacer hover */
-  .menu .menu-ul:hover .submenu1 {
-    display: flex;
-    background: #ffffff;
-    color: #360353;
-    transition: all 890ms ease;
-  }
-
-  .menu .menu-ul:hover .submenu2 {
-    display: flex;
-    background: #ffffff;
-    color: #360353;
-    transition: all 890ms ease;
-  }
-
-  .menu .menu-ul:hover .submenu3 {
-    display: flex;
-    background: #ffffff;
-    color: #360353;
-    transition: all 890ms ease;
-  }
-
-  .menu .menu-ul:hover .submenu4 {
-    display: flex;
-    background: #ffffff;
-    color: #360353;
-    transition: all 890ms ease;
-  }
-
-  .menu .menu-ul:hover .submenu5 {
-    display: flex;
-    background: #ffffff;
-    color: #360353;
-    transition: all 890ms ease;
-  }
-  
-  /* Estilo para las imágenes de los iconos */
-  .submenu-item img {
     display: block;
-    margin: 0 auto 10px;
   }
-
+  
+  .menu-li .menu-li-a:hover {
+    text-decoration: underline; /* Subrayado al hacer hover */
+    color: #ffffff; /* Color del texto al hacer hover */
+    background: #a30dfa; /* Fondo al hacer hover */
+    transition: all 420ms ease; /* Transición suave */
+  }
+  
+  /*-------------- Estilo para el modal ----------------*/
+  
+  .modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Fija el modal en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 100%; /* Ocupa todo el alto de la pantalla */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+  }
+  
+  .modal-content {
+    background-color: #fff; /* Fondo blanco para el contenido */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    max-width: 90%; /* Ancho máximo del contenido */
+  }
+  
+  /* Mostrar modal al hacer hover */
+  .menu-li:hover .modal {
+    display: flex; /* Muestra el modal al hacer hover */
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu-ul {
+      flex-direction: column; /* Cambia a disposición vertical en móviles */
+      align-items: center; /* Centra los elementos */
+    }
+  
+    .menu-li {
+      margin: 10px 0; /* Espaciado entre elementos */
+    }
+  }
 /*----------------SUB BANNER- CAMPAÑA CUOTAS-----------------*/
 
 .sub-banner0 {
