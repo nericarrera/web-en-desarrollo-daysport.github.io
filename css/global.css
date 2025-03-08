@@ -556,6 +556,7 @@
   }
   
   .menu-ul {
+    width: 70px;
     position: relative;
     color: #000000;
     list-style-type: none;
