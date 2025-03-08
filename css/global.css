@@ -543,31 +543,35 @@
     height: 21px;
     margin-top: 2px;
 }
-
- /*------------- MENÚ Y SUBMENÚ ---------------*/
+/*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
-  width: 100%; /* Asegúrate de que ocupe todo el ancho */
-  max-width: none; /* Elimina cualquier límite de ancho */
-  overflow: visible; /* Permite que el submenú se expanda */
-}
-
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    max-width: none; /* Elimina cualquier límite de ancho */
+    overflow: visible; /* Permite que el submenú se expanda */
+    display: flex;
+    justify-content: center; /* Centra el menú horizontalmente */
+    padding: 0;
+    margin: 0;
+  }
+  
   .menu-ul {
     position: relative;
     color: #000000;
     list-style-type: none;
     justify-content: center;
-    margin: 10px;
+    margin: 0;
     padding: 0;
+    display: flex;
   }
-
+  
   .menu-li {
     text-decoration: none;
     color: #000000;
     padding: 5px;
     position: relative;
   }
-
+  
   .menu-li .menu-li-a {
     text-decoration: none;
     font-family: 'Dosis', sans-serif;
@@ -577,82 +581,38 @@
     color: #000000;
     list-style-type: none;
     font-size: 15px;
+    padding: 10px 20px;
+    display: block;
   }
-
+  
   .menu-li .menu-li-a:hover {
     text-decoration: underline;
     color: #ffffff;
     background: #a30dfa;
     transition: all 420ms ease;
   }
-
+  
   /*-------------- Estilo para el submenú ----------------*/
   
-.submenu1 {
-    display: none;
-  position: absolute;
-  top: 100%;
-  width: 100.05vw; /* Ocupa el 100% del ancho de la ventana */
-  background-color: #999999;
-  z-index: 1000;
-  padding: 10px 0;
-  text-align: center;
-  justify-content: center;
-  transform: translateX(-18%); /* Corrige el centrado */
-}
-
-.submenu2 {
+  .submenu1,
+  .submenu2,
+  .submenu3,
+  .submenu4,
+  .submenu5 {
     display: none;
     position: absolute;
-    top: 100%;
-    width: 100.12vw;
-    background-color: #999999;
-    z-index: 1000;
-    padding: 10px 0;
+    top: 100%; /* Posición debajo del ítem del menú */
+    left: 0;
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    background-color: #999999; /* Color de fondo del submenú */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    padding: 20px 0;
     text-align: center;
     justify-content: center;
-    transform: translateX(-30.2%);
-}
-
-.submenu3 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 100.45vw;
-    background-color: #999999;
-    z-index: 1000;
-    padding: 10px 0;
-    text-align: center;
-    justify-content: center;
-    transform: translateX(-43.2%);
-}
-
-.submenu4 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 99.45vw;
-    background-color: #999999;
-    z-index: 1000;
-    padding: 10px 0;
-    text-align: center;
-    justify-content: center;
-    transform: translateX(-54.2%);
-}
-
-.submenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 98.8vw;
-    background-color: #999999;
-    z-index: 1000;
-    padding: 10px 0;
-    text-align: center;
-    justify-content: center;
-    transform: translateX(-69%);
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el submenú */
   }
-
+  
   .menu-li:hover .submenu1,
   .menu-li:hover .submenu2,
   .menu-li:hover .submenu3,
@@ -660,23 +620,22 @@
   .menu-li:hover .submenu5 {
     display: flex; /* Muestra el submenú al hacer hover */
   }
-
+  
   .submenu-item {
     margin: 0 10px; /* Espaciado entre elementos */
   }
-
+  
   .submenu-item a {
     color: #000000; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
     padding: 10px 20px; /* Espaciado interno */
     display: block; /* Hace que el enlace ocupe todo el espacio del li */
   }
-
+  
   .submenu-item a:hover {
     background-color: #f0f0f0; /* Color de fondo al hacer hover */
     border-radius: 5px; /* Bordes redondeados */
   }
-
   /*--------------- Estilo para los elementos del submenú ----------------*/
 
   .submenu-item {
