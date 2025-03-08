@@ -40,7 +40,7 @@
 
 .logo {
   display: flex;
-  width: 130px;
+  width: 200px;
   height: auto;
   text-align: center;
   justify-content: center;
@@ -55,6 +55,7 @@
   height: auto;
   position: relative;
   margin: auto;
+  justify-content: center;
 }
 
 .logo .a .logo1 {
@@ -68,7 +69,7 @@
   align-items: center;
   padding: 0 20px;
   background: #fdfdfd;
-  height: 65px;
+  height: 75px;
   position: relative;
   z-index: 10;
 }
