@@ -587,7 +587,8 @@
   }
   
   .menu-modal-submenu1 {
-    display: flex;
+    display: none;
+    position: absolute;
     width: 100%;
     background: #ffffff;
   }
