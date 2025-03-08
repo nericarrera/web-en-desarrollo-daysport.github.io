@@ -567,7 +567,7 @@
   }
   
   .menu-li .menu-li-a {
-    color: #fff; /* Color del texto */
+    color: #0a0a0a; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
     font-weight: bold; /* Texto en negrita */
     font-size: 16px; /* Tamaño de fuente */
