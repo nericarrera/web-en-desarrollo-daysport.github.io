@@ -588,7 +588,7 @@
   
   .menu-modal-submenu1 {
     display: none;
-    position: absolute;
+    position: fixed; 
     width: 100%;
     background: #ffffff;
   }
