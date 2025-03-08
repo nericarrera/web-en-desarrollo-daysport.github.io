@@ -549,7 +549,7 @@
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
     max-width: none; /* Elimina cualquier límite de ancho */
     overflow: visible; /* Permite que el submenú se expanda */
-    background-color: #000; /* Fondo negro para el menú */
+    background-color: #bdbcbc; /* Fondo negro para el menú */
     padding: 10px; /* Espaciado interno */
   }
   
@@ -562,6 +562,7 @@
   }
   
   .menu-li {
+    display: none;
     position: relative; /* Necesario para posicionar el modal */
   }
   
