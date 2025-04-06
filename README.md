@@ -1,1 +1,1 @@
-https://nericarrera/web-en-desarrollo-daysport.github.io
+https://web-en-desarrollo-daysport.github.io/nericarrera
