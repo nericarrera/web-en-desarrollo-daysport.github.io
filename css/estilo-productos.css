@@ -1,37 +1,37 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* HEADER */
-.header{
+.header {
   background: #000000;
-    text-align: center;
-    height: 39px;
-    width: 100%;
-    margin: 0 auto;     
+  text-align: center;
+  height: 39px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.header__inicio-env{
+.header__inicio-env {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding: 2px;    
+  padding: 2px;
   margin: auto;
 }
 
-.header__inicio-env p{
+.header__inicio-env p {
   font-size: 14px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 1.0px;
-  color:  #a30dfa;
+  letter-spacing: 1px;
+  color: #a30dfa;
   margin-top: 6px;
 }
 
-.header__inicio-env  p:hover{
+.header__inicio-env p:hover {
   display: flex;
   color: #ffffff;
   cursor: pointer;
@@ -85,8 +85,8 @@
 .buscador {
   display: flex;
   justify-content: end;
-  text-align: center; 
-  height: auto; 
+  text-align: center;
+  height: auto;
 }
 
 .buscador input {
@@ -201,7 +201,7 @@
   width: 100%; /* Asegúrate de que ocupe todo el ancho */
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
-  background-color: #000; /* Fondo negro para el menú */
+  background-color: #fff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
 }
 
@@ -276,48 +276,48 @@
 /*---------------------- SECTION------------------ */
 
 .section-conteiner-volver {
-    display: flex;
-    width: auto;
-    height: 60px;
-    margin: auto;
-    justify-content: flex-start;
-    position: absolute;
-    z-index: 10;
+  display: flex;
+  width: auto;
+  height: 60px;
+  margin: auto;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 10;
 }
 
 .conteiner-volver {
-    display: contents;
-    padding: 5px;
-    width: 100%;
-    margin: auto;
-    position: absolute;
-    z-index: 10;
+  display: contents;
+  padding: 5px;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  z-index: 10;
 }
 
-.volver{
-    display: inline;
-    margin: 35px;
+.volver {
+  display: inline;
+  margin: 35px;
 }
 
-.volver img{
+.volver img {
   width: 15px;
 }
 
-.volver-a{
+.volver-a {
   text-decoration: none;
 }
 
-.volver-titulo{
-    display: inline;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    margin-left: 5px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
+.volver-titulo {
+  display: inline;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-left: 5px;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
 }
 
-.volver-titulo:hover{
+.volver-titulo:hover {
   width: 100px;
   transition: all 500ms ease;
   background: #000000c2;
@@ -325,9 +325,9 @@
   color: #f9f9f9;
 }
 
- /*----------------------- PRODUCTO ---------------------------------  */
+/*----------------------- PRODUCTO ---------------------------------  */
 
-.product-page{
+.product-page {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -431,10 +431,9 @@
 /*-------------------------------------------------------------------*/
 
 .product-gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
-    
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Las imágenes llenarán su espacio sin deformarse */
 }
 
 .color-btn {
@@ -475,7 +474,6 @@
   color: white;
   border-color: #0056b3;
 }
-
 
 .size-btn {
   padding: 10px 20px;
@@ -521,7 +519,8 @@
   gap: 3px;
 }
 
-.btn-buy-now, .btn-add-to-cart {
+.btn-buy-now,
+.btn-add-to-cart {
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
@@ -555,23 +554,21 @@
   font-family: "Dosis" sans-serif;
   margin-top: 20px;
   border: double;
-  
 }
 
 .btn-add-to-cart:hover {
   background-color: #3c015c;
-  
 }
 
 /*------------------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .product-page {
-      grid-template-columns: 1fr; /* Una columna para dispositivos móviles */
+    grid-template-columns: 1fr; /* Una columna para dispositivos móviles */
   }
-  
+
   .product-gallery {
-      grid-template-columns: 1fr; /* Las imágenes ocuparán toda la pantalla en una fila */
+    grid-template-columns: 1fr; /* Las imágenes ocuparán toda la pantalla en una fila */
   }
 }
 
@@ -579,16 +576,15 @@
   border: 2px solid #000; /* Cambia el color al pasar el mouse */
 }
 
-
 /* Adaptabilidad para pantallas pequeñas */
 @media (max-width: 768px) {
   .main-image-wrapper {
-      width: 100%; /* En pantallas pequeñas la imagen ocupará el 100% del ancho */
+    width: 100%; /* En pantallas pequeñas la imagen ocupará el 100% del ancho */
   }
 
   .thumbnail-gallery img {
-      width: 80px;
-      height: 80px;
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -600,49 +596,48 @@
 .product-image-gallery img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Hace que la imagen rellene el cuadro sin deformarse */
+  object-fit: cover; /* Hace que la imagen rellene el cuadro sin deformarse */
   border-radius: 8px; /* Esto le da un borde redondeado */
 }
 
 .product-image-gallery,
 .product-video-section {
-    width: 100%;
-    aspect-ratio: 16 / 9;  /* Mantiene una proporción 16:9 (la más usada en pantallas) */
-    overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene una proporción 16:9 (la más usada en pantallas) */
+  overflow: hidden;
 }
 
 .product-video-section iframe,
 .product-image-gallery img,
 .product-video-section video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que el video o imagen rellene completamente el cuadro */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video o imagen rellene completamente el cuadro */
 }
 
 /* ------DETALLES PRODUCTO------------------------------------------- */
 
 .product-details-section {
-    flex: 1;
-    max-width: 50%;
-    position: sticky;
-    top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
-    margin: 10px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 1;
-    padding-left: 35px;
-
+  flex: 1;
+  max-width: 50%;
+  position: sticky;
+  top: 20px; /* Se mantiene a 20px del top cuando haces scroll */
+  margin: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  padding-left: 35px;
 }
 
 #product-title {
-    font-size: 30px;
-    color: #000000;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 0.5px;
-    margin-bottom: 0px;
-    width: 280px;
+  font-size: 30px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  margin-bottom: 0px;
+  width: 280px;
 }
 
 #product-price {
@@ -663,8 +658,8 @@
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-    margin-top: 30px;
-    color: #000000;    
+  margin-top: 30px;
+  color: #000000;
 }
 
 #product-sizes {
@@ -674,11 +669,9 @@
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-    margin-top: 30px;
-    color: #000000;    
+  margin-top: 30px;
+  color: #000000;
 }
-
-
 
 /*-----------------------------DETALLE COLOR--------------------------*/
 
@@ -710,11 +703,11 @@
 }
 
 .product-colors {
-    margin-top: 20px;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 0.5px;
+  margin-top: 20px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
 }
 
 /*-----------------------------DETALLE - TALLES --------------*/
@@ -744,7 +737,6 @@
   color: #888;
 }
 
-
 .label {
   margin-top: 10px;
 }
@@ -755,7 +747,6 @@
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
-
 }
 
 .size-btn {
@@ -798,7 +789,8 @@
   border-collapse: collapse;
 }
 
-.size-chart th, .size-chart td {
+.size-chart th,
+.size-chart td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
@@ -810,24 +802,23 @@
 }
 
 .product-quantity input {
-    width: 50px;
-    padding: 5px;
-    text-align: center;
-    margin-top: 25px;
-    font-family: "Dosis", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.5px;
-}
-
-.product-quantity label{
-  font-size: 15px;
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  margin-top: 25px;
   font-family: "Dosis", sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
 }
 
+.product-quantity label {
+  font-size: 15px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.5px;
+}
 
 .modal {
   position: fixed;
@@ -855,79 +846,68 @@
 }
 
 .related-products-container {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
 }
 
 .related-products-container h2 {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: 3rem;
-    color: #141414;
-      font-family: "Poppins", system-ui;
-      font-weight: 600;
-      font-style: italic;
-
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  color: #141414;
+  font-family: "Poppins", system-ui;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .related-products-gallery {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 10px;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 10px;
 }
 
 .related-product-card {
-    width: 240px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+  width: 240px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .related-product-card img {
-    width: 100%;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .related-product-info h5 {
-    font-size: 1.2rem;
-    color: #333;
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .related-product-info p {
-    font-size: 1rem;
-    color: #007bff;
+  font-size: 1rem;
+  color: #007bff;
 }
 
 .related-product-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-
 .related-products-navigation {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .related-products-navigation img {
-    width: 30px;
-    cursor: pointer;
+  width: 30px;
+  cursor: pointer;
 }
 
 /*-------------------MINIATURAS EN PRODUCTOS--------------*/
-
-
-
-
-
-
-
-
-
 
 /*---------- OPINIONES Y PUNTUACIONES--------------*/
 
@@ -964,7 +944,7 @@
   background-color: #f0f0f0;
 }
 
-.product-details-rating details p, 
+.product-details-rating details p,
 .product-details-rating details ul,
 .product-details-rating details form {
   margin-top: 10px;
@@ -1007,7 +987,7 @@
 
 .rating {
   float: right;
-  font-size: 1.0em;
+  font-size: 1em;
   color: #28a745; /* Color verde para las estrellas */
 }
 
@@ -1056,48 +1036,16 @@
   color: #ff9900; /* Color de las estrellas */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* FOOTER */
 
 .footer {
   width: 97%;
   display: flex;
-  font-family: "AdihausDIN-CnBoldItalic","AdihausDIN Cn",Helvetica, Arial, sans-serif;
+  font-family: "AdihausDIN-CnBoldItalic", "AdihausDIN Cn", Helvetica, Arial,
+    sans-serif;
   text-decoration: none;
   background: #a30dfa;
-  justify-content:space-between;
+  justify-content: space-between;
   position: relative;
   margin: auto;
   background-image: linear-gradient(#000000, #a30dfa);
@@ -1106,29 +1054,28 @@
   align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-
 }
 
-.conteiner-footer{
+.conteiner-footer {
   width: 190px;
   height: 200px;
   display: inline;
-  margin-top: 15px;  
-  padding: 15px;  
+  margin-top: 15px;
+  padding: 15px;
 }
 
-.conteiner-titulo-footer{
+.conteiner-titulo-footer {
   width: 150px;
   height: 35px;
   color: #ffffff;
   font-size: 23px;
   font-family: "DM Sans", sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
   text-decoration: underline;
 }
 
-.conteiner-titulo-footer:hover{
+.conteiner-titulo-footer:hover {
   color: #f3ff05;
   cursor: pointer;
   text-decoration: underline;
@@ -1136,10 +1083,10 @@ font-style: normal;
 
 .listafooter {
   display: grid;
- width: 150px;
+  width: 150px;
 }
 
-.listafooter a{
+.listafooter a {
   font-size: 14px;
   color: #fafafa;
   display: inline;
@@ -1150,12 +1097,11 @@ font-style: normal;
   -webkit-text-stroke: 0.2px #ffffff;
 }
 
-.listafooter a:hover{
+.listafooter a:hover {
   color: #fffb05;
   text-decoration: underline;
   font-weight: 500;
 }
-
 
 .iconos {
   height: 100px;
@@ -1165,13 +1111,11 @@ font-style: normal;
   align-content: flex-end;
   justify-content: center;
   align-items: center;
-  
 }
 
-.conteiner-icono-nav{
+.conteiner-icono-nav {
   width: 50px;
   height: 30px;
-  
 }
 
 .iconos a img {
@@ -1182,7 +1126,6 @@ font-style: normal;
 .section-conteiner {
   display: flex;
   width: auto;
-  
 }
 
 .footer-section {
@@ -1198,13 +1141,13 @@ font-style: normal;
   margin: auto;
 }
 
-.footer-titulo h3{
+.footer-titulo h3 {
   text-align: center;
   font-size: 22px;
   font-weight: 600;
   font-style: normal;
-  color: #FFFFFF;
-  font-family: 'Oswald', sans-serif;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
   margin-bottom: 5px;
   letter-spacing: -1;
 }
@@ -1223,7 +1166,6 @@ font-style: normal;
   height: 150px;
   color: #f0f0f0;
   background: #747474;
-  
 }
 
 .ubicacion img {
@@ -1236,7 +1178,7 @@ font-style: normal;
   color: #ffffff;
 }
 
-.conteiner-desarrollador{
+.conteiner-desarrollador {
   width: 97%;
   height: auto;
   justify-content: center;
@@ -1255,11 +1197,10 @@ font-style: normal;
   text-decoration: none;
   list-style: none;
   font-family: "Questrial", sans-serif;
-font-weight: 400;
-font-style: normal;
-  
+  font-weight: 400;
+  font-style: normal;
 }
 
-.nericarrera a:hover{
+.nericarrera a:hover {
   color: #bbbbbb;
 }
