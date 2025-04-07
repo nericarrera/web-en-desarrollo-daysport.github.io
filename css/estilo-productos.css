@@ -208,6 +208,7 @@
 }
 
 .menu-ul {
+  height: 15px;
   list-style-type: none; /* Elimina los puntos de la lista */
   margin: 0;
   padding: 0;
