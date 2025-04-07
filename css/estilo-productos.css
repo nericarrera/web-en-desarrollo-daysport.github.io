@@ -198,11 +198,13 @@
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
-  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  display: flex;
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
   background-color: #fff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .menu-ul {
@@ -218,12 +220,12 @@
 }
 
 .menu-li .menu-li-a {
-  color: #fff; /* Color del texto */
   text-decoration: none; /* Sin subrayado */
   font-weight: bold; /* Texto en negrita */
   font-size: 16px; /* Tamaño de fuente */
   padding: 10px 20px; /* Espaciado interno */
   display: block;
+  font-family: "Dosis", sans-serif;
 }
 
 .menu-li .menu-li-a:hover {
@@ -822,14 +824,12 @@
 
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 16%;
   z-index: 1000;
   background: white;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-top: 1px solid #ccc;
 }
 
 .modal-content {
