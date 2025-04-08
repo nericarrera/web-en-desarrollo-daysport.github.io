@@ -605,6 +605,11 @@
   width: 100%; /* Ancho completo */
 }
 
+.modal-mujer-seccion1 img {
+  width: 30%; /* Ancho completo de la imagen */
+  height: auto; /* Alto automático para mantener la proporción */
+  object-fit: cover;
+}
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
