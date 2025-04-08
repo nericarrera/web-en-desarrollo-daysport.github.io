@@ -666,6 +666,7 @@
   height: auto; /* Ajusta la altura automáticamente */
   margin: auto; /* Centra el video */
 }
+
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
