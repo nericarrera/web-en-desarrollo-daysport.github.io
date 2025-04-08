@@ -620,7 +620,8 @@
   cursor: pointer;
 }
 
-.modal-mujer-seccion:hover {
+.modal-mujer-seccion:hover,
+.modal-mujer-seccion img:hover {
   transform: scale(1.01); /* Efecto de zoom al hacer hover */
   transition: all 500ms ease; /* Transición suave */
   border: 1px solid #000;
