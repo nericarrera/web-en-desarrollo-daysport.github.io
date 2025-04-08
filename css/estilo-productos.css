@@ -78,7 +78,7 @@
 .conteiner-buscador-carrito {
   display: flex;
   margin: auto;
-  margin-top: 24px;
+  margin-top: 40px;
   width: auto;
 }
 
@@ -248,7 +248,6 @@
   background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
   z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
   justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
 }
 
 .modal-content {
