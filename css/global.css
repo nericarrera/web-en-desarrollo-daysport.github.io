@@ -601,7 +601,7 @@
   flex-direction: column; /* Coloca los elementos en columna */
   align-items: center; /* Centra los elementos */
   justify-content: center; /* Centra los elementos */
-  width: 100%; /* Ancho completo */
+  width: 30%; /* Ancho completo */
   background: #6677;
   border: 1px solid #000;
 }
@@ -611,7 +611,7 @@
   flex-direction: column; /* Coloca los elementos en columna */
   align-items: center; /* Centra los elementos */
   justify-content: center; /* Centra los elementos */
-  width: 100%; /* Ancho completo */
+  width: 30%; /* Ancho completo */
   background: #6677;
 }
 
