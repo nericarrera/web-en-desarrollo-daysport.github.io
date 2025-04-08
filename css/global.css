@@ -599,9 +599,7 @@
 .modal-mujer-seccion-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centra los elementos */
   gap: 10px; /* Espacio entre los elementos */
-  margin: auto; /* Centra el contenido */
   padding: 20px; /* Espaciado interno */
   width: 100%; /* Ancho completo */
 }
