@@ -621,7 +621,7 @@
 .modal-mujer-seccion1:hover,
 .modal-mujer-seccion2:hover,
 .modal-mujer-seccion3:hover {
-  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  transform: scale(1); /* Efecto de zoom al hacer hover */
   transition: all 500ms ease; /* Transición suave */
 }
 
