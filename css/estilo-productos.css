@@ -250,13 +250,6 @@
   justify-content: center; /* Centra el contenido horizontalmente */
 }
 
-.modal-content {
-  background-color: #fff; /* Fondo blanco para el contenido */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  text-align: center; /* Texto centrado */
-}
-
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
