@@ -539,7 +539,7 @@
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
-  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  width: 90%; /* Asegúrate de que ocupe todo el ancho */
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
   background-color: #ffffff; /* Fondo negro para el menú */
@@ -570,7 +570,7 @@
 .menu-li .menu-li-a:hover {
   text-decoration: underline; /* Subrayado al hacer hover */
   color: #ffffff; /* Color del texto al hacer hover */
-  background: #a30dfa; /* Fondo al hacer hover */
+  background: #360353; /* Fondo al hacer hover */
   transition: all 420ms ease; /* Transición suave */
 }
 
