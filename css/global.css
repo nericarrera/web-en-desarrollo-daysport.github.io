@@ -596,7 +596,8 @@
   width: 25%;
 }
 
-.modal-mujer-seccion-content {
+.modal-mujer-seccion-content,
+.modal-hombre-seccion-content {
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Espacio entre los elementos */
@@ -604,7 +605,8 @@
   width: 100%; /* Ancho completo */
 }
 
-.modal-mujer-seccion {
+.modal-mujer-seccion,
+.modal-hombre-seccion {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
   flex-wrap: wrap;
@@ -612,19 +614,22 @@
   gap: 1px;
 }
 
-.modal-mujer-seccion img {
+.modal-mujer-seccion img,
+.modal-hombre-seccion img {
   width: 155px;
   object-fit: cover;
   cursor: pointer;
 }
 
-.modal-mujer-seccion img:hover {
+.modal-mujer-seccion img:hover,
+.modal-hombre-seccion img:hover {
   transform: scale(1.01); /* Efecto de zoom al hacer hover */
   transition: all 420ms ease; /* Transición suave */
   border: 1px solid #000;
 }
 
-.modal-mujer-seccion a {
+.modal-mujer-seccion a,
+.modal-hombre-seccion a {
   font-family: "Dosis", sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -637,7 +642,8 @@
   align-items: center;
 }
 
-.modal-mujer-seccion a:hover {
+.modal-mujer-seccion a:hover,
+.modal-hombre-seccion a:hover {
   background: #360353;
   color: #ffffff; /* Color del texto al hacer hover */
 }
