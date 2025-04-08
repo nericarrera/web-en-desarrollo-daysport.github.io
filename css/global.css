@@ -606,10 +606,10 @@
   border: 1px solid #000;
 }
 
-.modal-mujer-seccion2
-  .modal-mujer-seccion3
-  .modal-mujer-seccion4
-  .modal-mujer-seccion5 {
+.modal-mujer-seccion2,
+.modal-mujer-seccion3,
+.modal-mujer-seccion4,
+.modal-mujer-seccion5 {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
   align-items: center; /* Centra los elementos */
