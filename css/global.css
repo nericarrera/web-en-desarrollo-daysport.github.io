@@ -661,6 +661,11 @@
   margin-bottom: 20px; /* Espacio debajo del texto */
 }
 
+.modal-content video {
+  width: 20%;
+  height: auto; /* Ajusta la altura automáticamente */
+  margin: auto; /* Centra el video */
+}
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
