@@ -615,6 +615,7 @@
 .modal-mujer-seccion3 img {
   width: 100%; /* Ancho completo de la imagen */
   object-fit: cover;
+  cursor: pointer;
 }
 
 /* Mostrar modal al hacer hover */
