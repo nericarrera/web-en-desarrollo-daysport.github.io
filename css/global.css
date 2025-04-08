@@ -623,6 +623,7 @@
 .modal-mujer-seccion:hover {
   transform: scale(1.01); /* Efecto de zoom al hacer hover */
   transition: all 500ms ease; /* Transición suave */
+  border: 1px solid #000;
 }
 
 .modal-mujer-seccion a {
