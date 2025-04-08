@@ -621,7 +621,7 @@
 .modal-mujer-seccion1 img,
 .modal-mujer-seccion2 img,
 .modal-mujer-seccion3 img {
-  width: 30%; /* Ancho completo de la imagen */
+  width: 100%; /* Ancho completo de la imagen */
   height: auto; /* Alto automático para mantener la proporción */
   object-fit: cover;
 }
