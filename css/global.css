@@ -618,13 +618,9 @@
   background: #6677;
 }
 
-.modal-mujer-seccion1 img {
-  width: 30%; /* Ancho completo de la imagen */
-  height: auto; /* Alto automático para mantener la proporción */
-  object-fit: cover;
-}
-
-.modal-mujer-seccion2 img {
+.modal-mujer-seccion1 img,
+.modal-mujer-seccion2 img,
+.modal-mujer-seccion3 img {
   width: 30%; /* Ancho completo de la imagen */
   height: auto; /* Alto automático para mantener la proporción */
   object-fit: cover;
