@@ -637,6 +637,11 @@
   align-items: center;
 }
 
+.modal-mujer-seccion a:hover {
+  background: #360353;
+  color: #ffffff; /* Color del texto al hacer hover */
+}
+
 .modal-content h2 {
   font-family: "Dosis", sans-serif; /* Fuente para el título */
   font-size: 24px; /* Tamaño de fuente del título */
