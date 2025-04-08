@@ -255,7 +255,6 @@
   padding: 20px; /* Espaciado interno */
   border-radius: 10px; /* Bordes redondeados */
   text-align: center; /* Texto centrado */
-  max-width: 90%; /* Ancho máximo del contenido */
 }
 
 /* Mostrar modal al hacer hover */
