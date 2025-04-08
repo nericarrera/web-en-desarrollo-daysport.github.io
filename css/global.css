@@ -618,6 +618,13 @@
   cursor: pointer;
 }
 
+.modal-mujer-seccion1 img:hover,
+.modal-mujer-seccion2 img:hover,
+.modal-mujer-seccion3 img:hover {
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+  transition: all 500ms ease; /* Transición suave */
+}
+
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
