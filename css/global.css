@@ -610,7 +610,7 @@
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
   flex-wrap: wrap;
-  width: 40%; /* Ancho completo */
+  width: 12%;
   gap: 1px;
 }
 
