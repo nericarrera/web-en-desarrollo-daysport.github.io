@@ -603,12 +603,11 @@
 .modal-mujer-seccion5 {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
-  align-items: center; /* Centra los elementos */
-  justify-content: center; /* Centra los elementos */
   width: 30%; /* Ancho completo */
   height: 380px;
   background: #6677;
   border: 1px solid #000;
+  gap: 1px;
 }
 
 .modal-mujer-seccion1 img,
