@@ -599,9 +599,8 @@
 .modal-mujer-seccion {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
-  width: 30%; /* Ancho completo */
-  height: auto;
-  border: 1px solid #000;
+  flex-wrap: wrap;
+  width: 40%; /* Ancho completo */
   gap: 1px;
 }
 
