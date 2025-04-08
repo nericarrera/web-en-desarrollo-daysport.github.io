@@ -578,7 +578,7 @@
 
 .modal {
   display: none; /* Oculta el modal por defecto */
-  position: fixed; /* Fija el modal en la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%; /* Ocupa todo el ancho de la pantalla */
