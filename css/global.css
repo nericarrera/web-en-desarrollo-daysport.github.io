@@ -617,6 +617,20 @@
   transition: all 500ms ease; /* Transición suave */
 }
 
+.modal-mujer-seccion a {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
