@@ -637,6 +637,15 @@
   text-align: center; /* Centra el título */
   font-weight: 600; /* Peso de la fuente */
   text-transform: uppercase; /* Texto en mayúsculas */
+  background: #333;
+}
+
+.modal-content p {
+  font-family: "Dosis", sans-serif; /* Fuente para el texto */
+  font-size: 16px; /* Tamaño de fuente del texto */
+  color: #000000; /* Color del texto */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 20px; /* Espacio debajo del texto */
 }
 
 /* Mostrar modal al hacer hover */
