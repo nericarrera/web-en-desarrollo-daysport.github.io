@@ -628,6 +628,16 @@
   align-items: center;
 }
 
+.modal-content h2 {
+  font-family: "Dosis", sans-serif; /* Fuente para el título */
+  font-size: 24px; /* Tamaño de fuente del título */
+  margin-bottom: 10px; /* Espacio debajo del título */
+  color: #000000; /* Color del título */
+  text-align: center; /* Centra el título */
+  font-weight: 600; /* Peso de la fuente */
+  text-transform: uppercase; /* Texto en mayúsculas */
+}
+
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
