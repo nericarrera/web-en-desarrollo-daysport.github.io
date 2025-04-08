@@ -593,7 +593,7 @@
   padding: 20px; /* Espaciado interno */
   border-radius: 10px; /* Bordes redondeados */
   text-align: center; /* Texto centrado */
-  max-width: 90%; /* Ancho máximo del contenido */
+  border: 1px solid #000;
 }
 
 .modal-mujer-seccion-content {
