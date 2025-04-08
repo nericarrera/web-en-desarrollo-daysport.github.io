@@ -596,16 +596,7 @@
   max-width: 90%; /* Ancho máximo del contenido */
 }
 
-.modal-mujer-seccion1 {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
-  align-items: center; /* Centra los elementos */
-  justify-content: center; /* Centra los elementos */
-  width: 30%; /* Ancho completo */
-  background: #6677;
-  border: 1px solid #000;
-}
-
+.modal-mujer-seccion1,
 .modal-mujer-seccion2,
 .modal-mujer-seccion3,
 .modal-mujer-seccion4,
