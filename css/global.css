@@ -596,7 +596,7 @@
   max-width: 90%; /* Ancho máximo del contenido */
 }
 
-.modal-mujer-seccion1 {
+.modal-mujer-seccion {
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
   width: 30%; /* Ancho completo */
