@@ -612,7 +612,10 @@
 
 .modal-mujer-seccion1 img,
 .modal-mujer-seccion2 img,
-.modal-mujer-seccion3 img {
+.modal-mujer-seccion3 img,
+.modal-mujer-seccion4 img,
+.modal-mujer-seccion5 img,
+.modal-mujer-seccion6 img {
   width: 160px;
   object-fit: cover;
   cursor: pointer;
