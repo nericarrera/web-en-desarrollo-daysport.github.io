@@ -616,6 +616,7 @@
   justify-content: center; /* Centra los elementos */
   width: 30%; /* Ancho completo */
   background: #6677;
+  border: 1px solid #000;
 }
 
 .modal-mujer-seccion1 img,
