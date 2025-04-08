@@ -606,7 +606,7 @@
   align-items: center; /* Centra los elementos */
   justify-content: center; /* Centra los elementos */
   width: 30%; /* Ancho completo */
-  height: 100px;
+  height: 380px;
   background: #6677;
   border: 1px solid #000;
 }
@@ -614,7 +614,6 @@
 .modal-mujer-seccion1 img,
 .modal-mujer-seccion2 img,
 .modal-mujer-seccion3 img {
-  width: 100%; /* Ancho completo de la imagen */
   object-fit: cover;
   cursor: pointer;
 }
