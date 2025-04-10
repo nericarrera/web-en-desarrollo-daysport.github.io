@@ -1,3 +1,14 @@
+/*-----------MODAL------------- */
+// Agrega esto a tu JavaScript existente
+document.querySelectorAll('.menu-li').forEach(menuItem => {
+    menuItem.addEventListener('mouseenter', () => {
+      document.body.style.overflow = 'hidden'; // Bloquea scroll de la página
+    });
+    
+    menuItem.addEventListener('mouseleave', () => {
+      document.body.style.overflow = ''; // Restaura scroll de la página
+    });
+  });
 
 /*--------BANNER--------*/
 
