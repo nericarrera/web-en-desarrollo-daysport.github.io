@@ -1,12 +1,16 @@
 /*-----------MODAL------------- */
-// Agrega esto a tu JavaScript existente
 document.querySelectorAll('.menu-li').forEach(menuItem => {
     menuItem.addEventListener('mouseenter', () => {
-      document.body.style.overflow = 'hidden'; // Bloquea scroll de la página
+      document.body.style.overflow = 'hidden';
+      // Forzar el scroll al inicio del modal
+      const modal = menuItem.querySelector('.modal');
+      if (modal) {
+        modal.scrollTop = 0;
+      }
     });
     
     menuItem.addEventListener('mouseleave', () => {
-      document.body.style.overflow = ''; // Restaura scroll de la página
+      document.body.style.overflow = '';
     });
   });
 

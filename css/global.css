@@ -582,36 +582,34 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Usar viewport height */
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
-  overflow-y: auto; /* Permite scroll dentro del modal */
-  overscroll-behavior: contain; /* Evita que el scroll afecte la página detrás */
-  padding: 20px 0; /* Espacio arriba y abajo */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0; /* Eliminamos el padding para usar todo el espacio */
 }
 
 .modal-content {
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px; /* O el ancho máximo que prefieras */
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 25%;
-  margin: 20px auto; /* Centrado vertical y horizontal */
 }
 
 .modal-mujer-seccion-content,
 .modal-hombre-seccion-content,
 .modal-niños-seccion-content,
 .modal-accesorios-seccion-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  background-color: #fff;
   padding: 20px;
-  width: 100%;
-  max-height: calc(
-    100vh - 200px
-  ); /* Altura máxima menos espacio para encabezado */
-  overflow-y: auto; /* Scroll interno si es necesario */
+  border-radius: 10px;
+  text-align: center;
+  width: 100%; /* Ahora ocupa todo el ancho del contenedor */
+  margin-bottom: 20px; /* Espacio entre el video y las secciones */
 }
 
 .modal-mujer-seccion,
@@ -619,10 +617,12 @@
 .modal-niños-seccion,
 .modal-accesorios-seccion {
   display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
   flex-wrap: wrap;
-  width: 17%;
-  gap: 1px;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .modal-mujer-seccion img,
@@ -689,8 +689,9 @@
 
 .modal-content video {
   width: 100%;
-  height: auto; /* Ajusta la altura automáticamente */
-  object-fit: cover;
+  max-height: 400px; /* Altura máxima para el video */
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 /* Mostrar modal al hacer hover */
