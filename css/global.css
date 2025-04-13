@@ -607,6 +607,7 @@
 .modal-accesorios-seccion-content,
 .modal-bravas-seccion-content {
   display: flex;
+  flex-wrap: wrap;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
