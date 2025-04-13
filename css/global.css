@@ -603,7 +603,8 @@
 .modal-mujer-seccion-content,
 .modal-hombre-seccion-content,
 .modal-niños-seccion-content,
-.modal-accesorios-seccion-content {
+.modal-accesorios-seccion-content,
+.modal-bravas-seccion-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -615,7 +616,8 @@
 .modal-mujer-seccion,
 .modal-hombre-seccion,
 .modal-niños-seccion,
-.modal-accesorios-seccion {
+.modal-accesorios-seccion,
+.modal-bravas-seccion {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -628,7 +630,8 @@
 .modal-mujer-seccion img,
 .modal-hombre-seccion img,
 .modal-niños-seccion img,
-.modal-accesorios-seccion img {
+.modal-accesorios-seccion img,
+.modal-bravas-seccion img {
   width: 155px;
   object-fit: cover;
   cursor: pointer;
@@ -637,7 +640,8 @@
 .modal-mujer-seccion img:hover,
 .modal-hombre-seccion img:hover,
 .modal-niños-seccion img:hover,
-.modal-accesorios-seccion img:hover {
+.modal-accesorios-seccion img:hover,
+.modal-bravas-seccion img:hover {
   transform: scale(1.01); /* Efecto de zoom al hacer hover */
   transition: all 420ms ease; /* Transición suave */
   border: 1px solid #000;
@@ -646,7 +650,8 @@
 .modal-mujer-seccion a,
 .modal-hombre-seccion a,
 .modal-niños-seccion a,
-.modal-accesorios-seccion a {
+.modal-accesorios-seccion a,
+.modal-bravas-seccion a {
   font-family: "Dosis", sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -662,7 +667,8 @@
 .modal-mujer-seccion a:hover,
 .modal-hombre-seccion a:hover,
 .modal-niños-seccion a:hover,
-.modal-accesorios-seccion a:hover {
+.modal-accesorios-seccion a:hover,
+.modal-bravas-seccion a:hover {
   background: #360353;
   color: #ffffff; /* Color del texto al hacer hover */
 }
