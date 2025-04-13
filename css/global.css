@@ -612,8 +612,9 @@
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  width: 70%; /* Ahora ocupa todo el ancho del contenedor */
+  width: 100%; /* Ahora ocupa todo el ancho del contenedor */
   margin-bottom: 20px; /* Espacio entre el video y las secciones */
+  flex-direction: column;
 }
 
 .modal-mujer-seccion,
