@@ -691,6 +691,7 @@
   background: #360353;
   color: #d3e005;
   transition: all 510ms ease; /* Transición suave */
+  cursor: pointer;
 }
 
 .modal-content p {
@@ -705,6 +706,7 @@
   background: #360353;
   color: #d3e005;
   transition: all 510ms ease; /* Transición suave */
+  cursor: pointer;
 }
 
 .modal-content video {
