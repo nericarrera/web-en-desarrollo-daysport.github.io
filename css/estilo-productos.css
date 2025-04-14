@@ -197,17 +197,6 @@
 
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
-.menu {
-  display: flex;
-  max-width: none; /* Elimina cualquier límite de ancho */
-  overflow: visible; /* Permite que el submenú se expanda */
-  background-color: #fff; /* Fondo negro para el menú */
-  padding: 10px; /* Espaciado interno */
-  justify-content: center;
-  height: 50px;
-  margin-top: 35px;
-}
-
 .menu-li {
   position: relative; /* Necesario para posicionar el modal */
 }

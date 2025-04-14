@@ -544,7 +544,7 @@
   overflow: visible; /* Permite que el submenú se expanda */
   background-color: #ffffff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
-  margin-top: 23px;
+  margin-top: 35px;
 }
 
 .menu-ul {
