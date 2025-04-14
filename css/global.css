@@ -686,6 +686,12 @@
   text-decoration: none;
 }
 
+.link-bravas:hover {
+  background: #360353;
+  color: #d3e005;
+  transition: all 520ms ease;
+}
+
 .modal-content h2 {
   font-family: "Dosis", sans-serif; /* Fuente para el título */
   font-size: 24px; /* Tamaño de fuente del título */
