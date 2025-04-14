@@ -539,6 +539,7 @@
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
+  display: flex;
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
   padding: 10px; /* Espaciado interno */
