@@ -539,7 +539,6 @@
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 
 .menu {
-  width: 90%; /* Asegúrate de que ocupe todo el ancho */
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
   padding: 10px; /* Espaciado interno */
