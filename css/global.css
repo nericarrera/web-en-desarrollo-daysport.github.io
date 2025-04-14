@@ -638,6 +638,7 @@
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid #eee;
+  cursor: pointer;
 }
 
 .modal-mujer-seccion img:hover,
