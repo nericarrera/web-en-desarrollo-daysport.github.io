@@ -204,6 +204,7 @@
   background-color: #fff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
   justify-content: center;
+  margin-top: 23px;
 }
 
 .menu-li {
