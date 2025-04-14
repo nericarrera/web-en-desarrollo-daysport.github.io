@@ -542,7 +542,6 @@
   width: 90%; /* Asegúrate de que ocupe todo el ancho */
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
-  background-color: #ffffff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
   margin-top: 35px;
 }
