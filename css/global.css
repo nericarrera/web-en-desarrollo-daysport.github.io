@@ -704,7 +704,7 @@
 }
 
 .menu-li {
-  margin: 10px 0; /* Espaciado entre elementos */
+  margin: 0px 0; /* Espaciado entre elementos */
 }
 
 /* Mostrar modal al hacer hover */

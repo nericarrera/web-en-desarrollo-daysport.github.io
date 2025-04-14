@@ -204,11 +204,10 @@
   background-color: #fff; /* Fondo negro para el menú */
   padding: 10px; /* Espaciado interno */
   justify-content: center;
-  margin-top: 15px;
 }
 
 .menu-ul {
-  height: 15px;
+  height: 20px;
   list-style-type: none; /* Elimina los puntos de la lista */
   margin: 0;
   padding: 0;
