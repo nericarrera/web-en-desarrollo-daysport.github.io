@@ -606,15 +606,15 @@
 .modal-niños-seccion-content,
 .modal-accesorios-seccion-content,
 .modal-bravas-seccion-content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
   background-color: #fff;
-  padding: 10px;
   border-radius: 10px;
-  text-align: center;
-  width: 100%; /* Ahora ocupa todo el ancho del contenedor */
-  margin-bottom: 20px; /* Espacio entre el video y las secciones */
-  flex-direction: column;
+  max-height: none; /* Eliminamos la altura máxima */
+  overflow-y: visible; /* Quitamos el scroll interno */
 }
 
 .modal-mujer-seccion,
@@ -623,12 +623,10 @@
 .modal-accesorios-seccion,
 .modal-bravas-seccion {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px;
-  width: 70%;
-  background-color: #fff;
-  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
 }
 
 .modal-mujer-seccion img,
@@ -638,7 +636,8 @@
 .modal-bravas-seccion img {
   width: 155px;
   object-fit: cover;
-  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #eee;
 }
 
 .modal-mujer-seccion img:hover,
@@ -646,9 +645,10 @@
 .modal-niños-seccion img:hover,
 .modal-accesorios-seccion img:hover,
 .modal-bravas-seccion img:hover {
-  transform: scale(1.01); /* Efecto de zoom al hacer hover */
   transition: all 420ms ease; /* Transición suave */
   border: 1px solid #000;
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .modal-mujer-seccion a,
@@ -662,10 +662,9 @@
   color: #000000;
   text-decoration: none;
   text-align: center;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .modal-mujer-seccion a:hover,
@@ -704,20 +703,53 @@
   margin-bottom: 20px;
 }
 
+.menu-li {
+  margin: 10px 0; /* Espaciado entre elementos */
+}
+
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
 }
 
-/* Responsive */
+/*----------------------- Responsive -------------------*/
 @media (max-width: 768px) {
   .menu-ul {
     flex-direction: column; /* Cambia a disposición vertical en móviles */
     align-items: center; /* Centra los elementos */
   }
 
-  .menu-li {
-    margin: 10px 0; /* Espaciado entre elementos */
+  /* Para pantallas grandes (4 columnas) */
+  @media (min-width: 1200px) {
+    .modal-mujer-seccion-content,
+    .modal-hombre-seccion-content,
+    .modal-niños-seccion-content,
+    .modal-accesorios-seccion-content,
+    .modal-bravas-seccion-content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Para tablets (3 columnas) */
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .modal-mujer-seccion-content,
+    .modal-hombre-seccion-content,
+    .modal-niños-seccion-content,
+    .modal-accesorios-seccion-content,
+    .modal-bravas-seccion-content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Para móviles (2 columnas) */
+  @media (max-width: 767px) {
+    .modal-mujer-seccion-content,
+    .modal-hombre-seccion-content,
+    .modal-niños-seccion-content,
+    .modal-accesorios-seccion-content,
+    .modal-bravas-seccion-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 /*----------------SUB BANNER- CAMPAÑA CUOTAS-----------------*/
