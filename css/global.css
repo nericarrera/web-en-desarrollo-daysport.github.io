@@ -687,12 +687,24 @@
   border-radius: 15px;
 }
 
+.modal-content h2:hover {
+  background: #360353;
+  color: #d3e005;
+  transition: all 510ms ease; /* Transición suave */
+}
+
 .modal-content p {
   font-family: "Dosis", sans-serif; /* Fuente para el texto */
   font-size: 20px; /* Tamaño de fuente del texto */
   color: #000000; /* Color del texto */
   text-align: center; /* Centra el texto */
   margin-bottom: 20px; /* Espacio debajo del texto */
+}
+
+.modal-content p:hover {
+  background: #360353;
+  color: #d3e005;
+  transition: all 510ms ease; /* Transición suave */
 }
 
 .modal-content video {
