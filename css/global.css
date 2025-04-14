@@ -572,8 +572,6 @@
   color: #d3e005; /* Color del texto al hacer hover */
   background: #36035388; /* Fondo al hacer hover */
   transition: all 420ms ease; /* Transición suave */
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
 
 /*-------------- Estilo para el modal ----------------*/
