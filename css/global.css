@@ -703,10 +703,6 @@
   margin-bottom: 20px;
 }
 
-.menu-li {
-  margin: 0px 0; /* Espaciado entre elementos */
-}
-
 /* Mostrar modal al hacer hover */
 .menu-li:hover .modal {
   display: flex; /* Muestra el modal al hacer hover */
