@@ -251,10 +251,6 @@
     flex-direction: column; /* Cambia a disposición vertical en móviles */
     align-items: center; /* Centra los elementos */
   }
-
-  .menu-li {
-    margin: 10px 0; /* Espaciado entre elementos */
-  }
 }
 
 /*---------------------- SECTION------------------ */
