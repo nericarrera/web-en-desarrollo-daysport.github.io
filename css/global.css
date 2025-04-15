@@ -178,7 +178,7 @@
 }
 
 #cart-dropdown:not(.cart-dropdown-hidden) {
-  display: block;
+  display: none;
   animation: fadeIn 0.3s ease;
 }
 
