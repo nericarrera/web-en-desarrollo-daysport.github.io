@@ -134,9 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verifica si el carrito está inicializado
 console.log('Carrito:', JSON.parse(localStorage.getItem('cart')));
 
-// Verifica visibilidad del dropdown
-console.log('Estilo del dropdown:', document.getElementById('cart-dropdown').style.display);
-
 // Fuerza mostrar el carrito
 document.getElementById('cart-dropdown').classList.remove('cart-dropdown-hidden');
 
