@@ -190,3 +190,25 @@ cartIcon.addEventListener('click', (event) => {
       cartDropdown.classList.add('cart-dropdown-hidden');
     }
   });
+
+  /*--------------------------------*/
+  // Cambia la selección de botones para que sea más específica
+document.querySelectorAll('[data-product]').forEach(button => {
+    button.addEventListener('click', (event) => {
+      if (!button.classList.contains('btn-add-to-cart')) return;
+      
+      event.preventDefault();
+      event.stopPropagation();
+  
+      const product = {
+        name: button.getAttribute('data-product'),
+        price: parseFloat(button.getAttribute('data-price')) || 0,
+        image: button.getAttribute('data-image'),
+        quantity: 1,
+        color: button.getAttribute('data-color') || 'default',
+        size: button.getAttribute('data-size') || 'default'
+      };
+  
+      addToCart(product);
+    });
+  });
