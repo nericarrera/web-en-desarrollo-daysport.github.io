@@ -161,7 +161,7 @@
 #cart-dropdown {
   position: fixed;
   top: 114px !important; /* Ajusta según tu header */
-  right: 1px !important;
+  right: 75px !important;
   width: 320px;
   background: white;
   border: 1px solid #ddd;
