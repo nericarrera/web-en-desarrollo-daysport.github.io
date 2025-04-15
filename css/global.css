@@ -160,8 +160,8 @@
 /* Estilos para el dropdown del carrito */
 #cart-dropdown {
   position: fixed;
-  top: 80px !important; /* Ajusta según tu header */
-  right: 20px !important;
+  top: 114px !important; /* Ajusta según tu header */
+  right: 1px !important;
   width: 320px;
   background: white;
   border: 1px solid #ddd;
