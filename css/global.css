@@ -130,7 +130,7 @@
   display: inline-block;
   cursor: pointer;
   margin: auto;
-  z-index: 1001; /* Mayor que el menú modal */
+  z-index: 1100 !important; /* Más alto que el menú modal */
 }
 
 #cart-icon {
