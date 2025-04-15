@@ -130,6 +130,7 @@
   display: inline-block;
   cursor: pointer;
   margin: auto;
+  z-index: 1001; /* Mayor que el menú modal */
 }
 
 #cart-icon {
@@ -157,16 +158,18 @@
 }
 
 #cart-dropdown {
-  position: absolute;
-  top: 40px;
-  right: -6px;
+  position: fixed; /* Cambiado de absolute a fixed */
+  top: 80px; /* Ajusta según la altura de tu nav */
+  right: 20px;
   width: 300px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  z-index: 1000;
+  z-index: 1002; /* Mayor que el icono */
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .cart-dropdown-hidden {
