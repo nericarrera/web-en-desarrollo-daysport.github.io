@@ -219,6 +219,8 @@
 #cart-items-list {
   position: relative;
   margin-top: 10px;
+  font-family: "Dosis";
+  text-align: center;
 }
 
 .cart-summary p {
@@ -243,7 +245,6 @@
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border-radius: 50px;
 }
 
 .cart-summary button:hover {
