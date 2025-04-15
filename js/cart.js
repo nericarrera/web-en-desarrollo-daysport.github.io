@@ -165,3 +165,28 @@ document.querySelectorAll('.btn-add-to-cart').forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
+
+/*-------------------------------------------------*/
+// Modifica el evento de clic del icono del carrito
+cartIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    
+    // Cierra todos los modales del menú primero
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.style.display = 'none';
+    });
+    
+    // Abre/cierra el carrito
+    cartDropdown.classList.toggle('cart-dropdown-hidden');
+    updateCart();
+  });
+  
+  // Modifica el evento de clic fuera del carrito
+  document.addEventListener('click', (event) => {
+    const isClickInsideCart = cartDropdown.contains(event.target) || cartIcon.contains(event.target);
+    
+    if (!isClickInsideCart && !cartDropdown.classList.contains('cart-dropdown-hidden')) {
+      cartDropdown.classList.add('cart-dropdown-hidden');
+    }
+  });
