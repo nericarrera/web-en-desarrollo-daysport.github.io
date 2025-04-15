@@ -709,7 +709,6 @@
 
 .link-bravas:hover {
   color: #d3e005;
-  -webkit-text-stroke: 0.5px #000000;
   transition: all 520ms ease;
 }
 
