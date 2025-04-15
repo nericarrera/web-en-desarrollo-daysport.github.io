@@ -194,12 +194,14 @@
 }
 
 .titulo-carrito {
-  color: #000000;
+  color: #ffffff;
   font-size: 22px;
   font-family: "Dosis", sans-serif;
   font-weight: 800;
   font-style: initial;
   padding: 2px;
+  text-align: center;
+  background: #000;
 }
 
 .cart-dropdown .cart-summary {
@@ -253,9 +255,9 @@
   border: none;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
   position: absolute;
-  top: 10px;
+  top: 14px;
   right: 10px;
   cursor: pointer;
   z-index: 10;
