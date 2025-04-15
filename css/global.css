@@ -2077,7 +2077,6 @@ form {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border-radius: 50px;
 }
 
 .cart-modal-checkout-btn:hover {
@@ -2091,7 +2090,6 @@ form {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border-radius: 50px;
 }
 
 .cart-modal-view-cart-btn:hover {
