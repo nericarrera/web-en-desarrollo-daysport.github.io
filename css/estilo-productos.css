@@ -202,7 +202,6 @@
 .menu-li .menu-li-a:hover {
   text-decoration: underline; /* Subrayado al hacer hover */
   color: #d3e005; /* Color del texto al hacer hover */
-  background: #673ab7; /* Fondo al hacer hover */
   transition: all 420ms ease; /* Transición suave */
 }
 
