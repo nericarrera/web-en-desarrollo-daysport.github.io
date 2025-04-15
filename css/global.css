@@ -157,19 +157,20 @@
   color: #000000;
 }
 
+/* Estilos para el dropdown del carrito */
 #cart-dropdown {
-  position: fixed; /* Cambiado de absolute a fixed */
-  top: 80px; /* Ajusta según la altura de tu nav */
-  right: 20px;
-  width: 300px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  z-index: 1002; /* Mayor que el icono */
+  position: fixed;
+  top: 80px !important; /* Ajusta según tu header */
+  right: 20px !important;
+  width: 320px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1101 !important;
   max-height: 70vh;
   overflow-y: auto;
+  display: none; /* Oculto por defecto */
 }
 
 .cart-dropdown-hidden {
