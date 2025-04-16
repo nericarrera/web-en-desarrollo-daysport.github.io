@@ -1,3 +1,5 @@
+console.log('Carrito al cargar:', JSON.parse(localStorage.getItem('cart')));
+
 document.addEventListener('DOMContentLoaded', function() {
     // Variables globales
     const cartIcon = document.getElementById('cart-icon');
@@ -13,18 +15,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar carrito desde localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
-    // Función para mostrar/ocultar el carrito
     function toggleCart() {
-      // Cerrar todos los menús abiertos primero
-      document.querySelectorAll('.modal').forEach(modal => {
-        modal.style.display = 'none';
-      });
+      // Solo alternar el carrito sin afectar otros modales
+      const isHidden = cartDropdown.classList.contains('cart-dropdown-hidden');
+      
+      // Ocultar primero si está visible
+      if (!isHidden) {
+        cartDropdown.classList.add('cart-dropdown-hidden');
+        return;
+      }
       
       // Alternar visibilidad del carrito
-      cartDropdown.classList.toggle('cart-dropdown-hidden');
-      
-      // Actualizar contenido
-      updateCart();
+  cartDropdown.classList.toggle('cart-dropdown-hidden');
+  
+  // Si el carrito se está mostrando, actualiza su contenido
+  if (!cartDropdown.classList.contains('cart-dropdown-hidden')) {
+    updateCart();
+  }
     }
   
     // Evento para el icono del carrito
@@ -137,6 +144,4 @@ console.log('Carrito:', JSON.parse(localStorage.getItem('cart')));
 // Verifica visibilidad del dropdown
 console.log('Estilo del dropdown:', document.getElementById('cart-dropdown').style.display);
 
-// Fuerza mostrar el carrito
-document.getElementById('cart-dropdown').classList.remove('cart-dropdown-hidden');
 
