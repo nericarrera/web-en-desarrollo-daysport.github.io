@@ -426,6 +426,12 @@
   letter-spacing: 0.5px;
 }
 
+.filter-dropdown-toggle:hover {
+  background-color: #333;
+  color: #fff;
+  transition: all 500ms ease;
+}
+
 /*--------------------COLORES DE FILTRO CUADROS-----------------*/
 .color-box {
   display: inline-block;
