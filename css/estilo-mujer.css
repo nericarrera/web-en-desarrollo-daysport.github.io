@@ -722,6 +722,14 @@
   display: none; /* Solo para el overlay o elementos ocultos permanentemente */
 }
 
+.filter-section collapsible-section {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .filter-title {
   cursor: pointer;
   display: flex;
