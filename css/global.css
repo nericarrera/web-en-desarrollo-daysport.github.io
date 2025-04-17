@@ -933,13 +933,14 @@
 
 .carrusel-mujer-novedad-titulo {
   display: flex;
-  width: auto;
+  width: 50%;
   height: auto;
   margin-left: 25px;
   margin-top: 20px;
   margin-bottom: 10px;
   background: #360353;
   padding: 5px;
+  margin: auto;
 }
 
 .novedad-mujer-titulo {
