@@ -229,14 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    clearFiltersButton.addEventListener('click', () => {
-        sortRadios.forEach(radio => (radio.checked = false));
-        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
-        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
-
-        mostrarProductos();
-    });
-
     actualizarContadores();
     mostrarProductos("all");
 });
