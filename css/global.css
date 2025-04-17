@@ -990,6 +990,7 @@
   display: block;
   width: 218px;
   justify-items: left;
+  margin-top: 15px;
 }
 
 .product-info-carrusel h3 {
@@ -997,6 +998,8 @@
   font-weight: 600;
   color: #333;
   margin: 0px 0px 0px;
+  margin-top: 10px;
+  font-family: "Questrial", sans-serif;
 }
 
 .product-info-carrusel p {
