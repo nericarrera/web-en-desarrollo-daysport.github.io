@@ -48,51 +48,86 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
+    const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
     
-    const carrusel = document.querySelector('.zoom-container');
-    const thumbnails = document.querySelector('.thumbnails-container');
+    if (!contenedorCarrusel) {
+        console.error("El contenedor del carrusel no está en el DOM.");
+        return;
+    }
 
     import('/js/mujerProductos.js').then(module => {
         const productosMujer = module.productosMujer;
 
-        if (!productosMujer) {
-            console.error("No se encontraron productos para el carrusel.");
+        if (!productosMujer || !Array.isArray(productosMujer)) {
+            console.error("No se encontraron productos válidos para el carrusel.");
             return;
         }
 
-        const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
-        if (!contenedorCarrusel) {
-            console.error("El contenedor del carrusel no está en el DOM.");
+        const productosNovedad = productosMujer.filter(producto => 
+            producto.etiqueta?.toLowerCase() === "novedad" && 
+            producto.imagen && 
+            producto.imagen.length > 0
+        );
+
+        if (productosNovedad.length === 0) {
+            console.warn("No hay productos con etiqueta 'novedad'");
+            contenedorCarrusel.innerHTML = '<p class="no-products">Próximamente más novedades</p>';
             return;
         }
-
-
-        const productosNovedad = productosMujer.filter(producto => producto.etiqueta?.toLowerCase() === "novedad");
 
         productosNovedad.forEach(producto => {
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('producto-novedad-mujer');
+            
+            // Verificar si hay miniaturas disponibles
+            const hasMiniaturas = producto.miniaturas && producto.miniaturas.length > 0;
+            
             productoDiv.innerHTML = `
                 <div class="product-container-carrusel">
                     <div class="product-image-carrusel">
-                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" 
+                             alt="${producto.nombre}" class="main-product-image">
+                        ${hasMiniaturas ? `
                         <div class="product-thumbnails">
                             ${producto.miniaturas.map((img, index) => `
-                                <img src="${img}" alt="Miniatura ${index + 1}" class="thumbnail-image">
+                                <img src="${img}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image"
+                                     data-product-id="${producto.id}"
+                                     data-img-src="${img}">
                             `).join('')}
-                        </div>
+                        </div>` : ''}
                     </div>
                     <div class="product-info-carrusel">
-                    <p>$${producto.precio.toLocaleString()}</p>
-                    <h3>${producto.nombre}</h3> 
+                        <p>$${producto.precio.toLocaleString()}</p>
+                        <h3>${producto.nombre}</h3> 
                     </div>
                 </div>
             `;
 
-            productoDiv.addEventListener('click', () => {
-                const url = `index-producto.html?id=${producto.id}&seccion=mujer`;
-                window.location.href = url;
+            // Evento click para redirección
+            productoDiv.addEventListener('click', (e) => {
+                // Evitar redirección si se hizo click en una miniatura
+                if (!e.target.classList.contains('thumbnail-image')) {
+                    window.location.href = `index-producto.html?id=${producto.id}&seccion=mujer`;
+                }
             });
+
+            // Agregar eventos hover para miniaturas
+            if (hasMiniaturas) {
+                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+                
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mainImage.src = thumbnail.src;
+                    });
+                    
+                    thumbnail.addEventListener('mouseenter', () => {
+                        mainImage.src = thumbnail.src;
+                    });
+                });
+            }
 
             contenedorCarrusel.appendChild(productoDiv);
         });
