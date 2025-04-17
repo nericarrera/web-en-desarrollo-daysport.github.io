@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" 
                              alt="${producto.nombre}" class="main-product-image">
                         ${hasMiniaturas ? `
-                            <p>$${producto.precio.toLocaleString()}</p>
                         <div class="product-thumbnails">
                             ${producto.miniaturas.map((miniatura, index) => `
                                 <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
