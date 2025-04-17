@@ -332,10 +332,9 @@
 }
 
 #product-colors img {
-  width: 40px; /* Tamaño fijo para las miniaturas */
-  height: 40px; /* Mantener proporción cuadrada */
+  width: 45px; /* Tamaño fijo para las miniaturas */
+  height: 47px; /* Mantener proporción cuadrada */
   object-fit: cover; /* Asegurar que la imagen se ajuste */
-  margin: 5px; /* Espaciado entre miniaturas */
   border: 1px solid #ddd; /* Borde ligero */
   border-radius: 50%; /* Forma circular */
   cursor: pointer; /* Mostrar cursor de mano al pasar el mouse */
