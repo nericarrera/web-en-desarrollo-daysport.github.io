@@ -995,7 +995,7 @@
 
 .product-info-carrusel h3 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 300;
   color: #333;
   margin: 0px 0px 0px;
   margin-top: 10px;
@@ -1005,10 +1005,10 @@
 .product-info-carrusel p {
   font-family: "Monserrat", sans-serif;
   font-style: normal;
-  font-variation-settings: "slnt" 0;
-  font-size: 15px;
+  font-size: 14px;
   color: #000000;
   margin-bottom: 1px;
+  font-weight: 300;
 }
 
 .product-info .mujer-carrusel-categoria {
