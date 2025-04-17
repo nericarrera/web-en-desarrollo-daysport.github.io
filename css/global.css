@@ -972,7 +972,7 @@
 }
 
 .producto-novedad-mujer:hover {
-  transform: translateY(-10px); /* Elevar ligeramente en hover */
+  transform: translateY(-5px); /* Elevar ligeramente en hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
 }
 
