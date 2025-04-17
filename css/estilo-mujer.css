@@ -424,6 +424,7 @@
   gap: 5px;
   font-family: "Questrial";
   letter-spacing: 0.5px;
+  border-radius: 20px;
 }
 
 .filter-dropdown-toggle:hover {
