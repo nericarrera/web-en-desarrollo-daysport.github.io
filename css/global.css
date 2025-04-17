@@ -1126,6 +1126,7 @@
 }
 
 .conteflechas {
+  display: flex;
   position: absolute;
   height: 25%;
   width: 95%;
