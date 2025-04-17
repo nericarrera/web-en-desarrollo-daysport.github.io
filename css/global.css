@@ -1002,6 +1002,10 @@
   font-family: "Questrial", sans-serif;
 }
 
+.product-info-carrusel h3:hover {
+  background: #bbbbbb;
+}
+
 .product-info-carrusel p {
   font-family: "Questrial", sans-serif;
   font-style: normal;
@@ -1009,6 +1013,10 @@
   color: #000000;
   margin-bottom: 1px;
   font-weight: 300;
+}
+
+.product-info-carrusel p:hover {
+  background: #bbbbbb;
 }
 
 .product-info .mujer-carrusel-categoria {
