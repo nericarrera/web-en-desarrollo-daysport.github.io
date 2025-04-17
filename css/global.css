@@ -627,6 +627,7 @@
   max-width: 1200px; /* O el ancho máximo que prefieras */
   margin: 0 auto;
   padding: 20px;
+  border-right: 1px solid #bbbbbb;
 }
 
 .modal-mujer-seccion-content,
