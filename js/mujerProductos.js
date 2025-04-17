@@ -4,6 +4,7 @@ export  const productosMujer = [
     {
     id: "mujer-1",
     nombre: "Remera Modal Soft",
+    etiqueta: "novedad",
     precio: 8000,
     categoria: "remeras",
     seccion: "mujer",
