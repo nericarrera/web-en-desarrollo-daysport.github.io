@@ -335,7 +335,7 @@
   width: 45px; /* Tamaño fijo para las miniaturas */
   height: 47px; /* Mantener proporción cuadrada */
   object-fit: cover; /* Asegurar que la imagen se ajuste */
-  border: 1px solid #ddd; /* Borde ligero */
+  border: 1px solid #1f1f1f; /* Borde ligero */
   border-radius: 50%; /* Forma circular */
   cursor: pointer; /* Mostrar cursor de mano al pasar el mouse */
   transition: transform 0.2s ease; /* Animación al pasar el mouse */
