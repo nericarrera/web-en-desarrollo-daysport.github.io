@@ -463,7 +463,7 @@
 .mujer-product-card {
   width: 260px;
   text-align: center;
-  height: 435px;
+  height: 475px;
   margin-bottom: 5px;
   border: 1px solid #ddd;
   background: #fff;
@@ -515,7 +515,7 @@
 
 .mujer-product-card img {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
   cursor: pointer;
 }
