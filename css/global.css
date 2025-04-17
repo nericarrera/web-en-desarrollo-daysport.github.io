@@ -1075,11 +1075,11 @@
 /*--------- TITULO DE (DESTACADO)----------- */
 .destacado {
   display: flex;
-  width: 100%;
+  width: 65%;
   position: relative;
   justify-content: center;
   margin-top: 15px;
-  backdrop-filter: brightness(0.5);
+  margin: auto;
 }
 
 .destacado__p {
