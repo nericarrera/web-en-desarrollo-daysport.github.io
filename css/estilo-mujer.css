@@ -628,10 +628,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #360353;
 }
 
 .filter-sidebar-header h2 {
   font-family: "Questrial";
+  padding: 3px;
 }
 
 .close-filter {
@@ -646,6 +648,7 @@
   letter-spacing: 0.5px;
   text-decoration: none;
   font-size: 24px;
+  color: #f3ff05;
 }
 
 .filter-title {
