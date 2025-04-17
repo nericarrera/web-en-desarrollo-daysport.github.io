@@ -938,12 +938,14 @@
   margin-left: 25px;
   margin-top: 20px;
   margin-bottom: 10px;
+  background: #360353;
 }
 
 .novedad-mujer-titulo {
   font-family: "Questrial", serif;
   font-weight: 500;
   font-size: 30px;
+  color: #d3e005;
 }
 
 .product-card-novedad-mujer {
