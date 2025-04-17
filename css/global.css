@@ -1008,6 +1008,7 @@
 }
 
 .product-info-carrusel p {
+  position: absolute;
   font-family: "Questrial", sans-serif;
   font-style: normal;
   font-size: 14px;
