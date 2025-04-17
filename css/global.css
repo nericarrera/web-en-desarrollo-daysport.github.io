@@ -1000,6 +1000,7 @@
   margin: 0px 0px 0px;
   margin-top: 10px;
   font-family: "Questrial", sans-serif;
+  padding: 1px;
 }
 
 .product-info-carrusel h3:hover {
@@ -1013,15 +1014,18 @@
   color: #000000;
   margin-bottom: 1px;
   font-weight: 300;
+  padding: 1px;
 }
 
 .product-info-carrusel p:hover {
   background: #e3e3e3;
+  padding: 1px;
 }
 
 .product-info .mujer-carrusel-categoria {
   font-size: 13px;
   color: #9b9b9b;
+  padding: 1px;
 }
 
 /*-------carrusel miniaturas para productos------*/
