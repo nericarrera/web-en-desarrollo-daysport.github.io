@@ -645,7 +645,12 @@
 .close-filter {
   cursor: pointer;
   font-size: 4.5em;
-  color: #333;
+  color: #fff;
+}
+
+.close-filter:hover {
+  color: #000;
+  transition: all 500ms ease;
 }
 
 #mujer-clear-filters {
