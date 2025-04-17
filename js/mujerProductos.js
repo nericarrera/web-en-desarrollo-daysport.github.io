@@ -78,7 +78,7 @@ export  const productosMujer = [
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"},
                 {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"},
-                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"}
+                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"},
         ], // Miniaturas para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
