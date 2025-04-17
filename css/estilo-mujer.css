@@ -427,9 +427,9 @@
 }
 
 .filter-dropdown-toggle:hover {
-  background-color: #333;
+  background-color: #360353;
   color: #fff;
-  transition: all 500ms ease;
+  transition: all 460ms ease;
 }
 
 /*--------------------COLORES DE FILTRO CUADROS-----------------*/
