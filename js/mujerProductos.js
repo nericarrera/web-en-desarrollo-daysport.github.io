@@ -49,12 +49,12 @@ export  const productosMujer = [
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"}, 
-           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"},
+           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"}
         ],
         hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -78,14 +78,14 @@ export  const productosMujer = [
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"},
                 {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"},
-                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"},
+                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"}
         ], // Miniaturas para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -108,14 +108,14 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "verano", 
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
-        imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg", ],
+        imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         miniaturas: [ 
-            {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg"},
+            {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg"}
 
         ], 
         hoverImagenes: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         variantes: [
-            { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -137,7 +137,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
         miniaturas: [ 
-            {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"},
+            {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"}
 
         ],
         hoverImagenes: [],
@@ -166,13 +166,13 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
         miniaturas: [ 
-            {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"},
+            {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"}
 
         ],
         hoverImagenes: [],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -197,7 +197,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
         miniaturas: [ 
-            {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"},
+            {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"}
 
         ],
         hoverImagenes: [],
@@ -225,7 +225,7 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
         miniaturas: [ 
-            {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"},
+            {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"}
 
         ],
         hoverImagenes: [],
@@ -251,12 +251,12 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
         miniaturas: [ 
-            {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"},
+            {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"}
         ],
         hoverImagenes: [],
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
