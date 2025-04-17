@@ -634,6 +634,12 @@
 .filter-sidebar-header h2 {
   font-family: "Questrial";
   padding: 3px;
+  color: #fff;
+}
+
+.filter-sidebar-header h2:hover {
+  color: #f3ff05;
+  transition: all 500ms ease;
 }
 
 .close-filter {
