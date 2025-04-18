@@ -1079,21 +1079,20 @@
 /*--------- TITULO DE (DESTACADO)----------- */
 .destacado {
   display: flex;
-  width: 65%;
+  width: 100%;
   position: relative;
   justify-content: center;
-  margin-top: 15px;
   margin: auto;
 }
 
 .destacado__p {
   text-align: center;
   justify-content: center;
-  font-size: 70px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #f3ff05;
+  font-size: 46px;
+  font-family: "Dosis", sans-serif;
+  color: #673ab7;
   margin: auto;
-  -webkit-text-stroke: 0.5px #000;
+  background: #d3e005;
 }
 
 /*------------- CONTENEDOR TARJETAS---------- */
