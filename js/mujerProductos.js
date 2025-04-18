@@ -12,7 +12,6 @@ export  const productosMujer = [
     descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
     miniaturas: [
-       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg" },
        {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"}
         
     ],
