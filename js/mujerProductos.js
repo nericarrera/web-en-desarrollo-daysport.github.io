@@ -120,9 +120,7 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/remeras-lino/blusalino-negro-1.jpeg",
-                "img/mujer/remeras-lino/blusalino-negro-1.jpeg",
-                
+                "img/mujer/remeras-lino/blusalino-negro-1.jpeg",                
             ],
            
         }
