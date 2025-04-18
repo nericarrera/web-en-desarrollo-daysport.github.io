@@ -420,6 +420,7 @@
 }
 
 .cart-item-details {
+  height: 220px;
   flex: 1;
   font-family: "DM Sans";
 }
