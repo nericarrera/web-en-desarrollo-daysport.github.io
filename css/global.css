@@ -1083,6 +1083,7 @@
   position: relative;
   justify-content: center;
   margin: auto;
+  background: #d3e005;
 }
 
 .destacado__p {
@@ -1092,7 +1093,6 @@
   font-family: "Questrial", sans-serif;
   color: #673ab7;
   margin: auto;
-  background: #d3e005;
 }
 
 /*------------- CONTENEDOR TARJETAS---------- */
