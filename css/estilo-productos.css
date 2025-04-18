@@ -8,7 +8,7 @@
 .header {
   background: #000000;
   text-align: center;
-  height: 39px;
+  height: 40px;
   width: 100%;
   margin: 0 auto;
 }
@@ -61,7 +61,7 @@
   background: #fdfdfd;
   height: 75px;
   position: relative;
-  z-index: 10;
+  z-index: 11;
 }
 
 .conteiner-buscador-carrito {
