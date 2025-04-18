@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-hombre');
     
     import('/js/hombreProductos.js').then(module => {
-        const productosMujer = module.productosMujer;
-        const productosNovedad = productosMujer.filter(producto => 
+        const productosHombre = module.productosHombre;
+        const productosNovedad = productosHombre.filter(producto => 
             producto.etiqueta?.toLowerCase() === "novedad"
         );
 
