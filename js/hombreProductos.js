@@ -7,7 +7,7 @@ export const productosHombre = [
         etiqueta: "novedad",
         precio: 8000,
         categoria: "remeras",
-        seccion: "mujer",
+        seccion: "hombre",
         temporada: "verano",
         descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
         imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
