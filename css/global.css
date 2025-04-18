@@ -1076,7 +1076,7 @@
 
 /*--------------------------------------------------*/
 
-/*--------- TITULO DE (DESTACADO)----------- */
+/*--------- NOVEDADES HOMBRE CARRUSEL ----------- */
 .carrusel-hombre-novedad-titulo {
   display: flex;
   width: 100%;
@@ -1092,6 +1092,38 @@
   color: #673ab7;
   font-weight: 700;
   padding: 5px;
+}
+
+.product-card-novedad-hombre {
+  text-align: center;
+}
+
+/* Contenedor principal del carrusel */
+.carrusel-container-hombre {
+  display: flex;
+  gap: 12px; /* Espacio entre productos */
+  overflow-x: auto; /* Habilitar desplazamiento horizontal */
+  padding: 28px 10px; /* Espaciado interno */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+  background: rgb(245, 245, 220);
+}
+
+/* Tarjeta individual de producto */
+.producto-novedad-hombre {
+  flex: 0 0 auto; /* Evitar que las tarjetas se reduzcan */
+  width: 250px; /* Ancho fijo para cada tarjeta */
+  height: 420px;
+  border: 1px solid #ddd; /* Borde delgado */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.producto-novedad-hombre:hover {
+  transform: translateY(-5px); /* Elevar ligeramente en hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
 }
 
 /*-------------NOVEDADES HOMBRES---------- */
