@@ -116,7 +116,8 @@ export  const productosMujer = [
             gris: [
                 "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"
             ],
-        }
+        }    
+        
     },
         
     { id: "mujer-4", 
