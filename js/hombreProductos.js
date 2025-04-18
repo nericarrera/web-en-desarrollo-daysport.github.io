@@ -40,7 +40,7 @@ export const productosHombre = [
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"},
         ],
         hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg",
-                        "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro2.jpeg"
+                        "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro2.jpeg",
         ], // Hover en el carrusel
         variantes: [
             { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
