@@ -220,6 +220,31 @@
   margin-top: 2px;
 }
 
+/*-------------------------BANNER SECCION HOMBRE------------------*/
+.banner-hombre {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-content-hombre {
+  margin: auto;
+}
+
+.banner-content-hombre h1 {
+  font-size: 15px;
+  font-family: "Dosis";
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.banner-content-hombre p {
+  font-family: "Dosis";
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 /*------------- MENÚ Y SUBMENÚ ---------------*/
 /* Estilo del filtro horizontal */
 
