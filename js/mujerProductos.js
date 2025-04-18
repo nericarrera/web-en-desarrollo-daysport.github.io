@@ -76,9 +76,9 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
         miniaturas: [
-            {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"},
-                {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"},
-                    {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"},
+            {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", hover:""},
+            {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", hover:"" },
+            {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", hover:""},
         ], // Miniaturas para el carrusel
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
