@@ -12,6 +12,7 @@ export const productosHombre = [
         descripcion: "Buzo de algodon frizado, cuello redondo liso, para usar en cualquier ocasion",
         imagen: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"],
         miniaturas: [
+            {src: "img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"},
 
         ],
         hoverImagenes: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"], // Hover en el carrusel
