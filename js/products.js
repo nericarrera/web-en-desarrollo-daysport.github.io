@@ -326,6 +326,65 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarDetallesProducto(product);
 });
 
+/*----------- "AGREGAR AL CARRITO" ------------*/
+document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
+    console.log('Botón "Agregar al carrito" clickeado'); // Depuración
+
+    // Obtener los datos del producto
+    const productTitle = document.getElementById('product-title').textContent;
+    const productPriceText = document.getElementById('product-price').textContent.replace('$', '');
+    const productPrice = parseFloat(productPriceText); // Convertir el precio a número
+
+    // Verificar que el precio sea un número válido
+    if (isNaN(productPrice)) {
+        console.error('El precio no es un número válido:', productPriceText);
+        alert('Error: El precio del producto no es válido.');
+        return;
+    }
+
+    const productImageElement = document.querySelector('.main-product-image'); // Elemento de la imagen
+
+    // Verificar que el elemento de la imagen exista
+    if (!productImageElement) {
+        console.error('El elemento de la imagen no se encontró.');
+        alert('Error: No se pudo obtener la imagen del producto.');
+        return;
+    }
+
+    const productImage = productImageElement.src; // Obtener la URL de la imagen
+
+    // Obtener el color seleccionado
+    const selectedColor = document.querySelector('.color-btn.selected')?.getAttribute('data-color') || 'Sin color';
+
+    // Obtener el talle seleccionado
+    const selectedSize = document.querySelector('.size-btn.selected')?.textContent || 'Sin talle';
+
+    // Obtener la cantidad seleccionada
+    const quantityInput = document.getElementById('quantity');
+    const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+
+    // Verificar que se haya seleccionado un talle
+    if (selectedSize === 'Sin talle') {
+        alert('Por favor, selecciona un talle antes de continuar.');
+        return;
+    }
+
+    // Crear el objeto del producto
+    const product = {
+        name: productTitle,
+        price: productPrice, // Precio convertido a número
+        image: productImage,
+        color: selectedColor,
+        size: selectedSize,
+        quantity: quantity // Cantidad seleccionada
+    };
+
+    console.log('Producto a agregar:', product); // Depuración
+
+    // Agregar el producto al carrito
+    addToCart(product);
+});
+
 
 
 
