@@ -118,67 +118,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
     
-            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-    
-            // Variable para almacenar la miniatura seleccionada
-            let selectedThumbnail = null;
-    
-            // Hover en la imagen principal
+            // Dentro de mostrarProductos(), reemplaza la parte de los eventos de hover con esto:
+
+const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+
+// Estado para rastrear la miniatura activa
+let activeThumbnail = null;
+
+// Hover en imagen principal (solo si no hay miniatura activa)
+mainImage.addEventListener('mouseenter', () => {
+    if (!activeThumbnail && producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+        mainImage.src = producto.hoverImagenes[0];
+    }
+});
+
+mainImage.addEventListener('mouseleave', () => {
+    if (!activeThumbnail) {
+        mainImage.src = producto.imagen[0];
+    } else {
+        // Si hay miniatura activa, vuelve a esa imagen
+        mainImage.src = activeThumbnail.src;
+    }
+});
+
+// Eventos para miniaturas
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('mouseenter', () => {
+        // Cambiar imagen principal
+        mainImage.src = thumbnail.src;
+        activeThumbnail = thumbnail;
+        
+        // Cambiar hover para mostrar la versión alternativa
+        const hoverImage = thumbnail.getAttribute('data-hover');
+        if (hoverImage) {
+            mainImage.addEventListener('mouseenter', () => {
+                mainImage.src = hoverImage;
+            });
+            
+            mainImage.addEventListener('mouseleave', () => {
+                mainImage.src = thumbnail.src;
+            });
+        }
+    });
+
+    thumbnail.addEventListener('mouseleave', () => {
+        // Restaurar eventos normales cuando el cursor sale de todas las miniaturas
+        const isHoveringAnyThumbnail = [...thumbnails].some(thumb => {
+            return thumb.matches(':hover');
+        });
+        
+        if (!isHoveringAnyThumbnail) {
+            activeThumbnail = null;
+            mainImage.src = producto.imagen[0];
+            
+            // Restaurar hover original
+            mainImage.onmouseenter = null;
+            mainImage.onmouseleave = null;
+            
             if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                const hoverImage = producto.hoverImagenes[0]; // Usamos la primera imagen de hover
-    
-                mainImage.addEventListener('mouseover', () => {
-                    if (!selectedThumbnail) { // Solo cambia si no hay una miniatura seleccionada
-                        mainImage.src = hoverImage;
-                    }
+                mainImage.addEventListener('mouseenter', () => {
+                    mainImage.src = producto.hoverImagenes[0];
                 });
-    
-                mainImage.addEventListener('mouseout', () => {
-                    if (!selectedThumbnail) { // Solo restablece si no hay una miniatura seleccionada
-                        mainImage.src = producto.imagen[0];
-                    }
+                
+                mainImage.addEventListener('mouseleave', () => {
+                    mainImage.src = producto.imagen[0];
                 });
             }
-    
-            // Hover en las miniaturas
-            thumbnails.forEach(thumbnail => {
-                const hoverImage = thumbnail.getAttribute('data-hover'); // Obtener la imagen de hover de la miniatura
-    
-                thumbnail.addEventListener('mouseover', () => {
-                    // Cambiar la imagen principal a la miniatura seleccionada
-                    mainImage.src = thumbnail.src;
-                    selectedThumbnail = thumbnail;
-    
-                    // Si hay una imagen de hover, mostrarla cuando el cursor esté sobre la imagen principal
-                    if (hoverImage) {
-                        mainImage.addEventListener('mouseover', () => {
-                            mainImage.src = hoverImage;
-                        });
-    
-                        mainImage.addEventListener('mouseout', () => {
-                            mainImage.src = thumbnail.src; // Volver a la miniatura seleccionada
-                        });
-                    }
-                });
-    
-                thumbnail.addEventListener('mouseout', () => {
-                    // Restablecer la imagen principal cuando el cursor sale de la miniatura
-                    selectedThumbnail = null;
-                    mainImage.src = producto.imagen[0];
-    
-                    // Restablecer los eventos de hover de la imagen principal
-                    if (hoverImage) {
-                        mainImage.removeEventListener('mouseover', () => {
-                            mainImage.src = hoverImage;
-                        });
-    
-                        mainImage.removeEventListener('mouseout', () => {
-                            mainImage.src = thumbnail.src;
-                        });
-                    }
-                });
-            });
+        }
+    });
+});
     
             mujerProductsGrid.appendChild(productoDiv);
         });
