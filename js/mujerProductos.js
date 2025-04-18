@@ -5,12 +5,15 @@ export  const productosMujer = [
     id: "mujer-1",
     nombre: "Remera Modal Soft",
     etiqueta: "novedad",
-    precio: 8000,
+    precio: 12000,
     categoria: "remeras",
     seccion: "mujer",
     temporada: "verano",
-    descripcion: "Remera de cuello redondo suave y cómoda, ideal para días de verano.",
+    descripcion: "Remera de modal soft, cuello redondo suave y cómoda, ideal para días de verano.",
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
+    imagenesDetalle: [
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+     ],
     miniaturas: [
        {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"}
         
