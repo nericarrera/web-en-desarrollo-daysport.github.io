@@ -421,6 +421,7 @@
 .cart-item-details {
   flex: 1;
   font-family: "DM Sans";
+  text-align: justify;
 }
 
 .cart-content p {
