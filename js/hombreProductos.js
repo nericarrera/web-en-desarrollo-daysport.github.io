@@ -37,6 +37,7 @@ export const productosHombre = [
         descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"],
         miniaturas: [
+            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"},
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"},
         ],
         hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg",
