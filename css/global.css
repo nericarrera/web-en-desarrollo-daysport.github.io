@@ -1192,8 +1192,6 @@
   justify-content: center;
   width: 280px;
   height: 540px;
-  padding: 5px;
-  border-radius: 5px;
 }
 
 .tarjetas:hover {
@@ -1270,6 +1268,7 @@
   justify-content: center;
   background: #000000;
   margin-bottom: 40px;
+  border-radius: 15px;
 }
 
 .motivate_p {
