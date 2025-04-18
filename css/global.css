@@ -633,7 +633,7 @@
 .modal-bravas-seccion-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  gap: 7px;
   padding: 20px;
   width: 100%;
   background-color: #fff;
