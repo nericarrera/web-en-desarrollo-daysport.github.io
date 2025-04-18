@@ -929,7 +929,7 @@
   margin: auto;
 }
 
-/*-------------------PRODUCTO NUEVOS DINAMICO MUJER ---------------*/
+/*-------------------NOVEDADES MUJER CARRUSEL ---------------*/
 
 .carrusel-mujer-novedad-titulo {
   display: flex;
@@ -1077,7 +1077,7 @@
 /*--------------------------------------------------*/
 
 /*--------- TITULO DE (DESTACADO)----------- */
-.destacado {
+.carrusel-hombre-novedad-titulo {
   display: flex;
   width: 100%;
   position: relative;
@@ -1086,7 +1086,7 @@
   padding: 5px;
 }
 
-.destacado__p {
+.novedad-hombre-titulo {
   font-size: 35px;
   font-family: "Questrial", sans-serif;
   color: #673ab7;
