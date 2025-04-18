@@ -28,24 +28,26 @@ export const productosHombre = [
 
     {
         id: "hombre-2",
-        nombre: "Campera TNF Combinada Puffer",
+        nombre: "Campera TNF combinada Puffer",
+        etiqueta: "novedad",
         precio: 65000,
         categoria: "camperas",
         seccion: "hombre",
         temporada: "invierno",
-        descripcion: "Campera Puffer combinada de alta calidad con diseño moderno y detalles únicos logo bordado.",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"],
-        miniaturas: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"],
-        hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg"], // Hover en el carrusel
-        etiqueta: "novedad",
-        variantes: [
-            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        miniaturas: [
+            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"},
         ],
-        imagenColores: { // Imágenes específicas por color para la página de producto
+        hoverImagenes: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"], // Hover en el carrusel
+        variantes: [
+            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
+        ],
+        imagenColores: {
             blanco: [
-                "imghombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg",
-            ],
+                "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg",
+                ],
             gris: [
                 "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg",
             ],
