@@ -970,6 +970,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .producto-novedad-mujer:hover {
