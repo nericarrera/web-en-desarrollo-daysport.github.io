@@ -249,15 +249,23 @@
   </section>
 
   <!--------------------------PRODUCTO------------------------->
-  <div class="product-page">
-    <div class="product-gallery">
-        <div class="zoom-container" data-="image">
-            <!-- Imagen principal del producto -->
-            <img class="main-product-image" id="product-image" src="" alt="Imagen principal del producto">
-
+  <div class="product-gallery">
+    <!-- Imagen principal con zoom -->
+    <div class="main-image-container">
+        <div class="zoom-container">
+            <img id="main-image" src="" alt="Imagen principal">
         </div>
-        <div id="product-thumbnails" class="thumbnails-container"></div>
+        <!-- Video (oculto por defecto) -->
+        <div class="video-container hidden">
+            <video id="main-video" controls></video>
+        </div>
     </div>
+
+    <!-- Fila de imágenes secundarias (estilo Adidas) -->
+    <div class="secondary-images">
+        <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+</div>
     <div class="product-details-section">
         <!-- Título del producto -->
         <h1 id="product-title"></h1>
@@ -290,8 +298,8 @@
     </div>
 </div>
 
-  <div id="sizeChartModal" class="modal hidden">
-    <div class="modal-content">
+  <div id="sizeChartModal-talles" class="modal hidden-talles">
+    <div class="modal-content-talles">
       <span class="close" onclick="toggleSizeChart(event)">&times;</span>
       <h2>Tabla de Talles</h2>
       <table>
