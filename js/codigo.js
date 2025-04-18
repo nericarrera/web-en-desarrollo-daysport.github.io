@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/*---------------------NOVEDAD MUJER EXPORTACION CARRUSEL-------------------- */
+/*---------------------NOVEDAD MUJER CARRUSEL-------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
     
@@ -113,7 +113,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(err => console.error("Error al importar productos:", err));
 });
 
-/***--------ENLACE A PAGINA DE PRODUCTOS--------- */
+/***--------NOVEDAD HOMBRE CARRUSEL --------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const contenedorCarrusel = document.querySelector('.carrusel-container-hombre');
+    
+    import('/js/hombreProductos.js').then(module => {
+        const productosMujer = module.productosMujer;
+        const productosNovedad = productosMujer.filter(producto => 
+            producto.etiqueta?.toLowerCase() === "novedad"
+        );
+
+        productosNovedad.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto-novedad-hombre');
+            
+            // Verificar si hay miniaturas disponibles
+            const hasMiniaturas = producto.miniaturas && producto.miniaturas.length > 0;
+            
+            productoDiv.innerHTML = `
+                <div class="product-container-carrusel">
+                    <div class="product-image-carrusel">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" 
+                             alt="${producto.nombre}" class="main-product-image">
+                        ${hasMiniaturas ? `
+                        <div class="product-thumbnails">
+                            ${producto.miniaturas.map((miniatura, index) => `
+                                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image"
+                                     data-product-id="${producto.id}">
+                            `).join('')}
+                        </div>` : ''}
+                    </div>
+                    <div class="product-info-carrusel">
+                        <p>$${producto.precio.toLocaleString()}</p>
+                        <h3>${producto.nombre}</h3> 
+                    </div>
+                </div>
+            `;
+
+            // Evento click para redirección
+            productoDiv.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('thumbnail-image')) {
+                    window.location.href = `index-producto.html?id=${producto.id}&seccion=mujer`;
+                }
+            });
+
+            // Agregar eventos hover para miniaturas
+            if (hasMiniaturas) {
+                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+                
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mainImage.src = thumbnail.src;
+                    });
+                    
+                    thumbnail.addEventListener('mouseenter', () => {
+                        mainImage.src = thumbnail.src;
+                    });
+                });
+            }
+
+            contenedorCarrusel.appendChild(productoDiv);
+        });
+    }).catch(err => console.error("Error al importar productos:", err));
+});
 
 
 
