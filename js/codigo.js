@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(err => console.error("Error al importar productos:", err));
 });
 
-/***--------NOVEDAD HOMBRE CARRUSEL --------- */
+/*-------------------------NOVEDAD HOMBRE CARRUSEL ---------------------------- */
+
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-hombre');
     
