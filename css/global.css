@@ -957,7 +957,7 @@
   overflow-x: auto; /* Habilitar desplazamiento horizontal */
   padding: 28px 10px; /* Espaciado interno */
   scroll-behavior: smooth; /* Desplazamiento suave */
-  background: beige;
+  background: rgb(245, 245, 220);
 }
 
 /* Tarjeta individual de producto */
