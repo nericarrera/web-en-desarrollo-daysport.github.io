@@ -251,64 +251,70 @@
   <!--------------------------PRODUCTO------------------------->
   <div class="product-page">
     <div class="product-gallery">
-        <div class="zoom-container" data-="image">
+        <div class="zoom-container">
             <!-- Imagen principal del producto -->
             <img class="main-product-image" id="product-image" src="" alt="Imagen principal del producto">
-
         </div>
         <div id="product-thumbnails" class="thumbnails-container"></div>
     </div>
+    
     <div class="product-details-section">
-        <!-- Título del producto -->
-        <h1 id="product-title"></h1>
-        <!-- Precio del producto -->
-        <p id="product-price"></p>
-        <!-- Descripción del producto -->
-        <p id="product-description" ></p>
+        <!-- Encabezado -->
+        <div class="product-header">
+            <h1 id="product-title"></h1>
+            <p id="product-price"></p>
+            <p id="product-description"></p>
+            <p id="product-tag" class="product-tag"></p>
+        </div>
 
         <!-- Colores disponibles -->
-        <div id="product-colors" class="product-colors">
-            <!-- Los botones de colores se generan dinámicamente -->
+        <div class="product-option">
+            <h3>Color: <span id="selected-color"></span></h3>
+            <div id="product-colors" class="color-options"></div>
         </div>
 
         <!-- Talles disponibles -->
-        <div id="product-sizes"  class="product-size">
-            <!-- Los botones de talles se generan dinámicamente -->
+        <div class="product-option">
+            <h3>Talle: <span id="selected-size"></span></h3>
+            <div id="product-sizes" class="size-options"></div>
+            <button class="size-guide-btn" onclick="toggleSizeChart(event)">Guía de talles</button>
         </div>
 
-        <!-- Selector de cantidad (opcional) -->
-        <div id="quantity-container" class="product-quantity hidden">
-            <label for="quantity">Cantidad:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
-        </div>
-
-        <!-- Botones de compra y agregar al carrito -->
+        <!-- Botones -->
         <div class="btn-container">
-            <button class="btn-buy-now">Comprar</button>
-            <button class="btn-add-to-cart">Agregar al carrito</button>
+            <button class="btn-buy-now">Comprar ahora</button>
+            <button class="btn-add-to-cart">Añadir al carrito</button>
+        </div>
+        
+        <!-- Detalles adicionales -->
+        <div class="product-additional-info">
+            <h3>Detalles del producto</h3>
+            <ul id="product-features"></ul>
         </div>
     </div>
 </div>
 
-  <div id="sizeChartModal" class="modal hidden">
+<!-- Modal de tabla de talles -->
+<div id="sizeChartModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="toggleSizeChart(event)">&times;</span>
-      <h2>Tabla de Talles</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Talle</th>
-            <th>Pecho (cm)</th>
-            <th>Cintura (cm)</th>
-            <th>Cadera (cm)</th>
-          </tr>
-        </thead>
-        <tbody id="sizeChartTableBody">
-          <!-- Aquí se agregarán dinámicamente las filas -->
-        </tbody>
-      </table>
+        <span class="close" onclick="toggleSizeChart(event)">&times;</span>
+        <h2>Tabla de Talles</h2>
+        <div class="size-chart-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Talle</th>
+                        <th>Pecho (cm)</th>
+                        <th>Cintura (cm)</th>
+                        <th>Cadera (cm)</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="sizeChartTableBody"></tbody>
+            </table>
+        </div>
     </div>
-  </div>
+</div>
 
   <div class="product-details-rating">
     <!-- Sección de Valoraciones -->
