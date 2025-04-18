@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Evento click para redirección
             productoDiv.addEventListener('click', (e) => {
                 if (!e.target.classList.contains('thumbnail-image')) {
-                    window.location.href = `index-producto.html?id=${producto.id}&seccion=mujer`;
+                    window.location.href = `index-producto.html?id=${producto.id}&seccion=hombre`;
                 }
             });
 
