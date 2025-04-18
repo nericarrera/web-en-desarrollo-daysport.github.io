@@ -1196,6 +1196,10 @@
   border-radius: 5px;
 }
 
+.tarjetas:hover {
+  border: 1px solid #673ab7;
+}
+
 .tarjetas video {
   width: 100%;
   height: 380px;
@@ -1210,10 +1214,6 @@
 .tarjeta-conteiner-descripcion {
   width: auto;
   height: auto;
-}
-
-.tarjeta-conteiner-description:hover {
-  border: 1px solid #673ab7;
 }
 
 .tarjeta-conteiner-descripcion img {
