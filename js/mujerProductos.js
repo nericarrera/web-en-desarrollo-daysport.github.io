@@ -47,6 +47,13 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"}
@@ -75,6 +82,13 @@ export  const productosMujer = [
         temporada: "media estacion",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", hover:""},
             {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", hover:"" },
@@ -109,6 +123,13 @@ export  const productosMujer = [
         temporada: "verano", 
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg"}
 
@@ -134,6 +155,13 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"}
 
@@ -163,6 +191,13 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"}
 
@@ -194,6 +229,13 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"}
 
@@ -222,6 +264,13 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"}
 
@@ -248,6 +297,13 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/camperas-deportivas/detalle-1.jpg",
+            "img/mujer/camperas-deportivas/detalle-2.jpg",
+            "img/mujer/camperas-deportivas/detalle-3.jpg",
+            "img/mujer/camperas-deportivas/modelo-1.jpg",
+            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        ],
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"}
         ],
