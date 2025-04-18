@@ -28,26 +28,26 @@ export const productosHombre = [
 
     {
         id: "hombre-2",
-        nombre: "Calza Nike Pro",
-        precio: 13500,
-        categoria: "calzas",
+        nombre: "Campera TNF Combinada Puffer",
+        precio: 65000,
+        categoria: "camperas",
         seccion: "hombre",
-        temporada: "verano",
-        descripcion: "Campera deportiva de alta calidad con diseño moderno y detalles únicos.",
-        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-        miniaturas: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg", "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
+        temporada: "invierno",
+        descripcion: "Campera Puffer combinada de alta calidad con diseño moderno y detalles únicos logo bordado.",
+        imagen: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"],
+        miniaturas: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"],
+        hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg"], // Hover en el carrusel
         etiqueta: "novedad",
         variantes: [
-            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
-            negro: [
-                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
+            blanco: [
+                "imghombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg",
             ],
             gris: [
-                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg",
+                "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg",
             ],
         }
     },
