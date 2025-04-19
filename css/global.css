@@ -1673,6 +1673,26 @@
   margin-top: 25px;
 }
 
+.registro-conteiner {
+  display: flex;
+  width: 97%;
+  height: auto;
+  justify-content: center;
+  margin: auto;
+  margin-top: -50px;
+  background: #360353;
+  border-radius: 15px;
+}
+
+.registro h3 {
+  display: flex;
+  font-weight: 300;
+  font-family: "Oswald", sans-serif;
+  font-size: 115px;
+  width: 100%;
+  color: #ffffff;
+}
+
 /* FOOTER */
 
 .footer {
