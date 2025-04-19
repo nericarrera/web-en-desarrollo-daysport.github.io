@@ -17,7 +17,7 @@ export  const productosMujer = [
         "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
      ],
     miniaturas: [
-       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg"}
+       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg", hover:""}
         
     ],
     hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover en el carrusel
@@ -46,24 +46,20 @@ export  const productosMujer = [
         id: "mujer-2",
         nombre: "Calza Nike Pro",
         etiqueta: "novedad",
-        precio: 14000,
+        precio: 16000,
         categoria: "calzas",
         seccion: "mujer",
-        temporada: "verano",
+        temporada: "media estacion",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+
         ],
         miniaturas: [
-           {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"}, 
-           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"}
+           {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
+           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], // Hover en el carrusel
+        hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -81,18 +77,15 @@ export  const productosMujer = [
     { id: "mujer-3",
         nombre: "Campera Deportiva Nike",
         etiqueta: "novedad",
-        precio: 30000,
+        precio: 35000,
         categoria: "camperas",
         seccion: "mujer",
         temporada: "media estacion",
-        descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
+        descripcion: "Campera deportiva entallada, excelente calidad para realizar entrenamientos o uso urbano.",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+            "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
+            "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"
         ],
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", hover:""},
@@ -127,17 +120,12 @@ export  const productosMujer = [
         categoria: "remeras",
         seccion: "mujer",
         temporada: "verano", 
-        descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
+        descripcion: "Blusa de lino, liviana comoda y frezca.",
         imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
         ],
         miniaturas: [ 
-            {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg"}
+            {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg", hover:""}
 
         ], 
         hoverImagenes: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
@@ -162,19 +150,14 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
-        ],
-        miniaturas: [ 
-            {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"}
 
         ],
-        hoverImagenes: [],
+        miniaturas: [ 
+            {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"},
+        ],
+        hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
         variantes: [
-            { color: "negro", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],       
         imagenColores: { // Imágenes específicas por color para la página de producto
@@ -198,17 +181,13 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+    
         ],
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"}
 
         ],
-        hoverImagenes: [],
+        hoverImagenes: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
