@@ -1719,13 +1719,20 @@
 .registro button {
   width: 200px;
   height: 50px;
-  background: #d3e005;
+  background: #fff;
   color: #000000;
   font-size: 20px;
   font-family: "Dosis", sans-serif;
   font-weight: 900;
   border-radius: 10px;
   justify-content: center;
+}
+
+.registro button:hover {
+  background: #d3e005;
+  color: #673ab7;
+  transition: all 500ms ease;
+  cursor: pointer;
 }
 
 /* FOOTER */
