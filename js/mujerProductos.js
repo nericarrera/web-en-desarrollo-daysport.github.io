@@ -336,4 +336,50 @@ export  const productosMujer = [
         }
         
     },
+
+    { id: "mujer-11", 
+        nombre: "Campera Gap", 
+        etiqueta: "novedad",
+        precio: 35000, 
+        categoria: "campera", 
+        seccion: "mujer",
+        temporada: "invierno",
+        descripcion: "Campera de algodon frizado, excelente calidad con capucha.",
+        imagen: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"], 
+        imagenesDetalle: [
+        
+        ],
+        miniaturas: [ 
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-grisme1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-veragu1.jpeg", hover:""},
+
+        ],
+        hoverImagenes: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"],
+        variantes: [
+            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "beige", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        ],        
+        imagenColores: { // Imágenes específicas por color para la página de producto
+            beige: [
+                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-beige1.jpeg"
+            ],
+            celeste: [
+                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg"
+            ],
+            verde: [
+                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg"
+            ],
+            rosa: [
+                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg"
+            ],
+        }
+        
+    },
+
+    
 ];
