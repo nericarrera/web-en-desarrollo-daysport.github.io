@@ -1685,6 +1685,12 @@
   background: #000;
 }
 
+.registro {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .registro h3 {
   display: flex;
   font-weight: 300;
