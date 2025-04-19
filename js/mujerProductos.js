@@ -308,9 +308,9 @@ export  const productosMujer = [
         
         ],
         miniaturas: [ 
-            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-celeste1.jpeg"},
-            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-verdelimon1.jpeg"},
-            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-celeste1.jpeg", hover:""},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-verdelimon1.jpeg", hover:""},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg", hover:""},
 
         ],
         hoverImagenes: ["img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg"],
