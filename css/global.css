@@ -1682,16 +1682,7 @@
   height: auto;
   justify-content: center;
   margin: auto;
-  background: #000;
-}
-
-.registro-conteiner:hover,
-.regitro h3:hover {
   background: #d3e005;
-  transition: all 500ms ease;
-  cursor: pointer;
-  color: #000000;
-  font-weight: 900;
 }
 
 .registro {
@@ -1701,20 +1692,22 @@
 
 .registro h3 {
   display: flex;
-  font-weight: 300;
-  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+  font-family: "Dosis", sans-serif;
   font-size: 35px;
   width: 70%;
-  color: #d3e005;
+  color: #000000;
+  margin: auto;
 }
 
 .registro p {
   display: flex;
-  font-weight: 300;
-  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
   font-size: 30px;
   width: 100%;
-  color: #d3e005;
+  color: #000000;
+  margin: auto;
 }
 
 .registro a {
