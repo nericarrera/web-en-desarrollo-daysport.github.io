@@ -1624,7 +1624,6 @@
   position: relative;
   justify-content: center;
   text-align: center;
-  background: #000000;
   margin: auto;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -1637,7 +1636,7 @@
   font-family: "Oswald", sans-serif;
   font-size: 115px;
   width: 100%;
-  color: #ffffff;
+  color: #000000;
 }
 
 .cont_sobrenosotros {
