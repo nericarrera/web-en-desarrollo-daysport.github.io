@@ -1688,7 +1688,6 @@
 .registro {
   display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 .registro h3 {
@@ -1696,7 +1695,7 @@
   font-weight: 300;
   font-family: "Oswald", sans-serif;
   font-size: 35px;
-  width: 100%;
+  width: 70%;
   color: #d3e005;
 }
 
@@ -1707,6 +1706,12 @@
   font-size: 30px;
   width: 100%;
   color: #d3e005;
+}
+
+.registro a {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .registro button {
