@@ -1685,7 +1685,7 @@
   background: #000;
 }
 
-.regitro-conteiner:hover {
+.registro-conteiner:hover {
   background: #d3e005;
   transition: all 500ms ease;
   cursor: pointer;
