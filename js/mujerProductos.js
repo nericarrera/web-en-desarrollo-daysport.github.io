@@ -115,7 +115,7 @@ export  const productosMujer = [
         
     { id: "mujer-4", 
         nombre: "Blusa de Lino", 
-        etiqueta: "novedad",
+        etiqueta: "",
         precio: 9000, 
         categoria: "remeras",
         seccion: "mujer",
@@ -142,7 +142,7 @@ export  const productosMujer = [
 
     { id: "mujer-5", 
         nombre: "Calza Nike Radeon",
-        etiqueta: "novedad", 
+        etiqueta: "", 
         precio: 13500, 
         categoria: "calzas", 
         seccion: "mujer",
@@ -206,7 +206,7 @@ export  const productosMujer = [
 
     {   
         id: "mujer-7", 
-        nombre: "Calza Nike Speak", 
+        nombre: "", 
         etiqueta: "novedad",
         precio: 13500, 
         categoria: "calzas", 
