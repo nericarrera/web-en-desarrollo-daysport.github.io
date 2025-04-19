@@ -366,16 +366,16 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-beige1.jpeg"
+
             ],
-            celeste: [
-                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg"
-            ],
-            verde: [
-                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg"
+            negro: [
+                "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg"
             ],
             rosa: [
-                "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg"
+                "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg"
+            ],
+            blanco: [
+                "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"
             ],
         }
         
