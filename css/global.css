@@ -905,6 +905,10 @@
   justify-content: center;
 }
 
+.banner-button a {
+  justify-content: center;
+}
+
 .banner-button:hover {
   background-color: #d3e005;
   color: #333;
