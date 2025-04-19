@@ -1713,6 +1713,7 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
+  margin: auto;
 }
 
 .registro button {
