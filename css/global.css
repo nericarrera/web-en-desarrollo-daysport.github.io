@@ -863,7 +863,7 @@
 
 .banner-content {
   position: absolute;
-  top: 93%;
+  top: 100%;
   left: 77%;
   transform: translate(-13%, -50%);
   text-align: center;
