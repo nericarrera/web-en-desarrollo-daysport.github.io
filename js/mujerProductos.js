@@ -215,17 +215,13 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+    
         ],
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"}
 
         ],
-        hoverImagenes: [],
+        hoverImagenes: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -240,6 +236,7 @@ export  const productosMujer = [
             ],
         }
     },
+
     { id: "mujer-8", 
         nombre: "Calza Nike Fluorecent", 
         etiqueta: "novedad",
@@ -250,17 +247,13 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+            
         ],
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"}
 
         ],
-        hoverImagenes: [],
+        hoverImagenes: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
         variantes: [
             { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -283,18 +276,14 @@ export  const productosMujer = [
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/camperas-deportivas/detalle-1.jpg",
-            "img/mujer/camperas-deportivas/detalle-2.jpg",
-            "img/mujer/camperas-deportivas/detalle-3.jpg",
-            "img/mujer/camperas-deportivas/modelo-1.jpg",
-            "img/mujer/camperas-deportivas/modelo-2.jpg"
+        
         ],
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"}
         ],
-        hoverImagenes: [],
+        hoverImagenes: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
         variantes: [
-            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
@@ -305,5 +294,46 @@ export  const productosMujer = [
         }
         
     },
-    
+
+    { id: "mujer-10", 
+        nombre: "Buzos bordados Algodon", 
+        etiqueta: "novedad",
+        precio: 35000, 
+        categoria: "buzos", 
+        seccion: "mujer",
+        temporada: "invierno",
+        descripcion: "Buzos de algodon frizados, bordados excelente calidad con capucha.",
+        imagen: ["img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-beige1.jpeg"], 
+        imagenesDetalle: [
+        
+        ],
+        miniaturas: [ 
+            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-celeste1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-verdelimon1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"},
+
+        ],
+        hoverImagenes: ["img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"],
+        variantes: [
+            { color: "beige", talla: "L", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "verde", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        ],        
+        imagenColores: { // Imágenes específicas por color para la página de producto
+            beige: [
+                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-beige1.jpeg"
+            ],
+            celeste: [
+                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-celeste1.jpeg"
+            ],
+            verde: [
+                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-verdelimon1.jpeg"
+            ],
+            rosa: [
+                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"
+            ],
+        }
+        
+    },
 ];
