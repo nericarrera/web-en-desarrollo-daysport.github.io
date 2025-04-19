@@ -1539,7 +1539,7 @@
 .registro-conteiner {
   display: flex;
   width: 97%;
-  height: auto;
+  height: 115px;
   justify-content: center;
   margin: auto;
   background: #d3e005;
