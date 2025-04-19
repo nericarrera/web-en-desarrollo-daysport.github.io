@@ -303,17 +303,17 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "invierno",
         descripcion: "Buzos de algodon frizados, bordados excelente calidad con capucha.",
-        imagen: ["img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-beige1.jpeg"], 
+        imagen: ["img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-beige1.jpeg"], 
         imagenesDetalle: [
         
         ],
         miniaturas: [ 
-            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-celeste1.jpeg"},
-            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-verdelimon1.jpeg"},
-            {src: "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-celeste1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-verdelimon1.jpeg"},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg"},
 
         ],
-        hoverImagenes: ["img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"],
+        hoverImagenes: ["img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg"],
         variantes: [
             { color: "beige", talla: "L", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -322,16 +322,16 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-beige1.jpeg"
+                "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-beige1.jpeg"
             ],
             celeste: [
-                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-celeste1.jpeg"
+                "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-celeste1.jpeg"
             ],
             verde: [
-                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-verdelimon1.jpeg"
+                "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-verdelimon1.jpeg"
             ],
             rosa: [
-                "img/mujer/buzos-algodon/buzos-algodon-bordados-concapucha-rosaviejo1.jpeg"
+                "img/mujer/buzos-algodon/buzo-algodon-bordados-concapucha-rosaviejo1.jpeg"
             ],
         }
         
