@@ -820,6 +820,14 @@
   transition: transform 0.5s ease;
 }
 
+.banner-titulo {
+  font-family: "Dosis", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  background: #000;
+  color: #d3e005;
+}
+
 .banner-slide {
   min-width: 100%;
   box-sizing: border-box;
