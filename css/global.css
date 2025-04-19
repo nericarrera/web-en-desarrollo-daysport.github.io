@@ -1685,6 +1685,14 @@
   background: #000;
 }
 
+.regitro-conteiner:hover {
+  background: #d3e005;
+  transition: all 500ms ease;
+  cursor: pointer;
+  color: #000000;
+  font-weight: 900;
+}
+
 .registro {
   display: flex;
   justify-content: center;
@@ -1714,6 +1722,7 @@
   text-align: center;
   text-decoration: none;
   margin: auto;
+  padding: 5px;
 }
 
 .registro button {
