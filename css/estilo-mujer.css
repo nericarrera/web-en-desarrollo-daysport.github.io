@@ -433,7 +433,7 @@
   font-weight: bold;
   font-family: "Questrial";
   text-align: left;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 7px;
 }
 
@@ -441,7 +441,7 @@
   color: #939393;
   font-family: "Dosis";
   text-align: left;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 5px;
 }
 
@@ -449,7 +449,7 @@
   color: #000;
   font-family: "Dosis";
   text-align: left;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .btn-ver-detalles {
