@@ -1744,14 +1744,14 @@
   height: auto;
   justify-content: center;
   display: flex;
-  background: #a30dfa;
+  background: #1c1c1c;
   text-decoration: none;
   margin: auto;
 }
 
 .nericarrera a {
   font-size: 15px;
-  color: #000000;
+  color: #673ab7;
   justify-content: center;
   text-decoration: none;
   list-style: none;
