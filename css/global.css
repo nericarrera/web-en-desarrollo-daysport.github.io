@@ -1674,31 +1674,45 @@
   margin-top: 25px;
 }
 
+/*--------------------REGISTRO-------------------*/
+
 .registro-conteiner {
   display: flex;
   width: 97%;
   height: auto;
   justify-content: center;
   margin: auto;
-  background: #d3e005;
 }
 
 .registro h3 {
   display: flex;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
-  font-size: 33px;
+  font-size: 35px;
   width: 100%;
-  color: #ffffff;
+  color: #d3e005;
 }
 
 .registro p {
   display: flex;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
-  font-size: 20px;
+  font-size: 30px;
   width: 100%;
-  color: #ffffff;
+  color: #d3e005;
+}
+
+.registro button {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  background: #d3e005;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  border-radius: 10px;
+  margin-top: -10px;
 }
 
 /* FOOTER */
