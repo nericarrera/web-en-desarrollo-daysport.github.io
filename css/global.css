@@ -1648,14 +1648,14 @@
 }
 
 .listafooter a {
-  font-size: 16px;
+  font-size: 15px;
   color: #fafafa;
   display: inline;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
-  -webkit-text-stroke: 0.2px #ffffff;
+  -webkit-text-stroke: 0.8px #360353;
 }
 
 .listafooter a:hover {
