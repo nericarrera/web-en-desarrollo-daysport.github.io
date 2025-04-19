@@ -1012,11 +1012,10 @@
   font-family: "AdihausDIN-CnBoldItalic", "AdihausDIN Cn", Helvetica, Arial,
     sans-serif;
   text-decoration: none;
-  background: #a30dfa;
+  background: #1c1c1c;
   justify-content: space-between;
   position: relative;
   margin: auto;
-  background-image: linear-gradient(#000000, #a30dfa);
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
