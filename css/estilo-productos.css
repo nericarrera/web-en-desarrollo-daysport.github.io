@@ -355,30 +355,6 @@
   transition: transform 0.2s ease; /* Animación al pasar el mouse */
 }
 
-/*----------------------PARTE NUEVA------------------*/
-
-/* Contenedor de la fila de imágenes secundarias */
-.secondary-images-row {
-  display: flex; /* Fila horizontal */
-  gap: 10px; /* Espacio entre imágenes */
-  margin-top: 15px;
-  overflow-x: auto; /* Scroll horizontal si hay muchas imágenes */
-  padding-bottom: 10px; /* Espacio para el scroll */
-}
-
-.secondary-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.secondary-image:hover {
-  border-color: #000;
-}
-
 /*----------------------ZOOM-------------------*/
 .lupa {
   position: absolute;
