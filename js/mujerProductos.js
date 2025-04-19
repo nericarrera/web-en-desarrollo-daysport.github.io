@@ -26,11 +26,11 @@ export  const productosMujer = [
         { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
         { color: "negro", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
         { color: "negro", talla: "XXL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
-        { color: "celeste", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-        { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+        { color: "celeste", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+        { color: "celeste", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         { color: "celeste", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-        { color: "celeste", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-        { color: "celeste", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        { color: "celeste", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+        { color: "celeste", talla: "XXL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
     ],
     imagenColores: {
         celeste: [
