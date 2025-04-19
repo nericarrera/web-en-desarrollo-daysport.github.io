@@ -1,11 +1,5 @@
-
-
-
 /*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
-
 import { productosMujer } from '/js/mujerProductos.js';
-
-
 
 /*-------------FILTRO MUJER----------------*/
 
