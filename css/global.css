@@ -1712,17 +1712,17 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  text-decoration: none;
 }
 
 .registro button {
-  display: flex;
   width: 200px;
   height: 50px;
   background: #d3e005;
   color: #000000;
   font-size: 20px;
   font-family: "Dosis", sans-serif;
-  font-weight: 300;
+  font-weight: 900;
   border-radius: 10px;
   justify-content: center;
 }
