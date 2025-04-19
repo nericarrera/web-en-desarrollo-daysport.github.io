@@ -888,33 +888,6 @@
   font-family: "Dosis", sans-serif;
 }
 
-.banner-button {
-  display: flex;
-  padding: 15px 30px;
-  background-color: #a30dfa;
-  color: #000;
-  font-size: 18px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  font-family: "Dosis", sans-serif;
-  margin-top: 25px;
-  text-align: center;
-  justify-content: center;
-  margin: auto;
-}
-
-.banner-button a {
-  justify-content: center;
-}
-
-.banner-button:hover {
-  background-color: #d3e005;
-  color: #333;
-}
-
 /* Responsividad para móviles */
 @media (max-width: 768px) {
   .banner {
