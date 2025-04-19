@@ -889,6 +889,7 @@
 }
 
 .banner-button {
+  display: flex;
   padding: 15px 30px;
   background-color: #a30dfa;
   color: #000;
@@ -899,6 +900,7 @@
   transition: background-color 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   font-family: "Dosis", sans-serif;
+  margin-top: 20px;
 }
 
 .banner-button:hover {
