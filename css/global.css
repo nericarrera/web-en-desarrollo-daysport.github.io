@@ -1673,64 +1673,6 @@
   margin-top: 25px;
 }
 
-/* FORMULARIO - EMAIL  */
-
-.conteiner-formulario {
-  width: 97%;
-  display: flex;
-  border-radius: 15px;
-  margin: auto;
-}
-
-.conteinerform {
-  width: 100%;
-  height: 100%;
-  background: #000000;
-  box-sizing: border-box;
-}
-
-form {
-  width: 440px;
-  height: 530px;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  margin-top: 20px;
-  border-radius: 7px;
-  font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
-  margin: auto;
-}
-
-.titulo-form {
-  color: #ffffff;
-  text-align: center;
-  margin: 0px;
-  font-size: 30px;
-  margin-bottom: 20px;
-  font-family: "AdihausDIN", Helvetica, Arial, sans-serif;
-  padding: 5px;
-}
-
-.input-form,
-.textarea1 {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 7px;
-  box-sizing: border-box;
-  font-size: 17px;
-  border: none;
-}
-
-.textarea1 {
-  min-height: 200px;
-  max-height: 50px;
-  max-width: 100%;
-}
-
-#boton:hover {
-  background: #ab70ce;
-  cursor: pointer;
-}
-
 /* FOOTER */
 
 .footer {
