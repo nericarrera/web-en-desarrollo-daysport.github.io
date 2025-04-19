@@ -822,7 +822,7 @@
 
 .banner-conteiner-titulo0 {
   display: flex;
-  width: 31%;
+  width: 30%;
   height: 48%;
   position: absolute;
   z-index: 2000;
@@ -838,7 +838,7 @@
   font-family: "Dosis", sans-serif;
   font-size: 50px;
   font-weight: 600;
-  color: #d3e005;
+  color: #673ab7;
   z-index: 22;
 }
 
