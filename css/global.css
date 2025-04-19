@@ -1649,7 +1649,8 @@
   justify-content: center;
   text-align: center;
   margin: auto;
-  border-radius: 70px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .img__somos {
@@ -1679,16 +1680,14 @@
   height: auto;
   justify-content: center;
   margin: auto;
-  margin-top: -50px;
-  background: #360353;
-  border-radius: 15px;
+  background: #d3e005;
 }
 
 .registro h3 {
   display: flex;
   font-weight: 300;
   font-family: "Oswald", sans-serif;
-  font-size: 115px;
+  font-size: 33px;
   width: 100%;
   color: #ffffff;
 }
