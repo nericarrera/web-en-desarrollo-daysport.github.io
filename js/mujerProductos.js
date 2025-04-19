@@ -45,7 +45,7 @@ export  const productosMujer = [
     {
         id: "mujer-2",
         nombre: "Calza Nike Pro",
-        etiqueta: "novedad",
+        etiqueta: "",
         precio: 16000,
         categoria: "calzas",
         seccion: "mujer",
@@ -206,8 +206,8 @@ export  const productosMujer = [
 
     {   
         id: "mujer-7", 
-        nombre: "", 
-        etiqueta: "novedad",
+        nombre: "Calza nike Speak", 
+        etiqueta: "",
         precio: 13500, 
         categoria: "calzas", 
         seccion: "mujer",
@@ -239,7 +239,7 @@ export  const productosMujer = [
 
     { id: "mujer-8", 
         nombre: "Calza Nike Fluorecent", 
-        etiqueta: "novedad",
+        etiqueta: "",
         precio: 13500, 
         categoria: "calzas",
         seccion: "mujer",
@@ -268,7 +268,7 @@ export  const productosMujer = [
 
     { id: "mujer-9", 
         nombre: "Calza Adidas Original", 
-        etiqueta: "novedad",
+        etiqueta: "",
         precio: 13500, 
         categoria: "calzas", 
         seccion: "mujer",
