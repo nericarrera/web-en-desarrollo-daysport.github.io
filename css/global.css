@@ -847,6 +847,7 @@
   color: #673ab7;
   transition: all 500ms ease;
   -webkit-text-stroke: 1px #000;
+  cursor: pointer;
 }
 
 .banner-slide {
