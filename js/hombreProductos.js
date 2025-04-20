@@ -99,42 +99,39 @@ export const productosHombre = [
     },
         
     { id: "hombre-4", 
-        nombre: "Blusa de Lino", 
-        precio: 9000, 
-        categoria: "remeras",
+        nombre: "Conjunto tech Nike",
+        etiqueta: "novedad", 
+        precio: 70000, 
+        categoria: "conjuntos",
         seccion: "hombre",
-        temporada: "verano", 
-        imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
+        temporada: "invierno", 
+        imagen: ["img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"], 
         imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg",
+            "img/hombre/conjuntos/conjunto-tech-campera-negro3.jpeg",
          ],
-        hoverImagenes: [],
-        miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
-        etiqueta: "novedad",
+        hoverImagenes: ["img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg"],
+        miniaturas: ["img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg",
+            "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg",
+            "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg",
+        ],
         variantes: [
             { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-negro-detalle.jpeg"
+                "img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"
             ],
-            rojo: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-rojo-detalle.jpeg"
+            blanco: [
+                "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg",              
             ],
-            azul: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-frente.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-espalda.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-costado.jpeg",
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-azul-detalle.jpeg"
-            ]
+            gris: [
+                "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg",                
+            ],
+            beige: [
+                "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg"
+
+            ],
         }
     },
 
