@@ -825,7 +825,6 @@
   width: 30%;
   height: 48%;
   position: absolute;
-  z-index: 2000;
   padding: 10px;
   margin: 15px;
   border-radius: 57px;
@@ -839,7 +838,6 @@
   font-size: 50px;
   font-weight: 600;
   color: #673ab7;
-  z-index: 22;
 }
 
 .banner-titulo0:hover {
