@@ -113,6 +113,7 @@ export const productosHombre = [
          ],
         hoverImagenes: ["img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg"],
         miniaturas: [
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"},
             {src: "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg"},
             {src: "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg"},
             {src: "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg"},
