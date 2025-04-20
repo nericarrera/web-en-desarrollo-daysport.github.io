@@ -338,7 +338,6 @@
   cursor: pointer;
   transition: border-color 0.2s ease;
   object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
-  border-radius: 7px;
 }
 
 .thumbnail-image:hover {
