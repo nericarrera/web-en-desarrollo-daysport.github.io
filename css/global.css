@@ -830,6 +830,7 @@
   border-radius: 57px;
   text-align: center;
   -webkit-text-stroke: 1px #cddc398a;
+  z-index: 1;
 }
 
 .banner-titulo0 {
