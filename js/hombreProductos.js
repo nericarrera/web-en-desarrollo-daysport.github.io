@@ -65,6 +65,7 @@ export const productosHombre = [
 
     { id: "hombre-3",
         nombre: "Campera Puffer Boss",
+        etiqueta: "novedad",
         precio: 13500,
         categoria: "camperas",
         seccion: "hombre",
@@ -73,30 +74,26 @@ export const productosHombre = [
         imagenesDetalle: [
             "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
             "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
-        hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
+        hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
         miniaturas: [
-            "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
-            "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
-            "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"
+            "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+            "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
         ], // Miniaturas para el carrusel
-        etiqueta: "novedad",
         variantes: [
-            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "violeta", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "verde", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
-            negro: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg",
+            violeta: [
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg",
             ],
-            rosa: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
+            blanco: [
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
             ],
-            gris: [
-                "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg",
+            verde: [
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
             ]
         }
     },
