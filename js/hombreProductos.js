@@ -44,8 +44,8 @@ export const productosHombre = [
             "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro4.jpeg",
          ],
         miniaturas: [
-            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"},
-            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"},
+            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg", hover:""},
+            {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg", hover:""},
         ],
         hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg"                        
         ], // Hover en el carrusel
@@ -77,9 +77,9 @@ export const productosHombre = [
          ],
         hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
         miniaturas: [
-            {src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"},
-            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg"},
-            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg"},
+            {src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg", hover:""},
+            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", hover:""},
+            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg", hover:""},
         ], // Miniaturas para el carrusel
         variantes: [
             { color: "violeta", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -113,10 +113,10 @@ export const productosHombre = [
          ],
         hoverImagenes: ["img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg"],
         miniaturas: [
-            {src: "img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"},
-            {src: "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg"},
-            {src: "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg"},
-            {src: "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg"},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg", hover:""},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg", hover:""},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg", hover:""},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg", hover:""},
         ],
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -142,7 +142,8 @@ export const productosHombre = [
     },
 
     { id: "hombre-5", 
-        nombre: "Calza Nike Radeon", 
+        nombre: "Calza Nike Radeon",
+        etiqueta: "novedad",
         precio: 13500, 
         categoria: "calzas", 
         seccion: "hombre",
@@ -154,8 +155,10 @@ export const productosHombre = [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: [],
-        miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
-        etiqueta: "novedad",
+        miniaturas: [
+            {src: "img/mujer/calzas/calza-nike-radeon-1.jpeg", hover:""}
+        ],
+        
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -182,8 +185,10 @@ export const productosHombre = [
         }
     },
 
-    { id: "hombre-6", 
-        nombre: "Calza Nike Grofada", 
+    {   
+        id: "hombre-6", 
+        nombre: "Calza Nike Grofada",
+        etiqueta: "novedad",
         precio: 15000, 
         categoria: "calzas", 
         seccion: "hombre",
@@ -195,8 +200,8 @@ export const productosHombre = [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: [],
-        miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
-        etiqueta: "novedad",
+        miniaturas: [
+            {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg", hover:""}],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -224,6 +229,7 @@ export const productosHombre = [
     },
     { id: "hombre-7", 
         nombre: "Calza Nike Speak", 
+        etiqueta: "novedad",
         precio: 13500, 
         categoria: "calzas", 
         seccion: "hombre",
@@ -235,8 +241,10 @@ export const productosHombre = [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: [],
-        miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
-        etiqueta: "novedad",
+        miniaturas: [
+            {src: "img/mujer/calzas/calza-nike-speak-1.jpeg", hover:""}
+        ],
+        
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -264,6 +272,7 @@ export const productosHombre = [
     },
     { id: "hombre-8", 
         nombre: "Calza Nike Fluorecent", 
+        etiqueta: "novedad",
         precio: 13500, 
         categoria: "calzas",
         seccion: "hombre",
@@ -275,8 +284,9 @@ export const productosHombre = [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: [],
-        miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
-        etiqueta: "novedad",
+        miniaturas: [
+            {src: "img/mujer/calzas/calza-nike-fluor-2.jpeg", hover:""}
+        ],
         variantes: [
             { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -302,8 +312,10 @@ export const productosHombre = [
             ]
         } 
     },
-    { id: "hombre-9", 
+    { 
+        id: "hombre-9", 
         nombre: "Calza Adidas Original", 
+        etiqueta: "novedad",
         precio: 13500, 
         categoria: "calzas", 
         seccion: "hombre",
@@ -315,8 +327,9 @@ export const productosHombre = [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: [],
-        miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
-        etiqueta: "novedad",
+        miniaturas: [
+            {src: "img/mujer/calzas/calza-adidas-original-1.jpeg", hover:""}
+        ],
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
