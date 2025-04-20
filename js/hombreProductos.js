@@ -64,15 +64,15 @@ export const productosHombre = [
     },
 
     { id: "hombre-3",
-        nombre: "Campera Deportiva Nike",
+        nombre: "Campera Puffer Boss",
         precio: 13500,
         categoria: "camperas",
         seccion: "hombre",
-        temporada: "media estacion",
-        imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
+        temporada: "invierno",
+        imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"], // Imagen principal para el carrusel
         imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+            "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
          ],
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
