@@ -1121,6 +1121,7 @@
   height: 200px;
   border: 0;
   justify-items: left;
+  border-radius: 10px;
 }
 
 .ubicacion {
