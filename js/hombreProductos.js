@@ -77,8 +77,8 @@ export const productosHombre = [
          ],
         hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
         miniaturas: [
-            "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
-            "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
+            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg"},
+            { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg"},
         ], // Miniaturas para el carrusel
         variantes: [
             { color: "violeta", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -111,9 +111,10 @@ export const productosHombre = [
             "img/hombre/conjuntos/conjunto-tech-campera-negro3.jpeg",
          ],
         hoverImagenes: ["img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg"],
-        miniaturas: ["img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg",
-            "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg",
-            "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg",
+        miniaturas: [
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg"},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-blanco1.jpeg"},
+            {src: "img/hombre/conjuntos/conjunto-tech-campera-beige1.jpeg"},
         ],
         variantes: [
             { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
