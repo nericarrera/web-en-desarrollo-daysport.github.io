@@ -11,6 +11,11 @@ export const productosHombre = [
         temporada: "invierno",
         descripcion: "Buzo de algodon frizado, cuello redondo liso, para usar en cualquier ocasion",
         imagen: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"],
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         miniaturas: [
         ],
         hoverImagenes: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"], // Hover en el carrusel
@@ -34,6 +39,10 @@ export const productosHombre = [
         temporada: "invierno",
         descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"],
+        imagenesDetalle: [
+            "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro3.jpeg",
+            "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro4.jpeg",
+         ],
         miniaturas: [
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"},
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg"},
@@ -61,6 +70,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "media estacion",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         miniaturas: [
             "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
@@ -94,6 +108,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano", 
         imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         etiqueta: "novedad",
@@ -129,6 +148,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
         etiqueta: "novedad",
@@ -165,6 +189,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
         etiqueta: "novedad",
@@ -200,6 +229,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
         etiqueta: "novedad",
@@ -235,6 +269,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "invierno", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
         etiqueta: "novedad",
@@ -270,6 +309,11 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
+        imagenesDetalle: [
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+         ],
         hoverImagenes: [],
         miniaturas: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
         etiqueta: "novedad",
