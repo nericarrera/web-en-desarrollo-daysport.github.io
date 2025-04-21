@@ -1069,7 +1069,6 @@
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.2s ease;
-  border-radius: 7px;
 }
 
 .thumbnail-image:hover {
