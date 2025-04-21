@@ -414,10 +414,6 @@
   transform: scale(2); /* Nivel de zoom */
 }
 
-.thumbnails-container {
-  display: none !important;
-}
-
 /*-------------------------------------------------------------------*/
 
 .product-gallery img {
