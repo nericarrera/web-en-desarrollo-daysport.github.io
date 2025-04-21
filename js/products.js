@@ -1,4 +1,5 @@
 // Importar los productos (asegúrate de que la ruta sea correcta)
+
 import { productosMujer } from '/js/mujerProductos.js';
 import { productosHombre } from '/js/hombreProductos.js';
 import { productosNiños } from '/js/niñosProductos.js';
@@ -82,40 +83,31 @@ function mostrarDetallesProducto(product) {
     // Mover el zoom al mover el mouse
     zoomContainer.addEventListener('mousemove', handleZoom);
 
+    // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
         const zoomContainer = document.querySelector('.zoom-container');
-        zoomContainer.innerHTML = ''; // Limpiar contenedor
+        zoomContainer.innerHTML = ''; // Limpiamos el contenedor
     
-        // Verificar si tenemos imágenes
-        if (!imagenes || imagenes.length === 0) {
-            console.warn('No hay imágenes para mostrar');
-            return;
-        }
+        // Combinamos imagen principal + imágenes de detalle
+        const todasLasImagenes = [...product.imagen, ...product.imagenesDetalle];
     
-        // Mostrar todas las imágenes del array
-        imagenes.forEach((imgSrc, index) => {
+        // Creamos y agregamos todas las imágenes
+        todasLasImagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
-            img.alt = `Imagen ${index + 1} del producto`;
+            img.alt = `Imagen ${index + 1}`;
             img.classList.add('main-product-image');
             
-            // Mantener la funcionalidad de zoom
+            // Mantenemos tu función de zoom actual
             img.addEventListener('click', function() {
-                // Desactivar zoom en todas las imágenes primero
-                document.querySelectorAll('.main-product-image').forEach(img => {
-                    img.classList.remove('zoomed');
-                });
-                
-                // Activar zoom en esta imagen
                 this.classList.toggle('zoomed');
-                
-                // Hacer scroll si está zoomed
                 if (this.classList.contains('zoomed')) {
                     this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
             
-            zoomContainer.appendChild(img);        
+            zoomContainer.appendChild(img);
+        
     });
 
        // Mostrar miniaturas
@@ -166,7 +158,7 @@ function mostrarDetallesProducto(product) {
             // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
 colorButton.addEventListener('click', () => {
     if (product.imagenColores && product.imagenColores[color]) {
-        // Mostrar TODAS las imágenes del color seleccionado
+        // Usamos todas las imágenes del color seleccionado
         mostrarImagenes(product.imagenColores[color]);
     }
     actualizarTalles(product, color);
@@ -174,7 +166,7 @@ colorButton.addEventListener('click', () => {
 
             coloresContainer.appendChild(colorButton);
         });
-
+        
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
