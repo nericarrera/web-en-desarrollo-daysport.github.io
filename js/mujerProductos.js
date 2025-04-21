@@ -408,10 +408,13 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg",
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg",
+                
             ],
             blanco: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg",
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco2.jpeg",
             ],
             negro: [
                 "img/mujer/camperas-chaleco/camperachaleco-lacoste-negro1.jpeg"
