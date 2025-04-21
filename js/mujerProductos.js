@@ -388,36 +388,39 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Campera con chaleco interior con piel puffer, capucha desmontable.",
         imagen: ["img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg"], 
-        imagenesDetalle: [
+        imagenesDetalle: [ "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg",
         
         ],
         miniaturas: [ 
-            {src: "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg", hover:""},
-            {src: "img/mujer/camperas-algodon/campera-gap-algodon-grisme1.jpeg", hover:""},
-            {src: "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg", hover:""},
-            {src: "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg", hover:""},
-            {src: "img/mujer/camperas-algodon/campera-gap-algodon-veragu1.jpeg", hover:""},
+            {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg"},
+            {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco2.jpeg"},
+            {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-negro1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-negro2.jpeg"},
+            {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar2.jpeg"},
 
         ],
-        hoverImagenes: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"],
+        hoverImagenes: ["img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg"],
         variantes: [
+            { color: "beige", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "beige", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "verde", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-
-            ],
-            negro: [
-                "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg"
-            ],
-            rosa: [
-                "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg"
             ],
             blanco: [
-                "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg"
+            ],
+            negro: [
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-negro1.jpeg"
+            ],
+            rosa: [
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-rosa1.jpeg"
+            ],
+            verde: [
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar1.jpeg"
             ],
         }
         
