@@ -170,17 +170,14 @@ if (product.imagenColores && product.imagenColores[primerColor]) {
 
             // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
             colorButton.addEventListener('click', () => {
-                // Resetear cualquier zoom activo primero
-                document.querySelectorAll('.main-product-image.zoomed').forEach(img => {
-                    img.classList.remove('zoomed');
-                });
-                
                 if (product.imagenColores && product.imagenColores[color]) {
-                    // Mostrar imágenes del nuevo color
+                    // Mostrar TODAS las imágenes del color seleccionado
                     mostrarImagenes(product.imagenColores[color]);
                 }
                 actualizarTalles(product, color);
             });
+
+            coloresContainer.appendChild(colorButton);
         });
 
     } else {
