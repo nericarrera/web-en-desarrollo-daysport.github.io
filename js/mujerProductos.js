@@ -166,8 +166,7 @@ export  const productosMujer = [
             ],
             gris: [
                 "img/mujer/calzas/calza-nike-radeon-1.jpeg"
-            ],
-           
+            ], 
         }
     },
 
@@ -292,7 +291,6 @@ export  const productosMujer = [
                 
             ],
         }
-        
     },
 
     { id: "mujer-10", 
@@ -334,7 +332,6 @@ export  const productosMujer = [
                 "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg"
             ],
         }
-        
     },
 
     { id: "mujer-11", 
@@ -380,6 +377,53 @@ export  const productosMujer = [
         }
         
     },
+
+    { 
+        id: "mujer-12", 
+        nombre: "Campera Chaleco Puffer con piel", 
+        etiqueta: "novedad",
+        precio: 70000, 
+        categoria: "campera", 
+        seccion: "mujer",
+        temporada: "invierno",
+        descripcion: "Campera con chaleco interior con piel puffer, capucha desmontable.",
+        imagen: ["img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg"], 
+        imagenesDetalle: [
+        
+        ],
+        miniaturas: [ 
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-grisme1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg", hover:""},
+            {src: "img/mujer/camperas-algodon/campera-gap-algodon-veragu1.jpeg", hover:""},
+
+        ],
+        hoverImagenes: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"],
+        variantes: [
+            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "beige", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        ],        
+        imagenColores: { // Imágenes específicas por color para la página de producto
+            beige: [
+
+            ],
+            negro: [
+                "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg"
+            ],
+            rosa: [
+                "img/mujer/camperas-algodon/campera-gap-algodon-rosbb1.jpeg"
+            ],
+            blanco: [
+                "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"
+            ],
+        }
+        
+    },
+
+
 
     
 ];
