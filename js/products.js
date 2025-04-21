@@ -83,23 +83,30 @@ function mostrarDetallesProducto(product) {
     zoomContainer.addEventListener('mousemove', handleZoom);
 
     // Función para mostrar imágenes en zoom-container y miniaturas
-function mostrarImagenes(imagenes) {
-    // Limpiar contenedores
-    zoomContainer.innerHTML = '';
-    thumbnailsContainer.innerHTML = '';
-
-          // Mostrar imágenes en zoom-container
-    imagenes.forEach((imagenSrc, index) => {
-        const image = document.createElement('img');
-        image.src = imagenSrc;
-        image.alt = `Imagen ${index + 1}`;
-        image.classList.add('main-product-image');
-        zoomContainer.appendChild(image);
-
-        // Agregar funcionalidad de zoom
-        image.addEventListener('click', () => {
-            image.classList.toggle('zoomed');
-        });
+    function mostrarImagenes(imagenes) {
+        const zoomContainer = document.querySelector('.zoom-container');
+        zoomContainer.innerHTML = ''; // Limpiamos el contenedor
+    
+        // Combinamos imagen principal + imágenes de detalle
+        const todasLasImagenes = [...product.imagen, ...product.imagenesDetalle];
+    
+        // Creamos y agregamos todas las imágenes
+        todasLasImagenes.forEach((imgSrc, index) => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `Imagen ${index + 1}`;
+            img.classList.add('main-product-image');
+            
+            // Mantenemos tu función de zoom actual
+            img.addEventListener('click', function() {
+                this.classList.toggle('zoomed');
+                if (this.classList.contains('zoomed')) {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+            
+            zoomContainer.appendChild(img);
+        
     });
 
        // Mostrar miniaturas
@@ -147,21 +154,18 @@ function mostrarImagenes(imagenes) {
                 colorButton.style.height = '50px';
             }
 
-            colorButton.addEventListener('click', () => {
-                // Actualizar las imágenes y miniaturas con las del color seleccionado
-                if (product.imagenColores && product.imagenColores[color]) {
-                    mostrarImagenes(product.imagenColores[color]); // Llamar a mostrarImagenes con las imágenes del color seleccionado
-                    image.classList.remove('zoomed'); // Desactivar zoom al cambiar la imagen
-                    isZoomed = false; // Restaurar estado del zoom
-                    zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor
-                }
-            
-                // Actualizar los talles disponibles para el color seleccionado
-                actualizarTalles(product, color);
-            });
+            // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
+colorButton.addEventListener('click', () => {
+    if (product.imagenColores && product.imagenColores[color]) {
+        // Usamos todas las imágenes del color seleccionado
+        mostrarImagenes(product.imagenColores[color]);
+    }
+    actualizarTalles(product, color);
+});
 
             coloresContainer.appendChild(colorButton);
         });
+        
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
