@@ -84,39 +84,42 @@ function mostrarDetallesProducto(product) {
 
     function mostrarImagenes(imagenes) {
         const zoomContainer = document.querySelector('.zoom-container');
-        zoomContainer.innerHTML = ''; // Limpiar contenedor
+        
+        // 1. Primero desactivar cualquier zoom activo
+        document.querySelectorAll('.main-product-image.zoomed').forEach(img => {
+            img.classList.remove('zoomed');
+        });
+        
+        // 2. Limpiar el contenedor
+        zoomContainer.innerHTML = '';
     
-        // Verificar si tenemos imágenes
-        if (!imagenes || imagenes.length === 0) {
-            console.warn('No hay imágenes para mostrar');
-            return;
-        }
-    
-        // Mostrar todas las imágenes del array
+        // 3. Mostrar todas las imágenes del array
         imagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.alt = `Imagen ${index + 1} del producto`;
             img.classList.add('main-product-image');
             
-            // Mantener la funcionalidad de zoom
+            // 4. Nueva función de zoom mejorada
             img.addEventListener('click', function() {
                 // Desactivar zoom en todas las imágenes primero
                 document.querySelectorAll('.main-product-image').forEach(img => {
                     img.classList.remove('zoomed');
                 });
                 
-                // Activar zoom en esta imagen
+                // Activar zoom solo en esta imagen
                 this.classList.toggle('zoomed');
                 
-                // Hacer scroll si está zoomed
+                // Ajustar el scroll si está zoomed
                 if (this.classList.contains('zoomed')) {
-                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
                 }
             });
             
-            zoomContainer.appendChild(img);        
-    });
+            zoomContainer.appendChild(img);
+        });
 
        // Mostrar miniaturas
     imagenes.forEach((imagenSrc, index) => {
@@ -135,11 +138,13 @@ function mostrarDetallesProducto(product) {
     });
 }
 
+    
     // Mostrar imágenes iniciales (primer color por defecto)
-    const primerColor = product.variantes[0].color;
-    if (product.imagenColores && product.imagenColores[primerColor]) {
-        mostrarImagenes(product.imagenColores[primerColor]);
-    }
+const primerColor = product.variantes[0].color;
+if (product.imagenColores && product.imagenColores[primerColor]) {
+    // Mostrar todas las imágenes del primer color
+    mostrarImagenes(product.imagenColores[primerColor]);
+}
 
     // Mostrar colores disponibles
     const coloresContainer = document.getElementById('product-colors');
@@ -164,15 +169,18 @@ function mostrarDetallesProducto(product) {
             }
 
             // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
-colorButton.addEventListener('click', () => {
-    if (product.imagenColores && product.imagenColores[color]) {
-        // Usamos todas las imágenes del color seleccionado
-        mostrarImagenes(product.imagenColores[color]);
-    }
-    actualizarTalles(product, color);
-});
-
-            coloresContainer.appendChild(colorButton);
+            colorButton.addEventListener('click', () => {
+                // Resetear cualquier zoom activo primero
+                document.querySelectorAll('.main-product-image.zoomed').forEach(img => {
+                    img.classList.remove('zoomed');
+                });
+                
+                if (product.imagenColores && product.imagenColores[color]) {
+                    // Mostrar imágenes del nuevo color
+                    mostrarImagenes(product.imagenColores[color]);
+                }
+                actualizarTalles(product, color);
+            });
         });
 
     } else {

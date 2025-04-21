@@ -325,13 +325,21 @@
 
 /* Estilo para cada imagen */
 .main-product-image {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  cursor: zoom-in;
-  border: 1px solid #eee;
   transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.main-product-image.zoomed {
+  transform: scale(2);
+  cursor: grab;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset del cursor cuando no hay zoom */
+.main-product-image:not(.zoomed) {
+  cursor: zoom-in;
 }
 
 .main-product-image:hover {
