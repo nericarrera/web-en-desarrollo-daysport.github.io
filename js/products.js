@@ -82,41 +82,43 @@ function mostrarDetallesProducto(product) {
     // Mover el zoom al mover el mouse
     zoomContainer.addEventListener('mousemove', handleZoom);
 
-    function mostrarImagenes(imagenes) {
+    function mostrarImagenes(imagenes = []) {
         const zoomContainer = document.querySelector('.zoom-container');
-        zoomContainer.innerHTML = ''; // Limpiar contenedor
-    
-        // Verificar si tenemos imágenes
+        
+        // 1. Limpiar completamente el contenedor
+        zoomContainer.innerHTML = '';
+        
+        // 2. Verificar si hay imágenes
         if (!imagenes || imagenes.length === 0) {
-            console.warn('No hay imágenes para mostrar');
+            const placeholder = document.createElement('div');
+            placeholder.textContent = 'No hay imágenes disponibles';
+            placeholder.style.gridColumn = '1 / -1';
+            placeholder.style.textAlign = 'center';
+            placeholder.style.padding = '20px';
+            zoomContainer.appendChild(placeholder);
             return;
         }
-    
-        // Mostrar todas las imágenes del array
+        
+        // 3. Mostrar todas las imágenes del array
         imagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
-            img.alt = `Imagen ${index + 1} del producto`;
+            img.alt = `Imagen ${index + 1}`;
             img.classList.add('main-product-image');
             
-            // Mantener la funcionalidad de zoom
+            // Función de zoom mejorada
             img.addEventListener('click', function() {
-                // Desactivar zoom en todas las imágenes primero
-                document.querySelectorAll('.main-product-image').forEach(img => {
-                    img.classList.remove('zoomed');
+                // Desactivar zoom en todas las imágenes
+                document.querySelectorAll('.main-product-image').forEach(i => {
+                    if (i !== this) i.classList.remove('zoomed');
                 });
                 
-                // Activar zoom en esta imagen
+                // Alternar zoom en esta imagen
                 this.classList.toggle('zoomed');
-                
-                // Hacer scroll si está zoomed
-                if (this.classList.contains('zoomed')) {
-                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
             });
             
-            zoomContainer.appendChild(img);        
-    });
+            zoomContainer.appendChild(img);
+        });
 
        // Mostrar miniaturas
     imagenes.forEach((imagenSrc, index) => {
@@ -167,14 +169,17 @@ if (product.imagenColores && product.imagenColores[primerColor]) {
 
             // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
             colorButton.addEventListener('click', () => {
-                if (product.imagenColores && product.imagenColores[color]) {
-                    // Mostrar TODAS las imágenes del color seleccionado
-                    mostrarImagenes(product.imagenColores[color]);
-                }
+                const color = colorButton.getAttribute('data-color');
+                
+                // 1. Obtener imágenes específicas para este color
+                const imagenesColor = product.imagenColores[color] || [];
+                
+                // 2. Mostrar solo las imágenes de este color
+                mostrarImagenes(imagenesColor);
+                
+                // 3. Actualizar talles
                 actualizarTalles(product, color);
             });
-
-            coloresContainer.appendChild(colorButton);
         });
 
     } else {
@@ -261,6 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html'; // Redirigir si no se encuentra el producto
     }
 });
+
+// Al cargar el producto por primera vez
+const primerColor = product.variantes[0].color;
+mostrarImagenes(product.imagenColores[primerColor]);
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
