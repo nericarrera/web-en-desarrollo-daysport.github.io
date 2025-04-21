@@ -84,42 +84,39 @@ function mostrarDetallesProducto(product) {
 
     function mostrarImagenes(imagenes) {
         const zoomContainer = document.querySelector('.zoom-container');
-        
-        // 1. Primero desactivar cualquier zoom activo
-        document.querySelectorAll('.main-product-image.zoomed').forEach(img => {
-            img.classList.remove('zoomed');
-        });
-        
-        // 2. Limpiar el contenedor
-        zoomContainer.innerHTML = '';
+        zoomContainer.innerHTML = ''; // Limpiar contenedor
     
-        // 3. Mostrar todas las imágenes del array
+        // Verificar si tenemos imágenes
+        if (!imagenes || imagenes.length === 0) {
+            console.warn('No hay imágenes para mostrar');
+            return;
+        }
+    
+        // Mostrar todas las imágenes del array
         imagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.alt = `Imagen ${index + 1} del producto`;
             img.classList.add('main-product-image');
             
-            // 4. Nueva función de zoom mejorada
+            // Mantener la funcionalidad de zoom
             img.addEventListener('click', function() {
                 // Desactivar zoom en todas las imágenes primero
                 document.querySelectorAll('.main-product-image').forEach(img => {
                     img.classList.remove('zoomed');
                 });
                 
-                // Activar zoom solo en esta imagen
+                // Activar zoom en esta imagen
                 this.classList.toggle('zoomed');
                 
-                // Ajustar el scroll si está zoomed
+                // Hacer scroll si está zoomed
                 if (this.classList.contains('zoomed')) {
-                    setTimeout(() => {
-                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
             
-            zoomContainer.appendChild(img);
-        });
+            zoomContainer.appendChild(img);        
+    });
 
        // Mostrar miniaturas
     imagenes.forEach((imagenSrc, index) => {
