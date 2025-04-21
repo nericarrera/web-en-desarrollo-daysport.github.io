@@ -82,31 +82,40 @@ function mostrarDetallesProducto(product) {
     // Mover el zoom al mover el mouse
     zoomContainer.addEventListener('mousemove', handleZoom);
 
-    // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
         const zoomContainer = document.querySelector('.zoom-container');
-        zoomContainer.innerHTML = ''; // Limpiamos el contenedor
+        zoomContainer.innerHTML = ''; // Limpiar contenedor
     
-        // Combinamos imagen principal + imágenes de detalle
-        const todasLasImagenes = [...product.imagen, ...product.imagenesDetalle];
+        // Verificar si tenemos imágenes
+        if (!imagenes || imagenes.length === 0) {
+            console.warn('No hay imágenes para mostrar');
+            return;
+        }
     
-        // Creamos y agregamos todas las imágenes
-        todasLasImagenes.forEach((imgSrc, index) => {
+        // Mostrar todas las imágenes del array
+        imagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
-            img.alt = `Imagen ${index + 1}`;
+            img.alt = `Imagen ${index + 1} del producto`;
             img.classList.add('main-product-image');
             
-            // Mantenemos tu función de zoom actual
+            // Mantener la funcionalidad de zoom
             img.addEventListener('click', function() {
+                // Desactivar zoom en todas las imágenes primero
+                document.querySelectorAll('.main-product-image').forEach(img => {
+                    img.classList.remove('zoomed');
+                });
+                
+                // Activar zoom en esta imagen
                 this.classList.toggle('zoomed');
+                
+                // Hacer scroll si está zoomed
                 if (this.classList.contains('zoomed')) {
                     this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             });
             
-            zoomContainer.appendChild(img);
-        
+            zoomContainer.appendChild(img);        
     });
 
        // Mostrar miniaturas
@@ -165,7 +174,7 @@ colorButton.addEventListener('click', () => {
 
             coloresContainer.appendChild(colorButton);
         });
-        
+
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
     }
