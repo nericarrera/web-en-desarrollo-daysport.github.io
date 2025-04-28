@@ -83,22 +83,18 @@ function mostrarDetallesProducto(product) {
     // Mover el zoom al mover el mouse
     zoomContainer.addEventListener('mousemove', handleZoom);
 
-    // Función para mostrar imágenes en zoom-container y miniaturas
     function mostrarImagenes(imagenes) {
         const zoomContainer = document.querySelector('.zoom-container');
-        zoomContainer.innerHTML = ''; // Limpiamos el contenedor
+        zoomContainer.innerHTML = ''; // Limpiar contenedor
     
-        // Combinamos imagen principal + imágenes de detalle
-        const todasLasImagenes = [...product.imagen, ...product.imagenesDetalle];
-    
-        // Creamos y agregamos todas las imágenes
-        todasLasImagenes.forEach((imgSrc, index) => {
+        // Crear y agregar solo las imágenes del color seleccionado
+        imagenes.forEach((imgSrc, index) => {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.alt = `Imagen ${index + 1}`;
             img.classList.add('main-product-image');
             
-            // Mantenemos tu función de zoom actual
+            // Mantener la función de zoom
             img.addEventListener('click', function() {
                 this.classList.toggle('zoomed');
                 if (this.classList.contains('zoomed')) {
@@ -107,24 +103,23 @@ function mostrarDetallesProducto(product) {
             });
             
             zoomContainer.appendChild(img);
-        
-    });
-
-       // Mostrar miniaturas
-    imagenes.forEach((imagenSrc, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imagenSrc;
-        thumbnail.alt = `Miniatura ${index + 1}`;
-        thumbnail.classList.add('thumbnail-image');
-        thumbnail.addEventListener('click', () => {
-            // Cambiar la imagen principal al hacer clic en la miniatura
-            const mainImages = document.querySelectorAll('.main-product-image');
-            mainImages.forEach((img, i) => {
-                img.src = imagenSrc; // Cambiar todas las imágenes principales
-            });
         });
-        thumbnailsContainer.appendChild(thumbnail);
-    });
+    
+        // Mostrar miniaturas (esto ya funciona bien)
+        thumbnailsContainer.innerHTML = ''; // Limpiar miniaturas anteriores
+        imagenes.forEach((imagenSrc, index) => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imagenSrc;
+            thumbnail.alt = `Miniatura ${index + 1}`;
+            thumbnail.classList.add('thumbnail-image');
+            thumbnail.addEventListener('click', () => {
+                // Cambiar todas las imágenes principales al hacer clic
+                document.querySelectorAll('.main-product-image').forEach(img => {
+                    img.src = imagenSrc;
+                });
+            });
+            thumbnailsContainer.appendChild(thumbnail);
+        });
 }
 
     // Mostrar imágenes iniciales (primer color por defecto)
