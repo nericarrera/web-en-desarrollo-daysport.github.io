@@ -39,8 +39,6 @@ export  const productosMujer = [
         negro: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
         ]
     }
 },
