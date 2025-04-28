@@ -51,10 +51,6 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "media estacion",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
-        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-        imagenesDetalle: [
-
-        ],
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}

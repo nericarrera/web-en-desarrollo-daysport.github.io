@@ -151,13 +151,12 @@ function mostrarDetallesProducto(product) {
             }
 
             // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
-colorButton.addEventListener('click', () => {
-    if (product.imagenColores && product.imagenColores[color]) {
-        // Usamos todas las imágenes del color seleccionado
-        mostrarImagenes(product.imagenColores[color]);
-    }
-    actualizarTalles(product, color);
-});
+            colorButton.addEventListener('click', () => {
+                if (product.imagenColores && product.imagenColores[color]) {
+                    mostrarImagenes(product.imagenColores[color]);
+                }
+                actualizarTalles(product, color);
+            });
 
             coloresContainer.appendChild(colorButton);
         });
