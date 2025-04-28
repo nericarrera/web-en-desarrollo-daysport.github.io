@@ -344,9 +344,8 @@
 }
 
 .thumbnails-container {
-  display: contents;
-  flex-wrap: wrap;
-  gap: 3px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 5 columnas */
 }
 
 .thumbnail-image {
