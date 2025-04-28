@@ -10,6 +10,12 @@ export  const productosMujer = [
     seccion: "mujer",
     temporada: "verano",
     descripcion: "Remera de modal soft, cuello redondo suave y cómoda, ideal para días de verano.",
+    imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
+    imagenesDetalle: [
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+     ],
     miniaturas: [
        {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg", hover:""}
         
@@ -29,15 +35,9 @@ export  const productosMujer = [
     imagenColores: {
         celeste: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
         ],
         negro: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
         ]
     }
 },
@@ -51,6 +51,10 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "media estacion",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
+        imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
+        imagenesDetalle: [
+
+        ],
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
