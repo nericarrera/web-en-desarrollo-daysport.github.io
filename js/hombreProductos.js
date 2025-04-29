@@ -67,7 +67,7 @@ export const productosHombre = [
     { id: "hombre-3",
         nombre: "Campera Puffer Boss",
         etiqueta: "novedad",
-        precio: 13500,
+        precio: 65000,
         categoria: "camperas",
         seccion: "hombre",
         temporada: "invierno",
