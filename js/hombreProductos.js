@@ -88,7 +88,7 @@ export const productosHombre = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             violeta: [
-                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg",
             ],
             blanco: [
                 "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
