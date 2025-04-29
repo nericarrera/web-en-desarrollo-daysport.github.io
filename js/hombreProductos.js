@@ -73,8 +73,7 @@ export const productosHombre = [
         temporada: "invierno",
         imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"], // Imagen principal para el carrusel
         imagenesDetalle: [
-            "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
-            "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
+            
          ],
         hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
         miniaturas: [
