@@ -93,6 +93,7 @@ export const productosHombre = [
             ],
             blanco: [
                 "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg",
+                "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
             ],
             verde: [
                 "img/hombre/camperas/camperas-abrigo/campera-abrigo-militar-neg-1.jpeg",
