@@ -12,11 +12,10 @@ export const productosHombre = [
         descripcion: "Buzo de algodon frizado, cuello redondo liso, para usar en cualquier ocasion",
         imagen: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"],
         imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+           
          ],
         miniaturas: [
+            {src: "img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg", hover:""},
         ],
         hoverImagenes: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"], // Hover en el carrusel
         variantes: [
@@ -25,6 +24,8 @@ export const productosHombre = [
         imagenColores: {
             azul: [
                 "img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg",
+                "img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg",
+             
             ],
         }
     },
