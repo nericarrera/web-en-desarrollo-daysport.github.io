@@ -75,7 +75,7 @@ export const productosHombre = [
         imagenesDetalle: [
             
          ],
-        hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"], // Hover en el carrusel
+        hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
         miniaturas: [
             {src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg", hover:""},
             { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", hover:""},
