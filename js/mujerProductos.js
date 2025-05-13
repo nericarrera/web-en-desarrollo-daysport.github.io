@@ -13,14 +13,12 @@ export  const productosMujer = [
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
     imagenesDetalle: [
         "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
+        
      ],
     miniaturas: [
-       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg", hover:""},
+       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" },
         
     ],
-    hoverImagenes: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"], // Hover en el carrusel
     variantes: [
         { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
         { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
@@ -40,7 +38,7 @@ export  const productosMujer = [
         negro: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg",
+            
         ]
     }
 },
@@ -62,7 +60,6 @@ export  const productosMujer = [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -95,7 +92,6 @@ export  const productosMujer = [
             {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", hover:"" },
             {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", hover:""},
         ], // Miniaturas para el carrusel
-        hoverImagenes: ["img/mujer/camperas-deportivas/campera-deportiva-nike-5.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -131,7 +127,6 @@ export  const productosMujer = [
             {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg", hover:""}
 
         ], 
-        hoverImagenes: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
         variantes: [
             { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
@@ -158,7 +153,6 @@ export  const productosMujer = [
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"},
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"],
         variantes: [
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -189,7 +183,6 @@ export  const productosMujer = [
             {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"}
 
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -223,7 +216,6 @@ export  const productosMujer = [
             {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"}
 
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-speak-1.jpeg"],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -255,7 +247,6 @@ export  const productosMujer = [
             {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"}
 
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-nike-fluor-2.jpeg"],
         variantes: [
             { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -283,7 +274,6 @@ export  const productosMujer = [
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"}
         ],
-        hoverImagenes: ["img/mujer/calzas/calza-adidas-original-1.jpeg"],
         variantes: [
             { color: "negro", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "multicolor", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
@@ -309,12 +299,11 @@ export  const productosMujer = [
         
         ],
         miniaturas: [ 
-            {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg", hover:""},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg", hover:"img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg"},
             {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg", hover:""},
-            {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg", hover:""},
+            {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg", hover:"img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg"},
 
         ],
-        hoverImagenes: ["img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-rosaviejo1.jpeg"],
         variantes: [
             { color: "beige", talla: "L", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "celeste", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -357,7 +346,6 @@ export  const productosMujer = [
             {src: "img/mujer/camperas-algodon/campera-gap-algodon-veragu1.jpeg", hover:""},
 
         ],
-        hoverImagenes: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"],
         variantes: [
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "beige", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
@@ -401,7 +389,7 @@ export  const productosMujer = [
             {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar2.jpeg"},
 
         ],
-        hoverImagenes: ["img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg"],
+        
         variantes: [
             { color: "beige", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "blanco", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },

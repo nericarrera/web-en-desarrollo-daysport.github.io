@@ -11,13 +11,10 @@ export const productosHombre = [
         temporada: "invierno",
         descripcion: "Buzo de algodon frizado, cuello redondo liso, para usar en cualquier ocasion",
         imagen: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"],
-        imagenesDetalle: [
-           
-         ],
+        
         miniaturas: [
             {src: "img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg", hover:""},
         ],
-        hoverImagenes: ["img/hombre/buzos/buzo-lacoste-azulfran-1.jpeg"], // Hover en el carrusel
         variantes: [
             { color: "azul", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
         ],
@@ -40,16 +37,11 @@ export const productosHombre = [
         temporada: "invierno",
         descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg"],
-        imagenesDetalle: [
-            "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro3.jpeg",
-            "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro4.jpeg",
-         ],
+        
         miniaturas: [
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro1.jpeg", hover:""},
             {src: "img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-grisnegro1.jpeg", hover:""},
         ],
-        hoverImagenes: ["img/hombre/Camperas/camperas-abrigo/campera-tnf-combinada-blanconegro2.jpeg"                        
-        ], // Hover en el carrusel
         variantes: [
             { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
             { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106"},
@@ -72,10 +64,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "invierno",
         imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"], // Imagen principal para el carrusel
-        imagenesDetalle: [
-            
-         ],
-        hoverImagenes: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-2.jpeg"], // Hover en el carrusel
+       
         miniaturas: [
             {src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg", hover:""},
             { src: "img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-blan-neg-1.jpeg", hover:""},
@@ -108,11 +97,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "invierno", 
         imagen: ["img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"], 
-        imagenesDetalle: [
-            "img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg",
-            "img/hombre/conjuntos/conjunto-tech-campera-negro3.jpeg",
-         ],
-        hoverImagenes: ["img/hombre/conjuntos/conjunto-tech-campera-negro2.jpeg"],
+        
         miniaturas: [
             {src: "img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg", hover:""},
             {src: "img/hombre/conjuntos/conjunto-tech-campera-gris1.jpeg", hover:""},
@@ -150,12 +135,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-        imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-         ],
-        hoverImagenes: [],
+        
         miniaturas: [
             {src: "img/mujer/calzas/calza-nike-radeon-1.jpeg", hover:""}
         ],
@@ -195,12 +175,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
-        imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-         ],
-        hoverImagenes: [],
+       
         miniaturas: [
             {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg", hover:""}],
         variantes: [
@@ -236,12 +211,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
-        imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-         ],
-        hoverImagenes: [],
+        
         miniaturas: [
             {src: "img/mujer/calzas/calza-nike-speak-1.jpeg", hover:""}
         ],
@@ -279,12 +249,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "invierno", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
-        imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-         ],
-        hoverImagenes: [],
+       
         miniaturas: [
             {src: "img/mujer/calzas/calza-nike-fluor-2.jpeg", hover:""}
         ],
@@ -322,12 +287,7 @@ export const productosHombre = [
         seccion: "hombre",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
-        imagenesDetalle: [
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-         ],
-        hoverImagenes: [],
+        
         miniaturas: [
             {src: "img/mujer/calzas/calza-adidas-original-1.jpeg", hover:""}
         ],
