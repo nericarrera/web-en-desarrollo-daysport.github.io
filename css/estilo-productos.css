@@ -403,6 +403,7 @@
   transition: transform 0.3s ease;
   transform-origin: center center; /* El zoom se centrará en el cursor */
   object-fit: cover;
+  border-radius: 15px; /* Bordes redondeados */
 }
 
 /* Efecto de zoom */
