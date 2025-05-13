@@ -67,7 +67,7 @@
 .conteiner-buscador-carrito {
   display: flex;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 35px;
   width: auto;
 }
 
@@ -192,7 +192,7 @@
 
 .menu-li .menu-li-a {
   text-decoration: none; /* Sin subrayado */
-  font-weight: bold; /* Texto en negrita */
+  font-weight: 500; /* Texto en negrita */
   font-size: 16px; /* Tamaño de fuente */
   padding: 10px 20px; /* Espaciado interno */
   display: block;
