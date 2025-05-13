@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
           li.innerHTML = `
             <div class="cart-item-modal">
               <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-              <div class="cart-item-details">
-                <p><strong>${item.name}</strong></p>
-                <p>$${item.price.toFixed(2)}</p>
-                ${item.color ? `<p>Color: ${item.color}</p>` : ''}
-                ${item.size ? `<p>Talle: ${item.size}</p>` : ''}
-                <p>Cantidad: ${item.quantity}</p>
+              <div class="cart-item-details1">
+                <p class="cart-item-name1"><strong>${item.name}</strong></p>
+                <p class="cart-item-name1">$${item.price.toFixed(2)}</p>
+                ${item.color ? `<p class="cart-item-name1">Color: ${item.color}</p>` : ''}
+                ${item.size ? `<p class="cart-item-name1">Talle: ${item.size}</p>` : ''}
+                <p class="cart-item-name1">${item.quantity}</p>
                 <button class="btn-remove-modal" data-index="${index}">✕</button>
               </div>
             </div>

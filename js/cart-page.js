@@ -39,7 +39,7 @@ function renderCart() {
                     <p>Cantidad: ${item.quantity}</p>
                 </div>
                 <div class="cart-item-actions">
-                    <button onclick="removeFromCart(${index})">Eliminar</button>
+                    <button onclick="removeFromCart(${index})">X</button>
                 </div>
             `;
 

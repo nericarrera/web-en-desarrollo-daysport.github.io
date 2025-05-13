@@ -222,7 +222,7 @@ html {
 
 #cart-items-list {
   position: relative;
-  margin-top: 10px;
+  margin-top: 3px;
   font-family: "Dosis";
   text-align: center;
 }
@@ -421,10 +421,18 @@ html {
   margin-right: 20px;
 }
 
+.cart-item-details1 {
+  flex: 1;
+  font-family: "Dosis" sans-serif;
+  text-align: left;
+  padding: 4px;
+}
+
 .cart-item-details {
   flex: 1;
   font-family: "DM Sans";
-  text-align: justify;
+  text-align: left;
+  padding: 4px;
 }
 
 .cart-content p {
@@ -433,8 +441,8 @@ html {
   color: #000;
 }
 
-.cart-item p {
-  font-family: "DM Sans", sans-serif;
+.cart-item-name1 {
+  font-family: "Dosis", sans-serif;
   font-size: 14px;
   color: #555;
 }
