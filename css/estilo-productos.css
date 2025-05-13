@@ -338,10 +338,6 @@
   cursor: zoom-in;
 }
 
-.main-product-image:hover {
-  transform: scale(1.02);
-}
-
 .thumbnails-container {
   display: grid;
 }
