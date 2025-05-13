@@ -851,9 +851,12 @@ html {
   font-size: 50px;
   font-weight: 600;
   color: #673ab7;
+  animation: slide-fade 10s infinite;
+  animation: changeImage 10s infinite;
+  opacity: 0.7;
 }
 
-.banner-titulo0:hover {
+.banner-titulo0 .banner-titulo0:hover {
   background: #d3e005;
   color: #673ab7;
   transition: all 500ms ease;
