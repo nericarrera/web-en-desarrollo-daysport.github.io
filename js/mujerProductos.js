@@ -416,6 +416,9 @@ export  const productosMujer = [
             { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "violeta", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "celeste", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "celeste", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             gris: [
@@ -431,8 +434,8 @@ export  const productosMujer = [
                 "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"
             ],
             rosa: [
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa1.jpeg"
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila0.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"
             ],
         }  
 
