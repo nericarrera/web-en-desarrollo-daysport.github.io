@@ -334,9 +334,6 @@
 }
 
 /* Reset del cursor cuando no hay zoom */
-.main-product-image:not(.zoomed) {
-  cursor: zoom-in;
-}
 
 .thumbnails-container {
   display: grid;

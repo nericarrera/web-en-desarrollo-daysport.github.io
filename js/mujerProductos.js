@@ -11,10 +11,7 @@ export  const productosMujer = [
     temporada: "verano",
     descripcion: "Remera de modal soft, cuello redondo suave y cómoda, ideal para días de verano.",
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
-    imagenesDetalle: [
-        "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-        
-     ],
+    
     miniaturas: [
        {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg" },
         
@@ -53,9 +50,7 @@ export  const productosMujer = [
         temporada: "media estacion",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-pro-gris-1.jpeg"],
-        imagenesDetalle: [
-
-        ],
+        
         miniaturas: [
            {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
@@ -83,10 +78,7 @@ export  const productosMujer = [
         temporada: "media estacion",
         descripcion: "Campera deportiva entallada, excelente calidad para realizar entrenamientos o uso urbano.",
         imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg"], // Imagen principal para el carrusel
-        imagenesDetalle: [
-            "img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg",
-            "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"
-        ],
+        
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", hover:""},
             {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg", hover:"" },
@@ -121,8 +113,7 @@ export  const productosMujer = [
         temporada: "verano", 
         descripcion: "Blusa de lino, liviana comoda y frezca.",
         imagen: ["img/mujer/remeras-lino/blusalino-negro-1.jpeg"],
-        imagenesDetalle: [
-        ],
+       
         miniaturas: [ 
             {src: "img/mujer/remeras-lino/blusalino-negro-1.jpeg", hover:""}
 
@@ -147,9 +138,7 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
-        imagenesDetalle: [
-
-        ],
+        
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"},
         ],
@@ -176,9 +165,7 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
-        imagenesDetalle: [
-    
-        ],
+        
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-nike-grofada-1.jpeg"}
 
@@ -209,9 +196,7 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
-        imagenesDetalle: [
-    
-        ],
+        
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-speak-1.jpeg"}
 
@@ -240,9 +225,7 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.", 
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
-        imagenesDetalle: [
-            
-        ],
+       
         miniaturas: [ 
             {src:"img/mujer/calzas/calza-nike-fluor-2.jpeg"}
 
@@ -268,9 +251,7 @@ export  const productosMujer = [
         temporada: "verano",
         descripcion: "Calza deportiva excelente calidad, ideal para realizar deporte de alto rendimiento.",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
-        imagenesDetalle: [
         
-        ],
         miniaturas: [ 
             {src: "img/mujer/calzas/calza-adidas-original-1.jpeg"}
         ],
@@ -295,9 +276,7 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Buzos de algodon frizados, bordados excelente calidad con capucha.",
         imagen: ["img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-beige1.jpeg"], 
-        imagenesDetalle: [
         
-        ],
         miniaturas: [ 
             {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-celeste1.jpeg", hover:"img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg"},
             {src: "img/mujer/buzos-algodon/buzo-algodon-bordado-concapucha-verdelimon1.jpeg", hover:""},
@@ -335,9 +314,7 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Campera de algodon frizado, excelente calidad con capucha.",
         imagen: ["img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg"], 
-        imagenesDetalle: [
-        
-        ],
+       
         miniaturas: [ 
             {src: "img/mujer/camperas-algodon/campera-gap-algodon-blanca1.jpeg", hover:""},
             {src: "img/mujer/camperas-algodon/campera-gap-algodon-grisme1.jpeg", hover:""},
@@ -379,9 +356,7 @@ export  const productosMujer = [
         temporada: "invierno",
         descripcion: "Campera con chaleco interior con piel puffer, capucha desmontable.",
         imagen: ["img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg"], 
-        imagenesDetalle: [ "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg",
-        
-        ],
+       
         miniaturas: [ 
             {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg"},
             {src: "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg", hover:"img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco2.jpeg"},
