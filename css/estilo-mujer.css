@@ -66,12 +66,12 @@
 .nav {
   display: flex;
   width: 100%;
-  height: 75px;
   background: #fdfdfd;
   list-style: none;
   position: relative;
   z-index: 11;
   justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
+  flex-wrap: wrap;
 }
 
 .conteiner-buscador-carrito {
@@ -227,6 +227,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 
 .banner-content-mujer {
@@ -252,6 +253,7 @@
 
 .horizontal-filter {
   display: flex;
+  width: 95%;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
@@ -259,12 +261,14 @@
   border-bottom: 1px solid #ddd;
   position: relative; /* Asegura que el menú desplegable se alinee bien */
   flex-wrap: wrap;
+  margin: auto;
 }
 
 .filter-categories {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 1px;
 }
 
 .mujer-filter-button {
@@ -326,8 +330,9 @@
 /*-------------------PRODUCTOS GRID MUJER-----------------*/
 
 .products-grid-m {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+
+  flex-wrap: wrap;
   gap: 5px;
   margin-top: 20px;
   padding: 20px;
@@ -335,9 +340,9 @@
 }
 
 .mujer-product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
   margin-top: 20px;
   padding: 20px;
 }
