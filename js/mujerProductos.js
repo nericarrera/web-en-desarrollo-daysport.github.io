@@ -407,19 +407,32 @@ export  const productosMujer = [
         imagen: ["img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg"],
         
         miniaturas: [
-           {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
-           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
+           {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"}, 
+          {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste1.jpeg"},
+          {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"},
+        {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa1.jpeg"},
         ],
         variantes: [
-            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
-            negro: [
-                "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"
-            ],
             gris: [
-                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"
+            ],
+            celeste: [
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste0.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste1.jpeg"
+            ],
+            lila: [
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila0.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"
+            ],
+            rosa: [
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa0.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa1.jpeg"
             ],
         }  
 
