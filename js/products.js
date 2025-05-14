@@ -81,32 +81,52 @@ function mostrarDetallesProducto(product) {
     });
 
     // Mover el zoom al mover el mouse
-    zoomContainer.addEventListener('mousemove', handleZoom);
+   function mostrarImagenes(imagenesColor) {
+    const zoomContainer = document.querySelector('.zoom-container');
+    const thumbnailsContainer = document.getElementById('product-thumbnails');
     
-    function mostrarImagenes(imagenesColor) {
     // Limpiar contenedores
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
 
-    // Mostrar todas las imágenes del color seleccionado
+    // Verificar si hay imágenes disponibles
+    if (!imagenesColor || imagenesColor.length === 0) {
+        // Si no hay imágenes específicas del color, usar las imágenes principales
+        imagenesColor = product.imagen.concat(product.imagenesDetalle || []);
+    }
+
+    // Mostrar TODAS las imágenes del color en el contenedor principal
     imagenesColor.forEach((imgSrc, index) => {
-        // Imagen principal
+        // Crear elemento de imagen
         const img = document.createElement('img');
         img.src = imgSrc;
-        img.alt = `Vista ${index + 1}`;
+        img.alt = `${product.nombre} - Vista ${index + 1}`;
         img.classList.add('main-product-image');
+        
+        // Solo la primera imagen visible por defecto
+        if (index > 0) {
+            img.style.display = 'none'; // Ocultar otras imágenes inicialmente
+        }
+        
         zoomContainer.appendChild(img);
 
-        // Miniatura
-        const thumb = document.createElement('img');
-        thumb.src = imgSrc;
-        thumb.alt = `Miniatura ${index + 1}`;
-        thumb.classList.add('thumbnail-image');
-        thumb.addEventListener('click', () => {
-            // Scroll a la imagen correspondiente
-            img.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+        // Crear miniatura
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Miniatura ${index + 1}`;
+        thumbnail.classList.add('thumbnail-image');
+        
+        // Evento para cambiar imagen principal al hacer clic
+        thumbnail.addEventListener('click', () => {
+            // Ocultar todas las imágenes principales
+            document.querySelectorAll('.zoom-container .main-product-image').forEach(img => {
+                img.style.display = 'none';
+            });
+            // Mostrar la imagen seleccionada
+            img.style.display = 'block';
         });
-        thumbnailsContainer.appendChild(thumb);
+        
+        thumbnailsContainer.appendChild(thumbnail);
     });
 }
 
