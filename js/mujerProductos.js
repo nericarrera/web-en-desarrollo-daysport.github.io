@@ -395,9 +395,35 @@ export  const productosMujer = [
         
     },
 
-    
+   {
+     id: "mujer-13",
+        nombre: "Conjunto Deportivo Lycra Nike",
+        etiqueta: "",
+        precio: 45000,
+        categoria: "conjuntos",
+        seccion: "mujer",
+        temporada: "media estacion",
+        descripcion: "Conjunto deportivo excelente calidad, ideal para realizar deporte de alto rendimiento.",
+        imagen: ["img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg"],
+        
+        miniaturas: [
+           {src: "img/mujer/calzas/calza-nike-pro-gris-1.jpeg", hover:""}, 
+           {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
+        ],
+        variantes: [
+            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+        ],
+        imagenColores: { // Imágenes específicas por color para la página de producto
+            negro: [
+                "img/mujer/calzas/calza-nike-pro-neg-1.jpeg"
+            ],
+            gris: [
+                "img/mujer/calzas/calza-nike-pro-gris-1.jpeg"
+            ],
+        }  
 
-
+    }
 
     
 ];
