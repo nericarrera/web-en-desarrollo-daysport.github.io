@@ -422,20 +422,16 @@ export  const productosMujer = [
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             gris: [
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste1.jpeg"
+                
             ],
             celeste: [
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste1.jpeg"
+                
             ],
             violeta: [
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"
+                
             ],
             rosa: [
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg"
+                
             ],
         }  
 
