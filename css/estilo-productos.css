@@ -315,7 +315,6 @@
 
 .zoom-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   gap: 1px;
 }
 
@@ -336,7 +335,7 @@
 /* Reset del cursor cuando no hay zoom */
 
 .thumbnails-container {
-  display: grid;
+  display: contents;
 }
 
 .thumbnail-image {
@@ -378,17 +377,6 @@
 
 .zoomed + .lupa {
   display: block;
-}
-
-/* Contenedor de la imagen */
-.zoom-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto; /* Ajusta según tu diseño */
-  height: auto; /* Ajusta según tu diseño */
-  overflow: hidden;
-  object-fit: cover;
-  cursor: pointer;
 }
 
 /* Imagen principal */

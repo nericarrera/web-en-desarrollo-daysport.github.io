@@ -404,7 +404,7 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "media estacion",
         descripcion: "Conjunto deportivo excelente calidad, ideal para realizar deporte de alto rendimiento.",
-        imagen: ["img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg", "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"],
+        imagen: ["img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"],
         
         miniaturas: [
            {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"}, 
@@ -423,7 +423,9 @@ export  const productosMujer = [
         imagenColores: { // Imágenes específicas por color para la página de producto
             gris: [
                 "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris0.jpeg",
-                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg"
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-gris1.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-lila1.jpeg",
+                "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa1.jpeg"
             ],
             celeste: [
                 "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-celeste0.jpeg",
