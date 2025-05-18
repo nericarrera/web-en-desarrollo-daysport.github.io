@@ -375,21 +375,22 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg",
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg",
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg"
                 
             ],
             blanco: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco1.jpeg",
                 "img/mujer/camperas-chaleco/camperachaleco-lacoste-blanco2.jpeg",
             ],
             negro: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-negro1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-negro2.jpeg"
             ],
             rosa: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-rosa1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-rosa2.jpeg"
             ],
             verde: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar1.jpeg"
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar1.jpeg",
+                "img/mujer/camperas-chaleco/camperachaleco-lacoste-verdemilitar2.jpeg"
             ],
         }
         

@@ -14,6 +14,30 @@ function getProductIdFromURL() {
     return params.get('id');
 }
 
+// Función para mostrar/ocultar la tabla de talles
+function toggleSizeChart(event) {
+    event.preventDefault();
+    const modal = document.getElementById('sizeChartModal-talles');
+    modal.classList.toggle('hidden-talles');
+}
+
+// Función para llenar la tabla de talles
+function mostrarTablaTalles(product) {
+    const tableBody = document.getElementById('sizeChartTableBody');
+    tableBody.innerHTML = '';
+    
+    product.variantes.forEach(variant => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${variant.talla}</td>
+            <td>${variant.pecho}</td>
+            <td>${variant.cintura}</td>
+            <td>${variant.cadera}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
 // Función para mostrar los detalles del producto
 function mostrarDetallesProducto(product) {
     if (!product) {
@@ -189,6 +213,8 @@ function mostrarDetallesProducto(product) {
         }
     }
 }
+
+
 
 // Inicialización al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
