@@ -78,7 +78,7 @@ export  const productosMujer = [
         seccion: "mujer",
         temporada: "media estacion",
         descripcion: "Campera deportiva entallada, excelente calidad para realizar entrenamientos o uso urbano.",
-        imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg"], // Imagen principal para el carrusel
+        imagen: ["img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", "img/mujer/camperas-deportivas/campera-deportiva-nike-2.jpeg"], // Imagen principal para el carrusel
         
         miniaturas: [
             {src:"img/mujer/camperas-deportivas/campera-deportiva-nike-1.jpeg", hover:""},
@@ -375,7 +375,6 @@ export  const productosMujer = [
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-                "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige1.jpeg",
                 "img/mujer/camperas-chaleco/camperachaleco-lacoste-beige2.jpeg",
                 
             ],
