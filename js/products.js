@@ -89,24 +89,45 @@ function mostrarDetallesProducto(product) {
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
 
-     // 2. Mostrar miniaturas (a partir de la segunda imagen) en product-thumbnails
-    if (imagenesColor && imagenesColor.length > 1) {
-        // Empezamos desde el índice 1 (segunda imagen)
-        for (let i = 1; i < imagenesColor.length; i++) {
-            const imgSrc = imagenesColor[i];
-            const thumbnail = document.createElement('img');
-            thumbnail.src = imgSrc;
-            thumbnail.alt = `Miniatura ${i}`;
-            thumbnail.classList.add('thumbnail-image');
-            
-            // Evento para cambiar la imagen principal al hacer clic
-            thumbnail.addEventListener('click', () => {
-                image.src = imgSrc; // Cambia la imagen principal
-            });
-            
-            thumbnailsContainer.appendChild(thumbnail);
-        }
+    // Verificar si hay imágenes disponibles
+    if (!imagenesColor || imagenesColor.length === 0) {
+        // Si no hay imágenes específicas del color, usar las imágenes principales
+        imagenesColor = product.imagen.concat(product.imagenesDetalle || []);
     }
+
+    // Mostrar TODAS las imágenes del color en el contenedor principal
+    imagenesColor.forEach((imgSrc, index) => {
+        // Crear elemento de imagen
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `${product.nombre} - Vista ${index + 1}`;
+        img.classList.add('main-product-image');
+        
+        // Solo la primera imagen visible por defecto
+        if (index > 0) {
+            img.style.display = 'none'; // Ocultar otras imágenes inicialmente
+        }
+        
+        zoomContainer.appendChild(img);
+
+        // Crear miniatura
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imgSrc;
+        thumbnail.alt = `Miniatura ${index + 1}`;
+        thumbnail.classList.add('thumbnail-image');
+        
+        // Evento para cambiar imagen principal al hacer clic
+        thumbnail.addEventListener('click', () => {
+            // Ocultar todas las imágenes principales
+            document.querySelectorAll('.zoom-container .main-product-image').forEach(img => {
+                img.style.display = 'none';
+            });
+            // Mostrar la imagen seleccionada
+            img.style.display = 'block';
+        });
+        
+        thumbnailsContainer.appendChild(thumbnail);
+    });
 }
 
     // Mostrar imágenes iniciales (primer color por defecto)
