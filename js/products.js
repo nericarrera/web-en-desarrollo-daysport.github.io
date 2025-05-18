@@ -120,7 +120,7 @@ function mostrarDetallesProducto(product) {
         thumbnail.addEventListener('click', () => {
             // Ocultar todas las imágenes principales
             document.querySelectorAll('.zoom-container .main-product-image').forEach(img => {
-                img.style.display = 'none';
+                img.style.display = 'block';
             });
             // Mostrar la imagen seleccionada
             img.style.display = 'block';
