@@ -276,21 +276,7 @@
             <!-- Los botones de talles se generan dinámicamente -->
         </div>
 
-        <!-- Selector de cantidad (opcional) -->
-        <div id="quantity-container" class="product-quantity hidden">
-            <label for="quantity">Cantidad:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
-        </div>
-
-        <!-- Botones de compra y agregar al carrito -->
-        <div class="btn-container">
-            <button class="btn-buy-now">Comprar</button>
-            <button class="btn-add-to-cart">Agregar al carrito</button>
-        </div>
-    </div>
-</div>
-
-  <div id="sizeChartModal-talles" class="modal hidden-talles">
+         <div id="sizeChartModal-talles" class="modal-hidden-talles">
     <div class="modal-content-talles">
       <span class="close" onclick="toggleSizeChart(event)">&times;</span>
       <h2>Tabla de Talles</h2>
@@ -309,6 +295,22 @@
       </table>
     </div>
   </div>
+
+        <!-- Selector de cantidad (opcional) -->
+        <div id="quantity-container" class="product-quantity hidden">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
+        </div>
+
+        <!-- Botones de compra y agregar al carrito -->
+        <div class="btn-container">
+            <button class="btn-buy-now">Comprar</button>
+            <button class="btn-add-to-cart">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
+
+ 
 
   <div class="product-details-rating">
     <!-- Sección de Valoraciones -->

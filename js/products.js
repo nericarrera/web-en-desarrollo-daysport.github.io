@@ -18,7 +18,7 @@ function getProductIdFromURL() {
 function toggleSizeChart(event) {
     event.preventDefault();
     const modal = document.getElementById('sizeChartModal-talles');
-    modal.classList.toggle('hidden-talles');
+    modal.classList.toggle('modal-hidden-talles');
 }
 
 // Función para llenar la tabla de talles
