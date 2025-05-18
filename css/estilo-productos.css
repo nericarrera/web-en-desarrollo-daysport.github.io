@@ -492,7 +492,7 @@
 }
 
 #sizeChartModal-talles.modal-hidden-talles {
-  display: none;
+  display: contents;
 }
 
 .modal-content-talles {

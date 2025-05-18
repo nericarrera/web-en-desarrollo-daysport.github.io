@@ -26,13 +26,13 @@ function mostrarTablaTalles(product) {
     const tableBody = document.getElementById('sizeChartTableBody');
     tableBody.innerHTML = '';
     
-    product.variantes.forEach(variant => {
+    product.variantes.forEach(variantes => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${variant.talla}</td>
-            <td>${variant.pecho}</td>
-            <td>${variant.cintura}</td>
-            <td>${variant.cadera}</td>
+            <td>${variantes.talla}</td>
+            <td>${variantes.pecho}</td>
+            <td>${variantes.cintura}</td>
+            <td>${variantes.cadera}</td>
         `;
         tableBody.appendChild(row);
     });
