@@ -34,113 +34,66 @@ function mostrarDetallesProducto(product) {
     const tallesContainer = document.getElementById('product-sizes');
     const quantityContainer = document.getElementById('quantity-container');
     const quantityInput = document.getElementById('quantity');
+    const coloresContainer = document.getElementById('product-colors');
 
     // Limpiar contenedores antes de agregar contenido
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
-    quantityContainer.classList.add('hidden'); // Ocultar el contador inicialmente
+    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+    quantityContainer.classList.add('hidden');
 
     // Mostrar la imagen principal
-    image = document.createElement('img'); // Usar la variable global
-    image.src = product.imagen[0]; // Primera imagen por defecto
+    image = document.createElement('img');
+    image.src = product.imagen[0];
     image.alt = product.nombre;
     image.classList.add('main-product-image');
     zoomContainer.appendChild(image);
 
-    // Variables para el zoom y desplazamiento
+    // Configuración del zoom
     let isZoomed = false;
     let offsetX, offsetY;
 
-    // Función para calcular el desplazamiento del zoom
     function handleZoom(event) {
         if (isZoomed) {
             const rect = zoomContainer.getBoundingClientRect();
-            const mouseX = event.clientX - rect.left;
-            const mouseY = event.clientY - rect.top;
-
-            // Calcular el desplazamiento basado en la posición del mouse
-            offsetX = (mouseX / rect.width) * 100;
-            offsetY = (mouseY / rect.height) * 100;
-
-            // Aplicar el desplazamiento
+            offsetX = (event.clientX - rect.left) / rect.width * 100;
+            offsetY = (event.clientY - rect.top) / rect.height * 100;
             image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
         }
     }
 
-    // Activar/desactivar zoom al hacer clic
     image.addEventListener('click', () => {
         isZoomed = !isZoomed;
         image.classList.toggle('zoomed');
-
-        if (isZoomed) {
-            zoomContainer.style.cursor = 'grab'; // Cambiar cursor al hacer zoom
-        } else {
-            zoomContainer.style.cursor = 'zoom-in'; // Restaurar cursor al desactivar zoom
-        }
+        zoomContainer.style.cursor = isZoomed ? 'grab' : 'zoom-in';
     });
 
-    // Mover el zoom al mover el mouse
-   function mostrarImagenes(imagenesColor) {
-    const zoomContainer = document.querySelector('.zoom-container');
-    const thumbnailsContainer = document.getElementById('product-thumbnails');
-    
-    // Limpiar contenedores
-    zoomContainer.innerHTML = '';
-    thumbnailsContainer.innerHTML = '';
+    zoomContainer.addEventListener('mousemove', handleZoom);
 
-    // Verificar si hay imágenes disponibles
-    if (!imagenesColor || imagenesColor.length === 0) {
-        // Si no hay imágenes específicas del color, usar las imágenes principales
-        imagenesColor = product.imagen.concat(product.imagenesDetalle || []);
-    }
-
-    // Mostrar TODAS las imágenes del color en el contenedor principal
-    imagenesColor.forEach((imgSrc, index) => {
-        // Crear elemento de imagen
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.alt = `${product.nombre} - Vista ${index + 1}`;
-        img.classList.add('main-product-image');
+    // Función para mostrar miniaturas
+    function mostrarMiniaturas(imagenes) {
+        thumbnailsContainer.innerHTML = '';
         
-        // Solo la primera imagen visible por defecto
-        if (index > 0) {
-            img.style.display = 'none'; // Ocultar otras imágenes inicialmente
-        }
-        
-        zoomContainer.appendChild(img);
-
-        // Crear miniatura
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imgSrc;
-        thumbnail.alt = `Miniatura ${index + 1}`;
-        thumbnail.classList.add('thumbnail-image');
-        
-        // Evento para cambiar imagen principal al hacer clic
-        thumbnail.addEventListener('click', () => {
-            // Ocultar todas las imágenes principales
-            document.querySelectorAll('.zoom-container .main-product-image').forEach(img => {
-                img.style.display = 'block';
+        imagenes.forEach((imgSrc, index) => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imgSrc;
+            thumbnail.alt = `Miniatura ${index + 1}`;
+            thumbnail.classList.add('thumbnail-image');
+            
+            thumbnail.addEventListener('click', () => {
+                image.src = imgSrc;
             });
-            // Mostrar la imagen seleccionada
-            img.style.display = 'block';
+            
+            thumbnailsContainer.appendChild(thumbnail);
         });
-        
-        thumbnailsContainer.appendChild(thumbnail);
-    });
-}
-
-    // Mostrar imágenes iniciales (primer color por defecto)
-    const primerColor = product.variantes[0].color;
-    if (product.imagenColores && product.imagenColores[primerColor]) {
-        mostrarImagenes(product.imagenColores[primerColor]);
     }
 
     // Mostrar colores disponibles
-    const coloresContainer = document.getElementById('product-colors');
-    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
     if (product.variantes && product.variantes.length > 0) {
-        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))]; // Eliminar colores duplicados
+        const coloresUnicos = [...new Set(product.variantes.map(v => v.color))];
+        let primerColor = null;
+
         coloresUnicos.forEach(color => {
             const colorButton = document.createElement('button');
             colorButton.classList.add('color-btn');
@@ -148,32 +101,54 @@ function mostrarDetallesProducto(product) {
 
             if (product.imagenColores && product.imagenColores[color]) {
                 const colorImage = document.createElement('img');
-                colorImage.src = product.imagenColores[color][0]; // Usar la primera imagen del color
+                colorImage.src = product.imagenColores[color][0];
                 colorImage.alt = color;
                 colorImage.classList.add('color-image');
                 colorButton.appendChild(colorImage);
+                
+                if (!primerColor) primerColor = color;
             } else {
-                colorButton.style.backgroundColor = color; // Mostrar un cuadro de color
+                colorButton.style.backgroundColor = color;
                 colorButton.style.width = '50px';
                 colorButton.style.height = '50px';
             }
 
-            // Modificamos el handler del color para que muestre todas las imágenes del color seleccionado
             colorButton.addEventListener('click', () => {
+                // Remover selección previa
+                document.querySelectorAll('.color-btn').forEach(btn => {
+                    btn.classList.remove('selected-color');
+                });
+                
+                // Marcar color seleccionado
+                colorButton.classList.add('selected-color');
+                
                 if (product.imagenColores && product.imagenColores[color]) {
-                    mostrarImagenes(product.imagenColores[color]);
+                    // Cambiar imagen principal
+                    image.src = product.imagenColores[color][0];
+                    
+                    // Mostrar miniaturas (todas las imágenes del color)
+                    mostrarMiniaturas(product.imagenColores[color]);
                 }
+                
                 actualizarTalles(product, color);
             });
 
             coloresContainer.appendChild(colorButton);
         });
-        
+
+        // Seleccionar primer color por defecto
+        if (primerColor) {
+            coloresContainer.querySelector('.color-btn').click();
+        }
     } else {
         coloresContainer.innerHTML += '<p>No hay colores disponibles.</p>';
+        // Mostrar miniaturas con imágenes generales si no hay colores
+        if (product.imagenesDetalle && product.imagenesDetalle.length > 0) {
+            mostrarMiniaturas([product.imagen[0], ...product.imagenesDetalle]);
+        }
     }
 
-    // Función para actualizar los talles disponibles
+    // Función para actualizar talles
     function actualizarTalles(product, color) {
         tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
         const variantesFiltradas = product.variantes.filter(v => v.color === color);
@@ -186,21 +161,17 @@ function mostrarDetallesProducto(product) {
                 sizeButton.classList.add('size-btn');
 
                 sizeButton.addEventListener('click', () => {
-                    // Si el talle ya está seleccionado, deseleccionarlo
                     if (sizeButton.classList.contains('selected')) {
                         sizeButton.classList.remove('selected');
-                        quantityContainer.classList.add('hidden'); // Ocultar el contador
+                        quantityContainer.classList.add('hidden');
                     } else {
-                        // Deseleccionar todos los talles
-                        document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
-                        // Seleccionar el talle actual
+                        document.querySelectorAll('.size-btn').forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
                         sizeButton.classList.add('selected');
-
-                        // Mostrar el contador de cantidad
                         quantityContainer.classList.remove('hidden');
-                        quantityInput.max = variant.stock; // Establecer el máximo según el stock disponible
+                        quantityInput.max = variant.stock;
 
-                        // Manejar la lógica para agregar al carrito
                         quantityInput.addEventListener('change', () => {
                             const cantidad = parseInt(quantityInput.value, 10);
                             if (cantidad > variant.stock) {
@@ -217,40 +188,22 @@ function mostrarDetallesProducto(product) {
             tallesContainer.innerHTML += '<p>No hay talles disponibles para este color.</p>';
         }
     }
-
-    // Mostrar talles disponibles para el primer color por defecto
-    if (product.variantes && product.variantes.length > 0) {
-        actualizarTalles(product, primerColor);
-    }
 }
 
+// Inicialización al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     const productId = getProductIdFromURL();
-    console.log('ID del producto:', productId); // Depuración
-
-    // Buscar el producto en todas las secciones
-    let product = productosMujer.find(p => p.id === productId); // Buscar en productosMujer
-
-    if (!product) {
-        product = productosHombre.find(p => p.id === productId); // Buscar en productosHombre
-    }
-
-    if (!product) {
-        product = productosNiños.find(p => p.id === productId); // Buscar en productosNiños
-    }
-
-    if (!product) {
-        product = productosAccesorios.find(p => p.id === productId); // Buscar en productosAccesorios
-    }
-
-    console.log('Producto encontrado:', product); // Depuración
+    let product = productosMujer.find(p => p.id === productId) || 
+                 productosHombre.find(p => p.id === productId) || 
+                 productosNiños.find(p => p.id === productId) || 
+                 productosAccesorios.find(p => p.id === productId);
 
     if (product) {
-        mostrarDetallesProducto(product); // Mostrar detalles del producto
+        mostrarDetallesProducto(product);
     } else {
         console.error('Producto no encontrado');
         alert('Producto no encontrado. Redirigiendo a la página principal...');
-        window.location.href = 'index.html'; // Redirigir si no se encuentra el producto
+        window.location.href = 'index.html';
     }
 });
 
