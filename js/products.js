@@ -25,7 +25,7 @@ function llenarTablaMedidas(product) {
     const tableBody = document.getElementById('sizeGuideTableBody');
     tableBody.innerHTML = '';
     
-    if (!product.variantes || product.variantes.length === 0) {
+    if (!product?.variantes || product.variantes.length === 0) {
         tableBody.innerHTML = '<tr><td colspan="4">No hay información de talles disponible</td></tr>';
         return;
     }
@@ -36,17 +36,25 @@ function llenarTablaMedidas(product) {
     tallesUnicos.forEach(talle => {
         // Encontrar la primera variante con este talle
         const variante = product.variantes.find(v => v.talla === talle);
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${talle}</td>
-            <td>${variante.pecho || 'N/A'}</td>
-            <td>${variante.cintura || 'N/A'}</td>
-            <td>${variante.cadera || 'N/A'}</td>
-        `;
-        tableBody.appendChild(row);
+        if (variante) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${talle}</td>
+                <td>${variante.pecho || 'N/A'}</td>
+                <td>${variante.cintura || 'N/A'}</td>
+                <td>${variante.cadera || 'N/A'}</td>
+            `;
+            tableBody.appendChild(row);
+        }
     });
-}
 
+     // Configurar la guía de talles (AGREGA ESTO AL FINAL DE mostrarDetallesProducto)
+    llenarTablaMedidas(product);
+    
+    // Event listeners para la guía de talles
+    document.getElementById('show-size-guide')?.addEventListener('click', toggleSizeGuide);
+    document.querySelector('.close-size-guide')?.addEventListener('click', toggleSizeGuide);
+}
 
 
 // Función para mostrar los detalles del producto

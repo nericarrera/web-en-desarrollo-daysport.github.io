@@ -325,14 +325,14 @@ export  const productosMujer = [
 
         ],
         variantes: [
-            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "beige", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "M", stock: 1, pecho: "98-100", cintura: "86-90", cadera: "102-106" },
+            { color: "beige", talla: "XL", stock: 1, pecho: "105-96", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "M", stock: 1, pecho: "98-100", cintura: "86-90", cadera: "102-106" },
             { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
-
+                "img/mujer/camperas-algodon/campera-gap-algodon-hueso1.jpeg",
             ],
             negro: [
                 "img/mujer/camperas-algodon/campera-gap-algodon-neg1.jpeg"
