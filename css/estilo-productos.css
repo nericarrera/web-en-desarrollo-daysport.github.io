@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* HEADER */
+/*------------------------- HEADER------------------------- */
 .header {
   background: #000000;
   text-align: center;
@@ -37,7 +37,7 @@
   cursor: pointer;
 }
 
-/* NAV * LOGO * BUSCADOR * IMPUT  */
+/*------------ NAV * LOGO * BUSCADOR * IMPUT ------------------ */
 
 .logo .a {
   display: flex;
@@ -95,6 +95,8 @@
   margin-right: -25px;
   margin-left: 20px;
 }
+
+/*-----------------------ICONO CARRITO Y USUARIO------------------*/
 
 #serch-icon {
   width: 20px;
@@ -206,7 +208,7 @@
   transition: all 420ms ease; /* Transición suave */
 }
 
-/*-------------- Estilo para el modal ----------------*/
+/*-------------- Estilo para el modal MENU ----------------*/
 
 .modal {
   display: none;
@@ -246,7 +248,7 @@
   }
 }
 
-/*---------------------- SECTION------------------ */
+/*---------------------- SECTION - VOLVER------------------ */
 
 .section-conteiner-volver {
   display: flex;
@@ -394,7 +396,7 @@
   transform: scale(2); /* Nivel de zoom */
 }
 
-/*-------------------------------------------------------------------*/
+/*------------------------PRODUCTO IMG-------------------------------------*/
 
 .product-gallery img {
   width: 100%;
@@ -479,75 +481,45 @@
 }
 
 /*-----------------------TABLA DE TALLES--------------*/
-#sizeChartModal-talles {
-  display: flex;
+/* Estilos para la guía de talles */
+.size-guide-hidden {
+  display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
   justify-content: center;
+  align-items: center;
 }
 
-#sizeChartModal-talles.modal-hidden-talles {
-  display: contents;
-}
-
-.modal-content-talles {
-  background-color: #fff;
-  margin-top: 20px;
-  border-radius: 5px;
-  max-width: 80%;
-  max-height: 80%;
+.size-guide-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
   overflow-y: auto;
-  position: relative;
 }
 
-.modal-content-talles table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-.modal-content-talles th,
-.modal-content-talles td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.modal-content-talles th {
-  background-color: #f2f2f2;
-}
-
-.modal-content-talles .close {
-  position: absolute;
-  right: 15px;
-  top: 5px;
-  font-size: 28px;
-  font-weight: bold;
+.close-size-guide {
+  float: right;
   cursor: pointer;
+  font-size: 24px;
 }
 
-.btn-size-chart {
+.size-guide-btn {
   background: none;
   border: none;
-  color: #333;
+  color: #a30dfa;
   text-decoration: underline;
   cursor: pointer;
-  font-size: 14px;
+  font-family: "Dosis", sans-serif;
   margin-top: 10px;
   padding: 5px 0;
-  display: block;
-  margin-bottom: 15px;
-}
-
-.btn-size-chart:hover {
-  color: #000;
-  text-decoration: none;
 }
 
 /*--------------------------------BOTON DE COMPRA ---------------------*/

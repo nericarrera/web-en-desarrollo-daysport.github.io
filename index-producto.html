@@ -276,25 +276,31 @@
             <!-- Los botones de talles se generan dinámicamente -->
         </div>
 
-         <div id="sizeChartModal-talles" class="modal-hidden-talles">
-    <div class="modal-content-talles">
-      <span class="close" onclick="toggleSizeChart(event)">&times;</span>
-      <h2>Tabla de Talles</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Talle</th>
-            <th>Pecho (cm)</th>
-            <th>Cintura (cm)</th>
-            <th>Cadera (cm)</th>
-          </tr>
-        </thead>
-        <tbody id="sizeChartTableBody">
-          <!-- Aquí se agregarán dinámicamente las filas -->
-        </tbody>
-      </table>
+       <div id="product-sizes" class="product-size">
+    <!-- Los botones de talles se generan dinámicamente -->
+    <button id="show-size-guide" class="size-guide-btn">Guía de Talles</button>
+</div>
+
+<!-- Cambiamos el nombre del modal a "size-guide" -->
+<div id="size-guide" class="size-guide-hidden">
+    <div class="size-guide-content">
+        <span class="close-size-guide">&times;</span>
+        <h2>Tabla de Medidas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Talle</th>
+                    <th>Pecho (cm)</th>
+                    <th>Cintura (cm)</th>
+                    <th>Cadera (cm)</th>
+                </tr>
+            </thead>
+            <tbody id="sizeGuideTableBody">
+                <!-- Datos dinámicos aquí -->
+            </tbody>
+        </table>
     </div>
-  </div>
+</div>
 
         <!-- Selector de cantidad (opcional) -->
         <div id="quantity-container" class="product-quantity hidden">
