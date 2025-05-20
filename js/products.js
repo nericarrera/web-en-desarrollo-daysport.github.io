@@ -21,21 +21,23 @@ function toggleSizeChart(event) {
     modal.classList.toggle('modal-hidden-talles');
 }
 
-// Función para llenar la tabla de talles
-function mostrarTablaTalles(product) {
+function mostrarTablaTalles(product) { 
+    if (!product || !product.variantes || product.variantes.length === 0) {
+        console.error('No hay talles disponibles para este producto.');
+        return;
+    }
     const tableBody = document.getElementById('sizeChartTableBody');
-    tableBody.innerHTML = '';
-    
-    product.variantes.forEach(variantes => {
+    tableBody.innerHTML = ''; // Limpiar la tabla antes de llenarla
+    product.variantes.forEach(variant => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${variantes.talla}</td>
-            <td>${variantes.pecho}</td>
-            <td>${variantes.cintura}</td>
-            <td>${variantes.cadera}</td>
+            <td>${variant.talla}</td>
+            <td>${variant.pecho || 'N/A'}</td>
+            <td>${variant.cintura || 'N/A'}</td>
+            <td>${variant.cadera || 'N/A'}</td>
         `;
         tableBody.appendChild(row);
-    });
+    }); 
 }
 
 // Función para mostrar los detalles del producto
