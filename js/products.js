@@ -14,48 +14,6 @@ function getProductIdFromURL() {
     return params.get('id');
 }
 
-// Función para mostrar/ocultar la guía de talles
-function toggleSizeGuide() {
-    const guide = document.getElementById('size-guide');
-    guide.classList.toggle('size-guide-hidden');
-}
-
-// Función para llenar la tabla con datos del producto actual
-function llenarTablaMedidas(product) {
-    const tableBody = document.getElementById('sizeGuideTableBody');
-    tableBody.innerHTML = '';
-    
-    if (!product?.variantes || product.variantes.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="4">No hay información de talles disponible</td></tr>';
-        return;
-    }
-    
-    // Agrupar talles únicos para evitar duplicados
-    const tallesUnicos = [...new Set(product.variantes.map(v => v.talla))];
-    
-    tallesUnicos.forEach(talle => {
-        // Encontrar la primera variante con este talle
-        const variante = product.variantes.find(v => v.talla === talle);
-        if (variante) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${talle}</td>
-                <td>${variante.pecho || 'N/A'}</td>
-                <td>${variante.cintura || 'N/A'}</td>
-                <td>${variante.cadera || 'N/A'}</td>
-            `;
-            tableBody.appendChild(row);
-        }
-    });
-
-     // Configurar la guía de talles (AGREGA ESTO AL FINAL DE mostrarDetallesProducto)
-    llenarTablaMedidas(product);
-    
-    // Event listeners para la guía de talles
-    document.getElementById('show-size-guide')?.addEventListener('click', toggleSizeGuide);
-    document.querySelector('.close-size-guide')?.addEventListener('click', toggleSizeGuide);
-}
-
 
 // Función para mostrar los detalles del producto
 function mostrarDetallesProducto(product) {
@@ -252,6 +210,178 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// --------------------------
+// GESTIÓN DE LA GUÍA DE TALLES
+// --------------------------
+
+// Variable para rastrear el estado del modal
+let sizeGuideModal = {
+    isOpen: false,
+    guideElement: null,
+    contentElement: null,
+    tableBody: null,
+    closeButton: null,
+    openButton: null
+};
+
+/**
+ * Inicializa la guía de talles con los datos del producto
+ * @param {Object} product - Producto actual con sus variantes
+ */
+function initSizeGuide(product) {
+    // 1. Configurar referencias a los elementos del DOM
+    setupModalReferences();
+    
+    // 2. Verificar que todos los elementos necesarios existan
+    if (!validateModalElements()) {
+        console.error('Error: Elementos esenciales de la guía de talles no encontrados');
+        return;
+    }
+    
+    // 3. Llenar la tabla con los datos del producto
+    populateSizeTable(product.variantes);
+    
+    // 4. Configurar los event listeners
+    setupEventListeners();
+    
+    // 5. Asegurar que el modal esté oculto inicialmente
+    hideModal();
+}
+
+/**
+ * Configura las referencias a los elementos del DOM
+ */
+function setupModalReferences() {
+    sizeGuideModal.guideElement = document.getElementById('size-guide');
+    sizeGuideModal.contentElement = document.querySelector('.size-guide-content');
+    sizeGuideModal.tableBody = document.getElementById('sizeGuideTableBody');
+    sizeGuideModal.closeButton = document.querySelector('.close-size-guide');
+    sizeGuideModal.openButton = document.getElementById('show-size-guide');
+}
+
+/**
+ * Valida que todos los elementos necesarios existan
+ * @returns {boolean} - True si todos los elementos son válidos
+ */
+function validateModalElements() {
+    return !!(
+        sizeGuideModal.guideElement &&
+        sizeGuideModal.contentElement &&
+        sizeGuideModal.tableBody &&
+        sizeGuideModal.closeButton &&
+        sizeGuideModal.openButton
+    );
+}
+
+/**
+ * Llena la tabla con los datos de las variantes
+ * @param {Array} variants - Array de variantes del producto
+ */
+function populateSizeTable(variants = []) {
+    // Limpiar la tabla existente
+    sizeGuideModal.tableBody.innerHTML = '';
+    
+    // Mostrar mensaje si no hay variantes
+    if (!variants || variants.length === 0) {
+        sizeGuideModal.tableBody.innerHTML = `
+            <tr>
+                <td colspan="4">No hay información de talles disponible</td>
+            </tr>
+        `;
+        return;
+    }
+    
+    // Crear un mapa de talles únicos para evitar duplicados
+    const uniqueSizes = new Map();
+    
+    // Procesar cada variante
+    variants.forEach(variant => {
+        if (!uniqueSizes.has(variant.talla)) {
+            uniqueSizes.set(variant.talla, variant);
+            
+            // Crear y agregar fila a la tabla
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${variant.talla}</td>
+                <td>${variant.pecho || 'N/A'}</td>
+                <td>${variant.cintura || 'N/A'}</td>
+                <td>${variant.cadera || 'N/A'}</td>
+            `;
+            sizeGuideModal.tableBody.appendChild(row);
+        }
+    });
+}
+
+/**
+ * Configura los event listeners para el modal
+ */
+function setupEventListeners() {
+    // Botón para abrir el modal
+    sizeGuideModal.openButton.addEventListener('click', toggleModal);
+    
+    // Botón para cerrar el modal
+    sizeGuideModal.closeButton.addEventListener('click', toggleModal);
+    
+    // Clic fuera del contenido para cerrar
+    document.addEventListener('click', (event) => {
+        if (sizeGuideModal.isOpen && 
+            !sizeGuideModal.contentElement.contains(event.target) && 
+            event.target !== sizeGuideModal.openButton) {
+            toggleModal();
+        }
+    });
+    
+    // Tecla ESC para cerrar
+    document.addEventListener('keydown', (event) => {
+        if (sizeGuideModal.isOpen && event.key === 'Escape') {
+            toggleModal();
+        }
+    });
+}
+
+/**
+ * Alterna la visibilidad del modal
+ */
+function toggleModal() {
+    sizeGuideModal.isOpen = !sizeGuideModal.isOpen;
+    
+    if (sizeGuideModal.isOpen) {
+        showModal();
+    } else {
+        hideModal();
+    }
+}
+
+/**
+ * Muestra el modal
+ */
+function showModal() {
+    sizeGuideModal.guideElement.classList.remove('size-guide-hidden');
+    document.body.style.overflow = 'hidden'; // Previene el scroll de la página
+}
+
+/**
+ * Oculta el modal
+ */
+function hideModal() {
+    sizeGuideModal.guideElement.classList.add('size-guide-hidden');
+    document.body.style.overflow = ''; // Restaura el scroll de la página
+}
+
+// --------------------------
+// INTEGRACIÓN CON LA PÁGINA DE PRODUCTO
+// --------------------------
+
+// En tu función mostrarDetallesProducto:
+function mostrarDetallesProducto(product) {
+    // ... (código existente para mostrar el producto)
+    
+    // Inicializar la guía de talles con los datos del producto
+    initSizeGuide(product);
+}
+
+
+
 /*----------- "AGREGAR AL CARRITO" ------------*/
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     console.log('Botón "Agregar al carrito" clickeado'); // Depuración
@@ -310,16 +440,6 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     // Agregar el producto al carrito
     addToCart(product);
 });
-
-
-// Configurar la guía de talles
-llenarTablaMedidas(product);
-
-// Event listeners para la guía de talles
-document.getElementById('show-size-guide')?.addEventListener('click', toggleSizeGuide);
-document.querySelector('.close-size-guide')?.addEventListener('click', toggleSizeGuide);
-
-
 
 
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */

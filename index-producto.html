@@ -249,22 +249,22 @@
   </section>
 
   <!--------------------------PRODUCTO------------------------->
-  <div class="product-page">
+ <div class="product-page">
     <div class="product-gallery">
         <div class="zoom-container" data-="image">
             <!-- Imagen principal del producto -->
             <img class="main-product-image" id="product-image" src="" alt="Imagen principal del producto">
-
         </div>
         <div id="product-thumbnails" class="thumbnails-container"></div>
     </div>
+    
     <div class="product-details-section">
         <!-- Título del producto -->
         <h1 id="product-title"></h1>
         <!-- Precio del producto -->
         <p id="product-price"></p>
         <!-- Descripción del producto -->
-        <p id="product-description" ></p>
+        <p id="product-description"></p>
 
         <!-- Colores disponibles -->
         <div id="product-colors" class="product-colors">
@@ -272,25 +272,16 @@
         </div>
 
         <!-- Talles disponibles -->
-        <div id="product-sizes"  class="product-size">
-            <!-- Los botones de talles se generan dinámicamente -->
+        <div class="talles-section">
+            <div id="product-sizes" class="product-size">
+                <!-- Los botones de talles se generan dinámicamente -->
+            </div>
         </div>
 
-       <div id="product-sizes" class="product-size">
-    <!-- Los botones de talles se generan dinámicamente -->
-    <button id="show-size-guide" class="size-guide-btn">Guía de Talles</button>
-</div>
-
-<!-- Cambiamos el nombre del modal a "size-guide" -->
-<div id="product-sizes" class="product-size">
-    <!-- Los botones de talles se generan dinámicamente -->
-    <button id="show-size-guide" class="size-guide-btn">Guía de Talles</button>
-</div>
-
-<!-- Guía de talles (antes modal) -->
+   <<!-- Contenedor del modal (puede ir al final del body) -->
 <div id="size-guide" class="size-guide-hidden">
     <div class="size-guide-content">
-        <span class="close-size-guide">&times;</span>
+        <button class="close-size-guide" aria-label="Cerrar guía de talles">&times;</button>
         <h2>Tabla de Medidas</h2>
         <table>
             <thead>
@@ -302,19 +293,24 @@
                 </tr>
             </thead>
             <tbody id="sizeGuideTableBody">
-                <!-- Datos dinámicos aquí -->
+                <!-- Las filas se generarán dinámicamente -->
             </tbody>
         </table>
     </div>
 </div>
 
-        <!-- Selector de cantidad (opcional) -->
+<!-- Botón para abrir la guía (debe estar en la sección de talles) -->
+<button id="show-size-guide" class="size-guide-btn">
+    Guía de Talles
+</button>
+
+        <!-- Selector de cantidad -->
         <div id="quantity-container" class="product-quantity hidden">
             <label for="quantity">Cantidad:</label>
             <input type="number" id="quantity" name="quantity" value="1" min="1" max="100">
         </div>
 
-        <!-- Botones de compra y agregar al carrito -->
+        <!-- Botones de compra -->
         <div class="btn-container">
             <button class="btn-buy-now">Comprar</button>
             <button class="btn-add-to-cart">Agregar al carrito</button>
