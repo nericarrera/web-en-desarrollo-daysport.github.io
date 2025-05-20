@@ -118,6 +118,7 @@ function mostrarDetallesProducto(product) {
                 // Remover selección previa
                 document.querySelectorAll('.color-btn').forEach(btn => {
                     btn.classList.remove('selected-color');
+
                 });
                 
                 // Marcar color seleccionado
@@ -211,174 +212,110 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------
-// GESTIÓN DE LA GUÍA DE TALLES
+// GUÍA DE TALLES - VERSIÓN AUTÓNOMA
 // --------------------------
 
-// Variable para rastrear el estado del modal
-let sizeGuideModal = {
-    isOpen: false,
-    guideElement: null,
-    contentElement: null,
-    tableBody: null,
-    closeButton: null,
-    openButton: null
-};
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Crear el modal dinámicamente
+    const sizeGuideHTML = `
+        <div id="size-guide" class="size-guide-hidden">
+            <div class="size-guide-content">
+                <div class="size-guide-header">
+                    <h2>Guía de talles</h2>
+                    <button class="close-size-guide">&times;</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Talla</th>
+                            <th>Pecho (cm)</th>
+                            <th>Cintura (cm)</th>
+                            <th>Cadera (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sizeGuideTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    `;
+    
+    // Insertar el modal al final del body
+    document.body.insertAdjacentHTML('beforeend', sizeGuideHTML);
 
-/**
- * Inicializa la guía de talles con los datos del producto
- * @param {Object} product - Producto actual con sus variantes
- */
-function initSizeGuide(product) {
-    // 1. Configurar referencias a los elementos del DOM
-    setupModalReferences();
-    
-    // 2. Verificar que todos los elementos necesarios existan
-    if (!validateModalElements()) {
-        console.error('Error: Elementos esenciales de la guía de talles no encontrados');
-        return;
-    }
-    
-    // 3. Llenar la tabla con los datos del producto
-    populateSizeTable(product.variantes);
-    
-    // 4. Configurar los event listeners
-    setupEventListeners();
-    
-    // 5. Asegurar que el modal esté oculto inicialmente
-    hideModal();
-}
+    // 2. Configurar eventos
+    document.querySelectorAll('[data-size-guide]').forEach(btn => {
+        btn.addEventListener('click', handleToggleGuide);
+    });
 
-/**
- * Configura las referencias a los elementos del DOM
- */
-function setupModalReferences() {
-    sizeGuideModal.guideElement = document.getElementById('size-guide');
-    sizeGuideModal.contentElement = document.querySelector('.size-guide-content');
-    sizeGuideModal.tableBody = document.getElementById('sizeGuideTableBody');
-    sizeGuideModal.closeButton = document.querySelector('.close-size-guide');
-    sizeGuideModal.openButton = document.getElementById('show-size-guide');
-}
+    // 3. Funcionalidad
+    const sizeGuide = {
+        isOpen: false,
+        currentProduct: null,
 
-/**
- * Valida que todos los elementos necesarios existan
- * @returns {boolean} - True si todos los elementos son válidos
- */
-function validateModalElements() {
-    return !!(
-        sizeGuideModal.guideElement &&
-        sizeGuideModal.contentElement &&
-        sizeGuideModal.tableBody &&
-        sizeGuideModal.closeButton &&
-        sizeGuideModal.openButton
-    );
-}
+        init(product) {
+            this.currentProduct = product;
+            this.fillTable(product);
+        },
 
-/**
- * Llena la tabla con los datos de las variantes
- * @param {Array} variants - Array de variantes del producto
- */
-function populateSizeTable(variants = []) {
-    // Limpiar la tabla existente
-    sizeGuideModal.tableBody.innerHTML = '';
-    
-    // Mostrar mensaje si no hay variantes
-    if (!variants || variants.length === 0) {
-        sizeGuideModal.tableBody.innerHTML = `
-            <tr>
-                <td colspan="4">No hay información de talles disponible</td>
-            </tr>
-        `;
-        return;
-    }
-    
-    // Crear un mapa de talles únicos para evitar duplicados
-    const uniqueSizes = new Map();
-    
-    // Procesar cada variante
-    variants.forEach(variant => {
-        if (!uniqueSizes.has(variant.talla)) {
-            uniqueSizes.set(variant.talla, variant);
+        fillTable(product) {
+            const tbody = document.getElementById('sizeGuideTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = product?.variantes?.length 
+                ? Array.from(new Set(product.variantes.map(v => v.talla)))
+                    .map(talla => {
+                        const variant = product.variantes.find(v => v.talla === talla);
+                        return `
+                            <tr>
+                                <td>${talla}</td>
+                                <td>${variant.pecho || 'N/A'}</td>
+                                <td>${variant.cintura || 'N/A'}</td>
+                                <td>${variant.cadera || 'N/A'}</td>
+                            </tr>
+                        `;
+                    }).join('')
+                : '<tr><td colspan="4">No hay información disponible</td></tr>';
+        },
+
+        toggle() {
+            this.isOpen = !this.isOpen;
+            document.getElementById('size-guide').classList.toggle('size-guide-hidden', !this.isOpen);
             
-            // Crear y agregar fila a la tabla
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${variant.talla}</td>
-                <td>${variant.pecho || 'N/A'}</td>
-                <td>${variant.cintura || 'N/A'}</td>
-                <td>${variant.cadera || 'N/A'}</td>
-            `;
-            sizeGuideModal.tableBody.appendChild(row);
-        }
-    });
-}
+            if (this.isOpen) {
+                document.addEventListener('click', this.handleOutsideClick.bind(this));
+                document.addEventListener('keydown', this.handleEscape.bind(this));
+            } else {
+                document.removeEventListener('click', this.handleOutsideClick);
+                document.removeEventListener('keydown', this.handleEscape);
+            }
+        },
 
-/**
- * Configura los event listeners para el modal
- */
-function setupEventListeners() {
-    // Botón para abrir el modal
-    sizeGuideModal.openButton.addEventListener('click', toggleModal);
-    
-    // Botón para cerrar el modal
-    sizeGuideModal.closeButton.addEventListener('click', toggleModal);
-    
-    // Clic fuera del contenido para cerrar
-    document.addEventListener('click', (event) => {
-        if (sizeGuideModal.isOpen && 
-            !sizeGuideModal.contentElement.contains(event.target) && 
-            event.target !== sizeGuideModal.openButton) {
-            toggleModal();
-        }
-    });
-    
-    // Tecla ESC para cerrar
-    document.addEventListener('keydown', (event) => {
-        if (sizeGuideModal.isOpen && event.key === 'Escape') {
-            toggleModal();
-        }
-    });
-}
+        handleOutsideClick(e) {
+            if (!e.target.closest('.size-guide-content')) this.toggle();
+        },
 
-/**
- * Alterna la visibilidad del modal
- */
-function toggleModal() {
-    sizeGuideModal.isOpen = !sizeGuideModal.isOpen;
-    
-    if (sizeGuideModal.isOpen) {
-        showModal();
-    } else {
-        hideModal();
+        handleEscape(e) {
+            if (e.key === 'Escape' && this.isOpen) this.toggle();
+        }
+    };
+
+    // 4. Manejador único
+    function handleToggleGuide(e) {
+        e.preventDefault();
+        sizeGuide.toggle();
     }
-}
 
-/**
- * Muestra el modal
- */
-function showModal() {
-    sizeGuideModal.guideElement.classList.remove('size-guide-hidden');
-    document.body.style.overflow = 'hidden'; // Previene el scroll de la página
-}
-
-/**
- * Oculta el modal
- */
-function hideModal() {
-    sizeGuideModal.guideElement.classList.add('size-guide-hidden');
-    document.body.style.overflow = ''; // Restaura el scroll de la página
-}
-
-// --------------------------
-// INTEGRACIÓN CON LA PÁGINA DE PRODUCTO
-// --------------------------
-
-// En tu función mostrarDetallesProducto:
-function mostrarDetallesProducto(product) {
-    // ... (código existente para mostrar el producto)
+    // 5. Inicialización cuando tengas el producto
+    // Llama a esto desde tu código principal cuando cargues el producto:
+    // sizeGuide.init(productoActual);
+    function mostrarDetallesProducto(product) {
+    // ... tu código existente ...
     
-    // Inicializar la guía de talles con los datos del producto
-    initSizeGuide(product);
+    // Inicializar la guía de talles
+    sizeGuide.init(product);
 }
+});
+
 
 
 

@@ -278,31 +278,7 @@
             </div>
         </div>
 
-   <<!-- Contenedor del modal (puede ir al final del body) -->
-<div id="size-guide" class="size-guide-hidden">
-    <div class="size-guide-content">
-        <button class="close-size-guide" aria-label="Cerrar guía de talles">&times;</button>
-        <h2>Tabla de Medidas</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Talle</th>
-                    <th>Pecho (cm)</th>
-                    <th>Cintura (cm)</th>
-                    <th>Cadera (cm)</th>
-                </tr>
-            </thead>
-            <tbody id="sizeGuideTableBody">
-                <!-- Las filas se generarán dinámicamente -->
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Botón para abrir la guía (debe estar en la sección de talles) -->
-<button id="show-size-guide" class="size-guide-btn">
-    Guía de Talles
-</button>
+ <button data-size-guide>Guía de talles</button>
 
         <!-- Selector de cantidad -->
         <div id="quantity-container" class="product-quantity hidden">
@@ -528,6 +504,7 @@
   <script type="module" src="/js/hombre.js"></script>
   <script type="module" src="/js/niños.js"></script>
   <script type="module" src="/js/accesorios.js"></script>
+
   
   <script type="module" src="/js/mujerProductos.js"></script>
   <script type="module" src="/js/hombreProductos.js"></script>
