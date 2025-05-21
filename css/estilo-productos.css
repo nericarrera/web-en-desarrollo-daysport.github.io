@@ -482,7 +482,7 @@
 
 /*-----------------------TABLA DE TALLES--------------*/
 .size-guide-hidden {
-  display: none;
+  display: none !important; /* Forzar ocultamiento */
 }
 
 #size-guide {
@@ -490,40 +490,40 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  z-index: 1000;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  padding: 2rem;
+  z-index: 10000; /* Mayor que otros elementos */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  width: 50%;
-  height: 50%;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
   overflow: auto;
 }
 
 .size-guide-content {
   position: relative;
-  min-width: 300px;
 }
 
 .close-size-guide {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1;
   cursor: pointer;
-  padding: 5px;
+  padding: 0.25rem;
+  transition: opacity 0.3s;
 }
 
-.size-guide-header {
-  margin-bottom: 15px;
+.close-size-guide:hover {
+  opacity: 0.7;
 }
 
-#sizeGuideTableBody td {
-  padding: 8px 12px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+#sizeGuideTableBody tr:hover {
+  background-color: #f5f5f5;
 }
 
 /*--------------------------------BOTON DE COMPRA ---------------------*/
