@@ -367,11 +367,11 @@ export  const productosMujer = [
         ],
         
         variantes: [
-            { color: "beige", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "blanco", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "verde", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "beige", talla: "M", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "blanco", talla: "XL", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "negro", talla: "M", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "rosa", talla: "L", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "verde", talla: "L", stock: 1, pecho: "100", cintura: "90", cadera: "102" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [

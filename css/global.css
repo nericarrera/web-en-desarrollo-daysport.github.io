@@ -613,7 +613,7 @@ html {
 
 /*-------------- Estilo para el modal ----------------*/
 
-.modal {
+.modal-menu {
   position: fixed;
   top: 15.9%;
   z-index: 1000;
@@ -623,7 +623,7 @@ html {
   border-top: 1px solid #ccc;
 }
 
-.modal-content {
+.modal-content-menu {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -724,7 +724,7 @@ html {
   transition: all 520ms ease;
 }
 
-.modal-content h2 {
+.modal-content-menu h2 {
   font-family: "Dosis", sans-serif; /* Fuente para el título */
   font-size: 24px; /* Tamaño de fuente del título */
   margin-bottom: 10px; /* Espacio debajo del título */
@@ -736,14 +736,14 @@ html {
   border-radius: 15px;
 }
 
-.modal-content h2:hover {
+.modal-content-menu h2:hover {
   background: #360353;
   color: #d3e005;
   transition: all 510ms ease; /* Transición suave */
   cursor: pointer;
 }
 
-.modal-content p {
+.modal-content-menu p {
   font-family: "Dosis", sans-serif; /* Fuente para el texto */
   font-size: 20px; /* Tamaño de fuente del texto */
   color: #000000; /* Color del texto */
@@ -751,14 +751,14 @@ html {
   margin-bottom: 20px; /* Espacio debajo del texto */
 }
 
-.modal-content p:hover {
+.modal-content-menu p:hover {
   background: #360353;
   color: #d3e005;
   transition: all 510ms ease; /* Transición suave */
   cursor: pointer;
 }
 
-.modal-content video {
+.modal-content-menu video {
   width: 100%;
   max-height: 400px; /* Altura máxima para el video */
   object-fit: contain;
@@ -766,7 +766,7 @@ html {
 }
 
 /* Mostrar modal al hacer hover */
-.menu-li:hover .modal {
+.menu-li:hover .modal-menu {
   display: flex; /* Muestra el modal al hacer hover */
 }
 
