@@ -414,8 +414,11 @@ export  const productosMujer = [
         {src: "img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa0.jpeg", hover:"img/mujer/conjuntos-deportivos-lycra/conjuntonikelycra-rosa1.jpeg"},
         ],
         variantes: [
-            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "violeta", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "celeste", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },

@@ -212,24 +212,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------
-// GUÍA DE TALLES - VERSIÓN CORREGIDA
+// GUÍA DE TALLES - VERSIÓN COMPLETA
 // --------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Insertar el modal
+    // Crear modal dinámicamente
     const sizeGuideHTML = `
-        <div id="size-guide" class="size-guide-hidden">
+        <div id="size-guide">
             <div class="size-guide-content">
                 <div class="size-guide-header">
-                    <h2>Guía de talles</h2>
+                    <h2>Guía de Talles</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
                 <table>
                     <thead>
                         <tr>
                             <th>Talla</th>
-                            <th>Pecho (cm)</th>
-                            <th>Cintura (cm)</th>
-                            <th>Cadera (cm)</th>
+                            <th>Pecho</th>
+                            <th>Cintura</th>
+                            <th>Cadera</th>
                         </tr>
                     </thead>
                     <tbody id="sizeGuideTableBody"></tbody>
@@ -239,98 +239,63 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.body.insertAdjacentHTML('beforeend', sizeGuideHTML);
 
-    // 2. Configurar eventos del modal
-    document.querySelector('.close-size-guide').addEventListener('click', () => {
-        document.getElementById('size-guide').classList.add('size-guide-hidden');
-    });
+    // Variables del modal
+    const sizeGuideModal = document.getElementById('size-guide');
+    const closeBtn = document.querySelector('.close-size-guide');
 
-    // Añade esto después de insertar el modal en el DOM:
-document.querySelector('.close-size-guide').addEventListener('click', () => {
-    sizeGuide.toggle();
-});
-
-    
-    // 3. Funcionalidad
-    const sizeGuide = {
-        isOpen: false,
-        currentProduct: null,
-
-        toggle() {
-            const modal = document.getElementById('size-guide');
-            modal.classList.toggle('size-guide-hidden');
-
-
-          // 4. Manejador para abrir el modal
+    // Manejadores de eventos
     document.querySelectorAll('[data-size-guide]').forEach(btn => {
         btn.addEventListener('click', () => {
-            sizeGuide.toggle();
+            const productId = getProductIdFromURL();
+            const product = getProductById(productId);
+            fillSizeGuide(product);
+            sizeGuideModal.style.display = 'flex';
         });
     });
-},
-   
 
-       fillTable(product) {
+    closeBtn.addEventListener('click', () => {
+        sizeGuideModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === sizeGuideModal) {
+            sizeGuideModal.style.display = 'none';
+        }
+    });
+});
+
+// Función para obtener producto actual
+function getProductById(id) {
+    return productosMujer.find(p => p.id === id) || 
+           productosHombre.find(p => p.id === id) || 
+           productosNiños.find(p => p.id === id) || 
+           productosAccesorios.find(p => p.id === id);
+}
+
+// Función para llenar la tabla de talles
+function fillSizeGuide(product) {
     const tbody = document.getElementById('sizeGuideTableBody');
-    if (!tbody) return;
+    tbody.innerHTML = '';
 
-    // Verifica si hay variantes
     if (product?.variantes?.length) {
-        // Filtra talles únicos
+        // Agrupar talles únicos
         const tallesUnicos = [...new Set(product.variantes.map(v => v.talla))];
-        tbody.innerHTML = tallesUnicos.map(talla => {
-            const variant = product.variantes.find(v => v.talla === talla);
-            return `
-                <tr>
-                    <td>${talla}</td>
-                    <td>${variant.pecho || 'N/A'}</td>
-                    <td>${variant.cintura || 'N/A'}</td>
-                    <td>${variant.cadera || 'N/A'}</td>
-                </tr>
+        
+        tallesUnicos.forEach(talla => {
+            const variante = product.variantes.find(v => v.talla === talla);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${talla}</td>
+                <td>${variante.pecho || 'N/A'}</td>
+                <td>${variante.cintura || 'N/A'}</td>
+                <td>${variante.cadera || 'N/A'}</td>
             `;
-        }).join('');
+            tbody.appendChild(row);
+        });
     } else {
         tbody.innerHTML = '<tr><td colspan="4">No hay información disponible</td></tr>';
     }
-},
-
-        toggle() {
-            this.isOpen = !this.isOpen;
-            document.getElementById('size-guide').classList.toggle('size-guide-hidden', !this.isOpen);
-            
-            if (this.isOpen) {
-                document.addEventListener('click', this.handleOutsideClick.bind(this));
-                document.addEventListener('keydown', this.handleEscape.bind(this));
-            } else {
-                document.removeEventListener('click', this.handleOutsideClick);
-                document.removeEventListener('keydown', this.handleEscape);
-            }
-        },
-
-        handleOutsideClick(e) {
-            if (!e.target.closest('.size-guide-content')) this.toggle();
-        },
-
-        handleEscape(e) {
-            if (e.key === 'Escape' && this.isOpen) this.toggle();
-        }
-    };
-
-    // 4. Manejador único
-    function handleToggleGuide(e) {
-        e.preventDefault();
-        sizeGuide.toggle();
-    }
-
-    // 5. Inicialización cuando tengas el producto
-    // Llama a esto desde tu código principal cuando cargues el producto:
-    // sizeGuide.init(productoActual);
-    function mostrarDetallesProducto(product) {
-    // ... tu código existente ...
-    
-    // Inicializar la guía de talles
-    sizeGuide.init(product);
 }
-});
 
 
 
