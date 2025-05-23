@@ -223,6 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>Guía de Talles</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
+                <p>Selecciona un talle y mira la guía correspondiente.</p>
+                <p>Recuerda que las medidas pueden variar según el fabricante.</p>  
                 <table>
                     <thead>
                         <tr>
