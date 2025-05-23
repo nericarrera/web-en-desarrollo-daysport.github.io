@@ -212,11 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --------------------------
-// GUÍA DE TALLES - VERSIÓN AUTÓNOMA
+// GUÍA DE TALLES - VERSIÓN CORREGIDA
 // --------------------------
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Crear el modal dinámicamente
+    // 1. Insertar el modal
     const sizeGuideHTML = `
         <div id="size-guide" class="size-guide-hidden">
             <div class="size-guide-content">
@@ -238,44 +237,61 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     `;
-    
-    // Insertar el modal al final del body
     document.body.insertAdjacentHTML('beforeend', sizeGuideHTML);
 
-    // 2. Configurar eventos
-    document.querySelectorAll('[data-size-guide]').forEach(btn => {
-        btn.addEventListener('click', handleToggleGuide);
+    // 2. Configurar eventos del modal
+    document.querySelector('.close-size-guide').addEventListener('click', () => {
+        document.getElementById('size-guide').classList.add('size-guide-hidden');
     });
 
+    // Añade esto después de insertar el modal en el DOM:
+document.querySelector('.close-size-guide').addEventListener('click', () => {
+    sizeGuide.toggle();
+});
+
+    
     // 3. Funcionalidad
     const sizeGuide = {
         isOpen: false,
         currentProduct: null,
 
-        init(product) {
-            this.currentProduct = product;
-            this.fillTable(product);
-        },
+        toggle() {
+            const modal = document.getElementById('size-guide');
+            modal.classList.toggle('size-guide-hidden');
 
-        fillTable(product) {
-            const tbody = document.getElementById('sizeGuideTableBody');
-            if (!tbody) return;
 
-            tbody.innerHTML = product?.variantes?.length 
-                ? Array.from(new Set(product.variantes.map(v => v.talla)))
-                    .map(talla => {
-                        const variant = product.variantes.find(v => v.talla === talla);
-                        return `
-                            <tr>
-                                <td>${talla}</td>
-                                <td>${variant.pecho || 'N/A'}</td>
-                                <td>${variant.cintura || 'N/A'}</td>
-                                <td>${variant.cadera || 'N/A'}</td>
-                            </tr>
-                        `;
-                    }).join('')
-                : '<tr><td colspan="4">No hay información disponible</td></tr>';
-        },
+          // 4. Manejador para abrir el modal
+    document.querySelectorAll('[data-size-guide]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            sizeGuide.toggle();
+        });
+    });
+},
+   
+
+       fillTable(product) {
+    const tbody = document.getElementById('sizeGuideTableBody');
+    if (!tbody) return;
+
+    // Verifica si hay variantes
+    if (product?.variantes?.length) {
+        // Filtra talles únicos
+        const tallesUnicos = [...new Set(product.variantes.map(v => v.talla))];
+        tbody.innerHTML = tallesUnicos.map(talla => {
+            const variant = product.variantes.find(v => v.talla === talla);
+            return `
+                <tr>
+                    <td>${talla}</td>
+                    <td>${variant.pecho || 'N/A'}</td>
+                    <td>${variant.cintura || 'N/A'}</td>
+                    <td>${variant.cadera || 'N/A'}</td>
+                </tr>
+            `;
+        }).join('');
+    } else {
+        tbody.innerHTML = '<tr><td colspan="4">No hay información disponible</td></tr>';
+    }
+},
 
         toggle() {
             this.isOpen = !this.isOpen;
