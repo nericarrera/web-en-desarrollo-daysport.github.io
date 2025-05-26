@@ -220,11 +220,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="size-guide">
             <div class="size-guide-content">
                 <div class="size-guide-header">
-                    <h2>Guía de Talles</h2>
+                    <h2>GUÍA DE TALLES PARA PRENDAS</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
                 <p>Selecciona un talle y mira la guía correspondiente.</p>
                 <p>Recuerda que las medidas pueden variar según el fabricante.</p>  
+                <img src="img/guia-de-talles/guiadetalles1.png" alt="Guía de Talles" class="size-guide-image">
                 <table>
                     <thead>
                         <tr>

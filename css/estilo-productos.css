@@ -491,16 +491,16 @@
   height: 100%;
 }
 
+/*----boton cerrar---*/
 .close-size-guide {
   position: absolute;
-  top: -2rem;
-  right: -1rem;
+  top: 0rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 3.5rem;
   line-height: 1;
   cursor: pointer;
-  padding: 0.25rem;
   transition: opacity 0.3s;
 }
 
@@ -538,29 +538,22 @@
   background-color: white;
   margin: 5% auto;
   padding: 20px;
-  max-width: 700px;
+  max-width: 75%;
   height: 600px;
   position: relative;
-}
-
-.close-size-guide {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 24px;
-  cursor: pointer;
+  border: 1px solid #000;
 }
 
 .size-guide-header {
-  margin-top: 20px;
+  margin-top: 36px;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .size-guide-header h2 {
   color: #1c1c1c;
-  font-family: "Poppins", sans-serif;
-  font-size: 26px;
+  font-family: "Questrial", sans-serif;
+  font-size: 35px;
   background: #e3e3e3;
   border-radius: 5px;
 }
@@ -724,17 +717,17 @@ th:hover {
   background-repeat: no-repeat;
   z-index: 1;
   padding-left: 35px;
+  border-left: 1px solid #ededed;
 }
 
 #product-title {
-  font-size: 30px;
+  font-size: 40px;
   color: #000000;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.5px;
   margin-bottom: 0px;
-  width: 280px;
 }
 
 #product-price {
