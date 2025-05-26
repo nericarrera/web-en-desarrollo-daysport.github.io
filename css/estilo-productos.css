@@ -635,6 +635,15 @@ th:hover {
   margin-top: 55px;
 }
 
+.guiadetallesimg-secundaria {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  object-fit: cover;
+  margin: auto;
+}
+
 /*--------------------------------BOTON DE COMPRA ---------------------*/
 
 .btn-container-mujer {

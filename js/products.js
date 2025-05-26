@@ -246,7 +246,7 @@ Sigue estos pasos para elegir tu medida ideal:</b></p>
                     </thead>
                     <tbody id="sizeGuideTableBody"></tbody>
                 </table>
-                <img class="guiadetallesimg" src="img/guia-de-talles/guiadetalles2.jpg" alt="Guía de Talles" class="size-guide-image">
+                <img class="guiadetallesimg-secundaria" src="img/guia-de-talles/guiadetalles2.jpg" alt="Guía de Talles" class="size-guide-image">
             </div>
         </div>
          <p>¿Necesitas ayuda? ¡No te preocupes! Escríbenos a 📩 daysport.ok@gmail.com o contáctanos por WhatsApp. ¡Estamos aquí para asegurarnos de que ames tu compra!</p>
