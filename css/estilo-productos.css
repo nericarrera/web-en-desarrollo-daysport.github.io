@@ -694,6 +694,8 @@ th:hover {
   margin-top: 20px;
   font-family: "Dosis" sans-serif;
   border: double;
+  text-align: center;
+  justify-content: center;
 }
 
 .btn-buy-now:hover {
