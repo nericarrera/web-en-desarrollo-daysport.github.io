@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <p>Selecciona un talle y mira la guía correspondiente.</p>
                 <p>Recuerda que las medidas pueden variar según el fabricante.</p>  
-                <img src="img/guia-de-talles/guiadetalles1.png" alt="Guía de Talles" class="size-guide-image">
+                <img src="img/guia-de-talles/guiadetalles1.jpg" alt="Guía de Talles" class="size-guide-image">
                 <table>
                     <thead>
                         <tr>
