@@ -41,7 +41,7 @@ function mostrarDetallesProducto(product) {
     zoomContainer.innerHTML = '';
     thumbnailsContainer.innerHTML = '';
     tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
-    coloresContainer.innerHTML = '<h3>Colores disponibles:</h3>';
+    coloresContainer.innerHTML = '<h3>Colores</h3>';
     quantityContainer.classList.add('hidden');
 
     // Mostrar la imagen principal
@@ -152,7 +152,7 @@ function mostrarDetallesProducto(product) {
 
     // Función para actualizar talles
     function actualizarTalles(product, color) {
-        tallesContainer.innerHTML = '<h3>Talles disponibles:</h3>';
+        tallesContainer.innerHTML = '<h3>Talles</h3>';
         const variantesFiltradas = product.variantes.filter(v => v.color === color);
 
         if (variantesFiltradas.length > 0) {
@@ -223,27 +223,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>✨¡Bienvenido/a a tu Guía de Talles!✨</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
-                <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a.
-Sigue estos pasos para elegir tu medida ideal:</b></p>
-                <p><b>1️⃣ La manera mas facil es por SISA:</b></p>
-                <img class="guiadetallesimg1" src="img/guia-de-talles/guiadetalles0.png" alt="Guía de Talles" class="size-guide-image">
+                <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a. Sigue estos pasos para elegir tu medida ideal:</b></p>
+                 <br>
+                <p>🔍 Compara con la tabla que esta <b>mas abajo</b>. Busca tu talla en la tabla según las medidas que tomaste. Si estás entre dos tallas, 
+                te recomendamos elegir la más grande para mayor comodidad.</p>
+                <br>
+                <p>💡 <b>Tips adicionales</b> Usa una cinta métrica flexible y mide sobre ropa ajustada o sin ropa holgada.</p>
+                <p>Si tienes dudas, revisa la descripción del producto: algunas prendas pueden tener un ajuste especial.</p>
+                <br>
+                <br>
                 <p><b>📏 Mide tu cuerpo:</b></p> 
                 <p><b>Pecho</b>: Coloca la cinta métrica alrededor de la parte más ancha de tu pecho, sin ajustar demasiado.</p>
                 <p><b>Cintura</b>: Mide alrededor de tu cintura natural (justo por encima del ombligo).</p>
                 <p><b>Cadera</b>: Toma la medida en la parte más amplia de tus caderas.</p>
-                <p>🔍 Compara con la tabla Busca tu talla en la tabla según las medidas que tomaste. Si estás entre dos tallas, te recomendamos elegir la más grande para mayor comodidad.</p>
-                <p>💡 <b>Tips adicionales</b> Usa una cinta métrica flexible y mide sobre ropa ajustada o sin ropa holgada.</p>
-                <p>Si tienes dudas, revisa la descripción del producto: algunas prendas pueden tener un ajuste especial.</p>
-
-                 
+                <br>
                 <img class="guiadetallesimg" src="img/guia-de-talles/guiadetalles1.jpg" alt="Guía de Talles" class="size-guide-image">
+                <br>
+                <p class="guiadetalles-titulo-tabla"><b>TABLA DE LA PRENDA SELECCIONADA:</b></p>
+
                 <table>
                     <thead>
                         <tr>
-                            <th>Talla</th>
-                            <th>Pecho</th>
-                            <th>Cintura</th>
-                            <th>Cadera</th>
+                            <th>TALLA</th>
+                            <th>PECHO/SISA</th>
+                            <th>CINTURA</th>
+                            <th>CADERA</th>
                         </tr>
                     </thead>
                     <tbody id="sizeGuideTableBody"></tbody>
