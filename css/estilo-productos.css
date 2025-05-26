@@ -494,15 +494,17 @@
 
 /*----boton cerrar---*/
 .close-size-guide {
+  width: 38px;
   position: absolute;
-  top: 0rem;
-  right: 1rem;
+  top: -3rem;
+  right: 0rem;
   background: none;
   border: none;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   line-height: 1;
   cursor: pointer;
   transition: opacity 0.3s;
+  border: 1px solid #000;
 }
 
 .close-size-guide:hover {
@@ -547,19 +549,40 @@
   margin: auto;
 }
 
+.size-guide-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.size-guide-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.size-guide-content::-webkit-scrollbar-thumb {
+  background: #7500b5;
+  border-radius: 4px;
+}
+
+.size-guide-content::-webkit-scrollbar-thumb:hover {
+  background: #3c015c;
+  cursor: pointer;
+}
+
 .size-guide-header {
   margin-top: 36px;
   margin-bottom: 20px;
   text-align: center;
+  position: relative;
 }
 
 .size-guide-header h2 {
   color: #1c1c1c;
   font-family: "Questrial", sans-serif;
-  font-size: 35px;
+  font-size: 45px;
   background: #e3e3e3;
   border-radius: 5px;
 }
+
 .size-guide-header h2:hover {
   background: #3c015c;
   color: #ffffff;
@@ -568,9 +591,9 @@
 
 .size-guide-content p {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   color: #1c1c1c;
-  margin-top: 15px;
+  padding: 3px;
 }
 
 table {
@@ -601,6 +624,15 @@ th:hover {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   margin-top: 20px;
+}
+
+.guiadetallesimg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  object-fit: cover;
+  margin-top: 55px;
 }
 
 /*--------------------------------BOTON DE COMPRA ---------------------*/
