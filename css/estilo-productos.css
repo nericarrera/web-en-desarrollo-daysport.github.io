@@ -635,6 +635,14 @@ th:hover {
   margin-top: 55px;
 }
 
+.guiadetallesimg1 {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
 .guiadetalles-footer {
   display: flex;
   justify-content: center;

@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a.
 Sigue estos pasos para elegir tu medida ideal:</b></p>
                 <p><b>1️⃣ La manera mas facil es por SISA:</b></p>
-                <img class=""guiadetallesimg" src="img/guia-de-talles/guiadetallessisa.jpg" alt="Guía de Talles" class="size-guide-image">
+                <img class=""guiadetallesimg1" src="img/guia-de-talles/images.png" alt="Guía de Talles" class="size-guide-image">
                 <p><b>📏 Mide tu cuerpo:</b></p> 
                 <p><b>Pecho</b>: Coloca la cinta métrica alrededor de la parte más ancha de tu pecho, sin ajustar demasiado.</p>
                 <p><b>Cintura</b>: Mide alrededor de tu cintura natural (justo por encima del ombligo).</p>
