@@ -69,10 +69,12 @@ html {
 }
 
 .nav {
+  display: flex;
   width: 100%; /* Asegúrate de que ocupe todo el ancho */
   max-width: none; /* Elimina cualquier límite de ancho */
   overflow: visible; /* Permite que el submenú se expanda */
   border-bottom: 1px solid #e1e1e1; /* Línea inferior */
+  flex-direction: row;
 }
 
 .conteiner-buscador-carrito {
@@ -1136,7 +1138,6 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
   cursor: pointer;
-  border-radius: 15px;
 }
 
 .producto-novedad-hombre:hover {
