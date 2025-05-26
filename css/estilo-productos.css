@@ -635,13 +635,13 @@ th:hover {
   margin-top: 55px;
 }
 
-.guiadetallesimg-secundaria {
-  width: 80%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 20px;
-  object-fit: cover;
-  margin: auto;
+.guiadetalles-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  background: #e3e3e3;
+  border-radius: 5px;
 }
 
 /*--------------------------------BOTON DE COMPRA ---------------------*/

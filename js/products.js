@@ -220,11 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="size-guide">
             <div class="size-guide-content">
                 <div class="size-guide-header">
-                    <h2>¡Bienvenido/a a tu Guía de Talles! </h2>
+                    <h2>✨¡Bienvenido/a a tu Guía de Talles!✨</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
                 <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a.
 Sigue estos pasos para elegir tu medida ideal:</b></p>
+                <p><b>1️⃣ La manera mas facil es por SISA:</b></p>
+                <img class=""guiadetallesimg" src="img/guia-de-talles/guiadetallessisa.jpg" alt="Guía de Talles" class="size-guide-image">
                 <p><b>📏 Mide tu cuerpo:</b></p> 
                 <p><b>Pecho</b>: Coloca la cinta métrica alrededor de la parte más ancha de tu pecho, sin ajustar demasiado.</p>
                 <p><b>Cintura</b>: Mide alrededor de tu cintura natural (justo por encima del ombligo).</p>
@@ -246,10 +248,10 @@ Sigue estos pasos para elegir tu medida ideal:</b></p>
                     </thead>
                     <tbody id="sizeGuideTableBody"></tbody>
                 </table>
-                <img class="guiadetallesimg-secundaria" src="img/guia-de-talles/guiadetalles2.jpg" alt="Guía de Talles" class="size-guide-image">
+               <p class="guiadetalles-footer">¿Necesitas ayuda? ¡No te preocupes! Escríbenos a 📩 daysport.ok@gmail.com o contáctanos por WhatsApp. ¡Estamos aquí para asegurarnos de que ames tu compra!</p>
             </div>
         </div>
-         <p>¿Necesitas ayuda? ¡No te preocupes! Escríbenos a 📩 daysport.ok@gmail.com o contáctanos por WhatsApp. ¡Estamos aquí para asegurarnos de que ames tu compra!</p>
+         
     `;
     document.body.insertAdjacentHTML('beforeend', sizeGuideHTML);
 
