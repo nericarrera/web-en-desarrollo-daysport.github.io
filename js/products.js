@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="size-guide">
             <div class="size-guide-content">
                 <div class="size-guide-header">
-                    <h2>✨¡Bienvenido/a a tu Guía de Talles!✨</h2>
+                    <h2>✨¡Bienvenido/a tu Guía de Talles!✨</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
                 <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a. Sigue estos pasos para elegir tu medida ideal:</b></p>
