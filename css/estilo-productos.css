@@ -387,7 +387,6 @@
   transition: transform 0.3s ease;
   transform-origin: center center; /* El zoom se centrará en el cursor */
   object-fit: cover;
-  padding: 3px;
 }
 
 /* Efecto de zoom */
@@ -454,11 +453,6 @@
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
-}
-
-.size-btn:hover {
-  background-color: #000;
-  color: #fff;
 }
 
 /*--------------------------------CONTADOR -----------------*/
@@ -913,10 +907,6 @@ th:hover {
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
-}
-
-.size-btn:hover {
-  background-color: #eaeaea;
 }
 
 .size-btn.selected {
