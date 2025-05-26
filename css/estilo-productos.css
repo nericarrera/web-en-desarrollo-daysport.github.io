@@ -489,6 +489,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 /*----boton cerrar---*/
@@ -536,12 +537,14 @@
 
 #size-guide .size-guide-content {
   background-color: white;
-  margin: 5% auto;
   padding: 20px;
-  max-width: 75%;
-  height: 600px;
+  border-radius: 8px;
+  width: 75%;
+  max-height: 80vh; /* Altura máxima del 80% de la pantalla */
+  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+  scroll-behavior: smooth;
   position: relative;
-  border: 1px solid #000;
+  margin: auto;
 }
 
 .size-guide-header {
