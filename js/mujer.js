@@ -1,16 +1,24 @@
-/*-------MOSTRAR PRODUCTOS DE MUJER CON PAGINACIÓN------------------*/
+/*-------MOSTRAR PRODUCTOS DE MUJER CON PAGINACIÓN Y FILTRADO POR URL------------------*/
 import { productosMujer } from '/js/mujerProductos.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del DOM
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
     const loadMoreBtn = document.getElementById('load-more-btn');
     const loadingSpinner = document.querySelector('.loading-spinner');
+    const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
+    const filterOverlay = document.querySelector('.filter-overlay');
+    const closeFilterButton = document.querySelector('.close-filter');
+    const applyFiltersButton = document.getElementById('apply-filters');
+    const clearFiltersButton = document.getElementById('mujer-clear-filters');
+    const colorCheckboxes = document.querySelectorAll('input[name="mujer-color"]');
+    const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
+    const sortRadios = document.querySelectorAll('input[name="sort"]');
     
-    // Variables de paginación
+    // Variables de estado
     let currentPage = 1;
-    const productsPerPage = 8; // Ajusta según necesidad
-    let currentProducts = [];
+    const productsPerPage = 8;
     let currentFilters = {
         categoria: "all",
         colores: [],
@@ -18,12 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
         orden: ""
     };
 
-    // Función para obtener productos con la etiqueta "novedad"
+    // 1. Procesar parámetros de URL al cargar
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoriaURL = urlParams.get('categoria');
+    
+    if (categoriaURL) {
+        currentFilters.categoria = categoriaURL;
+        const buttonToActivate = document.querySelector(`.mujer-filter-button[data-filter="${categoriaURL}"]`);
+        if (buttonToActivate) {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            buttonToActivate.classList.add('active');
+        }
+    }
+
+    // 2. Funciones principales
     function obtenerProductosNovedad() {
         return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
     }
 
-    // Función para actualizar contadores
     function actualizarContadores() {
         const colorCounts = {};
         const tallaCounts = {};
@@ -41,26 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        document.querySelectorAll('input[name="mujer-color"]').forEach(checkbox => {
+        colorCheckboxes.forEach(checkbox => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) {
-                itemCount.textContent = `(${count})`;
-            }
+            if (itemCount) itemCount.textContent = `(${count})`;
         });
 
-        document.querySelectorAll('input[name="size"]').forEach(checkbox => {
+        sizeCheckboxes.forEach(checkbox => {
             const talla = checkbox.value.toUpperCase();
             const count = tallaCounts[talla] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) {
-                itemCount.textContent = `(${count})`;
-            }
+            if (itemCount) itemCount.textContent = `(${count})`;
         });
     }
 
-    // Función para filtrar productos
     function filtrarProductos() {
         return productosMujer.filter(producto => {
             const matchesCategoria = currentFilters.categoria === "all" || producto.categoria === currentFilters.categoria;
@@ -73,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para ordenar productos
     function ordenarProductos(productos) {
         if (currentFilters.orden === "price-asc") {
             return [...productos].sort((a, b) => a.precio - b.precio);
@@ -85,152 +99,174 @@ document.addEventListener('DOMContentLoaded', () => {
         return productos;
     }
 
-    // Función para mostrar productos (con paginación)
     function mostrarProductos() {
         loadingSpinner.classList.remove('hidden');
         loadMoreBtn.disabled = true;
 
-        // Filtrar y ordenar
         const productosFiltrados = filtrarProductos();
         const productosOrdenados = ordenarProductos(productosFiltrados);
-        
-        // Calcular productos a mostrar
-        const startIndex = 0; // Siempre mostramos desde el inicio al cambiar filtros
         const endIndex = currentPage * productsPerPage;
         const productosAMostrar = productosOrdenados.slice(0, endIndex);
 
-        // Renderizar productos
-        mujerProductsGrid.innerHTML = "";
         renderizarProductos(productosAMostrar);
 
-        // Mostrar u ocultar botón "Mostrar más"
-        if (endIndex >= productosOrdenados.length) {
-            loadMoreBtn.classList.add('hidden');
-        } else {
-            loadMoreBtn.classList.remove('hidden');
-        }
-
+        loadMoreBtn.classList.toggle('hidden', endIndex >= productosOrdenados.length);
         loadingSpinner.classList.add('hidden');
         loadMoreBtn.disabled = false;
     }
 
-    // Función para renderizar productos
     function renderizarProductos(productos) {
-        productos.forEach(producto => {
-            const productoDiv = document.createElement('div');
-            productoDiv.classList.add('mujer-product-card');
+        mujerProductsGrid.innerHTML = productos.map(producto => {
+            const miniaturasHTML = producto.miniaturas?.map((miniatura, index) => `
+                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                     class="thumbnail-image" 
+                     data-main-image-id="mainImage-${producto.id}"
+                     data-hover="${miniatura.hover}">
+            `).join('') || '';
 
-            productoDiv.innerHTML = `
-                <div class="product-container-mujer">
-                    <a href="index-producto.html?id=${producto.id}" class="product-link">
-                        <div class="product-image-mujer">
-                            <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                            <div class="product-thumbnails hidden-thumbnails">
-                                ${producto.miniaturas ? producto.miniaturas.map((miniatura, index) => `
-                                    <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
-                                         class="thumbnail-image" 
-                                         data-main-image-id="mainImage-${producto.id}"
-                                         data-hover="${miniatura.hover}">
-                                `).join('') : ''}
+            return `
+                <div class="mujer-product-card">
+                    <div class="product-container-mujer">
+                        <a href="index-producto.html?id=${producto.id}" class="product-link">
+                            <div class="product-image-mujer">
+                                <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                                <div class="product-thumbnails hidden-thumbnails">${miniaturasHTML}</div>
                             </div>
+                        </a>
+                        <div class="product-details-mujer">
+                            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                            <p class="mujer-product-name">${producto.nombre}</p>
+                            <p class="mujer-product-categoria">${producto.categoria}</p>
+                            <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                            <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                         </div>
-                    </a>
-                    <div class="product-details-mujer">
-                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                        <p class="mujer-product-name">${producto.nombre}</p>
-                        <p class="mujer-product-categoria">${producto.categoria}</p>
-                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                        <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                     </div>
                 </div>
             `;
+        }).join('');
 
-            // Configurar eventos hover (igual que antes)
+        // Configurar eventos hover después de renderizar
+        document.querySelectorAll('.mujer-product-card').forEach(productoDiv => {
+            const id = productoDiv.querySelector('.main-product-image').id.split('-')[1];
+            const producto = productos.find(p => p.id === id);
+            if (!producto) return;
+
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
             let activeThumbnail = null;
 
-            mainImage.addEventListener('mouseenter', () => {
-                if (!activeThumbnail && producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                    mainImage.src = producto.hoverImagenes[0];
-                }
-            });
-
-            mainImage.addEventListener('mouseleave', () => {
+            const resetMainImage = () => {
                 if (!activeThumbnail) {
                     mainImage.src = producto.imagen[0];
                 } else {
                     mainImage.src = activeThumbnail.src;
                 }
+            };
+
+            mainImage.addEventListener('mouseenter', () => {
+                if (!activeThumbnail && producto.hoverImagenes?.length) {
+                    mainImage.src = producto.hoverImagenes[0];
+                }
             });
+
+            mainImage.addEventListener('mouseleave', resetMainImage);
 
             thumbnails.forEach(thumbnail => {
                 thumbnail.addEventListener('mouseenter', () => {
                     mainImage.src = thumbnail.src;
                     activeThumbnail = thumbnail;
                     
-                    const hoverImage = thumbnail.getAttribute('data-hover');
+                    const hoverImage = thumbnail.dataset.hover;
                     if (hoverImage) {
-                        mainImage.addEventListener('mouseenter', () => {
-                            mainImage.src = hoverImage;
-                        });
-                        
-                        mainImage.addEventListener('mouseleave', () => {
-                            mainImage.src = thumbnail.src;
-                        });
+                        const originalSrc = thumbnail.src;
+                        thumbnail.addEventListener('mouseenter', () => mainImage.src = hoverImage);
+                        thumbnail.addEventListener('mouseleave', () => mainImage.src = originalSrc);
                     }
                 });
 
                 thumbnail.addEventListener('mouseleave', () => {
-                    const isHoveringAnyThumbnail = [...thumbnails].some(thumb => {
-                        return thumb.matches(':hover');
-                    });
-                    
-                    if (!isHoveringAnyThumbnail) {
+                    if (![...thumbnails].some(thumb => thumb.matches(':hover'))) {
                         activeThumbnail = null;
-                        mainImage.src = producto.imagen[0];
-                        
-                        mainImage.onmouseenter = null;
-                        mainImage.onmouseleave = null;
-                        
-                        if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                            mainImage.addEventListener('mouseenter', () => {
-                                mainImage.src = producto.hoverImagenes[0];
-                            });
-                            
-                            mainImage.addEventListener('mouseleave', () => {
-                                mainImage.src = producto.imagen[0];
-                            });
-                        }
+                        resetMainImage();
                     }
                 });
             });
-            
-            mujerProductsGrid.appendChild(productoDiv);
         });
     }
 
-    // Event listeners
+    // 3. Event Listeners
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            currentFilters.categoria = button.getAttribute('data-filter');
-            currentPage = 1; // Resetear paginación al cambiar filtros
+            currentFilters.categoria = button.dataset.filter;
+            currentPage = 1;
+            history.pushState({}, '', `?categoria=${currentFilters.categoria}`);
             mostrarProductos();
         });
     });
 
-    // Evento para el botón "Mostrar más"
     loadMoreBtn.addEventListener('click', () => {
         currentPage++;
         mostrarProductos();
-        
-        // Scroll suave hacia abajo
-        setTimeout(() => {
-            loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 100);
+        setTimeout(() => loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
     });
+
+    if (filterDropdownToggle) {
+        filterDropdownToggle.addEventListener('click', () => {
+            filterOverlay.classList.add('show');
+            filterOverlay.style.display = 'block';
+        });
+    }
+
+    if (closeFilterButton) {
+        closeFilterButton.addEventListener('click', () => {
+            filterOverlay.classList.remove('show');
+            setTimeout(() => filterOverlay.style.display = 'none', 300);
+        });
+    }
+
+    if (applyFiltersButton) {
+        applyFiltersButton.addEventListener('click', () => {
+            currentFilters.colores = Array.from(colorCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value.toLowerCase());
+            
+            currentFilters.talles = Array.from(sizeCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value.toUpperCase());
+            
+            currentFilters.orden = Array.from(sortRadios)
+                .find(radio => radio.checked)?.value || "";
+            
+            currentPage = 1;
+            mostrarProductos();
+            filterOverlay.classList.remove('show');
+            setTimeout(() => filterOverlay.style.display = 'none', 300);
+        });
+    }
+
+    if (clearFiltersButton) {
+        clearFiltersButton.addEventListener('click', () => {
+            colorCheckboxes.forEach(cb => cb.checked = false);
+            sizeCheckboxes.forEach(cb => cb.checked = false);
+            sortRadios.forEach(radio => radio.checked = false);
+            
+            currentFilters = {
+                categoria: "all",
+                colores: [],
+                talles: [],
+                orden: ""
+            };
+            
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.mujer-filter-button[data-filter="all"]').classList.add('active');
+            
+            currentPage = 1;
+            history.pushState({}, '', window.location.pathname);
+            mostrarProductos();
+        });
+    }
 
     // Inicialización
     actualizarContadores();
