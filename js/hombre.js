@@ -1,12 +1,12 @@
-/*-------MOSTRAR PRODUCTOS DE HOMBRE CON PAGINACIÓN Y FILTRADO POR URL------------------*/
+/*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
+
 import { productosHombre } from '/js/hombreProductos.js';
 
+/*-------------FILTRO MUJER----------------*/
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos del DOM
     const hombreProductsGrid = document.querySelector('.hombre-products-grid');
     const filterButtons = document.querySelectorAll('.hombre-filter-button');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const loadingSpinner = document.querySelector('.loading-spinner');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
     const closeFilterButton = document.querySelector('.close-filter');
@@ -15,35 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorCheckboxes = document.querySelectorAll('input[name="hombre-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
-    
-    // Variables de estado
-    let currentPage = 1;
-    const productsPerPage = 8;
-    let currentFilters = {
-        categoria: "all",
-        colores: [],
-        talles: [],
-        orden: ""
-    };
 
-    // 1. Procesar parámetros de URL al cargar
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoriaURL = urlParams.get('categoria');
-    
-    if (categoriaURL) {
-        currentFilters.categoria = categoriaURL;
-        const buttonToActivate = document.querySelector(`.hombre-filter-button[data-filter="${categoriaURL}"]`);
-        if (buttonToActivate) {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            buttonToActivate.classList.add('active');
-        }
-    }
-
-    // 2. Funciones principales
+    // Función para obtener productos con la etiqueta "novedad"
     function obtenerProductosNovedad() {
         return productosHombre.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
     }
 
+    // Hacer los datos y funciones disponibles en el ámbito global
+    window.productosHombre = productosHombre;
+    window.obtenerProductosNovedad = obtenerProductosNovedad;
+
+    // Función para actualizar contadores
     function actualizarContadores() {
         const colorCounts = {};
         const tallaCounts = {};
@@ -65,154 +47,149 @@ document.addEventListener('DOMContentLoaded', () => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) itemCount.textContent = `(${count})`;
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
         });
 
         sizeCheckboxes.forEach(checkbox => {
             const talla = checkbox.value.toUpperCase();
             const count = tallaCounts[talla] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) itemCount.textContent = `(${count})`;
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
         });
     }
 
-    function filtrarProductos() {
-        return productosHombre.filter(producto => {
-            const matchesCategoria = currentFilters.categoria === "all" || producto.categoria === currentFilters.categoria;
-            const matchesColor = currentFilters.colores.length === 0 || 
-                producto.variantes.some(vari => currentFilters.colores.includes(vari.color.toLowerCase()));
-            const matchesTalla = currentFilters.talles.length === 0 || 
-                producto.variantes.some(vari => currentFilters.talles.includes(vari.talla.toUpperCase()));
-
+    // Función para mostrar productos
+    function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "") {
+        hombreProductsGrid.innerHTML = "";
+    
+        let productosFiltrados = productosHombre.filter(producto => {
+            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesColor = coloresSeleccionados.length === 0 || 
+                producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
+            const matchesTalla = tallesSeleccionados.length === 0 || 
+                producto.variantes.some(vari => tallesSeleccionados.includes(vari.talla.toUpperCase()));
+    
             return matchesCategoria && matchesColor && matchesTalla;
         });
-    }
-
-    function ordenarProductos(productos) {
-        if (currentFilters.orden === "price-asc") {
-            return [...productos].sort((a, b) => a.precio - b.precio);
-        } else if (currentFilters.orden === "price-desc") {
-            return [...productos].sort((a, b) => b.precio - a.precio);
-        } else if (currentFilters.orden === "novedades") {
-            return [...productos].sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
+    
+        if (orden === "price-asc") {
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (orden === "price-desc") {
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
+        } else if (orden === "novedades") {
+            productosFiltrados.sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
         }
-        return productos;
-    }
-
-    function mostrarProductos() {
-        loadingSpinner.classList.remove('hidden');
-        loadMoreBtn.disabled = true;
-
-        const productosFiltrados = filtrarProductos();
-        const productosOrdenados = ordenarProductos(productosFiltrados);
-        const endIndex = currentPage * productsPerPage;
-        const productosAMostrar = productosOrdenados.slice(0, endIndex);
-
-        renderizarProductos(productosAMostrar);
-
-        loadMoreBtn.classList.toggle('hidden', endIndex >= productosOrdenados.length);
-        loadingSpinner.classList.add('hidden');
-        loadMoreBtn.disabled = false;
-    }
-
-    function renderizarProductos(productos) {
-        hombreProductsGrid.innerHTML = productos.map(producto => {
-            const miniaturasHTML = producto.miniaturas?.map((miniatura, index) => `
-                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
-                     class="thumbnail-image" 
-                     data-main-image-id="mainImage-${producto.id}"
-                     data-hover="${miniatura.hover}">
-            `).join('') || '';
-
-            return `
-                <div class="hombre-product-card">
-                    <div class="product-container-hombre">
-                        <a href="index-producto.html?id=${producto.id}" class="product-link">
-                            <div class="product-image-hombre">
-                                <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                                <div class="product-thumbnails hidden-thumbnails">${miniaturasHTML}</div>
+    
+        productosFiltrados.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('hombre-product-card');
+    
+            productoDiv.innerHTML = `
+                <div class="product-container-hombre">
+                    <a href="index-producto.html?id=${producto.id}" class="product-link">
+                        <div class="product-image-hombre">
+                            <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                            <div class="product-thumbnails hidden-thumbnails">
+                                ${producto.miniaturas ? producto.miniaturas.map((miniatura, index) => `
+                                    <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                                         class="thumbnail-image" 
+                                         data-main-image-id="mainImage-${producto.id}"
+                                         data-hover="${miniatura.hover}">
+                                `).join('') : ''}
                             </div>
-                        </a>
-                        <div class="product-details-hombre">
-                            <p class="hombre-product-price">$${producto.precio.toLocaleString()}</p>
-                            <p class="hombre-product-name">${producto.nombre}</p>
-                            <p class="hombre-product-categoria">${producto.categoria}</p>
-                            <p class="hombre-product-etiqueta">${producto.etiqueta}</p>
-                            <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                         </div>
+                    </a>
+                    <div class="product-details-hombre">
+                        <p class="hombre-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="hombre-product-name">${producto.nombre}</p>
+                        <p class="hombre-product-categoria">${producto.categoria}</p>
+                        <p class="hombre-product-etiqueta">${producto.etiqueta}</p>
+                        <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                     </div>
                 </div>
             `;
-        }).join('');
-
-        // Configurar eventos hover después de renderizar
-        document.querySelectorAll('.hombre-product-card').forEach(productoDiv => {
-            const id = productoDiv.querySelector('.main-product-image').id.split('-')[1];
-            const producto = productos.find(p => p.id === id);
-            if (!producto) return;
-
+    
             const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
             const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            let activeThumbnail = null;
-
-            const resetMainImage = () => {
-                if (!activeThumbnail) {
-                    mainImage.src = producto.imagen[0];
-                } else {
-                    mainImage.src = activeThumbnail.src;
-                }
-            };
-
-            mainImage.addEventListener('mouseenter', () => {
-                if (!activeThumbnail && producto.hoverImagenes?.length) {
-                    mainImage.src = producto.hoverImagenes[0];
-                }
-            });
-
-            mainImage.addEventListener('mouseleave', resetMainImage);
-
+    
+            // Variable para almacenar la miniatura seleccionada
+            let selectedThumbnail = null;
+    
+            // Hover en la imagen principal
+            if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+                const hoverImage = producto.hoverImagenes[0]; // Usamos la primera imagen de hover
+    
+                mainImage.addEventListener('mouseover', () => {
+                    if (!selectedThumbnail) { // Solo cambia si no hay una miniatura seleccionada
+                        mainImage.src = hoverImage;
+                    }
+                });
+    
+                mainImage.addEventListener('mouseout', () => {
+                    if (!selectedThumbnail) { // Solo restablece si no hay una miniatura seleccionada
+                        mainImage.src = producto.imagen[0];
+                    }
+                });
+            }
+    
+            // Hover en las miniaturas
             thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('mouseenter', () => {
+                const hoverImage = thumbnail.getAttribute('data-hover'); // Obtener la imagen de hover de la miniatura
+    
+                thumbnail.addEventListener('mouseover', () => {
+                    // Cambiar la imagen principal a la miniatura seleccionada
                     mainImage.src = thumbnail.src;
-                    activeThumbnail = thumbnail;
-                    
-                    const hoverImage = thumbnail.dataset.hover;
+                    selectedThumbnail = thumbnail;
+    
+                    // Si hay una imagen de hover, mostrarla cuando el cursor esté sobre la imagen principal
                     if (hoverImage) {
-                        const originalSrc = thumbnail.src;
-                        thumbnail.addEventListener('mouseenter', () => mainImage.src = hoverImage);
-                        thumbnail.addEventListener('mouseleave', () => mainImage.src = originalSrc);
+                        mainImage.addEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.addEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src; // Volver a la miniatura seleccionada
+                        });
                     }
                 });
-
-                thumbnail.addEventListener('mouseleave', () => {
-                    if (![...thumbnails].some(thumb => thumb.matches(':hover'))) {
-                        activeThumbnail = null;
-                        resetMainImage();
+    
+                thumbnail.addEventListener('mouseout', () => {
+                    // Restablecer la imagen principal cuando el cursor sale de la miniatura
+                    selectedThumbnail = null;
+                    mainImage.src = producto.imagen[0];
+    
+                    // Restablecer los eventos de hover de la imagen principal
+                    if (hoverImage) {
+                        mainImage.removeEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.removeEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
                     }
                 });
             });
+    
+            hombreProductsGrid.appendChild(productoDiv);
         });
     }
 
-    // 3. Event Listeners
+    // Event listeners
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            currentFilters.categoria = button.dataset.filter;
-            currentPage = 1;
-            history.pushState({}, '', `?categoria=${currentFilters.categoria}`);
-            mostrarProductos();
+            const categoria = button.getAttribute('data-filter');
+            mostrarProductos(categoria);
         });
     });
 
-    loadMoreBtn.addEventListener('click', () => {
-        currentPage++;
-        mostrarProductos();
-        setTimeout(() => loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
-    });
-
-    if (filterDropdownToggle) {
+    if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
             filterOverlay.classList.add('show');
             filterOverlay.style.display = 'block';
@@ -222,55 +199,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeFilterButton) {
         closeFilterButton.addEventListener('click', () => {
             filterOverlay.classList.remove('show');
-            setTimeout(() => filterOverlay.style.display = 'none', 300);
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
         });
     }
 
     if (applyFiltersButton) {
         applyFiltersButton.addEventListener('click', () => {
-            currentFilters.colores = Array.from(colorCheckboxes)
+            const selectedCategory = document.querySelector('.hombre-filter-button.active').getAttribute('data-filter');
+            const selectedColors = Array.from(colorCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toLowerCase());
-            
-            currentFilters.talles = Array.from(sizeCheckboxes)
+            const selectedSizes = Array.from(sizeCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toUpperCase());
-            
-            currentFilters.orden = Array.from(sortRadios)
-                .find(radio => radio.checked)?.value || "";
-            
-            currentPage = 1;
-            mostrarProductos();
+
+            mostrarProductos(selectedCategory, selectedColors, selectedSizes);
+
             filterOverlay.classList.remove('show');
-            setTimeout(() => filterOverlay.style.display = 'none', 300);
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
         });
     }
 
-    if (clearFiltersButton) {
-        clearFiltersButton.addEventListener('click', () => {
-            colorCheckboxes.forEach(cb => cb.checked = false);
-            sizeCheckboxes.forEach(cb => cb.checked = false);
-            sortRadios.forEach(radio => radio.checked = false);
-            
-            currentFilters = {
-                categoria: "all",
-                colores: [],
-                talles: [],
-                orden: ""
-            };
-            
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.hombre-filter-button[data-filter="all"]').classList.add('active');
-            
-            currentPage = 1;
-            history.pushState({}, '', window.location.pathname);
-            mostrarProductos();
-        });
-    }
+    clearFiltersButton.addEventListener('click', () => {
+        sortRadios.forEach(radio => (radio.checked = false));
+        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
+        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
 
-    // Inicialización
+        mostrarProductos();
+    });
+
     actualizarContadores();
-    mostrarProductos();
+    mostrarProductos("all");
 });
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
