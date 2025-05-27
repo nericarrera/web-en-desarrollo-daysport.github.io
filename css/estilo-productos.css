@@ -53,6 +53,8 @@
   width: 40%;
 }
 
+/*----------------NAV-----------------*/
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -691,7 +693,6 @@ th:hover {
   color: white;
   margin-top: 20px;
   font-family: "Dosis" sans-serif;
-  border: double;
   text-align: center;
   justify-content: center;
 }
@@ -708,7 +709,6 @@ th:hover {
   color: white;
   font-family: "Dosis" sans-serif;
   margin-top: 20px;
-  border: double;
 }
 
 .btn-add-to-cart:hover {
@@ -1088,10 +1088,10 @@ th:hover {
 }
 
 .mediosdepago p {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
   letter-spacing: 0.5px;
   color: #000000;
   padding: 10px;
