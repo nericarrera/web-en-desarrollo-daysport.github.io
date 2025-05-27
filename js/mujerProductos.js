@@ -57,8 +57,11 @@ export  const productosMujer = [
            {src: "img/mujer/calzas/calza-nike-pro-neg-1.jpeg", hover:""}
         ],
         variantes: [
-            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "negro", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -86,10 +89,11 @@ export  const productosMujer = [
             {src: "img/mujer/camperas-deportivas/campera-deportiva-nike-3.jpeg", hover:""},
         ], // Miniaturas para el carrusel
         variantes: [
+            { color: "negro", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "rosa", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "rosa", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -120,7 +124,12 @@ export  const productosMujer = [
 
         ], 
         variantes: [
-            { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+             { color: "negro", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+             { color: "negro", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+             { color: "negro", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+
         ],
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -144,8 +153,11 @@ export  const productosMujer = [
             {src:"img/mujer/calzas/calza-nike-radeon-1.jpeg"},
         ],
         variantes: [
+            { color: "gris", talla: "S", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
             { color: "negro", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "XL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],       
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -173,7 +185,10 @@ export  const productosMujer = [
         ],
         variantes: [
             { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -203,8 +218,11 @@ export  const productosMujer = [
 
         ],
         variantes: [
-            { color: "negro", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
-            { color: "gris", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
+            { color: "gris", talla: "S", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "negro", talla: "M", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "L", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" },
+            { color: "gris", talla: "XXL", stock: 0, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             negro: [
@@ -325,10 +343,10 @@ export  const productosMujer = [
 
         ],
         variantes: [
-            { color: "negro", talla: "M", stock: 1, pecho: 98-100, cintura: 86-90, cadera: 102-106 },
-            { color: "beige", talla: "XL", stock: 1, pecho: 105-96, cintura: 86-90, cadera: 102-106 },
-            { color: "rosa", talla: "M", stock: 1, pecho: 98-100, cintura: 86-90, cadera: 102-106 },
-            { color: "blanco", talla: "L", stock: 1, pecho: 100-104, cintura: 86-90, cadera: 102-106 }
+            { color: "negro", talla: "M", stock: 1, pecho: "98-100", cintura: "86-90", cadera: "102-106" },
+            { color: "beige", talla: "XL", stock: 1, pecho: "105-96", cintura: "86-90", cadera: "102-106" },
+            { color: "rosa", talla: "M", stock: 1, pecho: "98-100", cintura: "86-90", cadera: "102-106" },
+            { color: "blanco", talla: "L", stock: 1, pecho: "100-104", cintura: "86-90", cadera: "102-106" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
@@ -367,11 +385,11 @@ export  const productosMujer = [
         ],
         
         variantes: [
-            { color: "beige", talla: "M", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
-            { color: "blanco", talla: "XL", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
-            { color: "negro", talla: "M", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
-            { color: "rosa", talla: "L", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
-            { color: "verde", talla: "L", stock: 1, pecho: "100", cintura: "90", cadera: "102" }
+            { color: "beige", talla: "S", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "blanco", talla: "M", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "negro", talla: "L", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "rosa", talla: "XL", stock: 1, pecho: "100", cintura: "90", cadera: "102" },
+            { color: "verde", talla: "XXL", stock: 1, pecho: "100", cintura: "90", cadera: "102" }
         ],        
         imagenColores: { // Imágenes específicas por color para la página de producto
             beige: [
