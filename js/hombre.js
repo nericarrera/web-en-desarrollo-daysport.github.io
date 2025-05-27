@@ -1,8 +1,5 @@
-/*-------MOSTRAR PRODUCTOS DE MUJER IMPORTACION------------------*/
-
+/*-------MOSTRAR PRODUCTOS DE HOMBRE CON PAGINACIÓN------------------*/
 import { productosHombre } from '/js/hombreProductos.js';
-
-/*-------------FILTRO MUJER----------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
     const hombreProductsGrid = document.querySelector('.hombre-products-grid');
@@ -15,6 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorCheckboxes = document.querySelectorAll('input[name="hombre-color"]');
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
+    
+    // Variables nuevas para paginación
+    const productsPerPage = 8;
+    let currentPage = 1;
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.textContent = 'Mostrar más';
+    loadMoreBtn.id = 'load-more-btn';
+    loadMoreBtn.classList.add('load-more-btn');
+    loadMoreBtn.style.display = 'none'; // Ocultar inicialmente
+    
+    // Insertar el botón después del grid
+    hombreProductsGrid.insertAdjacentElement('afterend', loadMoreBtn);
 
     // Función para obtener productos con la etiqueta "novedad"
     function obtenerProductosNovedad() {
@@ -62,9 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para mostrar productos
-    function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "") {
-        hombreProductsGrid.innerHTML = "";
+    // Función para mostrar productos (MODIFICADA para paginación)
+    function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "", resetPagination = true) {
+        if (resetPagination) {
+            currentPage = 1;
+            hombreProductsGrid.innerHTML = ""; // Solo limpiamos si es un nuevo filtro
+        }
     
         let productosFiltrados = productosHombre.filter(producto => {
             const matchesCategoria = categoria === "all" || producto.categoria === categoria;
@@ -84,7 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
             productosFiltrados.sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
         }
     
-        productosFiltrados.forEach(producto => {
+        // Calcular productos a mostrar
+        const startIndex = 0;
+        const endIndex = currentPage * productsPerPage;
+        const productosAMostrar = productosFiltrados.slice(startIndex, endIndex);
+    
+        // Renderizar solo los productos nuevos (no limpiar el grid si es paginación)
+        renderizarProductos(productosAMostrar);
+    
+        // Mostrar u ocultar botón "Mostrar más"
+        loadMoreBtn.style.display = endIndex >= productosFiltrados.length ? 'none' : 'block';
+    }
+
+    // Función para renderizar productos (similar a la original pero sin limpiar el grid)
+    function renderizarProductos(productos) {
+        productos.forEach(producto => {
+            // Verificar si el producto ya está renderizado
+            if (document.getElementById(`mainImage-${producto.id}`)) {
+                return;
+            }
+            
             const productoDiv = document.createElement('div');
             productoDiv.classList.add('hombre-product-card');
     
@@ -121,16 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Hover en la imagen principal
             if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
-                const hoverImage = producto.hoverImagenes[0]; // Usamos la primera imagen de hover
+                const hoverImage = producto.hoverImagenes[0];
     
                 mainImage.addEventListener('mouseover', () => {
-                    if (!selectedThumbnail) { // Solo cambia si no hay una miniatura seleccionada
+                    if (!selectedThumbnail) {
                         mainImage.src = hoverImage;
                     }
                 });
     
                 mainImage.addEventListener('mouseout', () => {
-                    if (!selectedThumbnail) { // Solo restablece si no hay una miniatura seleccionada
+                    if (!selectedThumbnail) {
                         mainImage.src = producto.imagen[0];
                     }
                 });
@@ -138,31 +169,27 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Hover en las miniaturas
             thumbnails.forEach(thumbnail => {
-                const hoverImage = thumbnail.getAttribute('data-hover'); // Obtener la imagen de hover de la miniatura
+                const hoverImage = thumbnail.getAttribute('data-hover');
     
                 thumbnail.addEventListener('mouseover', () => {
-                    // Cambiar la imagen principal a la miniatura seleccionada
                     mainImage.src = thumbnail.src;
                     selectedThumbnail = thumbnail;
     
-                    // Si hay una imagen de hover, mostrarla cuando el cursor esté sobre la imagen principal
                     if (hoverImage) {
                         mainImage.addEventListener('mouseover', () => {
                             mainImage.src = hoverImage;
                         });
     
                         mainImage.addEventListener('mouseout', () => {
-                            mainImage.src = thumbnail.src; // Volver a la miniatura seleccionada
+                            mainImage.src = thumbnail.src;
                         });
                     }
                 });
     
                 thumbnail.addEventListener('mouseout', () => {
-                    // Restablecer la imagen principal cuando el cursor sale de la miniatura
                     selectedThumbnail = null;
                     mainImage.src = producto.imagen[0];
     
-                    // Restablecer los eventos de hover de la imagen principal
                     if (hoverImage) {
                         mainImage.removeEventListener('mouseover', () => {
                             mainImage.src = hoverImage;
@@ -179,14 +206,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event listeners
+    // Event listeners (MODIFICADOS para paginación)
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const categoria = button.getAttribute('data-filter');
-            mostrarProductos(categoria);
+            mostrarProductos(categoria, [], [], "", true);
         });
+    });
+
+    // Evento para el botón "Mostrar más"
+    loadMoreBtn.addEventListener('click', () => {
+        currentPage++;
+        mostrarProductos(
+            document.querySelector('.hombre-filter-button.active')?.getAttribute('data-filter') || "all",
+            Array.from(colorCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase()),
+            Array.from(sizeCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toUpperCase()),
+            Array.from(sortRadios).find(r => r.checked)?.value || "",
+            false
+        );
+        
+        // Desplazamiento suave al botón
+        setTimeout(() => {
+            loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
     });
 
     if (filterDropdownToggle && filterOverlay) {
@@ -207,16 +251,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (applyFiltersButton) {
         applyFiltersButton.addEventListener('click', () => {
-            const selectedCategory = document.querySelector('.hombre-filter-button.active').getAttribute('data-filter');
+            const selectedCategory = document.querySelector('.hombre-filter-button.active')?.getAttribute('data-filter') || "all";
             const selectedColors = Array.from(colorCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toLowerCase());
             const selectedSizes = Array.from(sizeCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toUpperCase());
+            const selectedSort = Array.from(sortRadios).find(r => r.checked)?.value || "";
 
-            mostrarProductos(selectedCategory, selectedColors, selectedSizes);
-
+            mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort, true);
+            
             filterOverlay.classList.remove('show');
             setTimeout(() => {
                 filterOverlay.style.display = 'none';
@@ -228,12 +273,15 @@ document.addEventListener('DOMContentLoaded', () => {
         sortRadios.forEach(radio => (radio.checked = false));
         colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
         sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.hombre-filter-button[data-filter="all"]').classList.add('active');
 
-        mostrarProductos();
+        mostrarProductos("all", [], [], "", true);
     });
 
+    // Inicialización
     actualizarContadores();
-    mostrarProductos("all");
+    mostrarProductos("all", [], [], "", true);
 });
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */

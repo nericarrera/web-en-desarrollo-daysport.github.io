@@ -333,6 +333,8 @@
   padding: 20px;
 }
 
+/*-------------------------PRODUCTOS - TARJETAS ---------------------*/
+
 .hombre-product-card {
   width: 235px;
   text-align: center;
@@ -621,6 +623,31 @@
 
 .product-thumbnails img:hover {
   border: 1px solid #000;
+}
+
+/*--------------BOTON MOSTRAR MAS - hombres------------------*/
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background-color: #360353;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: "Questrial", sans-serif;
+}
+
+.load-more-btn:hover {
+  background-color: #560585;
+  transform: translateY(-2px);
+}
+
+.load-more-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /* FOOTER */
