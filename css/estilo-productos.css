@@ -492,7 +492,7 @@
 .close-size-guide {
   width: 38px;
   position: absolute;
-  top: -3rem;
+  top: -1rem;
   right: 0rem;
   background: none;
   border: none;
@@ -504,7 +504,8 @@
 }
 
 .close-size-guide:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+  background: #3c015c;
 }
 
 #sizeGuideTableBody td {
@@ -568,8 +569,7 @@
 }
 
 .size-guide-header {
-  margin-top: 36px;
-  margin-bottom: 20px;
+  margin-top: 5px;
   text-align: center;
   position: relative;
   padding: 35px;
