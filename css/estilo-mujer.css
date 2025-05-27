@@ -332,9 +332,8 @@
 
 .products-grid-m {
   display: flex;
-
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 9px;
   margin-top: 20px;
   padding: 20px;
   justify-content: center;
@@ -411,6 +410,7 @@
   width: 230px;
   height: 100px;
   display: flex;
+  margin-top: 2px;
   justify-content: left;
   opacity: 1; /* Mostrar con transición */
   visibility: visible; /* Habilitar interacción */

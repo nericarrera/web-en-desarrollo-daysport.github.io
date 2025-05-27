@@ -223,9 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>✨¡Bienvenido/a tu Guía de Talles!✨</h2>
                     <button class="close-size-guide">&times;</button>
                 </div>
-                <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a. Sigue estos pasos para elegir tu medida ideal:</b></p>
+                <p><b>En Daysport, queremos que encuentres la talla perfecta para sentirte cómodo/a y seguro/a. 
+                Sigue estos pasos para elegir tu medida ideal:</b></p>
                  <br>
-                <p>🔍 Compara con la tabla que esta <b>mas abajo</b>. Busca tu talla en la tabla según las medidas que tomaste. Si estás entre dos tallas, 
+                <p>🔍 Compara con la tabla que esta <b>mas abajo</b>. Busca tu talla en la tabla según las medidas que tomaste. 
+                Si estás entre dos tallas, 
                 te recomendamos elegir la más grande para mayor comodidad.</p>
                 <br>
                 <p>💡 <b>Tips adicionales</b> Usa una cinta métrica flexible y mide sobre ropa ajustada o sin ropa holgada.</p>
@@ -252,7 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </thead>
                     <tbody id="sizeGuideTableBody"></tbody>
                 </table>
-               <p class="guiadetalles-footer">¿Necesitas ayuda? ¡No te preocupes! Escríbenos a 📩 daysport.ok@gmail.com o contáctanos por WhatsApp. ¡Estamos aquí para asegurarnos de que ames tu compra!</p>
+               <p class="guiadetalles-footer">¿Necesitas ayuda? 
+               ¡No te preocupes! Escríbenos a 📩 daysport.ok@gmail.com o contáctanos por WhatsApp. 
+               ¡Estamos aquí para asegurarnos de que ames tu compra!</p>
             </div>
         </div>
          
