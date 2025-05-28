@@ -1,5 +1,4 @@
-/* Estilo del filtro horizontal */
-
+/*----------------- Estilo del filtro horizontal------------------------- */
 .horizontal-filter {
   display: flex;
   align-items: center;
@@ -209,6 +208,28 @@
   font-family: "Dosis" sans-serif;
   font-size: 10px;
   text-decoration: none;
+}
+
+/*---------------BOTON MOSTRAR MAS-------------------*/
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #333;
+}
+
+.load-more-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /*-----------------BOTON FILTRO DESPLEGABLE--------------*/
