@@ -289,7 +289,8 @@
 }
 
 .mujer-filter-button:hover {
-  border-bottom: 2px solid #333;
+  background: #000;
+  color: #fff;
 }
 
 .mujer-filter-button.active {
@@ -518,29 +519,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #360353;
+  background: #000;
+  padding: 5px;
 }
 
 .filter-sidebar-header h2 {
   font-family: "Questrial";
-  padding: 6px;
   color: #fff;
-}
-
-.filter-sidebar-header h2:hover {
-  color: #f3ff05;
-  transition: all 500ms ease;
+  text-align: center;
 }
 
 .close-filter {
   cursor: pointer;
-  font-size: 4.5em;
+  font-size: 3.5em;
   color: #fff;
-  padding: 3px;
 }
 
 .close-filter:hover {
-  color: #a30dfa;
+  background: #360353;
   transition: all 500ms ease;
 }
 
@@ -551,7 +547,9 @@
   font-size: 24px;
   color: #fff;
   padding: 6px;
+  text-align: center;
 }
+
 #mujer-clear-filters:hover {
   color: #f3ff05;
   transition: all 500ms ease;
@@ -586,6 +584,12 @@
   font-size: 1em;
   margin-top: 20px;
   border-radius: 5px;
+}
+
+.apply-button:hover {
+  background-color: #360353;
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 /* Mostrar el overlay y la barra lateral */
