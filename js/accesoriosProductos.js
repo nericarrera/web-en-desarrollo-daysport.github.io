@@ -272,7 +272,7 @@ export const productosAccesorios = [
     { id: "accesorios-9", 
         nombre: "Calza Adidas Original", 
         precio: 13500, 
-        categoria: "calzas", 
+        categoria: "mochilas", 
         seccion: "accesorios",
         temporada: "verano",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
