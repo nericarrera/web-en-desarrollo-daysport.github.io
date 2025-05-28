@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Insertar el botón después del grid
     accesoriosProductsGrid.insertAdjacentElement('afterend', loadMoreBtn);
 
+    // Función para obtener parámetros de la URL
+    function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            categoria: params.get('categoria') || 'all'
+        };
+    }
+
     // Función para obtener productos con la etiqueta "novedad"
     function obtenerProductosNovedad() {
         return productosAccesorios.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
@@ -70,15 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Función para mostrar productos (MODIFICADA para paginación)
+    // Función para mostrar productos (MODIFICADA para paginación y filtrado por URL)
     function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "", resetPagination = true) {
         if (resetPagination) {
             currentPage = 1;
             accesoriosProductsGrid.innerHTML = ""; // Solo limpiamos si es un nuevo filtro
         }
-    
+        
+        // Obtener categoría de la URL si existe (sobrescribe el parámetro)
+        const urlParams = getUrlParams();
+        if (urlParams.categoria && urlParams.categoria !== 'all') {
+            categoria = urlParams.categoria.toLowerCase();
+            
+            // Activar el botón de filtro correspondiente
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            const activeButton = document.querySelector(`.accesorios-filter-button[data-filter="${categoria}"]`);
+            if (activeButton) activeButton.classList.add('active');
+        }
+
         let productosFiltrados = productosAccesorios.filter(producto => {
-            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesCategoria = categoria === "all" || producto.categoria.toLowerCase() === categoria.toLowerCase();
             const matchesColor = coloresSeleccionados.length === 0 || 
                 producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
             const matchesTalla = tallesSeleccionados.length === 0 || 
@@ -105,9 +124,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Mostrar u ocultar botón "Mostrar más"
         loadMoreBtn.style.display = endIndex >= productosFiltrados.length ? 'none' : 'block';
+        
+        // Si no hay productos, mostrar mensaje
+        if (productosFiltrados.length === 0 && resetPagination) {
+            accesoriosProductsGrid.innerHTML = '<p class="no-products-message">No se encontraron productos con los filtros seleccionados.</p>';
+            loadMoreBtn.style.display = 'none';
+        }
     }
 
-    // Función para renderizar productos (similar a la original pero sin limpiar el grid)
+    // Función para renderizar productos
     function renderizarProductos(productos) {
         productos.forEach(producto => {
             // Verificar si el producto ya está renderizado
@@ -205,12 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event listeners (MODIFICADOS para paginación)
+    // Event listeners
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const categoria = button.getAttribute('data-filter');
+            
+            // Actualizar URL sin recargar la página
+            const url = new URL(window.location.href);
+            url.searchParams.set('categoria', categoria);
+            window.history.pushState({}, '', url);
+            
             mostrarProductos(categoria, [], [], "", true);
         });
     });
@@ -275,12 +306,26 @@ document.addEventListener('DOMContentLoaded', () => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         document.querySelector('.accesorios-filter-button[data-filter="all"]').classList.add('active');
 
+        // Limpiar parámetro de URL
+        const url = new URL(window.location.href);
+        url.searchParams.delete('categoria');
+        window.history.pushState({}, '', url);
+
         mostrarProductos("all", [], [], "", true);
+    });
+
+    // Manejar el evento popstate (navegación adelante/atrás)
+    window.addEventListener('popstate', () => {
+        const urlParams = getUrlParams();
+        mostrarProductos(urlParams.categoria, [], [], "", true);
     });
 
     // Inicialización
     actualizarContadores();
-    mostrarProductos("all", [], [], "", true);
+    
+    // Mostrar productos según parámetros de URL al cargar
+    const urlParams = getUrlParams();
+    mostrarProductos(urlParams.categoria, [], [], "", true);
 });
 
 /*----------------------MENU DESPLEGABLE COLPASIBLES--------------- */
