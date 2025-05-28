@@ -203,14 +203,16 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 
 .banner-content-hombre {
   margin: auto;
+  padding: 1px;
 }
 
 .banner-content-hombre h1 {
-  font-size: 15px;
+  font-size: 25px;
   font-family: "Dosis";
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -218,7 +220,7 @@
 
 .banner-content-hombre p {
   font-family: "Dosis";
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -228,19 +230,23 @@
 
 .horizontal-filter {
   display: flex;
+  width: 95%;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  position: relative; /* Asegura que el menú desplegable se alinee bien */
+  position: relative;
   flex-wrap: wrap;
+  margin: auto;
+  gap: 5px;
 }
 
 .filter-categories {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 1px 1px 1px 1px;
 }
 
 .hombre-filter-button {
@@ -251,12 +257,13 @@
   cursor: pointer;
   padding: 5px;
   font-family: "Questrial";
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 
 .hombre-filter-button:hover {
-  border-bottom: 2px solid #333;
+  background: #000;
+  color: #fff;
 }
 
 .hombre-filter-button.active {
@@ -275,7 +282,7 @@
   gap: 5px;
   font-family: "Questrial";
   letter-spacing: 0.5px;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 /*--------------------COLORES DE FILTRO CUADROS-----------------*/
@@ -296,11 +303,12 @@
 /*-------------------PRODUCTOS GRID HOMBRE-----------------*/
 
 .products-grid-h {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
   margin-top: 20px;
   padding: 20px;
+  justify-content: center;
 }
 
 .hombre-product-grid {
@@ -326,7 +334,6 @@
   transition: all 0.3s ease-in-out;
   z-index: 10;
   cursor: pointer;
-  border-radius: 15px;
 }
 
 .hombre-product-card:hover {
@@ -494,7 +501,7 @@
 .close-filter {
   cursor: pointer;
   font-size: 3.5em;
-  color: #333;
+  color: #fff;
 }
 
 .close-filter:hover {
@@ -598,6 +605,15 @@
 
 .collapsible-section.active .filter-title span {
   transform: rotate(180deg);
+}
+
+/*----------------------COLOR-BOX---------------------*/
+input[type="checkbox"] {
+  width: 15px;
+  height: 16px;
+  background: #360353;
+  margin-right: 5px;
+  text-align: center;
 }
 
 /*--------------------FOTO MINIATURA -----------------*/
