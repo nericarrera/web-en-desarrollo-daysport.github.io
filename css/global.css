@@ -591,7 +591,6 @@ html {
   top: 15.9%;
   z-index: 1000;
   background: white;
-  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-top: 1px solid #ccc;
 }
@@ -601,7 +600,7 @@ html {
   flex-direction: column;
   flex-wrap: wrap;
   min-height: 100vh;
-  width: 33%;
+  width: 22%;
   max-width: 1200px; /* O el ancho máximo que prefieras */
   margin: 0 auto;
   padding: 20px;
