@@ -77,7 +77,7 @@
 .conteiner-buscador-carrito {
   display: flex;
   margin: auto;
-  margin-top: 24px;
+  margin-top: 35px;
   width: auto;
   position: relative;
 }
@@ -168,11 +168,6 @@
   justify-content: flex-end;
 }
 
-.titulo-carrito {
-  color: #000000;
-  font-size: 19px;
-}
-
 .cart-dropdown ul {
   list-style: none;
   padding: 0;
@@ -188,15 +183,6 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-
-.cart-summary button {
-  background-color: #a30dfa;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .cart-summary button:hover {
@@ -520,7 +506,6 @@
   justify-content: space-between;
   align-items: center;
   background: #000;
-  padding: 5px;
 }
 
 .filter-sidebar-header h2 {
@@ -551,7 +536,8 @@
 }
 
 #mujer-clear-filters:hover {
-  color: #f3ff05;
+  background: #360353;
+  color: #fff;
   transition: all 500ms ease;
 }
 
