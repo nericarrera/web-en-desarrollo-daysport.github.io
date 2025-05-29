@@ -335,8 +335,8 @@
 }
 
 #product-colors img {
-  width: 54px; /* Tamaño fijo para las miniaturas */
-  height: 60px; /* Mantener proporción cuadrada */
+  width: 58px; /* Tamaño fijo para las miniaturas */
+  height: 57px; /* Mantener proporción cuadrada */
   object-fit: cover; /* Asegurar que la imagen se ajuste */
   border-radius: 50%; /* Forma circular */
   cursor: pointer; /* Mostrar cursor de mano al pasar el mouse */
@@ -442,7 +442,7 @@
 }
 
 .product-quantity {
-  margin-top: 20px; /* Espaciado superior */
+  margin-top: 0px; /* Espaciado superior */
 }
 
 .product-quantity input {
@@ -597,13 +597,23 @@ th:hover {
 }
 
 .button-guia-talles {
-  color: #000;
-  padding: 3px;
+  background: #333;
+  color: #fff;
+  padding: 5px;
   text-align: center;
   font-family: "Questrial", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   margin-top: 20px;
-  margin-left: 3px;
+  border-radius: 24px;
+  border: 0px;
+  font-weight: 500;
+}
+
+.button-guia-talles:hover {
+  background: #673ab7;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 500ms ease;
 }
 
 .guiadetallesimg {
@@ -657,19 +667,20 @@ th:hover {
 .btn-add-to-cart {
   padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 24px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.2s ease;
+  border: 1px solid #333;
 }
 
 .btn-buy-now {
-  width: 240px;
+  width: 200px;
   height: 45px;
   position: relative;
   flex-wrap: wrap;
-  background-color: #28a745;
-  color: white;
+  background-color: #d3e005;
+  color: #333;
   margin-top: 20px;
   font-family: "Dosis" sans-serif;
   text-align: center;
@@ -681,9 +692,9 @@ th:hover {
 }
 
 .btn-add-to-cart {
-  background-color: #000000;
+  background-color: #333;
   width: auto;
-  width: 240px;
+  width: 200px;
   height: 45px;
   color: white;
   font-family: "Dosis" sans-serif;
@@ -760,23 +771,23 @@ th:hover {
 }
 
 #product-title {
-  font-size: 40px;
+  font-size: 45px;
   color: #333;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
-  letter-spacing: 0.5px;
-  padding: 5px;
 }
 
 #product-price {
   font-size: 14px;
-  color: #333;
+  color: #fff;
   font-family: "Arvo", serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 1px;
+  background: #673ab7;
   padding: 5px;
+  border: 1px solid #333;
 }
 
 #product-description {
@@ -793,13 +804,15 @@ th:hover {
 }
 
 #product-sizes {
-  font-size: 17px;
   font-family: "Dosis", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0.5px;
   margin-top: 30px;
+  color: #333;
+  padding: 5px;
+}
+
+#product-sizes h3 {
+  font-size: 20px;
+  font-weight: 600;
   color: #333;
   padding: 5px;
 }
@@ -810,13 +823,12 @@ th:hover {
   font-family: "Dosis", sans-serif;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 0.5px;
 }
 
 .product-colors h3 {
   font-size: 20px;
   color: #333;
-  margin-bottom: 10px;
+  padding: 5px;
 }
 
 .color-btn {
@@ -850,11 +862,10 @@ th:hover {
 
 /*-----------------------------DETALLE - TALLES --------------*/
 .size-btn {
+  margin-top: 10px;
   padding: 10px 15px;
-  margin: 5px;
-  border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -864,7 +875,7 @@ th:hover {
 }
 
 .size-btn.selected {
-  background-color: #a30dfa;
+  background-color: #333;
   color: white;
   border-color: #a30dfa;
 }
