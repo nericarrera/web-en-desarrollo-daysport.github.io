@@ -33,7 +33,9 @@
 }
 
 .niños-filter-button:hover {
-  border-bottom: 2px solid #333;
+  background: #333;
+  transition: all 500ms ease;
+  color: #fff;
 }
 
 .niños-filter-button.active {

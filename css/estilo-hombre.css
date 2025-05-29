@@ -262,7 +262,8 @@
 }
 
 .hombre-filter-button:hover {
-  background: #000;
+  background: #333;
+  transition: all 500ms ease;
   color: #fff;
 }
 

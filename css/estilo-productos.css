@@ -570,8 +570,8 @@
 
 .size-guide-content p {
   font-family: "Poppins", sans-serif;
-  font-size: 22px;
-  color: #1c1c1c;
+  font-size: 20px;
+  color: #333;
   padding: 3px;
 }
 
@@ -629,7 +629,7 @@ th:hover {
 .guiadetalles-titulo-tabla {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  color: #1c1c1c;
+  color: #ffffff;
   margin-top: 10px;
   text-align: center;
 }
@@ -761,7 +761,7 @@ th:hover {
 
 #product-title {
   font-size: 40px;
-  color: #000000;
+  color: #333;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -771,11 +771,10 @@ th:hover {
 
 #product-price {
   font-size: 14px;
-  color: #000000;
+  color: #333;
   font-family: "Arvo", serif;
   font-weight: 700;
   font-style: normal;
-  color: #000000;
   letter-spacing: 1px;
   padding: 5px;
 }
@@ -789,7 +788,7 @@ th:hover {
   font-style: normal;
   letter-spacing: 0.5px;
   margin-top: 30px;
-  color: #000000;
+  color: #333;
   padding: 5px;
 }
 
@@ -801,7 +800,7 @@ th:hover {
   font-style: normal;
   letter-spacing: 0.5px;
   margin-top: 30px;
-  color: #000000;
+  color: #333;
   padding: 5px;
 }
 
@@ -816,7 +815,7 @@ th:hover {
 
 .product-colors h3 {
   font-size: 20px;
-  color: #000000;
+  color: #333;
   margin-bottom: 10px;
 }
 
@@ -1057,22 +1056,21 @@ th:hover {
 }
 
 .mediosdepago h3 {
-  font-size: 30px;
+  font-size: 27px;
   font-family: "Questrial", sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
-  color: #000000;
+  color: #333;
   padding: 5px;
 }
 
 .mediosdepago p {
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Questrial", sans-serif;
   font-weight: 400;
-  font-style: italic;
   letter-spacing: 0.5px;
-  color: #000000;
+  color: #333;
   padding: 10px;
 }
 
@@ -1132,6 +1130,7 @@ th:hover {
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
+  color: #333;
 }
 
 .product-details-rating textarea {
@@ -1144,7 +1143,7 @@ th:hover {
 }
 
 .product-details-rating button {
-  background-color: #000;
+  background-color: #333;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -1183,7 +1182,7 @@ th:hover {
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-  color: #000000;
+  color: #333;
 }
 
 .previous-comments ul {
