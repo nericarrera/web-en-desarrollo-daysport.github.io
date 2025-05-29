@@ -331,7 +331,7 @@
 }
 
 .thumbnail-image:hover {
-  border-color: #a30dfa;
+  border-color: #673ab7;
 }
 
 #product-colors img {
@@ -430,7 +430,7 @@
   background-color: #131313;
   border: 1px solid #ccc;
   cursor: pointer;
-  font-family: "Dosis", sans-serif;
+  font-family: "Questrial", sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
@@ -597,14 +597,13 @@ th:hover {
 }
 
 .button-guia-talles {
-  background: #333;
-  color: #fff;
+  background: #fff;
+  color: #333;
   padding: 5px;
   text-align: center;
-  font-family: "Questrial", sans-serif;
+  font-family: "Dosis", sans-serif;
   font-size: 17px;
   margin-top: 20px;
-  border-radius: 24px;
   border: 0px;
   font-weight: 500;
 }
@@ -672,6 +671,7 @@ th:hover {
   font-size: 16px;
   transition: background-color 0.2s ease;
   border: 1px solid #333;
+  font-family: "Dosis", sans-serif;
 }
 
 .btn-buy-now {
@@ -682,7 +682,6 @@ th:hover {
   background-color: #d3e005;
   color: #333;
   margin-top: 20px;
-  font-family: "Dosis" sans-serif;
   text-align: center;
   justify-content: center;
 }
@@ -793,14 +792,15 @@ th:hover {
 #product-description {
   width: 280px;
   font-size: 17px;
-  font-family: "Dosis", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.5px;
-  margin-top: 30px;
   color: #333;
   padding: 5px;
+  margin: auto;
+  margin-top: 30px;
 }
 
 #product-sizes {
@@ -1406,6 +1406,7 @@ th:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px;
   }
 
   .product-gallery {
@@ -1475,6 +1476,9 @@ th:hover {
     font-weight: 600;
     font-style: normal;
     letter-spacing: 0.5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .product-colors h3 {
@@ -1512,12 +1516,61 @@ th:hover {
     object-fit: cover;
   }
 
+  /*------------------GUIA DE TALLES - TALLES----------*/
+  .talles-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-guia-talles {
+    background: #333;
+    color: #fff;
+  }
+
+  /*--------------------BUTTON DE COMPRA Y AGREGAR AL CARRITO-----------*/
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 3px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .btn-buy-now,
+  .btn-add-to-cart {
+    width: 100%;
+    border-radius: 0px;
+    margin: 0px;
+    margin-top: 0px;
+  }
+
+  /*---------------------CONTENEDOR DE COMENTARIOS ---------------*/
+  .product-details-rating {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .product-rating-container {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
   /*--------------------------CONTENEDOR DE MEDIOS DE PAGO ----------------------*/
 
   .container-mediosdepago {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-    width: 37%;
+    display: none;
   }
 }
