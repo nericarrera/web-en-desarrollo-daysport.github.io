@@ -39,18 +39,9 @@
 
 /*------------ NAV * LOGO * BUSCADOR * IMPUT ------------------ */
 
-.logo .a {
-  display: flex;
-  width: auto;
-  height: auto;
-  position: relative;
-  margin: auto;
-  justify-content: center;
-}
-
 .logo .a .logo1 {
   display: flex;
-  width: 40%;
+  width: 100%;
 }
 
 /*----------------NAV-----------------*/

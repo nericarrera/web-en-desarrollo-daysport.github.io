@@ -43,38 +43,301 @@ html {
 
 /*-------- NAV--- * ---LOGO-- *--- BUSCADOR --*-- IMPUT---  */
 
+/* Estilos Base del Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
 .logo {
   display: flex;
-  width: 130px;
-  height: auto;
-  text-align: center;
-  justify-content: center;
-  padding: 5px;
-  margin: auto;
-  justify-content: flex-start;
+  height: 100%;
+  align-items: center;
 }
 
 .logo .a {
   display: flex;
-  width: auto;
-  height: auto;
-  position: relative;
-  margin: auto;
+  height: 100%;
+  align-items: center;
 }
 
 .logo .a .logo1 {
-  display: flex;
-  width: 40%;
+  height: 50px;
+  width: auto;
+  width: 100%;
+  object-fit: contain;
   border-radius: 5px;
+  transition: transform 0.3s;
 }
 
-.nav {
+.logo .a .logo1:hover {
+  transform: scale(1.05);
+}
+
+/* Hamburguesa (Mobile) */
+.hamburger {
+  display: none;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  top: 8px;
+}
+
+.hamburger.active .hamburger-inner {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+  opacity: 0;
+}
+
+/* Contenedor del Menú */
+.menu-container {
   display: flex;
-  width: 100%; /* Asegúrate de que ocupe todo el ancho */
-  max-width: none; /* Elimina cualquier límite de ancho */
-  overflow: visible; /* Permite que el submenú se expanda */
-  border-bottom: 1px solid #e1e1e1; /* Línea inferior */
-  flex-direction: row;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin: auto;
+}
+
+.menu {
+  display: flex;
+  padding: 10px;
+}
+
+.menu-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-li {
+  position: relative;
+  margin: 0 1rem;
+}
+
+.menu-li .menu-li-a {
+  color: #0a0a0a;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.3s;
+}
+
+.menu-li .menu-li-a:hover {
+  color: #d3e005;
+  text-decoration: underline;
+}
+
+/* Modales del Menú */
+.modal-menu {
+  position: fixed;
+  top: 15.9%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #ccc;
+  display: none;
+  z-index: 999;
+}
+
+.menu-li:hover .modal-menu {
+  display: flex;
+}
+
+.modal-content-menu {
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  padding: 20px;
+  border-right: 1px solid #bbbbbb;
+}
+
+.modal-content-menu h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #000;
+  border-radius: 15px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.modal-content-menu h2:hover {
+  background: #360353;
+  color: #d3e005;
+}
+
+.modal-content-menu p {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content-menu video {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Contenido de los modales */
+.modal-mujer-seccion-content,
+.modal-hombre-seccion-content,
+.modal-niños-seccion-content,
+.modal-accesorios-seccion-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 7px;
+  padding: 20px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.modal-mujer-seccion,
+.modal-hombre-seccion,
+.modal-niños-seccion,
+.modal-accesorios-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s;
+}
+
+.modal-mujer-seccion img,
+.modal-hombre-seccion img,
+.modal-niños-seccion img,
+.modal-accesorios-seccion img {
+  width: 155px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  transition: all 0.3s;
+}
+
+.modal-mujer-seccion img:hover,
+.modal-hombre-seccion img:hover,
+.modal-niños-seccion img:hover,
+.modal-accesorios-seccion img:hover {
+  border: 1px solid #000;
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-mujer-seccion a,
+.modal-hombre-seccion a,
+.modal-niños-seccion a,
+.modal-accesorios-seccion a {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.modal-mujer-seccion a:hover,
+.modal-hombre-seccion a:hover,
+.modal-niños-seccion a:hover,
+.modal-accesorios-seccion a:hover {
+  color: #d3e005;
+}
+
+.link-bravas {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s;
+}
+
+.link-bravas:hover {
+  color: #d3e005;
+}
+
+/* Contenedor de Iconos */
+.icons-container {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
 }
 
 .conteiner-buscador-carrito {
@@ -85,11 +348,40 @@ html {
   position: relative;
 }
 
+/* Búsqueda */
+.search-container {
+  position: relative;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
 .buscador {
   display: flex;
   justify-content: end;
   text-align: center;
   height: auto;
+}
+
+.search-box {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 300px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.search-container.active .search-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .buscador input {
@@ -109,40 +401,59 @@ html {
   margin-left: 20px;
 }
 
-#serch-icon {
+#serch-icon,
+.search-icon img {
   width: 20px;
   display: flex;
   margin: auto;
   margin-top: 5px;
+  transition: transform 0.3s;
+  margin-right: 25px;
 }
 
-/*----------CARRITO------------------*/
-/*----------------CARRITO ITEM--------------*/
-
-.cart-item {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+.search-icon img:hover {
+  transform: scale(1.1);
 }
 
-.cart-item-img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 5px;
+.search-box input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
+.search-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: #ff5252;
+}
+
+/* Carrito */
 .cart-icon-container {
   position: relative;
   display: inline-block;
   cursor: pointer;
   margin: auto;
-  z-index: 1100 !important; /* Más alto que el menú modal */
+  z-index: 1100;
 }
 
 #cart-icon {
   width: 20px;
   margin-top: 5px;
+  transition: transform 0.3s;
+}
+
+#cart-icon:hover {
+  transform: scale(1.1);
 }
 
 #cart-count {
@@ -157,28 +468,28 @@ html {
   width: 18px;
   margin: auto;
   border: 1px solid #000;
+  transition: all 0.3s;
 }
 
 #cart-count:hover {
   background-color: #f3ff05;
-  transition: all 500ms ease;
   color: #000000;
 }
 
-/* Estilos para el dropdown del carrito */
+/* Dropdown del Carrito */
 #cart-dropdown {
   position: fixed;
-  top: 114px !important; /* Ajusta según tu header */
+  top: 114px !important;
   right: 75px !important;
   width: 320px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1101 !important;
+  z-index: 1101;
   max-height: 70vh;
   overflow-y: auto;
-  display: none; /* Oculto por defecto */
+  display: none;
 }
 
 #cart-dropdown.cart-dropdown-hidden {
@@ -212,26 +523,21 @@ html {
   background: #000;
 }
 
-.cart-dropdown .cart-summary {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.item-list-cart {
-  font-family: "Dosis", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-#cart-items-list {
+.cart-modal-items {
   position: relative;
   margin-top: 10px;
   font-family: "Inter", sans-serif;
   text-align: center;
 }
 
-.cart-summary p {
+.cart-modal-summary {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cart-modal-summary p {
   width: auto;
   color: #000000;
   margin-bottom: 10px;
@@ -243,10 +549,11 @@ html {
 #cart-total {
   font-family: "Questrial", sans-serif;
   font-size: 16px;
-  font-size: 800;
+  font-weight: 800;
 }
 
-.cart-summary button {
+.cart-modal-checkout-btn,
+.cart-modal-view-cart-btn {
   font-family: "Inter", sans-serif;
   background-color: #360353;
   color: white;
@@ -254,9 +561,11 @@ html {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 5px;
 }
 
-.cart-summary button:hover {
+.cart-modal-checkout-btn:hover,
+.cart-modal-view-cart-btn:hover {
   background-color: #8b06d1;
 }
 
@@ -282,6 +591,7 @@ html {
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 10px;
+  padding: 10px;
 }
 
 .cart-item-img {
@@ -293,32 +603,7 @@ html {
 
 .cart-item-details {
   flex: 1;
-}
-
-.cart-item-details p {
-  margin: 0;
-  font-size: 14px;
-}
-
-#empty-cart-message {
-  font-size: 1.2em;
-  color: #ff0000;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.cart-item-modal {
-  display: flex;
-}
-
-.cart-item-img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.cart-item-details {
-  flex-grow: 1;
+  text-align: left;
 }
 
 .cart-item-details p {
@@ -336,24 +621,217 @@ html {
   font-size: 12px;
 }
 
-.btn-remove-from-cart {
-  background-color: transparent;
-  color: #ff0000;
-  border: none;
-  font-size: 1.5em;
+/* Usuario */
+.user-icon-container {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
+  margin: auto;
+}
+
+#user-icon {
+  width: 20px;
+  margin-left: 25px;
+  height: 21px;
+  margin-top: 2px;
+  transition: transform 0.3s;
+}
+
+#user-icon:hover {
+  transform: scale(1.1);
+}
+
+.user-dropdown {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  right: 0;
+  top: 100%;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 1000;
 }
 
-.btn-remove-from-cart:hover {
-  color: #cc0000;
+.user-icon-container:hover .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/*-------------------------CARRITO PAGINA DEL CARRITO---------------*/
+.user-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-family: "Dosis", sans-serif;
+}
 
-/* Estilos generales para la página del carrito */
+.user-dropdown a:hover {
+  background: #f8f8f8;
+  color: #d3e005;
+}
+
+/* Banner */
+.sub-banner0 {
+  width: 100%;
+}
+
+.sub-banner0 img {
+  width: 100%;
+}
+
+/* Banner Slider */
+.banner-track {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.banner-slide video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s;
+    overflow-y: auto;
+  }
+
+  .menu-container.active {
+    right: 0;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .menu-ul {
+    flex-direction: column;
+  }
+
+  .menu-li {
+    margin: 0.5rem 0;
+  }
+
+  .modal-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+    padding-left: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu-li.active .modal-menu {
+    display: block;
+    max-height: 1000px;
+  }
+
+  .modal-content-menu {
+    width: 100%;
+    border-right: none;
+  }
+
+  .icons-container {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .conteiner-buscador-carrito {
+    margin-top: 0;
+  }
+
+  .buscador input {
+    margin-right: 0;
+  }
+
+  #cart-dropdown {
+    top: 100px !important;
+    right: 20px !important;
+  }
+
+  .user-dropdown {
+    right: auto;
+    left: 0;
+  }
+
+  .search-box {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+}
+
+/* Grid responsive para submenús */
+@media (min-width: 1200px) {
+  .modal-mujer-seccion-content,
+  .modal-hombre-seccion-content,
+  .modal-niños-seccion-content,
+  .modal-accesorios-seccion-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .modal-mujer-seccion-content,
+  .modal-hombre-seccion-content,
+  .modal-niños-seccion-content,
+  .modal-accesorios-seccion-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-mujer-seccion-content,
+  .modal-hombre-seccion-content,
+  .modal-niños-seccion-content,
+  .modal-accesorios-seccion-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Estilos para la página del carrito (mantenidos de tu código original) */
 .cart-page-container {
   display: flex;
   justify-content: space-between;
@@ -400,16 +878,8 @@ html {
   flex-wrap: wrap;
 }
 
-/* Estilos para la lista de productos */
 .cart-items {
   flex: 2;
-}
-
-.cart-item {
-  display: flex;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
 }
 
 .cart-item img {
@@ -433,13 +903,6 @@ html {
   padding: 4px;
 }
 
-.cart-item-details {
-  flex: 1;
-  font-family: "DM Sans";
-  text-align: left;
-  padding: 4px;
-}
-
 .cart-content p {
   font-family: "Questrial", sans-serif;
   font-size: 23px;
@@ -451,10 +914,6 @@ html {
   font-family: "Dosis", sans-serif;
   font-size: 14px;
   color: #555;
-}
-
-.cart-item-details p strong {
-  color: #333;
 }
 
 .cart-item-actions {
@@ -474,8 +933,6 @@ html {
 .cart-item-actions button:hover {
   background-color: #cc0000;
 }
-
-/* Estilos para el resumen del pedido */
 
 .cart-summary h2 {
   font-size: 25px;
@@ -513,6 +970,7 @@ html {
   font-size: 16px;
   color: #ffffff;
 }
+
 .cart-marketin-2 {
   letter-spacing: 1px;
   padding: 10px;
@@ -521,278 +979,25 @@ html {
   color: #ffffff;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
   .cart-content {
     flex-direction: column;
   }
 
   .cart-summary {
-    order: -1; /* Mover el resumen arriba en móviles */
-  }
-}
-
-/*------------------ICONO USUARIO---------------*/
-
-.user-icon-container {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin: auto;
-}
-
-#user-icon {
-  width: 20px;
-  margin-left: 25px;
-  height: 21px;
-  margin-top: 2px;
-}
-/*------------- MENÚ Y SUBMENÚ ---------------*/
-
-.menu {
-  display: flex;
-  max-width: none; /* Elimina cualquier límite de ancho */
-  overflow: visible; /* Permite que el submenú se expanda */
-  padding: 10px; /* Espaciado interno */
-  margin-top: 30px;
-}
-
-.menu-ul {
-  list-style-type: none; /* Elimina los puntos de la lista */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around; /* Distribuye los elementos del menú */
-}
-
-.menu-li {
-  position: relative; /* Necesario para posicionar el modal */
-}
-
-.menu-li .menu-li-a {
-  color: #0a0a0a; /* Color del texto */
-  text-decoration: none; /* Sin subrayado */
-  font-weight: 500; /* Texto en negrita */
-  font-size: 16px; /* Tamaño de fuente */
-  padding: 10px 20px; /* Espaciado interno */
-  display: block;
-}
-
-.menu-li .menu-li-a:hover {
-  text-decoration: underline; /* Subrayado al hacer hover */
-  color: #d3e005; /* Color del texto al hacer hover */
-  transition: all 300ms ease; /* Transición suave */
-}
-
-/*-------------- Estilo para el modal ----------------*/
-
-.modal-menu {
-  position: fixed;
-  top: 15.9%;
-  z-index: 1000;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-top: 1px solid #ccc;
-}
-
-.modal-content-menu {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  min-height: 100vh;
-  width: 22%;
-  max-width: 1200px; /* O el ancho máximo que prefieras */
-  margin: 0 auto;
-  padding: 20px;
-  border-right: 1px solid #bbbbbb;
-}
-
-.modal-mujer-seccion-content,
-.modal-hombre-seccion-content,
-.modal-niños-seccion-content,
-.modal-accesorios-seccion-content,
-.modal-bravas-seccion-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 7px;
-  padding: 20px;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 10px;
-  max-height: none; /* Eliminamos la altura máxima */
-  overflow-y: visible; /* Quitamos el scroll interno */
-}
-
-.modal-mujer-seccion,
-.modal-hombre-seccion,
-.modal-niños-seccion,
-.modal-accesorios-seccion,
-.modal-bravas-seccion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.3s ease;
-}
-
-.modal-mujer-seccion img,
-.modal-hombre-seccion img,
-.modal-niños-seccion img,
-.modal-accesorios-seccion img,
-.modal-bravas-seccion img {
-  width: 155px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  cursor: pointer;
-}
-
-.modal-mujer-seccion img:hover,
-.modal-hombre-seccion img:hover,
-.modal-niños-seccion img:hover,
-.modal-accesorios-seccion img:hover,
-.modal-bravas-seccion img:hover {
-  transition: all 420ms ease; /* Transición suave */
-  border: 1px solid #000;
-  transform: scale(1.03);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.modal-mujer-seccion a,
-.modal-hombre-seccion a,
-.modal-niños-seccion a,
-.modal-accesorios-seccion a,
-.modal-bravas-seccion a {
-  font-family: "Dosis", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #000000;
-  text-decoration: none;
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.modal-mujer-seccion a:hover,
-.modal-hombre-seccion a:hover,
-.modal-niños-seccion a:hover,
-.modal-accesorios-seccion a:hover,
-.modal-bravas-seccion a:hover {
-  color: #d3e005; /* Color del texto al hacer hover */
-}
-
-.link-bravas {
-  font-family: "Dosis", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-}
-
-.link-bravas:hover {
-  color: #d3e005;
-  transition: all 520ms ease;
-}
-
-.modal-content-menu h2 {
-  font-family: "Dosis", sans-serif; /* Fuente para el título */
-  font-size: 24px; /* Tamaño de fuente del título */
-  margin-bottom: 10px; /* Espacio debajo del título */
-  color: #ffffff; /* Color del título */
-  text-align: center; /* Centra el título */
-  font-weight: 600; /* Peso de la fuente */
-  text-transform: uppercase; /* Texto en mayúsculas */
-  background: #000;
-  border-radius: 15px;
-}
-
-.modal-content-menu h2:hover {
-  background: #360353;
-  color: #d3e005;
-  transition: all 510ms ease; /* Transición suave */
-  cursor: pointer;
-}
-
-.modal-content-menu p {
-  font-family: "Dosis", sans-serif; /* Fuente para el texto */
-  font-size: 20px; /* Tamaño de fuente del texto */
-  color: #000000; /* Color del texto */
-  text-align: center; /* Centra el texto */
-  margin-bottom: 20px; /* Espacio debajo del texto */
-}
-
-.modal-content-menu p:hover {
-  background: #360353;
-  color: #d3e005;
-  transition: all 510ms ease; /* Transición suave */
-  cursor: pointer;
-}
-
-.modal-content-menu video {
-  width: 100%;
-  max-height: 400px; /* Altura máxima para el video */
-  object-fit: contain;
-  margin-bottom: 20px;
-}
-
-/* Mostrar modal al hacer hover */
-.menu-li:hover .modal-menu {
-  display: flex; /* Muestra el modal al hacer hover */
-}
-
-/*----------------------- Responsive -------------------*/
-@media (max-width: 768px) {
-  .menu-ul {
-    flex-direction: column; /* Cambia a disposición vertical en móviles */
-    align-items: center; /* Centra los elementos */
+    order: -1;
   }
 
-  /* Para pantallas grandes (4 columnas) */
-  @media (min-width: 1200px) {
-    .modal-mujer-seccion-content,
-    .modal-hombre-seccion-content,
-    .modal-niños-seccion-content,
-    .modal-accesorios-seccion-content,
-    .modal-bravas-seccion-content {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .cart-page-container {
+    flex-direction: column;
+    max-width: 100%;
   }
 
-  /* Para tablets (3 columnas) */
-  @media (max-width: 1199px) and (min-width: 768px) {
-    .modal-mujer-seccion-content,
-    .modal-hombre-seccion-content,
-    .modal-niños-seccion-content,
-    .modal-accesorios-seccion-content,
-    .modal-bravas-seccion-content {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  /* Para móviles (2 columnas) */
-  @media (max-width: 767px) {
-    .modal-mujer-seccion-content,
-    .modal-hombre-seccion-content,
-    .modal-niños-seccion-content,
-    .modal-accesorios-seccion-content,
-    .modal-bravas-seccion-content {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .cart-page-colum1,
+  .cart-page-colum2 {
+    width: 100%;
   }
 }
-/*----------------SUB BANNER- CAMPAÑA CUOTAS-----------------*/
-
-.sub-banner0 {
-  width: 100%;
-}
-
-.sub-banner0 img {
-  width: 100%;
-}
-
-/*----------------------BANNER PORTADA------------------*/
 
 .banner {
   position: relative;
