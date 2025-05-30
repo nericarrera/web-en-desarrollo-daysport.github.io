@@ -710,6 +710,10 @@ html {
     display: block;
   }
 
+  .logo {
+    display: flex;
+  }
+
   .menu-container {
     position: fixed;
     top: 0;
