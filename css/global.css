@@ -281,7 +281,7 @@ html {
 .modal-hombre-seccion img,
 .modal-niños-seccion img,
 .modal-accesorios-seccion img {
-  width: 155px;
+  width: 130px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid #eee;
