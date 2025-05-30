@@ -70,7 +70,6 @@ html {
 
 .logo {
   display: flex;
-  height: 100%;
   align-items: center;
 }
 
@@ -163,6 +162,7 @@ html {
 .menu {
   display: flex;
   padding: 10px;
+  margin-top: 15px;
 }
 
 .menu-ul {
@@ -712,6 +712,12 @@ html {
 
   .logo {
     display: flex;
+  }
+
+  /* Ajustamos el logo para móvil */
+  .logo .a .logo1 {
+    height: 35px;
+    max-width: 110px;
   }
 
   .menu-container {
