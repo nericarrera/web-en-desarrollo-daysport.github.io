@@ -1383,10 +1383,6 @@ th:hover {
 
 @media (max-width: 963px) {
   /*--------------------NAVEGADOR MENU---------------*/
-  .nav {
-    flex-direction: column;
-    align-items: center;
-  }
 
   .menu-container {
     width: 100%;
