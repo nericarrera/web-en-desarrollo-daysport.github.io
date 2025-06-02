@@ -54,7 +54,7 @@ html {
   position: relative;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
-  height: 80px;
+  height: 65px;
   box-sizing: border-box;
 }
 
@@ -67,6 +67,10 @@ html {
 }
 
 #cart-icon-movil {
+  display: none;
+}
+
+.cart-count-movil {
   display: none;
 }
 
@@ -455,7 +459,6 @@ html {
   display: inline-block;
   cursor: pointer;
   margin: auto;
-  z-index: 1100;
 }
 
 #cart-icon {
@@ -1812,9 +1815,10 @@ html {
   }
 
   .logo-nav-movil img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     margin-left: 10px;
+    border-radius: 8px;
   }
 
   .hamburger {
@@ -1838,12 +1842,11 @@ html {
     margin: auto;
     border: 1px solid #000;
     transition: all 0.3s;
-    top: 9px;
-    right: 65px;
   }
 
   .user-dropdown {
     display: flex;
+    flex-direction: column;
   }
 
   .menu-container {
@@ -1941,10 +1944,6 @@ html {
 
 /* Grid responsive para submenús */
 @media (min-width: 1200px) {
-  .icons-container-movil {
-    display: flex;
-  }
-
   #cart-count {
     position: absolute;
     background-color: #a30dfa;
@@ -1956,8 +1955,6 @@ html {
     /* margin: auto; */
     border: 1px solid #000;
     transition: all 0.3s;
-    top: -2px;
-    right: 139px;
   }
 
   .modal-mujer-seccion-content,

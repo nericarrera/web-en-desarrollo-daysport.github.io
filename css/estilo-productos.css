@@ -52,7 +52,7 @@
   align-items: center;
   padding: 0 20px;
   background: #fdfdfd;
-  height: 75px;
+  height: 65px;
   position: relative;
   z-index: 11;
   flex-wrap: wrap;
@@ -217,7 +217,7 @@
 @media (max-width: 768px) {
   .menu-ul {
     flex-direction: column; /* Cambia a disposición vertical en móviles */
-    align-items: center; /* Centra los elementos */
+    align-items: flex-start; /* Centra los elementos */
   }
 }
 
