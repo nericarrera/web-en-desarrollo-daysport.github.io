@@ -679,7 +679,8 @@ th:hover {
 }
 
 .btn-buy-now:hover {
-  background-color: #0fc336;
+  background-color: #333;
+  color: #d3e005;
 }
 
 .btn-add-to-cart {
@@ -693,7 +694,7 @@ th:hover {
 }
 
 .btn-add-to-cart:hover {
-  background-color: #3c015c;
+  color: #d3e005;
 }
 
 /*------------------------------------------------------------------*/
@@ -791,7 +792,6 @@ th:hover {
   letter-spacing: 0.5px;
   color: #333;
   padding: 5px;
-  margin: auto;
   margin-top: 30px;
 }
 
@@ -838,7 +838,7 @@ th:hover {
 
 .color-btn:hover {
   transform: scale(1.1);
-  border-color: #a30dfa;
+  border-color: #673ab7;
 }
 
 .color-btn.selected {
@@ -860,6 +860,7 @@ th:hover {
   background-color: #fff;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
+  margin-left: 3px;
 }
 
 .size-btn:hover {
@@ -1537,12 +1538,12 @@ th:hover {
     font-weight: 700;
     font-style: normal;
     letter-spacing: 0.5px;
-    padding: 5px;
+    padding: 15px;
     justify-content: center;
   }
 
   #product-price {
-    width: 100%;
+    width: 80%;
     font-size: 14px;
     color: #000000;
     font-family: "Arvo", serif;
@@ -1551,6 +1552,7 @@ th:hover {
     color: #000000;
     letter-spacing: 1px;
     padding: 5px;
+    text-align: center;
   }
 
   #product-description {
@@ -1564,6 +1566,7 @@ th:hover {
     margin-top: 30px;
     color: #000000;
     padding: 5px;
+    text-align: center;
   }
 
   #product-sizes {
@@ -1586,6 +1589,7 @@ th:hover {
     font-style: normal;
     letter-spacing: 0.5px;
     width: 100%;
+    padding: 5px;
     display: flex;
     justify-content: center;
   }
@@ -1632,14 +1636,13 @@ th:hover {
     align-items: center;
     width: 100%;
     padding: 20px;
-    width: 100%;
-    display: flex;
     justify-content: center;
   }
 
   .button-guia-talles {
     background: #333;
     color: #fff;
+    width: 150px;
   }
 
   /*--------------------BUTTON DE COMPRA Y AGREGAR AL CARRITO-----------*/
