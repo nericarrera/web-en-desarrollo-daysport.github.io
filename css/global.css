@@ -141,7 +141,7 @@ html {
   content: "";
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: #d3e005;
   position: absolute;
   left: 0;
   transition: transform 0.3s;
@@ -157,6 +157,7 @@ html {
 
 .hamburger.active .hamburger-inner {
   transform: translateY(-50%) rotate(45deg);
+  background: #673ab7;
 }
 
 .hamburger.active .hamburger-inner::before {
@@ -178,7 +179,7 @@ html {
 .menu {
   display: flex;
   padding: 10px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .menu-ul {
@@ -212,7 +213,7 @@ html {
 /* Modales del Menú */
 .modal-menu {
   position: fixed;
-  top: 15.9%;
+  top: 14.3%;
   left: 0;
   width: 100%;
   background: white;
@@ -275,7 +276,6 @@ html {
 .modal-accesorios-seccion-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 7px;
   padding: 20px;
   width: 100%;
   background-color: #fff;
@@ -297,6 +297,7 @@ html {
 .modal-hombre-seccion img,
 .modal-niños-seccion img,
 .modal-accesorios-seccion img {
+  display: flex;
   width: 130px;
   object-fit: cover;
   border-radius: 8px;
@@ -692,7 +693,7 @@ html {
   color: #d3e005;
 }
 
-/* Banner */
+/* ---------------------Banner-------------------------- */
 .sub-banner0 {
   width: 100%;
 }
@@ -1368,8 +1369,8 @@ html {
 
 .conteiner-banner-video video {
   display: flex;
-  height: 100%;
-  width: 100%;
+  width: 80%;
+  margin: auto;
   border-top-left-radius: 5px;
 }
 
@@ -1799,6 +1800,115 @@ html {
     display: flex;
   }
 
+  .modal-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu-li.active .modal-menu {
+    max-height: 1000px; /* Ajusta según necesites */
+  }
+
+  .menu-li > .menu-li-a::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+
+  .menu-li.active > .menu-li-a::after {
+    transform: rotate(180deg);
+  }
+
+  .menu-li {
+    margin-top: 0px;
+  }
+
+  /* Ocultar videos e imágenes en móvil */
+  .modal-content-menu video,
+  .modal-mujer-seccion img,
+  .modal-hombre-seccion img,
+  .modal-niños-seccion img,
+  .modal-accesorios-seccion img {
+    display: none !important;
+  }
+
+  /* Estilo para los submenús en móvil */
+  .modal-menu {
+    position: static !important;
+    width: 100% !important;
+    display: none;
+    box-shadow: none !important;
+    border-top: none !important;
+    padding: 0 !important;
+    margin-top: 10px;
+  }
+
+  .modal-content-menu {
+    width: 100% !important;
+    border-right: none !important;
+    padding: 10px !important;
+  }
+
+  /* Estilo para las secciones del submenú */
+  .modal-mujer-seccion-content,
+  .modal-hombre-seccion-content,
+  .modal-niños-seccion-content,
+  .modal-accesorios-seccion-content {
+    grid-template-columns: 1fr !important;
+    padding: 10px !important;
+    width: 30%;
+  }
+
+  .modal-mujer-seccion,
+  .modal-hombre-seccion,
+  .modal-niños-seccion,
+  .modal-accesorios-seccion {
+    align-items: flex-start !important;
+    padding: 8px 15px !important;
+    border-bottom: 1px solid #eee;
+  }
+
+  .modal-mujer-seccion a,
+  .modal-hombre-seccion a,
+  .modal-niños-seccion a,
+  .modal-accesorios-seccion a {
+    width: 100% !important;
+    padding: 8px 0 !important;
+    font-size: 14px !important;
+  }
+
+  /* Indicador de submenú abierto */
+  .menu-li.active > .menu-li-a {
+    color: #d3e005 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Ajustar el header del submenú */
+  .modal-content-menu h2 {
+    font-size: 18px !important;
+    padding: 8px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .modal-content-menu p {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .menu-li .menu-li-a {
+    color: #0a0a0a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    font-family: "Dosis", sans-serif;
+    transition: all 0.3s;
+  }
+
   .logo-nav-movil {
     display: flex;
     margin: auto;
@@ -1817,6 +1927,7 @@ html {
 
   .hamburger {
     display: block;
+    margin-top: -12px;
   }
 
   .icons-container-movil {
@@ -1851,7 +1962,6 @@ html {
     height: 100vh;
     background: white;
     flex-direction: column;
-    align-items: flex-start;
     padding: 2rem;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     transition: right 0.4s;
@@ -1874,10 +1984,6 @@ html {
     flex-direction: column;
   }
 
-  .menu-li {
-    margin: 0.5rem 0;
-  }
-
   .modal-menu {
     position: static;
     width: 100%;
@@ -1893,8 +1999,10 @@ html {
   }
 
   .menu-li.active .modal-menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
     max-height: 1000px;
+    max-height: fit-content;
   }
 
   .modal-content-menu {
@@ -1964,7 +2072,7 @@ html {
   .modal-hombre-seccion-content,
   .modal-niños-seccion-content,
   .modal-accesorios-seccion-content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
