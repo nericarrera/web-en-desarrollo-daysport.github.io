@@ -878,37 +878,6 @@ html {
   transition: transform 0.5s ease;
 }
 
-.banner-conteiner-titulo0 {
-  display: flex;
-  width: 30%;
-  height: 48%;
-  position: absolute;
-  padding: 10px;
-  margin: 15px;
-  border-radius: 57px;
-  text-align: center;
-  -webkit-text-stroke: 1px #cddc398a;
-  z-index: 1;
-}
-
-.banner-titulo0 {
-  position: absolute;
-  font-family: "Dosis", sans-serif;
-  font-size: 50px;
-  font-weight: 600;
-  color: #673ab7;
-  animation: slide-fade 10s infinite;
-  animation: changeImage 10s infinite;
-  opacity: 0.7;
-}
-
-.banner-titulo0 .banner-titulo0:hover {
-  background: #d3e005;
-  color: #673ab7;
-  transition: all 500ms ease;
-  cursor: pointer;
-}
-
 .banner-slide {
   min-width: 100%;
   box-sizing: border-box;
@@ -934,14 +903,6 @@ html {
 }
 
 /*---------------- Contenido del banner------------------- */
-
-.banner h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-family: "Dosis", sans-serif;
-  color: #ffffff;
-}
 
 .banner p {
   font-size: 24px;
