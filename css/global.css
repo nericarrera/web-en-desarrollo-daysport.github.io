@@ -1798,6 +1798,81 @@ html {
     display: flex;
   }
 
+  /* Estilos para el buscador móvil */
+  .search-container-movil {
+    position: relative;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+
+  .search-container-movil .search-box {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 280px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+
+  .search-container-movil.active .search-box {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .search-container-movil .search-icon img {
+    width: 20px;
+    transition: transform 0.3s;
+  }
+
+  .search-container-movil .search-icon img:hover {
+    transform: scale(1.1);
+  }
+
+  .search-container-movil .search-box input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-container-movil .search-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+  }
+
+  .search-container-movil .search-btn:hover {
+    background: #ff5252;
+  }
+
+  .icons-container-movil {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .search-container {
+    display: none;
+  }
+
+  .search-container-movil {
+    display: none;
+  }
+
   .modal-menu {
     max-height: 0;
     overflow: hidden;
