@@ -877,3 +877,49 @@ input[type="checkbox"] {
 .nericarrera a:hover {
   color: #bbbbbb;
 }
+
+@media (max-width: 1024px) {
+  .header__inicio-env {
+    padding: 5px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .conteiner-buscador-carrito {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .buscador input {
+    width: 100px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .cart-icon-container,
+  .user-icon-container {
+    margin-top: 10px;
+  }
+
+  /*-------------------CARRITO------------------*/
+  #cart-count {
+    position: absolute;
+    top: -13px;
+    right: -11px;
+    background-color: #a30dfa;
+    color: white;
+    padding: 6px;
+    border-radius: 100%;
+    font-size: 8px;
+    width: 18px;
+    margin: auto;
+  }
+}

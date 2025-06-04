@@ -58,19 +58,19 @@ html {
   box-sizing: border-box;
 }
 
-.logo-nav-movil {
+.logo-nav-mobile {
   display: none;
 }
 
-.icons-container-movil {
+.icons-container-mobile {
   display: none;
 }
 
-#cart-icon-movil {
+#cart-icon-mobile {
   display: none;
 }
 
-.cart-count-movil {
+.cart-count-mobile {
   display: none;
 }
 
@@ -1799,13 +1799,13 @@ html {
   }
 
   /* Estilos para el buscador móvil */
-  .search-container-movil {
+  .search-container-mobile {
     position: relative;
     margin-left: 1rem;
     cursor: pointer;
   }
 
-  .search-container-movil .search-box {
+  .search-container-mobile .search-box-mobile {
     position: absolute;
     right: 0;
     top: 100%;
@@ -1821,22 +1821,22 @@ html {
     z-index: 1000;
   }
 
-  .search-container-movil.active .search-box {
+  .search-container-mobile.active .search-box-mobile {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  .search-container-movil .search-icon img {
+  .search-container-mobile .search-icon img {
     width: 20px;
     transition: transform 0.3s;
   }
 
-  .search-container-movil .search-icon img:hover {
+  .search-container-mobile .search-icon img:hover {
     transform: scale(1.1);
   }
 
-  .search-container-movil .search-box input {
+  .search-container-mobile .search-box-mobile input {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ddd;
@@ -1844,7 +1844,7 @@ html {
     margin-bottom: 0.5rem;
   }
 
-  .search-container-movil .search-btn {
+  .search-container-mobile .search-btn {
     background: #ff6b6b;
     color: white;
     border: none;
@@ -1855,22 +1855,22 @@ html {
     width: 100%;
   }
 
-  .search-container-movil .search-btn:hover {
+  .search-container-mobile .search-btn:hover {
     background: #ff5252;
   }
 
-  .icons-container-movil {
+  .icons-container-mobile {
     display: flex;
     align-items: center;
     gap: 15px;
   }
 
   .search-container {
-    display: none;
+    display: flex;
   }
 
-  .search-container-movil {
-    display: none;
+  .search-container-mobile {
+    display: flex;
   }
 
   .modal-menu {
@@ -1982,16 +1982,16 @@ html {
     transition: all 0.3s;
   }
 
-  .logo-nav-movil {
+  .logo-nav-mobil {
     display: flex;
     margin: auto;
   }
 
-  .logo-nav-movil a {
+  .logo-nav-mobil a {
     display: flex;
   }
 
-  .logo-nav-movil img {
+  .logo-nav-mobil img {
     width: 50px;
     height: 50px;
     margin-left: 10px;
@@ -2003,7 +2003,7 @@ html {
     margin-top: -12px;
   }
 
-  .icons-container-movil {
+  .icons-container-mobil {
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -2104,7 +2104,7 @@ html {
     right: 20px !important;
   }
 
-  .search-box {
+  .search-box-mobile {
     right: auto;
     left: 0;
     width: 100%;
