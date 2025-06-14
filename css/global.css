@@ -1179,7 +1179,6 @@ html {
 
 .conteiner-tarjeta-titulo {
   width: 95%;
-  height: 100px;
   margin: auto;
   margin-top: 50px;
 }
@@ -1338,6 +1337,8 @@ html {
   justify-content: center;
   margin: auto;
   margin-top: 30px;
+  padding: 15px;
+  gap: 20px;
 }
 
 .conteiner-banner2 .banner-bravas-p {
@@ -1348,6 +1349,8 @@ html {
   font-weight: 900;
   color: #e90090;
   margin-top: 16px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .logo-lasbravas {
@@ -1595,7 +1598,7 @@ html {
 /* FOOTER */
 
 .footer {
-  width: 97%;
+  width: 100%;
   display: flex;
   font-family: "AdihausDIN-CnBoldItalic", "AdihausDIN Cn", Helvetica, Arial,
     sans-serif;
