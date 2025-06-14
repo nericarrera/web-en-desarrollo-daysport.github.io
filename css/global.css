@@ -267,6 +267,7 @@ html {
   max-height: 400px;
   object-fit: contain;
   margin-bottom: 20px;
+  border-radius: 20px;
 }
 
 /* Contenido de los modales */
@@ -300,7 +301,7 @@ html {
   display: flex;
   width: 130px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 20px;
   border: 1px solid #eee;
   transition: all 0.3s;
 }
@@ -1314,7 +1315,7 @@ html {
 
 /* BANNER LAS BRAVAS */
 .conteiner-banner {
-  width: 100%;
+  width: 97%;
   justify-content: center;
   background-image: linear-gradient(#ffffff, #ffff18);
   margin: auto;
