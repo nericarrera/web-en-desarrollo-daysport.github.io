@@ -87,6 +87,7 @@ html {
 .logo {
   display: flex;
   align-items: center;
+  margin-top: -15px;
 }
 
 .logo .a {
