@@ -1322,17 +1322,14 @@ html {
 }
 
 .conteiner-banner-video {
-  background: #fffb00e0;
   border-radius: 5px;
-  box-shadow: 0 0px 2px 2px rgba(0, 0, 0, 0.2);
   margin-top: 100px;
 }
 
 .conteiner-banner-video video {
   display: flex;
-  width: 80%;
+  width: 100%;
   margin: auto;
-  border-top-left-radius: 5px;
 }
 
 .conteiner-banner2 {
@@ -1340,22 +1337,29 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+  margin-top: 30px;
 }
 
 .conteiner-banner2 .banner-bravas-p {
   display: flex;
   width: 398px;
-  font-size: 39px;
-  font-family: "Montserrat", sans-serif;
+  font-size: 59px;
+  font-family: "Questrial", sans-serif;
   font-weight: 900;
   color: #e90090;
   margin-top: 16px;
 }
 
+.logo-lasbravas {
+  background: #e90090;
+  width: 50%;
+}
+
 .conteiner-banner2 img {
   display: flex;
-  width: 20%;
-  margin-left: 338px;
+  width: 98%;
+  margin: auto;
+  padding: 15px;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
