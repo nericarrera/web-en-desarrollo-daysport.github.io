@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const cartCloseBtn = document.getElementById('cart-close-btn');
   const userIcon = document.getElementById('user-icon');
   const userDropdown = document.querySelector('.user-dropdown');
-  
+
+  // MOBILE: variables para buscador mobile
+  const searchToggleMobile = document.getElementById('search-toggle-mobile');
+  const searchContainerMobile = document.querySelector('.search-container-mobile');
+
   // Menú Hamburguesa
   hamburger.addEventListener('click', function() {
     this.classList.toggle('active');
     menuContainer.classList.toggle('active');
-    
     // Cerrar otros elementos abiertos al abrir el menú
     if (this.classList.contains('active')) {
       searchContainer.classList.remove('active');
@@ -27,16 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = '';
     }
   });
-  
+
   // Submenús en móvil
   menuItems.forEach(item => {
     const link = item.querySelector('.menu-li-a');
-    
     link.addEventListener('click', function(e) {
       if (window.innerWidth <= 1024) {
         e.preventDefault();
         item.classList.toggle('active');
-        
         // Cerrar otros submenús
         menuItems.forEach(otherItem => {
           if (otherItem !== item) {
@@ -46,16 +47,34 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
-  // Búsqueda
-  searchToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    searchContainer.classList.toggle('active');
-    
-    // Cerrar otros elementos
-    cartDropdown.classList.remove('show');
-    userDropdown.style.opacity = '0';
-  });
+
+  // Búsqueda ESCRITORIO
+  if (searchToggle && searchContainer) {
+    searchToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      searchContainer.classList.toggle('active');
+      // Cerrar otros elementos
+      cartDropdown.classList.remove('show');
+      userDropdown.style.opacity = '0';
+    });
+  }
+
+  // Búsqueda MOBILE
+  if (searchToggleMobile && searchContainerMobile) {
+    searchToggleMobile.addEventListener('click', function(e) {
+      e.stopPropagation();
+      searchContainerMobile.classList.toggle('active');
+      // Cierra otros menús si es necesario
+    });
+
+    // Cierra el buscador mobile al hacer clic fuera
+    document.addEventListener('click', function() {
+      searchContainerMobile.classList.remove('active');
+    });
+
+    // Evita que el clic dentro del buscador lo cierre
+    searchContainerMobile.addEventListener('click', e => e.stopPropagation());
+  }
   
   // Carrito
   cartIcon.addEventListener('click', function(e) {

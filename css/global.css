@@ -93,6 +93,14 @@ html {
   transform: scale(1.05);
 }
 
+.logo-nav-mobile {
+  display: none;
+}
+
+.icons-container-mobile {
+  display: none;
+}
+
 /* Contenedor del Menú */
 .menu-container {
   display: flex;
@@ -471,8 +479,6 @@ html {
 
 .cart-modal-summary {
   margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
   padding: 10px;
 }
 
@@ -2049,7 +2055,7 @@ html {
     display: flex;
   }
 
-  .logo1-mobile img {
+  .logo-nav-mobile img {
     width: 50px;
     height: 50px;
     margin-left: 10px;
