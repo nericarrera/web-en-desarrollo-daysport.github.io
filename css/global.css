@@ -1782,8 +1782,6 @@ html {
   width: 20px;
 }
 
-
-
 .user-icon-container-mobile {
   position: relative;
   display: flex;
@@ -1813,12 +1811,6 @@ html {
   visibility: visible;
   transform: translateY(0);
 }
-
-
-
-
-.search-btn-mobile
-
 
 .cart-icon-container-mobile {
   position: relative;
@@ -2057,7 +2049,7 @@ html {
     display: flex;
   }
 
-  .logo-nav-mobile img {
+  .logo1-mobile img {
     width: 50px;
     height: 50px;
     margin-left: 10px;
