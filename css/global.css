@@ -1763,14 +1763,6 @@ html {
 .icons-container-mobile {
   display: none;
 }
-
-#cart-icon-mobile {
-  display: none;
-}
-
-.cart-count-mobile {
-  display: none;
-}
   
   .icons-container { display: none; }
   .logo { display: none; }
@@ -1831,7 +1823,7 @@ html {
 
 .cart-count-mobile {
   position: absolute;
-  top: -10px;
+  top: -20px;
   right: -10px;
   background-color: #a30dfa;
   color: white;
@@ -1847,6 +1839,11 @@ html {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.user-icon-container-mobile img {
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -1872,8 +1869,9 @@ html {
   .search-container-mobile .search-box-mobile {
     position: absolute;
     right: 0;
+    left: -194%;
     top: 100%;
-    width: 280px;
+    width: 200px;
     background: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -1909,7 +1907,7 @@ html {
   }
 
   .search-container-mobile .search-btn-mobile {
-    background: #ff6b6b;
+    background: #360353;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -1920,7 +1918,7 @@ html {
   }
 
   .search-container-mobile .search-btn-mobile:hover {
-    background: #ff5252;
+    background: #8b06d1;
   }
 
   .icons-container-mobile {
@@ -1935,6 +1933,7 @@ html {
 
   .search-container-mobile {
     display: flex;
+    margin: auto;
   }
 
   .modal-menu {
