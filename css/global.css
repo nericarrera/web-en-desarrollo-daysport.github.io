@@ -372,7 +372,7 @@ html {
 }
 
 .search-btn {
-  background: #ff6b6b;
+  background: #360353;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -382,7 +382,7 @@ html {
 }
 
 .search-btn:hover {
-  background: #ff5252;
+  background: #8b06d1;
 }
 
 /* Carrito */
@@ -2336,7 +2336,7 @@ html {
 }
 
 .cart-modal-checkout-btn {
-  background-color: #a30dfa;
+  background-color: #360353;
   color: white;
   border: none;
   padding: 10px;
@@ -2349,7 +2349,7 @@ html {
 }
 
 .cart-modal-view-cart-btn {
-  background-color: #007bff;
+  background-color: #360353;
   color: white;
   border: none;
   padding: 10px;
@@ -2358,5 +2358,5 @@ html {
 }
 
 .cart-modal-view-cart-btn:hover {
-  background-color: #0056b3;
+  background-color: #8b06d1;
 }
