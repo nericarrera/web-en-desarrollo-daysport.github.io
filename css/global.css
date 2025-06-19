@@ -1769,16 +1769,6 @@ html {
   .logo-nav-mobile { display: flex; }
   .icons-container-mobile { display: flex; }
 
-  .cart-icon-container-mobile {
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-#cart-icon-mobile {
-  width: 20px;
-}
 
 .user-icon-container-mobile {
   position: relative;
@@ -1846,18 +1836,44 @@ html {
   height: 20px;
 }
 
+.cart-dropdown-hidden {
+    display: flex;
+}
+
+.cart-dropdown-mobile {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  min-width: 115px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
 
 .user-icon-container-mobile:hover .user-dropdown-mobile,
 .user-icon-container-mobile.active .user-dropdown-mobile {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: column;
+
 }
 
-
-  .nav {
-    display: flex;
-  }
+.user-dropdown-mobile a {
+    padding: 0.5rem 1rem;
+    color: #000;
+    text-decoration: none;
+    display: block;
+}
 
   /* Estilos para el buscador móvil */
   .search-container-mobile {
@@ -1869,7 +1885,7 @@ html {
   .search-container-mobile .search-box-mobile {
     position: absolute;
     right: 0;
-    left: -194%;
+    left: -80%;
     top: 100%;
     width: 200px;
     background: white;
@@ -1934,6 +1950,7 @@ html {
   .search-container-mobile {
     display: flex;
     margin: auto;
+    gap: 15px;
   }
 
   .modal-menu {
