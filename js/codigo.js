@@ -1,3 +1,45 @@
+
+// Buscador general (escritorio)
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.querySelector('.search-btn');
+if (searchInput && searchBtn) {
+  searchBtn.addEventListener('click', function() {
+    const query = searchInput.value.trim();
+    if (query) {
+      window.location.href = `buscador.html?query=${encodeURIComponent(query)}`;
+    }
+  });
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `buscador.html?query=${encodeURIComponent(query)}`;
+      }
+    }
+  });
+}
+
+// Buscador mobile
+const searchInputMobile = document.getElementById('search-input-mobile');
+const searchBtnMobile = document.querySelector('.search-btn-mobile');
+if (searchInputMobile && searchBtnMobile) {
+  searchBtnMobile.addEventListener('click', function() {
+    const query = searchInputMobile.value.trim();
+    if (query) {
+      window.location.href = `buscador.html?query=${encodeURIComponent(query)}`;
+    }
+  });
+  searchInputMobile.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const query = searchInputMobile.value.trim();
+      if (query) {
+        window.location.href = `buscador.html?query=${encodeURIComponent(query)}`;
+      }
+    }
+  });
+}
+
+
 // Menú Responsive
 document.addEventListener('DOMContentLoaded', function() {
   // Variables
