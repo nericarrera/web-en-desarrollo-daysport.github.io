@@ -8,15 +8,18 @@ const query = getQueryParam('query').toLowerCase();
 
 // Importa los productos de todas las secciones
 Promise.all([
-  import('/js/mujerProductos.js'),
-  import('/js/hombreProductos.js'),
-  import('/js/accesoriosProductos.js')
-]).then(([mujerModule, hombreModule, accesoriosModule]) => {
+  import('./mujerProductos.js'),
+  import('./hombreProductos.js'),
+  import('./accesoriosProductos.js'),
+  import('./niñosProductos.js'),
+
+]).then(([mujerModule, hombreModule, niñosModule, accesoriosModule]) => {
   // Une todos los productos en un solo array
   const productos = [
     ...(mujerModule.productosMujer || []),
     ...(hombreModule.productosHombre || []),
-    ...(accesoriosModule.productosAccesorios || [])
+    ...(niñosModule.productosNiños || []),
+    ...(accesoriosModule.productosAccesorios || []),
   ];
 
   // Filtra los productos por nombre, descripción o categoría
