@@ -63,6 +63,7 @@ export const productosHombre = [
         categoria: "camperas",
         seccion: "hombre",
         temporada: "invierno",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/camperas/camperas-abrigo/campera-abrigo-boss-neg-viol-1.jpeg"], // Imagen principal para el carrusel
        
         miniaturas: [
@@ -96,6 +97,7 @@ export const productosHombre = [
         categoria: "conjuntos",
         seccion: "hombre",
         temporada: "invierno", 
+        descripcion: "Conjunto tech Nike, con capucha, ideal para el invierno, logo bordado",
         imagen: ["img/hombre/conjuntos/conjunto-tech-campera-negro1.jpeg"], 
         
         miniaturas: [
@@ -134,6 +136,7 @@ export const productosHombre = [
         categoria: "calzas", 
         seccion: "hombre",
         temporada: "verano",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/mujer/calzas/calza-nike-radeon-1.jpeg"], 
         
         miniaturas: [
@@ -174,6 +177,7 @@ export const productosHombre = [
         categoria: "calzas", 
         seccion: "hombre",
         temporada: "verano",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/mujer/calzas/calza-nike-grofada-1.jpeg"], 
        
         miniaturas: [
@@ -210,6 +214,7 @@ export const productosHombre = [
         categoria: "calzas", 
         seccion: "hombre",
         temporada: "verano",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/mujer/calzas/calza-nike-speak-1.jpeg"], 
         
         miniaturas: [
@@ -248,6 +253,7 @@ export const productosHombre = [
         categoria: "calzas",
         seccion: "hombre",
         temporada: "invierno", 
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/mujer/calzas/calza-nike-fluor-1.jpeg", "img/mujer/calzas/calza-nike-fluor-2.jpeg"], 
        
         miniaturas: [
@@ -286,6 +292,7 @@ export const productosHombre = [
         categoria: "calzas", 
         seccion: "hombre",
         temporada: "verano",
+        descripcion: "Campera Puffer combinada, con capucha para usar en cualquier ocasion, ideal para el invierno, logo bordado",
         imagen: ["img/mujer/calzas/calza-adidas-original-1.jpeg"], 
         
         miniaturas: [

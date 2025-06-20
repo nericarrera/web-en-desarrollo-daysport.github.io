@@ -38,9 +38,10 @@ Promise.all([
       contenedor.innerHTML = resultados.map(prod => `
         <div class="producto">
           <img src="${prod.imagen[0]}" alt="${prod.nombre}">
+          <p>$${prod.precio}</p>
           <h3>${prod.nombre}</h3>
           <p>${prod.descripcion || ''}</p>
-          <p>$${prod.precio}</p>
+          
         </div>
       `).join('');
     }
