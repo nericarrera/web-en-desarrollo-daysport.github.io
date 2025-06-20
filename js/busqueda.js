@@ -8,9 +8,9 @@ const query = getQueryParam('query').toLowerCase();
 
 // Importa los productos de todas las secciones
 Promise.all([
-  import('./js/mujerProductos.js'),
-  import('./js/hombreProductos.js'),
-  import('./js/accesoriosProductos.js')
+  import('/js/mujerProductos.js'),
+  import('/js/hombreProductos.js'),
+  import('/js/accesoriosProductos.js')
 ]).then(([mujerModule, hombreModule, accesoriosModule]) => {
   // Une todos los productos en un solo array
   const productos = [
