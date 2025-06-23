@@ -1763,9 +1763,6 @@ html {
   opacity: 0;
 }
 
-  .logo-nav-mobile {
-  display: none;
-}
 
 .icons-container-mobile {
   display: none;
@@ -1968,9 +1965,6 @@ html {
     transform: rotate(180deg);
   }
 
-  .menu-li {
-    margin-top: 0px;
-  }
 
   /* Ocultar videos e imágenes en móvil */
   .modal-content-menu video,
@@ -2078,7 +2072,6 @@ html {
   .icons-container-mobile {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
   }
 
   #cart-count {
