@@ -1713,7 +1713,6 @@ html {
 
 .hamburger-box {
   width: 40px;
-  height: 24px;
   display: inline-block;
   position: relative;
 }
@@ -2084,6 +2083,7 @@ html {
   .logo-nav-mobile {
     display: flex;
     margin: auto;
+    margin-left: 60px;
   }
 
   .logo-nav-mobile a {
