@@ -39,6 +39,27 @@ if (searchInputMobile && searchBtnMobile) {
   });
 }
 
+// Carrito MOBILE
+const cartIconMobile = document.getElementById('cart-icon-mobile');
+const cartDropdownMobile = document.getElementById('cart-dropdown-mobile');
+const cartCloseBtnMobile = document.getElementById('cart-close-btn-mobile');
+
+if (cartIconMobile && cartDropdownMobile) {
+  cartIconMobile.addEventListener('click', function(e) {
+    e.stopPropagation();
+    cartDropdownMobile.classList.toggle('show');
+  });
+  if (cartCloseBtnMobile) {
+    cartCloseBtnMobile.addEventListener('click', function() {
+      cartDropdownMobile.classList.remove('show');
+    });
+  }
+  document.addEventListener('click', function() {
+    cartDropdownMobile.classList.remove('show');
+  });
+  cartDropdownMobile.addEventListener('click', e => e.stopPropagation());
+}
+
 
 // Menú Responsive
 document.addEventListener('DOMContentLoaded', function() {

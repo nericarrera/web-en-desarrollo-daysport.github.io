@@ -1701,7 +1701,6 @@ html {
 /* Responsive */
 @media (max-width: 1024px) {
 
-  
 /* Hamburguesa (Mobile) */
 .hamburger {
   display: none;
@@ -1713,11 +1712,10 @@ html {
 }
 
 .hamburger-box {
-  width: 30px;
+  width: 40px;
   height: 24px;
   display: inline-block;
   position: relative;
-  margin-top: 15px;
 }
 
 .hamburger-inner {
@@ -1763,15 +1761,34 @@ html {
   opacity: 0;
 }
 
-
 .icons-container-mobile {
   display: none;
 }
   
-  .icons-container { display: none; }
-  .logo { display: none; }
-  .logo-nav-mobile { display: flex; }
-  .icons-container-mobile { display: flex; }
+  .icons-container { 
+    display: none; 
+  }
+
+  .logo { 
+    display: flex; 
+    width: 100%;
+        justify-content: center;
+        border-bottom: 1px solid #eee;
+  }
+
+  .logo .a .logo1 {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+
+  .logo-nav-mobile { 
+    display: flex; 
+  }
+
+  .icons-container-mobile { 
+    display: flex; 
+  }
 
 .user-dropdown-mobile {
   position: absolute;
@@ -1807,6 +1824,19 @@ html {
   width: 20px;
 }
 
+#cart-icon-mobile:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#cart-dropdown-mobile {
+  display: none;
+}
+#cart-dropdown-mobile.show {
+  display: block;
+  background: #fff;
+}
+
 .cart-count-mobile {
   position: absolute;
   top: -20px;
@@ -1820,6 +1850,7 @@ html {
   text-align: center;
   border: 1px solid #000;
 }
+
 .user-icon-container-mobile {
   position: relative;
   display: flex;
@@ -1830,6 +1861,10 @@ html {
 .user-icon-container-mobile img {
   width: 20px;
   height: 20px;
+}
+
+.user-icon-container-mobile:hover img {
+  transform: scale(1.1);
 }
 
 .cart-dropdown-hidden {
@@ -1852,7 +1887,6 @@ html {
   z-index: 1000;
 }
 
-
 .user-icon-container-mobile:hover .user-dropdown-mobile,
 .user-icon-container-mobile.active .user-dropdown-mobile {
   opacity: 1;
@@ -1861,7 +1895,6 @@ html {
   font-family: 'Dosis', sans-serif;
   display: flex;
   flex-direction: column;
-
 }
 
 .user-dropdown-mobile a {
@@ -1872,12 +1905,10 @@ html {
 }
 
   /* Estilos para el buscador móvil */
-
   .search-container-mobile .search-box-mobile {
     position: absolute;
     right: 0;
-    left: -89%;
-    top: 210%;
+    top: 101%;
     width: 200px;
     background: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1893,11 +1924,13 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    left: 70%;
   }
 
   .search-container-mobile .search-icon img {
     width: 20px;
     transition: transform 0.3s;
+    cursor: pointer;
   }
 
   .search-container-mobile .search-icon img:hover {
@@ -1954,7 +1987,6 @@ html {
   }
 
   .menu-li > .menu-li-a::after {
-    content: "▼";
     font-size: 10px;
     margin-left: 5px;
     display: inline-block;
@@ -1983,7 +2015,7 @@ html {
     box-shadow: none !important;
     border-top: none !important;
     padding: 0 !important;
-    margin-top: 10px;
+    
   }
 
   .modal-content-menu {
@@ -2059,9 +2091,13 @@ html {
   }
 
   .logo-nav-mobile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-nav-mobile img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
   }
 
   .hamburger {
@@ -2111,14 +2147,16 @@ html {
 
   .menu {
     flex-direction: column;
-    width: 100%;
+    width: 25%;
     margin-bottom: 2rem;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 0;
+    align-self: flex-start;
   }
 
   .menu-ul {
     flex-direction: column;
+    margin: 4px;
   }
 
   .modal-menu {
@@ -2130,8 +2168,6 @@ html {
     transform: none;
     display: none;
     padding-left: 1rem;
-    max-height: 0;
-    overflow: hidden;
     transition: max-height 0.3s ease;
   }
 
@@ -2185,6 +2221,39 @@ html {
     display: none;
    
   }
+
+  .sobrenosotros h3 {
+    display: flex;
+    font-size: 50px;
+    font-weight: 300;
+    font-family: "Oswald", sans-serif;
+    color: #d3e005;
+    -webkit-text-stroke: 1px #000000;
+    margin-top: 20px;
+  }
+
+  .cont_sobrenosotros {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+  }
+
+  .img__somos {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    display: flex;
+    padding: 12px;
+    margin-top: 5px;
+    margin-right: 0;
+  }
+
+  
 }
 
 /* Grid responsive para submenús */
