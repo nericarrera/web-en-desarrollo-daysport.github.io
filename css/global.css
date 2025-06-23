@@ -314,7 +314,8 @@ html {
 .search-box {
   position: absolute;
   right: 0;
-  top: 100%;
+  left: -15px;
+  top: 185%;
   width: 300px;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -356,7 +357,6 @@ html {
   display: flex;
   margin: auto;
   transition: transform 0.3s;
-  margin-right: 25px;
 }
 
 .search-icon img:hover {
@@ -426,12 +426,11 @@ html {
 /* Dropdown del Carrito */
 #cart-dropdown {
   position: fixed;
-  top: 114px !important;
-  right: 75px !important;
+  top: 104px !important;
+  right: 0px !important;
   width: 320px;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1101;
   max-height: 70vh;
@@ -537,6 +536,14 @@ html {
   gap: 10px;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+.cart-item-modal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .cart-item-img {
@@ -1769,14 +1776,6 @@ html {
   .logo-nav-mobile { display: flex; }
   .icons-container-mobile { display: flex; }
 
-
-.user-icon-container-mobile {
-  position: relative;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
 .user-dropdown-mobile {
   position: absolute;
   right: 0;
@@ -1791,7 +1790,7 @@ html {
   transform: translateY(10px);
   transition: all 0.3s;
   z-index: 1000;
-  margin-top: 13px;
+  margin-top: 5px;
 }
 .user-icon-container-mobile:hover .user-dropdown-mobile,
 .user-icon-container-mobile.active .user-dropdown-mobile {
@@ -1876,22 +1875,16 @@ html {
 }
 
   /* Estilos para el buscador móvil */
-  .search-container-mobile {
-    position: relative;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
 
   .search-container-mobile .search-box-mobile {
     position: absolute;
     right: 0;
-    left: -80%;
-    top: 100%;
+    left: -89%;
+    top: 210%;
     width: 200px;
     background: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    border-radius: 5px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -2193,6 +2186,11 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .banner-content {
+    display: none;
+   
   }
 }
 
