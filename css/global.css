@@ -72,6 +72,7 @@ html {
   display: flex;
   align-items: center;
   margin-top: -15px;
+  margin: auto;
 }
 
 .logo .a {
@@ -82,7 +83,6 @@ html {
 
 .logo .a .logo1 {
   height: 50px;
-  width: auto;
   width: 100%;
   object-fit: contain;
   border-radius: 5px;
@@ -107,6 +107,7 @@ html {
   align-items: center;
   transition: all 0.3s ease;
   margin: auto;
+  gap: 100px;
 }
 
 .menu {
@@ -287,6 +288,7 @@ html {
 .icons-container {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .conteiner-buscador-carrito {
@@ -300,7 +302,6 @@ html {
 /* Búsqueda */
 .search-container {
   position: relative;
-  margin-left: 1.5rem;
   cursor: pointer;
 }
 
@@ -427,7 +428,7 @@ html {
 #cart-dropdown {
   position: fixed;
   top: 104px !important;
-  right: 0px !important;
+  right: 175px !important;
   width: 320px;
   background: white;
   border: 1px solid #ddd;
@@ -583,7 +584,6 @@ html {
 
 #user-icon {
   width: 20px;
-  margin-left: 25px;
   height: 21px;
   margin-top: 2px;
   transition: transform 0.3s;
@@ -1451,16 +1451,12 @@ html {
 .img__somos {
   width: 375px;
   height: 460px;
-  border-radius: 50%;
   display: flex;
   padding: 12px;
-  margin-top: 5px;
-  margin-right: 80px;
 }
 
 .nosotros__p1 {
   display: flex;
-  width: 750px;
   color: #ffffff;
   font-size: 20px;
   text-align: justify;
@@ -1474,15 +1470,17 @@ html {
 .registro-conteiner {
   display: flex;
   width: 97%;
-  height: 115px;
   justify-content: center;
   margin: auto;
   background: #d3e005;
+  padding: 10px;
 }
 
 .registro {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .registro h3 {
@@ -1490,7 +1488,7 @@ html {
   font-weight: 900;
   font-family: "Dosis", sans-serif;
   font-size: 35px;
-  width: 70%;
+  width: 63%;
   color: #000000;
   margin: auto;
 }
@@ -1503,6 +1501,8 @@ html {
   width: 100%;
   color: #000000;
   margin: auto;
+  text-align: center;
+  padding: 10px;
 }
 
 .registro a {
@@ -2083,7 +2083,6 @@ html {
   .logo-nav-mobile {
     display: flex;
     margin: auto;
-    margin-left: 60px;
   }
 
   .logo-nav-mobile a {
@@ -2103,11 +2102,13 @@ html {
   .hamburger {
     display: block;
     margin-top: -12px;
+    margin: auto;
   }
 
   .icons-container-mobile {
     display: flex;
     justify-content: space-between;
+    margin: auto;
   }
 
   #cart-count {
@@ -2351,7 +2352,6 @@ html {
 }
 
 @media only screen and (max-width: 600px) {
-}
 
 .nav__ul {
   display: none;
@@ -2434,4 +2434,21 @@ html {
 
 .cart-modal-view-cart-btn:hover {
   background-color: #8b06d1;
+}
+
+/*------------buscador----------*/
+.search-container-mobile.active .search-box-mobile {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  left: 43%;
+}
+
+.nosotros__p1 {
+  color: black;
+  font-family: 'Dosis', sans-serif;
+  -webkit-text-stroke: 0.1px;
+
+}
+
 }
