@@ -1237,7 +1237,6 @@ html {
 .motivate_p1 {
   display: flex;
   width: 100%;
-  height: 30px;
   font-family: "Dosis", sans-serif;
   letter-spacing: 1px;
   font-style: normal;
@@ -1280,14 +1279,14 @@ html {
 
 .conteiner-banner2 .banner-bravas-p {
   display: flex;
-  width: 398px;
   font-size: 59px;
   font-family: "Questrial", sans-serif;
   font-weight: 900;
   color: #e90090;
   margin-top: 16px;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: baseline;
+  letter-spacing: 2px;
 }
 
 .logo-lasbravas {
@@ -1485,20 +1484,20 @@ html {
 
 .registro h3 {
   display: flex;
+  text-align: center;
   font-weight: 900;
   font-family: "Dosis", sans-serif;
   font-size: 35px;
-  width: 63%;
   color: #000000;
   margin: auto;
 }
 
 .registro p {
+  width: 36%;
   display: flex;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
   font-size: 30px;
-  width: 100%;
   color: #000000;
   margin: auto;
   text-align: center;
@@ -1834,6 +1833,10 @@ html {
 #cart-dropdown-mobile.show {
   display: block;
   background: #fff;
+  position: absolute;
+  top: 35px;
+  width: 40vh;
+  right: -80px;
 }
 
 .cart-count-mobile {
@@ -1962,7 +1965,7 @@ html {
   .icons-container-mobile {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
   }
 
   .search-container {
@@ -2144,6 +2147,7 @@ html {
 
   .menu-container.active {
     right: 0;
+    display: block;
   }
 
   .menu {
@@ -2247,11 +2251,15 @@ html {
   .img__somos {
     width: 50%;
     height: auto;
-    border-radius: 50%;
     display: flex;
     padding: 12px;
     margin-top: 5px;
     margin-right: 0;
+  }
+
+  .nosotros__p1 {
+    color: #000000;
+    margin-top: 0px;
   }
 
   
@@ -2444,11 +2452,78 @@ html {
   left: 43%;
 }
 
+/*---------------ARTICULOS 1-------------*/
+.article__p {
+  font-size: 30px;
+
+}
+
+/*--------------DESCUENTOS-----------*/
+.conteiner-descuento {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/*-------------MOTIVATE----------*/
+.motivate {
+  width: 90%;
+  padding: 10px;
+  background: #000000;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.motivate_p {
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 30px;
+}
+
+.motivate_p1 {
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+/*-------------bravas-bravas-----------*/
+.banner-bravas-p {
+  font-size: 30px;
+  font-family: "Questrial", sans-serif;
+  font-weight: 900;
+  color: #e90090;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 .nosotros__p1 {
   color: black;
   font-family: 'Dosis', sans-serif;
   -webkit-text-stroke: 0.1px;
+}
 
+.registro {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.registro p {
+  width: auto;
 }
 
 }
+
+
+
