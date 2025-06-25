@@ -1282,7 +1282,6 @@ th:hover {
   width: 150px;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-end;
   justify-content: center;
   align-items: center;
 }

@@ -1289,17 +1289,13 @@ html {
   letter-spacing: 2px;
 }
 
-.logo-lasbravas {
-  background: #e90090;
-  width: 50%;
-}
-
 .conteiner-banner2 img {
   display: flex;
-  width: 98%;
+  width: 65%;
   margin: auto;
   padding: 15px;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background: #ff1493;
 }
 
 /* GALERIA FOTOS BRAVAS */
