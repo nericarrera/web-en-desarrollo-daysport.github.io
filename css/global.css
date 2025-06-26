@@ -1118,6 +1118,9 @@ html {
   width: 95%;
   margin: auto;
   margin-top: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .titulo-conteiner-tarjeta {
@@ -2516,6 +2519,22 @@ html {
 .registro p {
   width: auto;
 }
+
+}
+
+/*---------------------------------*/
+  
+@media only screen and (max-width: 450px) {
+
+  /*---------------carrito---------------*/
+  #cart-dropdown-mobile.show {
+        display: block;
+        background: #fff;
+        position: absolute;
+        top: 35px;
+        width: 25vh;
+        right: -80px;
+    }
 
 }
 
