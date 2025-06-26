@@ -81,7 +81,7 @@ html {
 }
 
 .logo .a .logo1 {
-  height: 50px;
+  height: 80px;
   width: 100%;
   object-fit: contain;
   border-radius: 5px;
@@ -1080,7 +1080,6 @@ html {
 }
 
 .conteiner-descuento-descuento {
-  width: 355px;
   height: 405;
   display: flex;
   justify-content: center;
@@ -1253,7 +1252,6 @@ html {
 
 /* BANNER LAS BRAVAS */
 .conteiner-banner {
-  width: 97%;
   justify-content: center;
   background-image: linear-gradient(#ffffff, #ffff18);
   margin: auto;
@@ -1290,6 +1288,7 @@ html {
   flex-wrap: wrap;
   text-align: baseline;
   letter-spacing: 2px;
+  padding: 5px;
 }
 
 .conteiner-banner2 img {
@@ -1305,7 +1304,6 @@ html {
 
 .conteiner-galeria {
   display: flex;
-  width: 97%;
   justify-content: center;
   align-items: center;
   background: #ffff18;
@@ -1367,7 +1365,6 @@ html {
 }
 
 .conteiner-bravas {
-  width: 97%;
   height: 80px;
   margin: auto;
   position: relative;
@@ -1434,7 +1431,6 @@ html {
 
 .cont_sobrenosotros {
   display: flex;
-  width: 97%;
   height: auto;
   padding: 14px;
   justify-content: center;
@@ -1467,7 +1463,6 @@ html {
 
 .registro-conteiner {
   display: flex;
-  width: 97%;
   justify-content: center;
   margin: auto;
   background: #d3e005;
@@ -2093,6 +2088,7 @@ html {
   .logo-nav-mobile img {
     width: 80px;
     height: 80px;
+    margin-left: 22px;
   }
 
   .logo-nav-mobile img:hover {
@@ -2102,13 +2098,13 @@ html {
 
   .hamburger {
     display: block;
-    margin: auto;
+    
   }
 
   .icons-container-mobile {
     display: flex;
     justify-content: space-between;
-    margin: auto;
+
   }
 
   #cart-count {
@@ -2526,6 +2522,14 @@ html {
   
 @media only screen and (max-width: 450px) {
 
+/*-----------buscador---------------*/
+    .search-container-mobile.active .search-box-mobile {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        left: 26%;
+    }
+
   /*---------------carrito---------------*/
   #cart-dropdown-mobile.show {
         display: block;
@@ -2535,6 +2539,44 @@ html {
         width: 25vh;
         right: -50px;
     }
+
+
+
+    /*--------------NOVEDADES MUJER-----------*/
+    .carrusel-container-mujer {
+    width: 83%;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 28px 10px;
+    margin: auto;
+    flex-direction: column;
+}
+
+.carrusel-container-hombre {
+    width: 83%;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 28px 10px;
+    margin: auto;
+    flex-direction: column;
+}
+
+
+
+
+/*----------PROMOCIONES-----------*/
+.conteiner-descuento-descuento {
+    
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+}
+
+
 
 }
 

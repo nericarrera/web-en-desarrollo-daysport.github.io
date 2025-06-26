@@ -1216,7 +1216,6 @@ th:hover {
 /*--------------------- FOOTER ------------------------------*/
 
 .footer {
-  width: 97%;
   display: flex;
   font-family: "AdihausDIN-CnBoldItalic", "AdihausDIN Cn", Helvetica, Arial,
     sans-serif;
