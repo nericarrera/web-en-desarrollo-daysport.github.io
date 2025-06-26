@@ -315,7 +315,7 @@ html {
   position: absolute;
   right: 0;
   left: -110px;
-  top: 185%;
+  top: 171%;
   width: 300px;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -391,6 +391,7 @@ html {
   display: inline-block;
   cursor: pointer;
   margin: auto;
+  margin-right: 0px;
 }
 
 #cart-icon {
@@ -606,7 +607,7 @@ html {
   transform: translateY(10px);
   transition: all 0.3s;
   z-index: 1000;
-  margin-top: 13px;
+  margin-top: 10px;
 }
 
 .user-icon-container:hover .user-dropdown {
@@ -1828,8 +1829,8 @@ html {
   background: #fff;
   position: absolute;
   top: 35px;
-  width: 25vh;
-  right: -80px;
+  width: 36vh;
+        right: -50px;
 }
 
 .cart-count-mobile {
@@ -2188,6 +2189,7 @@ html {
     padding-top: 1rem;
     border-top: 1px solid #eee;
     flex-direction: row;
+    display: flex;
   }
 
   .conteiner-buscador-carrito {
@@ -2199,9 +2201,34 @@ html {
   }
 
   #cart-dropdown {
-    top: 100px !important;
+    top: 133px !important;
     right: 20px !important;
+    width: 223px;
   }
+
+  .titulo-carrito {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Dosis", sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .cart-modal-items {
+    position: relative;
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.cart-modal-summary p {
+    width: auto;
+    color: #000000;
+    margin-bottom: 10px;
+    font-family: "Dosis", sans-serif;
+    font-size: 13px;
+    padding: 2px;
+}
 
   .search-box-mobile {
     right: auto;
@@ -2213,6 +2240,8 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    width: 200px;
+        margin-left: 100px;
   }
 
   .banner-content {
@@ -2418,6 +2447,7 @@ html {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 25px;
 }
 
 .cart-modal-checkout-btn:hover {
@@ -2431,6 +2461,7 @@ html {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 25px;
 }
 
 .cart-modal-view-cart-btn:hover {
