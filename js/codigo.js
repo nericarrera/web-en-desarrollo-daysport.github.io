@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /*---------------------NOVEDAD MUJER CARRUSEL-------------------- */
+
 document.addEventListener('DOMContentLoaded', () => {
     const contenedorCarrusel = document.querySelector('.carrusel-container-mujer');
     
@@ -397,5 +398,140 @@ document.addEventListener('DOMContentLoaded', () => {
     }).catch(err => console.error("Error al importar productos:", err));
 });
 
+/*---------------------NOVEDAD NIÑOS CARRUSEL-------------------- */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contenedorCarrusel = document.querySelector('.carrusel-container-niños');
+    
+    import('/js/niñosProductos.js').then(module => {
+        const productosNiños = module.productosNiños;
+        const productosNovedad = productosNiños.filter(producto => 
+            producto.etiqueta?.toLowerCase() === "novedad"
+        );
+
+        productosNovedad.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto-novedad-niños');
+            
+            // Verificar si hay miniaturas disponibles
+            const hasMiniaturas = producto.miniaturas && producto.miniaturas.length > 0;
+            
+            productoDiv.innerHTML = `
+                <div class="product-container-carrusel">
+                    <div class="product-image-carrusel">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" 
+                             alt="${producto.nombre}" class="main-product-image">
+                        ${hasMiniaturas ? `
+                        <div class="product-thumbnails">
+                            ${producto.miniaturas.map((miniatura, index) => `
+                                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image"
+                                     data-product-id="${producto.id}">
+                            `).join('')}
+                        </div>` : ''}
+                    </div>
+                    <div class="product-info-carrusel">
+                        <p>$${producto.precio.toLocaleString()}</p>
+                        <h3>${producto.nombre}</h3> 
+                    </div>
+                </div>
+            `;
+
+            // Evento click para redirección
+            productoDiv.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('thumbnail-image')) {
+                    window.location.href = `index-producto.html?id=${producto.id}&seccion=niños`;
+                }
+            });
+
+            // Agregar eventos hover para miniaturas
+            if (hasMiniaturas) {
+                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+                
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mainImage.src = thumbnail.src;
+                    });
+                    
+                    thumbnail.addEventListener('mouseenter', () => {
+                        mainImage.src = thumbnail.src;
+                    });
+                });
+            }
+
+            contenedorCarrusel.appendChild(productoDiv);
+        });
+    }).catch(err => console.error("Error al importar productos:", err));
+});
+
+/*---------------------NOVEDAD ACCESORIOS CARRUSEL-------------------- */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contenedorCarrusel = document.querySelector('.carrusel-container-accesorios');
+    
+    import('/js/accesoriosProductos.js').then(module => {
+        const productosAccesorios = module.productosAccesorios;
+        const productosNovedad = productosAccesorios.filter(producto => 
+            producto.etiqueta?.toLowerCase() === "novedad"
+        );
+
+        productosNovedad.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('producto-novedad-accesorios');
+            
+            // Verificar si hay miniaturas disponibles
+            const hasMiniaturas = producto.miniaturas && producto.miniaturas.length > 0;
+            
+            productoDiv.innerHTML = `
+                <div class="product-container-carrusel">
+                    <div class="product-image-carrusel">
+                        <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" 
+                             alt="${producto.nombre}" class="main-product-image">
+                        ${hasMiniaturas ? `
+                        <div class="product-thumbnails">
+                            ${producto.miniaturas.map((miniatura, index) => `
+                                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                                     class="thumbnail-image"
+                                     data-product-id="${producto.id}">
+                            `).join('')}
+                        </div>` : ''}
+                    </div>
+                    <div class="product-info-carrusel">
+                        <p>$${producto.precio.toLocaleString()}</p>
+                        <h3>${producto.nombre}</h3> 
+                    </div>
+                </div>
+            `;
+
+            // Evento click para redirección
+            productoDiv.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('thumbnail-image')) {
+                    window.location.href = `index-producto.html?id=${producto.id}&seccion=accesorios`;
+                }
+            });
+
+            // Agregar eventos hover para miniaturas
+            if (hasMiniaturas) {
+                const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+                const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+                
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mainImage.src = thumbnail.src;
+                    });
+                    
+                    thumbnail.addEventListener('mouseenter', () => {
+                        mainImage.src = thumbnail.src;
+                    });
+                });
+            }
+
+            contenedorCarrusel.appendChild(productoDiv);
+        });
+    }).catch(err => console.error("Error al importar productos:", err));
+});
 
 
