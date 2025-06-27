@@ -314,8 +314,8 @@ html {
 .search-box {
   position: absolute;
   right: 0;
-  left: -110px;
-  top: 171%;
+  left: -175px;
+  top: 150%;
   width: 300px;
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -2061,10 +2061,12 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: auto;
   }
 
   .search-container {
     display: flex;
+    margin: auto;
   }
 
   .search-container-mobile {
@@ -2200,7 +2202,7 @@ html {
 
   .hamburger {
     display: block;
-    
+    margin: auto;
   }
 
   .icons-container-mobile {
@@ -2342,7 +2344,7 @@ html {
     visibility: visible;
     transform: translateY(0);
     width: 200px;
-        margin-left: 100px;
+        margin-left: 155px;
   }
 
   .banner-content {

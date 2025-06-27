@@ -45,7 +45,6 @@
   height: auto;
   text-align: center;
   justify-content: center;
-  padding: 5px;
   margin: auto;
   justify-content: flex-start;
 }
@@ -60,7 +59,7 @@
 
 .logo .a .logo1 {
   display: flex;
-  width: 40%;
+  width: 100%;
 }
 
 .nav {
@@ -117,7 +116,6 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: auto;
 }
 
 #cart-icon {
@@ -205,7 +203,6 @@
 
 #user-icon {
   width: 20px;
-  margin-left: 25px;
   height: 21px;
   margin-top: 2px;
 }
