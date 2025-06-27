@@ -325,6 +325,17 @@ function fillSizeGuide(product) {
 
 
 /*----------- "AGREGAR AL CARRITO" ------------*/
+// Función para mostrar el toast
+function showCartToast(message) {
+    const toast = document.getElementById('cart-toast');
+    toast.textContent = message;
+    toast.style.display = 'block';
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 2000); // Se oculta después de 2 segundos
+}
+
+
 document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
     console.log('Botón "Agregar al carrito" clickeado'); // Depuración
 
@@ -381,7 +392,10 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
 
     // Agregar el producto al carrito
     addToCart(product);
+    showCartToast('¡Producto agregado al carrito!');
 });
+
+
 
 
 /*----------------COMENTARIOS EN LA DESCRIPCION DE PRODUCTO-------------- */
