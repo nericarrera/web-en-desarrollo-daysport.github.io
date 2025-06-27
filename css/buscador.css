@@ -42,12 +42,14 @@ main {
 .producto h3 {
     font-size: 1.2em;
     margin: 10px;
-    font-family: 'Ma';
+    font-family: 'Questrial', sans-serif;
 }
 
 .producto p {
     font-size: 1em;
-    margin: 0 10px 10px;
+    margin: 0 5px 10px;
+    font-family: 'Questrial', sans-serif;
+    padding: 3px;
 }
 
 /*------------------titulo--------------*/
