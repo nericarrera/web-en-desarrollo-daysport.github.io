@@ -1068,7 +1068,108 @@ html {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
 }
 
-/*-------------NOVEDADES HOMBRES---------- */
+/*-------------NOVEDADES NIÑOS---------- */
+.carrusel-niños-novedad-titulo {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  background: #d3e005;
+  padding: 5px;
+}
+
+.novedad-niños-titulo {
+  font-size: 35px;
+  font-family: "Questrial", sans-serif;
+  color: #673ab7;
+  font-weight: 700;
+  padding: 5px;
+  margin-left: 30px;
+}
+
+.product-card-novedad-niños {
+  text-align: center;
+}
+
+/* Contenedor principal del carrusel */
+.carrusel-container-niños {
+  width: 83%;
+  display: flex;
+  gap: 12px; /* Espacio entre productos */
+  overflow-x: auto; /* Habilitar desplazamiento horizontal */
+  padding: 28px 10px; /* Espaciado interno */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+  margin: auto; /* Centrar el carrusel */
+}
+
+/* Tarjeta individual de producto */
+.producto-novedad-niños {
+  flex: 0 0 auto; /* Evitar que las tarjetas se reduzcan */
+  width: 250px; /* Ancho fijo para cada tarjeta */
+  height: 420px;
+  border: 1px solid #ddd; /* Borde delgado */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+  cursor: pointer;
+}
+
+.producto-novedad-niños:hover {
+  transform: translateY(-5px); /* Elevar ligeramente en hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
+}
+
+/*-----------------NOVEDADES ACCESORIOS--------------*/
+.carrusel-accesorios-novedad-titulo {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  background: #d3e005;
+  padding: 5px;
+}
+
+.novedad-accesorios-titulo {
+  font-size: 35px;
+  font-family: "Questrial", sans-serif;
+  color: #673ab7;
+  font-weight: 700;
+  padding: 5px;
+  margin-left: 30px;
+}
+
+.product-card-novedad-accesorios {
+  text-align: center;
+}
+
+/* Contenedor principal del carrusel */
+.carrusel-container-accesorios {
+  width: 83%;
+  display: flex;
+  gap: 12px; /* Espacio entre productos */
+  overflow-x: auto; /* Habilitar desplazamiento horizontal */
+  padding: 28px 10px; /* Espaciado interno */
+  scroll-behavior: smooth; /* Desplazamiento suave */
+  margin: auto; /* Centrar el carrusel */
+}
+
+/* Tarjeta individual de producto */
+.producto-novedad-accesorios {
+  flex: 0 0 auto; /* Evitar que las tarjetas se reduzcan */
+  width: 250px; /* Ancho fijo para cada tarjeta */
+  height: 420px;
+  border: 1px solid #ddd; /* Borde delgado */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+  cursor: pointer;
+}
+
+.producto-novedad-accesorios:hover {
+  transform: translateY(-5px); /* Elevar ligeramente en hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
+}
+
 
 /*----------- BANNER DESCUENTO------------ */
 .conteiner-descuento {

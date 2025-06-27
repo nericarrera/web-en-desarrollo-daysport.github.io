@@ -49,3 +49,18 @@ main {
     font-size: 1em;
     margin: 0 10px 10px;
 }
+
+/*------------------titulo--------------*/
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-family: 'Dosis', sans-serif;
+}

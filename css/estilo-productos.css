@@ -1246,6 +1246,7 @@ th:hover {
   font-weight: 400;
   font-style: normal;
   text-decoration: underline;
+  margin-bottom: 10px;
 }
 
 .conteiner-titulo-footer:hover {
