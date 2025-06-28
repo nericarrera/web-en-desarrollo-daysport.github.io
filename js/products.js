@@ -52,23 +52,39 @@ function mostrarDetallesProducto(product) {
     zoomContainer.appendChild(image);
 
     // Configuración del zoom
-    let isZoomed = false;
-    let offsetX, offsetY;
+    // Configuración del zoom
+let isZoomed = false;
 
-    function handleZoom(event) {
-        if (isZoomed) {
-            const rect = zoomContainer.getBoundingClientRect();
-            offsetX = (event.clientX - rect.left) / rect.width * 100;
-            offsetY = (event.clientY - rect.top) / rect.height * 100;
-            image.style.transformOrigin = `${offsetX}% ${offsetY}%`;
-        }
+function handleZoom(event) {
+    if (!isZoomed) return;
+    const rect = zoomContainer.getBoundingClientRect();
+    // Calcula la posición del mouse dentro del contenedor
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    image.style.transformOrigin = `${x}% ${y}%`;
+}
+
+image.addEventListener('click', () => {
+    isZoomed = !isZoomed;
+    if (isZoomed) {
+        image.classList.add('zoomed');
+        image.style.transform = 'scale(2.2)';
+        zoomContainer.style.cursor = 'zoom-out';
+    } else {
+        image.classList.remove('zoomed');
+        image.style.transform = 'scale(1)';
+        zoomContainer.style.cursor = 'zoom-in';
     }
+});
 
-    image.addEventListener('click', () => {
-        isZoomed = !isZoomed;
-        image.classList.toggle('zoomed');
-        zoomContainer.style.cursor = isZoomed ? 'grab' : 'zoom-in';
-    });
+zoomContainer.addEventListener('mousemove', handleZoom);
+
+// Opcional: al salir del contenedor, centrar el zoom o restaurar
+zoomContainer.addEventListener('mouseleave', () => {
+    if (isZoomed) {
+        image.style.transformOrigin = '50% 50%';
+    }
+});
 
     zoomContainer.addEventListener('mousemove', handleZoom);
 
@@ -392,7 +408,7 @@ document.querySelector('.btn-add-to-cart').addEventListener('click', () => {
 
     // Agregar el producto al carrito
     addToCart(product);
-    showCartToast('¡Producto agregado al carrito!');
+    
 });
 
 

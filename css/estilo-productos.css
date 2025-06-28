@@ -288,7 +288,11 @@
 }
 
 .zoom-container {
-  display: grid;
+   position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  width: 100%; /* o el ancho que desees */
+  height: 100%; /* o el alto que desees */
   gap: 1px;
 }
 
@@ -296,11 +300,14 @@
 .main-product-image {
   transition: transform 0.3s ease;
   transform-origin: center center;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .main-product-image.zoomed {
   transform: scale(2);
-  cursor: grab;
+  cursor: zoom-out;
   z-index: 10;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
