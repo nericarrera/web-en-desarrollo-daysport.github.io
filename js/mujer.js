@@ -168,29 +168,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     mainImage.src = producto.hoverImagenes[0];
                 }
             });
-
-            mainImage.addEventListener('mouseleave', resetMainImage);
-
+ // Hover en las miniaturas
             thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('mouseenter', () => {
+                const hoverImage = thumbnail.getAttribute('data-hover');
+    
+                thumbnail.addEventListener('mouseover', () => {
                     mainImage.src = thumbnail.src;
-                    activeThumbnail = thumbnail;
-                    
-                    const hoverImage = thumbnail.dataset.hover;
+                    selectedThumbnail = thumbnail;
+    
                     if (hoverImage) {
-                        const originalSrc = thumbnail.src;
-                        thumbnail.addEventListener('mouseenter', () => mainImage.src = hoverImage);
-                        thumbnail.addEventListener('mouseleave', () => mainImage.src = originalSrc);
+                        mainImage.addEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.addEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
                     }
                 });
-
-                thumbnail.addEventListener('mouseleave', () => {
-                    if (![...thumbnails].some(thumb => thumb.matches(':hover'))) {
-                        activeThumbnail = null;
-                        resetMainImage();
+    
+                thumbnail.addEventListener('mouseout', () => {
+                    selectedThumbnail = null;
+                    mainImage.src = producto.imagen[0];
+    
+                    if (hoverImage) {
+                        mainImage.removeEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.removeEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
                     }
                 });
             });
+    
+            ProductsGrid.appendChild(productoDiv);
         });
     }
 

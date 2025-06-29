@@ -13,7 +13,7 @@ export  const productosMujer = [
     imagen: ["img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"],
     
     miniaturas: [
-       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg", hover:""},
+       {src: "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-2.jpeg", hover:"img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"},
         
     ],
     variantes: [
@@ -30,7 +30,7 @@ export  const productosMujer = [
     imagenColores: {
         celeste: [
             "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg",
-            "img/mujer/remera-modal-soft/remera-modal-soft-cuelloR-1.jpeg"
+            
             
         ],
         negro: [
