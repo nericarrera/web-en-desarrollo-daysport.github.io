@@ -1000,6 +1000,7 @@ html {
   justify-content: flex-start;
   margin-left: 5px;
   gap: 2px;
+  padding: 4px;
 }
 
 .thumbnail-image {

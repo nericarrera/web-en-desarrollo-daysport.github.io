@@ -146,62 +146,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
 
         // Configurar eventos hover después de renderizar
-        document.querySelectorAll('.mujer-product-card').forEach(productoDiv => {
-            const id = productoDiv.querySelector('.main-product-image').id.split('-')[1];
-            const producto = productos.find(p => p.id === id);
-            if (!producto) return;
+        // Configurar eventos hover después de renderizar
+document.querySelectorAll('.mujer-product-card').forEach(productoDiv => {
+    const id = productoDiv.querySelector('.main-product-image').id.split('-')[1];
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return;
 
-            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-            let activeThumbnail = null;
+    const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+    const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+    let lastThumbnailSrc = producto.imagen[0]; // Por defecto, la principal
 
-            const resetMainImage = () => {
-                if (!activeThumbnail) {
-                    mainImage.src = producto.imagen[0];
-                } else {
-                    mainImage.src = activeThumbnail.src;
-                }
-            };
+    thumbnails.forEach(thumbnail => {
+        const hoverImage = thumbnail.getAttribute('data-hover');
 
+        // Cuando el mouse entra en la miniatura
+        thumbnail.addEventListener('mouseenter', () => {
+            lastThumbnailSrc = thumbnail.src;
+            mainImage.src = thumbnail.src;
+        });
+
+        // Cuando el mouse sale de la miniatura
+        thumbnail.addEventListener('mouseleave', () => {
+            mainImage.src = producto.imagen[0];
+        });
+
+        // Si la miniatura tiene imagen de hover, al pasar por la imagen principal, mostrarla
+        if (hoverImage) {
             mainImage.addEventListener('mouseenter', () => {
-                if (!activeThumbnail && producto.hoverImagenes?.length) {
-                    mainImage.src = producto.hoverImagenes[0];
+                if (mainImage.src === thumbnail.src) {
+                    mainImage.src = hoverImage;
                 }
             });
- // Hover en las miniaturas
-            thumbnails.forEach(thumbnail => {
-                const hoverImage = thumbnail.getAttribute('data-hover');
-    
-                thumbnail.addEventListener('mouseover', () => {
+            mainImage.addEventListener('mouseleave', () => {
+                if (mainImage.src === hoverImage) {
                     mainImage.src = thumbnail.src;
-                    selectedThumbnail = thumbnail;
-    
-                    if (hoverImage) {
-                        mainImage.addEventListener('mouseover', () => {
-                            mainImage.src = hoverImage;
-                        });
-    
-                        mainImage.addEventListener('mouseout', () => {
-                            mainImage.src = thumbnail.src;
-                        });
-                    }
-                });
-    
-                thumbnail.addEventListener('mouseout', () => {
-                    selectedThumbnail = null;
-                    mainImage.src = producto.imagen[0];
-    
-                    if (hoverImage) {
-                        mainImage.removeEventListener('mouseover', () => {
-                            mainImage.src = hoverImage;
-                        });
-    
-                        mainImage.removeEventListener('mouseout', () => {
-                            mainImage.src = thumbnail.src;
-                        });
-                    }
-                });
+                }
             });
+        }
+    });
+
+    // Si quieres que al hacer click en una miniatura quede seleccionada:
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            lastThumbnailSrc = thumbnail.src;
+            mainImage.src = thumbnail.src;
+        });
+                    })
     
             ProductsGrid.appendChild(productoDiv);
         });
