@@ -2,11 +2,8 @@
 import { productosMujer } from '/js/mujerProductos.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos del DOM
     const mujerProductsGrid = document.querySelector('.mujer-products-grid');
     const filterButtons = document.querySelectorAll('.mujer-filter-button');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const loadingSpinner = document.querySelector('.loading-spinner');
     const filterDropdownToggle = document.querySelector('.filter-dropdown-toggle');
     const filterOverlay = document.querySelector('.filter-overlay');
     const closeFilterButton = document.querySelector('.close-filter');
@@ -16,34 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeCheckboxes = document.querySelectorAll('input[name="size"]');
     const sortRadios = document.querySelectorAll('input[name="sort"]');
     
-    // Variables de estado
-    let currentPage = 1;
+    // Variables para paginación
     const productsPerPage = 8;
-    let currentFilters = {
-        categoria: "all",
-        colores: [],
-        talles: [],
-        orden: ""
-    };
-
-    // 1. Procesar parámetros de URL al cargar
-    const urlParams = new URLSearchParams(window.location.search);
-    const categoriaURL = urlParams.get('categoria');
+    let currentPage = 1;
+    const loadMoreBtn = document.createElement('button');
+    loadMoreBtn.textContent = 'Mostrar más';
+    loadMoreBtn.id = 'load-more-btn';
+    loadMoreBtn.classList.add('load-more-btn');
+    loadMoreBtn.style.display = 'none';
     
-    if (categoriaURL) {
-        currentFilters.categoria = categoriaURL;
-        const buttonToActivate = document.querySelector(`.mujer-filter-button[data-filter="${categoriaURL}"]`);
-        if (buttonToActivate) {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            buttonToActivate.classList.add('active');
-        }
-    }
+    // Insertar el botón después del grid
+    mujerProductsGrid.insertAdjacentElement('afterend', loadMoreBtn);
 
-    // 2. Funciones principales
+    // Función para obtener productos con la etiqueta "novedad"
     function obtenerProductosNovedad() {
         return productosMujer.filter(producto => producto.etiqueta.toLowerCase() === "novedad");
     }
 
+    // Hacer los datos y funciones disponibles en el ámbito global
+    window.productosMujer = productosMujer;
+    window.obtenerProductosNovedad = obtenerProductosNovedad;
+
+    // Función para actualizar contadores
     function actualizarContadores() {
         const colorCounts = {};
         const tallaCounts = {};
@@ -65,157 +56,184 @@ document.addEventListener('DOMContentLoaded', () => {
             const color = checkbox.value.toLowerCase();
             const count = colorCounts[color] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) itemCount.textContent = `(${count})`;
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
         });
 
         sizeCheckboxes.forEach(checkbox => {
             const talla = checkbox.value.toUpperCase();
             const count = tallaCounts[talla] || 0;
             const itemCount = checkbox.parentElement.querySelector('.item-count');
-            if (itemCount) itemCount.textContent = `(${count})`;
+            if (itemCount) {
+                itemCount.textContent = `(${count})`;
+            }
         });
     }
 
-    function filtrarProductos() {
-        return productosMujer.filter(producto => {
-            const matchesCategoria = currentFilters.categoria === "all" || producto.categoria === currentFilters.categoria;
-            const matchesColor = currentFilters.colores.length === 0 || 
-                producto.variantes.some(vari => currentFilters.colores.includes(vari.color.toLowerCase()));
-            const matchesTalla = currentFilters.talles.length === 0 || 
-                producto.variantes.some(vari => currentFilters.talles.includes(vari.talla.toUpperCase()));
-
+    // Función para mostrar productos con paginación
+    function mostrarProductos(categoria = "all", coloresSeleccionados = [], tallesSeleccionados = [], orden = "", resetPagination = true) {
+        if (resetPagination) {
+            currentPage = 1;
+            mujerProductsGrid.innerHTML = "";
+        }
+    
+        let productosFiltrados = productosMujer.filter(producto => {
+            const matchesCategoria = categoria === "all" || producto.categoria === categoria;
+            const matchesColor = coloresSeleccionados.length === 0 || 
+                producto.variantes.some(vari => coloresSeleccionados.includes(vari.color.toLowerCase()));
+            const matchesTalla = tallesSeleccionados.length === 0 || 
+                producto.variantes.some(vari => tallesSeleccionados.includes(vari.talla.toUpperCase()));
+    
             return matchesCategoria && matchesColor && matchesTalla;
         });
-    }
-
-    function ordenarProductos(productos) {
-        if (currentFilters.orden === "price-asc") {
-            return [...productos].sort((a, b) => a.precio - b.precio);
-        } else if (currentFilters.orden === "price-desc") {
-            return [...productos].sort((a, b) => b.precio - a.precio);
-        } else if (currentFilters.orden === "novedades") {
-            return [...productos].sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
+    
+        if (orden === "price-asc") {
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (orden === "price-desc") {
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
+        } else if (orden === "novedades") {
+            productosFiltrados.sort((a, b) => (b.etiqueta === "novedad") - (a.etiqueta === "novedad"));
         }
-        return productos;
-    }
-
-    function mostrarProductos() {
-        loadingSpinner.classList.remove('hidden');
-        loadMoreBtn.disabled = true;
-
-        const productosFiltrados = filtrarProductos();
-        const productosOrdenados = ordenarProductos(productosFiltrados);
+    
+        // Calcular productos a mostrar
+        const startIndex = 0;
         const endIndex = currentPage * productsPerPage;
-        const productosAMostrar = productosOrdenados.slice(0, endIndex);
-
+        const productosAMostrar = productosFiltrados.slice(startIndex, endIndex);
+    
+        // Renderizar productos
         renderizarProductos(productosAMostrar);
-
-        loadMoreBtn.classList.toggle('hidden', endIndex >= productosOrdenados.length);
-        loadingSpinner.classList.add('hidden');
-        loadMoreBtn.disabled = false;
+    
+        // Mostrar u ocultar botón "Mostrar más"
+        loadMoreBtn.style.display = endIndex >= productosFiltrados.length ? 'none' : 'block';
     }
 
+    // Función para renderizar productos con el sistema de hover
     function renderizarProductos(productos) {
-        mujerProductsGrid.innerHTML = productos.map(producto => {
-            const miniaturasHTML = producto.miniaturas?.map((miniatura, index) => `
-                <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
-                     class="thumbnail-image" 
-                     data-main-image-id="mainImage-${producto.id}"
-                     data-hover="${miniatura.hover}">
-            `).join('') || '';
-
-            return `
-                <div class="mujer-product-card">
-                    <div class="product-container-mujer">
-                        <a href="index-producto.html?id=${producto.id}" class="product-link">
-                            <div class="product-image-mujer">
-                                <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
-                                <div class="product-thumbnails hidden-thumbnails">${miniaturasHTML}</div>
+        productos.forEach(producto => {
+            // Verificar si el producto ya está renderizado
+            if (document.getElementById(`mainImage-${producto.id}`)) {
+                return;
+            }
+            
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('mujer-product-card');
+    
+            productoDiv.innerHTML = `
+                <div class="product-container-mujer">
+                    <a href="index-producto.html?id=${producto.id}" class="product-link">
+                        <div class="product-image-mujer">
+                            <img id="mainImage-${producto.id}" src="${producto.imagen[0]}" alt="${producto.nombre}" class="main-product-image">
+                            <div class="product-thumbnails hidden-thumbnails">
+                                ${producto.miniaturas ? producto.miniaturas.map((miniatura, index) => `
+                                    <img src="${miniatura.src}" alt="Miniatura ${index + 1}" 
+                                         class="thumbnail-image" 
+                                         data-main-image-id="mainImage-${producto.id}"
+                                         data-hover="${miniatura.hover}">
+                                `).join('') : ''}
                             </div>
-                        </a>
-                        <div class="product-details-mujer">
-                            <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
-                            <p class="mujer-product-name">${producto.nombre}</p>
-                            <p class="mujer-product-categoria">${producto.categoria}</p>
-                            <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
-                            <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                         </div>
+                    </a>
+                    <div class="product-details-mujer">
+                        <p class="mujer-product-price">$${producto.precio.toLocaleString()}</p>
+                        <p class="mujer-product-name">${producto.nombre}</p>
+                        <p class="mujer-product-categoria">${producto.categoria}</p>
+                        <p class="mujer-product-etiqueta">${producto.etiqueta}</p>
+                        <a href="index-producto.html?id=${producto.id}" class="btn-ver-detalles"></a>
                     </div>
                 </div>
             `;
-        }).join('');
-
-        // Configurar eventos hover después de renderizar
-        // Configurar eventos hover después de renderizar
-document.querySelectorAll('.mujer-product-card').forEach(productoDiv => {
-    const id = productoDiv.querySelector('.main-product-image').id.split('-')[1];
-    const producto = productos.find(p => p.id === id);
-    if (!producto) return;
-
-    const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
-    const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
-    let lastThumbnailSrc = producto.imagen[0]; // Por defecto, la principal
-
-    thumbnails.forEach(thumbnail => {
-        const hoverImage = thumbnail.getAttribute('data-hover');
-
-        // Cuando el mouse entra en la miniatura
-        thumbnail.addEventListener('mouseenter', () => {
-            lastThumbnailSrc = thumbnail.src;
-            mainImage.src = thumbnail.src;
-        });
-
-        // Cuando el mouse sale de la miniatura
-        thumbnail.addEventListener('mouseleave', () => {
-            mainImage.src = producto.imagen[0];
-        });
-
-        // Si la miniatura tiene imagen de hover, al pasar por la imagen principal, mostrarla
-        if (hoverImage) {
-            mainImage.addEventListener('mouseenter', () => {
-                if (mainImage.src === thumbnail.src) {
-                    mainImage.src = hoverImage;
-                }
-            });
-            mainImage.addEventListener('mouseleave', () => {
-                if (mainImage.src === hoverImage) {
-                    mainImage.src = thumbnail.src;
-                }
-            });
-        }
-    });
-
-    // Si quieres que al hacer click en una miniatura quede seleccionada:
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            lastThumbnailSrc = thumbnail.src;
-            mainImage.src = thumbnail.src;
-        });
-                    })
     
-            ProductsGrid.appendChild(productoDiv);
+            const mainImage = productoDiv.querySelector(`#mainImage-${producto.id}`);
+            const thumbnails = productoDiv.querySelectorAll('.thumbnail-image');
+    
+            // Variable para almacenar la miniatura seleccionada
+            let selectedThumbnail = null;
+    
+            // Hover en la imagen principal
+            if (producto.hoverImagenes && producto.hoverImagenes.length > 0) {
+                const hoverImage = producto.hoverImagenes[0];
+    
+                mainImage.addEventListener('mouseover', () => {
+                    if (!selectedThumbnail) {
+                        mainImage.src = hoverImage;
+                    }
+                });
+    
+                mainImage.addEventListener('mouseout', () => {
+                    if (!selectedThumbnail) {
+                        mainImage.src = producto.imagen[0];
+                    }
+                });
+            }
+    
+            // Hover en las miniaturas
+            thumbnails.forEach(thumbnail => {
+                const hoverImage = thumbnail.getAttribute('data-hover');
+    
+                thumbnail.addEventListener('mouseover', () => {
+                    mainImage.src = thumbnail.src;
+                    selectedThumbnail = thumbnail;
+    
+                    if (hoverImage) {
+                        mainImage.addEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.addEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
+                    }
+                });
+    
+                thumbnail.addEventListener('mouseout', () => {
+                    selectedThumbnail = null;
+                    mainImage.src = producto.imagen[0];
+    
+                    if (hoverImage) {
+                        mainImage.removeEventListener('mouseover', () => {
+                            mainImage.src = hoverImage;
+                        });
+    
+                        mainImage.removeEventListener('mouseout', () => {
+                            mainImage.src = thumbnail.src;
+                        });
+                    }
+                });
+            });
+    
+            mujerProductsGrid.appendChild(productoDiv);
         });
     }
 
-    // 3. Event Listeners
+    // Event listeners
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            currentFilters.categoria = button.dataset.filter;
-            currentPage = 1;
-            history.pushState({}, '', `?categoria=${currentFilters.categoria}`);
-            mostrarProductos();
+            const categoria = button.getAttribute('data-filter');
+            mostrarProductos(categoria, [], [], "", true);
         });
     });
 
+    // Evento para el botón "Mostrar más"
     loadMoreBtn.addEventListener('click', () => {
         currentPage++;
-        mostrarProductos();
-        setTimeout(() => loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+        mostrarProductos(
+            document.querySelector('.mujer-filter-button.active')?.getAttribute('data-filter') || "all",
+            Array.from(colorCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase()),
+            Array.from(sizeCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toUpperCase()),
+            Array.from(sortRadios).find(r => r.checked)?.value || "",
+            false
+        );
+        
+        // Desplazamiento suave al botón
+        setTimeout(() => {
+            loadMoreBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
     });
 
-    if (filterDropdownToggle) {
+    if (filterDropdownToggle && filterOverlay) {
         filterDropdownToggle.addEventListener('click', () => {
             filterOverlay.classList.add('show');
             filterOverlay.style.display = 'block';
@@ -225,55 +243,45 @@ document.querySelectorAll('.mujer-product-card').forEach(productoDiv => {
     if (closeFilterButton) {
         closeFilterButton.addEventListener('click', () => {
             filterOverlay.classList.remove('show');
-            setTimeout(() => filterOverlay.style.display = 'none', 300);
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
         });
     }
 
     if (applyFiltersButton) {
         applyFiltersButton.addEventListener('click', () => {
-            currentFilters.colores = Array.from(colorCheckboxes)
+            const selectedCategory = document.querySelector('.mujer-filter-button.active')?.getAttribute('data-filter') || "all";
+            const selectedColors = Array.from(colorCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toLowerCase());
-            
-            currentFilters.talles = Array.from(sizeCheckboxes)
+            const selectedSizes = Array.from(sizeCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.value.toUpperCase());
+            const selectedSort = Array.from(sortRadios).find(r => r.checked)?.value || "";
+
+            mostrarProductos(selectedCategory, selectedColors, selectedSizes, selectedSort, true);
             
-            currentFilters.orden = Array.from(sortRadios)
-                .find(radio => radio.checked)?.value || "";
-            
-            currentPage = 1;
-            mostrarProductos();
             filterOverlay.classList.remove('show');
-            setTimeout(() => filterOverlay.style.display = 'none', 300);
+            setTimeout(() => {
+                filterOverlay.style.display = 'none';
+            }, 300);
         });
     }
 
-    if (clearFiltersButton) {
-        clearFiltersButton.addEventListener('click', () => {
-            colorCheckboxes.forEach(cb => cb.checked = false);
-            sizeCheckboxes.forEach(cb => cb.checked = false);
-            sortRadios.forEach(radio => radio.checked = false);
-            
-            currentFilters = {
-                categoria: "all",
-                colores: [],
-                talles: [],
-                orden: ""
-            };
-            
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.mujer-filter-button[data-filter="all"]').classList.add('active');
-            
-            currentPage = 1;
-            history.pushState({}, '', window.location.pathname);
-            mostrarProductos();
-        });
-    }
+    clearFiltersButton.addEventListener('click', () => {
+        sortRadios.forEach(radio => (radio.checked = false));
+        colorCheckboxes.forEach(checkbox => (checkbox.checked = false));
+        sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.mujer-filter-button[data-filter="all"]').classList.add('active');
+
+        mostrarProductos("all", [], [], "", true);
+    });
 
     // Inicialización
     actualizarContadores();
-    mostrarProductos();
+    mostrarProductos("all", [], [], "", true);
 });
 
 
